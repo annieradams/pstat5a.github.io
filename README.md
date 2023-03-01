@@ -1,2 +1,2 @@
 # pstat5a.github.io
-Repo for PSTAT 5A public site, at University of California, Santa Barbara
+This site is currently under construction; please check back soon for updates!
