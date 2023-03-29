@@ -142,7 +142,7 @@ If you have a disability, or otherwise require accommodations for the exams and/
 
 ## Technology Needs
 
-As a part of this course, you will be required to program in Python. Though the Lab Sections take place in specially designed classrooms that come equipped with computers, your homework and quizzes may cover Python-related questions, which means we expect you to have access to a laptop capable of connecting to the internet. If you do not currently posess such a laptop, please check out UCSB's Basic Needs Resource [page on Technology Resources](https://food.ucsb.edu/resources/technology-resources) to try and acquire one.
+As a part of this course, you will be required to program in Python. Though the Lab Sections take place in specially designed classrooms that come equipped with computers, your homework and quizzes may cover Python-related questions, which means we expect you to have access to a laptop capable of connecting to the internet. If you do not currently possess such a laptop, please check out UCSB's Basic Needs Resource [page on Technology Resources](https://food.ucsb.edu/resources/technology-resources) to try and acquire one.
 
 ## Section Switching
 
