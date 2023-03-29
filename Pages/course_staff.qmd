@@ -1,0 +1,129 @@
+---
+title: "PSTAT 5A: Understanding Data"
+subtitle: "Course Staff"
+author:
+  - name: "Ethan Marzban"
+    affiliations:
+      - name: "Spring 2023"
+author-title: "Instructor"
+affiliation-title: "Quarter"
+format: html
+linkcolor: "#ffa07a"
+---
+
+## Instructor
+
+:::{.callout-note collapse="false"}
+## Instructor: Ethan P. Marzban
+<table>
+  <tr>
+    <td style = "padding-right: 10pt">
+      <img src = "../Images/Profiles/placeholder.png" width = 175>
+    </td>
+    <td>
+      <p style = "font-size:24px"><b>Ethan P. Marzban</b></p>
+      <p>
+        Hello! I am currently in the 3rd year of my PhD program here in the PSTAT department, having joined back in 2020 (after having completed my undergraduate degree in Statistics as well). Outside of school I enjoy playing the piano, drinking boba, and talking about cats!
+      </p>
+      <table>
+        <tr>
+          <td><b>Email:</b></td>
+          <td><a href = "mailto:epmarzban@pstat.ucsb.edu">epmarzban@pstat.ucsb.edu</a></td>
+        </tr>
+        <tr>
+          <td><b>OH:</b></td>
+          <td><u>HW Clinic:</u> Tuesdays, 4:30 - 5:30 in ELLSN 2626 <br /> <u>OH:</u> Fridays, 12 - 1pm in SH 5607F (Sobel)</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+:::
+
+## Teaching Assistants (TAs)
+
+<!-- TA 1 -->
+:::{.callout-note collapse="false"}
+## TA: Nickolas Thiessen
+<table>
+  <tr>
+    <td style = "padding-right: 10pt">
+      <img src = "../Images/Profiles/placeholder.png" width = 175>
+    </td>
+    <td>
+      <p style = "font-size:24px"><b>Nickolas Thiessen</b></p>
+      <p>
+        More information coming soon!
+      </p>
+      <table>
+        <tr>
+          <td><b>Email:</b></td>
+          <td><a href="mailto:nickolas@ucsb.edu">nickolas@ucsb.edu</a></td>
+        </tr>
+        <tr>
+          <td><b>OH:</b></td>
+          <td>TBD, TBD</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+:::
+
+<!-- TA 2 -->
+:::{.callout-note collapse="false"}
+## TA: TBD
+<table>
+  <tr>
+    <td style = "padding-right: 10pt">
+      <img src = "../Images/Profiles/placeholder.png" width = 175>
+    </td>
+    <td>
+      <p style = "font-size:24px"><b>TBD</b></p>
+      <p>
+        More information coming soon!
+      </p>
+      <table>
+        <tr>
+          <td><b>Email:</b></td>
+          <td>TBD</td>
+        </tr>
+        <tr>
+          <td><b>OH:</b></td>
+          <td>TBD, TBD</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+:::
+
+## Undergraduate Learning Assistants (ULAs)
+
+<!-- ULA 1 -->
+:::{.callout-note collapse="false"}
+## ULA: Catherine Li
+<table>
+  <tr>
+    <td style = "padding-right: 10pt">
+      <img src = "../Images/Profiles/placeholder.png" width = 175>
+    </td>
+    <td>
+      <p style = "font-size:24px"><b>Catherine Li</b></p>
+      <p>
+        More information coming soon!
+      </p>
+      <table>
+        <tr>
+          <td><b>Email:</b></td>
+          <td><a href="mailto:catherine_li@umail.ucsb.edu">catherine_li@umail.ucsb.edu</a></td>
+        </tr>
+        <tr>
+          <td><b>OH:</b></td>
+          <td>TBD, TBD</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+:::

@@ -1,0 +1,17 @@
+---
+title: "PSTAT 5A: Understanding Data"
+subtitle: "Homework and Homework Solutions"
+author:
+  - name: "Ethan Marzban"
+    affiliations:
+      - name: "Spring 2023"
+author-title: "Instructor"
+affiliation-title: "Quarter"
+format: html
+css: "../schedule.css"
+---
+
+Here you will find all homework assignments and their solutions.
+
+-   **Homework 1:** due by 11:59pm on Tuesday, April 11 \
+    (will be posted 5pm on Wednesday, April 5)
