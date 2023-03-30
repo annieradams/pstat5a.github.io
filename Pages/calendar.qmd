@@ -1,6 +1,6 @@
 ---
 title: "PSTAT 5A: Understanding Data"
-subtitle: "Course Calendar"
+subtitle: "Sections and Calendar"
 author:
   - name: "Ethan Marzban"
     affiliations:
@@ -19,7 +19,6 @@ format: html
             <th style="height: 26px;">Email</th>
             <th style="height: 26px;">Section Time</th>
             <th style="height: 26px;">Location</th>
-            <th style="height: 26px;">OH</th>
         </tr>
     </thead>
     <tbody>
@@ -28,7 +27,6 @@ format: html
             <td style="height: 56px;" rowspan="2"><a class="inline_disabled" href="mailto:tbd@pstat.ucsb.edu" target="_blank" rel="noopener">tbd@pstat.ucsb.edu</a></td>
             <td style="height: 28px;">10 - 10:50am</td>
             <td style="height: 28px;">Psychology East 1805</td>
-            <td style="height: 56px;" rowspan="2">TBD</td>
         </tr>
         <tr class="odd" style="height: 28px;">
             <td style="height: 28px;">11 - 11:50am</td>
@@ -39,8 +37,6 @@ format: html
             <td style="height: 56px;" rowspan="2"><a class="inline_disabled" href="mailto:nickolas@pstat.ucsb.edu" target="_blank" rel="noopener">nickolas@pstat.ucsb.edu</a></td>
             <td style="height: 28px;">12 - 12:50pm</td>
             <td style="height: 28px;">Phelps 1513</td>
-            <td style="height: 56px;" rowspan="2">TBD</td>
-        </tr>
         <tr class="even" style="height: 28px;">
             <td style="height: 28px;">1 - 1:50pm</td>
             <td style="height: 28px;">Phelps 1529</td>

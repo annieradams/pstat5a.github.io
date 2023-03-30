@@ -17,7 +17,7 @@ website:
           - href: Pages/schedule.qmd
             text: Schedule of Topics
           - href: Pages/calendar.qmd
-            text: Course Calendar / OH
+            text: Sections and Calendar
           - href: Pages/course_staff.qmd
             text: Course Staff / OH
       - section: "Homework"
