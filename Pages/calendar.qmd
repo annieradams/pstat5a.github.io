@@ -10,7 +10,7 @@ affiliation-title: "Quarter"
 format: html
 ---
 
-## Schedule of Sections and Office Hours
+## Schedule of Sections
 
 <table class="table" style="width: 85%; height: 138px;">
     <thead>

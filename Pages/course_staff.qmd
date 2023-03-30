@@ -62,7 +62,7 @@ linkcolor: "#ffa07a"
         </tr>
         <tr>
           <td><b>OH:</b></td>
-          <td>TBD, TBD</td>
+          <td>Fridays, 9 - 11am in Building 434 Rm 113 </td>
         </tr>
       </table>
     </td>
