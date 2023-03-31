@@ -70,23 +70,51 @@ linkcolor: "#ffa07a"
 </table>
 :::
 
-<!-- TA 2 -->
+<!-- Jason Teng -->
 :::{.callout-note collapse="false"}
-## TA: TBD
+## TA: Jason Teng
 <table>
   <tr>
     <td style = "padding-right: 10pt">
       <img src = "../Images/Profiles/placeholder.png" width = 175>
     </td>
     <td>
-      <p style = "font-size:24px"><b>TBD</b></p>
+      <p style = "font-size:24px"><b>Jason Teng</b></p>
       <p>
         More information coming soon!
       </p>
       <table>
         <tr>
           <td><b>Email:</b></td>
-          <td>TBD</td>
+          <td><a href="mailto:jteng@ucsb.edu">jteng@ucsb.edu</a></td>
+        </tr>
+        <tr>
+          <td><b>OH:</b></td>
+          <td>TBD, TBD</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+:::
+
+<!-- Yuan Zhou -->
+:::{.callout-note collapse="false"}
+## TA: Yuan Zhou
+<table>
+  <tr>
+    <td style = "padding-right: 10pt">
+      <img src = "../Images/Profiles/placeholder.png" width = 175>
+    </td>
+    <td>
+      <p style = "font-size:24px"><b>Yuan Zhou</b></p>
+      <p>
+        More information coming soon!
+      </p>
+      <table>
+        <tr>
+          <td><b>Email:</b></td>
+          <td><a href="mailto:yuan_zhou@ucsb.edu">yuan_zhou@ucsb.edu</a></td>
         </tr>
         <tr>
           <td><b>OH:</b></td>
