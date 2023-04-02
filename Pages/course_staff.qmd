@@ -90,7 +90,7 @@ linkcolor: "#ffa07a"
         </tr>
         <tr>
           <td><b>OH:</b></td>
-          <td>TBD, TBD</td>
+          <td>Thursdays, 11am - noon in South Hall 5421 (the StatLab)</td>
         </tr>
       </table>
     </td>
@@ -118,7 +118,7 @@ linkcolor: "#ffa07a"
         </tr>
         <tr>
           <td><b>OH:</b></td>
-          <td>TBD, TBD</td>
+          <td>Tuesdays, 10 - 11am in South Hall 5421 (the StatLab)</td>
         </tr>
       </table>
     </td>
