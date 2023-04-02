@@ -3,10 +3,10 @@ project:
   output-dir: docs
 
 website:
-  title: "PSTAT 5A: Spring 2023"
+  title: "PSTAT 5A: Spring 2023 (Section 200)"
 
   sidebar:
-    title: "PSTAT 5A: Understanding Data"
+    title: "PSTAT 5A: Understanding Data (Section 200)"
     style: "docked"
     search: true
     contents:
