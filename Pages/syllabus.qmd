@@ -79,7 +79,7 @@ The following are the assignments and metrics that will be used to compute your 
 
 There will be **weekly** homework assignments that are each graded out of 10 points, on a combination of **correctness** and **completion**: we will select a few parts/problems to be graded out of 8 points on correctness, and you will be awarded 2 points for completing the remainder of the homework. Your lowest homework score will be dropped.\
 
-Homework assignments are typically released on Wednesdays and due on Tuesdays, with the exception of Exam Weeks when the homework will be due on Monday.
+Homework assignments will typically be released on Wednesdays and be due on Tuesdays, with the exception of Exam Weeks when the homework will be due on Monday.
 
 ### Quizzes
 
