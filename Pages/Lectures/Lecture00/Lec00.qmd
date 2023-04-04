@@ -38,7 +38,7 @@ title-slide-attributes:
 
 ::: {.column width="40%"}
 
-<img src = "ethan.jpg" width = "60%">
+![](ethan.jpg){width=60% fig-align="center"}
 
 :::
 
