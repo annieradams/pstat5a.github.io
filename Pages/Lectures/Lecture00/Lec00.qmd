@@ -38,7 +38,7 @@ title-slide-attributes:
 
 ::: {.column width="40%"}
 
-![](ethan.jpg){width=60% fig-align="center"}
+![](ethan.svg){width=60% fig-align="center"}
 
 :::
 
