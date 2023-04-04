@@ -193,7 +193,7 @@
     "href": "Pages/Lectures/Lecture00/Lec00.html#the-path-forward",
     "title": "PSTAT 5A: Lecture 00",
     "section": "The Path Forward",
-    "text": "The Path Forward\n\nSo, how does this course factor into the discourse surrounding Data Science?\nFrom the course description:\n\n\n\nIntroduction to data science. Concepts of statistical thinking. Topics include random variables, sampling distributions, hypothesis testing, correlation and regression. Visualizing, analyzing and interpreting real world data using Python. Computing labs required.\n\n\n\nSo this course is designed to be an introduction to data science."
+    "text": "The Path Forward\n\nSo, how does this course factor into things?\nFrom the course description:\n\n\n\nIntroduction to data science. Concepts of statistical thinking. Topics include random variables, sampling distributions, hypothesis testing, correlation and regression. Visualizing, analyzing and interpreting real world data using Python. Computing labs required.\n\n\n\nSo this course is designed to be an introduction to data science."
   },
   {
     "objectID": "Pages/schedule.html",

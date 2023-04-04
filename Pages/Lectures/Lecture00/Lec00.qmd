@@ -180,7 +180,7 @@ _**Catherine's Help Hours will begin Next Week**_
 
 ## The Path Forward
 
-- So, how does this course factor into the discourse surrounding Data Science?
+- So, how does this course factor into things?
 
 - From the course description:
 
