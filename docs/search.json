@@ -445,7 +445,7 @@
     "href": "Pages/Lectures/Lecture01/Lec01_v2.html#percentiles",
     "title": "PSTAT 5A: Lecture 01",
     "section": "Percentiles",
-    "text": "Percentiles\n\n\n\n\n\n\n\nDefinition\n\n\n\nThe pth percentile of a set of observations \\(X\\) is the value \\(\\pi_{x, \\ 0.5}\\) such that p% of observations lie to the left of (i.e. are less than) \\(\\pi_{x, \\ 0.5}\\).\n\n\n\n\n\n\nMaybe now you can see why I switched over to this data of scores- I think percentiles are sometimes easier to interpret in the context of exam scores, since they are very commonly reported with standardized testing scores (e.g. SAT, GRE, etc.)\n\nIn the context of scores: someone who scored at the pth percentile performed better than p% of all test-takers."
+    "text": "Percentiles\n\n\n\n\n\n\n\nDefinition\n\n\n\nThe pth percentile of a set of observations \\(X\\) is the value \\(\\pi_{x, \\ p}\\) such that p% of observations lie to the left of (i.e. are less than) \\(\\pi_{x, \\ p}\\).\n\n\n\n\n\n\nMaybe now you can see why I switched over to this data of scores- I think percentiles are sometimes easier to interpret in the context of exam scores, since they are very commonly reported with standardized testing scores (e.g. SAT, GRE, etc.)\n\nIn the context of scores: someone who scored at the pth percentile performed better than p% of all test-takers."
   },
   {
     "objectID": "Pages/Lectures/Lecture01/Lec01_v2.html#quartiles",

@@ -821,7 +821,7 @@ data.frame(x) %>%
 :::{.callout-note}
 ## **Definition**
 ::: {style="font-size: 30px"}
-The **_p_^th^ percentile** of a set of observations $X$ is the value $\pi_{x, \ 0.5}$ such that _p_% of observations lie to the left of (i.e. are less than) $\pi_{x, \ 0.5}$.
+The **_p_^th^ percentile** of a set of observations $X$ is the value $\pi_{x, \ p}$ such that _p_% of observations lie to the left of (i.e. are less than) $\pi_{x, \ p}$.
 :::
 :::
 :::
