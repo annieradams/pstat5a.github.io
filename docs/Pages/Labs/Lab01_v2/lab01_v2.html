@@ -342,7 +342,7 @@ Important
 </section>
 <section id="cells" class="level3">
 <h3 class="anchored" data-anchor-id="cells">Cells</h3>
-<p>There are two main types of cells we will be using in this class: <strong>Markdown cells</strong> (which include text/descriptions, but no code) and <strong>code cells</strong> (which contain code that needs to be run).</p>
+<p>There are two main types of cells we will be using in this class: <strong>Markdown cells</strong> (which include text/descriptions, but no code) and <strong>code cells</strong> (which contain code that needs to be run). We’ll be talking a bit more about Markdown cells in a few weeks.</p>
 <div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -383,16 +383,16 @@ Tip
 <p>To run a cell and automatically create a new cell underneath it, use the keyboard shortcut <code>SHIFT + ENTER</code>.</p>
 </div>
 </div>
-<p>By the way, do you notice the little <code>In [1]:</code> at the left of our first cell? This is Jupyter’s syntax for letting us know the order in which Jupyter is executing the code cells. The <code>1</code> in our cell from Task 2 above corresponds to the fact that this was the <strong>1</strong><sup>st</sup> code cell we executed in our document.</p>
+<p>By the way, do you notice the little <code>In [1]:</code> at the left of our first cell? This is Jupyter’s way of letting us know the order in which the code cells have been executed. The <code>1</code> in our cell from Task 2 above corresponds to the fact that this was the <strong>1</strong><sup>st</sup> code cell we executed in our document.</p>
 </section>
 </section>
 <section id="coding-with-python" class="level2">
 <h2 class="anchored" data-anchor-id="coding-with-python">Coding with Python</h2>
-<p>There is a reason we use the word “language” to describe programming languages- that is because they function quite like a human language. This means that they have their own set of synatxes, and semantics. It is precisely these syntaxes and semantincs we will be learning over the course of these Computing Labs!<br>
+<p>There is a reason we use the word “language” to describe programming languages- that is because they function quite like a human language. This means that they each have their own <strong>syntax</strong> (i.e.&nbsp;set of grammar rules). It is precisely the Syntax of the Python language that we will be learning over the course of these Computing Labs!<br>
 </p>
 <p>Programs are made up of <strong>expressions</strong>, like <code>2 + 2</code>. We <strong>evaluate</strong> expressions by <strong>running</strong> (or <strong>executing</strong>) them in a programming language. Expressions are like the sentences of programming- they contain complex pieces of information that are conveyed between the user and the computer.<br>
 </p>
-<p>Much like sentences in other languages, expressions must obey a rigid <strong>syntax</strong>. For example, when we want to perform addition in Python we must use the <code>+</code> symbol; we can’t, for example, say <code>2 plus 2</code>.<br>
+<p>Much like sentences in other languages, expressions must obey a rigid syntax. For example, when we want to perform addition in Python we must use the <code>+</code> symbol; we can’t, for example, say <code>2 plus 2</code>.<br>
 </p>
 <p>What happens when we violate a syntax rule? Well…</p>
 <div class="callout-important callout callout-style-default callout-captioned">
@@ -546,11 +546,11 @@ Task 5
 </section>
 <section id="python-modules" class="level2">
 <h2 class="anchored" data-anchor-id="python-modules">Python Modules</h2>
-<p>It is important to note that all Python objects take up space in the form of memory. Nowadays, with the recent innovations in computers, this is not so much of an issue but historically, when many of these programming languages were first being created, optimizing space was of the utmost concern. (Even today, <strong>efficiency</strong> is a guiding tenent of most programmers!)<br>
+<p>It is important to note that all Python objects take up space in the form of memory (i.e.&nbsp;storage space on your computer). Nowadays, with the recent innovations in computers, this is not so much of an issue but historically, when many of these programming languages were first being created, optimizing space was of the utmost concern. (Even today, <strong>efficiency</strong> is a guiding tenet of most programmers!)<br>
 </p>
 <p>Think of it this way- if you are doing work on code that doesn’t involve much trigonometry, there isn’t a whole lot of need to have the <code>sin</code> function readily available. The idea programmers had was to compartmentalize, and store certain functions in what are known as <strong>modules</strong>.<br>
 </p>
-<p>Modules are Python files containing definitions for functions and classes. While data types and built-in functions in the Python standard library are available for immediate use, modules need to be imported (loaded) first.<br>
+<p>Modules are Python files containing definitions for functions and classes (we’ll talk about classes a little later). While data types and built-in functions in the Python standard library are available for immediate use, modules need to be <strong>imported</strong> first.<br>
 </p>
 <p>The syntax for importing all functions from a module is:</p>
 <div class="cell">
@@ -577,7 +577,7 @@ Task 5 (cont’d)
 </section>
 <section id="functions" class="level2">
 <h2 class="anchored" data-anchor-id="functions">Functions</h2>
-<p>We will talk extensively about Python functions in a few weeks. For now, suffice it to say that Python functions work just like mathematical functions: for example, note how we used the <code>sin()</code> function in the previous task. One pieece of terminology that is somewhat specific to programming is the notion of <strong>calling</strong>- when we say to <strong>call a function</strong> on a quantity, we mean to pass that quantity through the function. So, for example, in Task 5 we <em>called</em> the <code>sin()</code> function on the quantity <code>1</code>.</p>
+<p>We will talk extensively about Python functions in a few weeks. For now, suffice it to say that Python functions work just like mathematical functions: for example, note how we used the <code>sin()</code> function in the previous task. One piece of terminology that is somewhat specific to programming is the notion of <strong>calling</strong>- when we say to <strong>call a function</strong> on an argument, we mean to pass that argument through the function. So, for example, in Task 5 we <em>called</em> the <code>sin()</code> function on the argument <code>1</code>.</p>
 </section>
 <section id="variable-assignment" class="level2">
 <h2 class="anchored" data-anchor-id="variable-assignment">Variable Assignment</h2>

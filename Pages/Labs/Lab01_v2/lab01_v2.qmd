@@ -70,7 +70,7 @@ When you run code using the "Run" button at the top of your environment, only th
 
 ### Cells
 
-There are two main types of cells we will be using in this class: **Markdown cells** (which include text/descriptions, but no code) and **code cells** (which contain code that needs to be run). 
+There are two main types of cells we will be using in this class: **Markdown cells** (which include text/descriptions, but no code) and **code cells** (which contain code that needs to be run). We'll be talking a bit more about Markdown cells in a few weeks.
 
 ::: {.callout-important}
 ## Task 2
@@ -100,15 +100,15 @@ Notice that after running a cell, Jupyter automatically adds a new cell right af
 To run a cell and automatically create a new cell underneath it, use the keyboard shortcut `SHIFT + ENTER`.
 :::
 
-By the way, do you notice the little `In [1]:` at the left of our first cell? This is Jupyter's syntax for letting us know the order in which Jupyter is executing the code cells. The `1` in our cell from Task 2 above corresponds to the fact that this was the **1**^st^ code cell we executed in our document. 
+By the way, do you notice the little `In [1]:` at the left of our first cell? This is Jupyter's way of letting us know the order in which the code cells have been executed. The `1` in our cell from Task 2 above corresponds to the fact that this was the **1**^st^ code cell we executed in our document. 
 
 ## Coding with Python
 
-There is a reason we use the word "language" to describe programming languages- that is because they function quite like a human language. This means that they have their own set of synatxes, and semantics. It is precisely these syntaxes and semantincs we will be learning over the course of these Computing Labs! \
+There is a reason we use the word "language" to describe programming languages- that is because they function quite like a human language. This means that they each have their own **syntax** (i.e. set of grammar rules). It is precisely the Syntax of the Python language that we will be learning over the course of these Computing Labs! \
 
 Programs are made up of **expressions**, like `2 + 2`. We **evaluate** expressions by **running** (or **executing**) them in a programming language. Expressions are like the sentences of programming- they contain complex pieces of information that are conveyed between the user and the computer. \
 
-Much like sentences in other languages, expressions must obey a rigid **syntax**. For example, when we want to perform addition in Python we must use the `+` symbol; we can't, for example, say `2 plus 2`. \
+Much like sentences in other languages, expressions must obey a rigid syntax. For example, when we want to perform addition in Python we must use the `+` symbol; we can't, for example, say `2 plus 2`. \
 
 What happens when we violate a syntax rule? Well...
 
@@ -194,11 +194,11 @@ To answer the question of why this is, we need to take a bit of a detour into th
 
 ## Python Modules
 
-It is important to note that all Python objects take up space in the form of memory. Nowadays, with the recent innovations in computers, this is not so much of an issue but historically, when many of these programming languages were first being created, optimizing space was of the utmost concern. (Even today, **efficiency** is a guiding tenent of most programmers!) \
+It is important to note that all Python objects take up space in the form of memory (i.e. storage space on your computer). Nowadays, with the recent innovations in computers, this is not so much of an issue but historically, when many of these programming languages were first being created, optimizing space was of the utmost concern. (Even today, **efficiency** is a guiding tenet of most programmers!) \
 
 Think of it this way- if you are doing work on code that doesn't involve much trigonometry, there isn't a whole lot of need to have the `sin` function readily available. The idea programmers had was to compartmentalize, and store certain functions in what are known as **modules**. \
 
-Modules are Python files containing definitions for functions and classes. While data types and built-in functions in the Python standard library are available for immediate use, modules need to be imported (loaded) first. \
+Modules are Python files containing definitions for functions and classes (we'll talk about classes a little later). While data types and built-in functions in the Python standard library are available for immediate use, modules need to be **imported** first. \
 
 The syntax for importing all functions from a module is:
 ```{python}
@@ -220,8 +220,7 @@ It turns out that the `sin()` function is located in the `math` module Load all 
 
 ## Functions
 
-We will talk extensively about Python functions in a few weeks. For now, suffice it to say that Python functions work just like mathematical functions: for example, note how we used the `sin()` function in the previous task. One pieece of terminology that is somewhat specific to programming is the notion of **calling**- when we say to **call a function** on a quantity, we mean to pass that quantity through the function. So, for example, in Task 5 we *called* the `sin()` function on the quantity `1`.
-
+We will talk extensively about Python functions in a few weeks. For now, suffice it to say that Python functions work just like mathematical functions: for example, note how we used the `sin()` function in the previous task. One piece of terminology that is somewhat specific to programming is the notion of **calling**- when we say to **call a function** on an argument, we mean to pass that argument through the function. So, for example, in Task 5 we *called* the `sin()` function on the argument `1`.
 
 
 ## Variable Assignment
