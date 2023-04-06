@@ -784,37 +784,13 @@ data.frame(x) %>%
 
 - Now, consider the score of a hypothetical student called Mindy. Suppose Mindy received a score of 90% on this exam.
 
-- Based on the histogram, we can see that over half (50%) of students in the class received a score lower than Mindy's 90%. 
+- Following the steps we used in Exercise 3, we can compute the proportion of students who scored *lower* than Mindy to be 95.71%.
+
+    - We would therefore say that Mindy's score - i.e. 90% - is at the **95.71^th^ percentile** of exam scores.
+
 
 ---
 
-```{r, fig.height = 4}
-data.frame(x) %>%
-  ggplot(aes(x = x)) +
-  geom_histogram(col = "white", bins = 15) +
-  theme_economist(base_size = 18) +
-  theme(panel.background = element_rect("#f0ebd8"),
-        plot.background = element_rect(fill = "#f0ebd8"),
-        axis.title.y = element_text(size = 16,
-                                    margin = margin(
-                                      t = 0, 
-                                      r = 10,
-                                      b = 0, 
-                                      l = 0)),
-        axis.title.x = element_text(size = 16)
-  ) +
-  ggtitle("Histogram of Scores") +
-  geom_vline(xintercept = 90,
-             size = 1,
-             col = "red")
-```
-
-
-- Upon examining the data more closely, we can see that 95.71% of the class received a score lower than Mindy's.
-
-- We would therefore say that Mindy's score - i.e. 90% - is at the **95.71^th^ percentile** of exam scores.
-
----
 ## Percentiles
 
 :::{.fragment}
@@ -849,6 +825,8 @@ The **_p_^th^ percentile** of a set of observations $X$ is the value $\pi_{x, \ 
 - This procedure is quite long and complicated, and is based off an entire paper written back in the 90's. 
 
 - For example, if we consider the set $S = \{1, 2, 3, 4, 5, 6\}$, we would (based on the definition from the previous slide) call the first quartile $2$, whereas most softwares would return a value of $2.25$.
+
+    - I'll show you on the chalkboard why the first quartile is $2$.
 
 - **Don't worry about why this is**- whenever we talk about quartiles in this class, you can just think of the definition I posed on the previous slide.
 

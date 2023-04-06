@@ -1335,15 +1335,10 @@ categorical-&gt;ordinal
 
 <img data-src="Lec01_v2_files/figure-revealjs/unnamed-chunk-20-1.png" width="960" class="r-stretch"><ul>
 <li class="fragment"><p>Now, consider the score of a hypothetical student called Mindy. Suppose Mindy received a score of 90% on this exam.</p></li>
-<li class="fragment"><p>Based on the histogram, we can see that over half (50%) of students in the class received a score lower than Mindy’s 90%.</p></li>
-</ul>
-</section>
-<section class="slide level2">
-
-
-<img data-src="Lec01_v2_files/figure-revealjs/unnamed-chunk-21-1.png" width="960" class="r-stretch"><ul>
-<li class="fragment"><p>Upon examining the data more closely, we can see that 95.71% of the class received a score lower than Mindy’s.</p></li>
-<li class="fragment"><p>We would therefore say that Mindy’s score - i.e.&nbsp;90% - is at the <strong>95.71<sup>th</sup> percentile</strong> of exam scores.</p></li>
+<li class="fragment"><p>Following the steps we used in Exercise 3, we can compute the proportion of students who scored <em>lower</em> than Mindy to be 95.71%.</p>
+<ul>
+<li class="fragment">We would therefore say that Mindy’s score - i.e.&nbsp;90% - is at the <strong>95.71<sup>th</sup> percentile</strong> of exam scores.</li>
+</ul></li>
 </ul>
 </section>
 <section id="percentiles" class="slide level2">
@@ -1391,7 +1386,10 @@ categorical-&gt;ordinal
 <ul>
 <li class="fragment"><p>I should quickly mention one small caveat- computing softwares often use a different procedure for computing quartiles.</p></li>
 <li class="fragment"><p>This procedure is quite long and complicated, and is based off an entire paper written back in the 90’s.</p></li>
-<li class="fragment"><p>For example, if we consider the set <span class="math inline">\(S = \{1, 2, 3, 4, 5, 6\}\)</span>, we would (based on the definition from the previous slide) call the first quartile <span class="math inline">\(2\)</span>, whereas most softwares would return a value of <span class="math inline">\(2.25\)</span>.</p></li>
+<li class="fragment"><p>For example, if we consider the set <span class="math inline">\(S = \{1, 2, 3, 4, 5, 6\}\)</span>, we would (based on the definition from the previous slide) call the first quartile <span class="math inline">\(2\)</span>, whereas most softwares would return a value of <span class="math inline">\(2.25\)</span>.</p>
+<ul>
+<li class="fragment">I’ll show you on the chalkboard why the first quartile is <span class="math inline">\(2\)</span>.</li>
+</ul></li>
 <li class="fragment"><p><strong>Don’t worry about why this is</strong>- whenever we talk about quartiles in this class, you can just think of the definition I posed on the previous slide.</p></li>
 </ul>
 </section>
@@ -1419,7 +1417,7 @@ categorical-&gt;ordinal
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="Lec01_v2_files/figure-revealjs/unnamed-chunk-22-1.png" width="768"></p>
+<p><img data-src="Lec01_v2_files/figure-revealjs/unnamed-chunk-21-1.png" width="768"></p>
 </div>
 </div>
 </div>
@@ -1439,7 +1437,7 @@ categorical-&gt;ordinal
 <p>Here is a boxplot of the <code>bill_length_mm</code> variable from the <code>palmerpenguins</code> dataset:</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="Lec01_v2_files/figure-revealjs/unnamed-chunk-23-1.png" width="672"></p>
+<p><img data-src="Lec01_v2_files/figure-revealjs/unnamed-chunk-22-1.png" width="672"></p>
 </div>
 </div>
 </div>

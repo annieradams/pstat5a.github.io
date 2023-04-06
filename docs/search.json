@@ -459,7 +459,7 @@
     "href": "Pages/Lectures/Lecture01/Lec01_v2.html#small-caveat",
     "title": "PSTAT 5A: Lecture 01",
     "section": "Small Caveat",
-    "text": "Small Caveat\n\nI should quickly mention one small caveat- computing softwares often use a different procedure for computing quartiles.\nThis procedure is quite long and complicated, and is based off an entire paper written back in the 90’s.\nFor example, if we consider the set \\(S = \\{1, 2, 3, 4, 5, 6\\}\\), we would (based on the definition from the previous slide) call the first quartile \\(2\\), whereas most softwares would return a value of \\(2.25\\).\nDon’t worry about why this is- whenever we talk about quartiles in this class, you can just think of the definition I posed on the previous slide."
+    "text": "Small Caveat\n\nI should quickly mention one small caveat- computing softwares often use a different procedure for computing quartiles.\nThis procedure is quite long and complicated, and is based off an entire paper written back in the 90’s.\nFor example, if we consider the set \\(S = \\{1, 2, 3, 4, 5, 6\\}\\), we would (based on the definition from the previous slide) call the first quartile \\(2\\), whereas most softwares would return a value of \\(2.25\\).\n\nI’ll show you on the chalkboard why the first quartile is \\(2\\).\n\nDon’t worry about why this is- whenever we talk about quartiles in this class, you can just think of the definition I posed on the previous slide."
   },
   {
     "objectID": "Pages/Lectures/Lecture01/Lec01_v2.html#whiskers",
