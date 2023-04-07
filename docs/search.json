@@ -231,6 +231,188 @@
     "text": "Here you will find all homework assignments and their solutions.\n\nHomework 1: due by 11:59pm on Tuesday, April 11\n(will be posted 5pm on Wednesday, April 5)\n.pdf"
   },
   {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#last-time",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#last-time",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Last Time",
+    "text": "Last Time\n\nLast time we started discussing how to produce and interpret visual summaries for datasets consisting of only one variable.\n\nWe learned that histograms and boxplots are good visualizers for numerical variables and barplots are good visualizers for categorical data.\n\nBut, as we also saw (in the palmerpenguins dataset), data is usually comprised of several variables.\nA natural question therefore arises: how might we visualize the relationship between multiple variables?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#multiple-variables",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#multiple-variables",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Multiple Variables",
+    "text": "Multiple Variables\n\nPerhaps unsurprisingly, visualizing the relationship between 3 or more variables can be a bit tricky.\nAs such, we will restrict ourselves to comparing only two variables.\nEven if we compare only two variables, three cases arise:\n\nComparing two numerical variables\nComparing one numerical and one categorical variable\nComparing two categorical variables\n\nWe will examine the first two cases above, and save the third for later."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#two-numerical-variables",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#two-numerical-variables",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Two Numerical Variables",
+    "text": "Two Numerical Variables\n\nLet’s say we have two variables, and we want to visualize their relationship.\nAs an example, let’s return to the palmerpenguins dataset and compare the bill_length_mm and bill_depth_mm variables. Let’s also restrict ourselves to Gentoo penguins.\n\n\n\n\n   bill_length_mm bill_depth_mm\n 1           46.1          13.2\n 2           50            16.3\n 3           48.7          14.1\n 4           50            15.2\n 5           47.6          14.5\n 6           46.5          13.5\n 7           45.4          14.6\n 8           46.7          15.3\n 9           43.3          13.4\n10           46.8          15.4\n# ℹ 114 more rows"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#scatterplot",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#scatterplot",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Scatterplot",
+    "text": "Scatterplot\n\nThis type of visualization is called a scatterplot.\nSpecifically, when comparing two numerical variables of the same length, we generate a scatterplot by plotting each observational unit on a Cartesian coordinate system where the axes are prescribed by the variables in question.\n\n\n\n\n\n\n\n\nResult\n\n\n\nWhen comparing two numerical variables (of the same length), a scatterplot is the best visulization tool."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#interpreting-scatterplots",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#interpreting-scatterplots",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Interpreting Scatterplots",
+    "text": "Interpreting Scatterplots\n\n\n\n\nLet’s return to the scatterplot we generated before:\n\n\n\n\n\n\n\n\n\nNotice how as the values of bill_length_mm increase, the corresponding values of bill_depth_mm also increase on average?\n\nThis makes intutive sense: longer bills are probably deeper!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#trend",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#trend",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Trend",
+    "text": "Trend\n\nThis is an example of what we call a trend; specifically, a positive linear trend.\n\nA trend is, loosely speaking, any relationship we observe between the two variables in a scatterplot.\nA trend is said to be linear if a one-unit change in one variable corresponds to a fixed amount of change in the other (we’ll talk about nonlinear trends in a bit)\nA trend is said to be positive (or increasing) if a one-unit increase in one variable corresponds to a one-unit increase in the other."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#associations",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#associations",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Associations",
+    "text": "Associations\n\nAnother way to talk about trends is to phrase things in terms of the variables being compared.\n\nFor example, if the scatterplot of two variables displays a positive linear trend, we might say that the two variables have a positive linear association.\nAs a concrete example: bill length and bill depth appear to have a positive linear association, as seen in the scatterplot from a few slides ago."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#a-numerical-and-a-categorical-variable",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#a-numerical-and-a-categorical-variable",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "A Numerical and a Categorical Variable",
+    "text": "A Numerical and a Categorical Variable\n\nThe final case we will consider today is comparing a numerical variable to a categorical one.\nAs a concrete example, here is a (mock) dataset comprised of the following variables:\n\n\n\n\n\n\n\n\n\nVariable Name\nDescription\n\n\n\n\nstdy_hrs\naverage amount of time (in hrs) a student spent studying for a particular class each week\n\n\nltr_grd\nthe final letter grade (A+, A, A-, etc.) the student received in the class"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#side-by-side-boxplots",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#side-by-side-boxplots",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Side-by-Side Boxplots",
+    "text": "Side-by-Side Boxplots\n\n\n\n\n\n\n\nResult\n\n\n\nWhen comparing one numerical and one categorical variable, it is best to visualize their relationship using a side-by-side boxplot.\n\n\n\n\n\n\nThough the notion of trend is slightly different in the context of a side-by-side boxplot, we can still use them to determine relationships.\nFor example, from the plot on the previous slide, we can see that, on average, students who received lower grades tended to study less than those students who received higher grades."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#causality",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#causality",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Causality",
+    "text": "Causality\n\nI should make a very important point: identifying trends is not the same thing as identifying causal relationships.\nFor example, the side-by-side boxplot from a few slides ago does not tell us that “studying less causes your grade to decrease”\n\nThere are a lot of other confounding variables that could contribute to the decrease in grade.\n\nWe won’t talk too much about causality in this course, but it is an important thing to be aware of: association is not the same thing as causation!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#quantifying-data",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#quantifying-data",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Quantifying Data",
+    "text": "Quantifying Data\n\nLet’s once again consider a single numerical variable.\nAs a concrete example, we can consider the exam scores variable from the previous slides:\n\n\n\n\n  [1] 88.236 77.348 81.050 74.431 75.083 79.569 74.998 80.099 74.264 83.850\n [11] 89.857 81.427 79.439 84.260 78.565 77.570 78.224 73.780 88.085 79.341\n [21] 80.554 77.317 81.155 83.842 87.051 78.362 81.528 72.148 74.131 78.927\n [31] 75.446 79.791 78.199 90.769 85.640 78.420 83.484 79.045 97.909 86.736\n [41] 73.723 76.973 81.320 79.238 85.803 86.621 85.781 81.844 82.896 80.478\n [51] 75.903 84.565 76.302 83.432 85.448 69.695 81.049 85.575 84.791 82.525\n [61] 78.361 77.803 86.542 84.171 86.103 72.772 78.730 76.189 75.187 79.194\n [71] 77.159 82.048 82.661 84.021 76.008 79.474 79.015 86.992 72.524 76.094\n [81] 78.765 80.623 82.497 75.776 70.614 79.677 81.182 77.943 76.863 85.561\n [91] 89.569 96.695 73.680 77.770 81.584 81.965 78.373 76.295 73.212 79.229\n[101] 87.273 87.364 82.706 83.843 75.864 82.791 82.637 78.685 72.626 69.302\n[111] 93.408 73.189 83.764 77.832 82.803 80.278 94.962 79.616 85.667 82.710\n[121] 86.823 76.656 74.623 71.508 91.131 78.318 81.058 86.239 76.585 85.652\n[131] 77.122 86.036 83.127 83.234 80.746 83.878 75.544 73.780 81.106 85.523"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#summarizing-data",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#summarizing-data",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Summarizing Data",
+    "text": "Summarizing Data\n\nThe remainder of today’s lecture will be devoted to finding numerical summaries of a dataset \\(X = \\{x_i\\}_{i=1}^{n}\\).\nThis will lead us to several different summary statistics, which are mathematical quantities that seek to describe different aspects of our data."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#quantifying-center",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#quantifying-center",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Quantifying “Center”",
+    "text": "Quantifying “Center”\n\nHere is a very broad question: what is the center of a dataset \\(X = \\{x_i\\}_{i=1}^{n}\\)?\nPerhaps the scores dataset from earlier is a bit too complicated- let’s simplify things and look at the dataset \\[ X = \\{1, 1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 6\\} \\]\nAs a starting point, I can “plot” these points on a number line (to produce what is known as a dotplot):"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#quantifying-center-1",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#quantifying-center-1",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Quantifying “Center”",
+    "text": "Quantifying “Center”\n\n\nBack to our question: what is the center of this dataset?\n\n\n\nPerhaps we can think of center as a balancing point. In other words: where should I place a fulcrum to ensure this number line remains balanced?\n\n\n\n\n\n\n\n\n\nWe call this balancing point the arithmetic mean (or just mean, or average, for short), and denote it \\(\\overline{x}\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#the-mean",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#the-mean",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "The Mean",
+    "text": "The Mean\n\n\n\n\n\n\nFormula: The Mean\n\n\n\nGiven a set of data \\(x = \\{x_i\\}_{i=1}^{n}\\), we compute its mean, denoted \\(\\overline{x}\\), using the formula \\[ \\overline{x} = \\frac{1}{n} (x_1 + \\cdots + x_n) \\] which can be equivalently written as \\[ \\overline{x} = \\frac{1}{n} \\sum_{i=1}^{n} x_i \\]\n\n\n\n\n\nIn words: we compute the mean by adding up all of the points included in our dataset, and dividing by the total number of points."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#a-note-on-notation",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#a-note-on-notation",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "A Note on Notation",
+    "text": "A Note on Notation\n\nPerhaps you haven’t seen the notation \\(\\sum_{i=1}^{n} x_i\\) before. Don’t get scared by it! It’s just a shorthand notation for the sum of the points \\(\\{x_1, x_2, \\cdots, x_n\\}\\).\nSo, if it’s easier for you, you can always think of \\((x_1 + \\cdots x_n)\\) in place of \\(\\sum_{i=1}^{n} x_i\\).\nHaving said that, I will often use this notation (called sigma notation, as the symbol \\(\\sum\\) is the capital Greek letter “sigma”) as it saves quite a bit of time in the long run.\n\nI also urge you to familiarze yourself with \\(\\Sigma\\) notation, as I’m sure you will encounter it even beyond this course!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#time-for-an-exercise",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#time-for-an-exercise",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Time for an Exercise!",
+    "text": "Time for an Exercise!\n\n\n\n\n\n\nExercise 1\n\n\n\nCompute the mean of the set \\(B = \\{-1, 0, 1, 1, 2, 4\\}\\). Discuss with your neighbors!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#another-one",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#another-one",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Another One!",
+    "text": "Another One!\n\n\n\n\n\n\nExercise 2\n\n\n\nA collection of \\(n = 42\\) exam scores have an average 50%. Two additional scores of 100% are reported. How does the average of scores change with the addition of these two new scores?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#range",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#range",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Range",
+    "text": "Range\n\nAnother way we can summarize a dataset \\(X = \\{x_i\\}_{i=1}^{n}\\) is to describe how spread out it is.\nOne idea on how we can capture the spread is to say: how far apart is the smallest value from the largest value?\nIndeed, this statistic has a name: the range.\n\n\n\n\n\n\n\n\nFormula: Range\n\n\n\nGiven a set of numbers \\(X = \\{x_1, x_2, \\cdots, x_n\\}\\), we compute the range of \\(X\\) as: \\[ \\mathrm{range}(X) = \\max\\{x_1, \\cdots, x_n\\} - \\min\\{x_1, \\ \\cdots, \\ x_n\\} \\] i.e. the largest value minus the smallest value."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#leadup",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#leadup",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Leadup",
+    "text": "Leadup\n\nNow, there is another way to think about spread: suppose we look at the average distance of points from their mean.\nMore specifically: define \\(d_i := x_i - \\overline{x}\\) to be the deviation of the \\(i\\)th point from the mean:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#the-variance",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#the-variance",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "The Variance",
+    "text": "The Variance\n\n\nThis is what we call the variance of the set \\(X\\), denoted by \\(s_x^2\\).\n\n\n\n\n\n\n\n\nFormula: Variance, and Standard Deviation\n\n\n\nGiven a set of data \\(X = \\{x_i\\}_{i=1}^{n}\\), we compute the variance of \\(X\\) by \\[ s_x^2 = \\frac{1}{n - 1} \\sum_{i=1}^{n} (x_i - \\overline{x})^2 \\] We define the standard deviation, denoted by \\(s_x\\), to be \\(\\sqrt{s_X^2}\\); i.e. \\[ s_x := \\sqrt{\\frac{1}{n - 1} \\sum_{i=1}^{n} (x_i - \\overline{x})^2} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#time-for-an-exercise-1",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#time-for-an-exercise-1",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Time for an Exercise!",
+    "text": "Time for an Exercise!\n\n\n\n\n\n\nExercise 3\n\n\n\nFor the set \\(X = \\{1, 2, 3, 4, 5\\}\\), compute \\(s_x\\). Discuss with your neighbor!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#iqr",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#iqr",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "IQR",
+    "text": "IQR\n\nThere is yet another way to quantify the spread of a dataset, and that is what is known as the Interquartile Range (IQR, for short).\n\n\n\n\n\n\n\n\nFormula: The IQR\n\n\n\nGiven a set of data \\(x = \\{x_i\\}_{i=1}^{n}\\), we compute its interquartile range using the formula \\[ \\mathrm{IQR} = Q_3 - Q_1 \\] where \\(Q_1\\) and \\(Q_3\\) denote the first and third quartiles, respectively.\n\n\n\n\n\n\nIn other words, the IQR is just the width of the box in a boxplot!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#five-number-summary",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#five-number-summary",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Five Number Summary",
+    "text": "Five Number Summary\n\nSpeaking of boxplots, there is a set of numbers that occurs frequently when summarizing numerical data, collectively called the five number summary. The elements of the five number summary are:\n\nThe minimum\nThe first quartile\nThe median\nThe third quartile\nThe maximum"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#time-for-an-exercise-2",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#time-for-an-exercise-2",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Time for an Exercise!",
+    "text": "Time for an Exercise!\n\n\n\n\n\n\nExercise 4\n\n\n\nConsider a dataset \\(X\\) that has boxplot given by:\n\n\n\n\n\nProvide the five number summary, along with the IQR. Discuss with your Neighbors!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#summary",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#summary",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Summary",
+    "text": "Summary\n\nWe started off by finishing our discussion of data visualizing, identifying ways to visualize the relationship between two variables.\n\nSuch visualizations included: scatterplots and side-by-side boxplots.\nWe also discussed notions of trend.\n\nNext, we discussed various numerical summaries of data.\n\nThese included measures of central tendency (like the mean or the median), along with measures of spread (like the variance, standard deviation, or IQR).\nWe were also introduced to the five number summary, which is closely related to boxplots.\n\nNext time we’ll begin our discussion on Probability, which, as we will see, provides a rigorous way of quantifying uncertainty."
+  },
+  {
     "objectID": "Pages/Lectures/Lecture00/Lec00.html#course-staff",
     "href": "Pages/Lectures/Lecture00/Lec00.html#course-staff",
     "title": "PSTAT 5A: Lecture 00",

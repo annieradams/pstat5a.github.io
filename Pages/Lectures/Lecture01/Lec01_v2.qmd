@@ -655,7 +655,7 @@ penguins %>%
 ```
 ::: nonincremental
 - What binwidth was used to generate the above histogram?
-- What proportion of penguins had flippers between 190 and 210 mm long? (Remember there EW 344 penguins included in the dataset) 
+- What proportion of penguins had flippers between 190 and 210 mm long? (Remember there were 344 penguins included in the dataset) 
 :::
 
 Discuss with your neighbors!
