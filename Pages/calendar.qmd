@@ -36,7 +36,7 @@ format: html
         </tr>
         <tr class="even" style="height: 28px;">
             <td style="height: 56px;" rowspan="2">Nickolas Thiessen</td>
-            <td style="height: 56px;" rowspan="2"><a class="inline_disabled" href="mailto:nickolas@pstat.ucsb.edu" target="_blank" rel="noopener">nickolas@pstat.ucsb.edu</a></td>
+            <td style="height: 56px;" rowspan="2"><a class="inline_disabled" href="mailto:nickolas@ucsb.edu" target="_blank" rel="noopener">nickolas@ucsb.edu</a></td>
             <td style="height: 28px;">12 - 12:50pm</td>
             <td style="height: 28px;">Phelps 1513</td>
         <tr class="even" style="height: 28px;">
