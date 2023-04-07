@@ -148,7 +148,10 @@ linkcolor: "#ffa07a"
         </tr>
         <tr>
           <td><b>OH:</b></td>
-          <td>TBD, TBD</td>
+          <td>M 2 - 4pm, Th 9 - 11am ([Zoom](https://ucsb.zoom.us/j/84381539895?pwd=U1kzUDB0c3h1VTl3ajY4cDdHWXdHQT09)) </td>
+        </tr>
+        <td><b>Study Groups:</b></td>
+          <td>T 3:30 - 4:30pm (ELLSN 2626), Th 3:30 - 5:30 (SH 5421) </td>
         </tr>
       </table>
     </td>
