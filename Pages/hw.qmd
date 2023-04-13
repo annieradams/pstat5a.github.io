@@ -13,9 +13,8 @@ css: "../schedule.css"
 
 Here you will find all homework assignments and their solutions.
 
--   **Homework 1:** due by 11:59pm on Tuesday, April 11 \
-    (will be posted 5pm on Wednesday, April 5)
-    
-    <a href = "../Files/HW/HW01.pdf" class = "button label-outline" target = "_blank">.pdf</a> <br />
+-   **Homework 1:** due by 11:59pm on Tuesday, April 11 <a href = "../Files/HW/HW01.pdf" class = "button label-outline" target = "_blank">.pdf</a> <br />
+
+-   **Homework 2:** due by 11:59pm on Tuesday, April 18 <a href = "../Files/HW/HW02.pdf" class = "button label-outline" target = "_blank">.pdf</a> <br />
 
 
