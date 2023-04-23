@@ -427,6 +427,160 @@
     "text": "Lecture Summary\n\nWe started off by talking about Venn Diagrams.\nBut, the main topic of today’s lecture was counting, which refers to the tools we use to systematically count the elements in a set without having to list out all of the elements contained in it.\nWe talked briefly about what it means for order to matter (or, consequently, not matter).\n\nThis lead us to the notations \\(n!\\), \\((n)_k\\), and \\(\\binom{n}{k}\\).\n\nNext time, we’ll see how we can use new information to update our beliefs on certain events by way of what are known as conditional probabilities.\n\nWe’ll also be able to work through a few more interesting examples."
   },
   {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#structure-of-data",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#structure-of-data",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "Structure of Data",
+    "text": "Structure of Data\n\nWe started by talking about the structure of data.\nWe were exposed to the notion of a data matrix, which is comprised of a series of observational units (i.e. rows) on a series of variables (i.e. columns)\nFor instance, the palmerpenguins data matrix is:\n\n\n\n\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           NA            NA                  NA          NA\n 5 Adelie  Torgersen           36.7          19.3               193        3450\n 6 Adelie  Torgersen           39.3          20.6               190        3650\n 7 Adelie  Torgersen           38.9          17.8               181        3625\n 8 Adelie  Torgersen           39.2          19.6               195        4675\n 9 Adelie  Torgersen           34.1          18.1               193        3475\n10 Adelie  Torgersen           42            20.2               190        4250\n# ℹ 334 more rows\n# ℹ 2 more variables: sex <fct>, year <int>"
+  },
+  {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#structure-of-data-1",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#structure-of-data-1",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "Structure of Data",
+    "text": "Structure of Data\n\n\nOf course, the reader is not expected to a priori know what the variables in a dataset represent; as such, most datasets come equipped with a data dictionary that lists out the variables included in the dataset along with a brief description of each.\n\n\n\n\n\n\n\n\n\n\nVariable\nDescription\n\n\n\n\nspecies\nThe species of penguin (either Adelie, Chinstrap, or Gentoo)\n\n\nisland\nThe island on which the penguin was found (either Biscoe, Dream, or Torgersen)\n\n\nbill_length_mm\nThe length (millimeters) of the penguin’s bill\n\n\nbill_depth_mm\nThe depth (in millimeters) of the penguin’s bill\n\n\nflipper_length_mm\nThe length (in millimeters) of the penguin’s flipper\n\n\nbody_mass_g\nThe mass (in grams) of the penguin\n\n\nsex\nThe sex of the penguin (either Male or Female)\n\n\nyear\nThe year in which the penguin was observed"
+  },
+  {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#classification-of-variables",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#classification-of-variables",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "Classification of Variables",
+    "text": "Classification of Variables\n\nWe also saw that variables fall into two main types: numerical and categorical.\n\nRemember that it is not enough to simply check whether our data is comprised of numbers, as categorical data can be encoded using numbers (e.g. months in a year).\nRather, we should check whether it makes interpretable sense to add two elements in our variable (e.g. 1 + 2 is 3, whereas Jan + Feb is not March)."
+  },
+  {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#classification-of-variables-1",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#classification-of-variables-1",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "Classification of Variables",
+    "text": "Classification of Variables\n\nWithin numerical data, we have a further subdivision into discrete and continuous variables.\n\nThe set of possible values of a discrete variable has jumps, whereas the set possible values of a continuous variable has no jumps.\n\nWithin categorical data, we have a further subdivision into ordinal and nominal variables.\n\nOrdinal variables have a natural ordering (e.g. letter grades, months of the year, etc.) whereas nominal variables do not (e.g. favorite color)"
+  },
+  {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#full-classification-scheme",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#full-classification-scheme",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "Full Classification Scheme",
+    "text": "Full Classification Scheme\n\n\n\n\n\n\n\ndata_classification\n\n \n\ncluster_main\n\n  \n\ncluster_0\n\n  \n\ncluster_1\n\n  \n\ncluster_2\n\n  \n\ncluster_3\n\n   \n\nData\n\n Variable   \n\nnumerical\n\n Numerical   \n\nData->numerical\n\n    \n\ncategorical\n\n Categorical   \n\nData->categorical\n\n    \n\ncontinuous\n\n Continuous   \n\nnumerical->continuous\n\n    \n\ndiscrete\n\n Discrete   \n\nnumerical->discrete\n\n    \n\nnominal\n\n Nominal   \n\ncategorical->nominal\n\n    \n\nordinal\n\n Ordinal   \n\ncategorical->ordinal"
+  },
+  {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#visualization",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#visualization",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "Visualization",
+    "text": "Visualization\n\nOnce we have classified a variable as being either numerical or categorical, we can ask ourselves: how can we best visualize this variable?\nFor categorical data, we use a bargraph and for numerical data we use either a histogram or a boxplot."
+  },
+  {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#bargraph",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#bargraph",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "Bargraph",
+    "text": "Bargraph"
+  },
+  {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#histogram",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#histogram",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "Histogram",
+    "text": "Histogram\n\n\nRemember the importance of binwidth: demo"
+  },
+  {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#boxplot",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#boxplot",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "Boxplot",
+    "text": "Boxplot\n\n\nRemember that the whiskers are never allowed to extend beyond 1.5 times the IQR (and recall that the IQR is just the width of the box)."
+  },
+  {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#numerical-summaries",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#numerical-summaries",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "Numerical Summaries",
+    "text": "Numerical Summaries\n\nWe can also produce numerical summaries of numerical variables.\nMeasures of Central Tendency are different quantities that summarize the “center” of a variable\n\nThere are two main measures of central tendency we discussed: the mean and the median.\n\nThe mean (or arithmetic mean) is a sort of “balancing point”:\n\n\n\n\n\n\n\n\n\n\\[ \\overline{x} = \\frac{1}{n} \\sum_{i=1}^{n} x_i \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#spread",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#spread",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "Spread",
+    "text": "Spread\n\nAnother way we could summarize a numerical dataset (i.e. a dataset containing only one variable, one that is numerical) is to describe how “spread out” the values are.\nThe variance is a sort of “average distance of points to the mean”:\n\n\n\n\n\n\n\n\n\n\\[ s_x^2 = \\frac{1}{n - 1} \\sum_{i=1}^{n} (x_i - \\overline{x})^2 \\]\n\n\nThe standard deviation is just the square root of the variance"
+  },
+  {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#spread-1",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#spread-1",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "Spread",
+    "text": "Spread\n\nThe interquartile range (IQR) is another measure of spread: \\[ \\mathrm{IQR} = Q_3 - Q_1 \\] where \\(Q_1\\) and \\(Q_3\\) denote the first and third quartiles, respectively.\n\nRecall that the \\(p\\)th percentile of a dataset \\(X\\) is the value \\(\\pi_{x, \\ 0.5}\\) such that p% of observations lie to the left of (i.e. are less than) \\(\\pi_{x, \\ 0.5}\\).\n\\(Q_1\\) is the 25th percentile and \\(Q_3\\) is the 75th percentile\n\nThe third measure of spread we discussed is the range: \\[ \\mathrm{range}(X) = \\max\\{x_1, \\cdots, x_n\\} - \\min\\{x_1, \\ \\cdots, \\ x_n\\} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#number-summary",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#number-summary",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "5-Number Summary",
+    "text": "5-Number Summary\n\nRecall the five number summary, which contains:\n\nThe minimum\nThe first quartile\nThe median\nThe third quartile\nThe maximum\n\nAlso recall how all of these quantities appear on a boxplot!"
+  },
+  {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#comparisons-of-variables",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#comparisons-of-variables",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "Comparisons of Variables",
+    "text": "Comparisons of Variables\n\nIf we want to compare two variables, there are three cases to consider:\n\nNumerical vs. Numerical\nNumerical vs. Categorical\nCategorical vs. Categorical\n\nWhen comparing two numerical variables, we use a scatterplot\nWhen comparing a numerical variable to a categorical variable, we use a side-by-side boxplot\nWhen comparing two categorical variables, we construct a contingency table"
+  },
+  {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#basics-of-probability",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#basics-of-probability",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "Basics of Probability",
+    "text": "Basics of Probability\n\nProbability is, in many ways, the language of uncertainty.\nAn experiment is any procedure we can repeat an infinite number of times, where each time we repeat the procedure the same fixed set of “things” can occur\n\nThese “things” are called outcomes\nThe outcome space, denoted \\(\\Omega\\), is the set containing all outcomes associated with a particular experiment.\nEvents are just subset of the outcome space.\n\nWe can express outcome spaces using tables or trees."
+  },
+  {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#probability-1",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#probability-1",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "Probability",
+    "text": "Probability\n\nProbability is a function that acts on events\n\nNotationally: \\(\\mathbb{P}(E)\\)\n\nThere are two main approaches to computing probabilities:\n\nThe Classical Aproach: if outcomes are equally likely, then for any event \\(E\\) \\[ \\mathbb{P}(E) = \\frac{\\#(E)}{\\#(\\Omega)} \\]\nThe long-run [relative] frequency approach: repeat the experiment an infinite number of times and define \\(\\mathbb{P}(E)\\) to be the proportion of times \\(E\\) occurs"
+  },
+  {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#long-run-frequencies-example",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#long-run-frequencies-example",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "Long-Run Frequencies Example",
+    "text": "Long-Run Frequencies Example\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nToss\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\n\n\n\nOutcome\nH\nT\nT\nH\nT\nH\nH\nH\nT\nT\n\n\nRaw freq. of H\n1\n1\n1\n2\n2\n3\n4\n5\n5\n5\n\n\nRel. freq of H\n1/1\n1/2\n1/3\n2/4\n2/5\n3/6\n4/7\n5/8\n5/9\n5/10"
+  },
+  {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#set-operations",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#set-operations",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "Set Operations",
+    "text": "Set Operations\n\nGiven two events \\(E\\) and \\(F\\), there are several operations we can perform:\n\nComplement: \\(E^\\complement\\); denotes “not \\(E\\)”\nUnion: \\(E \\cup F\\); denotes \\(E\\) or \\(F\\) (or both)\nIntersection: \\(E \\cap F\\); denotes \\(E\\) and \\(F\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#venn-diagrams",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#venn-diagrams",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "Venn Diagrams",
+    "text": "Venn Diagrams\n\n\n\n\n\n \\(A^\\complement\\)  (complement)\n\n\n\n\n\n\n\n\n \\(A \\cap B\\)  (intersection)\n\n\n\n\n\n\n\n\n \\(A \\cup B\\)  (union)"
+  },
+  {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#axioms-of-probability",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#axioms-of-probability",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "Axioms of Probability",
+    "text": "Axioms of Probability\n\n\\(\\mathbb{P}(E) \\geq 0\\) for any event \\(E\\)\n\\(\\mathbb{P}(\\Omega) = 1\\)\nFor disjoint events \\(E\\) and \\(F\\) (i.e. for \\(E \\cap F = \\varnothing\\)), \\(\\mathbb{P}(E \\cup F) = \\mathbb{P}(E) + \\mathbb{P}(F)\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#probability-rules",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#probability-rules",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "Probability Rules",
+    "text": "Probability Rules\n\nProbability of the Empty Set: \\(\\mathbb{P}(\\varnothing) = 0\\)\nComplement Rule: \\(\\mathbb{P}(E^\\complement) = 1 - \\mathbb{P}(E)\\)\nAddition Rule: \\(\\mathbb{P}(E \\cup F) = \\mathbb{P}(E) + \\mathbb{P}(F) - \\mathbb{P}(E \\cap F)\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#conditional-probabilities",
+    "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#conditional-probabilities",
+    "title": "PSTAT 5A: Midterm 1 Review",
+    "section": "Conditional Probabilities",
+    "text": "Conditional Probabilities\n\n\\(\\mathbb{P}(E \\mid F)\\) denotes an “updating” of our beliefs on \\(E\\) in the presence of \\(F\\))\n\nDefinition: \\(\\displaystyle \\mathbb{P}(E \\mid F) = \\frac{\\mathbb{P}(E \\cap F)}{\\mathbb{P}(F)}\\), provided \\(\\mathbb{P}(F) \\neq 0\\)\n\nMultiplication Rule: \\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E \\mid F) \\cdot \\mathbb{P}(F) = \\mathbb{P}(F \\mid E) \\cdot \\mathbb{P}(E)\\)\nBayes’ Rule: \\(\\displaystyle \\mathbb{P}(E \\mid F) = \\frac{\\mathbb{P}(F \\mid E) \\cdot \\mathbb{P}(E)}{\\mathbb{P}(F)}\\)\n\n\n\n\nIndependence asserts that \\(\\mathbb{P}(E \\mid F) = \\mathbb{P}(E)\\), which in turn implies \\(\\mathbb{P}(F \\mid E) = \\mathbb{P}(F)\\) and \\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E) \\cdot \\mathbb{P}(F)\\)\n\nNote that \\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E) \\cdot \\mathbb{P}(F)\\) only when \\(E\\) and \\(F\\) are independent! Otherwise, you have to compute \\(\\mathbb{P}(E \\cap F)\\) using the multiplication rule.\nThe interpretation of independence is that the two events “do not affect each other”"
+  },
+  {
     "objectID": "Pages/Lectures/Lecture03/Lec03.html#uncertainty",
     "href": "Pages/Lectures/Lecture03/Lec03.html#uncertainty",
     "title": "PSTAT 5A: Lecture 03",
@@ -1271,7 +1425,7 @@
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Tuesday, April 18, 2023\n\nAs a reminder: Monday sections are Discussion Sections and Wednesday sections are Lab Sections. There will not be a discussion section in week 1 (as, if there were one, it would take place before the first lecture!)\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(4/03 - 4/09)\n\n00: Introduction \n01: Descriptive Statistics \n02: More Descriptive Statistics \n\nNo Discussion Section\nLab 01  (Introduction to Python, and Basic Data Types)\nSolns \n\n\n2\n(4/10 - 4/16)\n\n03: Intro to Probability \n04: Counting \n\nDiscussion Worksheet 01 \nSolns \nLab 02  (Data Classes)\nSolns \n\n\n3\n(4/17 - 4/23)\n\n05: Conditional Probabilities \n06: Review\n\nExam Information/Polices \n\nList of Topics \n\nPractice Problems \n\n\nDiscussion Worksheet 02 \nSolns \nLab 03 (Conditionals, Comparisons, and Functions)\nSolns \n\n\n4\n(4/24 - 4/30)\n\n07: Midterm Exam 1\n08: Discrete Random Variables\n\nDiscussion Worksheet 03 (Midterm 1 Review)\nLab 04: Loops, and Basics of Plotting\n\n\n5\n(5/01 - 5/07)\n\n09: Continuous Random Variables\n10: Intro to Inferential Statistics\n\nDiscussion Worksheet 04\nLab 05: Simulations and Sampling\n\n\n6\n(5/08 - 5/14)\n\n11: Sampling Distributions\n12: Confidence Intervals\n\nDiscussion Worksheet 05\nLab 06: Sampling Distributions\n\n\n7\n(5/15 - 5/21)\n\n13: Hypothesis Testing\n14: Review\n\nDiscussion Worksheet 06\nLab 07: Confidence Intervals\n\n\n8\n(5/22 - 5/28)\n\n15: Midterm Exam 2\n16: More Hypothesis Testing\n\nDiscussion Worksheet 07 (Midterm 2 Review)\nLab 08: Testing Distributional Fits\n\n\n9\n(5/29 - 6/4)\n\n17: Hypothesis Testing in Multiple Samples\n18: Regression\n\nDiscussion Worksheet 08\nLab 09: Reading In Data, EDA, and Drawing Conclusions\n\n\n10\n(6/05 - 6/11)\n\n19: More Regression\n20: Review\n\nDiscussion Worksheet 09\nLab 10: Regression\n\n\nFINAL EXAM\nTuesday, June 13 from 4-7pm"
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Tuesday, April 18, 2023\n\nAs a reminder: Monday sections are Discussion Sections and Wednesday sections are Lab Sections. There will not be a discussion section in week 1 (as, if there were one, it would take place before the first lecture!)\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(4/03 - 4/09)\n\n00: Introduction \n01: Descriptive Statistics \n02: More Descriptive Statistics \n\nNo Discussion Section\nLab 01  (Introduction to Python, and Basic Data Types)\nSolns \n\n\n2\n(4/10 - 4/16)\n\n03: Intro to Probability \n04: Counting \n\nDiscussion Worksheet 01 \nSolns \nLab 02  (Data Classes)\nSolns \n\n\n3\n(4/17 - 4/23)\n\n05: Conditional Probabilities \n06: Review \n\nExam Information/Polices \n\nList of Topics \n\nPractice Problems \n\n\nDiscussion Worksheet 02 \nSolns \nLab 03 (Conditionals, Comparisons, and Functions)\nSolns \n\n\n4\n(4/24 - 4/30)\n\n07: Midterm Exam 1\n08: Discrete Random Variables\n\nDiscussion Worksheet 03 (Midterm 1 Review)\nLab 04: Loops, and Basics of Plotting\n\n\n5\n(5/01 - 5/07)\n\n09: Continuous Random Variables\n10: Intro to Inferential Statistics\n\nDiscussion Worksheet 04\nLab 05: Simulations and Sampling\n\n\n6\n(5/08 - 5/14)\n\n11: Sampling Distributions\n12: Confidence Intervals\n\nDiscussion Worksheet 05\nLab 06: Sampling Distributions\n\n\n7\n(5/15 - 5/21)\n\n13: Hypothesis Testing\n14: Review\n\nDiscussion Worksheet 06\nLab 07: Confidence Intervals\n\n\n8\n(5/22 - 5/28)\n\n15: Midterm Exam 2\n16: More Hypothesis Testing\n\nDiscussion Worksheet 07 (Midterm 2 Review)\nLab 08: Testing Distributional Fits\n\n\n9\n(5/29 - 6/4)\n\n17: Hypothesis Testing in Multiple Samples\n18: Regression\n\nDiscussion Worksheet 08\nLab 09: Reading In Data, EDA, and Drawing Conclusions\n\n\n10\n(6/05 - 6/11)\n\n19: More Regression\n20: Review\n\nDiscussion Worksheet 09\nLab 10: Regression\n\n\nFINAL EXAM\nTuesday, June 13 from 4-7pm"
   },
   {
     "objectID": "Pages/calendar.html",
