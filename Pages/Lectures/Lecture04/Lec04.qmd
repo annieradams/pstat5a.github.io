@@ -489,7 +489,7 @@ $${\tiny \begin{aligned}[t]
 ## **Definition**
 ::: {style="font-size: 30px"}
 We define $n$ **choose** $k$ to be
-$$ \binom{n}{k} = \frac{(n)_k}{k!} = \frac{n!}{n!(n - k)!} $$
+$$ \binom{n}{k} = \frac{(n)_k}{k!} = \frac{n!}{k!(n - k)!} $$
 :::
 :::
 :::
