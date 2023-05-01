@@ -97,7 +97,7 @@ There are **two midterms** and a **final** exam for this class. You are required
 -   The final is scheduled to take place **Tuesday, June 13 from 4 - 7pm** (as determined by the University)
 :::
 
-The midterms are scheduled to take place in **Embarcadero Hall**, and will have assigned seating. The Final Exam is currently scheduled to take place in our regular classroom, though there is a possibility of moving the exam to a larger classroom- such a change will be announced well in advance of the date of the Final. Unless stated otherwise, all exams will be cumulative.
+The midterms are scheduled to take place in **Embarcadero Hall**, and will have assigned seating. [The Final Exam will also take place in **Embarcadero Hall**.]{style="color:red"} Unless stated otherwise, all exams will be cumulative.
 
 ### Schedule of Due Dates
 
