@@ -1260,6 +1260,209 @@
     "text": "The Path Forward\n\nSo, how does this course factor into things?\nFrom the course description:\n\n\n\nIntroduction to data science. Concepts of statistical thinking. Topics include random variables, sampling distributions, hypothesis testing, correlation and regression. Visualizing, analyzing and interpreting real world data using Python. Computing labs required.\n\n\n\nSo this course is designed to be an introduction to data science."
   },
   {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#last-time",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#last-time",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Last Time",
+    "text": "Last Time\n\nLast lecture we started talking about random variables.\nA random variable is a numeric outcome of some random process or experiment.\n\nFor example, “number of heads observed in \\(5\\) independent tosses of a fair coin”\n\nThe state space of a random variable \\(X\\) is the set \\(S_X\\) of possible values the random variable could attain.\n\nIf \\(S_X\\) has jumps, we say \\(X\\) is a “discrete random variable”\nOtherwise, we say \\(X\\) is a “continuous random variable.”\n\nToday we’ll talk about continuous random variables."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#continuous-random-variables",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#continuous-random-variables",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Continuous Random Variables",
+    "text": "Continuous Random Variables\n\nContinuous random variables are described by their so-called probability density function (or p.d.f. for short).\n\nThe graph of a p.d.f. is called the density curve.\n\nThe p.d.f. is such that probabilities are found as areas underneath the density curve.\nFor example, if the random variable \\(X\\) has the following density curve…"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#two-properties",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#two-properties",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Two Properties",
+    "text": "Two Properties\n\nSince probabilities are areas underneath the density curve, we arrive at the following two properties (which themselves follow from the Axioms of Probability):\n\n\n\n\n\n\n\n\nProperties of a P.D.F.\n\n\n\n\nDensity curves must always be nonnegative; i.e. the corresponding p.d.f. \\(f_X(x)\\) must obey \\(f_X(x) \\geq 0\\) for every \\(x\\).\nThe area underneath a density curve must be \\(1\\).\n\n\n\n\n\n\n\nIn this lecture, we will examine two continuous distributions: the uniform distribution, and the normal distribution.\n\nWe will see that the density curves/p.d.f.’s of these two distributions will satisfy the above two properties."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#uniform-distribution-1",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#uniform-distribution-1",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Uniform Distribution",
+    "text": "Uniform Distribution\n\nThe uniform distribution takes two parameters: \\(a\\) and \\(b\\), with \\(a < b\\).\n\nWe denote the fact that a random variable \\(X\\) follows the uniform distribution with parameters \\(a\\) and \\(b\\) using the notation \\[ X \\sim \\mathrm{Unif}(a, \\ b) \\]\n\nThe \\(\\mathrm{Unif}(a, \\ b)\\) distribution has the following p.d.f.: \\[ f_X(x) = \\begin{cases} \\displaystyle \\frac{1}{b - a} & \\text{if } a \\leq x \\leq b \\\\[3mm] 0 & \\text{otherwise} \\\\ \\end{cases} \\] which corresponds to a rectangular density curve:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#uniform-density-curves",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#uniform-density-curves",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Uniform Density Curves",
+    "text": "Uniform Density Curves\n\nOftentimes, we will be a bit lazy with our density curve and omit the open/closed circles. For example, we might sketch the density curve of the \\(\\mathrm{Unif}(1, \\ 2.15)\\) distribution as"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#effect-of-changing-a-and-b",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#effect-of-changing-a-and-b",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Effect of Changing \\(a\\) and \\(b\\)",
+    "text": "Effect of Changing \\(a\\) and \\(b\\)\n\nviewof a = Inputs.range(\n  [-3, 3], \n  {value: 0, step: 0.1, label: \"a=\"}\n)\n\nviewof b = Inputs.range(\n  [-3, 3], \n  {value: 1, step: 0.1, label: \"b=\"}\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmargin2 = ({top: 20, right: 30, bottom: 30, left: 40})\n\nheight2 = 400\n\nx_values2 = d32.scaleLinear()\n.domain(d32.extent(data2, d => d.x))\n.range([margin2.left, width - margin2.right])\n\ny_values2 = d32.scaleLinear()\n.domain([Math.min(d32.min(data2, d => d.y),0), Math.max(1,d32.max(data2, d => d.y))]).nice()\n.range([height2 - margin2.bottom, margin2.top])\n\nline2 = d32.line()\n.x(d => x_values2(d.x))\n.y(d => y_values2(d.y))\n\nxAxis2 = g => g\n.attr(\"transform\", `translate(0,${height2 - margin2.bottom})`)\n.call(d32.axisBottom(x_values2)\n      .ticks(width / 80)\n      .tickSizeOuter(0))\n\nyAxis2 = g => g\n.attr(\"transform\", `translate(${margin2.left},0)`)\n.call(d32.axisLeft(y_values2)\n      .tickValues(d32.scaleLinear().domain(y_values2.domain()).ticks()))\n\nfunction unif_pdf (input_value, mu, sigsq) {\nif(input_value < a){\n  return 0\n} else if(input_value > b){\n  return 0\n} else{\n  return 1 / (b - a)\n}\n}\n\nabs_x2=6\n\ndata2 = {\n  let values = [];\n  for (let x = -abs_x2; x < abs_x2; x=x+0.01) values.push({\"x\":x,\"y\":unif_pdf(x, µ, sigsquared)});\n  return values;\n}\n\nd32 = require(\"https://d3js.org/d3.v5.min.js\")\n\nchart2 = {\n  const svg = d32.select(DOM.svg(width, height2));\n  \n  svg.append(\"g\")\n  .call(xAxis2);\n  \n  svg.append(\"g\")\n  .call(yAxis2);\n  \n  svg.append(\"path\")\n  .datum(data2)\n  .attr(\"fill\", \"none\")\n  .attr(\"stroke\", \"steelblue\")\n  .attr(\"stroke-width\", 4)\n  .attr(\"stroke-linejoin\", \"round\")\n  .attr(\"stroke-linecap\", \"round\")\n  .attr(\"d\", line);\n  \n  return svg.node();\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit to https://observablehq.com/@dswalter/normal-distribution for the base of the applet code"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#uniform-probabilities",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#uniform-probabilities",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Uniform Probabilities",
+    "text": "Uniform Probabilities\n\nRecall, from our initial discussion on continuous random variables, that probabilities are found as areas underneath the density curve.\nDue to the rectangular shape of the Uniform density curves, finding probabilities under the Uniform distribution ends up being relatively straightforward (so long as we remember how to find the area of a rectangle!)\nLet’s work through an example together.\n\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nIf \\(X \\sim \\mathrm{Unif}(-1, \\ 1)\\), compute \\(\\mathbb{P}(X \\leq 0.57)\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#solution",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#solution",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Solution",
+    "text": "Solution\n\nWhen working through probability problems involving continuous distributions, sketching a picture is always a good first step.\n\nSometimes, we will explicitly make that the first step of a problem, meaning failure to sketch a relevant picture may result in less-than-full marks!\n\nThe density curve of the \\(\\mathrm{Unif}(-1, \\ 1)\\) distribution is given by"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#solution-1",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#solution-1",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Solution",
+    "text": "Solution\n\nThe desired probability is thus\n\n\n\n\n\n\n\n\n\n\n\n\n\nThis is a rectangle with base \\((0.57 - (-1)) = 1.57\\) and height \\(1 / (1 - (-1)) = 1/2\\). Therefore, the area of this rectangle - and, also, the desired probability - is \\[ (1.57) \\times \\frac{1}{2} = \\boxed{0.785 = 78.5\\%} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#another-example",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#another-example",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Another Example",
+    "text": "Another Example\n\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\nIf \\(X \\sim \\mathrm{Unif}(0, 1)\\), compute \\(\\mathbb{P}(0.25 \\leq X \\leq 0.75)\\).\n\n\n\n\n\n\n\nWe are going to solve this problem in two different ways.\nAgain, we always begin with a sketch of the desired probability as an area underneath the density curve:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#tail-probabilities",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#tail-probabilities",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Tail Probabilities",
+    "text": "Tail Probabilities\n\nThis is not a coincidence!\nFor a more arbitrary distribution:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncan be decomposed as\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\[ \\huge - \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#tail-probabilities-1",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#tail-probabilities-1",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Tail Probabilities",
+    "text": "Tail Probabilities\n\nIn math, what we have found is:\n\n\n\n\n\n\n\n\nImportant\n\n\n\n\\[ \\mathbb{P}(x_1 \\leq X \\leq x_2)  = \\mathbb{P}(X \\leq x_2) - \\mathbb{P}(X \\leq x_1) \\]\n\n\n\n\n\n\nThe quantity \\(\\mathbb{P}(X \\leq x)\\), where we view \\(x\\) as an arbitrary input (and hence the quantity \\(\\mathbb{P}(X \\leq x)\\) as a function of \\(x\\)) is called the cumulative distribution function (or c.d.f. for short) of \\(X\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#your-turn",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#your-turn",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 1\n\n\n\n\nThe time (in minutes) spent waiting in line at Starbucks is found to vary uniformly between 5mins and 15mins.\n\nDefine the random variable of interest, and call it \\(X\\).\nIf a person is selected at random from the line at Starbucks, what is the probability that they spend between 3 and 7 minutes waiting in line?\nWhat is the c.d.f. of wait times? (I.e., find the probability that a randomly selected person spends less than \\(x\\) minutes waiting in line, for an arbitrary value \\(x\\). Yes, your final answer will depend on \\(x\\); that’s why the c.d.f. is a function!)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#probability-of-attaining-an-exact-value",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#probability-of-attaining-an-exact-value",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Probability of Attaining an Exact Value",
+    "text": "Probability of Attaining an Exact Value\n\nIf \\(X \\sim \\mathrm{Unif}[0, 1]\\), what is the probability that \\(X\\) equals, say \\(0.5\\)?\n\nThe area this corresponds to is a rectangle of height \\(1 / (1 - 0) = 1\\), but with width \\(0\\).\nTherefore, the probability is zero.\n\nThis is not unique to the Uniform distribution!\n\n\n\n\n\n\n\n\nProbability of Attaining an Exact Value\n\n\n\nIf \\(X\\) is a continuous random variable, \\(\\mathbb{P}(X = x) = 0\\) for any value \\(x\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#mean-and-variance-of-the-uniform-distribution",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#mean-and-variance-of-the-uniform-distribution",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Mean and Variance of the Uniform Distribution",
+    "text": "Mean and Variance of the Uniform Distribution\n\nIf \\(X \\sim \\mathrm{Unif}[a, b]\\), we have the following results:\n\n\\(\\displaystyle \\mathbb{E}[X] = \\frac{a + b}{2}\\)\n\\(\\displaystyle \\mathrm{Var}(X) = \\frac{1}{12}(b - a)^2\\)\n\n\n\n\n\n\n\n\n\nExercise 2\n\n\n\n\nConsider again the setup of Exerise 1: the time (in minutes) spent waiting in line at Starbucks is found to vary uniformly on between 5mins and 15mins.\n\nIf we select a person at random, what is the expected amount of time (in minutes) they will spend waiting in line? What about the variance and standard deviation of the time (in minutes) they will spend waiting in line?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#normal-distribution-1",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#normal-distribution-1",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Normal Distribution",
+    "text": "Normal Distribution\n\nThe normal distribution takes two parameters \\(\\mu\\) and \\(\\sigma\\). We use the notation \\(X \\sim \\mathcal{N}(\\mu, \\ \\sigma)\\) to denote “\\(X\\) follows the normal distribution with parameters \\(\\mu\\) and \\(\\sigma\\).”\nThe normal distribution has distribution function given by \\[ f(x) = \\frac{1}{\\sigma \\cdot \\sqrt{2 \\pi}} \\cdot \\exp\\left\\{ - \\frac{1}{2} \\cdot \\left( \\frac{x - \\mu}{\\sigma} \\right)^2 \\right\\} \\]\nLet’s determine how the parameters affect the shape of the density curve."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#changing-mu-and-sigma",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#changing-mu-and-sigma",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Changing \\(\\mu\\) and \\(\\sigma\\)",
+    "text": "Changing \\(\\mu\\) and \\(\\sigma\\)\n\nviewof µ = Inputs.range(\n  [-3, 3], \n  {value: 0, step: 0.1, label: \"µ:\"}\n)\n\nviewof σ = Inputs.range(\n  [0.2, 3.1], \n  {value: 1, step: 0.01, label: \"σ:\"}\n)\n\nsigsquared = σ**2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmargin = ({top: 20, right: 30, bottom: 30, left: 40})\n\nheight = 400\n\nx_values = d3.scaleLinear()\n    .domain(d3.extent(data, d => d.x))\n    .range([margin.left, width - margin.right])\n\ny_values = d3.scaleLinear()\n    .domain([Math.min(d3.min(data, d => d.y),0), Math.max(1,d3.max(data, d => d.y))]).nice()\n    .range([height - margin.bottom, margin.top])\n    \nline = d3.line()\n    .x(d => x_values(d.x))\n    .y(d => y_values(d.y))\n\nxAxis = g => g\n  .attr(\"transform\", `translate(0,${height - margin.bottom})`)\n  .call(d3.axisBottom(x_values)\n      .ticks(width / 80)\n      .tickSizeOuter(0))\n\nyAxis = g => g\n  .attr(\"transform\", `translate(${margin.left},0)`)\n  .call(d3.axisLeft(y_values)\n      .tickValues(d3.scaleLinear().domain(y_values.domain()).ticks()))\n    \nfunction normal_pdf (input_value, mu, sigsq) {\n  let left_chunk = 1/(Math.sqrt(2*Math.PI*sigsq))\n  let right_top = -((input_value-mu)**2)\n  let right_bottom = 2*sigsq\n  return left_chunk * Math.exp(right_top/right_bottom)\n}\n\nabs_x=6\n\ndata = {\n  let values = [];\n  for (let x = -abs_x; x < abs_x; x=x+0.01) values.push({\"x\":x,\"y\":normal_pdf(x, µ, sigsquared)});\n  return values;\n}\n\nd3 = require(\"https://d3js.org/d3.v5.min.js\")\n\nchart = {\n  const svg = d3.select(DOM.svg(width, height));\n\n  svg.append(\"g\")\n      .call(xAxis);\n\n  svg.append(\"g\")\n      .call(yAxis);\n  \n  svg.append(\"path\")\n      .datum(data)\n      .attr(\"fill\", \"none\")\n      .attr(\"stroke\", \"steelblue\")\n      .attr(\"stroke-width\", 4)\n      .attr(\"stroke-linejoin\", \"round\")\n      .attr(\"stroke-linecap\", \"round\")\n      .attr(\"d\", line);\n  \n  return svg.node();\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit to https://observablehq.com/@dswalter/normal-distribution for the majority of the applet code"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#changing-mu",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#changing-mu",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Changing \\(\\mu\\)",
+    "text": "Changing \\(\\mu\\)\nHolding \\(\\sigma = 1\\) fixed and varying \\(\\mu\\), we find:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#changing-sigma",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#changing-sigma",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Changing \\(\\sigma\\)",
+    "text": "Changing \\(\\sigma\\)\nHolding \\(\\mu = 0\\) fixed and varying \\(\\sigma\\), we find:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#standard-normal-distribution",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#standard-normal-distribution",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Standard Normal Distribution",
+    "text": "Standard Normal Distribution\n\n\n\n\n\n\n\nDefinition\n\n\n\nThe standard normal distribution is the normal distribution with \\(\\mu = 0\\) and \\(\\sigma = 1\\); i.e. \\(\\mathcal{N}(0, 1)\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#normal-probabilities",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#normal-probabilities",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Normal Probabilities",
+    "text": "Normal Probabilities\n\nRecall that for continuous variables, probabilities are found as areas underneath the density curve. For example, if \\(X \\sim \\mathcal{N}(0, 1)\\), then \\(\\mathbb{P}(X \\leq -1)\\) is found by computing the area below:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#normal-probabilities-1",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#normal-probabilities-1",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Normal Probabilities",
+    "text": "Normal Probabilities\n\nNow, unlike with the Uniform density curve, we don’t have a simple closed-form formula for areas under the Normal curve.\nFor instance, how would you get a numerical value for the area shaded on the previous slide?\nThe answer is by way of what is known as a normal table, or z-table.\nTo illustrate how to read a normal table, let’s work through an example:\n\n\n\n\n\n\n\n\nWorked-Out Example 3\n\n\n\n\nIf \\(Z \\sim \\mathcal{N}(0, 1)\\), compute \\(\\mathbb{P}(Z \\leq 0.83)\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#normal-table",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#normal-table",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Normal Table",
+    "text": "Normal Table"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#reading-the-normal-table",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#reading-the-normal-table",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Reading the Normal Table",
+    "text": "Reading the Normal Table\n\nTo find \\(\\mathbb{P}(Z \\leq 0.83)\\), we break up \\(0.83\\) as \\[ 0.83 = 0.8 + 0.03 \\]\nThis tells us to find the desired probability in the intersection of the \\(0.8\\) row and the \\(0.03\\) column:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#another-example-1",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#another-example-1",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Another Example",
+    "text": "Another Example\n\n\n\n\n\n\n\n\n\nWorked-Out Example 4\n\n\n\n\nIf \\(Z \\sim \\mathcal{N}(0, 1)\\), find\n\n\\(\\mathbb{P}(Z \\leq -1.01)\\)\n\\(\\mathbb{P}(Z \\leq -2.25)\\)\n\\(\\mathbb{P}(-2.25 \\leq Z \\leq -1.01)\\)\n\\(\\mathbb{P}(X \\geq -0.7)\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#standardization",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#standardization",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Standardization",
+    "text": "Standardization\n\nNow, all of our considerations above were in the case of the standard normal distribution. How do we find areas under nonstandard normal density curves?\nThe answer: we use a process called standardization.\n\n\n\n\n\n\n\n\nStandardization\n\n\n\nIf \\(X \\sim \\mathcal{N}(\\mu, \\ \\sigma)\\), then \\[ \\left( \\frac{X - \\mu}{\\sigma} \\right) \\sim \\mathcal{N}(0, 1) \\] That is, if we take a normally distributed random variable, subtract off its mean, and divide by its standard deviation, we obtain a random variable whose distribution is the standard normal distribution."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#normal-probabilities-general-case",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#normal-probabilities-general-case",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Normal Probabilities; General Case",
+    "text": "Normal Probabilities; General Case\n\nThus, if \\(X \\sim \\mathcal{N}(\\mu, \\ \\sigma)\\), here are the steps we use to compute \\(\\mathbb{P}(X \\leq x)\\):\n\nCompute the \\(z-\\)score \\(z = \\frac{x - \\mu}{\\sigma}\\), rounded to two decimal places.\nLook up the corresponding entry in a standard normal table."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#your-turn-1",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#your-turn-1",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 3\n\n\n\n\nIt is found that the scores on a particular exam are normally distributed with a mean of 83 and a standard deviation of 5.\n\nDefine the random variable of interest, and call it \\(X\\).\nIf a student is selected at random, what is the probability that they scored 81 or lower?\nIf a student is selected at random, what is the probability that they scored 75 or higher?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#mean-and-variance-of-the-normal-distribution",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#mean-and-variance-of-the-normal-distribution",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Mean and Variance of the Normal Distribution",
+    "text": "Mean and Variance of the Normal Distribution\n\nIf \\(X \\sim \\mathcal{N}(\\mu, \\ \\sigma)\\), we have the following results:\n\n\\(\\displaystyle \\mathbb{E}[X] = \\mu\\)\n\\(\\displaystyle \\mathrm{Var}(X) = \\sigma^2\\)\n\nSo, the two parameters we use to describe the normal distribution are the mean and the variance.\nWe’ll talk more about parameters in the next lecture."
+  },
+  {
     "objectID": "Pages/Lectures/Lecture08/Lec08.html#recap-of-probability",
     "href": "Pages/Lectures/Lecture08/Lec08.html#recap-of-probability",
     "title": "PSTAT 5A: Lecture 08",
@@ -1656,7 +1859,7 @@
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Monday, May 2, 2023\n\nAs a reminder: Monday sections are Discussion Sections and Wednesday sections are Lab Sections. There will not be a discussion section in week 1 (as, if there were one, it would take place before the first lecture!)\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(4/03 - 4/09)\n\n00: Introduction \n01: Descriptive Statistics \n02: More Descriptive Statistics \n\nNo Discussion Section\nLab 01  (Introduction to Python, and Basic Data Types)\nSolns \n\n\n2\n(4/10 - 4/16)\n\n03: Intro to Probability \n04: Counting \n\nDiscussion Worksheet 01 \nSolns \nLab 02  (Data Classes)\nSolns \n\n\n3\n(4/17 - 4/23)\n\n05: Conditional Probabilities \n06: Review \n\nExam Information/Polices \n\nList of Topics \n\nPractice Problems \n\nPractice Problems Solns \n\nMT1 Coverpage \n\n\nDiscussion Worksheet 02 \nSolns \nLab 03 (Conditionals, Comparisons, and Functions)\nSolns \n\n\n4\n(4/24 - 4/30)\n\n07: Midterm Exam 1\n08: Discrete Random Variables \n\nDiscussion Worksheet 03 (Midterm 1 Review)\nLab 04 (Descriptive Statistics)\nSolns  \n\n\n5\n(5/01 - 5/07)\n\n09: Continuous Random Variables\n10: Intro to Inferential Statistics\n\nDiscussion Worksheet 04 \nSolns \nLab 05: Random Number Generation, and Simulations\n\n\n6\n(5/08 - 5/14)\n\n11: Sampling Distributions\n12: Confidence Intervals\n\nDiscussion Worksheet 05\nLab 06: Sampling Distributions\n\n\n7\n(5/15 - 5/21)\n\n13: Hypothesis Testing\n14: Review\n\nDiscussion Worksheet 06\nLab 07: Confidence Intervals\n\n\n8\n(5/22 - 5/28)\n\n15: Midterm Exam 2\n16: More Hypothesis Testing\n\nDiscussion Worksheet 07 (Midterm 2 Review)\nLab 08: Testing Distributional Fits\n\n\n9\n(5/29 - 6/4)\n\n17: Hypothesis Testing in Multiple Samples\n18: Regression\n\nDiscussion Worksheet 08\nLab 09: Reading In Data, EDA, and Drawing Conclusions\n\n\n10\n(6/05 - 6/11)\n\n19: More Regression\n20: Review\n\nDiscussion Worksheet 09\nLab 10: Regression\n\n\nFINAL EXAM\nTuesday, June 13 from 4-7pm"
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Monday, May 2, 2023\n\nAs a reminder: Monday sections are Discussion Sections and Wednesday sections are Lab Sections. There will not be a discussion section in week 1 (as, if there were one, it would take place before the first lecture!)\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(4/03 - 4/09)\n\n00: Introduction \n01: Descriptive Statistics \n02: More Descriptive Statistics \n\nNo Discussion Section\nLab 01  (Introduction to Python, and Basic Data Types)\nSolns \n\n\n2\n(4/10 - 4/16)\n\n03: Intro to Probability \n04: Counting \n\nDiscussion Worksheet 01 \nSolns \nLab 02  (Data Classes)\nSolns \n\n\n3\n(4/17 - 4/23)\n\n05: Conditional Probabilities \n06: Review \n\nExam Information/Polices \n\nList of Topics \n\nPractice Problems \n\nPractice Problems Solns \n\nMT1 Coverpage \n\n\nDiscussion Worksheet 02 \nSolns \nLab 03 (Conditionals, Comparisons, and Functions)\nSolns \n\n\n4\n(4/24 - 4/30)\n\n07: Midterm Exam 1\n08: Discrete Random Variables \n\nDiscussion Worksheet 03 (Midterm 1 Review)\nLab 04 (Descriptive Statistics)\nSolns  \n\n\n5\n(5/01 - 5/07)\n\n09: Continuous Random Variables \n10: Intro to Inferential Statistics\n\nDiscussion Worksheet 04 \nSolns \nLab 05: Random Number Generation, and Simulations\n\n\n6\n(5/08 - 5/14)\n\n11: Sampling Distributions\n12: Confidence Intervals\n\nDiscussion Worksheet 05\nLab 06: Sampling Distributions\n\n\n7\n(5/15 - 5/21)\n\n13: Hypothesis Testing\n14: Review\n\nDiscussion Worksheet 06\nLab 07: Confidence Intervals\n\n\n8\n(5/22 - 5/28)\n\n15: Midterm Exam 2\n16: More Hypothesis Testing\n\nDiscussion Worksheet 07 (Midterm 2 Review)\nLab 08: Testing Distributional Fits\n\n\n9\n(5/29 - 6/4)\n\n17: Hypothesis Testing in Multiple Samples\n18: Regression\n\nDiscussion Worksheet 08\nLab 09: Reading In Data, EDA, and Drawing Conclusions\n\n\n10\n(6/05 - 6/11)\n\n19: More Regression\n20: Review\n\nDiscussion Worksheet 09\nLab 10: Regression\n\n\nFINAL EXAM\nTuesday, June 13 from 4-7pm"
   },
   {
     "objectID": "Pages/calendar.html",
