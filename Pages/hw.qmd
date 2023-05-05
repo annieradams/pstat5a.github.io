@@ -21,4 +21,4 @@ Here you will find all homework assignments and their solutions.
 
 -   **Homework 4:** due by 11:59pm on Tuesday, May 2 <a href = "../Files/HW/HW04.pdf" class = "button label-outline" target = "_blank">.pdf</a> <a href = "../Files/HW/HW04_Solns.pdf" class = "button label-outline" target = "_blank">Solns</a> <br />
 
--   **Homework 5:** will be posted by 8:30pm
+-   **Homework 5:** due by 11:59pm on Wednesday, May 10 <a href = "../Files/HW/HW05.pdf" class = "button label-outline" target = "_blank">.pdf</a>
