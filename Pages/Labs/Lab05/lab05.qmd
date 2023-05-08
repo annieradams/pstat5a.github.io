@@ -122,6 +122,9 @@ For example, suppose we believe that weights of rats in a particular situation a
 #| echo: False
 
 import scipy.stats as sps
+import numpy.random as npr
+
+npr.seed(123)
 sps.norm.rvs(3.8, 0.5, 10)
 ```
 
