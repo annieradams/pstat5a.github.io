@@ -571,7 +571,7 @@
 <div>
 <ol type="1">
 <li><span class="math inline">\(np \geq 10\)</span></li>
-<li><span class="math inline">\(np(1 - p) \geq 10\)</span></li>
+<li><span class="math inline">\(n(1 - p) \geq 10\)</span> <span style="color:red">note that this has been changed from the version presented in lecture last week; please see the corresponding course announcement</span></li>
 </ol>
 </div>
 </div>
@@ -624,7 +624,7 @@
 <li class="fragment">We would like to utilize the Central Limit Theorem for Proportions. First, we check:
 <ol type="1">
 <li class="fragment"><span class="math inline">\(np = (100) \cdot (0.87) = 87 \geq 10 \ \checkmark\)</span></li>
-<li class="fragment"><span class="math inline">\(np(1 - p) = (100) \cdot (0.87) \cdot (1 - 0.87) \approx 11.31 \geq 10 \ \checkmark\)</span></li>
+<li class="fragment"><span class="math inline">\(np(1 - p) = (100) \cdot (0.87) \cdot (1 - 0.87) \approx 11.31 \geq 10 \ \checkmark\)</span> <span style="color:red">these are the old conditions; I encourage you to check the new ones on your own!</span></li>
 </ol>
 <ul>
 <li class="fragment">Since both of the success-failure conditions are satisfied, we know that <span class="math display">\[ \widehat{P} \sim \mathcal{N}\left(0.87, \ \sqrt{\frac{0.87 \cdot (1 - 0.87)}{100}} \right) \sim \mathcal{N}\left(0.87, \ 0.0336 \right) \]</span> and so <span class="math display">\[ \mathbb{P}(\widehat{P} \leq 0.9) = \mathbb{P}\left( \frac{\widehat{P} - 0.87}{0.0336} \leq \frac{0.9 - 0.87}{0.0336} \right) = \mathbb{P}\left( \frac{\widehat{P} - 0.87}{0.0336} \leq 0.89 \right) \]</span> which equates to around <span class="math inline">\(\boxed{0.8133 = 81.33\%}\)</span></li>
@@ -670,6 +670,7 @@ z_2 &amp; = \frac{0.5 - 0.87}{0.0336} \approx -0.60
 </div>
 </div>
 </div>
+<p><span style="color:red">Due to the retroactive change in the success-failure conditions, I will post the written-out solutions to this exercise before Lecture 11.</span></p>
 </div>
 
 

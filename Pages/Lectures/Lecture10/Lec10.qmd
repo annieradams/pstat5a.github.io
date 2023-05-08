@@ -178,7 +178,7 @@ $$ \widehat{P} \sim \mathcal{N}\left( p, \ \sqrt{ \frac{p(1 - p)}{n} } \right) $
 
 :::{.nonincremental}
 1) $np \geq 10$
-2) $np(1 - p) \geq 10$
+2) $n(1 - p) \geq 10$ [note that this has been changed from the version presented in lecture last week; please see the corresponding course announcement]{style="color:red"}
 :::
 :::
 :::
@@ -213,7 +213,7 @@ a) Let $\widehat{P} =$ the proportion of Americans in the sample of size $n = 10
 
 b) We would like to utilize the Central Limit Theorem for Proportions. First, we check:
     1) $np = (100) \cdot (0.87) = 87 \geq 10 \ \checkmark$
-    2) $np(1 - p) = (100) \cdot (0.87) \cdot (1 - 0.87) \approx 11.31 \geq 10 \ \checkmark$
+    2) $np(1 - p) = (100) \cdot (0.87) \cdot (1 - 0.87) \approx 11.31 \geq 10 \ \checkmark$ [these are the old conditions; I encourage you to check the new ones on your own!]{style="color:red"}
     
     - Since both of the success-failure conditions are satisfied, we know that
 $$ \widehat{P} \sim \mathcal{N}\left(0.87, \ \sqrt{\frac{0.87 \cdot (1 - 0.87)}{100}} \right) \sim \mathcal{N}\left(0.87, \ 0.0336 \right) $$
@@ -249,4 +249,7 @@ c. What is the probability that the proportion of people in the sample who are f
 :::
 :::
 :::
+
+[Due to the retroactive change in the success-failure conditions, I will post the written-out solutions to this exercise before Lecture 11.]{style="color:red"}
+
 :::

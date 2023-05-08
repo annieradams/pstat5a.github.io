@@ -1306,7 +1306,7 @@
     "href": "Pages/Lectures/Lecture10/Lec10.html#central-limit-theorem-for-proportions",
     "title": "PSTAT 5A: Lecture 10",
     "section": "Central Limit Theorem for Proportions",
-    "text": "Central Limit Theorem for Proportions\n\n\n\n\n\n\nImportant\n\n\n\nIf we have reasonably representative samples taken from a population with true proportion \\(p\\) and let \\(\\widehat{P}\\) denote the sample proportion, then \\[ \\widehat{P} \\sim \\mathcal{N}\\left( p, \\ \\sqrt{ \\frac{p(1 - p)}{n} } \\right) \\] provided that\n\n\n\\(np \\geq 10\\)\n\\(np(1 - p) \\geq 10\\)\n\n\n\n\n\n\n\nThe two conditions above are sometimes referred to as the success-failure conditions, and must be satisfied in order to invoke the Central Limit Theorem for Proportions (CLTP).\n\nWe’ll talk a bit more about “reasonably representative” samples later in the course (time-permitting)."
+    "text": "Central Limit Theorem for Proportions\n\n\n\n\n\n\nImportant\n\n\n\nIf we have reasonably representative samples taken from a population with true proportion \\(p\\) and let \\(\\widehat{P}\\) denote the sample proportion, then \\[ \\widehat{P} \\sim \\mathcal{N}\\left( p, \\ \\sqrt{ \\frac{p(1 - p)}{n} } \\right) \\] provided that\n\n\n\\(np \\geq 10\\)\n\\(n(1 - p) \\geq 10\\) note that this has been changed from the version presented in lecture last week; please see the corresponding course announcement\n\n\n\n\n\n\n\nThe two conditions above are sometimes referred to as the success-failure conditions, and must be satisfied in order to invoke the Central Limit Theorem for Proportions (CLTP).\n\nWe’ll talk a bit more about “reasonably representative” samples later in the course (time-permitting)."
   },
   {
     "objectID": "Pages/Lectures/Lecture10/Lec10.html#worked-out-example-2",
@@ -1327,7 +1327,7 @@
     "href": "Pages/Lectures/Lecture10/Lec10.html#solutions-1",
     "title": "PSTAT 5A: Lecture 10",
     "section": "Solutions",
-    "text": "Solutions\n\nWe would like to utilize the Central Limit Theorem for Proportions. First, we check:\n\n\\(np = (100) \\cdot (0.87) = 87 \\geq 10 \\ \\checkmark\\)\n\\(np(1 - p) = (100) \\cdot (0.87) \\cdot (1 - 0.87) \\approx 11.31 \\geq 10 \\ \\checkmark\\)\n\n\nSince both of the success-failure conditions are satisfied, we know that \\[ \\widehat{P} \\sim \\mathcal{N}\\left(0.87, \\ \\sqrt{\\frac{0.87 \\cdot (1 - 0.87)}{100}} \\right) \\sim \\mathcal{N}\\left(0.87, \\ 0.0336 \\right) \\] and so \\[ \\mathbb{P}(\\widehat{P} \\leq 0.9) = \\mathbb{P}\\left( \\frac{\\widehat{P} - 0.87}{0.0336} \\leq \\frac{0.9 - 0.87}{0.0336} \\right) = \\mathbb{P}\\left( \\frac{\\widehat{P} - 0.87}{0.0336} \\leq 0.89 \\right) \\] which equates to around \\(\\boxed{0.8133 = 81.33\\%}\\)"
+    "text": "Solutions\n\nWe would like to utilize the Central Limit Theorem for Proportions. First, we check:\n\n\\(np = (100) \\cdot (0.87) = 87 \\geq 10 \\ \\checkmark\\)\n\\(np(1 - p) = (100) \\cdot (0.87) \\cdot (1 - 0.87) \\approx 11.31 \\geq 10 \\ \\checkmark\\) these are the old conditions; I encourage you to check the new ones on your own!\n\n\nSince both of the success-failure conditions are satisfied, we know that \\[ \\widehat{P} \\sim \\mathcal{N}\\left(0.87, \\ \\sqrt{\\frac{0.87 \\cdot (1 - 0.87)}{100}} \\right) \\sim \\mathcal{N}\\left(0.87, \\ 0.0336 \\right) \\] and so \\[ \\mathbb{P}(\\widehat{P} \\leq 0.9) = \\mathbb{P}\\left( \\frac{\\widehat{P} - 0.87}{0.0336} \\leq \\frac{0.9 - 0.87}{0.0336} \\right) = \\mathbb{P}\\left( \\frac{\\widehat{P} - 0.87}{0.0336} \\leq 0.89 \\right) \\] which equates to around \\(\\boxed{0.8133 = 81.33\\%}\\)"
   },
   {
     "objectID": "Pages/Lectures/Lecture10/Lec10.html#solutions-2",
@@ -1341,7 +1341,7 @@
     "href": "Pages/Lectures/Lecture10/Lec10.html#your-turn-1",
     "title": "PSTAT 5A: Lecture 10",
     "section": "Your Turn!",
-    "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 2\n\n\n\n\nAt a certain company, it is known that 65% of employees are from underrepresented minorities (UMs). A representative sample of 80 employees is taken, and the proportion of people from UMs is recorded.\n\nDefine the random variable of interest.\nWhat is the probability that greater than than 50% of people in the sample are from UMs?\nWhat is the probability that the proportion of people in the sample who are from UMs lies within 5% of the true proportion of 65%?"
+    "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 2\n\n\n\n\nAt a certain company, it is known that 65% of employees are from underrepresented minorities (UMs). A representative sample of 80 employees is taken, and the proportion of people from UMs is recorded.\n\nDefine the random variable of interest.\nWhat is the probability that greater than than 50% of people in the sample are from UMs?\nWhat is the probability that the proportion of people in the sample who are from UMs lies within 5% of the true proportion of 65%?\n\n\n\n\n\n\nDue to the retroactive change in the success-failure conditions, I will post the written-out solutions to this exercise before Lecture 11."
   },
   {
     "objectID": "Pages/Lectures/Lecture00/Lec00.html#course-staff",
