@@ -137,7 +137,7 @@
     "href": "Pages/Labs/Lab07/lab07.html#default-values-in-a-function",
     "title": "Lab07",
     "section": "Default Values in a Function",
-    "text": "Default Values in a Function\nBy the way, it should be noted that some arguments in certain functions have what are known as default values. For example, the code scipy.stats.norm.ppf(0.025) will run even though we haven’t explicitly specified an m and s value. If we consult the help file for the scipy.stats.norm.ppf() function, we will see that the arguments m and s are assigned default values of 0 and 1 respectively. What this means is that, we don’t explicitly specify a value for m or s, Python will automatically assign them a value of 0 and 1, respectively.\n\nimport scipy.stats as sps\nsps.norm.ppf(0.025)\n\n-1.9599639845400545\n\n\n\n\n\n\n\n\nTask 2\n\n\n\n\nWhat are the arguments that the function sps.t.ppf() (assuming we have imported scipy.stats as sps) takes?\nHow many of the arguments take default values? What are the default values?\n\n\n\nWhen defining a function ourselves, we can also specify default values for some (or even all) of the arguments! The syntax we use is:\n\ndef <function name>(<arg1> = <default1>, <arg2> = <default2>, ...):\n  <body of function>\n\nFor example,\n\ndef f(x, y = 1):\n  return x + y\n\nf(3)\n\n4\n\n\n\n\n\n\n\n\nTask 3\n\n\n\nWrite a function called dice_roll() that takes in two inputs:\n\nnum_sides (with a default value of 6)\nnum_rolls (with a default value of 1)\n\nthat simulates rolling a num_sides-sided die num_rolls times. Test that your function behaves as follows:\n\ndice_roll(12, 5) # rolling a 12-sided die 5 times\n\n[4, 4, 4, 1, 1]\n\n\n\ndice_roll(12) # rolling a 12-sided die once\n\n[5]\n\n\n\ndice_roll() # rolling a 6-sided die once\n\n[4]"
+    "text": "Default Values in a Function\nBy the way, it should be noted that some arguments in certain functions have what are known as default values. For example, the code scipy.stats.norm.ppf(0.025) will run even though we haven’t explicitly specified an m and s value. If we consult the help file for the scipy.stats.norm.ppf() function, we will see that the arguments m and s are assigned default values of 0 and 1 respectively. What this means is that, we don’t explicitly specify a value for m or s, Python will automatically assign them a value of 0 and 1, respectively.\n\nimport scipy.stats as sps\nsps.norm.ppf(0.025)\n\n-1.9599639845400545\n\n\n\n\n\n\n\n\nTask 2\n\n\n\n\nWhat are the arguments that the function sps.t.ppf() (assuming we have imported scipy.stats as sps) takes?\nHow many of the arguments take default values? What are the default values?\n\n\n\nWhen defining a function ourselves, we can also specify default values for some (or even all) of the arguments! The syntax we use is:\n\ndef <function name>(<arg1> = <default1>, <arg2> = <default2>, ...):\n  <body of function>\n\nFor example,\n\ndef f(x, y = 1):\n  return x + y\n\nf(3)\n\n4\n\n\n\n\n\n\n\n\nTask 3\n\n\n\nWrite a function called dice_roll() that takes in two inputs:\n\nnum_sides (with a default value of 6)\nnum_rolls (with a default value of 1)\n\nthat simulates rolling a num_sides-sided die num_rolls times. Test that your function behaves as follows:\n\ndice_roll(12, 5) # rolling a 12-sided die 5 times\n\n[2, 2, 0, 6, 2]\n\n\n\ndice_roll(12) # rolling a 12-sided die once\n\n[0]\n\n\n\ndice_roll() # rolling a 6-sided die once\n\n[3]"
   },
   {
     "objectID": "Pages/Labs/Lab07/lab07.html#testing-distributional-fits",
@@ -2233,6 +2233,307 @@
     "text": "Summary\n\nWe started off by talking about the structure of data, and the data matrix.\nWe then discussed how to classify variables.\nNext, we explored graphical methods for summarizing data.\n\nBargraphs are best-suited for categorical data\nHistograms and boxplots are best-suited for numerical data\n\nWe also introduced the notions of percentiles, the median, and outliers.\nNext time we’ll discuss how to visualize the relationship between two variables.\nWe’ll also discuss some numerical summaries for data, including the mean, median, standard deviation, and IQR."
   },
   {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#hypothesis-testing-1",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#hypothesis-testing-1",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Hypothesis Testing",
+    "text": "Hypothesis Testing\n\nRecall that in the framework of hypothesis testing, we wish to utilize data to assess the plausibility/validity of a hypothesis, called the null hypothesis.\n\nSpecifically, we wish to determine whether or not the data provides support to reject the null in favor of the alternative hypothesis or not.\n\nIn the case of hypothesis testing for a population proportion \\(p\\), our null takes the form \\(H_0: p = p_0\\) and there are several different alternative hypotheses we could consider:\n\nTwo-tailed alternative/test: \\(H_A: \\ p \\neq p_0\\)\nLower-tailed alternative/test: \\(H_A: \\ p < p_0\\)\nUpper-tailed alternative/test: \\(H_A: \\ p > p_0\\)\nSimple-vs-simple alternative/test: \\(H_A: \\ p = p_1\\) for \\(p_1 \\neq p_0\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#hypothesis-testing-for-a-proportion",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#hypothesis-testing-for-a-proportion",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Hypothesis Testing for a Proportion",
+    "text": "Hypothesis Testing for a Proportion\n\nThe different alternative hypotheses lead to different forms of our hypothesis test.\nLast lecture, we discussed how to construct a two-sided hypothesis test.\nOn the homework, I ask you to derive the lower-tailed hypothesis test, and I also provide you with the form for an upper-tailed hypothesis test.\nTo help you with Problem 1 on the upcoming homework, allow me to re-do the derivations we did last lecture, but this time more in the style of Problem 1 on HW01."
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#two-sided-test-for-a-proportion",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#two-sided-test-for-a-proportion",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Two-Sided Test for a Proportion",
+    "text": "Two-Sided Test for a Proportion\n\nWe start with the test statistic \\[ \\mathrm{TS} = \\frac{\\widehat{P} - p_0}{\\sqrt{\\frac{p_0 (1 - p_0)}{n}}} \\]\nIf the null were true, i.e. if the true value of \\(p\\) were \\(p_0\\), then this test statistic would follow the Normal Distribution provided we are able to invoke the Central Limit Theorem for proportions, which we can do only if\n\n\\(np_0 \\geq 10\\)\n\\(n(1 - p_0) \\geq 10\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#two-sided-test-for-a-proportion-1",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#two-sided-test-for-a-proportion-1",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Two-Sided Test for a Proportion",
+    "text": "Two-Sided Test for a Proportion\n\nIf these conditions hold, we then know that (by the Central Limit Theorem for Proportions) \\[ \\widehat{P} \\stackrel{H_0}{\\sim} \\mathcal{N}\\left( p_0, \\ \\sqrt{\\frac{p_0 (1 - p_0)}{n}} \\right) \\] which means, by our Standardization Result, that \\[\\mathrm{TS} \\stackrel{H_0}{\\sim} \\mathcal{N}(0, \\ 1)\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#two-sided-test-for-a-proportion-2",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#two-sided-test-for-a-proportion-2",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Two-Sided Test for a Proportion",
+    "text": "Two-Sided Test for a Proportion\n\nNow, let’s think about when we would reject the null that \\(p = p_0\\) in favor of the alternative that \\(p \\neq p_0\\).\n\nIf we observed a value of \\(\\widehat{p}\\) that was much greater than \\(p_0\\) (i.e. if \\(\\mathrm{TS}\\) was much larger than 0), we would probably reject the null in favor of the alternative.\nBut, if we observed a value of \\(\\widehat{p}\\) that was much smaller than \\(p_0\\) (i.e. if \\(\\mathrm{TS}\\) was much smaller than 0), we would probably also reject the null in favor of the alternative.\nTherefore, we reject when the magnitude of \\(\\mathrm{TS}\\) is large; i.e. with \\(|\\mathrm{TS}| > c\\) for some constant \\(c\\).\n\nThis means our test should take the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| > c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#two-sided-test-for-a-proportion-3",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#two-sided-test-for-a-proportion-3",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Two-Sided Test for a Proportion",
+    "text": "Two-Sided Test for a Proportion\n\nFinally, we need to consider how large to make our cutoff (or critical value) \\(c\\).\nThis is where we need to consider the two types of errors we could commit: Type I and Type II Errors\n\nType I error: the null was rejected when it was in fact true (convicting an innocent person)\nType II error: the null was not rejected when it was in fact false (letting a guilty person go free)\n\nWe call the probability of committing a Type I error the level of significance \\(\\alpha\\), which we fix before beginning our testing procedure.\nIn terms of the critical value, this means \\(c\\) should satisfy the equation \\[ \\mathbb{P}_{H_0}(|\\mathrm{TS}| > c) = \\alpha \\] where \\(\\mathbb{P}_{H_0}\\) means “probability of, assuming the null is actually true (i.e. that \\(p = p_0\\))”."
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#two-sided-test-for-a-proportion-4",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#two-sided-test-for-a-proportion-4",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Two-Sided Test for a Proportion",
+    "text": "Two-Sided Test for a Proportion\n\nSince we know that \\(\\mathrm{TS}\\) follows a standard normal distribution under the null, this means that \\(c\\) should be the \\((\\alpha / 2) \\times 100\\)th percentile of the standard normal distribution.\n\nFor example, if \\(\\alpha = 0.05\\), then the critical value is the \\((0.05) / 2 \\times 100 = 2.5\\)th percentile of the standard normal distribution, which we see to be \\(1.96\\).\n\nAs such, the final form of our test is \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| > z_{1 - \\alpha/2} \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] where we can use the notation \\(z_{1 - \\alpha/2}\\) to denote the \\((\\alpha / 2) \\times 100\\)th percentile of the standard normal distribution, scaled by negative 1."
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#quick-note",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#quick-note",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Quick Note",
+    "text": "Quick Note\n\nIt turns out that the \\((\\alpha / 2) \\times 100\\)th percentile of the standard normal distribution scaled by negative 1 is equivalent to the \\((1 - \\alpha / 2)\\)th percentile of the standard normal distribution, not scaled by negative 1.\n\n\n\nimport scipy.stats as sps\n\n-sps.norm.ppf(0.05/2)\n\n1.9599639845400545\n\n\n\n\n\nimport scipy.stats as sps\n\nsps.norm.ppf(1 - 0.05/2)\n\n1.959963984540054\n\n\n\n\nBasically, when doing a two-sided test, ensure that the critical value is positive."
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#worked-out-example",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#worked-out-example",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nAdministration within a Statistics department at an unnamed university claims to admit 24% of all applicants. A disgruntled student, dubious of the administration’s claims, takes a representative sample of 120 students who applied to the Statistics major, and found that 20% of these students were actually admitted into the major.\n\nConduct a two-sided hypothesis test at a 5% level of significance on the administrator’s claims that 24% of applicants into the Statistics major are admitted. Be sure you phrase your conclusion clearly, and in the context of the problem."
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#solutions",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#solutions",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Solutions",
+    "text": "Solutions\n\nWe first phrase the hypotheses.\nLet \\(p\\) denote the true proportion of applicants who get admitted into the major. Since we are performing a two-sided test, our hypotheses take the form \\[ \\left[ \\begin{array}{rr}\nH_0:    p = 0.24    \\\\\nH_A:    p \\neq 0.24\n\\end{array} \\right.\\]\nNow we compute the value of the test statistic: \\[ \\mathrm{TS} = \\frac{\\widehat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}} = \\frac{0.2 - 0.24}{\\sqrt{\\frac{(0.24) \\cdot (1 - 0.24)}{120}}} \\approx -1.026 \\]\nNext, we compute the critical value. Since we are using an \\(\\alpha = 0.05\\) level of significance, we will use the critical value \\(1.96\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-1",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-1",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Solutions",
+    "text": "Solutions\n\nFinally, we perform the test: we will reject the null in favor of the alternative if \\(|\\mathrm{TS}|\\) is larger than the critical value.\nIn this case, \\(|\\mathrm{TS}| = |-1.026| = 1.026 < 1.96\\) meaning we fail to reject the null:\n\n\n\nAt an \\(\\alpha = 0.05\\) level of significance, there was insufficient evidence to reject the null hypothesis that 24% of applicants are admitted into the major as opposed to the alternative that the true admittance rate was not 24%."
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#basics-of-random-variables",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#basics-of-random-variables",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Basics of Random Variables",
+    "text": "Basics of Random Variables\n\nRecall long ago we discussed the notion of an experiment: any procedure we can repeat an infinite number of times where each time we repeat the experiment the same fixed set of things (i.e. the outcomes) can occur.\nA random variable, loosely speaking, is some sort of numerical variable that keeps track of certain quantities relating to an experiment.\nFor example, if we toss 7 coins and let \\(X\\) denote the number of heads we observe in these 7 coin tosses, then \\(X\\) would be a random variable.\nThe set of all values a random variable can attain is called the state space, and is denoted \\(S_X\\).\nWe classify random variables based on their state space:\n\nIf \\(S_X\\) has jumps, we say \\(X\\) is a discrete random variable\nIf \\(S_X\\) does not have jumps, we say \\(X\\) is a continuous random variable"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#discrete-random-variables",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#discrete-random-variables",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Discrete Random Variables",
+    "text": "Discrete Random Variables\n\nDiscrete random variables are described/summarized by a probability mass function (p.m.f.), which is a specification of the values the random variable can take (i.e. the state space) along with the probabilities with which the random variable attains those values.\n\nP.M.F.’s are often displayed in tabular form: e.g. \\[ \\begin{array}{r|cccc}\n\\boldsymbol{k}              & -1    & 0   & 1   & 2   \\\\\n\\hline\n\\boldsymbol{\\mathbb{P}(X = k)}   & 0.1   & 0.2   & 0.3   & 0.4\n  \\end{array}\\]\nNote that the probability values in a P.M.F. must sum to 1.\n\nQuantities like \\(\\mathbb{P}(X \\leq k)\\) are found by summing up the values of \\(\\mathbb{P}(X = x)\\) for all values of \\(x\\) in the state space that are less than \\(k\\).\n\nFor example, in the example above, \\[\\mathbb{P}(X \\leq 0.5) = \\mathbb{P}(X = -1) + \\mathbb{P}(X = 0)  = 0.1 + 0.2 = 0.3 \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#expected-value",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#expected-value",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Expected Value",
+    "text": "Expected Value\n\nThe expected value of a random variable \\(X\\), denoted \\(\\mathbb{E}[X]\\), represents a sort of “average” of \\(X\\), and is computed as \\[ \\mathbb{E}[X] = \\sum_{\\text{all $k$}} k \\cdot \\mathbb{P}(X = k) \\]\n\nAgain, don’t be scared by the sigma notation! It just represents a sum.\nSo, for example, using our P.M.F. from the previous slide, \\[\\begin{align*}\n\\mathbb{E}[X]   & = (-1) \\cdot \\mathbb{P}(X = -1) + (0) \\cdot \\mathbb{P}(X = 0)    \\\\\n& \\hspace{10mm} + (1) \\cdot \\mathbb{P}(X = 1) + (2) \\cdot \\mathbb{P}(X = 2)    \\\\[3mm]\n  & = (-1) \\cdot (0.1) + (0) \\cdot (0.2) + (1) \\cdot (0.3) + (2) \\cdot (0.4)     \\\\[3mm]\n  & = \\boxed{1}\n  \\end{align*}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#variance-and-standard-deviation",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#variance-and-standard-deviation",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Variance and Standard Deviation",
+    "text": "Variance and Standard Deviation\n\nThere are two formulas we can use for the variance of a random variable \\(X\\): \\[ \\mathrm{Var}(X) = \\sum_{\\text{all $k$}} (k - \\mathbb{E}[X])^2 \\cdot \\mathbb{P}(X = k) \\] or \\[ \\mathrm{Var}(X) = \\left(\\sum_{\\text{all $k$}} k^2 \\cdot \\mathbb{P}(X = k) \\right) - (\\mathbb{E}[X])^2 \\]\nThe standard deviation of a random variable is simply the square root of the variance: \\[ \\mathrm{SD}(X) = \\sqrt{\\mathrm{Var}(X)} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#variance-and-standard-deviation-1",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#variance-and-standard-deviation-1",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Variance and Standard Deviation",
+    "text": "Variance and Standard Deviation\n\nFor example, using the PMF from a few slides ago, the first formula for variance tells us to compute \\[\\begin{align*}\n\\mathrm{Var}(X)     & = \\sum_{\\text{all $k$}} (k - \\mathbb{E}[X])^2 \\cdot \\mathbb{P}(X = k)    \\\\\n  & = (-1 - 1)^2 \\cdot \\mathbb{P}(X = -1) + (0 - 1)^2 \\cdot \\mathbb{P}(X = 0)    \\\\\n    & \\hspace{10mm} + (1 - 1)^2 \\cdot \\mathbb{P}(X = 1) + (2 - 1)^2 \\cdot \\mathbb{P}(X = 2)    \\\\[3mm]\n      & = (-1 - 1)^2 \\cdot (0.1) + (0 - 1)^2 \\cdot (0.2)    \\\\\n      & \\hspace{10mm}+ (1 - 1)^2 \\cdot (0.3) + (2 - 1)^2 \\cdot (0.4)   \\\\[3mm]\n      & = \\boxed{1}\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#variance-and-standard-deviation-2",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#variance-and-standard-deviation-2",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Variance and Standard Deviation",
+    "text": "Variance and Standard Deviation\n\n\nUsing the second formula for variance, we first compute \\[\\begin{align*}\n\\sum_{\\text{all $k$}} k^2 \\mathbb{P}(X = k)    &  = (-1)^2 \\cdot \\mathbb{P}(X = -1) + (0)^2 \\cdot \\mathbb{P}(X = 0)    \\\\\n    & \\hspace{10mm} + (1)^2 \\cdot \\mathbb{P}(X = 1) + (2 - 1)^2 \\cdot \\mathbb{P}(X = 2)    \\\\[3mm]\n      & = (-1)^2 \\cdot (0.1) + (0)^2 \\cdot (0.2)    \\\\\n      & \\hspace{10mm}+ (1)^2 \\cdot (0.3) + (2)^2 \\cdot (0.4)   \\\\[3mm]\n      & = 2\n\\end{align*}\\] which means \\[ \\mathrm{Var}(X) = 2 - (1)^2 = \\boxed{1}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#binomial-distribution",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#binomial-distribution",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Binomial Distribution",
+    "text": "Binomial Distribution\n\nSuppose we have \\(n\\) independent trials, each resulting in “success” with probability \\(p\\) and “failure” with probability \\(1 - p\\). If \\(X\\) denotes the number of successes in these \\(n\\) trials, we say \\(X\\) follow the Binomial distribution with parameters \\(n\\) and \\(p\\), notated \\[ X \\sim \\mathrm{Bin}(n, \\ p) \\]\nIf \\(X \\sim \\mathrm{Bin}(n, \\ p)\\), then:\n\n\\(S_X = \\{0, 1, 2, \\cdots, n\\}\\)\n\\(\\mathbb{P}(X = k) = \\binom{n}{k} p^k (1 - p)^{n - k}\\)\n\\(\\mathbb{E}[X] = np\\)\n\\(\\mathrm{Var}(X) = np(1 - p)\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#binomial-distribution-1",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#binomial-distribution-1",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Binomial Distribution",
+    "text": "Binomial Distribution\n\nIn order to verify that the Binomial distribution is appropriate to use, we need to check the Binomial Criteria:\n\nIndependence across trials\nFixed number \\(n\\) of trials\nWell-defined notion of “success” and “failure”\nFixed probability \\(p\\) of success across trials.\n\nIf you are going to use the Binomial distribution in a problem, you must check all four of these!"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#case-study-airline-bookings",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#case-study-airline-bookings",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Case Study: Airline Bookings",
+    "text": "Case Study: Airline Bookings"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#worked-out-example-2",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#worked-out-example-2",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\nSuppose that GauchoAir has found that each passenger that books a ticket on the GA5A flight from SBA to GCV (GauchoVille) actually shows up with probability 90%.\nIf flight GA5A has only 186 seats, but sells 195 tickets, what is the probability that GauchoAir will need to re-book certain passengers?"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#solution",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#solution",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Solution",
+    "text": "Solution\n\nAs always, we start by defining quantities.\nLet \\(X\\) denote the number of passengers, out of the 195 booked on the flight, that actually show up for the flight.\nThe video claims that \\(X\\) follows a Binomial Distribution- let’s work with that claim for a moment (and then we can revisit that assumption later).\nSpecifically, \\(X \\sim \\mathrm{Bin}(195, \\ 90)\\).\nNow, the airline will only need to re-book passengers when the number of passengers that arive (\\(X\\)) exceeds the capacity of the plane (186).\nSo, the quantity we seek is \\(\\mathbb{P}(X > 186) = \\mathbb{P}(X \\geq 187)\\).\nThough we could do this by hand, let’s use Python.\nWe can also discuss whether we think the Binomial critera really are satisfied in this case or not."
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#geometric-distribution",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#geometric-distribution",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Geometric Distribution",
+    "text": "Geometric Distribution\n\nAnother distribution we encountered (this time in Discussion Section) is the so-called Geometric Distribution.\nIf \\(X\\) counts the number of trials (including the final trial) until we observe our first “success”, and if each trial results in a “success” with probability \\(p\\), then \\(X\\) is said to follow the Geometric distribution with parameter \\(p\\): \\[ X \\sim \\mathrm{Geom}(p) \\]\nIf \\(X \\sim \\mathrm{Geom}(p)\\), we have:\n\n\\(S_X = \\{1, 2, 3, \\cdots \\}\\)\n\\(\\mathbb{P}(X = k) = (1 - p)^{k - 1} \\cdot p\\)\n\\(\\mathbb{E}[X] = \\frac{1}{p}\\)\n\\(\\mathrm{Var}(X) = \\frac{1 - p}{p^2}\\) (wasn’t explicitly mentioned before, but it’s good to know!)"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#continuous-random-variables",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#continuous-random-variables",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Continuous Random Variables",
+    "text": "Continuous Random Variables\n\nNot all random variables are discrete- many are continuous!\nContinuous random variables are characterized by a probability density function (pdf) \\(f_X(x)\\), which must obey the following two properties:\n\n\\(f_X(x)\\) must be nonnegative everywhere\nThe area underneath the graph of \\(f_X(x)\\) must be 1\n\nThe graph of a pdf is called a density curve\nProbabilities are found as areas underneath the density curve."
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#areas-under-the-density-curve",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#areas-under-the-density-curve",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Areas Under the Density Curve",
+    "text": "Areas Under the Density Curve\n\n\n\n\nFor example, the area above represents \\(\\mathbb{P}(0.25 \\leq X \\leq 0.75)\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#uniform-distribution",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#uniform-distribution",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Uniform Distribution",
+    "text": "Uniform Distribution\n\nAn specific example of a continuous distribution is the Uniform distribution with parameters \\(a\\) and \\(b\\): \\(X \\sim \\mathrm{Unif}(a, \\ b)\\).\nThe p.d.f. is given by \\[ f_X(x) = \\begin{cases} \\frac{1}{b - a} & \\text{if } a \\leq x \\leq b \\\\ 0 & \\text{otherwise} \\\\ \\end{cases} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#effect-of-changing-a-and-b",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#effect-of-changing-a-and-b",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Effect of Changing \\(a\\) and \\(b\\)",
+    "text": "Effect of Changing \\(a\\) and \\(b\\)\n\nviewof a = Inputs.range(\n  [-3, 3], \n  {value: 0, step: 0.1, label: \"a=\"}\n)\n\nviewof b = Inputs.range(\n  [-3, 3], \n  {value: 1, step: 0.1, label: \"b=\"}\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmargin2 = ({top: 20, right: 30, bottom: 30, left: 40})\n\nheight2 = 400\n\nx_values2 = d32.scaleLinear()\n.domain(d32.extent(data2, d => d.x))\n.range([margin2.left, width - margin2.right])\n\ny_values2 = d32.scaleLinear()\n.domain([Math.min(d32.min(data2, d => d.y),0), Math.max(1,d32.max(data2, d => d.y))]).nice()\n.range([height2 - margin2.bottom, margin2.top])\n\nline2 = d32.line()\n.x(d => x_values2(d.x))\n.y(d => y_values2(d.y))\n\nxAxis2 = g => g\n.attr(\"transform\", `translate(0,${height2 - margin2.bottom})`)\n.call(d32.axisBottom(x_values2)\n      .ticks(width / 80)\n      .tickSizeOuter(0))\n\nyAxis2 = g => g\n.attr(\"transform\", `translate(${margin2.left},0)`)\n.call(d32.axisLeft(y_values2)\n      .tickValues(d32.scaleLinear().domain(y_values2.domain()).ticks()))\n\nfunction unif_pdf (input_value, mu, sigsq) {\nif(input_value < a){\n  return 0\n} else if(input_value > b){\n  return 0\n} else{\n  return 1 / (b - a)\n}\n}\n\nabs_x2=6\n\ndata2 = {\n  let values = [];\n  for (let x = -abs_x2; x < abs_x2; x=x+0.01) values.push({\"x\":x,\"y\":unif_pdf(x, µ, sigsquared)});\n  return values;\n}\n\nd32 = require(\"https://d3js.org/d3.v5.min.js\")\n\nchart2 = {\n  const svg = d32.select(DOM.svg(width, height2));\n  \n  svg.append(\"g\")\n  .call(xAxis2);\n  \n  svg.append(\"g\")\n  .call(yAxis2);\n  \n  svg.append(\"path\")\n  .datum(data2)\n  .attr(\"fill\", \"none\")\n  .attr(\"stroke\", \"steelblue\")\n  .attr(\"stroke-width\", 4)\n  .attr(\"stroke-linejoin\", \"round\")\n  .attr(\"stroke-linecap\", \"round\")\n  .attr(\"d\", line);\n  \n  return svg.node();\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit to https://observablehq.com/@dswalter/normal-distribution for the base of the applet code"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#uniform-distribution-1",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#uniform-distribution-1",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Uniform Distribution",
+    "text": "Uniform Distribution\n\nThe expected value and variance are: \\[ \\mathbb{E}[X] = \\frac{a + b}{2} ; \\quad \\mathrm{Var}(X) = \\frac{(b - a)^2}{12} \\]\nAgain, probabilities are found as areas underneath the density curve:"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#tail-probabilities",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#tail-probabilities",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Tail Probabilities",
+    "text": "Tail Probabilities\n\nVisualizing probabilities as areas also enables us to write more complicated probabilistic expressions as differences of tail probabilities:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncan be decomposed as\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\[ \\huge - \\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\[ \\mathbb{P}(a \\leq X \\leq b) = \\underbrace{\\mathbb{P}(X \\leq b)}_{\\text{c.d.f. at $b$}} - \\underbrace{\\mathbb{P}(X \\leq a)}_{\\text{c.d.f. at $a$}} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#chalkboard-example",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#chalkboard-example",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Chalkboard Example",
+    "text": "Chalkboard Example\n\n\n\n\n\n\n\nChalkboard Example 1\n\n\n\n\nThe time (in minutes) spent waiting in line at Starbucks is found to vary uniformly between 5mins and 15mins.\nWhat is the c.d.f. of wait times? (I.e., find the probability that a randomly selected person spends less than \\(x\\) minutes waiting in line, for an arbitrary value \\(x\\). Yes, your final answer will depend on \\(x\\); that’s why the c.d.f. is a function!)"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#chalkboard-example-2",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#chalkboard-example-2",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Chalkboard Example",
+    "text": "Chalkboard Example\n\n\n\n\n\n\n\nChalkboard Example 2\n\n\n\n\nThe time (in minutes) spent waiting in line at Starbucks is found to vary uniformly between 5mins and 15mins.\nA random sample of 10 customers is taken; what is the probability that exactly 4 of these customers will spend between 10 and 13 minutes waiting in line?"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#normal-distribution",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#normal-distribution",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Normal Distribution",
+    "text": "Normal Distribution\n\nWe also learned about the Normal Distribution: \\(X \\sim \\mathcal{N}(\\mu, \\ \\sigma)\\)\nThe normal density curve is bell-shaped"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#changing-mu-and-sigma",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#changing-mu-and-sigma",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Changing \\(\\mu\\) and \\(\\sigma\\)",
+    "text": "Changing \\(\\mu\\) and \\(\\sigma\\)\n\nviewof µ = Inputs.range(\n  [-3, 3], \n  {value: 0, step: 0.1, label: \"µ:\"}\n)\n\nviewof σ = Inputs.range(\n  [0.2, 3.1], \n  {value: 1, step: 0.01, label: \"σ:\"}\n)\n\nsigsquared = σ**2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmargin = ({top: 20, right: 30, bottom: 30, left: 40})\n\nheight = 400\n\nx_values = d3.scaleLinear()\n    .domain(d3.extent(data, d => d.x))\n    .range([margin.left, width - margin.right])\n\ny_values = d3.scaleLinear()\n    .domain([Math.min(d3.min(data, d => d.y),0), Math.max(1,d3.max(data, d => d.y))]).nice()\n    .range([height - margin.bottom, margin.top])\n    \nline = d3.line()\n    .x(d => x_values(d.x))\n    .y(d => y_values(d.y))\n\nxAxis = g => g\n  .attr(\"transform\", `translate(0,${height - margin.bottom})`)\n  .call(d3.axisBottom(x_values)\n      .ticks(width / 80)\n      .tickSizeOuter(0))\n\nyAxis = g => g\n  .attr(\"transform\", `translate(${margin.left},0)`)\n  .call(d3.axisLeft(y_values)\n      .tickValues(d3.scaleLinear().domain(y_values.domain()).ticks()))\n    \nfunction normal_pdf (input_value, mu, sigsq) {\n  let left_chunk = 1/(Math.sqrt(2*Math.PI*sigsq))\n  let right_top = -((input_value-mu)**2)\n  let right_bottom = 2*sigsq\n  return left_chunk * Math.exp(right_top/right_bottom)\n}\n\nabs_x=6\n\ndata = {\n  let values = [];\n  for (let x = -abs_x; x < abs_x; x=x+0.01) values.push({\"x\":x,\"y\":normal_pdf(x, µ, sigsquared)});\n  return values;\n}\n\nd3 = require(\"https://d3js.org/d3.v5.min.js\")\n\nchart = {\n  const svg = d3.select(DOM.svg(width, height));\n\n  svg.append(\"g\")\n      .call(xAxis);\n\n  svg.append(\"g\")\n      .call(yAxis);\n  \n  svg.append(\"path\")\n      .datum(data)\n      .attr(\"fill\", \"none\")\n      .attr(\"stroke\", \"steelblue\")\n      .attr(\"stroke-width\", 4)\n      .attr(\"stroke-linejoin\", \"round\")\n      .attr(\"stroke-linecap\", \"round\")\n      .attr(\"d\", line);\n  \n  return svg.node();\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit to https://observablehq.com/@dswalter/normal-distribution for the majority of the applet code"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#standardization",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#standardization",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Standardization",
+    "text": "Standardization\n\nIf \\(X \\sim \\mathcal{N}(\\mu, \\ \\sigma)\\), \\[ \\left( \\frac{X - \\mu}{\\sigma} \\right) \\sim \\mathcal{N}(0, \\ 1)\\]\n\n\n\n\nAlso, if \\(X \\sim \\mathcal{N}(\\mu, \\ \\sigma)\\):\n\n\\(\\mathbb{E}[X] = \\mu\\)\n\\(\\mathrm{Var}(X) = \\sigma^2\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#inferential-statistics-1",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#inferential-statistics-1",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Inferential Statistics",
+    "text": "Inferential Statistics\n\nThe primary goal of inferential statistics is to take samples from some population, and use summary statistics to try and make inferences about population parameters\nFor example, we could take samples, compute sample proportions \\(\\widehat{P}\\), and try to make inferences about the population proportion \\(p\\).\nWe could also take samples, compute sample means \\(\\overline{X}\\), and try to make inferences about the population mean \\(\\mu\\).\nOur summary statistics will often be point estimators (i.e. quantities that have expected value equal to the corresponding population parameter), which are random variables as they depend on the sample taken.\n\nFor example, different samples of people will have different average heights.\n\nThe distribution of a point estimator is called the sampling distribution of the estimator."
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#sampling-distribution-of-widehatp",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#sampling-distribution-of-widehatp",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Sampling Distribution of \\(\\widehat{P}\\)",
+    "text": "Sampling Distribution of \\(\\widehat{P}\\)\n\nGiven a population with population proportion \\(p\\), we use \\(\\widehat{P}\\) as a point estimator of \\(p\\).\nAssume the success-failure conditions are met; i.e.\n\n\\(n p \\geq 10\\)\n\\(n (1 - p) \\geq 10\\)\n\nThen, the Central Limit Theorem for Proportions tells us that \\[ \\widehat{P} \\sim \\mathcal{N}\\left(p, \\ \\sqrt{\\frac{p(1 - p)}{n}} \\right) \\]\nIf we don’t have access to \\(p\\) directly (as is often the case), we use the substitution approximation to check whether\n\n\\(n \\widehat{p} \\geq 10\\)\n\\(n (1 - \\widehat{p}) \\geq 10\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#sampling-distribution-of-overlinex",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#sampling-distribution-of-overlinex",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Sampling Distribution of \\(\\overline{X}\\)",
+    "text": "Sampling Distribution of \\(\\overline{X}\\)\n\nGiven a population with population mean \\(\\mu\\) and population standard deviation \\(\\sigma\\), we use \\(\\overline{X}\\) as a point estimator of \\(\\mu\\).\nIf the population is normally distributed, then \\[ \\overline{X} \\sim \\mathcal{N}\\left(\\mu, \\ \\frac{\\sigma}{\\sqrt{n}} \\right) \\] or, equivalently, \\[ \\frac{\\overline{X} - \\mu}{\\sigma / \\sqrt{n}} \\sim \\mathcal{N}\\left(0, \\ 1 \\right) \\]\nIf the population is not normally distributed, but the sample size \\(n\\) is at least 30, then the Central Limit Theorem for the Sample Mean (or just the Central Limit Theorem) tells us \\[ \\frac{\\overline{X} - \\mu}{\\sigma / \\sqrt{n}} \\sim \\mathcal{N}\\left(0, \\ 1 \\right) \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#sampling-distribution-of-overlinex-1",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#sampling-distribution-of-overlinex-1",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Sampling Distribution of \\(\\overline{X}\\)",
+    "text": "Sampling Distribution of \\(\\overline{X}\\)\n\nIf the population is non-normal, the sample size is large, and we don’t have access to \\(\\sigma\\) (but access to \\(s\\), the sample standard deviation instead), then \\[ \\frac{\\overline{X} - \\mu}{s / \\sqrt{n}} \\sim t_{n - 1}\\]\nRecall that the \\(t-\\)distribution looks like a standard normal distribution, but has wider tails than the standard normal distribution (which accounts for the additional uncertainty injected into the problem by using \\(s\\), a random variable, in place of \\(\\sigma\\), a deterministic constant).\nAlso recall that \\(t_{\\infty}\\) (i.e. the \\(t-\\)distribution with an infinite degrees of freedom) is the same thing as the standard normal distribution."
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#confidence-intervals",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#confidence-intervals",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Confidence Intervals",
+    "text": "Confidence Intervals\n\nInstead of using point estimators (which are random) to estimate population parameters (which are deterministic), it may make more sense to provide an interval that, with some confidence level, contains the true parameter value.\nIn general, when constructing a confidence interval for a parameter \\(\\theta\\), we use \\[ \\widehat{\\theta} \\pm c \\cdot \\mathrm{SD}(\\widehat{\\theta}) \\] where \\(c\\) is some constant that depends on our confidence level.\n\nAgain, think of the fishing analogy from the textbook- if we want to be more certain we’ll catch a fish, we should cast a wider net; i.e. higher confidence levels will lead to wider intervals.\n\nThe coefficient \\(c\\) will also depend on the sampling distribution of \\(\\widehat{\\theta}\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#confidence-intervals-for-a-population-proportion",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#confidence-intervals-for-a-population-proportion",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Confidence Intervals for a Population Proportion",
+    "text": "Confidence Intervals for a Population Proportion\n\nTo construct a confidence interval for an unknown population proportion \\(p\\), we use \\[ \\widehat{p} \\pm (-c) \\cdot \\sqrt{\\frac{\\widehat{p} \\cdot (1 - \\widehat{p})}{n}} \\] where \\(c\\) denotes the \\((1 - \\alpha) / 2 \\times 100\\)th percentile of the standard normal distribution.\n\nAgain, just remember that the coefficient should be positive"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#confidence-intervals-for-a-population-mean",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#confidence-intervals-for-a-population-mean",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Confidence Intervals for a Population Mean",
+    "text": "Confidence Intervals for a Population Mean\n\nTo construct a confidence interval for an unknown population mean \\(\\mu\\), we use \\[ \\overline{x} \\pm (z_{\\alpha}) \\cdot \\frac{\\sigma}{\\sqrt{n}} \\] or \\[ \\overline{x} \\pm (-t_{n - 1, \\ \\alpha}) \\cdot \\frac{s}{\\sqrt{n}} \\] depending on the conditions listed in the previous section of these slides."
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#worked-out-example-3",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#worked-out-example-3",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 3\n\n\n\n\nSaoirse would like to construct a 95% confidence interval for the true proportion of California Residents that speak Spanish. To that end, she took a representative sample of 120 CA residents and found that 36 of these residents speak Spanish.\n\nIdentify the population\nDefine the parameter of interest.\nDefine the random variable of interest.\nConstruct a 95% confidence interval for the true proportion of CA residents that speak Spanish."
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-2",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-2",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Solutions",
+    "text": "Solutions\n\nThe population is the set of all California residents.\nThe parameter of interest is \\(p\\), the true proportion of CA residents that speak Spanish.\nThe random variable of interest is \\(\\widehat{P}\\), the proportion of people in a representative sample of 120 CA residents that speak spanish.\nWe check the success-failure conditions, with the substitution approximation:\n\n\\(n \\widehat{p} = (120) \\cdot \\left( \\frac{36}{120} \\right) = 36 \\ \\checkmark\\)\n\\(n (1 - \\widehat{p}) = (120) \\cdot \\left( \\frac{84}{120} \\right) = 84 \\ \\checkmark\\)\n\n\n\nSince these conditions are met, we can proceed in constructing our confidence interval as \\[ 0.3 \\pm 1.96 \\cdot \\sqrt{\\frac{0.3 \\cdot 0.7}{120}} = \\boxed{[0.218 \\ , \\ 0.382]} \\]"
+  },
+  {
     "objectID": "Pages/Lectures/Lecture12/Lec12.html#previously",
     "href": "Pages/Lectures/Lecture12/Lec12.html#previously",
     "title": "PSTAT 5A: Lecture 12",
@@ -2685,7 +2986,7 @@
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Wednesday, May 10, 2023\n\nAs a reminder: Monday sections are Discussion Sections and Wednesday sections are Lab Sections. There will not be a discussion section in week 1 (as, if there were one, it would take place before the first lecture!)\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(4/03 - 4/09)\n\n00: Introduction \n01: Descriptive Statistics \n02: More Descriptive Statistics \n\nNo Discussion Section\nLab 01  (Introduction to Python, and Basic Data Types)\nSolns \n\n\n2\n(4/10 - 4/16)\n\n03: Intro to Probability \n04: Counting \n\nDiscussion Worksheet 01 \nSolns \nLab 02  (Data Classes)\nSolns \n\n\n3\n(4/17 - 4/23)\n\n05: Conditional Probabilities \n06: Review \n\nExam Information/Polices \n\nList of Topics \n\nPractice Problems \n\nPractice Problems Solns \n\nMT1 Coverpage \n\n\nDiscussion Worksheet 02 \nSolns \nLab 03 (Conditionals, Comparisons, and Functions)\nSolns \n\n\n4\n(4/24 - 4/30)\n\n07: Midterm Exam 1\n\nBlue Version: Blank Solns \nYellow Version: Blank Solns \n\n08: Discrete Random Variables \n\nDiscussion Worksheet 03 (Midterm 1 Review)\nLab 04 (Descriptive Statistics)\nSolns  \n\n\n5\n(5/01 - 5/07)\n\n09: Continuous Random Variables \n\nNormal Table\n\n10: Intro to Inferential Statistics \n\nIn-Lecture Demo \n\nExercise 2 Solns \n\n\nDiscussion Worksheet 04 \nSolns \nLab 05  Random Number Generation, and Simulations\nSolns \n\n\n\n6\n(5/08 - 5/14)\n\n11: Confidence Intervals for Proportions \n12: Inference on the Mean \n\nDiscussion Worksheet 05 \nSolns \nLab 06 Loops\n\nSolns \n\n\n7\n(5/15 - 5/21)\n\n13: Hypothesis Testing, Part I \n14: Review\n\nDiscussion Worksheet 06 \n\nCombined Tables\n\nSolns \nLab 07 Percentiles, and Testing Distributional Fits\n\n\n8\n(5/22 - 5/28)\n\n15: Midterm Exam 2\n\nExam Information/Polices \n\n16: Hypothesis Testing, Part II\n\nDiscussion Worksheet 07 (Midterm 2 Review)\nLab 08: Mini Recap of Material\n\n\n9\n(5/29 - 6/4)\n\n17: Hypothesis Testing in Multiple Samples\n18: Regression\n\nDiscussion Worksheet 08\nLab 09: Exploratory Data Analysis (EDA)\n\n\n10\n(6/05 - 6/11)\n\n19: More Regression\n20: Review\n\nDiscussion Worksheet 09\nLab 10: Regression\n\n\nFINAL EXAM\nTuesday, June 13 from 4-7pm"
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Wednesday, May 10, 2023\n\nAs a reminder: Monday sections are Discussion Sections and Wednesday sections are Lab Sections. There will not be a discussion section in week 1 (as, if there were one, it would take place before the first lecture!)\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(4/03 - 4/09)\n\n00: Introduction \n01: Descriptive Statistics \n02: More Descriptive Statistics \n\nNo Discussion Section\nLab 01  (Introduction to Python, and Basic Data Types)\nSolns \n\n\n2\n(4/10 - 4/16)\n\n03: Intro to Probability \n04: Counting \n\nDiscussion Worksheet 01 \nSolns \nLab 02  (Data Classes)\nSolns \n\n\n3\n(4/17 - 4/23)\n\n05: Conditional Probabilities \n06: Review \n\nExam Information/Polices \n\nList of Topics \n\nPractice Problems \n\nPractice Problems Solns \n\nMT1 Coverpage \n\n\nDiscussion Worksheet 02 \nSolns \nLab 03 (Conditionals, Comparisons, and Functions)\nSolns \n\n\n4\n(4/24 - 4/30)\n\n07: Midterm Exam 1\n\nBlue Version: Blank Solns \nYellow Version: Blank Solns \n\n08: Discrete Random Variables \n\nDiscussion Worksheet 03 (Midterm 1 Review)\nLab 04 (Descriptive Statistics)\nSolns  \n\n\n5\n(5/01 - 5/07)\n\n09: Continuous Random Variables \n\nNormal Table\n\n10: Intro to Inferential Statistics \n\nIn-Lecture Demo \n\nExercise 2 Solns \n\n\nDiscussion Worksheet 04 \nSolns \nLab 05  Random Number Generation, and Simulations\nSolns \n\n\n\n6\n(5/08 - 5/14)\n\n11: Confidence Intervals for Proportions \n12: Inference on the Mean \n\nDiscussion Worksheet 05 \nSolns \nLab 06 Loops\n\nSolns \n\n\n7\n(5/15 - 5/21)\n\n13: Hypothesis Testing, Part I \n14: Review \n\nDiscussion Worksheet 06 \n\nCombined Tables\n\nSolns \nLab 07 Percentiles, and Testing Distributional Fits\n\n\n8\n(5/22 - 5/28)\n\n15: Midterm Exam 2\n\nExam Information/Polices \n\n16: Hypothesis Testing, Part II\n\nDiscussion Worksheet 07 (Midterm 2 Review)\nLab 08: Mini Recap of Material\n\n\n9\n(5/29 - 6/4)\n\n17: Hypothesis Testing in Multiple Samples\n18: Regression\n\nDiscussion Worksheet 08\nLab 09: Exploratory Data Analysis (EDA)\n\n\n10\n(6/05 - 6/11)\n\n19: More Regression\n20: Review\n\nDiscussion Worksheet 09\nLab 10: Regression\n\n\nFINAL EXAM\nTuesday, June 13 from 4-7pm"
   },
   {
     "objectID": "Pages/calendar.html",
