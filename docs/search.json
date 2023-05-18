@@ -137,7 +137,7 @@
     "href": "Pages/Labs/Lab07/lab07.html#default-values-in-a-function",
     "title": "Lab07",
     "section": "Default Values in a Function",
-    "text": "Default Values in a Function\nBy the way, it should be noted that some arguments in certain functions have what are known as default values. For example, the code scipy.stats.norm.ppf(0.025) will run even though we haven’t explicitly specified an m and s value. If we consult the help file for the scipy.stats.norm.ppf() function, we will see that the arguments m and s are assigned default values of 0 and 1 respectively. What this means is that, we don’t explicitly specify a value for m or s, Python will automatically assign them a value of 0 and 1, respectively.\n\nimport scipy.stats as sps\nsps.norm.ppf(0.025)\n\n-1.9599639845400545\n\n\n\n\n\n\n\n\nTask 2\n\n\n\n\nWhat are the arguments that the function sps.t.ppf() (assuming we have imported scipy.stats as sps) takes?\nHow many of the arguments take default values? What are the default values?\n\n\n\nWhen defining a function ourselves, we can also specify default values for some (or even all) of the arguments! The syntax we use is:\n\ndef <function name>(<arg1> = <default1>, <arg2> = <default2>, ...):\n  <body of function>\n\nFor example,\n\ndef f(x, y = 1):\n  return x + y\n\nf(3)\n\n4\n\n\n\n\n\n\n\n\nTask 3\n\n\n\nWrite a function called dice_roll() that takes in two inputs:\n\nnum_sides (with a default value of 6)\nnum_rolls (with a default value of 1)\n\nthat simulates rolling a num_sides-sided die num_rolls times. Test that your function behaves as follows:\n\ndice_roll(12, 5) # rolling a 12-sided die 5 times\n\n[5, 5, 6, 2, 2]\n\n\n\ndice_roll(12) # rolling a 12-sided die once\n\n[6]\n\n\n\ndice_roll() # rolling a 6-sided die once\n\n[1]"
+    "text": "Default Values in a Function\nBy the way, it should be noted that some arguments in certain functions have what are known as default values. For example, the code scipy.stats.norm.ppf(0.025) will run even though we haven’t explicitly specified an m and s value. If we consult the help file for the scipy.stats.norm.ppf() function, we will see that the arguments m and s are assigned default values of 0 and 1 respectively. What this means is that, we don’t explicitly specify a value for m or s, Python will automatically assign them a value of 0 and 1, respectively.\n\nimport scipy.stats as sps\nsps.norm.ppf(0.025)\n\n-1.9599639845400545\n\n\n\n\n\n\n\n\nTask 2\n\n\n\n\nWhat are the arguments that the function sps.t.ppf() (assuming we have imported scipy.stats as sps) takes?\nHow many of the arguments take default values? What are the default values?\n\n\n\nWhen defining a function ourselves, we can also specify default values for some (or even all) of the arguments! The syntax we use is:\n\ndef <function name>(<arg1> = <default1>, <arg2> = <default2>, ...):\n  <body of function>\n\nFor example,\n\ndef f(x, y = 1):\n  return x + y\n\nf(3)\n\n4\n\n\n\n\n\n\n\n\nTask 3\n\n\n\nWrite a function called dice_roll() that takes in two inputs:\n\nnum_sides (with a default value of 6)\nnum_rolls (with a default value of 1)\n\nthat simulates rolling a num_sides-sided die num_rolls times. Test that your function behaves as follows:\n\ndice_roll(12, 5) # rolling a 12-sided die 5 times\n\n[4, 4, 4, 1, 1]\n\n\n\ndice_roll(12) # rolling a 12-sided die once\n\n[5]\n\n\n\ndice_roll() # rolling a 6-sided die once\n\n[4]"
   },
   {
     "objectID": "Pages/Labs/Lab07/lab07.html#testing-distributional-fits",
@@ -389,7 +389,7 @@
     "href": "Pages/hw.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Here you will find all homework assignments and their solutions.\n\nHomework 1: due by 11:59pm on Tuesday, April 11 .pdf Solns \nHomework 2: due by 11:59pm on Tuesday, April 18 .pdf Solns \nHomework 3: due by 11:59pm on MONDAY, APRIL 24 .pdf Solns \nHomework 4: due by 11:59pm on Tuesday, May 2 .pdf Solns \nHomework 5: due by 11:59pm on Wednesday, May 10 .pdf Solns \nHomework 6: due by 11:59pm on Tuesday, May 16 .pdf"
+    "text": "Here you will find all homework assignments and their solutions.\n\nHomework 1: due by 11:59pm on Tuesday, April 11 .pdf Solns \nHomework 2: due by 11:59pm on Tuesday, April 18 .pdf Solns \nHomework 3: due by 11:59pm on MONDAY, APRIL 24 .pdf Solns \nHomework 4: due by 11:59pm on Tuesday, May 2 .pdf Solns \nHomework 5: due by 11:59pm on Wednesday, May 10 .pdf Solns \nHomework 6: due by 11:59pm on Tuesday, May 16 .pdf\nHomework 7: due by 11:59pm on MONDAY, MAY 22 .pdf"
   },
   {
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#last-time",
@@ -2422,11 +2422,270 @@
     "text": "General Flowchart\n\n\n\n\ngraph TB\n  A[Is the population Normal?  . ] --> |Yes| B{{Use Normal .}}\n  A --> |No| C[Is n >= 30?  .]\n  C --> |Yes| D[sigma or s?  .]\n  C --> |No| E{{cannot proceed   .}}\n  D --> |sigma| F{{Use Normal .}}\n  D --> |s| G{{Use t }}"
   },
   {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#cats",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#cats",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Cats!",
+    "text": "Cats!\n\nAs we have previously seen…\n… I like cats.\nSo, let’s consider another cat example!\nIt is often stated that only 1 in 5 orange tabby cats is female; i.e. that only 20% of orange tabby cats are female.\nLet’s say we take a representative sample of 100 orange tabby cats and find that 19 of these cats are female.\nSince we observed a proportion of only 19% female cats in our sample, does that mean the claim of 20% of orange tabby cats being female is wrong?\nWell, no! We know that this 19% is actually an observed instance of \\(\\widehat{P}\\), which itself is random.\n\nFurthermore, 19% is pretty close to 20% so there’s nothing obviously letting us know that the claim is false."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#cats-1",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#cats-1",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Cats!",
+    "text": "Cats!\n\nHowever, if instead our sample of 100 orange tabby cats contained only 1 female in this sample, we might start to question the claim that 20% of orange tabby cats are female.\nOkay, what if in our sample of 100 orange tabby cats we actually only observed 15 female cats?\nThings are perhaps a bit less clear now… we know that there will be some variability in our point estimator, but how much variability would we really expect? Enough to plausibly observe a sample proportion of 15%?\n\n\n\n\nA little more abstractly: we started with a hypothesis (in this example, “20% of orange tabby cats are female”). We then wish to use our data to test how plausible this hypothesis is."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#hypothesis-testing",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#hypothesis-testing",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Hypothesis Testing",
+    "text": "Hypothesis Testing\n\nThis is exactly the framework of hypothesis testing.\nIn hypothesis testing, we start with a pair of competing claims which we call the null hypothesis and alternative hypothesis, respectively.\n\nWe use \\(H_0\\), read as “h-naught”, to denote the null hypothesis and \\(H_A\\) to denote the alternative hypothesis.\n\nFor instance, in our cat example above the null hypothesis would be “\\(H_0\\): the true proportion of orange cats that are female is 20%”.\nOftentimes we will want to phrase our hypotheses in more mathematical terms. This is where the notation we’ve used over the past few lectures comes into play: letting \\(p\\) denote the true proportion of orange tabby cats that are female, we can write our null hypothesis as \\[ H_0: \\ p = 0.2 \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#hypothesis-testing-1",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#hypothesis-testing-1",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Hypothesis Testing",
+    "text": "Hypothesis Testing\n\nWhat about the alternative hypothesis?\nAs the name suggests, the alternative hypothesis provides some sort of alternative to the null.\nLet’s look at our cat example again. Here are some potential alternatives to the null:\n\n\\(p \\neq 0.2\\) (i.e. the true proportion of orange tabby cats that are female is not 20%)\n\\(p > 0.2\\) (i.e. the true proportion of orange tabby cats that are female is larger than 20%)\n\\(p < 0.2\\) (i.e. the true proportion of orange tabby cats that are female is less than 20%)\n\\(p = 0.10\\) (i.e. the true proportion of orange tabby cats that are female is 10%)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#hypothesis-testing-2",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#hypothesis-testing-2",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Hypothesis Testing",
+    "text": "Hypothesis Testing\n\nEach of these alternative hypotheses has a name.\nBefore we talk about these names, let’s establish a slightly more general framework for conducting hypothesis testing on a proportion.\nOur null hypothesis will often take the form \\[ H_0 : \\ p = p_0 \\] for some prespecified value \\(p_0\\) (e.g. 20%, like in our cat example above).\nThis leads to four possible alternative hypotheses:\n\n\\(H_A: \\ p \\neq p_0\\)\n\\(H_A: \\ p > p_0\\)\n\\(H_A: \\ p < p_0\\)\n\\(H_A: \\ p = p_1\\) (where \\(p_1 \\neq p_0\\))\n\nI’d like to stress: in a specific hypothesis testing problem, we need to pick one of these alternative hypotheses"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#terminology",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#terminology",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Terminology",
+    "text": "Terminology\n\nWhen our alternative hypothesis is of the form \\(H_A: \\ p \\neq p_0\\), we refer to the situation as a two-sided hypothesis test.\nWhen our alternative hypothesis is of the form \\(H_A: \\ p > p_0\\) or \\(H_A: \\ p < p_0\\), we refer to the situation as a one-sided hypothesis test. Specifically:\n\n\\(H_A: \\ p < p_0\\) leads to a lower-tailed test\n\\(H_A: \\ p > p_0\\) leads to an upper-tailed test\n\nWhen our alternative hypothesis is of the form \\(H_A: \\ p = p_1\\) (for some value \\(p_1\\) different than our null value \\(p_0\\)), we refer to the situation as a simple-vs-simple hypothesis test.\nAgain, our test will be only one of the above!\nAdditionally, it is usually up to the tester (i.e. the statistician or datascientist in charge of conducting the hypothesis test) to pick which set of hypotheses to use."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#setting-the-hypotheses",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#setting-the-hypotheses",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Setting the Hypotheses",
+    "text": "Setting the Hypotheses\n\nOkay, so which test to we use when?\nIn practice, there isn’t a one-size-fits-all approach to knowing which set of hypotheses to adapt in a given situation.\nUsually, in the absence of any additional information, we adopt a two-sided test as it tends to be the most general.\nHowever, sometimes additional information may be available to us that may influence us to select a different type of test.\n\nFor example, if previous studies have resulted in numerous observed sample proportions much less than the null value \\(p_0\\), we may want to adopt a lower-tailed test.\n\nHow do we set the null hypothesis? Well, typically the null hypothesis is easier to set: I like to think of it as the “status quo”.\n\nIn other words, the null hypothesis is often taken to be whatever the existing claims state; e.g. that 20% of orange tabby cats are female."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nForbes magazine has claimed that, as of May 2023, 91.7% of US households own a vehicle.\n\nWhat is the population?\nWhat is the sample?\nDefine the parameter of interest.\nDefine the random variable of interest.\nWrite down the null hypothesis for this test.\nWrite down the two-sided alternative hypothesis for this test.\nWrite down the lower-tailed hypothesis for this test.\nWrite down the upper-tailed hypothesis for this test."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#solutions",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Solutions",
+    "text": "Solutions\n\nThe population is the set of all US households.\nThe sample is the representative sample of 500 US households we took.\nThe parameter of interest is \\(p =\\) the true proportion of US households that own a vehicle.\nThe random variable of interest is \\(\\widehat{P} =\\) the proportion of households in a sample of 500 that own a vehicle.\nRecall that the null hypothesis can be thought of as the “status quo”.\n\nIn other words, we take the null to be whatever claim we want to test: \\[ H_0 : \\ p = 0.917 \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-contd",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-contd",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Solutions (cont’d)",
+    "text": "Solutions (cont’d)\n\nThe two-sided alternative hypothesis would be that the proportion of households that own a vehicle is not equal to 91.7%: \\[ H_A: \\ p \\neq 0.917 \\]\nThe lower-tailed alternative hypothesis would be that the proportion of households that own a vehicle is less than 91.7%: \\[ H_A: \\ p < 0.917 \\]\nThe lower-tailed alternative hypothesis would be that the proportion of households that own a vehicle is greater than 91.7%: \\[ H_A: \\ p > 0.917 \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#hypothesis-testing-3",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#hypothesis-testing-3",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Hypothesis Testing",
+    "text": "Hypothesis Testing\n\nAlright, here is what we have so far in terms of hypotheses:\n\nThe null hypothesis represents a sort of “status quo” statement.\nThe alternative hypothesis represents an alternative to the status quo.\n\nSo, what is a hypothesis test?\nA hypothesis test is a framework/procedure that allows us to determine whether or not the null should be rejected in favor of the alternative.\nNaturally, a hypothesis test will depend on data! As such, we can think of a hypothesis test as a function that takes in data and outputs either reject H0 or fail to reject H0. \\[ \\texttt{decision}(\\texttt{data}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\texttt{...} \\\\  \\texttt{fail to reject } H_0 & \\text{if } \\texttt{...} \\\\ \\end{cases}  \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#fail-to-reject",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#fail-to-reject",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Fail To Reject?",
+    "text": "Fail To Reject?\n\nBy the way, the results of a hypothesis test are always framed in terms of the null hypothesis; e.g. “reject \\(H_0\\)” or “fail to reject \\(H_0\\)”.\nWait, why are we saying “fail to reject \\(H_0\\)”? Isn’t that just equivalent to “accept \\(H_0\\)”?\nWell, not quite…\nThink of it this way: just because we are saying the particular alternative hypothesis we picked is less plausible than the null, doesn’t mean there isn’t a different alternative hypothesis that is more plausible than the null.\nAll we are saying when we fail to reject the null is exactly that- we didn’t have enough information to reject \\(H_0\\) outright. We are not saying that \\(H_0\\) must be true.\nAdmittedly, some statisticians have gotten a little lax with this distinction and you may encounter textbooks and/or professors that use terms like “accept the null”.\n\nFor better or for worse, I am a bit of a traditionalist in this respect and will adhere to the terminology “fail to reject” in favor of “accept”."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#four-states-of-the-world",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#four-states-of-the-world",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Four States of the World",
+    "text": "Four States of the World\n\nOkay, so we’ve talked a bit more about what a hypothesis test actually is: it is a procedure that takes in data and outputs a decision on whether or not to reject the null.\nBehind the scenes, however, the null will either be true or not.\nThis leads to the following four situations:\n\n\n\n\n\n\n\n\n\nResult of Test\n\n\n\n\n\n\n\nReject\n\n\nFail to Reject\n\n\n\n\nH0\n\n\nTrue\n\n\n\n\n\n\n\n\nFalse\n\n\n\n\n\n\n\n\n\n\n\n\nSome of these situations are good, and some of these are bad! Which are which?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#four-states-of-the-world-1",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#four-states-of-the-world-1",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Four States of the World",
+    "text": "Four States of the World\n\n\n\n\n\n\n\n\n\nResult of Test\n\n\n\n\n\n\n\nReject\n\n\nFail to Reject\n\n\n\n\nH0\n\n\nTrue\n\n\nBAD\n\n\nGOOD\n\n\n\n\nFalse\n\n\nGOOD\n\n\nBAD\n\n\n\n\n\n\n\nWe give names to the two “bad” situations: Type I and Type II errors.\n\n\n\n\n\n\n\n\n\nResult of Test\n\n\n\n\n\n\n\nReject\n\n\nFail to Reject\n\n\n\n\nH0\n\n\nTrue\n\n\nType I Error\n\n\nGOOD\n\n\n\n\nFalse\n\n\nGOOD\n\n\nType II Error"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#type-i-and-type-ii-errors",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#type-i-and-type-ii-errors",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Type I and Type II Errors",
+    "text": "Type I and Type II Errors\n\n\n\n\n\n\n\nDefinition: Type I and Type II errors\n\n\n\n\n\nA Type I Error occurs when we reject \\(H_0\\), when \\(H_0\\) was actually true.\nA Type II Error occurs when we fail to reject \\(H_0\\), when \\(H_0\\) was actually false.\n\n\n\n\n\n\n\n\nA common way of interpreting Type I and Type II errors are in the context of the judicial system.\nThe US judicial system is built upon a motto of “innocent until proven guilty.” As such, the null hypothesis is that a given person is innocent.\nA Type I error represents convicting an innocent person.\nA Type II error represents letting a guilty person go free."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#type-i-and-type-ii-errors-1",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#type-i-and-type-ii-errors-1",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Type I and Type II Errors",
+    "text": "Type I and Type II Errors\n\nViewing the two errors in the context of the judicial system also highlights a tradeoff.\nIf we want to reduce the number of times we wrongfully convict an innocent person, we may want to make the conditions for convicting someone even stronger.\nBut, this would have the consequence of having fewer people overall convicted, thereby (and inadvertently) increasing the chance we let a guilty person go free.\nAs such, controlling for one type of error increses the likelihood of committing the other type."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example-2",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example-2",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\nForbes magazine has claimed that, as of May 2023, 91.7% of US households own a vehicle.\nAssuming we are conducting a two-sided test, what would a Type I error be in the context of this experiment? What about a Type II error?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-1",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-1",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Solutions",
+    "text": "Solutions\n\nA Type I error would be concluding that the true proportion of US households that own a vehicle is not 91.7%, when in fact 91.8% of US households own a vehicle.\nA Type II error would be concluding that the true proportion of US households that own a vehicle is 91.7%, when in fact the true proportion is not 91.8%."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#leadup",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#leadup",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Leadup",
+    "text": "Leadup\n\nAlright, now we know about the basics and background surrounding hypothesis tests.\nHow do we actually construct one?\nLet’s focus on hypothesis testing for population proportions for now; we’ll deal with sample means later.\nRecall our setup: our hypothesis test should be some sort of decision-making process of the form \\[ \\texttt{decision}(\\texttt{data}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\texttt{...} \\\\  \\texttt{fail to reject } H_0 & \\text{if } \\texttt{...} \\\\ \\end{cases}  \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#leadup-1",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#leadup-1",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Leadup",
+    "text": "Leadup\n\nFor the moment, let’s return to the cat example from the beginning of the lecture.\nLetting \\(p\\) denote the true proportion of orange tabby cats that are female, our null hypothesis takes the form \\(H_0: \\ p = 0.2\\).\nSuppose we take a two-sided alternative: \\(H_A: \\ p \\neq 0.2\\).\nNow, we have a good summary statistic for proportions: \\(\\widehat{P}\\).\nAs such, our decision process should probably be of the form \\[ \\texttt{decision}(\\widehat{p}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\texttt{...} \\\\  \\texttt{fail to reject } H_0 & \\text{if } \\texttt{...} \\\\ \\end{cases}  \\]\nSaid differently: if we observe a value of \\(\\widehat{p} = 0.82\\), or a value of \\(\\widehat{p} = 0.001\\), we would likely be inclined to reject the null."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#test-statistic",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#test-statistic",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Test Statistic",
+    "text": "Test Statistic\n\nSo, it makes sense to reject \\(H_0\\) when \\(\\widehat{p}\\) is very far away from \\(p_0\\) (which, in the cat example, is \\(0.2\\)). \\[ \\texttt{decision}(\\widehat{p}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if $\\widehat{p}$ is far from $p_0$} \\\\  \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]\nFor reasons that will become clear in a few slides, we typically avoid using \\(\\widehat{p}\\) and instead use a standardized version of \\(\\widehat{p}\\): \\[ \\mathrm{TS} = \\frac{\\widehat{P} - p_0}{\\sqrt{\\frac{p_0 (1 - p_0)}{n}}} \\] where \\(\\mathrm{TS}\\) stands for test statistic."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#test-statistic-1",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#test-statistic-1",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Test Statistic",
+    "text": "Test Statistic\n\nLet’s try and convert our decision-making process to be in terms of the test statistic.\nFirst, note that saying \\(\\widehat{p}\\) is “far away” from \\(p_0\\) could mean one of two things:\n\n\\(\\widehat{p}\\) was much larger than \\(p_0\\)\n\\(\\widehat{p}\\) was much smaller than \\(p_0\\)\n\nThese two cases can be combined into a single case if we think in terms of the magnitude of the distance bewteen \\(\\widehat{p}\\) and \\(p_0\\), which is equivalent to considering \\(|\\mathrm{TS}|\\).\nWhat I’m getting at is this: if \\(\\widehat{p}\\) was far away from \\(p_0\\), then \\(|\\mathrm{TS}|\\) must be large.\nHence, we can rephrase our decision process as \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if $|\\mathrm{TS}|$ is large} \\\\  \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#constructing-the-test",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#constructing-the-test",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Constructing the Test",
+    "text": "Constructing the Test\n\nOkay, but how large is “large”?\nThat is, for what values of \\(|\\mathrm{TS}|\\) will we reject the null?\n\nBy the way, the set of values that correspond to a decision of reject is called the rejection region of a test.\n\nIn other words, if our test takes the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| > c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] what value should we take \\(c\\) to be?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#the-errors",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#the-errors",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "The Errors",
+    "text": "The Errors\n\nWell, to answer this question, we need to return to our considerations of Type II and Type II errors.\nRecall that a Type I error occurs when we reject \\(H_0\\) when \\(H_0\\) was actually true, and a Type II error occurs when we fail to reject \\(H_0\\) when \\(H_0\\) was false.\nChanging the value of \\(c\\) changes the probability of committing the two types of errors!\nSpecifically, setting a larger value of \\(c\\) corresponds to rejecting \\(H_0\\) for fewer values, thereby decreasing the probability of committing a Type I errror but increasing the probability of committing a Type II error.\nConversely, setting a smaller value of \\(c\\) corresponds to rejecting \\(H_0\\) for more values, thereby increasing the probability of committing a Type I error but decreasing the probability of committing a Type II error."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#the-compromise",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#the-compromise",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "The Compromise",
+    "text": "The Compromise\n\nWe need to compromise!\nIn practice, we go into the test knowing how much leeway we are going to allow ourselves to commit a Type I error. That is, we prespecify our tolerance for committing a Type I error.\nThe probability of committing a Type I error is called the level of significance (or just significance level), and is often denoted \\(\\alpha\\).\nStatisticians therefore construct a hypothesis test around a specific value of \\(\\alpha\\).\nA common level of significance is \\(\\alpha = 0.05\\), though \\(\\alpha = 0.01\\) and \\(\\alpha = 0.1\\) are sometimes used as well.\nOkay, so what does this mean for our test?\nWe now know that \\(\\alpha\\) denotes the probability of rejecting the null when the null is true; i.e. \\[ \\mathbb{P}_{H_0}(|\\mathrm{TS}| > c) = \\alpha \\] where the symbol \\(\\mathbb{P}_{H_0}\\) just means “assuming the null, the probability of….”"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#the-compromise-1",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#the-compromise-1",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "The Compromise",
+    "text": "The Compromise\n\nAgain, remember that \\(\\alpha\\) is fixed (e.g. \\(0.05\\)); it is the value of \\(c\\) we are after!\nSo, a natural question arises: what is the distribution of \\(\\mathrm{TS}\\) under the null?\nRecall that \\[ \\mathrm{TS} = \\frac{\\widehat{P} - p_0}{\\sqrt{\\frac{p_0 (1 - p_0)}{n}}} \\]\nNow, assuming the null is true (i.e. that \\(p = p_0\\)), the Central Limit Theorem for Proportions tells us \\[ \\widehat{P} \\stackrel{H_0}{\\sim} \\mathcal{N}\\left(p_0, \\ \\sqrt{\\frac{p_0(1 - p_0)}{n}} \\right) \\] where the symbol \\(\\stackrel{H_0}{\\sim}\\) is just a shorthand for “distributed as, under the null”"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#the-distribution-of-the-test-statistic",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#the-distribution-of-the-test-statistic",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "The Distribution of the Test Statistic",
+    "text": "The Distribution of the Test Statistic\n\nTherefore, assuming the null is correct, we have \\[ \\mathrm{TS} \\sim \\mathcal{N}(0, \\ 1)\\]\nSo, our condition \\[ \\mathbb{P}_{H_0}(|\\mathrm{TS}| > c) = \\alpha \\] which, by the symmetry of the standard normal distribution, is equivalent to \\[ \\mathbb{P}_{H_0}(\\mathrm{TS} < -c) = \\frac{\\alpha}{2} \\]\nHence, \\(-c\\) is just the \\((\\alpha / 2) \\times 100\\) percentile of the standard normal distribution!!!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#the-test",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#the-test",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "The Test",
+    "text": "The Test\n\n\n\n\n\n\n\nTwo-Sided Test for a Proportion:\n\n\n\n\nWhen testing \\(H_0: \\ p = p_0\\) vs \\(H_A: \\ p \\neq p_0\\) at an \\(\\alpha\\) level of significance, where \\(p\\) denotes a population proportion, the test takes the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| > z_{1 - \\alpha/2} \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] where:\n\n\\(\\displaystyle \\mathrm{TS} = \\frac{\\widehat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}}\\)\n\\(z_{1 - \\alpha/2}\\) denotes the \\((\\alpha/2) \\times 100\\)th percentile of the standard normal distribution, scaled by negative 1."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#the-test-1",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#the-test-1",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "The Test",
+    "text": "The Test\n\nFor example, if \\(\\alpha = 0.05\\) then \\(c\\) is negative 1 times the 2.5th percentile of the standard normal distribution; i.e. 1.96 and our test becomes \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| > 1.96 \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]\n\n\nCAUTION!!!\n\n\nAll of this is predicated on our invocation of the Central Limit Theorem for Proportions!\nIn other words, the test above was derived assuming \\[ \\widehat{P} \\stackrel{H_0}{\\sim} \\mathcal{N}\\left(p_0, \\ \\sqrt{\\frac{p_0(1 - p)}{n}} \\right) \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#the-assumptions",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#the-assumptions",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "The Assumptions",
+    "text": "The Assumptions\n\n\nThis is not always true!\n\n\n\nWhen is this true? In other words, what conditions do we need in order for the above distributional statement to be true?\n\nThat’s right, the success-failure conditions.\n\nBut now, since we only need the above to be true for \\(p = p_0\\), we only need to verify that:\n\n\\(n p_0 \\geq 10\\)\n\\(n (1 - p_0) \\geq 10\\)\n\nIt is very important we check these conditions before conducting our test!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#the-test-2",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#the-test-2",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "The Test",
+    "text": "The Test\n\n\n\n\n\n\n\nTwo-Sided Test for a Proportion:\n\n\n\nWhen testing \\(H_0: \\ p = p_0\\) vs \\(H_A: \\ p \\neq p_0\\) at an \\(\\alpha\\) level of significance, where \\(p\\) denotes a population proportion:\n\nCheck that the success-failure conditions hold. Namely, check that:\n\n\\(n p_0 \\geq 10\\)\n\\(n (1 - p_0) \\geq 10\\)\n\nCompute the test statistic \\[\\displaystyle \\mathrm{TS} = \\frac{\\widehat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}}\\]\nCompute the critical value \\(z_{1 - \\alpha/2}\\), which is the the \\((\\alpha/2) \\times 100\\)th percentile of the standard normal distribution, scaled by negative 1.\nReject \\(H_0\\) if \\(|\\mathrm{TS}| > z_{1 - \\alpha/2}\\), and fail to reject \\(H_0\\) otherwise."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example-3",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example-3",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 3\n\n\n\n\nForbes magazine has claimed that, as of May 2023, 91.7% of US households own a vehicle. To test that claim, we take a representative sample of 500 US households and observe that 89.4% of these households own a vehicle.\nConduct a two-sided hypothesis test at a \\(5\\%\\) level of significance on Forbes’s claim that 91.7% of US households own a vehicle. Be sure you phrase your conclusion clearly, and in the context of the problem."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-2",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-2",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Solutions",
+    "text": "Solutions\n\nAll we really need to do is follow the steps outlined in the previous slide.\n\n\nCheck Conditions\n\n\\(n p_0 = 500 \\cdot (0.917) = 458.5 \\geq 10 \\ \\checkmark\\)\n\\(n (1 - p_0) = 500 \\cdot (1 - 0.917) = 41.5 \\geq 10 \\ \\checkmark\\)\nSince both conditions are met, we can proceed.\n\nCompute the Test Statistic \\[ \\mathrm{TS} = \\frac{\\widehat{p} - p_0}{\\sqrt{\\frac{p_0 (1 - p_0)}{n}}} = \\frac{0.894 - 0.917}{\\sqrt{\\frac{0.917 (1 - 0.917)}{500}}} = -1.86 \\]\nCompute the critical value Because \\(\\alpha = 0.05\\), the critical value is \\(1.96\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-3",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-3",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Solutions",
+    "text": "Solutions\n\nConduct the test: We see that \\(|\\mathrm{TS}| = |-1.86| = 1.86\\) which is not greater than \\(1.96\\). As such, we fail to reject the null.\n\n\nNow, the problem told us to phrase our conclusions carefully and in the context of the problem.\nIt is VERY important to include the level of significance in your final conclusions.\nSo, here is how we would phrase the final conclusion of our test:\n\n\n\nAt an \\(\\alpha = 0.05\\) level of significance, there is insufficient evidence to reject Forbes’s claim that 91.7% of US households own a vehicle.\n\n\n\nIt is very important to include the level of significance in our conclusion! This is because the final outcome of our test may change depending on which level of significance we use."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example-4",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example-4",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 4\n\n\n\n\nForbes magazine has claimed that, as of May 2023, 91.7% of US households own a vehicle. To test that claim, we take a representative sample of 500 US households and observe that 89.4% of these households own a vehicle.\nConduct a two-sided hypothesis test at a \\(1\\%\\) level of significance on Forbes’s claim that 91.7% of US households own a vehicle. Be sure you phrase your conclusion clearly, and in the context of the problem."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-4",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-4",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Solutions",
+    "text": "Solutions\n\nThe only thing that will change from before is our critical value.\nSince we are using an \\(\\alpha = 0.01\\) level of significance, we find the 0.5th percentile [since \\((0.01) / 2 \\times 100\\% = 0.05\\%\\)]\nThere are several ways we could find this critical value.\nThe first is to use our normal table: \\(2.575\\).\nThe second is to use our \\(t-\\)table: \\(2.58\\)\nThe third is to use Python:\n\n\n\nimport scipy.stats as sps\n-sps.norm.ppf(0.005)\n\n2.575829303548901"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-contd-1",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-contd-1",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Solutions (cont’d)",
+    "text": "Solutions (cont’d)\n\nSince the observed value of our test statistic \\(|\\mathrm{TS}| = 1.86\\) is smaller than all of these values, we fail to reject the null.\n\n\n\nAt an \\(\\alpha = 0.01\\) level of significance, there is insufficient evidence to reject Forbes’s claim that 91.7% of US households own a vehicle.\n\n\n\nBy the way, I’m sure some of you are wondering exactly which cutoff (the one from the \\(z-\\)table, the one from the \\(t-\\)table, or the one from Python) to use?\nIn a real-world setting, definitely use the one Python generated as it is the most accurate.\nOn a quiz, I will accept either the \\(z-\\)table or the \\(t-\\)table value, provided you VERY CLEARLY AND EXPLICITLY state which one you are using."
+  },
+  {
     "objectID": "Pages/schedule.html",
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Wednesday, May 10, 2023\n\nAs a reminder: Monday sections are Discussion Sections and Wednesday sections are Lab Sections. There will not be a discussion section in week 1 (as, if there were one, it would take place before the first lecture!)\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(4/03 - 4/09)\n\n00: Introduction \n01: Descriptive Statistics \n02: More Descriptive Statistics \n\nNo Discussion Section\nLab 01  (Introduction to Python, and Basic Data Types)\nSolns \n\n\n2\n(4/10 - 4/16)\n\n03: Intro to Probability \n04: Counting \n\nDiscussion Worksheet 01 \nSolns \nLab 02  (Data Classes)\nSolns \n\n\n3\n(4/17 - 4/23)\n\n05: Conditional Probabilities \n06: Review \n\nExam Information/Polices \n\nList of Topics \n\nPractice Problems \n\nPractice Problems Solns \n\nMT1 Coverpage \n\n\nDiscussion Worksheet 02 \nSolns \nLab 03 (Conditionals, Comparisons, and Functions)\nSolns \n\n\n4\n(4/24 - 4/30)\n\n07: Midterm Exam 1\n\nBlue Version: Blank Solns \nYellow Version: Blank Solns \n\n08: Discrete Random Variables \n\nDiscussion Worksheet 03 (Midterm 1 Review)\nLab 04 (Descriptive Statistics)\nSolns  \n\n\n5\n(5/01 - 5/07)\n\n09: Continuous Random Variables \n\nNormal Table\n\n10: Intro to Inferential Statistics \n\nIn-Lecture Demo \n\nExercise 2 Solns \n\n\nDiscussion Worksheet 04 \nSolns \nLab 05  Random Number Generation, and Simulations\nSolns \n\n\n\n6\n(5/08 - 5/14)\n\n11: Confidence Intervals for Proportions \n12: Inference on the Mean \n\nDiscussion Worksheet 05 \nSolns \nLab 06 Loops\n\nSolns \n\n\n7\n(5/15 - 5/21)\n\n13: Hypothesis Testing, Part I\n14: Review\n\nDiscussion Worksheet 06 \n\nCombined Tables\n\nSolns \nLab 07 Percentiles, and Testing Distributional Fits\n\n\n8\n(5/22 - 5/28)\n\n15: Midterm Exam 2\n\nExam Information/Polices \n\n16: Hypothesis Testing, Part II\n\nDiscussion Worksheet 07 (Midterm 2 Review)\nLab 08: Mini Recap of Material\n\n\n9\n(5/29 - 6/4)\n\n17: Hypothesis Testing in Multiple Samples\n18: Regression\n\nDiscussion Worksheet 08\nLab 09: Exploratory Data Analysis (EDA)\n\n\n10\n(6/05 - 6/11)\n\n19: More Regression\n20: Review\n\nDiscussion Worksheet 09\nLab 10: Regression\n\n\nFINAL EXAM\nTuesday, June 13 from 4-7pm"
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Wednesday, May 10, 2023\n\nAs a reminder: Monday sections are Discussion Sections and Wednesday sections are Lab Sections. There will not be a discussion section in week 1 (as, if there were one, it would take place before the first lecture!)\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(4/03 - 4/09)\n\n00: Introduction \n01: Descriptive Statistics \n02: More Descriptive Statistics \n\nNo Discussion Section\nLab 01  (Introduction to Python, and Basic Data Types)\nSolns \n\n\n2\n(4/10 - 4/16)\n\n03: Intro to Probability \n04: Counting \n\nDiscussion Worksheet 01 \nSolns \nLab 02  (Data Classes)\nSolns \n\n\n3\n(4/17 - 4/23)\n\n05: Conditional Probabilities \n06: Review \n\nExam Information/Polices \n\nList of Topics \n\nPractice Problems \n\nPractice Problems Solns \n\nMT1 Coverpage \n\n\nDiscussion Worksheet 02 \nSolns \nLab 03 (Conditionals, Comparisons, and Functions)\nSolns \n\n\n4\n(4/24 - 4/30)\n\n07: Midterm Exam 1\n\nBlue Version: Blank Solns \nYellow Version: Blank Solns \n\n08: Discrete Random Variables \n\nDiscussion Worksheet 03 (Midterm 1 Review)\nLab 04 (Descriptive Statistics)\nSolns  \n\n\n5\n(5/01 - 5/07)\n\n09: Continuous Random Variables \n\nNormal Table\n\n10: Intro to Inferential Statistics \n\nIn-Lecture Demo \n\nExercise 2 Solns \n\n\nDiscussion Worksheet 04 \nSolns \nLab 05  Random Number Generation, and Simulations\nSolns \n\n\n\n6\n(5/08 - 5/14)\n\n11: Confidence Intervals for Proportions \n12: Inference on the Mean \n\nDiscussion Worksheet 05 \nSolns \nLab 06 Loops\n\nSolns \n\n\n7\n(5/15 - 5/21)\n\n13: Hypothesis Testing, Part I \n14: Review\n\nDiscussion Worksheet 06 \n\nCombined Tables\n\nSolns \nLab 07 Percentiles, and Testing Distributional Fits\n\n\n8\n(5/22 - 5/28)\n\n15: Midterm Exam 2\n\nExam Information/Polices \n\n16: Hypothesis Testing, Part II\n\nDiscussion Worksheet 07 (Midterm 2 Review)\nLab 08: Mini Recap of Material\n\n\n9\n(5/29 - 6/4)\n\n17: Hypothesis Testing in Multiple Samples\n18: Regression\n\nDiscussion Worksheet 08\nLab 09: Exploratory Data Analysis (EDA)\n\n\n10\n(6/05 - 6/11)\n\n19: More Regression\n20: Review\n\nDiscussion Worksheet 09\nLab 10: Regression\n\n\nFINAL EXAM\nTuesday, June 13 from 4-7pm"
   },
   {
     "objectID": "Pages/calendar.html",
