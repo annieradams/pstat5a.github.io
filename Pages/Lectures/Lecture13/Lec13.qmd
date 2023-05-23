@@ -360,7 +360,7 @@ Assuming we are conducting a two-sided test, what would a Type I error be in the
 
 ## Solutions {style="font-size:32px"}
 
-- A Type I error would be concluding that the true proportion of US households that own a vehicle is not 91.7\%, when in fact 91.8\% of US households own a vehicle.
+- A Type I error would be concluding that the true proportion of US households that own a vehicle is not 91.7\%, when in fact 91.7\% of US households own a vehicle.
 
 - A Type II error would be concluding that the true proportion of US households that own a vehicle is 91.7\%, when in fact the true proportion is *not* 91.8\%. 
 
