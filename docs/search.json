@@ -137,7 +137,7 @@
     "href": "Pages/Labs/Lab07/lab07.html#default-values-in-a-function",
     "title": "Lab07",
     "section": "Default Values in a Function",
-    "text": "Default Values in a Function\nBy the way, it should be noted that some arguments in certain functions have what are known as default values. For example, the code scipy.stats.norm.ppf(0.025) will run even though we haven’t explicitly specified an m and s value. If we consult the help file for the scipy.stats.norm.ppf() function, we will see that the arguments m and s are assigned default values of 0 and 1 respectively. What this means is that, we don’t explicitly specify a value for m or s, Python will automatically assign them a value of 0 and 1, respectively.\n\nimport scipy.stats as sps\nsps.norm.ppf(0.025)\n\n-1.9599639845400545\n\n\n\n\n\n\n\n\nTask 2\n\n\n\n\nWhat are the arguments that the function sps.t.ppf() (assuming we have imported scipy.stats as sps) takes?\nHow many of the arguments take default values? What are the default values?\n\n\n\nWhen defining a function ourselves, we can also specify default values for some (or even all) of the arguments! The syntax we use is:\n\ndef <function name>(<arg1> = <default1>, <arg2> = <default2>, ...):\n  <body of function>\n\nFor example,\n\ndef f(x, y = 1):\n  return x + y\n\nf(3)\n\n4\n\n\n\n\n\n\n\n\nTask 3\n\n\n\nWrite a function called dice_roll() that takes in two inputs:\n\nnum_sides (with a default value of 6)\nnum_rolls (with a default value of 1)\n\nthat simulates rolling a num_sides-sided die num_rolls times. Test that your function behaves as follows:\n\ndice_roll(12, 5) # rolling a 12-sided die 5 times\n\n[2, 6, 1, 5, 5]\n\n\n\ndice_roll(12) # rolling a 12-sided die once\n\n[6]\n\n\n\ndice_roll() # rolling a 6-sided die once\n\n[4]"
+    "text": "Default Values in a Function\nBy the way, it should be noted that some arguments in certain functions have what are known as default values. For example, the code scipy.stats.norm.ppf(0.025) will run even though we haven’t explicitly specified an m and s value. If we consult the help file for the scipy.stats.norm.ppf() function, we will see that the arguments m and s are assigned default values of 0 and 1 respectively. What this means is that, we don’t explicitly specify a value for m or s, Python will automatically assign them a value of 0 and 1, respectively.\n\nimport scipy.stats as sps\nsps.norm.ppf(0.025)\n\n-1.9599639845400545\n\n\n\n\n\n\n\n\nTask 2\n\n\n\n\nWhat are the arguments that the function sps.t.ppf() (assuming we have imported scipy.stats as sps) takes?\nHow many of the arguments take default values? What are the default values?\n\n\n\nWhen defining a function ourselves, we can also specify default values for some (or even all) of the arguments! The syntax we use is:\n\ndef <function name>(<arg1> = <default1>, <arg2> = <default2>, ...):\n  <body of function>\n\nFor example,\n\ndef f(x, y = 1):\n  return x + y\n\nf(3)\n\n4\n\n\n\n\n\n\n\n\nTask 3\n\n\n\nWrite a function called dice_roll() that takes in two inputs:\n\nnum_sides (with a default value of 6)\nnum_rolls (with a default value of 1)\n\nthat simulates rolling a num_sides-sided die num_rolls times. Test that your function behaves as follows:\n\ndice_roll(12, 5) # rolling a 12-sided die 5 times\n\n[2, 6, 4, 6, 3]\n\n\n\ndice_roll(12) # rolling a 12-sided die once\n\n[4]\n\n\n\ndice_roll() # rolling a 6-sided die once\n\n[1]"
   },
   {
     "objectID": "Pages/Labs/Lab07/lab07.html#testing-distributional-fits",
@@ -1960,22 +1960,22 @@
     "text": "Two Populations\n\nAlright, so what does this mean in the context of our two-proportion problem?\nWell, for one thing, we can easily construct a confidence interval for \\((\\theta_2 - \\theta_1)\\) using: \\[ (\\widehat{\\theta}_2 - \\widehat{\\theta}_1) \\pm c \\cdot \\sqrt{\\mathrm{Var}(\\widehat{\\theta}_1) + \\mathrm{Var}(\\widehat{\\theta}_2)} \\] where \\(c\\) is a constant that is determined by both the sampling distribution of \\(\\widehat{\\theta}_2 - \\widehat{\\theta}_1\\) as well as our confidence level.\nBy the way, can anyone tell me why the variances are added, and not subtracted?"
   },
   {
-    "objectID": "Pages/Lectures/Lecture17/Lec17.html#two-proportions",
-    "href": "Pages/Lectures/Lecture17/Lec17.html#two-proportions",
-    "title": "PSTAT 5A: Lecture 17",
-    "section": "Two Proportions",
-    "text": "Two Proportions\n\nTo make things more specific, let’s consider comparing two population means.\nSpecifically: imagine we have two populations (which we will call Population 1 and Population 2), governed by population means \\(\\mu_1\\) and \\(\\mu_2\\), respectively.\nFor now, let’s focus a two-sided test, where our hypotheses are \\[\\left[ \\begin{array}{rr}\nH_0:    & \\mu_1 = \\mu_2   \\\\\nH_A:    & \\mu_1 \\neq \\mu_2\n\\end{array} \\right.\\]"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture17/Lec17.html#two-proportions-1",
-    "href": "Pages/Lectures/Lecture17/Lec17.html#two-proportions-1",
-    "title": "PSTAT 5A: Lecture 17",
-    "section": "Two Proportions",
-    "text": "Two Proportions\n\nAgain, it’s customary to rephrase things to be in terms of differences: \\[\\left[ \\begin{array}{rr}\nH_0:    & \\mu_2 - \\mu_1 = 0   \\\\\nH_A:    & \\mu_2 - \\mu_1 \\neq 0\n\\end{array} \\right.\\]\nNow, we need data!\nSuppose we have a sample \\(X = \\{X_i\\}_{i=1}^{n_1}\\) taken from Population 1 and a sample \\(Y = \\{Y_i\\}_{i=1}^{n_2}\\) taken from Population 2.\n\nNote that we are allowing for different sample sizes, \\(n_1\\) and \\(n_2\\)!\n\nLet’s also assume that, in addition to being representative samples, the two samples are both independent within themselves and independent from each other (i.e. assume the \\(X_i\\)’s and \\(Y_i\\)’s are independent, and that the \\(X\\)’s are independent from the \\(Y\\)’s)"
-  },
-  {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#two-means",
     "href": "Pages/Lectures/Lecture17/Lec17.html#two-means",
+    "title": "PSTAT 5A: Lecture 17",
+    "section": "Two Means",
+    "text": "Two Means\n\nTo make things more specific, let’s consider comparing two population means.\nSpecifically: imagine we have two populations (which we will call Population 1 and Population 2), governed by population means \\(\\mu_1\\) and \\(\\mu_2\\), respectively.\nFor now, let’s focus a two-sided test, where our hypotheses are \\[\\left[ \\begin{array}{rr}\nH_0:    & \\mu_1 = \\mu_2   \\\\\nH_A:    & \\mu_1 \\neq \\mu_2\n\\end{array} \\right.\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture17/Lec17.html#two-means-1",
+    "href": "Pages/Lectures/Lecture17/Lec17.html#two-means-1",
+    "title": "PSTAT 5A: Lecture 17",
+    "section": "Two Means",
+    "text": "Two Means\n\nAgain, it’s customary to rephrase things to be in terms of differences: \\[\\left[ \\begin{array}{rr}\nH_0:    & \\mu_2 - \\mu_1 = 0   \\\\\nH_A:    & \\mu_2 - \\mu_1 \\neq 0\n\\end{array} \\right.\\]\nNow, we need data!\nSuppose we have a sample \\(X = \\{X_i\\}_{i=1}^{n_1}\\) taken from Population 1 and a sample \\(Y = \\{Y_i\\}_{i=1}^{n_2}\\) taken from Population 2.\n\nNote that we are allowing for different sample sizes, \\(n_1\\) and \\(n_2\\)!\n\nLet’s also assume that, in addition to being representative samples, the two samples are both independent within themselves and independent from each other (i.e. assume the \\(X_i\\)’s and \\(Y_i\\)’s are independent, and that the \\(X\\)’s are independent from the \\(Y\\)’s)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture17/Lec17.html#two-means-2",
+    "href": "Pages/Lectures/Lecture17/Lec17.html#two-means-2",
     "title": "PSTAT 5A: Lecture 17",
     "section": "Two Means",
     "text": "Two Means\n\nAgain, we are interested in finding a point estimator for \\(\\mu_2 - \\mu_1\\).\nHere’s a question: do we have a natural point estimator for \\(\\mu_2\\)? What about for \\(\\mu_1\\)?\nSo, it seems that a natural point estimator for \\(\\delta = \\mu_2 - \\mu_1\\) is \\[ \\widehat{\\delta} = \\overline{Y} - \\overline{X} \\]\nWhat is the sampling distribution of \\(\\widehat{\\delta}\\)?\nWell, there are a few cases to consider."

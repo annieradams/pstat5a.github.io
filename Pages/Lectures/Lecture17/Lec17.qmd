@@ -136,7 +136,7 @@ where $c$ is a constant that is determined by both the sampling distribution of 
 - By the way, can anyone tell me why the variances are *added*, and not *subtracted*?
 
 
-## Two Proportions
+## Two Means
 
 - To make things more specific, let's consider comparing two **population means**. 
 
@@ -149,7 +149,7 @@ $$\left[ \begin{array}{rr}
 \end{array} \right.$$
 
 
-## Two Proportions
+## Two Means
 
 - Again, it's customary to rephrase things to be in terms of differences:
 $$\left[ \begin{array}{rr}
