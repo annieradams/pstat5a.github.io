@@ -8,7 +8,7 @@
 
 <meta name="author" content="PSTAT 5A, with Ethan Marzban">
 
-<title>PSTAT 5A: Spring 2023 (Section 200) - Lab07</title>
+<title>PSTAT 5A: Spring 2023 (Section 200) - Lab09</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -129,7 +129,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     }
     </style>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="styles.css">
@@ -141,7 +140,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Lab07</h1>
+      <h1 class="quarto-secondary-nav-title">Lab09</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -152,8 +151,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">Lab07</h1>
-            <p class="subtitle lead">Percentiles, Default Values, and Testing Distributional Fits</p>
+      <h1 class="title d-none d-lg-block">Lab09</h1>
+            <p class="subtitle lead">Exploring a Real-World Dataset</p>
                       </div>
   </div>
     
@@ -251,9 +250,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#percentiles" id="toc-percentiles" class="nav-link active" data-scroll-target="#percentiles">Percentiles</a></li>
-  <li><a href="#default-values-in-a-function" id="toc-default-values-in-a-function" class="nav-link" data-scroll-target="#default-values-in-a-function">Default Values in a Function</a></li>
-  <li><a href="#testing-distributional-fits" id="toc-testing-distributional-fits" class="nav-link" data-scroll-target="#testing-distributional-fits">Testing Distributional Fits</a></li>
+  <li><a href="#introduction-to-the-dataset" id="toc-introduction-to-the-dataset" class="nav-link active" data-scroll-target="#introduction-to-the-dataset">Introduction to the Dataset</a></li>
+  <li><a href="#part-1-importing" id="toc-part-1-importing" class="nav-link" data-scroll-target="#part-1-importing">Part 1: Importing</a></li>
+  <li><a href="#part-2-getting-a-feel-for-the-dataset" id="toc-part-2-getting-a-feel-for-the-dataset" class="nav-link" data-scroll-target="#part-2-getting-a-feel-for-the-dataset">Part 2: Getting a Feel for the Dataset</a></li>
+  <li><a href="#part-3-accessing-specific-elements-of-the-dataset" id="toc-part-3-accessing-specific-elements-of-the-dataset" class="nav-link" data-scroll-target="#part-3-accessing-specific-elements-of-the-dataset">Part 3: Accessing Specific Elements of the Dataset</a></li>
+  <li><a href="#part-5-a-mini-project" id="toc-part-5-a-mini-project" class="nav-link" data-scroll-target="#part-5-a-mini-project">Part 5: A Mini-Project</a></li>
   </ul>
 </nav>
     </div>
@@ -264,137 +265,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 <hr>
-<section id="percentiles" class="level2">
-<h2 class="anchored" data-anchor-id="percentiles">Percentiles</h2>
-<p>As we have seen in lecture, confidence intervals for a population parameter <span class="math inline">\(\theta\)</span> take the form <span class="math display">\[ \widehat{\theta} \pm c \cdot \mathrm{s.e.} \]</span> where <span class="math inline">\(\mathrm{s.e.}\)</span> denotes the standard error (i.e.&nbsp;standard deviation) of the point estimator <span class="math inline">\(\widehat{\Theta}\)</span>, and <span class="math inline">\(c\)</span> is an appropriately-selected percentile from the distribution of <span class="math inline">\(\widehat{\Theta}\)</span>.</p>
-<p>Up until now, we have primarily been finding the constant <span class="math inline">\(c\)</span> using the various tables at our disposal (i.e.&nbsp;the normal table, and the <span class="math inline">\(t\)</span> table). Though being able to read these tables is a useful skill (and a skill that is potentially testable on quizzes and exams…), using computers to compute these percentiles can greatly increase efficiency.</p>
-<p>On Homework 6 we were exposed to the function <code>scipy.stats.norm.ppf()</code> to compute the percentiles of the normal distribution. Recall that the syntax</p>
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>scipy.stats.norm.ppf(p, m, s)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>computes the <code>p</code><sup>th</sup> percentile of the <span class="math inline">\(\mathcal{N}\)</span>(<code>m</code>, <code>s</code>) distribution. There are analagous functions that allow us to compute percentiles of other distributions; for example, <code>scipy.stats.t.ppf()</code> can be used to find the percentiles of the <span class="math inline">\(t\)</span> distribution.</p>
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Task 1
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="a">
-<li><p>Find the 10<sup>th</sup> percentile of the <span class="math inline">\(t_{31}\)</span> distribution and check that this value agrees with the value provided in the <span class="math inline">\(t-\)</span>table appearing on the course website. (Remember that the percentile you find will need to be scaled by <span class="math inline">\(-1\)</span> to match the value provided in the table.)</p></li>
-<li><p>Find the 0.5<sup>th</sup> percentile of the <span class="math inline">\(t_{11}\)</span> distribution and check that this value agrees with the value provided in the <span class="math inline">\(t-\)</span>table appearing on the course website. (Remember that the percentile you find will need to be scaled by <span class="math inline">\(-1\)</span> to match the value provided in the table.)</p></li>
-</ol>
-</div>
-</div>
-</section>
-<section id="default-values-in-a-function" class="level2">
-<h2 class="anchored" data-anchor-id="default-values-in-a-function">Default Values in a Function</h2>
-<p>By the way, it should be noted that some arguments in certain functions have what are known as <strong>default values</strong>. For example, the code <code>scipy.stats.norm.ppf(0.025)</code> will run even though we haven’t explicitly specified an <code>m</code> and <code>s</code> value. If we consult the <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html">help file</a> for the <code>scipy.stats.norm.ppf()</code> function, we will see that the arguments <code>m</code> and <code>s</code> are assigned default values of <code>0</code> and <code>1</code> respectively. What this means is that, we don’t explicitly specify a value for <code>m</code> or <code>s</code>, Python will automatically assign them a value of <code>0</code> and <code>1</code>, respectively.</p>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> sps</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sps.norm.ppf(<span class="fl">0.025</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>-1.9599639845400545</code></pre>
-</div>
-</div>
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Task 2
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="a">
-<li><p>What are the arguments that the function <code>sps.t.ppf()</code> (assuming we have imported <code>scipy.stats</code> as <code>sps</code>) takes?</p></li>
-<li><p>How many of the arguments take default values? What are the default values?</p></li>
-</ol>
-</div>
-</div>
-<p>When defining a function ourselves, we can also specify default values for some (or even all) of the arguments! The syntax we use is:</p>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> <span class="op">&lt;</span>function name<span class="op">&gt;</span>(<span class="op">&lt;</span>arg1<span class="op">&gt;</span> <span class="op">=</span> <span class="op">&lt;</span>default1<span class="op">&gt;</span>, <span class="op">&lt;</span>arg2<span class="op">&gt;</span> <span class="op">=</span> <span class="op">&lt;</span>default2<span class="op">&gt;</span>, ...):</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;</span>body of function<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>For example,</p>
-<div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x, y <span class="op">=</span> <span class="dv">1</span>):</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> x <span class="op">+</span> y</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>f(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>4</code></pre>
-</div>
-</div>
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Task 3
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Write a function called <code>dice_roll()</code> that takes in two inputs:</p>
+<p>In this week’s lab, we will explore a real-world dataset.</p>
+<section id="introduction-to-the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-the-dataset">Introduction to the Dataset</h2>
+<p>The dataset we will explore is called <code>air22.csv</code>, and can be accessed at <a href="https://pstat5a.github.io/Files/Datasets/air22.csv">https://pstat5a.github.io/Files/Datasets/air22.csv</a>. It contains observations from the Bureau of Transportation Statistics <a href="https://www.transtats.bts.gov/">https://www.transtats.bts.gov/</a> on flights taking place during 2022.</p>
+<p>Here is an abridged version of the data dictionary:</p>
 <ul>
-<li><code>num_sides</code> (with a default value of 6)</li>
-<li><code>num_rolls</code> (with a default value of 1)</li>
+<li><code>year</code>: the year in which the data was collected</li>
+<li><code>month</code>: the month in which the data was collected</li>
+<li><code>carrier</code>: the carrier abbreviation (e.g.&nbsp;<code>AS</code> for Alaska, <code>AA</code> for American Airlines, etc.)</li>
+<li><code>carrier_name</code>: the full name of the carrier (e.g.&nbsp;Alaska, American, etc.)</li>
+<li><code>airport</code>: the airport IATA code (e.g.&nbsp;<code>SEA</code> for SeaTac International Airport, etc.)</li>
+<li><code>airport_name</code>: the full name of the airport</li>
+<li><code>arr_flights</code>: the number of flights that arrived</li>
+<li><code>arr_del15</code>: the number of flights that were delayed for more than 15 minutes</li>
+<li><code>carrier_ct</code>: the number of flights delayed due to carrier-related issues (e.g.&nbsp;no crew, delayed captain, etc.)</li>
+<li><code>weather_ct</code>: the number of flights delayed due to weather-related issues</li>
+<li><code>nas_ct</code>: the number of flights delayed due to National Air Security (NAS)-related issues (e.g.&nbsp;heavy traffic)</li>
+<li><code>security_ct</code>: the number of flights <strong>cancelled</strong> due to security-related issues</li>
+<li><code>late_aircraft_ct</code>: the number of flights delayed due to the arriving aircraft being delayed</li>
+<li><code>arr_cancelled</code>: the number of cancelled flights</li>
+<li><code>arr_diverted</code>: the number of flights that were diverted</li>
+<li><code>arr_delay</code>: the total time (in minutes) of delayed flight</li>
+<li><code>carrier_delay</code>: the total time (in minutes) of delay due to air carrier-related issues</li>
+<li><code>weather_delay</code>: the total time (in minutes) of delay due to air weather-related issues</li>
+<li><code>nas_delay</code>: the total time (in minutes) of delay due to air NAS-related issues</li>
+<li><code>security_delay</code>: the total time (in minutes) of delay due to air security-related issues</li>
+<li><code>late_aircraft_delay</code>: the total time (in minutes) of delay due to the arriving aircraft being delayed</li>
 </ul>
-<p>that simulates rolling a <code>num_sides</code>-sided die <code>num_rolls</code> times. Test that your function behaves as follows:</p>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dice_roll(<span class="dv">12</span>, <span class="dv">5</span>) <span class="co"># rolling a 12-sided die 5 times</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>[3, 6, 6, 4, 0]</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dice_roll(<span class="dv">12</span>) <span class="co"># rolling a 12-sided die once</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>[4]</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>dice_roll() <span class="co"># rolling a 6-sided die once</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>[5]</code></pre>
-</div>
-</div>
-</div>
-</div>
 </section>
-<section id="testing-distributional-fits" class="level2">
-<h2 class="anchored" data-anchor-id="testing-distributional-fits">Testing Distributional Fits</h2>
-<p>If you recall, one of the first questions we need to ask ourselves when constructing a confidence interval for a population mean is whether or not the underlying distribution is normal. This begs the question: how can we tell if something follows a normal distribution?</p>
-<p>One idea might be to look at a histogram. For example, given a list of numbers <code>x</code> sampled from an unknown distribution, we could simply generate a histogram of <code>x</code> and see if it is bell-shaped:</p>
-<div class="cell" data-execution_count="9">
-<div class="cell-output cell-output-display">
-<p><img src="lab07_files/figure-html/cell-10-output-1.png" width="506" height="294"></p>
+<section id="part-1-importing" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-importing">Part 1: Importing</h2>
+<p>We should start by importing the dataset into our JupyterHub environment! In this class, we will almost exclusively import datasets to <code>datascience</code> tables (remember those, from Lab 1?) The syntax we use to import a dataset and store it in a table called <code>table_name</code> is:</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>table_name <span class="op">=</span> Table.read_table(<span class="op">&lt;</span>location of dataset<span class="op">&gt;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>By default, the <code>read_table</code> method will use the first line of data as labels for each of the columns. If, however, your data does not include labels as its first line you will need to manually specify the labels:</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>table_name <span class="op">=</span> Table.read_table(<span class="op">&lt;</span>location of dataset<span class="op">&gt;</span>, names <span class="op">=</span> [labl1, ...])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Action Item
 </div>
 </div>
-<p>This is, however, <strong>not</strong> a good idea in practice, as there are many distributions that have bell-shaped density curves but are <em>not</em> normal; for example, <span class="math inline">\(t-\)</span>distribution. In other words, even though the histogram above is bell-shaped, how do we know it came from a normal distribution and not a <span class="math inline">\(t-\)</span>distribution? The answer is- we don’t!</p>
-<p>Instead, statisticians and datascientists use <strong>QQ-plots</strong> to assess distributional fits. The general idea of a QQ-plot is as follows: if <code>x</code> truly was sampled from a normal distribution, its sample percentiles should correspond closely with the percentiles of the standard normal distribution. As such, a QQ-plot plots the sample percentiles (sometimes called <strong>quantiles</strong>, hence the name QQ-plot as opposed to PP-plot) against the standard normal percentiles.<br>
-</p>
-<p>There are several different functions in several different Python modules which can be used to construct QQ-plots; the one we will use is the <code>probplot()</code> function from the <code>scipy.stats</code> package:</p>
-<div class="cell" data-execution_count="10">
-<div class="cell-output cell-output-display">
-<p><img src="lab07_files/figure-html/cell-11-output-1.png" width="503" height="294"></p>
-</div>
-</div>
-<div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">3</span>))</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>sps.probplot(x, plot <span class="op">=</span> plt)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Why is Python displaying a diagonal line? Well, let’s think about what our QQ-plot would look like if <code>x</code> <em>were</em> actually sampled from a normal distribution. Again, <em>all</em> sample quantiles of <code>x</code> would be pretty close to the corresponding quantiles of the standard normal distribution; i.e.&nbsp;the QQ-plot would look pretty close to a diagonal line!</p>
-<p>Said differently: significant deviations from the diagonal line in a QQ-plot indicate non-normality. The plot above does not have too many significant deviations from the line, meaning we would say that <code>x</code> is likely sampled from a normal distribution. As an example of a QQ-plot that indicates non-normality:</p>
-<div class="cell" data-execution_count="12">
-<div class="cell-output cell-output-display">
-<p><img src="lab07_files/figure-html/cell-13-output-1.png" width="510" height="294"></p>
+<div class="callout-body-container callout-body">
+<p>Import the <code>air22.csv</code> dataset, and save it as a table called <code>air</code>. <strong>Hint:</strong> make sure you import any necessary modules first!</p>
 </div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
@@ -403,11 +323,28 @@ Task 3
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Note
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When using a QQ-plot to assess normality, always check the behavior in the tails (i.e.&nbsp;left- and right-extremes of the plot), as this is often where non-normality becomes the clearest.</p>
+<p>The list of <code>Table()</code>-related methods at <a href="http://data8.org/datascience/tables.html">http://data8.org/datascience/tables.html</a> may prove very useful for this lab!</p>
+</div>
+</div>
+</section>
+<section id="part-2-getting-a-feel-for-the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-getting-a-feel-for-the-dataset">Part 2: Getting a Feel for the Dataset</h2>
+<p>Let’s start of easy by answering a few questions. You should use code to determine the answers to these questions, but should write your answers using descriptive sentences in a markdown cell.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Action Item
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>How many rows are in the dataset? (Recall: in the language introduced in Week 1, this is the number of <strong>observational units</strong> in the <strong>data matrix</strong>.)</p>
 </div>
 </div>
 <div class="callout-important callout callout-style-default callout-captioned">
@@ -416,11 +353,159 @@ Note
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Task 4
+Action Item
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Generate a series of 100 draws from the <span class="math inline">\(\mathcal{N}(3, \ 2.1)\)</span> distribution and store these in a variable called <code>x</code>. Generate another series of 100 draws, this time from the <span class="math inline">\(t_{2}\)</span> distribution, and store these in a variable called <code>y</code>. Then, generate QQ-plots of both <code>x</code> and <code>y</code>, and comment on how you would be able to tell that <code>x</code> was normally distributed whereas <code>y</code> was not, even if you hadn’t been told explicitly which distributions <code>x</code> and <code>y</code> came from. <strong>Hint:</strong> you may need to look up the help file on <code>scipy.stats.probplot()</code> when making the QQ-plot for <code>y</code>.</p>
+<p>How many columns are in the dataset? (Recall: in the language introduced in Week 1, this is the number of <strong>variables</strong> in the data matrix.)</p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Action Item
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Return a list of the column names in the dataset. <strong>Hint:</strong> Recall that the column names, in the context of the <code>datascience</code> module, are sometimes called the <strong>labels</strong> of the table. Again, consult the help file if you need help!</p>
+</div>
+</div>
+</section>
+<section id="part-3-accessing-specific-elements-of-the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-accessing-specific-elements-of-the-dataset">Part 3: Accessing Specific Elements of the Dataset</h2>
+<p>There are a few methods we can use to access specific parts of a Table:</p>
+<ul>
+<li><code>table_name.column(&lt;index or label&gt;)</code>: returns an array containing the data in the specified column</li>
+<li><code>table_name.row(&lt;index or label&gt;)</code>: returns an array containing the data in the specified column</li>
+<li><code>table_name.column(i).item(j)</code>: returns the value in column <code>i</code> + 1, row <code>j</code> + 1 (note the plus ones!)</li>
+</ul>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Action Item
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Display only the <code>arr_del15</code> column of the dataset.</p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Action Item
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What years are included in the dataset?</p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Action Item
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Create a histogram of the delay times caused by weather-related issues. Use 100 bins, and include axis labels as well as a plot title.</p>
+</div>
+</div>
+<p>We can also get creative, and use comparisons to subset various parts of our dataset. For example,</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>air.column(<span class="st">"carrier"</span>) <span class="op">==</span> <span class="st">"AS"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>will return a Boolean vector (i.e.&nbsp;a vector of <code>True</code> and <code>False</code> elements), with <code>True</code> elements corresponding to values in the <code>carrier</code> column that have value <code>"AS"</code>. In words: this would give us the indices of rows corresponding to data on Alaska Airlines.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Action Item
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>How many observational units were recorded from Alaska Airlines? <strong>Hint:</strong> Think about how a sum could help us here.</p>
+</div>
+</div>
+</section>
+<section id="part-5-a-mini-project" class="level2">
+<h2 class="anchored" data-anchor-id="part-5-a-mini-project">Part 5: A Mini-Project</h2>
+<p>Alright, let’s close off this lab with a bit of a mini-project. Our goal is to examine the number of arrivals over time. Specifically, we would ultimately like to plot the average number of arrivals per month vs.&nbsp;month.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Action Item
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Explain, in words, what the following line of code is doing:</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>air.row(air.column(<span class="dv">1</span>) <span class="op">==</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Action Item
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Explain, in words, what the following line of code is doing:</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>air.row(air.column(<span class="dv">1</span>) <span class="op">==</span> <span class="dv">2</span>)[<span class="dv">6</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Hint:</strong> <code>arr_flights</code> is the 7th column in the dataset.</p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Action Item
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Based on your answers to the previous two Action Items, complete the following code to compute the average number of flights per month:</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>means <span class="op">=</span> []</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> _________________:</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  means.______(np.nanmean(air.row(air.column(___) <span class="op">==</span> ___)[___]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>(By the way, the <code>nanmeans()</code> function is a variant of the <code>mean()</code> function from the <code>numpy</code> module that ignores missing values when computing the mean.)</p>
+</div>
+</div>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Action Item
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Plot your <code>means</code> list against the list containing the integers <code>1</code>, <code>2</code>, <code>3</code>, …, <code>12</code> (this list functions like a list of month names.)</p>
 </div>
 </div>
 
