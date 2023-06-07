@@ -137,7 +137,7 @@
     "href": "Pages/Labs/Lab07/lab07.html#default-values-in-a-function",
     "title": "Lab07",
     "section": "Default Values in a Function",
-    "text": "Default Values in a Function\nBy the way, it should be noted that some arguments in certain functions have what are known as default values. For example, the code scipy.stats.norm.ppf(0.025) will run even though we haven’t explicitly specified an m and s value. If we consult the help file for the scipy.stats.norm.ppf() function, we will see that the arguments m and s are assigned default values of 0 and 1 respectively. What this means is that, we don’t explicitly specify a value for m or s, Python will automatically assign them a value of 0 and 1, respectively.\n\nimport scipy.stats as sps\nsps.norm.ppf(0.025)\n\n-1.9599639845400545\n\n\n\n\n\n\n\n\nTask 2\n\n\n\n\nWhat are the arguments that the function sps.t.ppf() (assuming we have imported scipy.stats as sps) takes?\nHow many of the arguments take default values? What are the default values?\n\n\n\nWhen defining a function ourselves, we can also specify default values for some (or even all) of the arguments! The syntax we use is:\n\ndef <function name>(<arg1> = <default1>, <arg2> = <default2>, ...):\n  <body of function>\n\nFor example,\n\ndef f(x, y = 1):\n  return x + y\n\nf(3)\n\n4\n\n\n\n\n\n\n\n\nTask 3\n\n\n\nWrite a function called dice_roll() that takes in two inputs:\n\nnum_sides (with a default value of 6)\nnum_rolls (with a default value of 1)\n\nthat simulates rolling a num_sides-sided die num_rolls times. Test that your function behaves as follows:\n\ndice_roll(12, 5) # rolling a 12-sided die 5 times\n\n[2, 1, 3, 2, 5]\n\n\n\ndice_roll(12) # rolling a 12-sided die once\n\n[0]\n\n\n\ndice_roll() # rolling a 6-sided die once\n\n[6]"
+    "text": "Default Values in a Function\nBy the way, it should be noted that some arguments in certain functions have what are known as default values. For example, the code scipy.stats.norm.ppf(0.025) will run even though we haven’t explicitly specified an m and s value. If we consult the help file for the scipy.stats.norm.ppf() function, we will see that the arguments m and s are assigned default values of 0 and 1 respectively. What this means is that, we don’t explicitly specify a value for m or s, Python will automatically assign them a value of 0 and 1, respectively.\n\nimport scipy.stats as sps\nsps.norm.ppf(0.025)\n\n-1.9599639845400545\n\n\n\n\n\n\n\n\nTask 2\n\n\n\n\nWhat are the arguments that the function sps.t.ppf() (assuming we have imported scipy.stats as sps) takes?\nHow many of the arguments take default values? What are the default values?\n\n\n\nWhen defining a function ourselves, we can also specify default values for some (or even all) of the arguments! The syntax we use is:\n\ndef <function name>(<arg1> = <default1>, <arg2> = <default2>, ...):\n  <body of function>\n\nFor example,\n\ndef f(x, y = 1):\n  return x + y\n\nf(3)\n\n4\n\n\n\n\n\n\n\n\nTask 3\n\n\n\nWrite a function called dice_roll() that takes in two inputs:\n\nnum_sides (with a default value of 6)\nnum_rolls (with a default value of 1)\n\nthat simulates rolling a num_sides-sided die num_rolls times. Test that your function behaves as follows:\n\ndice_roll(12, 5) # rolling a 12-sided die 5 times\n\n[0, 0, 3, 3, 6]\n\n\n\ndice_roll(12) # rolling a 12-sided die once\n\n[0]\n\n\n\ndice_roll() # rolling a 6-sided die once\n\n[6]"
   },
   {
     "objectID": "Pages/Labs/Lab07/lab07.html#testing-distributional-fits",
@@ -2541,6 +2541,349 @@
     "text": "QQ-Plots for the Fluoride Dataset"
   },
   {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#review-of-lecture-18",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#review-of-lecture-18",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Review of Lecture 18",
+    "text": "Review of Lecture 18\n\nLast time, we started to talk about how to actually model a relationship between two variables.\nSpecifically, given a respone variable y and an explanatory variable x, we typically assume x and y are related through the equation \\[ \\texttt{y} = f(\\texttt{x}) + \\texttt{noise} \\] where \\(f\\) is some function.\nOf particular interest to us in this class is when \\(f\\) takes the form of a linear equation: i.e. when our model is of the form \\[ \\texttt{y} = \\beta_0 + \\beta_1 \\cdot \\texttt{x} + \\texttt{noise} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#review-of-lecture-18-1",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#review-of-lecture-18-1",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Review of Lecture 18",
+    "text": "Review of Lecture 18\n\nNow, the noise part of our model makes it impossible to know the true values of \\(\\beta_0\\) and \\(\\beta_1\\).\n\nIn this way, we can think of them as population parameters.\n\nAs such, we sought to find point estimators \\(\\widehat{\\beta_0}\\) and \\(\\widehat{\\beta_1}\\) that best estimate \\(\\beta_0\\) and \\(\\beta_1\\), respectively.\nTo quantify what we mean by “best”, we employed the condition of minimizing the residual sum of squares.\n\nEffectively, this means finding the line \\(\\widehat{\\beta_0} + \\widehat{\\beta_1} \\cdot \\texttt{x}\\) that minimizes the average distance between the points in the dataset and the line."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#review-of-lecture-18-2",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#review-of-lecture-18-2",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Review of Lecture 18",
+    "text": "Review of Lecture 18"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#review-of-lecture-18-3",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#review-of-lecture-18-3",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Review of Lecture 18",
+    "text": "Review of Lecture 18\n\nSuch estimators (i.e. those that minimize the RSS) are said to be ordinary least squares (OLS) estimates.\n\nThe resulting line \\(\\widehat{\\beta_0} + \\widehat{\\beta_1} \\cdot \\texttt{x}\\) is thus called the OLS Regression Line\n\nIt turns out that the OLS estimates of \\(\\beta_0\\) and \\(\\beta_1\\) are: \\[\\begin{align*}\n\\widehat{\\beta_1}   & = \\frac{\\sum_{i=1}^{n} (x_i - \\overline{x})(y_i - \\overline{y})}{\\sum_{i=1}^{n} (x - \\overline{x})^2} = \\frac{s_Y}{s_X} \\cdot r \\\\\n\\widehat{\\beta_0}   & = \\overline{y} - \\widehat{\\beta_1} \\cdot \\overline{x}\n\\end{align*}\\] where r denotes Pearson’s Correlation Coefficient \\[ r = \\frac{1}{n - 1} \\sum_{i=1}^{n} \\left( \\frac{x_i - \\overline{x}}{s_X} \\right) \\left( \\frac{y_i - \\overline{y}}{s_Y} \\right)  \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#example",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#example",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Example",
+    "text": "Example\n\n\n\\(\\widehat{\\beta_0} =\\) -2.5884231; \\(\\widehat{\\beta_1} =\\) -1.733778"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#example-1",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#example-1",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Example",
+    "text": "Example\n\n\n\\(\\widehat{\\beta_0} =\\) -2.5884231; \\(\\widehat{\\beta_1} =\\) -0.483778"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#example-2",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#example-2",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Example",
+    "text": "Example\n\n\n\\(\\widehat{\\beta_0} =\\) -2.5884231; \\(\\widehat{\\beta_1} =\\) 0.266222\nDo we really believe the slope, though?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#leadup",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#leadup",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Leadup",
+    "text": "Leadup\n\nWell, remember- \\(\\widehat{\\beta_1}\\) is just an estimator of \\(\\beta_1\\), the true slope.\nAs such, we should be a little wary of using a single observed instance of \\(\\widehat{\\beta_1}\\) as an estimate for \\(\\beta_1\\).\nWhat do you think would be a better quantity to report?\nThat’s right- a confidence interval!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#confidence-intervals-for-the-slope",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#confidence-intervals-for-the-slope",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Confidence Intervals for the Slope",
+    "text": "Confidence Intervals for the Slope\n\nIt is often desired to report a confidence interval for \\(\\beta_1\\).\nRecall: in general, a confidence interval for a parameter \\(\\theta\\) takes the form \\[ \\widehat{\\theta} \\pm c \\cdot \\mathrm{SD}(\\widehat{\\theta}) \\] where:\n\n\\(\\widehat{\\theta}\\) is a point estimator for \\(\\theta\\)\n\\(c\\) is a constant that depends both on the confidence level as well as the sampling distribution of \\(\\widehat{\\theta}\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#confidence-intervals-for-the-slope-1",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#confidence-intervals-for-the-slope-1",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Confidence Intervals for the Slope",
+    "text": "Confidence Intervals for the Slope\n\nWe’re going to do the same thing for \\(\\beta_1\\): \\[ \\widehat{\\beta_1} \\pm c \\cdot \\mathrm{SD}\\left( \\widehat{\\beta_1} \\right) \\]\nYou will not be responsible for computing the standard deviation of \\(\\widehat{\\beta_1}\\). On a problem, you will be provided with this information.\nWe should, however, talk about what distribution \\[ \\frac{\\widehat{\\beta_1} - \\beta_1}{\\mathrm{SD}(\\widehat{\\beta_1})} \\] follows, as this will be the distribution whose quantiles we use when constructing our confidence intervals."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#confidence-intervals-for-the-slope-2",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#confidence-intervals-for-the-slope-2",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Confidence Intervals for the Slope",
+    "text": "Confidence Intervals for the Slope\n\nIt turns out that, if we assume the noise in our model is normally distributed, then \\[ \\left( \\frac{\\widehat{\\beta_1} - \\beta_1}{\\mathrm{SD}(\\widehat{\\beta_1})} \\right) \\sim t_{n - 2} \\]\n\nDon’t worry too much about why we use \\(n - 2\\) degrees of freedom instead of \\(n - 1\\). The reasoning depends a bit on the way we compute \\(\\mathrm{SD}(\\widehat{\\beta_1})\\), which, again, we will not discuss in this class.\n\nThis allows us to construct confidence intervals for \\(\\beta\\) using the \\(t_{n - 2}\\) distribution."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#worked-out-example",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#worked-out-example",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nTwo sets \\(\\boldsymbol{x} = \\{x_i\\}_{i=1}^{100}\\) and \\(\\boldsymbol{y} = \\{y_i\\}_{i=1}^{100}\\) have yielded: \\[\\begin{align*}\n  \\sum_{i=1}^{100} x_i = 1009.491    & \\qquad \\sum_{i=1}^{100} y_i = -2009.075  \\\\\n  \\sum_{i=1}^{100} (x_i - \\overline{x})^2 = 796.16 & \\qquad  \\sum_{i=1}^{100} (y_i - \\overline{y})^2 = 6237.68   \\\\\n  \\sum_{i=1}^{100} (x_i - \\overline{x})(y_i - \\overline{y}) = -1380.372\n\\end{align*}\\]\n\nFind the equation of the OLS regression line.\nIt turns out that \\(\\mathrm{Var}(\\widehat{\\beta_1}) = 0.0452\\). Construct a 95% confidence interval for \\(\\beta_1\\), the slope of the true linear relationship between x and y."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#solutions",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#solutions",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Solutions",
+    "text": "Solutions\n\nFor part (a), we simply plug into our formulas: \\[\\begin{align*}\n\\widehat{\\beta_1}   & = \\frac{\\sum_{i=1}^{n} (x_i - \\overline{x})(y_i - \\overline{y})}{\\sum_{i=1}^{n} (x_i - \\overline{x})^2} = \\frac{-1380.372}{796.16}  \\approx \\boxed{-1.73}    \\\\\n\\widehat{\\beta_0}   & = \\overline{y} - \\widehat{\\beta_1} \\cdot \\overline{x} = \\left( \\frac{-2009.075}{100} \\right) - (-1.734) \\cdot \\left( \\frac{1009.491}{100} \\right) \\approx \\boxed{-2.627}\n\\end{align*}\\]\nHence, the equation of the OLS regression line is \\[ \\boxed{ \\widehat{y} = -2.627 - 1.734 \\cdot \\texttt{x} } \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#solutions-1",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#solutions-1",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Solutions",
+    "text": "Solutions\n\nFor part (b), we should first find the appropriate quantile of the appropriate t-distribution.\nHere, \\(n = 100\\) meaning we will use the \\(t_{98}\\) distribution.\nAdditionally, we require a 95% confidence level, meaning the quantile we seek is the \\(97.5\\)th percentile or, equivalently, negative one times the \\(2.5\\)th percentile.\n\n\n\nimport scipy.stats as sps\nsps.t.ppf(0.975, 98)\n\n1.984467454426692\n\n\n\nimport scipy.stats as sps\n-sps.t.ppf(0.025, 98)\n\n1.9844674544266925"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#solutions-2",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#solutions-2",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Solutions",
+    "text": "Solutions\n\nTherefore, our confidence interval for \\(\\beta_1\\) takes the form \\[ (-1.734) \\pm 1.98 \\cdot (\\sqrt{0.0452})  = \\boxed{[1.313 \\ ,  2.155]}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#a-ci-that-contains-zero",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#a-ci-that-contains-zero",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "A CI that Contains Zero",
+    "text": "A CI that Contains Zero\n\nWhat happens if a confidence interval for \\(\\beta_1\\) includes zero?\nWell, let’s think about what a confidence interval is actually saying.\nA 95% CI \\([a \\ , b]\\) for some parameter \\(\\theta\\) is saying “we are 95% confident that the true value of \\(\\theta\\) lies in the interval \\([a \\ , b]\\).”\nAs such, if a 95% confidence interval for \\(\\beta_1\\), we are effectively saying that the value of \\(\\beta_1\\) could be zero.\nSince \\(\\beta_1\\) represents the slope of the relationship between x and y, this means we are saying that there could potentially be no relationship between x and y at all!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#hypothesis-testing-for-the-slope",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#hypothesis-testing-for-the-slope",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Hypothesis Testing for the Slope",
+    "text": "Hypothesis Testing for the Slope\n\nIndeed, we could make this a bit more rigorous by performing a hypothesis test for \\(\\beta_1\\).\n\nQuick side note: there is in fact a duality between confidence intervals and hypothesis testing. For the sake of time and brevity, however, we will likely not get a chance to discuss this connection this quarter.\n\nSpecifically, we may wish to test \\[ \\left[ \\begin{array}{rr}\nH_0:    & \\beta_1 = 0   \\\\\nH_A:    & \\beta_1 \\neq 0\n\\end{array} \\right.\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#hypothesis-testing-for-the-slope-1",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#hypothesis-testing-for-the-slope-1",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Hypothesis Testing for the Slope",
+    "text": "Hypothesis Testing for the Slope\n\nA natural test statistic is \\[ \\frac{\\widehat{\\beta_1}}{\\mathrm{SD}(\\widehat{\\beta})} \\stackrel{H_0}{\\sim} t_{n - 2} \\]\nSince we are considering a two-sided alternative (for now), our test would reject for large values of \\(|\\mathrm{TS}|\\), where the critical value comes from the \\(t_{n - 2}\\) distribution.\n\nOr, we could simply consider p-values!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#hypothesis-testing-for-the-slope-2",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#hypothesis-testing-for-the-slope-2",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Hypothesis Testing for the Slope",
+    "text": "Hypothesis Testing for the Slope\n\nIndeed, many computer softwares (and statistical papers!) report a table resembling the following after running a regression:\n\n\n\n\n\n\nEstimate\nStd. Error\nt-value\nPr(>|t|)\n\n\n\n\nIntercept\n-2.588\n2.327\n-1.112\n0.269\n\n\nSlope\n-1.734\n0.222\n-7.811\n6.41e-12\n\n\n\n\n\nThe first column is the raw estimated value (i.e. \\(\\widehat{\\beta_0}\\) and \\(\\widehat{\\beta_1}\\), respectively)\nThe second column is the standard error (i.e. standard deviation) of the estimator\nThe third column is the test statistic (i.e. the first column divided by the second)\nThe fourth column is the p-value in a two-sided test, testing whether or not the given parameter is actually zero or not."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#extensions",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#extensions",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Extensions",
+    "text": "Extensions\n\nRegression truly is one of the workhorses of statistics (the other being Hypothesis Testing).\nIndeed, there is so much one can do with regression!\nFor one, we could consider how a response variable y is related to multiple covariates x1, x2, …, xk.\nWe could also explore nonlinear relationships between y and a single covariate x (or even multiple covariates!)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#extensions-1",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#extensions-1",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Extensions",
+    "text": "Extensions\n\nHere is an interesting project: suppose we have access to a roster of passengers on the Titanic.\n\nFor those who don’t know, the RMS Titanic was a British passenger line that crahsed into an iceberg on April 15, 1912.\n\nTragically, not all passengers survived.\nOne question we may want to ask is: how did various factors (e.g. class, gender, etc.) affect whether or not a given passenger survived?\n\nFor instance, since women and children boarded lifeboats first, it may be plausible surmise that women and children had a higher likelihood of surviving."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#extensions-2",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#extensions-2",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Extensions",
+    "text": "Extensions\n\nNotice how here, the response variable (i.e. whether or not someone survived) is a binary variable; that is, it takes only one of two values (survived or did not survive).\nRegression involving a binary response (like with this Titanic project) is called logistic regression and is highly applicable to lots of other projects as well.\n\nBy the way, there is an actual dataset on the Titanic at https://www.kaggle.com/competitions/titanic\n\nThese are all topics that fall under the category of Machine Learning.\n\nI highly encourage everyone to take a look at some Machine Learning resources, either online or by way of PSTAT 131!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#where-does-data-come-from-1",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#where-does-data-come-from-1",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Where Does Data Come From?",
+    "text": "Where Does Data Come From?\n\nThroughout this course, we have been using various pieces of data.\nOne thing we should discuss, as good Data Scientists, is where this data actually came from?\n\nWho collected it? How was the data collected? Who were the subjects included in the data?\n\nWe will now begin to discuss some possible answers to these questions, as well as some practical strategies for collecting data of our own!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#the-research-process",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#the-research-process",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "The Research Process",
+    "text": "The Research Process\n\nIndeed, most experiments and studies begin with some sort of question.\n\nFor example: “does this new drug truly reduce blood pressure?”\nOr: “is smoking really linked with higher rates of lung cancer?”\nOr: “what is the average mercury content in swordfish in the Atlantic Ocean?”\nOr: “over the past 3 years, what is the average number of people that have been admitted into the PSTAT major?”\n\nThe next step is something we’ve actually done several times in this class already: identify the population of interest!\n\nCan anyone tell me what the populations associated with the above research questions are?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#sampling-procedures",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#sampling-procedures",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Sampling Procedures",
+    "text": "Sampling Procedures\n\nNow, we need the most crucial piece of all: data!\n\nSpecifically, we need to collect our data.\n\nThis will entail taking a sample (or possibly many samples) from our population.\nThere are many ways to take a sample!\nOne way is to take what is known as a simple random sample (or SRS, for short).\nA simple random sample is akin to assigning a unique number to each person in the population, and then picking some subset of these numbers uniformly at random.\n\nCrucially, in this way, each member of the population has an equal chance of being included in the sample."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#sampling-procedures-1",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#sampling-procedures-1",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Sampling Procedures",
+    "text": "Sampling Procedures\n\nNow, Simple Random Samples do have some potential downsides.\nAs an example, let’s consider the following situation: suppose our population is the workplace at some company (which we will call Company X).\nSay we are interested in determining whether or not there is systemic racism present in Company X.\nTo determine whether or not this is the case, we might take a sample and administer a survey (we’ll talk more about surveys in a bit).\nCan anyone tell me a potential problem with this setup if we were to take a Simple Random Sample?\n\nWhat if I tell you, for example, that 80% of people in this company are Caucasian and only 20% are not?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#sampling-procedures-2",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#sampling-procedures-2",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Sampling Procedures",
+    "text": "Sampling Procedures\n\nThat’s right- we run the risk of obtaining a biased sample.\nSaid differently: if we take an SRS of employees at this company, there is a high probability that this sample will contain a disproportionately larger number of Caucasians than non-Caucasians.\n\nThis would almost certainly affect the results of our survey!\n\nOne way to remedy this would be to perform what is known as in which we first divide the population into several strata (i.e. groups), and then take an SRS from each stratum.\n\nThis has the benefit of ensuring a roughly equal number of participants from each stratum, but has the downsides of being very dependent on the strata that are created.\nThat is, sometimes it won’t necessarily be obvious how to divide the population!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#sampling-procedures-3",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#sampling-procedures-3",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Sampling Procedures",
+    "text": "Sampling Procedures\n\nAnother type of sampling is called cluster sampling. Similar to stratified sampling, the population is first divided into several groups (now called clusters). But, instead of taking an SRS from every cluster we instead take an SRS of clusters and then take an SRS from each included cluster\n\nNote, then, that we are not including every cluster in our sample in this way of sampling.\nThis has the benefit of being (potentially) cheaper, but has the (obvious) downside of potentially skewing results due to the lack of certain clusters.\n\nBy the way, this is slightly different than the notion of Cluster Sampling outlined in the textbook; the textbook calls the above scheme “multistage sampling”. However, this term is not widely used, and as such we will simply refer to the above as “Cluster Sampling”, as most statisticians do."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#example-3",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#example-3",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Example",
+    "text": "Example\n\nLet’s consider an example from the textbook:\n\n\n\n\n\n\n\n\nExample (credit to OpenIntro Statistics)\n\n\n\n\nSuppose we are interested in estimating the malaria rate in a densely tropical portion of rural Indonesia. We learn that there are 30 villages in that part of the Indonesian jungle, each more or less similar to the next. Our goal is to test 150 individuals for malaria. What sampling method should be employed?\n\n\n\n\n\n\n\nAt surface level, an SRS may seem tempting.\n\nAfter all, the villages are “more or less similar to the next”.\n\nHowever, an SRS will likely contain individuals from all (or certainly most) of the villages.\nThis would require someone to actually visit these villages to collect data, which will be incredibly costly.\nAs such, an SRS is probably not a good idea."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#example-4",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#example-4",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Example",
+    "text": "Example\n\nIndeed, cluster sampling seems to be the way to go.\nSpecifically, we could assign each village to its own cluster, then select some number of villages (say, maybe 15 or so) randomly, and then select some number of people (say, 10 or so) from each of the selected villages.\nBecause the villages are “more or less similar”, the people included in our sample would likely not have many obvious differences (in the context of the experiment) and we would believe our sample to be relatively representative.\nAdditionally, the experimenter (or a volunteer) would only need to visit 15 villages instead of all 30.\nOf course, we would need to modify our statistical tools slightly to reflect the fact that our sample was actually collected via a clustering scheme- such modifications (though not too challenging) are outside the scope of this course.\n\nRight now, I’m merely trying to get us to think about the practicalities of data collection!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#bias",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#bias",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Bias",
+    "text": "Bias\n\nEven if we end up with a fairly representative sample, there are ways bias can creep in.\nSuppose we administer a survey to a representative sample of people.\nIt is not guaranteed that everyone in our sample will actually fill out the survey; even if a particular individual does attempt the survey, there is no guarantee they will finish the entirety of the survey.\nThis can lead to gaps in our data with respect to certain demographics, which is itself a form of bias.\nWe call this non-response bias."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#bias-1",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#bias-1",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Bias",
+    "text": "Bias\n\nAnother sampling strategy that is prone to bias is known as convenience sampling.\nWe can think of convenience sampling as any sort of sampling scheme where individuals who are easily accessed have a higher chance of being included in the sample.\nFor example, suppose we poll students about their views on the housing crisis in Santa Barbara.\n\nIf we conduct this poll at UCSB, we are more likely to get UCSB students and much less likely to get, say, UCLA students.\nSimilarly, if we conducted our study at UCLA, we would be more likely to include UCLA students than, say, NYU students."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#bias-2",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#bias-2",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Bias",
+    "text": "Bias\n\nSo, why would we ever use a convenience sample?\nWell, as the name suggests- it is convenient!\nConvenience samples are often both the easiest to obtain, as well as the cheapest.\nHaving said that, most statisticans agree thate convenience samples are bad. This is due to what is known as the garbage in garbage out philosophy.\nLoosely speaking, the “garbage in garbage out” philosophy states that our results are only as good as our data- even the most sophisticated statistical models will output nonsensical or skewed results if we are feeding them nonsensical or skewed data!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#another-distinction",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#another-distinction",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Another Distinction",
+    "text": "Another Distinction\n\nThere is another distinction we should be aware of: the difference between an observational study and an experiment.\nIn an observational study, no treatment is ever explicitly applied (or withheld).\nThis is in contrast to an experiment, in which researchers assign treatments to cases.\nFor example, suppose a researcher is interested in determining the relationship between cancer rates and tanning beds.\nIn an experiment, the researcher would take some sample of volunteers, split them into groups, and assign one group to tan regularly and another to not use tanning beds at all for the duration of the study.\n\nAt the end of the study, the researcher would collect data and analyze."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#another-distinction-1",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#another-distinction-1",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Another Distinction",
+    "text": "Another Distinction\n\nIf instead the researcher were to conduct an observational study, they might take some sample of people who already use tanning beds, analyze cancer rates, and repeat for a sample of people who do not use tanning beds.\n\nNote that in this case, the experimenter has not explicitly assigned a treatment (i.e. using a tanning bed) to either group. In a sense, the groups were formed around the treatment.\n\nNaturally, experiments come with all sorts of ethical considerations.\n\nFor instance, in trying to determine the relationship between cancer rates and smoking, nobody would actually force a group of participants to smoke, just for the purposes of an experiment.\nThis is one “pro” in favor of observational studies- the experimenter is not responsible for forcing a group of people to do (or not do something) they wouldn’t want to."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#another-distinction-2",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#another-distinction-2",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Another Distinction",
+    "text": "Another Distinction\n\nOf course, observational studies are not perfect either.\nSpecifically, observational studies cannot be used to identify causal relationships; they can only ever identify associations (or a lack thereof).\nRemember that assocations are not the same things as causation!\n\nSo, just because an observational study indicates a link between smoking and increased lung cancer rates, that is not sufficient justification to say that smoking causes increased lung cancer rates. To make that causal claim, an experiment would need to be conducted."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#example-5",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#example-5",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Example",
+    "text": "Example\n\n\n\n\n\n\n\nExample (OpenIntro Statistics, 1.19)\n\n\n\n\nA large college class has 160 students. All 160 students attend the lectures together, but the students are divided into 4 groups, each of 40 students, for lab sections administered by different teaching assistants. The professor wants to conduct a survey about how satisfied the students are with the course, and he believes that the lab section a student is in might affect the student’s overall satisfaction with the course.\n\nWhat type of study is this?\nSuggest a sampling strategy for carrying out this study."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#solutions-3",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#solutions-3",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Solutions",
+    "text": "Solutions\n\nBecause treatment has neither been administered nor withheld by the researcher, this is an example of an observational study.\nIn this case, stratified sampling would likely be a good idea, with each lab section assigned to a stratum. This ensures each stratum (lab section) is represented in the sample."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#longitudinal-vs.-cross-sectional-studies",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#longitudinal-vs.-cross-sectional-studies",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Longitudinal vs. Cross-Sectional Studies",
+    "text": "Longitudinal vs. Cross-Sectional Studies\n\nSuppose a particular drug claims to significantly reduce blood sugar levels. Consider the following two scenarios:\n\nAn SRS of 100 people is taken from a certain demographic, and divided randomly into two groups: group A and group B. Group A is administered the drug and Group B is not administered the drug. After a week, the researcher collects data on the blood sugar levels of the two groups.\nAn SRS of 50 people is taken from a certain demographic. These 50 people have their blood sugar levels recorded, and are then all administered the drug. A week later, the participants have their blood sugar levels recorded."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#longitudinal-vs.-cross-sectional-studies-1",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#longitudinal-vs.-cross-sectional-studies-1",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Longitudinal vs. Cross-Sectional Studies",
+    "text": "Longitudinal vs. Cross-Sectional Studies\n\nNote that both of these situations seemingly end up with the same data: 50 measurements of pre-treatment blood sugar levels, and 50 measurements of post-treatment blood sugar levels.\nHowever, we can see that these two studies are fundamentally different.\nIn the first study, people were divided into two groups (called the treatment and control groups, respectively).\nIn the second, the same 50 individuals were tracked over time.\nThis is an example of the distinction between a cross-sectional study and a longitudinal study."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#longitudinal-vs.-cross-sectional-studies-2",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#longitudinal-vs.-cross-sectional-studies-2",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Longitudinal vs. Cross-Sectional Studies",
+    "text": "Longitudinal vs. Cross-Sectional Studies\n\nIn a longitudinal study, the same set of individuals is tracked over time.\nIn a cross-sectional study, individuals are divided into several groups.\nNotice that data in longitudinal studies necessarily possess serial correlation: that is, measurements are correlated!\n\nPre-treatment measurements for, say, John, are very likely correlated with John’s post-treatment measurements since these measurements were still collected from John!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#principles-of-experimental-design",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#principles-of-experimental-design",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Principles of Experimental Design",
+    "text": "Principles of Experimental Design\n\nLet’s quickly return to our distinction between observational studies and experiments.\nSuppose it is decided that we want to conduct an experiment.\nWe then need to think very carefully about how we want to design our experiment.\nThis leads us into our final discussion for this course: Experimental Design."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#treatment-vs.-control-groups",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#treatment-vs.-control-groups",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Treatment vs. Control Groups",
+    "text": "Treatment vs. Control Groups\n\nFirst, let me make clear the distinction between treatment and control groups.\nTreatment groups are groups to which one or more treatments is/are administered.\n\nThere can potentially be multiple treatment groups; for example, we could have 4 groups each testing a different medicine\n\nTypically, we always leave at least one group “alone”; i.e. one group to which no treatment is administered. This group is called the control group.\n\nIt is also possible to have multiple control groups!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#experimental-design",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#experimental-design",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Experimental Design",
+    "text": "Experimental Design\n\nExperimental Design loosely refers to the principles of and procedures related to setting up an experiment.\nI won’t go into this in too much detail.\nI do highly encourage you to read Section 1.4 of your textbook, as it provides a very nice summary of some of the main tenants of experimental design.\nRemember - as Data Scientists, it is very important we understand our data as much as possible before performing analyses.\n\nPart of knowing our data is knowing how it was collected, and, indeed, how we might go about collecting our own!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#what-now-1",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#what-now-1",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "What Now?",
+    "text": "What Now?\n\nAlright, so that was the last bit of new material I wanted to cover in this class.\nBut…. why did we do all of this?\nWhat was the point of this course?\n\nIf you say “the point was for me to finish my major”, well, then, fair enough!\n\nBut, more fundamentally, this course is designed to try and provide an introduction to Data Science."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#what-now-2",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#what-now-2",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "What Now?",
+    "text": "What Now?\n\nThe key operating word in this is “introduction-” we only just scratched the surface of the topics we discussed!\nEven within our own PSTAT department, there are lots of different courses that dive deeper into the subjects we discussed.\nPSTAT 120A provides a deeper look at Probability, and some more sophisticated probability tools.\nPSTAT 120B and 120C provide a deeper look at inferential statistics, and how to answer much more interesting and complex problems than those we looked at in this course!\nInterested in Experimental Design? PSTAT 122 is devoted entirely to that!\nWant to learn more about regression (including logistic regression)? Take PSTAT 126 and 131!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#story",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#story",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Story",
+    "text": "Story\n\nNow, I know many of you are graduating this quarter.\n\nCongratulations, by the way!!!\n\nFor those of you who are not, and especially for those of you who aren’t quite sure what you want to do, I’d like to leave you with a story.\nI encountered a student who had come into undergrad not knowing what they wanted to do at all.\nThey had a vague inkling that they might want to do math, but after a quarter switched to Econ, then Physics, and finally wound their way into the equivalent of PSTAT 5A at their undergraduate institution.\nBy the end of the quarter, they were so intrigued to learn more the decided to take the analog of 120A, and then 120B, and then, before they knew it, they had completed a degree in statistics!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#story-1",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#story-1",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Story",
+    "text": "Story\n\nThat student…. was me!\nYears ago, I stumbled into the analog of PSTAT 5A and was so enamored by the field that here I am now, pursuing a PhD in it!\nI truly believe statistics and data science are some of the most useful and applicable fields around.\nWherever there is data, there is the need for a data scientist.\nWhenever there is uncertainty, there is the need for a statistician.\nStatistics and Data Science have far reaching applications in so many fields!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#story-2",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#story-2",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Story",
+    "text": "Story\n\nThere is a famous quote from an extremely influential statistician named John Tukey:\n\n\n\nThe best thing about being a statistician is that you get to play in everyone’s backyard.\n\n\n\nI couldn’t agree more!\n\nThough, I would perhaps update this quote to say “statistician and/or data scientist”\n\nSo, now that you’ve learned the basics…\n\n\n…go out and play!"
+  },
+  {
     "objectID": "Pages/Lectures/Lecture00/Lec00.html#course-staff",
     "href": "Pages/Lectures/Lecture00/Lec00.html#course-staff",
     "title": "PSTAT 5A: Lecture 00",
@@ -3945,7 +4288,7 @@
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Wednesday, May 31, 2023\n\nAs a reminder: Monday sections are Discussion Sections and Wednesday sections are Lab Sections. There will not be a discussion section in week 1 (as, if there were one, it would take place before the first lecture!)\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(4/03 - 4/09)\n\n00: Introduction \n01: Descriptive Statistics \n02: More Descriptive Statistics \n\nNo Discussion Section\nLab 01  (Introduction to Python, and Basic Data Types)\nSolns \n\n\n2\n(4/10 - 4/16)\n\n03: Intro to Probability \n04: Counting \n\nDiscussion Worksheet 01 \nSolns \nLab 02  (Data Classes)\nSolns \n\n\n3\n(4/17 - 4/23)\n\n05: Conditional Probabilities \n06: Review \n\nExam Information/Polices \n\nList of Topics \n\nPractice Problems \n\nPractice Problems Solns \n\nMT1 Coverpage \n\n\nDiscussion Worksheet 02 \nSolns \nLab 03 (Conditionals, Comparisons, and Functions)\nSolns \n\n\n4\n(4/24 - 4/30)\n\n07: Midterm Exam 1\n\nBlue Version: Blank Solns \nYellow Version: Blank Solns \n\n08: Discrete Random Variables \n\nDiscussion Worksheet 03 (Midterm 1 Review)\nLab 04 (Descriptive Statistics)\nSolns  \n\n\n5\n(5/01 - 5/07)\n\n09: Continuous Random Variables \n\nNormal Table\n\n10: Intro to Inferential Statistics \n\nIn-Lecture Demo \n\nExercise 2 Solns \n\n\nDiscussion Worksheet 04 \nSolns \nLab 05  Random Number Generation, and Simulations\nSolns \n\n\n\n6\n(5/08 - 5/14)\n\n11: Confidence Intervals for Proportions \n12: Inference on the Mean \n\nDiscussion Worksheet 05 \nSolns \nLab 06 Loops\n\nSolns \n\n\n7\n(5/15 - 5/21)\n\n13: Hypothesis Testing, Part I \n14: Review \n\nList of Topics \nExam Information/Polices \nPractice Problems \n\nSolns \n\nMC Practice \n\nSolns \n\n\n\n\nDiscussion Worksheet 06 \n\nCombined Tables\n\nSolns \nLab 07 Percentiles, and Testing Distributional Fits\nSolns \n\n\n8\n(5/22 - 5/28)\n\n15: Midterm Exam 2\n16: Hypothesis Testing, Part II \n\nExercise 1(b) Solns \n\n\nDiscussion Worksheet 07 (Midterm 2 Review)\nLab 08 Markdown Syntax\n\n\n9\n(5/29 - 6/4)\n\n17: Hypothesis Testing in Multiple Samples \n18: Regression \n\nDiscussion Worksheet 08\nLab 09 Exploring a Dataset\n\n\n10\n(6/05 - 6/11)\n\n19: More Regression, and Basic Experimental Design\n20: Review\n\nDiscussion Worksheet 09\nLab 10: Regression\n\n\nFINAL EXAM\nTuesday, June 13 from 4-7pm\n\n\n\n\n\n\n\nQuiz Formula Sheets\nPlease note: quiz sheets will NEVER be uploaded before the quiz takes place.\n\nQz01 \n\nQz02 \n\nQz03 \n\nQz04 \n\nQz05"
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Wednesday, May 31, 2023\n\nAs a reminder: Monday sections are Discussion Sections and Wednesday sections are Lab Sections. There will not be a discussion section in week 1 (as, if there were one, it would take place before the first lecture!)\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(4/03 - 4/09)\n\n00: Introduction \n01: Descriptive Statistics \n02: More Descriptive Statistics \n\nNo Discussion Section\nLab 01  (Introduction to Python, and Basic Data Types)\nSolns \n\n\n2\n(4/10 - 4/16)\n\n03: Intro to Probability \n04: Counting \n\nDiscussion Worksheet 01 \nSolns \nLab 02  (Data Classes)\nSolns \n\n\n3\n(4/17 - 4/23)\n\n05: Conditional Probabilities \n06: Review \n\nExam Information/Polices \n\nList of Topics \n\nPractice Problems \n\nPractice Problems Solns \n\nMT1 Coverpage \n\n\nDiscussion Worksheet 02 \nSolns \nLab 03 (Conditionals, Comparisons, and Functions)\nSolns \n\n\n4\n(4/24 - 4/30)\n\n07: Midterm Exam 1\n\nBlue Version: Blank Solns \nYellow Version: Blank Solns \n\n08: Discrete Random Variables \n\nDiscussion Worksheet 03 (Midterm 1 Review)\nLab 04 (Descriptive Statistics)\nSolns  \n\n\n5\n(5/01 - 5/07)\n\n09: Continuous Random Variables \n\nNormal Table\n\n10: Intro to Inferential Statistics \n\nIn-Lecture Demo \n\nExercise 2 Solns \n\n\nDiscussion Worksheet 04 \nSolns \nLab 05  Random Number Generation, and Simulations\nSolns \n\n\n\n6\n(5/08 - 5/14)\n\n11: Confidence Intervals for Proportions \n12: Inference on the Mean \n\nDiscussion Worksheet 05 \nSolns \nLab 06 Loops\n\nSolns \n\n\n7\n(5/15 - 5/21)\n\n13: Hypothesis Testing, Part I \n14: Review \n\nList of Topics \nExam Information/Polices \nPractice Problems \n\nSolns \n\nMC Practice \n\nSolns \n\n\n\n\nDiscussion Worksheet 06 \n\nCombined Tables\n\nSolns \nLab 07 Percentiles, and Testing Distributional Fits\nSolns \n\n\n8\n(5/22 - 5/28)\n\n15: Midterm Exam 2\n\nSalmon Version: Blank Solns \nYellow Version: Blank Solns \n\n16: Hypothesis Testing, Part II \n\nExercise 1(b) Solns \n\n\nDiscussion Worksheet 07 (Midterm 2 Review)\nLab 08 Markdown Syntax\n\n\n9\n(5/29 - 6/4)\n\n17: Hypothesis Testing in Multiple Samples \n18: Regression \n\nDiscussion Worksheet 08\nLab 09 Exploring a Dataset\n\n\n10\n(6/05 - 6/11)\n\n19: More Regression, and Sampling Procedures \n20: Review\n\nDiscussion Worksheet 09\nLab 10: Regression\n\n\nFINAL EXAM\nTuesday, June 13 from 4-7pm\n\nList of Topics \n\n\n\n\n\n\n\n\nQuiz Formula Sheets\nPlease note: quiz sheets will NEVER be uploaded before the quiz takes place.\n\nQz01 \n\nQz02 \n\nQz03 \n\nQz04 \n\nQz05"
   },
   {
     "objectID": "Pages/calendar.html",
