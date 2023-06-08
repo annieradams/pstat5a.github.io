@@ -644,7 +644,7 @@ $$ \texttt{y} = \beta_0 + \beta_1 \cdot \texttt{x} + \texttt{Noise} $$
 
 ## Residuals {style="font-size:32px"}
 
-- The **_i_^th^ residual** is defined to be the perpendicular distance from the _i_^th^ datapoint to the line:
+- The **_i_^th^ residual** is defined to be the quantity $e_i$ below:
 
 :::{.fragment style="text-align:center"}
 ![](rss.svg){width="50%"}
@@ -725,12 +725,12 @@ data.frame(z, w) %>%
   ) +
   geom_smooth(method = "lm", se = FALSE, linewidth = 2)
 
-fit1 <- lm(y ~ x)
+fit10 <- lm(w ~ z)
 ```
 
-- $\widehat{\beta_0} =$ `r fit1$coefficients[1]`; \quad $\widehat{\beta_1} =$ `r fit1$coefficients[2]`.
+- $\widehat{\beta_0} =$ `r fit10$coefficients[1]`; \quad $\widehat{\beta_1} =$ `r fit10$coefficients[2]`.
 
-- I.e. the equation of the line in blue is  `r fit1$coefficients[1]` + `r fit1$coefficients[2]` * `x`.
+- I.e. the equation of the line in blue is  `r fit10$coefficients[1]` + `r fit10$coefficients[2]` * `x`.
 
 ## Fitted Values {style="font-size:30px"}
 
@@ -1196,7 +1196,7 @@ $$ \widehat{\beta_1} = \frac{s_Y}{s_X} \cdot r  $$
 An airline is interested in determining the relationship between flight duration (in minutes) and the net amount of soda consumed (in oz.). Letting `x` denote `flight duration` (the explanatory variable) and `y` denote `amount of soda consumed` (the response variable), a sample of size 100 yielded the following results:
 $$ \begin{array}{cc}
   \displaystyle \sum_{i=1}^{n} x_i  = 10,\!211.7;   & \displaystyle \sum_{i=1}^{n} (x_i - \overline{x})^2 =  38,\!760.68    \\
-  \displaystyle \sum_{i=1}^{n} y_i  = 14,\!3995.8;   & \displaystyle \sum_{i=1}^{n} (x_i - \overline{x})^2 =  87.23984   \\
+  \displaystyle \sum_{i=1}^{n} y_i  = 14,\!3995.8;   & \displaystyle \sum_{i=1}^{n} (y_i - \overline{y})^2 =  87.23984   \\
  \displaystyle \sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y}) = 379.945 \\
 \end{array} $$
 

@@ -661,7 +661,7 @@ r   &amp; = \frac{1}{3 - 1} \left[ \left( \frac{1 - 2}{1} \right) \left( \frac{1
 <section id="residuals" class="slide level2" style="font-size:32px">
 <h2>Residuals</h2>
 <ul>
-<li class="fragment">The <strong><em>i</em><sup>th</sup> residual</strong> is defined to be the perpendicular distance from the <em>i</em><sup>th</sup> datapoint to the line:</li>
+<li class="fragment">The <strong><em>i</em><sup>th</sup> residual</strong> is defined to be the quantity <span class="math inline">\(e_i\)</span> below:</li>
 </ul>
 <div class="fragment" style="text-align:center">
 <p><img data-src="rss.svg" style="width:50.0%"></p>
@@ -689,8 +689,8 @@ r   &amp; = \frac{1}{3 - 1} \left[ \left( \frac{1 - 2}{1} \right) \left( \frac{1
 <h2>Example</h2>
 
 <img data-src="Lec18_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"><ul>
-<li class="fragment"><p><span class="math inline">\(\widehat{\beta_0} =\)</span> 3.366744; <span class="math inline">\(\widehat{\beta_1} =\)</span> 0.9790114.</p></li>
-<li class="fragment"><p>I.e. the equation of the line in blue is 3.366744 + 0.9790114 * <code>x</code>.</p></li>
+<li class="fragment"><p><span class="math inline">\(\widehat{\beta_0} =\)</span> -0.2056061; <span class="math inline">\(\widehat{\beta_1} =\)</span> -2.1049432.</p></li>
+<li class="fragment"><p>I.e. the equation of the line in blue is -0.2056061 + -2.1049432 * <code>x</code>.</p></li>
 </ul>
 </section>
 <section id="fitted-values" class="slide level2" style="font-size:30px">
@@ -970,7 +970,7 @@ r   &amp; = \frac{1}{3 - 1} \left[ \left( \frac{1 - 2}{1} \right) \left( \frac{1
 <div style="font-size: 24px">
 <p>An airline is interested in determining the relationship between flight duration (in minutes) and the net amount of soda consumed (in oz.). Letting <code>x</code> denote <code>flight duration</code> (the explanatory variable) and <code>y</code> denote <code>amount of soda consumed</code> (the response variable), a sample of size 100 yielded the following results: <span class="math display">\[ \begin{array}{cc}
   \displaystyle \sum_{i=1}^{n} x_i  = 10,\!211.7;   &amp; \displaystyle \sum_{i=1}^{n} (x_i - \overline{x})^2 =  38,\!760.68    \\
-  \displaystyle \sum_{i=1}^{n} y_i  = 14,\!3995.8;   &amp; \displaystyle \sum_{i=1}^{n} (x_i - \overline{x})^2 =  87.23984   \\
+  \displaystyle \sum_{i=1}^{n} y_i  = 14,\!3995.8;   &amp; \displaystyle \sum_{i=1}^{n} (y_i - \overline{y})^2 =  87.23984   \\
 \displaystyle \sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y}) = 379.945 \\
 \end{array} \]</span></p>
 <ol type="a">

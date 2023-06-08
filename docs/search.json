@@ -137,7 +137,7 @@
     "href": "Pages/Labs/Lab07/lab07.html#default-values-in-a-function",
     "title": "Lab07",
     "section": "Default Values in a Function",
-    "text": "Default Values in a Function\nBy the way, it should be noted that some arguments in certain functions have what are known as default values. For example, the code scipy.stats.norm.ppf(0.025) will run even though we haven’t explicitly specified an m and s value. If we consult the help file for the scipy.stats.norm.ppf() function, we will see that the arguments m and s are assigned default values of 0 and 1 respectively. What this means is that, we don’t explicitly specify a value for m or s, Python will automatically assign them a value of 0 and 1, respectively.\n\nimport scipy.stats as sps\nsps.norm.ppf(0.025)\n\n-1.9599639845400545\n\n\n\n\n\n\n\n\nTask 2\n\n\n\n\nWhat are the arguments that the function sps.t.ppf() (assuming we have imported scipy.stats as sps) takes?\nHow many of the arguments take default values? What are the default values?\n\n\n\nWhen defining a function ourselves, we can also specify default values for some (or even all) of the arguments! The syntax we use is:\n\ndef <function name>(<arg1> = <default1>, <arg2> = <default2>, ...):\n  <body of function>\n\nFor example,\n\ndef f(x, y = 1):\n  return x + y\n\nf(3)\n\n4\n\n\n\n\n\n\n\n\nTask 3\n\n\n\nWrite a function called dice_roll() that takes in two inputs:\n\nnum_sides (with a default value of 6)\nnum_rolls (with a default value of 1)\n\nthat simulates rolling a num_sides-sided die num_rolls times. Test that your function behaves as follows:\n\ndice_roll(12, 5) # rolling a 12-sided die 5 times\n\n[6, 6, 0, 0, 6]\n\n\n\ndice_roll(12) # rolling a 12-sided die once\n\n[0]\n\n\n\ndice_roll() # rolling a 6-sided die once\n\n[3]"
+    "text": "Default Values in a Function\nBy the way, it should be noted that some arguments in certain functions have what are known as default values. For example, the code scipy.stats.norm.ppf(0.025) will run even though we haven’t explicitly specified an m and s value. If we consult the help file for the scipy.stats.norm.ppf() function, we will see that the arguments m and s are assigned default values of 0 and 1 respectively. What this means is that, we don’t explicitly specify a value for m or s, Python will automatically assign them a value of 0 and 1, respectively.\n\nimport scipy.stats as sps\nsps.norm.ppf(0.025)\n\n-1.9599639845400545\n\n\n\n\n\n\n\n\nTask 2\n\n\n\n\nWhat are the arguments that the function sps.t.ppf() (assuming we have imported scipy.stats as sps) takes?\nHow many of the arguments take default values? What are the default values?\n\n\n\nWhen defining a function ourselves, we can also specify default values for some (or even all) of the arguments! The syntax we use is:\n\ndef <function name>(<arg1> = <default1>, <arg2> = <default2>, ...):\n  <body of function>\n\nFor example,\n\ndef f(x, y = 1):\n  return x + y\n\nf(3)\n\n4\n\n\n\n\n\n\n\n\nTask 3\n\n\n\nWrite a function called dice_roll() that takes in two inputs:\n\nnum_sides (with a default value of 6)\nnum_rolls (with a default value of 1)\n\nthat simulates rolling a num_sides-sided die num_rolls times. Test that your function behaves as follows:\n\ndice_roll(12, 5) # rolling a 12-sided die 5 times\n\n[1, 2, 5, 5, 0]\n\n\n\ndice_roll(12) # rolling a 12-sided die once\n\n[2]\n\n\n\ndice_roll() # rolling a 6-sided die once\n\n[6]"
   },
   {
     "objectID": "Pages/Labs/Lab07/lab07.html#testing-distributional-fits",
@@ -1495,7 +1495,7 @@
     "href": "Pages/Lectures/Lecture18/Lec18.html#residuals",
     "title": "PSTAT 5A: Lecture 18",
     "section": "Residuals",
-    "text": "Residuals\n\nThe ith residual is defined to be the perpendicular distance from the ith datapoint to the line:\n\n\n\n\n\nRSS is then just \\(\\displaystyle \\mathrm{RSS} = \\sum_{i=1}^{n} e_i^2\\)"
+    "text": "Residuals\n\nThe ith residual is defined to be the quantity \\(e_i\\) below:\n\n\n\n\n\nRSS is then just \\(\\displaystyle \\mathrm{RSS} = \\sum_{i=1}^{n} e_i^2\\)"
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#results",
@@ -1516,7 +1516,7 @@
     "href": "Pages/Lectures/Lecture18/Lec18.html#example-3",
     "title": "PSTAT 5A: Lecture 18",
     "section": "Example",
-    "text": "Example\n\n\n\\(\\widehat{\\beta_0} =\\) 3.366744; \\(\\widehat{\\beta_1} =\\) 0.9790114.\nI.e. the equation of the line in blue is 3.366744 + 0.9790114 * x."
+    "text": "Example\n\n\n\\(\\widehat{\\beta_0} =\\) -0.2056061; \\(\\widehat{\\beta_1} =\\) -2.1049432.\nI.e. the equation of the line in blue is -0.2056061 + -2.1049432 * x."
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#fitted-values",
@@ -1635,7 +1635,7 @@
     "href": "Pages/Lectures/Lecture18/Lec18.html#your-turn-2",
     "title": "PSTAT 5A: Lecture 18",
     "section": "Your Turn!",
-    "text": "Your Turn!\n\n\n\n\n\n\nExercise 2\n\n\n\n\nAn airline is interested in determining the relationship between flight duration (in minutes) and the net amount of soda consumed (in oz.). Letting x denote flight duration (the explanatory variable) and y denote amount of soda consumed (the response variable), a sample of size 100 yielded the following results: \\[ \\begin{array}{cc}\n  \\displaystyle \\sum_{i=1}^{n} x_i  = 10,\\!211.7;   & \\displaystyle \\sum_{i=1}^{n} (x_i - \\overline{x})^2 =  38,\\!760.68    \\\\\n  \\displaystyle \\sum_{i=1}^{n} y_i  = 14,\\!3995.8;   & \\displaystyle \\sum_{i=1}^{n} (x_i - \\overline{x})^2 =  87.23984   \\\\\n\\displaystyle \\sum_{i=1}^{n} (x_i - \\overline{x})(y_i - \\overline{y}) = 379.945 \\\\\n\\end{array} \\]\n\nFind the equation of the OLS Regression line.\nIf a particular flight has a duration of 110 minutes, how many ounces of soda would we expect to be consumed on the flight?"
+    "text": "Your Turn!\n\n\n\n\n\n\nExercise 2\n\n\n\n\nAn airline is interested in determining the relationship between flight duration (in minutes) and the net amount of soda consumed (in oz.). Letting x denote flight duration (the explanatory variable) and y denote amount of soda consumed (the response variable), a sample of size 100 yielded the following results: \\[ \\begin{array}{cc}\n  \\displaystyle \\sum_{i=1}^{n} x_i  = 10,\\!211.7;   & \\displaystyle \\sum_{i=1}^{n} (x_i - \\overline{x})^2 =  38,\\!760.68    \\\\\n  \\displaystyle \\sum_{i=1}^{n} y_i  = 14,\\!3995.8;   & \\displaystyle \\sum_{i=1}^{n} (y_i - \\overline{y})^2 =  87.23984   \\\\\n\\displaystyle \\sum_{i=1}^{n} (x_i - \\overline{x})(y_i - \\overline{y}) = 379.945 \\\\\n\\end{array} \\]\n\nFind the equation of the OLS Regression line.\nIf a particular flight has a duration of 110 minutes, how many ounces of soda would we expect to be consumed on the flight?"
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#recap",
