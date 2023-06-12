@@ -137,7 +137,7 @@
     "href": "Pages/Labs/Lab07/lab07.html#default-values-in-a-function",
     "title": "Lab07",
     "section": "Default Values in a Function",
-    "text": "Default Values in a Function\nBy the way, it should be noted that some arguments in certain functions have what are known as default values. For example, the code scipy.stats.norm.ppf(0.025) will run even though we haven’t explicitly specified an m and s value. If we consult the help file for the scipy.stats.norm.ppf() function, we will see that the arguments m and s are assigned default values of 0 and 1 respectively. What this means is that, we don’t explicitly specify a value for m or s, Python will automatically assign them a value of 0 and 1, respectively.\n\nimport scipy.stats as sps\nsps.norm.ppf(0.025)\n\n-1.9599639845400545\n\n\n\n\n\n\n\n\nTask 2\n\n\n\n\nWhat are the arguments that the function sps.t.ppf() (assuming we have imported scipy.stats as sps) takes?\nHow many of the arguments take default values? What are the default values?\n\n\n\nWhen defining a function ourselves, we can also specify default values for some (or even all) of the arguments! The syntax we use is:\n\ndef <function name>(<arg1> = <default1>, <arg2> = <default2>, ...):\n  <body of function>\n\nFor example,\n\ndef f(x, y = 1):\n  return x + y\n\nf(3)\n\n4\n\n\n\n\n\n\n\n\nTask 3\n\n\n\nWrite a function called dice_roll() that takes in two inputs:\n\nnum_sides (with a default value of 6)\nnum_rolls (with a default value of 1)\n\nthat simulates rolling a num_sides-sided die num_rolls times. Test that your function behaves as follows:\n\ndice_roll(12, 5) # rolling a 12-sided die 5 times\n\n[1, 2, 5, 5, 0]\n\n\n\ndice_roll(12) # rolling a 12-sided die once\n\n[2]\n\n\n\ndice_roll() # rolling a 6-sided die once\n\n[6]"
+    "text": "Default Values in a Function\nBy the way, it should be noted that some arguments in certain functions have what are known as default values. For example, the code scipy.stats.norm.ppf(0.025) will run even though we haven’t explicitly specified an m and s value. If we consult the help file for the scipy.stats.norm.ppf() function, we will see that the arguments m and s are assigned default values of 0 and 1 respectively. What this means is that, we don’t explicitly specify a value for m or s, Python will automatically assign them a value of 0 and 1, respectively.\n\nimport scipy.stats as sps\nsps.norm.ppf(0.025)\n\n-1.9599639845400545\n\n\n\n\n\n\n\n\nTask 2\n\n\n\n\nWhat are the arguments that the function sps.t.ppf() (assuming we have imported scipy.stats as sps) takes?\nHow many of the arguments take default values? What are the default values?\n\n\n\nWhen defining a function ourselves, we can also specify default values for some (or even all) of the arguments! The syntax we use is:\n\ndef <function name>(<arg1> = <default1>, <arg2> = <default2>, ...):\n  <body of function>\n\nFor example,\n\ndef f(x, y = 1):\n  return x + y\n\nf(3)\n\n4\n\n\n\n\n\n\n\n\nTask 3\n\n\n\nWrite a function called dice_roll() that takes in two inputs:\n\nnum_sides (with a default value of 6)\nnum_rolls (with a default value of 1)\n\nthat simulates rolling a num_sides-sided die num_rolls times. Test that your function behaves as follows:\n\ndice_roll(12, 5) # rolling a 12-sided die 5 times\n\n[4, 0, 2, 3, 3]\n\n\n\ndice_roll(12) # rolling a 12-sided die once\n\n[2]\n\n\n\ndice_roll() # rolling a 6-sided die once\n\n[3]"
   },
   {
     "objectID": "Pages/Labs/Lab07/lab07.html#testing-distributional-fits",
@@ -452,7 +452,7 @@
     "href": "Pages/hw.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Here you will find all homework assignments and their solutions.\n\nHomework 1: due by 11:59pm on Tuesday, April 11 .pdf Solns \nHomework 2: due by 11:59pm on Tuesday, April 18 .pdf Solns \nHomework 3: due by 11:59pm on MONDAY, APRIL 24 .pdf Solns \nHomework 4: due by 11:59pm on Tuesday, May 2 .pdf Solns \nHomework 5: due by 11:59pm on Wednesday, May 10 .pdf Solns \nHomework 6: due by 11:59pm on Tuesday, May 16 .pdf Solns \nHomework 7: due by 11:59pm on MONDAY, MAY 22 .pdf Solns \nHomework 8: due by 11:59pm on Wednesday, May 31 .pdf Solns \nHomework 9: due by 11:59pm on Wednesday, June 7 .pdf"
+    "text": "Here you will find all homework assignments and their solutions.\n\nHomework 1: due by 11:59pm on Tuesday, April 11 .pdf Solns \nHomework 2: due by 11:59pm on Tuesday, April 18 .pdf Solns \nHomework 3: due by 11:59pm on MONDAY, APRIL 24 .pdf Solns \nHomework 4: due by 11:59pm on Tuesday, May 2 .pdf Solns \nHomework 5: due by 11:59pm on Wednesday, May 10 .pdf Solns \nHomework 6: due by 11:59pm on Tuesday, May 16 .pdf Solns \nHomework 7: due by 11:59pm on MONDAY, MAY 22 .pdf Solns \nHomework 8: due by 11:59pm on Wednesday, May 31 .pdf Solns \nHomework 9: due by 11:59pm on Wednesday, June 7 .pdf Solns"
   },
   {
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#last-time",
@@ -1636,6 +1636,251 @@
     "title": "PSTAT 5A: Lecture 18",
     "section": "Your Turn!",
     "text": "Your Turn!\n\n\n\n\n\n\nExercise 2\n\n\n\n\nAn airline is interested in determining the relationship between flight duration (in minutes) and the net amount of soda consumed (in oz.). Letting x denote flight duration (the explanatory variable) and y denote amount of soda consumed (the response variable), a sample of size 100 yielded the following results: \\[ \\begin{array}{cc}\n  \\displaystyle \\sum_{i=1}^{n} x_i  = 10,\\!211.7;   & \\displaystyle \\sum_{i=1}^{n} (x_i - \\overline{x})^2 =  38,\\!760.68    \\\\\n  \\displaystyle \\sum_{i=1}^{n} y_i  = 14,\\!3995.8;   & \\displaystyle \\sum_{i=1}^{n} (y_i - \\overline{y})^2 =  87.23984   \\\\\n\\displaystyle \\sum_{i=1}^{n} (x_i - \\overline{x})(y_i - \\overline{y}) = 379.945 \\\\\n\\end{array} \\]\n\nFind the equation of the OLS Regression line.\nIf a particular flight has a duration of 110 minutes, how many ounces of soda would we expect to be consumed on the flight?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#setup",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#setup",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Setup",
+    "text": "Setup\n\nConsider a population, governed by some parameter \\(\\theta\\) (e.g. a mean \\(\\mu\\), a variance \\(\\sigma^2\\), a proportion \\(p\\), etc.)\nSuppose we have a null hypothesis that \\(\\theta = \\theta_0\\) (for some specified and fixed value \\(\\theta_0\\)), along with an alternative hypothesis.\nThe goal of hypothesis testing is to use data (in the form of a representative sample taken from the population), and determine whether or not this data leads credence to the null in favor of the alternative.\n\nRecall that there are four main types of alternatives we could adopt: two-sided, lower-tailed, upper-tailed, and simple-vs-simple."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#testing-a-mean",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#testing-a-mean",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Testing a Mean",
+    "text": "Testing a Mean\n\nBefore MT2, we discussed the framework of hypothesis testing a population proportion p.\nAfter MT2, we discussed how to perform hypothesis testing on a population mean \\(\\mu\\).\nLet’s, for the moment, consider a two-sided test: \\[ \\left[ \\begin{array}{rr}\nH_0:    & \\mu = \\mu_0   \\\\\nH_A:    & \\mu \\neq \\mu_0\n\\end{array} \\right. \\]\nSince we know that \\(\\overline{X}\\), the sample mean, is a relatively good point estimator of a population mean \\(\\mu\\), we know that our test statistic should involve \\(\\overline{X}\\) in some way."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#testing-a-mean-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#testing-a-mean-1",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Testing a Mean",
+    "text": "Testing a Mean\n\nSpecifically, we know that our test statistics are usually standardized versions of point estimators. As such, it is tempting to adopt \\[ \\mathrm{TS} = \\frac{\\overline{X} - \\mu_0}{\\sigma / \\sqrt{n}} \\] as, under certain conditions, this follows a standard normal distribution under the null (i.e. when assuming the true population mean \\(\\mu\\) is in fact \\(\\mu_0\\)): \\[ \\mathrm{TS} = \\frac{\\overline{X} - \\mu_0}{\\sigma / \\sqrt{n}} \\stackrel{H_0}{\\sim} \\mathcal{N}(0, \\ 1) \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#testing-a-mean-2",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#testing-a-mean-2",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Testing a Mean",
+    "text": "Testing a Mean\n\nBut, we won’t always have access to the true population standard deviation \\(\\sigma\\)! Rather, sometimes we only have access to \\(s_X\\), the sample standard deviation.\nThis leads to the following test statistic: \\[ \\mathrm{TS} = \\frac{\\overline{X} - \\mu_0}{s_X / \\sqrt{n}} \\] which now no longer follows the standard normal distribution under the null, but rather a t-distribution with \\(n - 1\\) degrees of freedom: \\[ \\mathrm{TS} = \\frac{\\overline{X} - \\mu_0}{s_X / \\sqrt{n}} \\stackrel{H_0}{\\sim} t_{n - 1} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#sampling-distribution-of-overlinex",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#sampling-distribution-of-overlinex",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Sampling Distribution of \\(\\overline{X}\\)",
+    "text": "Sampling Distribution of \\(\\overline{X}\\)\n\n\n\n\n\ngraph TB\n  A[Is the population Normal?  . ] --> |Yes| B{{Use Normal .}}\n  A --> |No| C[Is n >= 30?  .]\n  C --> |Yes| D[sigma or s?  .]\n  C --> |No| E{{cannot proceed   .}}\n  D --> |sigma| F{{Use Normal .}}\n  D --> |s| G{{Use t }}"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#test-statistic",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#test-statistic",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Test Statistic",
+    "text": "Test Statistic\n\nSo, to summarize, our test statistic is: \\[ \\mathrm{TS} = \\begin{cases}\n\\displaystyle \\frac{\\overline{X} - \\mu_0}{\\sigma / \\sqrt{n}}    & \\text{if } \\quad  \\begin{array}{rl} \\bullet & \\text{pop. is normal, OR} \\\\ \\bullet & \\text{$n \\geq 30$ AND $\\sigma$ is known} \\end{array} \\quad \\stackrel{H_0}{\\sim} \\mathcal{N}(0, \\ 1) \\\\[5mm]\n\\displaystyle \\frac{\\overline{X} - \\mu_0}{s / \\sqrt{n}}         & \\text{if } \\quad  \\begin{array}{rl} \\bullet & \\text{$n \\geq 30$ AND $\\sigma$ is not known} \\end{array} \\quad \\stackrel{H_0}{\\sim} t_{n - 1}\n\\end{cases} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#test",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#test",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Test",
+    "text": "Test\n\nRecall our null and alternative hypotheses: \\[ \\left[ \\begin{array}{rr}\nH_0:    & \\mu = \\mu_0   \\\\\nH_A:    & \\mu \\neq \\mu_0\n\\end{array} \\right. \\]\nIf an observed instance of \\(\\overline{X}\\) is much larger than \\(\\mu_0\\), we are more inclined to believe the alternative over the null.\n\nIn other words, we would reject \\(H_0\\) for large positive values of \\(\\mathrm{TS}\\).\n\nHowever, we would also be more inclined to believe the alternative over the null if an observed instance of \\(\\overline{X}\\) was much smaller than \\(\\mu_0\\).\n\nIn other words, we would reject \\(H_0\\) for large negative values of \\(\\mathrm{TS}\\) as well."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#test-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#test-1",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Test",
+    "text": "Test\n\nWe combine these two cases using absolute values: \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| > c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] for some critical value \\(c\\).\n\nThe critical value will depend not only on the confidence level, but also the sampling distribution of \\(\\overline{X}\\).\nSpecifically, as we have previously seen, it will be the appropriate percentile (“appropriate” as dictated by the confidence level) of either the \\(\\mathcal{N}(0, \\ 1)\\) distribution or the \\(t_{n - 1}\\) distribution."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#critical-value",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#critical-value",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Critical Value",
+    "text": "Critical Value\n\n\nThe critical value is the positive value along the x-axis that makes the blue shaded region equal to \\(\\alpha\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#p-values",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#p-values",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "p-Values",
+    "text": "p-Values\n\nWe also saw how, instead of looking at critical values, we can also look at p-values.\nThe p-value is the probability of observing something as or more extreme (in the directino of the alternative) than what we currently observe.\nAs such, p-values that are smaller than the level of significance lead credence to the alternative over the null; i.e. we reject whenever \\(p < \\alpha\\).\n\nNote this means that the way we compute p-values depends on the type of test (i.e. two-sided, lower-tailed, or upper-tailed) that we are conducting."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#p-value-lower-tailed-test",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#p-value-lower-tailed-test",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "p-value; Lower-Tailed Test",
+    "text": "p-value; Lower-Tailed Test"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#p-value-upper-tailed-test",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#p-value-upper-tailed-test",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "p-value; Upper-Tailed Test",
+    "text": "p-value; Upper-Tailed Test"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#p-value-two-sided-test",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#p-value-two-sided-test",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "p-value; Two-Sided Test",
+    "text": "p-value; Two-Sided Test"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#worked-out-example",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#worked-out-example",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nA city official claims that the average monthly rent of a 1 bedroom apartment in GauchoVille is $1.1k. To test this claim, a representative sample of 37 1 bedroom apartments is taken; the average monthly rent of these 37 apartments is found to be $1.21k and the standard deviation of these 37 apartments is found to be 0.34. Assume we are conducting a two-sided test with a 5% level of significance.\n\nDefine the parameter of interest.\nState the null and alternative hypotheses.\nCompute the value of the test statistic.\nAssuming the null is correct, what is the distribution of the test statistic?\nWhat is the critical value of the test?\nConduct the test, and phrase your conclusions in the context of the problem.\nWhat code would we use to compute the p-value? Would we expect this value to be less than or greater than 5%?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#solutions",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#solutions",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Solutions",
+    "text": "Solutions\n\n\\(\\mu =\\) average monthly cost of a 1 bedroom apartment in GauchoVille.\n\n\\[\\left[ \\begin{array}{rr}\n  H_0:    & \\mu = 1.1   \\\\\n  H_A:    & \\mu \\neq 1.1\n\\end{array} \\right. \\]\n\nSince we do not have access to the population standard deviation, we use \\[ \\mathrm{TS} = \\frac{\\overline{X} - \\mu_0}{s / \\sqrt{n}} = \\frac{1.21 - 1.1}{0.34 / \\sqrt{37}} = \\boxed{ 1.97 } \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#solutions-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#solutions-1",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Solutions",
+    "text": "Solutions\n\nWe ask:\n\nIs the population normally distributed (i.e. are housing prices in GauchoVille normally distributed)? No.\nIs our sample size large enough? Yes; \\(n = 37 \\geq 30\\).\nDo we have \\(\\sigma\\) or \\(s\\)? We have \\(s\\).\n\n\n\nTherefore, we use a t-distribution with \\(n - 1 = 37 - 1 = 36\\) degrees of freedom: \\[ \\boxed{\\mathrm{TS} \\stackrel{H_0}{\\sim} t_{36} } \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#solutions-2",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#solutions-2",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Solutions",
+    "text": "Solutions\n\nFrom the t-table provided on the website (which will also be provided to you during the exam), the critical value is .\n\nSince \\(|\\mathrm{TS}| = |1.97| = 1.97 < 2.03\\), we fail to reject the null:\n\n\n\nAt a 5% level of significance, there was insufficient evidence to reject the null hypothesis that the true monthly cost of a 1-bedroom apartment in GauchoVille is $1.1k in favor of the alternative that the true cost is not $1.1k.\n\n\n\nThe code we would use, after importing scipy.stats, is 2 * scipy.stats.t.cdf(-1.97, 36), which we would expect to be larger than 5% as we failed to reject based on the critical value, and we only reject when p is less than \\(\\alpha\\) (which is 5% for this problem)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#two-samples",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#two-samples",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Two Samples",
+    "text": "Two Samples\n\nThe above discussion was in regards to a single sample, taken from a single population.\nWhat happens if we have two populations, goverend by parameters \\(\\theta_1\\) and \\(\\theta_2\\).\nFor example, suppose we want to compare the average air pollution in Santa Barbara to that in Los Angeles.\nThat is, given two populations (Population 1 and Population 2) with population means \\(\\mu_1\\) and \\(\\mu_2\\), we would like to test some claim involving both \\(\\mu_1\\) and \\(\\mu_2\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#two-samples-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#two-samples-1",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Two Samples",
+    "text": "Two Samples\n\nFor this class, we only ever consider a null of the form \\(H_0: \\mu_1 = \\mu_2\\); i.e. that the two populations have the same average.\nWe do still have two alternative hypotheses available to us:\n\n\\(H_A: \\ \\mu_1 < \\mu_2\\)\n\\(H_A: \\ \\mu_1 > \\mu_2\\)\n\nRemember that the trick is to reparameterize everything to be in terms of a difference of parameters, thereby reducing the two-parameter problem into a one-parameter problem."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#two-sided",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#two-sided",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Two-Sided",
+    "text": "Two-Sided\n\nFor example, suppose we are testing the following hypotheses: \\[ \\left[ \\begin{array}{rr}\nH_0:    & \\mu_1 = \\mu_2   \\\\\nH_A:    & \\mu_1 \\neq \\mu_2\n\\end{array} \\right. \\]\nWe can define \\(\\delta = \\mu_2 - \\mu_1\\), and equivalently re-express our hypotheses as \\[ \\left[ \\begin{array}{rr}\nH_0:    & \\delta = 0   \\\\\nH_A:    & \\delta \\neq 0\n\\end{array} \\right. \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#test-statistic-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#test-statistic-1",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Test Statistic",
+    "text": "Test Statistic\n\nNow, we need some sort of test statistic.\nSuppose we have a (representative) sample \\(x = \\{x_i\\}_{i=1}^{n_1}\\) from Population 1 and a (representative) sample \\(y = \\{y_i\\}_{i=1}^{n_2}\\) from Population 2 (note the potentially different sample sizes!)\nWe have an inkling that a decent point estimator for \\(\\delta = \\mu_2 - \\mu_1\\) is \\(\\widehat{\\delta} = \\overline{Y} - \\overline{X}\\).\nOur test statistic will be some standardized form of \\(\\widehat{\\delta}\\), meaning we need to find \\(\\mathbb{E}[\\widehat{\\delta}]\\) and \\(\\mathrm{SD}(\\widehat{\\delta})\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#linear-combinations-of-random-variables",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#linear-combinations-of-random-variables",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Linear Combinations of Random Variables",
+    "text": "Linear Combinations of Random Variables\n\nOur two main results are:\n\n\\(\\mathbb{E}[aX + bY + c] = a \\cdot \\mathbb{E}[X] + b \\cdot \\mathbb{E}[Y] + c\\)\n\\(\\mathrm{Var}(aX + bY + c) = a^2 \\cdot \\mathrm{Var}(X) + b^2 \\cdot \\mathrm{Var}(Y)\\), for independent random variables \\(X\\) and \\(Y\\).\n\nSince \\(\\mathbb{E}[\\overline{Y}] = \\mu_2\\) and \\(\\mathbb{E}[\\overline{X}] = \\mu_1\\), we have that \\[\\begin{align*}\n\\mathbb{E}[\\widehat{\\delta}]    & = \\mathbb{E}[\\overline{Y} - \\overline{X}]    \\\\\n  & = \\mathbb{E}[\\overline{Y}] - \\mathbb{E}[\\overline{X}]   \\\\\n  & = \\mu_2 - \\mu_1 = \\delta\n\\end{align*}\\] which effectively shows that \\(\\widehat{\\delta}\\) is a “good” point estimator of \\(\\delta\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#linear-combinations-of-random-variables-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#linear-combinations-of-random-variables-1",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Linear Combinations of Random Variables",
+    "text": "Linear Combinations of Random Variables\n\nAdditionally, since \\[ \\mathrm{Var}(\\overline{X}) = \\frac{\\sigma_1^2}{n_1}; \\qquad \\mathrm{Var}(\\overline{Y}) = \\frac{\\sigma_2^2}{n_2} \\] we have \\[\\begin{align*}\n\\mathrm{Var}(\\widehat{\\delta})    & = \\mathrm{Var}(\\overline{Y} - \\overline{X})   \\\\\n  & = \\mathrm{Var}(\\overline{Y}) + \\mathrm{Var}(\\overline{X})   \\\\\n  & = \\frac{\\sigma_1^2}{n_1} + \\frac{\\sigma_2^2}{n_2}\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#test-statistic-2",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#test-statistic-2",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Test Statistic",
+    "text": "Test Statistic\n\nThis led us to consider the following test statistic: \\[ \\mathrm{TS}_1 = \\frac{\\overline{Y} - \\overline{X}}{\\sqrt{\\frac{\\sigma_1^2}{n_1} + \\frac{\\sigma_2^2}{n_2}}} \\] which, under the null, would follow a standard normal distribution if \\(\\overline{X}\\) and \\(\\overline{Y}\\) both followed a normal distribution.\nHowever, in many situations, we won’t have access to the population variances \\(\\sigma_1^2\\) and \\(\\sigma_2^2\\). Rather, we will only have access to the sample variances \\(s_X^2\\) and \\(s_Y^2\\). Hence, we modify our test statistic to be of the form \\[ \\mathrm{TS} = \\frac{\\overline{Y} - \\overline{X}}{\\sqrt{\\frac{s_X^2}{n_1} + \\frac{s_Y^2}{n_2}}} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#distribution-of-the-test-statistic",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#distribution-of-the-test-statistic",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Distribution of the Test Statistic",
+    "text": "Distribution of the Test Statistic\n\nThis statistic is no longer normally distributed under the null.\nIt approximately follows a t distribution with degrees of freedom given by the Satterthwaite Approximation: \\[ \\mathrm{df} = \\mathrm{round}\\left\\{ \\frac{ \\left[ \\left( \\frac{s_X^2}{n_1} \\right) + \\left( \\frac{s_Y^2}{n_2} \\right) \\right]^2 }{ \\frac{\\left( \\frac{s_X^2}{n_1} \\right)^2}{n_1 - 1} + \\frac{\\left( \\frac{s_Y^2}{n_2} \\right)^2}{n_2 - 1} } \\right\\} \\]\nThat is; \\[ \\mathrm{TS} \\stackrel{H_0}{\\sim} t_{\\mathrm{df}}; \\quad \\text{df given by above}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#test-2",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#test-2",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Test",
+    "text": "Test\n\nIf we are conducting a two-sided hypothesis test, then both large positive values and large negative values of our test statistic would lead credence to the null over the alternative.\n\nAs such, our test would reject for large values of \\(|\\mathrm{TS}|\\)\n\nIf instead our alternative took the form \\(\\mu_1 < \\mu_2\\); i.e. that \\(\\delta = \\mu_2 - \\mu_1 > 0\\), our test would reject for large positive values of \\(\\mathrm{TS}\\).\nIf instead our alternative took the form \\(\\mu_1 > \\mu_2\\); i.e. that \\(\\delta = \\mu_2 - \\mu_1 < 0\\), our test would reject for large negative values of \\(\\mathrm{TS}\\).\nAgain, the key is to note that after reparameterizing the problem to be in terms of the difference \\(\\delta = \\mu_2 - \\mu_1\\), the problem becomes a familiar one-parameter problem."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#worked-out-example-2",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#worked-out-example-2",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\nA renter wants to know which city is cheaper to live in: GauchoVille or Bruin City. Specifically, she would like to test the null hypothesis that the two cities have the same average monthly rent against the alternative that GauchoVille has a higher average monthly rent.\n\nAs such, she takes a representative sample of 32 houses from GauchoVille (which she calls Population 1) and 32 houses from Bruin City (which she calls Population 2), and records the following information about her samples (all values are reported in thousands of dollars):\n\\[\\begin{array}{r|cc}\n                    & \\text{Sample Average}     & \\text{Sample Standard Deviation}    \\\\\n  \\hline\n  \\textbf{GauchoVille}  &     3.2                    & 0.50        \\\\\n  \\textbf{Bruin City}   &     3.5                    & 0.60\n\\end{array}\\]\n\nWrite down the null and alternative hypotheses, taking care to define any relevant parameter(s).\nCompute the value of the test statistic.\nAssuming the null is correct, what is the distribution of the test statistic? Be sure to include any/all relevant parameter(s)! (Assume all independence and normality conditions are met.)\nWhat is the critical value of the test, if we are to use a 5% level of significance?\nConduct the relevant test at a 5% level of significance, and report your conclusions in the context of the problem."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#solutions-3",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#solutions-3",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Solutions",
+    "text": "Solutions\n\nLet \\(\\mu_1\\) denote the true average monthly rent in Population 1 (GauchoVille) and let \\(\\mu_2\\) denote the true average monthly rent in Population 2 (Bruin City). Then, the null and alternative hypotheses can be phrased as: \\[ \\left[ \\begin{array}{rr}\n  H_0:    & \\mu_1 = \\mu_2   \\\\\n  H_A:    & \\mu_1 < \\mu_2\n\\end{array} \\right. \\] which, phrased in terms of the difference \\(\\mu_2 - \\mu_1\\), is equivalent to \\[ \\left[ \\begin{array}{rr}\n  H_0:    & \\mu_2 - \\mu_1 = 0   \\\\\n  H_A:    & \\mu_2 - \\mu_1 > 0\n\\end{array} \\right. \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#solutions-4",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#solutions-4",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Solutions",
+    "text": "Solutions\n\nWe compute\n\n\n\\[\\begin{align*}\n  \\mathrm{TS}   & = \\frac{\\overline{Y} - \\overline{X}}{\\sqrt{\\frac{s_X^2}{n_1} + \\frac{s_Y^2}{n_2}}} \\\\\n    & = \\frac{3.5 - 3.2}{\\sqrt{\\frac{0.5^2}{32} + \\frac{0.6^2}{32}  }} \\approx \\boxed{2.173}\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#solutions-5",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#solutions-5",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Solutions",
+    "text": "Solutions\n\nWe know that, under the null, the test statistic (assuming all independence and normality conditions hold) follows a t-distribution with degrees of freedom given by the Satterthwaite Approximation. As such, we should first compute the degrees of freedom:\n\n\n\\[\\begin{align*}\n  \\mathrm{df}   & = \\mathrm{round}\\left\\{ \\frac{ \\left[ \\left( \\frac{s_X^2}{n_1} \\right) + \\left( \\frac{s_Y^2}{n_2} \\right) \\right]^2 }{ \\frac{\\left( \\frac{s_X^2}{n_1} \\right)^2}{n_1 - 1} + \\frac{\\left( \\frac{s_Y^2}{n_2} \\right)^2}{n_2 - 1} } \\right\\} \\\\\n    & = \\mathrm{round}\\left\\{ \\frac{ \\left[ \\left( \\frac{0.5^2}{32} \\right) + \\left( \\frac{0.6^2}{32} \\right) \\right]^2 }{ \\frac{\\left( \\frac{0.5^2}{32} \\right)^2}{32 - 1} + \\frac{\\left( \\frac{0.6^2}{32} \\right)^2}{32 - 1} } \\right\\} \\\\\n    & = \\mathrm{round}\\{60.04737\\} = 60\n\\end{align*}\\]\n\n\nTherefore, \\(\\mathrm{TS} \\stackrel{H_0}{\\sim} t_{60}\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#solutions-6",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#solutions-6",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Solutions",
+    "text": "Solutions\n\nRecall that we have an upper-tailed alternative. As such, the critical value will be the \\((1 - 0.05) \\times 100 = 95\\)th percentile of the \\(t_{60}\\) distribution. From our table, we see that this is .\nWe reject when our test statistic is larger than the critical value (again, since we are using an upper-tailed alternative). Since \\(\\mathrm{TS} = 2.173 > 1.67\\), we reject the null:\n\n\n\nAt a 5% level of significance, there was sufficient evidence to reject the null that the average monthly rent in the two cities is the same against the alternative that the average monthly rent in Bruin City is higher than that in GauchoVille.\n\n\n\nQuick aside: do you think it was a valid assumption to make that the “normality conditions” hold?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#multiple-populations",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#multiple-populations",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Multiple Populations",
+    "text": "Multiple Populations\n\nSuppose, instead of comparing two population means, we compare k population means \\(\\mu_1, \\cdots, \\mu_k\\).\nThis is one framework in which ANOVA (Analysis of Variance) is useful.\nGiven \\(k\\) populations, each assumed to be normally distributed, with means \\(\\mu_1, \\cdots, \\mu_k\\), ANOVA tests the following hypotheses: \\[ \\left[ \\begin{array}{rl}\nH_0:    & \\mu_1 = \\mu_2 = \\cdots = \\mu_k    \\\\\nH_A:    & \\text{at least one of the $\\mu_i$'s is different from the others}\n\\end{array} \\right. \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#anova",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#anova",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "ANOVA",
+    "text": "ANOVA\n\nSpecifically, ANOVA utilizes the so-called F-statistic \\[ \\mathrm{F} = \\frac{\\mathrm{MS}_{\\mathrm{G}}}{\\mathrm{MS}_{E}} \\] where \\(\\mathrm{MS}_{\\mathrm{G}}\\), the mean square between groups, can be thought of as a measure of variability between group means, and \\(\\mathrm{MS}_{\\mathrm{E}}\\), the mean squared error, can be thought of as a measure of variability within groups/variability due to chance.\nIf \\(\\mathrm{MS}_{\\mathrm{G}}\\) is much larger than \\(\\mathrm{MS}_{\\mathrm{E}}\\) - i.e. if the variability between groups is much more than what we would expect due to chance alone - we would likely reject the null that all group means were the same.\n\nAs such, ANOVA rejects for values of the F-statistic that are large (i.e. much greater than 1)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#anova-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#anova-1",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "ANOVA",
+    "text": "ANOVA\n\nAssuming the \\(k\\) populations follow independent normal distributions, the F-statistic follows an F-distribution under the null.\n\nSpecifically, \\(F \\sim F_{k-1, \\ n - k}\\) where \\(n\\) is the total number of observations across all groups.\n\nSince we reject \\(H_0\\) (in favor of \\(H_A\\)) whenever \\(F\\) is large, we always compute p-values in ANOVA using right-tail probabilities:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#anova-2",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#anova-2",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "ANOVA",
+    "text": "ANOVA\n\nThe results of an ANOVA are typically displayed by way of an ANOVA Table:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDF\nSum Sq\nMean Sq\nF value\nPr(>F)\n\n\n\n\nBetween Groups\n\\(k - 1\\)\n\\(\\mathrm{SS}_{\\mathrm{G}}\\)\n\\(\\mathrm{MS}_{\\mathrm{G}}\\)\nF\np-value\n\n\nResiduals\n\\(n - k\\)\n\\(\\mathrm{SS}_{\\mathrm{E}}\\)\n\\(\\mathrm{MS}_{\\mathrm{E}}\\)\n\n\n\n\n\n\n\n\n\nYou should familiarize yourself with how these quantities relate to each other; specifically, that \\[ \\mathrm{MS}_{\\mathrm{G}} = \\frac{\\mathrm{SS}_{\\mathrm{G}}}{k - 1} ; \\quad \\mathrm{MS}_{\\mathrm{E}} = \\frac{\\mathrm{SS}_{\\mathrm{E}}}{n - k}; \\quad F = \\frac{\\mathrm{MS}_{\\mathrm{G}}}{\\mathrm{MS}_{\\mathrm{E}}} \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#recap",
@@ -4288,7 +4533,7 @@
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Wednesday, May 31, 2023\n\nAs a reminder: Monday sections are Discussion Sections and Wednesday sections are Lab Sections. There will not be a discussion section in week 1 (as, if there were one, it would take place before the first lecture!)\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(4/03 - 4/09)\n\n00: Introduction \n01: Descriptive Statistics \n02: More Descriptive Statistics \n\nNo Discussion Section\nLab 01  (Introduction to Python, and Basic Data Types)\nSolns \n\n\n2\n(4/10 - 4/16)\n\n03: Intro to Probability \n04: Counting \n\nDiscussion Worksheet 01 \nSolns \nLab 02  (Data Classes)\nSolns \n\n\n3\n(4/17 - 4/23)\n\n05: Conditional Probabilities \n06: Review \n\nExam Information/Polices \n\nList of Topics \n\nPractice Problems \n\nPractice Problems Solns \n\nMT1 Coverpage \n\n\nDiscussion Worksheet 02 \nSolns \nLab 03 (Conditionals, Comparisons, and Functions)\nSolns \n\n\n4\n(4/24 - 4/30)\n\n07: Midterm Exam 1\n\nBlue Version: Blank Solns \nYellow Version: Blank Solns \n\n08: Discrete Random Variables \n\nDiscussion Worksheet 03 (Midterm 1 Review)\nLab 04 (Descriptive Statistics)\nSolns  \n\n\n5\n(5/01 - 5/07)\n\n09: Continuous Random Variables \n\nNormal Table\n\n10: Intro to Inferential Statistics \n\nIn-Lecture Demo \n\nExercise 2 Solns \n\n\nDiscussion Worksheet 04 \nSolns \nLab 05  Random Number Generation, and Simulations\nSolns \n\n\n\n6\n(5/08 - 5/14)\n\n11: Confidence Intervals for Proportions \n12: Inference on the Mean \n\nDiscussion Worksheet 05 \nSolns \nLab 06 Loops\n\nSolns \n\n\n7\n(5/15 - 5/21)\n\n13: Hypothesis Testing, Part I \n14: Review \n\nList of Topics \nExam Information/Polices \nPractice Problems \n\nSolns \n\nMC Practice \n\nSolns \n\n\n\n\nDiscussion Worksheet 06 \n\nCombined Tables\n\nSolns \nLab 07 Percentiles, and Testing Distributional Fits\nSolns \n\n\n8\n(5/22 - 5/28)\n\n15: Midterm Exam 2\n\nSalmon Version: Blank Solns \nYellow Version: Blank Solns \n\n16: Hypothesis Testing, Part II \n\nExercise 1(b) Solns \n\n\nDiscussion Worksheet 07 (Midterm 2 Review)\nLab 08 Markdown Syntax\n\n\n9\n(5/29 - 6/4)\n\n17: Hypothesis Testing in Multiple Samples \n18: Regression \n\nDiscussion Worksheet 08\nLab 09 Exploring a Dataset\n\n\n10\n(6/05 - 6/11)\n\n19: More Regression, and Sampling Procedures \n20: Review\n\nDiscussion Worksheet 09\nLab 10: Regression\n\n\nFINAL EXAM\nTuesday, June 13 from 4-7pm\n\nList of Topics \n\nSample FR Questions \n\nSample MC Questions \n\nScantron \n\n\n\n\n\n\n\n\nQuiz Formula Sheets\nPlease note: quiz sheets will NEVER be uploaded before the quiz takes place.\n\nQz01 \n\nQz02 \n\nQz03 \n\nQz04 \n\nQz05"
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Sunday, June 11, 2023\n\nAs a reminder: Monday sections are Discussion Sections and Wednesday sections are Lab Sections. There will not be a discussion section in week 1 (as, if there were one, it would take place before the first lecture!)\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(4/03 - 4/09)\n\n00: Introduction \n01: Descriptive Statistics \n02: More Descriptive Statistics \n\nNo Discussion Section\nLab 01  (Introduction to Python, and Basic Data Types)\nSolns \n\n\n2\n(4/10 - 4/16)\n\n03: Intro to Probability \n04: Counting \n\nDiscussion Worksheet 01 \nSolns \nLab 02  (Data Classes)\nSolns \n\n\n3\n(4/17 - 4/23)\n\n05: Conditional Probabilities \n06: Review \n\nExam Information/Polices \n\nList of Topics \n\nPractice Problems \n\nPractice Problems Solns \n\nMT1 Coverpage \n\n\nDiscussion Worksheet 02 \nSolns \nLab 03 (Conditionals, Comparisons, and Functions)\nSolns \n\n\n4\n(4/24 - 4/30)\n\n07: Midterm Exam 1\n\nBlue Version: Blank Solns \nYellow Version: Blank Solns \n\n08: Discrete Random Variables \n\nDiscussion Worksheet 03 (Midterm 1 Review)\nLab 04 (Descriptive Statistics)\nSolns  \n\n\n5\n(5/01 - 5/07)\n\n09: Continuous Random Variables \n\nNormal Table\n\n10: Intro to Inferential Statistics \n\nIn-Lecture Demo \n\nExercise 2 Solns \n\n\nDiscussion Worksheet 04 \nSolns \nLab 05  Random Number Generation, and Simulations\nSolns \n\n\n\n6\n(5/08 - 5/14)\n\n11: Confidence Intervals for Proportions \n12: Inference on the Mean \n\nDiscussion Worksheet 05 \nSolns \nLab 06 Loops\n\nSolns \n\n\n7\n(5/15 - 5/21)\n\n13: Hypothesis Testing, Part I \n14: Review \n\nList of Topics \nExam Information/Polices \nPractice Problems \n\nSolns \n\nMC Practice \n\nSolns \n\n\n\n\nDiscussion Worksheet 06 \n\nCombined Tables\n\nSolns \nLab 07 Percentiles, and Testing Distributional Fits\nSolns \n\n\n8\n(5/22 - 5/28)\n\n15: Midterm Exam 2\n\nSalmon Version: Blank Solns \nYellow Version: Blank Solns \n\n16: Hypothesis Testing, Part II \n\nExercise 1(b) Solns \n\n\nDiscussion Worksheet 07 (Midterm 2 Review)\nLab 08 Markdown Syntax\n\n\n9\n(5/29 - 6/4)\n\n17: Hypothesis Testing in Multiple Samples \n18: Regression \n\nDiscussion Worksheet 08\nLab 09 Exploring a Dataset\n\n\n10\n(6/05 - 6/11)\n\n19: More Regression, and Sampling Procedures \n20: Review\n\nPost-MT2, Part I \n\n\nDiscussion Worksheet 09\nLab 10: Regression\n\n\nFINAL EXAM\nTuesday, June 13 from 4-7pm\n\nList of Topics \n\nSample FR Questions \n\nSample MC Questions \n\nScantron \n\n\n\n\n\n\n\n\nQuiz Formula Sheets\nPlease note: quiz sheets will NEVER be uploaded before the quiz takes place.\n\nQz01 \n\nQz02 \n\nQz03 \n\nQz04 \n\nQz05"
   },
   {
     "objectID": "Pages/calendar.html",
