@@ -384,15 +384,15 @@ b. If a particular flight has a duration of 110 minutes, how many ounces of soda
 
 a. 
 \begin{align*}
-  \widehat{\beta_0}   & = \frac{\sum_{i=1}^{n}(x_i - \overline{x})(y_i - \overline{y})} {\sum_{i=1}^{n} (x_i - \overline{x})^2} = \frac{379.945}{10,\!211.7} \approx \boxed{0.0372}   \\
-  \widehat{\beta_0}   & = \overline{y} - \widehat{\beta_1} \cdot \overline{x} = \boxed{1436.159}
+  \widehat{\beta_0}   & = \frac{\sum_{i=1}^{n}(x_i - \overline{x})(y_i - \overline{y})} {\sum_{i=1}^{n} (x_i - \overline{x})^2} = \frac{379.945}{38,\!760.68} \approx \boxed{0.0098}   \\
+  \widehat{\beta_0}   & = \overline{y} - \widehat{\beta_1} \cdot \overline{x} = \boxed{1438.957}
 \end{align*}
 Therefore,
-$$ \widehat{(\texttt{amt. of soda})} = 1436.159 + (0.0372) \cdot (\texttt{flight duration}) $$
+$$ \widehat{(\texttt{amt. of soda})} = 1436.159 + (0.0098) \cdot (\texttt{flight duration}) $$
 
 \
 
-b. $\widehat{y}^{(110)} = 1436.159 + (0.0372)(110) = \boxed{1440.251 \text{ oz.}}$
+b. $\widehat{y}^{(110)} = 1438.957 + (0.0098)(110) = \boxed{1440.035 \text{ oz.}}$
 
 ## Extrapolation
 
