@@ -3,10 +3,10 @@ project:
   output-dir: docs
 
 website:
-  title: "PSTAT 5A: Spring 2023 (Section 200)"
+  title: "PSTAT 5A: Summer Session A, 2023"
 
   sidebar:
-    title: "PSTAT 5A: Understanding Data (Section 200)"
+    title: "PSTAT 5A: Summer Session A, 2023"
     style: "docked"
     search: true
     contents:
@@ -24,6 +24,10 @@ website:
         contents:
           - href: Pages/hw.qmd
             text: HW and Solns
+      - section: "Exam Prep"
+        contents:
+          - href: Pages/exam_prep.qmd
+            text: Exam Prep
     logo: "Images/Logos_Icons/5a_hex.png"
 
   page-footer: "Site Designed by Ethan Marzban using Quarto; ©2023"

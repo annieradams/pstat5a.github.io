@@ -1,0 +1,14 @@
+---
+title: "PSTAT 5A: Understanding Data"
+subtitle: "Exam Prep"
+author:
+  - name: "Ethan Marzban"
+    affiliations:
+      - name: "Summer Session A, 2023"
+author-title: "Instructor"
+affiliation-title: "Quarter"
+format: html
+css: "../schedule.css"
+---
+
+### **_Preparatory material for the exams will be posted here as we approach the dates of the exams._**

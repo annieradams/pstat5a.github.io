@@ -1,8 +1,10 @@
 ---
 title: "PSTAT 5A: Understanding Data"
-subtitle: "Spring 2023 <br /> Instructor: Ethan P. Marzban"
+subtitle: "Summer Session A, 2023 <br /> Instructor: Ethan P. Marzban"
 ---
 
-Welcome to the official course site for PSTAT 5A (titled Understanding Data) at the University of California, Santa Barbara! Please note that this is the site for **Lecture Section 200** of the Spring 2023 iteration of the course, with Ethan Marzban. (Lecture Section 100 will be utilizing Canvas.) \
+Welcome to the official course site for PSTAT 5A (titled Understanding Data) at the University of California, Santa Barbara! Please note that this is the site for **Summer Session A, 2023** iteration of the course, with Ethan Marzban. \
 
-All relevant information for the course can be found on this site, with the (perhaps crucial) exception of quizzes, which will take place on the course Canvas site. 
+All relevant information for the course can be found on this site, with the (perhaps crucial) exception of quizzes, which will take place on the course Gradescope site. \
+
+If you are looking for a past iteration of this course, please navigate to <a href="https://pstat5a-archives.github.io" target = "_blank">https://pstat5a-archives.github.io</a>

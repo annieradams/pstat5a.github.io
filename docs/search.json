@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Welcome to the official course site for PSTAT 5A (titled Understanding Data) at the University of California, Santa Barbara! Please note that this is the site for Lecture Section 200 of the Spring 2023 iteration of the course, with Ethan Marzban. (Lecture Section 100 will be utilizing Canvas.)\n\nAll relevant information for the course can be found on this site, with the (perhaps crucial) exception of quizzes, which will take place on the course Canvas site."
+    "text": "Welcome to the official course site for PSTAT 5A (titled Understanding Data) at the University of California, Santa Barbara! Please note that this is the site for Summer Session A, 2023 iteration of the course, with Ethan Marzban.\n\nAll relevant information for the course can be found on this site, with the (perhaps crucial) exception of quizzes, which will take place on the course Gradescope site.\n\nIf you are looking for a past iteration of this course, please navigate to https://pstat5a-archives.github.io"
   },
   {
     "objectID": "Pages/Labs/Lab03/lab03.html#comparisons",
@@ -333,14 +333,14 @@
     "href": "Pages/course_staff.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Instructor: Ethan P. Marzban\n\n\n\n\n\n\n\n\n\n\n\n\n\nEthan P. Marzban\n\n\nHello! I am currently in the 3rd year of my PhD program here in the PSTAT department, having joined back in 2020 (after having completed my undergraduate degree in Statistics as well). Outside of school I enjoy playing the piano, drinking boba, and talking about cats!\n\n\n\n\n\nEmail:\n\n\nepmarzban@pstat.ucsb.edu\n\n\n\n\nOH:\n\n\nHW Clinic: Tuesdays, 4:30 - 5:30 in ELLSN 2626  OH: Fridays, 12 - 1pm in SH 5607F (Sobel)"
+    "text": "Instructor: Ethan P. Marzban\n\n\n\n\n\n\n\n\n\n\n\n\n\nEthan P. Marzban\n\n\nHello! I currently just finished the 3rd year of my PhD program here in the PSTAT department, having joined back in 2020 (after having completed my undergraduate degree in Statistics as well). Outside of school I enjoy playing the piano, drinking boba, and talking about cats!\n\n\n\n\n\nEmail:\n\n\nepmarzban@pstat.ucsb.edu\n\n\n\n\nOH:\n\n\nTuesdays 4:30 - 5:30pm, over Zoom  Thursdays 2:30 - 3:30pm, in SH 5607F (the Sobel Seminar Hall)"
   },
   {
     "objectID": "Pages/course_staff.html#teaching-assistants-tas",
     "href": "Pages/course_staff.html#teaching-assistants-tas",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Teaching Assistants (TAs)",
-    "text": "Teaching Assistants (TAs)\n\n\n\n\n\n\n\nTA: Nickolas Thiessen\n\n\n\n\n\n\n\n\n\n\n\n\n\nNickolas Thiessen\n\n\nNickolas is currently a student in the BS/MS program in Actuarial Science, in the PSTAT department.\n\n\n\n\n\nEmail:\n\n\nnickolas@ucsb.edu\n\n\n\n\nOH:\n\n\nFridays, 9 - 11am in Building 434 Rm 113\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTA: Jason Teng\n\n\n\n\n\n\n\n\n\n\n\n\n\nJason Teng\n\n\nJason is currently a student in the Masters Program in the PSTAT department.\n\n\n\n\n\nEmail:\n\n\njteng@ucsb.edu\n\n\n\n\nOH:\n\n\nThursdays, 11am - noon in South Hall 5421 (the StatLab)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTA: Yuan Zhou\n\n\n\n\n\n\n\n\n\n\n\n\n\nYuan Zhou\n\n\nYuan is currently a student in the Masters program in the PSTAT department.\n\n\n\n\n\nEmail:\n\n\nyuan_zhou@ucsb.edu\n\n\n\n\nOH:\n\n\nTuesdays, 10 - 11am in South Hall 5421 (the StatLab)"
+    "text": "Teaching Assistants (TAs)\n\n\n\n\n\n\n\nTA: Mengrui Zhang\n\n\n\n\n\n\n\n\n\n\n\n\n\nMengrui Zhang\n\n\nMengrui is a PhD Student in the PSTAT Department.\n\n\n\n\n\nEmail:\n\n\nmengrui@ucsb.edu\n\n\n\n\nOH:\n\n\nMW, 4 - 6pm (SH 5431 W)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTA: Olivier Mulkin\n\n\n\n\n\n\n\n\n\n\n\n\n\nOlivier Mulkin\n\n\nOlivier is a PhD Student in the PSTAT Department.\n\n\n\n\n\nEmail:\n\n\nomulkin@ucsb.edu\n\n\n\n\nOH:\n\n\nT, 1 - 3pm (Zoom)"
   },
   {
     "objectID": "Pages/course_staff.html#undergraduate-learning-assistants-ulas",
@@ -354,28 +354,28 @@
     "href": "Pages/syllabus.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "WELCOME TO PSTAT 5A! I am very excited to introduce to you the wonderful worlds of Statistics and Data Science. As our world becomes ever more saturated with data, the need for data literacy becomes increasingly important. By the end of this course, I hope you will be able to think critically about statistical studies and results, understand how data can be used to simultaneously inform and manipulate, and begin applying your newfound techniques to your future endeavors, all while gaining an introduction to the fields of Statistics and Data Science. I am very much looking forward to a great quarter with all of you!\n— Ethan"
+    "text": "WELCOME TO PSTAT 5A! I am very excited to introduce to you the wonderful fields of Statistics and Data Science. As our world becomes ever more saturated with data, the need for data literacy becomes increasingly important. By the end of this course, I hope you will be able to think critically about statistical studies and results, understand how data can be used to simultaneously inform and manipulate, and begin applying your newfound techniques to your future endeavors. I am very much looking forward to a great quarter with all of you!\n— Ethan"
   },
   {
     "objectID": "Pages/syllabus.html#lecture-information",
     "href": "Pages/syllabus.html#lecture-information",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Lecture Information",
-    "text": "Lecture Information\n\n\n\n\n\n\nLecture Times and Locations\n\n\n\nTuesdays and Thursdays: 2:00pm - 3:15pm in CHEM 1171"
+    "text": "Lecture Information\n\n\n\n\n\n\nLecture Times and Locations\n\n\n\nM, T, W, Th: 11:00am - 12:20pm in ILP 1101"
   },
   {
     "objectID": "Pages/syllabus.html#course-staff",
     "href": "Pages/syllabus.html#course-staff",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Course Staff",
-    "text": "Course Staff\n\n\n\n\n\n\n\n\n\n\nInstructor:\nEthan P. Marzban\n\n\n\n\nEmail:\nepmarzban@pstat.ucsb.edu\n\n\nHelp Hours:\n\nHW Clinic: Tuesdays 4:30 - 5:30pm in ELLSN 2626\nOH: Fridays 12-1pm in SH 5607F\n\n\n\n\n\n\n\n\n\n\n\n\nTAs\n\n\n\n\nNickolas Thiessen\n(nickolas@ucsb.edu)\n\n\nJason Teng\n(jteng@ucsb.edu)\n\n\nYuan Zhou\n(yuan_zhou@ucsb.edu)"
+    "text": "Course Staff\n\n\n\n\n\n\n\n\n\n\nInstructor:\nEthan P. Marzban\n\n\n\n\nEmail:\nepmarzban@pstat.ucsb.edu\n\n\nHelp Hours:\n\nTuesdays: 4:30pm - 5:30pm (Zoom)\nThursdays: 1:00pm - 2:00pm (SH 5607 F)\n\n\n\n\n\n\n\n\n\n\n\n\nTAs\n\n\n\n\nMengrui Zhang\n(mengrui@ucsb.edu)\n\n\nOlivier Mulkin\n(omulkin@ucsb.edu)"
   },
   {
     "objectID": "Pages/syllabus.html#course-description",
     "href": "Pages/syllabus.html#course-description",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Course Description",
-    "text": "Course Description\nThe official description of this course, from the Course Catalogue, is:\n\nIntroduction to data science. Concepts of statistical thinking. Topics include random variables, sampling distributions, hypothesis testing, correlation and regression. Visualizing, analyzing and interpreting real world data using Python. Computing labs required."
+    "text": "Course Description\nThe official description of this course, from the Course Catalog, is:\n\nIntroduction to data science. Concepts of statistical thinking. Topics include random variables, sampling distributions, hypothesis testing, correlation and regression. Visualizing, analyzing and interpreting real world data using Python. Computing labs required."
   },
   {
     "objectID": "Pages/syllabus.html#textbooks",
@@ -389,28 +389,28 @@
     "href": "Pages/syllabus.html#course-components",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Course Components",
-    "text": "Course Components\nThe following are the assignments and metrics that will be used to compute your final grade in this course:\n\nHomework:\nThere will be weekly homework assignments that are each graded out of 10 points, on a combination of correctness and completion: we will select a few parts/problems to be graded out of 8 points on correctness, and you will be awarded 2 points for completing the remainder of the homework. Your lowest homework score will be dropped.\n\nHomework assignments will typically be released on Wednesdays and be due on Tuesdays, with the exception of Exam Weeks when the homework will be due on Monday.\n\n\nQuizzes\nQuizzes will be administered on Wednesdays, During your Lab Section. Make-up quizzes will not be offered; instead, your lowest quiz score will be dropped at the end of the quarter. There are no quizzes in Exam Weeks.\n\n\nExams\nThere are two midterms and a final exam for this class. You are required to take all three exams; failure to do so will result in an automatic grade of “F”, so please ensure you are able to take the exams on the dates listed below.\n\n\n\n\n\n\nExam Dates:\n\n\n\n\nMidterm 1 is scheduled to take place Tuesday, April 25 from 2 - 3:15pm (lecture time)\nMidterm 2 is scheduled to take place Tuesday, May 23 from 2 - 3:15pm (lecture time)\nThe final is scheduled to take place Tuesday, June 13 from 4 - 7pm (as determined by the University)\n\n\n\nThe midterms are scheduled to take place in Embarcadero Hall, and will have assigned seating. The Final Exam will also take place in Embarcadero Hall. Unless stated otherwise, all exams will be cumulative.\n\n\nSchedule of Due Dates\nA tentative schedule of release and due dates can be found here"
+    "text": "Course Components\nThe following are the assignments and metrics that will be used to compute your final grade in this course:\n\nLabs\nEvery Monday you will work through a Lab worksheet that will be posted to the website by the previous day. You will then have until 40 minutes after the end of your scheduled section to submit your work through Gradescope. Your TA will explain more about the structure of lab during your first Section meeting of the quarter.\n\n\nQuizzes\nQuizzes will be administered asynchronously on Fridays, through Gradescope. Specifically, the quiz will remain open from 10am until 11:59pm, and you must find 40 consecutive minutes to take the quiz. (Consecutive means you cannot start the quiz, and then come back to it later- once you start, you will have 40 minutes to both complete the quiz as well as upload your work). I encourage you to spend 25 minutes working on the quiz, and 15 minutes uploading. No quiz scores will be dropped. There are no quizzes in Exam Weeks.\n\n\nExams\nThere are two midterms and a final exam for this class. You are required to take all three exams; failure to do so will result in an automatic grade of “F”, so please ensure you are able to take the exams on the dates listed below.\n\n\n\n\n\n\nExam Dates:\n\n\n\n\nMidterm 1 is scheduled to take place Thursday July 6 from 2 - 3:15pm (lecture time)\nMidterm 2 is scheduled to take place Thursday July 20 from 2 - 3:15pm (lecture time)\nThe final is scheduled to take place FRIDAY, AUGUST 4 from 4 - 7pm\n\n\n\nAll exams are scheduled to take place in our lecture classroom, ILP 1101. Unless stated otherwise, all exams will be cumulative.\n\n\nHomework:\nHomework for this class will be neither collected nor graded. However, the weekly quizzes will be based heavily (though potentially not entirely) off the homework assignments. Homework assignments will be released on Mondays, along with their final answers. Solutions will be posted biweekly, on the Tuesdays before exams. As such, you should not rely on the solutions to help you study; instead, please come to office hours to check your work regularly!\n\n\nSchedule of Due Dates\nA tentative schedule of release and due dates can be found here"
   },
   {
     "objectID": "Pages/syllabus.html#grading-scheme",
     "href": "Pages/syllabus.html#grading-scheme",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Grading Scheme",
-    "text": "Grading Scheme\nYour final grade will be computed using the following weights:\n\n\n\nHomework:\n10%\n\n\nLabs:\n10%\n\n\nQuizzes:\n10%\n\n\nMidterm 1\n20%\n\n\nMidterm 2\n20%\n\n\nFinal Examination:\n30%\n\n\n\nPlease note that late submissions for any of the above will not be accepted. Instead, I will drop your lowest homework, lab, quiz, and midterm score (you must take all three exams; failure to do so will result in an automatic ‘F’)\nYour final letter grade will be issued according to the following scheme (cutoffs between plusses and minuses will be calculated at the end of the quarter):\n\nA– – A+: 90 – 100%\nB– – B+: 80 – 89.99%\nC– – C+: 70 – 79.99%\nD– – D+ : 60 – 69.99%\nF: 0 – 59.99%\n\nPlease note: I have elected to adopt an uncurved grading scheme to eliminate any sense of “competition” among students; I highly encourage you all to collaborate with and uplift each other. Having said that, I will certainly consider adjusting the cutoffs (naturally, in everyone’s favor) at the end of the quarter if necessary."
+    "text": "Grading Scheme\nYour final grade will be computed using the following weights:\n\n\n\nLabs:\n10%\n\n\nQuizzes:\n15%\n\n\nMidterm 1\n20%\n\n\nMidterm 2\n20%\n\n\nFinal Examination:\n35%\n\n\n\nPlease note that late submissions for any of the above will not be accepted. Additionally, make-up exams cannot be accommodated.\nYour final letter grade will be issued according to the following scheme (cutoffs between plusses and minuses will be calculated at the end of the quarter):\n\nA– – A+: 90 – 100%\nB– – B+: 80 – 89.99%\nC– – C+: 70 – 79.99%\nD– – D+ : 60 – 69.99%\nF: 0 – 59.99%\n\nI have elected to adopt an uncurved grading scheme to eliminate any sense of “competition” among students; I highly encourage you all to collaborate with and uplift each other. Having said that, I will certainly consider adjusting the cutoffs (naturally, in everyone’s favor) at the end of the quarter if necessary."
   },
   {
     "objectID": "Pages/syllabus.html#academic-integrity",
     "href": "Pages/syllabus.html#academic-integrity",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Academic Integrity",
-    "text": "Academic Integrity\nAs a member of the UCSB community, it is expected that you will act with academic integrity. This means, among other things, that the work you submit should be entirely your own and not copied from any external sources. Collaboration on homework assignments is perfectly acceptable (even encouraged) but the work you submit should still be your own; you can’t have someone else write up solutions for you, nor can you consult cites like Chegg, CourseHero, etc. Anyone found guilty of academic misconduct will be reported to the Academic Senate, and will receive at minimum a failing grade on the assignment in question; further actions may also include failing the course, and marks being made on permanent records. Depending on the severity of the infraction, expulsion is also a possibility.\nBasically, don’t cheat- please! If you’re ever struggling with course material, please come talk to me or the TA’s. We are truly here for you, and want only the best for you."
+    "text": "Academic Integrity\nAs a member of the UCSB community, it is expected that you will act with academic integrity. This means, among other things, that the work you submit should be entirely your own and not copied from any external sources. Collaboration on non-quiz and non-exam assignments is perfectly acceptable (and even encouraged), but the work you submit should still be your own; you can’t have someone else write up solutions for you.\nAnyone found guilty of academic misconduct will be reported to the Academic Senate, and will receive at minimum a failing grade on the assignment in question; further actions may also include failing the course, and marks being made on permanent records. Depending on the severity of the infraction, expulsion is also a possibility.\nBasically, don’t cheat- please! If you’re ever struggling with course material, please come talk to me or the TA’s. We are truly here for you, and want only the best for you."
   },
   {
     "objectID": "Pages/syllabus.html#intellectual-property",
     "href": "Pages/syllabus.html#intellectual-property",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Intellectual Property",
-    "text": "Intellectual Property\nYou’ve probably seen a clause on other syllabi stating something to the effect of “all material in this course is the intellectual property of myself and may not be shared with anyone outside this class without my explicit written permission.”\nThough this is all true, I will be making most course-related material available on a public GitHub site, which can be accessed here: https://pstat5a.github.io."
+    "text": "Intellectual Property\nYou’ve probably seen a clause on other syllabi stating something to the effect of “all material in this course is the intellectual property of myself and may not be shared with anyone outside this class without my explicit written permission.”\nThough this does still hold true for this course, I will be making most course-related material available on a public GitHub site, which can be accessed here: https://pstat5a.github.io."
   },
   {
     "objectID": "Pages/syllabus.html#disabled-students-program-dsp",
@@ -438,7 +438,7 @@
     "href": "Pages/syllabus.html#email-policy",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Email Policy",
-    "text": "Email Policy\nIf you need to send an email to me (Ethan), please include “PSTAT 5A” in the subject line of your email. Additionally, please allow up to one business day for a reply (though I will do my best to get back to you ASAP) Please note that I do not answer questions with extensive mathematics/equations over email (as trying to communicate in math over email can be a bit of a technical nightmare) Instead, if you have questions relating to course content I welcome you to either ask over Discord or during one of my Office Hours. Also, should you need to include your TA, please send a single email to both your TA and myself, as opposed to separate emails to the two of us. Thank you!"
+    "text": "Email Policy\nI am adopting the following policy regarding emails: you must speak with me (either during Office Hours or at the end of lecture) and get my verbal approval before sending me an email for any matter. This includes accommodations, sicknesses, grade disputes, etc; specifically, if you wish to contact me about a sickness-related accommodation please attend my Zoom Office Hour. (University policy dictates that anyone suffering from sickness-like symptoms should stay home to avoid exposure to the rest of the class.) Please note that I will ignore any emails that were sent without my prior verbal approval; also, I will ignore all DM’s (Direct Messages) sent through Discord. Thank you for understanding!"
   },
   {
     "objectID": "Pages/syllabus.html#disclaimer",
@@ -452,7 +452,7 @@
     "href": "Pages/hw.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Here you will find all homework assignments and their solutions.\n\nHomework 1: due by 11:59pm on Tuesday, April 11 .pdf Solns \nHomework 2: due by 11:59pm on Tuesday, April 18 .pdf Solns \nHomework 3: due by 11:59pm on MONDAY, APRIL 24 .pdf Solns \nHomework 4: due by 11:59pm on Tuesday, May 2 .pdf Solns \nHomework 5: due by 11:59pm on Wednesday, May 10 .pdf Solns \nHomework 6: due by 11:59pm on Tuesday, May 16 .pdf Solns \nHomework 7: due by 11:59pm on MONDAY, MAY 22 .pdf Solns \nHomework 8: due by 11:59pm on Wednesday, May 31 .pdf Solns \nHomework 9: due by 11:59pm on Wednesday, June 7 .pdf Solns"
+    "text": "Here you will find all homework assignments and their solutions.\n\nHomework 1: due by 11:59pm on Tuesday, April 11 .pdf Solns"
   },
   {
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#last-time",
@@ -4799,14 +4799,14 @@
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Sunday, June 11, 2023\n\nAs a reminder: Monday sections are Discussion Sections and Wednesday sections are Lab Sections. There will not be a discussion section in week 1 (as, if there were one, it would take place before the first lecture!)\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(4/03 - 4/09)\n\n00: Introduction \n01: Descriptive Statistics \n02: More Descriptive Statistics \n\nNo Discussion Section\nLab 01  (Introduction to Python, and Basic Data Types)\nSolns \n\n\n2\n(4/10 - 4/16)\n\n03: Intro to Probability \n04: Counting \n\nDiscussion Worksheet 01 \nSolns \nLab 02  (Data Classes)\nSolns \n\n\n3\n(4/17 - 4/23)\n\n05: Conditional Probabilities \n06: Review \n\nExam Information/Polices \n\nList of Topics \n\nPractice Problems \n\nPractice Problems Solns \n\nMT1 Coverpage \n\n\nDiscussion Worksheet 02 \nSolns \nLab 03 (Conditionals, Comparisons, and Functions)\nSolns \n\n\n4\n(4/24 - 4/30)\n\n07: Midterm Exam 1\n\nBlue Version: Blank Solns \nYellow Version: Blank Solns \n\n08: Discrete Random Variables \n\nDiscussion Worksheet 03 (Midterm 1 Review)\nLab 04 (Descriptive Statistics)\nSolns  \n\n\n5\n(5/01 - 5/07)\n\n09: Continuous Random Variables \n\nNormal Table\n\n10: Intro to Inferential Statistics \n\nIn-Lecture Demo \n\nExercise 2 Solns \n\n\nDiscussion Worksheet 04 \nSolns \nLab 05  Random Number Generation, and Simulations\nSolns \n\n\n\n6\n(5/08 - 5/14)\n\n11: Confidence Intervals for Proportions \n12: Inference on the Mean \n\nDiscussion Worksheet 05 \nSolns \nLab 06 Loops\n\nSolns \n\n\n7\n(5/15 - 5/21)\n\n13: Hypothesis Testing, Part I \n14: Review \n\nList of Topics \nExam Information/Polices \nPractice Problems \n\nSolns \n\nMC Practice \n\nSolns \n\n\n\n\nDiscussion Worksheet 06 \n\nCombined Tables\n\nSolns \nLab 07 Percentiles, and Testing Distributional Fits\nSolns \n\n\n8\n(5/22 - 5/28)\n\n15: Midterm Exam 2\n\nSalmon Version: Blank Solns \nYellow Version: Blank Solns \n\n16: Hypothesis Testing, Part II \n\nExercise 1(b) Solns \n\n\nDiscussion Worksheet 07 (Midterm 2 Review)\nLab 08 Markdown Syntax\n\n\n9\n(5/29 - 6/4)\n\n17: Hypothesis Testing in Multiple Samples \n18: Regression \n\nDiscussion Worksheet 08\nLab 09 Exploring a Dataset\n\n\n10\n(6/05 - 6/11)\n\n19: More Regression, and Sampling Procedures \n20: Review\n\nPost-MT2, Part I \n\nPost-MT2, Part II \n\nProbability Review \n\n\nDiscussion Worksheet 09\nLab 10: Regression\n\n\nFINAL EXAM\nTuesday, June 13 from 4-7pm\n\nList of Topics \n\nSample FR Questions Solns \n\nSample MC Questions Solns \n\nScantron \n\n\n\n\n\n\n\nFinal Grade Distribution: \nQuiz Formula Sheets\nPlease note: quiz sheets will NEVER be uploaded before the quiz takes place.\n\nQz01 \n\nQz02 \n\nQz03 \n\nQz04 \n\nQz05"
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Wednesday, June 21, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n03: Intro to Probability\n04: Counting\n\nWorksheet 01\nLab01: Introduction to Python\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nWorksheet 02\nLab02: Data Classes, Comparisons, Conditionals, and Functions\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nWorksheet 04\nLab03: Descriptive Statistics, Sampling Distributions, and Simulations\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n14: Hypothesis Testing for Proportions\n15: Review\n16: Midterm 2\n\nWorksheet 05\nLab04: Percentiles, QQ-Plots, and Loops\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing for Means\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 06\nLab05: Markdown Syntax, and Importing Data\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\n\nLab06: Exploratory Data Analysis"
   },
   {
     "objectID": "Pages/calendar.html",
     "href": "Pages/calendar.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "TA\n\n\nEmail\n\n\nSection Time\n\n\nLocation\n\n\n\n\n\n\nYuan Zhou\n\n\nyuan_zhou@pstat.ucsb.edu\n\n\n10 - 10:50am\n\n\nPsychology East 1805\n\n\n\n\nJason Teng\n\n\njteng@pstat.ucsb.edu\n\n\n11 - 11:50am\n\n\nPhelps 1525\n\n\n\n\nNickolas Thiessen\n\n\nnickolas@ucsb.edu\n\n\n12 - 12:50pm\n\n\nPhelps 1513\n\n\n\n1 - 1:50pm\n\n\nPhelps 1529"
+    "text": "TA\n\n\nEmail\n\n\nSection Time\n\n\nLocation\n\n\n\n\n\n\nOlivier Mulkin\n\n\nomulkin@pstat.ucsb.edu\n\n\n12:30 - 1:20pm\n\n\nPhelps 1513\n\n\n\n\nMengrui Zhang\n\n\nmengrui@ucsb.edu\n\n\n2 - 2:50pm\n\n\nPhelps 1513\n\n\n\n3 - 3:50pm\n\n\nPhelps 1513"
   },
   {
     "objectID": "Pages/calendar.html#visual-weekly-schedule",
@@ -4814,5 +4814,19 @@
     "title": "PSTAT 5A: Understanding Data",
     "section": "Visual Weekly Schedule",
     "text": "Visual Weekly Schedule"
+  },
+  {
+    "objectID": "Pages/exam_prep.html",
+    "href": "Pages/exam_prep.html",
+    "title": "PSTAT 5A: Understanding Data",
+    "section": "",
+    "text": "Preparatory material for the exams will be posted here as we approach the dates of the exams."
+  },
+  {
+    "objectID": "Pages/syllabus.html#schedule-of-sections",
+    "href": "Pages/syllabus.html#schedule-of-sections",
+    "title": "PSTAT 5A: Understanding Data",
+    "section": "Schedule of Sections",
+    "text": "Schedule of Sections\n\n\n\nTimes\nTA\nLocation\n\n\n\n\nMW 12:30 - 1:20pm\nOlivier Mulkin\nPHELPS 1513\n\n\nMW 2:00 - 2:50pm\nMengrui Zhang\nPHELPS 1513\n\n\nMW 3:00 - 3:50pm\nMengrui Zhang\nPHELPS 1513"
   }
 ]
