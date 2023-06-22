@@ -28,14 +28,14 @@ M, T, W, Th: 11:00am - 12:20pm in **ILP 1101**
 \vspace{-5mm}
 
 ::: {layout-ncol="2"}
-+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| **Instructor:**       | Ethan P. Marzban                                                                                                                             |
-+:======================+:=============================================================================================================================================+
-| **Email:**            | [epmarzban\@pstat.ucsb.edu](mailto:epmarzban@pstat.ucsb.edu)                                                                                 |
-+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| **Help Hours:**       | -   [**Tuesdays:**]{.underline} 4:30pm - 5:30pm (<a href="https://ucsb.zoom.us/j/86469023392?pwd=aG5zY29wRWJscEFRY2ZYa0dXOVZ6Zz09">Zoom</a>) |
-|                       | -   [**Thursdays:**]{.underline} 1:00pm - 2:00pm (SH 5607 F)                                                                                 |
-+-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| **Instructor:** | Ethan P. Marzban                                                                                                                             |
++:================+:=============================================================================================================================================+
+| **Email:**      | [epmarzban\@pstat.ucsb.edu](mailto:epmarzban@pstat.ucsb.edu) (Please use only in case of emergency)                                          |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| **Help Hours:** | -   [**Tuesdays:**]{.underline} 4:30pm - 5:30pm (<a href="https://ucsb.zoom.us/j/86469023392?pwd=aG5zY29wRWJscEFRY2ZYa0dXOVZ6Zz09">Zoom</a>) |
+|                 | -   [**Thursdays:**]{.underline} 1:00pm - 2:00pm (SH 5607 F)                                                                                 |
++-----------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 : {tbl-colwidths="\[20, 30\]"}
 
@@ -136,7 +136,7 @@ I have elected to adopt an uncurved grading scheme to eliminate any sense of "co
 
 ## Academic Integrity
 
-As a member of the UCSB community, it is expected that you will act with academic integrity. This means, among other things, that the work you submit should be entirely your own and not copied from any external sources. Collaboration on non-quiz and non-exam assignments is perfectly acceptable (and even encouraged), but the work you submit should still be your own; you can't have someone else write up solutions for you. 
+As a member of the UCSB community, it is expected that you will act with academic integrity. This means, among other things, that the work you submit should be entirely your own and not copied from any external sources. Collaboration on non-quiz and non-exam assignments is perfectly acceptable (and even encouraged), but the work you submit should still be your own; you can't have someone else write up solutions for you.
 
 Anyone found guilty of academic misconduct will be reported to the Academic Senate, and will receive at minimum a failing grade on the assignment in question; further actions may also include failing the course, and marks being made on permanent records. Depending on the severity of the infraction, expulsion is also a possibility.
 
@@ -166,7 +166,7 @@ As mentioned above, Sections (both Discussion and Lab) take place in special "Co
 
 ## Email Policy
 
-Please note that we have a **no-email** (including Canvas messages) policy, except for emergencies; I leave it to you to decide what's an 'emergency'. Please bring all of your questions to me during Office Hours or at the end of lectures. (Also, please note that DMs [Direct Messages] sent to the course staff through Discord will be ignored.) Thank you!
+Please note that we have a **no-email** (including Canvas messages) policy, except for emergencies; I leave it to you to decide what's an 'emergency'. Please bring all of your questions to me during Office Hours or at the end of lectures. (Also, please note that DMs \[Direct Messages\] sent to the course staff through Discord will be ignored.) Thank you!
 
 <!-- This quarter, I am adopting a **no-email policy**. If you have any questions or concerns, please come to my office hours to express them; if you are unable to make either of my office hours, please see me after class to set up a meeting time. Please note that I will ignore any emails sent to my inbox. Thank you! -->
 

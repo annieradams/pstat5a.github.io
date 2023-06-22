@@ -28,7 +28,7 @@ linkcolor: "#ffa07a"
       <table>
         <tr>
           <td><b>Email:</b></td>
-          <td><a href = "mailto:epmarzban@pstat.ucsb.edu">epmarzban@pstat.ucsb.edu</a></td>
+          <td><a href = "mailto:epmarzban@pstat.ucsb.edu">epmarzban@pstat.ucsb.edu</a> (Please use only in case of emergency)</td>
         </tr>
         <tr>
           <td><b>OH:</b></td>
