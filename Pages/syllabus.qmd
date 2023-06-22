@@ -95,8 +95,8 @@ There are **two midterms** and a **final** exam for this class. You are required
 ::: callout-note
 ## **Exam Dates**:
 
--   Midterm 1 is scheduled to take place **Thursday July 6 from 11am - 12:20pm** (lecture time)
--   Midterm 2 is scheduled to take place **Thursday July 20 from 11am - 12:20pm** (lecture time)
+-   Midterm 1 is scheduled to take place **Thursday July 6 from 11:00am - 12:20pm** (lecture time)
+-   Midterm 2 is scheduled to take place **Thursday July 20 from 11:00am - 12:20pm** (lecture time)
 -   The final is scheduled to take place [**FRIDAY, AUGUST 4 from 4 - 7pm**]{style="color:red"}
 :::
 
