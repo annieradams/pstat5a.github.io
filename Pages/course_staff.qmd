@@ -89,7 +89,7 @@ linkcolor: "#ffa07a"
         </tr>
         <tr>
           <td><b>OH:</b></td>
-          <td>T, 1 - 3pm (Zoom)</td>
+          <td>T, 1 - 3pm (Zoom) <font color="red">Starts in Week 2</font></td>
         </tr>
       </table>
     </td>
