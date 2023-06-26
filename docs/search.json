@@ -287,6 +287,209 @@
     "text": "Why Should I Care?\n\n\nI suspect not all of you are necessarily pursuing a degree in Statistics or Data Science.\n\n\n\nHowever, wherever there is data, there is the need for a Data Scientist (or, at least, some of the principles from Data Science).\n\nSo, even if you are working in (what you might think is) a field that is far removed from Statsitics, the minute you start dealing with Data is the minute you start needing to know Data Science!\n\nHere’s a perhaps more pragmatic answer: even if you think you want to go straight into industry right after this course, no company wants to hire someone to just mindlessly crunch numbers - though computing experience is absolutely crucial in making yourself a good candidate, employers would much rather have someone who is both skilled at running code but also understands why they are running the code they are running!"
   },
   {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#what-is-data",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#what-is-data",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "What is Data?",
+    "text": "What is Data?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#what-is-data-1",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#what-is-data-1",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "What is Data?",
+    "text": "What is Data?\n\nAccording to Merriam-Webster (source), there are three definitions for data:\n\n\nfactual information (such as measurements or statistics) used as a basis for reasoning, discussion, or calculation\ninformation in digital form that can be transmitted or processed\ninformation output by a sensing device or organ that includes both useful and irrelevant or redundant information and must be processed to be meaningful"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#example-of-data",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#example-of-data",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Example of Data",
+    "text": "Example of Data\n\nAs a concrete example of a dataset, let’s explore the so-called palmerpenguins dataset.\nCollected by Dr. Kristen Gorman at the Palmer Station in Antarctica, this dataset contains various measurements of 344 different penguins Dr. Gorman encountered."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#the-data-matrix",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#the-data-matrix",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "The Data Matrix",
+    "text": "The Data Matrix\n\nEach row of the data matrix above corresponds to an individual penguin.\n\nIn general, we refer to a given row of the data matrix as an observational unit, or case.\n\nFor each penguin, we can see that there are observations on several different characteristics; specifically, for each penguin she encountered, Dr. Gorman measured and recorded the penguin’s species, island, bill length (in mm), bill depth (in mm), flipper length (in mm), body mass (in grams), sex, and year of observation.\n\nNotice that these are the column names in our data matrix above. In general, the columns of the data matrix are referred to as variables."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#numerical-vs.-categorical",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#numerical-vs.-categorical",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Numerical vs. Categorical",
+    "text": "Numerical vs. Categorical\n\nNumerical variables are variables whose observations consist of numbers.\n\nExamples: heights, temperatures, number of free throws, etc.\n\nNot all variables are numerical. For example, I could take a poll asking people’s opinions on the movie Ant-Man and the Wasp: Quantumania- the observations of this variable will most certainly not be numerical.\n\nRather, the observations of this variable will fall into one of a series of fixed categories (e.g. “Enjoyed the movie”, “Neutral about the movie”, “Too many bugs”, etc.).\nAs such, we describe non-numerical variables as categorical variables."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#a-note-on-language",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#a-note-on-language",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "A Note on Language",
+    "text": "A Note on Language\n\nQuestion: can we say that data is numerical? Or, can we say we have “categorical data”?\nSure- if our data consists of just a single variable!\nThat is to say- the classification terms we learned (and will learn) can be used to describe data, provided our data contains only one variable.\nThe definition of data we are using (i.e. in the context of the data matrix) is that data is comprised of several variables. As such, we cannot simply take the classification of variables and apply that to the entire dataset (unless our dataset consists of only one variable).\n\nThis may seem like a subtle point… and it is! I’m just pointing it out so you are aware of it."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#continuous-vs.-discrete-variables",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#continuous-vs.-discrete-variables",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Continuous vs. Discrete Variables",
+    "text": "Continuous vs. Discrete Variables\n\nThere is a way we can further subdivide numerical variables.\nAs an example, let us consider two different variables, both of which are numerical: heights, and number of accidents on a stretch of highway.\n\nIt is perfectly conceivable to observe a height of 5.15 feet, or 5.1302 feet, or 5.02391829 feet. In other words, there are an infinite number of possible heights between, say, 5 feet and 6 feet.\nOn the other hand, it doesn’t make sense to talk about “1.5 accidents” occurring on a stretch of highway; the number of accidents needs to be an integer."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#ordinal-vs.-nominal-variables",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#ordinal-vs.-nominal-variables",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Ordinal vs. Nominal Variables",
+    "text": "Ordinal vs. Nominal Variables\n\nJust as there was a way to subdivide numerical variables, there is a way to further subdivide categorical variables as well.\nAs an example, consider the following two categorical variables: color, and letter grades (i.e. A, B+, etc.)\n\nFirstly, I hope you can see that both of these variables are indeed categorical: there are only a fixed set of values that “color” and “letter grade” can take, with nothing in between.\nNow, clearly letter grades can be ordered: that is, an A is better than a B, which is better than a C, and so on and so forth.\nIn contrast, “green” isnt inherently better than “red”, which isn’t inherently better than “grey”, and so on and so forth."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#full-classification-scheme",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#full-classification-scheme",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Full Classification Scheme",
+    "text": "Full Classification Scheme\n\n\nHere is a diagram of the full classification scheme:\n\n\n\n\n\n\n\n\n\ndata_classification\n\n \n\ncluster_main\n\n  \n\ncluster_0\n\n  \n\ncluster_1\n\n  \n\ncluster_2\n\n  \n\ncluster_3\n\n   \n\nData\n\n Variable   \n\nnumerical\n\n Numerical   \n\nData->numerical\n\n    \n\ncategorical\n\n Categorical   \n\nData->categorical\n\n    \n\ncontinuous\n\n Continuous   \n\nnumerical->continuous\n\n    \n\ndiscrete\n\n Discrete   \n\nnumerical->discrete\n\n    \n\nnominal\n\n Nominal   \n\ncategorical->nominal\n\n    \n\nordinal\n\n Ordinal   \n\ncategorical->ordinal"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#time-for-an-exercise",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#time-for-an-exercise",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Time for an Exercise!",
+    "text": "Time for an Exercise!\n\n\n\n\n\n\nExercise 1\n\n\n\nClassify each of the following variables as either discrete, continuous, ordinal, or nominal.\n\n\nThe number of times a computer program returns an error\nThe time it takes an experienced swimmer to complete 4 laps of a pool\nThe favorite flavor of donut of a randomly selected person\nThe months of the year, as written in MM format (e.g. “01” for “January”, “02” for “February”, etc.)\n\n\nDiscuss with your neighbors!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#important-note",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#important-note",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Important Note",
+    "text": "Important Note\n\nIt is important to note that categorical data can be encoded using numbers (as we saw in the previous slide).\n\nIndeed, this is a fairly common practice as computers are more adept at dealing with numbers than things like words or symbols.\nAs such, when classifying data, it is not always enough to just check whether the data consists of numbers or not- it is important to think critically about what the data itself represents.\nAs a quick rule-of-thumb: check whether adding two numbers in your dataset makes interpretive sense. 12in \\(+\\) 13in is 15in, whereas blue + gold does not equal anything, regardless of whether blue is being encoded as 0 and gold is being encoded as 1."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#real-world-data-set",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#real-world-data-set",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Real-World Data Set",
+    "text": "Real-World Data Set\n\nLet’s return to the palmerpenguins dataset.\nSpecifically, let’s examine the species variable:\n\n\n\n\n  [1] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n  [8] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [15] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [22] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [29] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [36] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [43] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [50] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [57] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [64] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [71] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [78] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [85] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [92] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [99] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n[106] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n[113] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n[120] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n[127] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n[134] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n[141] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n[148] Adelie    Adelie    Adelie    Adelie    Adelie    Gentoo    Gentoo   \n[155] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[162] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[169] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[176] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[183] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[190] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[197] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[204] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[211] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[218] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[225] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[232] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[239] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[246] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[253] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[260] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[267] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[274] Gentoo    Gentoo    Gentoo    Chinstrap Chinstrap Chinstrap Chinstrap\n[281] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap\n[288] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap\n[295] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap\n[302] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap\n[309] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap\n[316] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap\n[323] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap\n[330] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap\n[337] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap\n[344] Chinstrap\nLevels: Adelie Chinstrap Gentoo"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#descriptive-statistics",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#descriptive-statistics",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Descriptive Statistics",
+    "text": "Descriptive Statistics\n\n\nThis is the goal of Descriptive Statistics- to find different summarizing techniques to desribe the data.\n\n\n\nThere are two ways we can seek to summarize data: numerically (using numbers), and graphically.\nLet’s start with the latter- that is, let’s discuss how we might summarize our data using graphs."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#back-to-penguins",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#back-to-penguins",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Back To Penguins",
+    "text": "Back To Penguins\n\nHere is the species variable one more time:\n\n\n\n\n  [1] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n  [8] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [15] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [22] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [29] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [36] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [43] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [50] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [57] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [64] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [71] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [78] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [85] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [92] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n [99] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n[106] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n[113] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n[120] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n[127] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n[134] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n[141] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   \n[148] Adelie    Adelie    Adelie    Adelie    Adelie    Gentoo    Gentoo   \n[155] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[162] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[169] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[176] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[183] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[190] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[197] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[204] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[211] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[218] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[225] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[232] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[239] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[246] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[253] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[260] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[267] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   \n[274] Gentoo    Gentoo    Gentoo    Chinstrap Chinstrap Chinstrap Chinstrap\n[281] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap\n[288] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap\n[295] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap\n[302] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap\n[309] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap\n[316] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap\n[323] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap\n[330] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap\n[337] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap\n[344] Chinstrap\nLevels: Adelie Chinstrap Gentoo"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#bargraphsbarplots",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#bargraphsbarplots",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Bargraphs/Barplots",
+    "text": "Bargraphs/Barplots\n\n\nThis is an example of what is known as a bargraph or barplot.\n\n\n\n\n\n\n\n\nResult\n\n\n\nA bargraph is the best type of visualization for categorical data.\n\n\n\n\n\nIn general, if you have \\(k\\) categories, then you will have \\(k\\) bars in your bargraph, each with height propotional to the number of observations within the corresponding category.\nAs you can see, computing software is very useful when it comes to data visualization! In a few weeks, you will explore how to generate visualizations of your own in Python during Lab."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#time-for-another-exercise",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#time-for-another-exercise",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Time For Another Exercise!",
+    "text": "Time For Another Exercise!\n\n\n\n\n\n\nExercise 2\n\n\n\nA recent survey asked 120 different PSTAT students what their favorite color is. The bargraph of the results is displayed below:\n\n\n\n\n\nApproximately what proportion of the students in the sample reported either blue or gold as their favorite color? Discuss with your neighbor!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#leadup",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#leadup",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Leadup",
+    "text": "Leadup\n\n\nAll of our discussions above were related to categorical variables.\n\n\n\nAs we discussed at the beginning of this lecture, not all variables are categorical- how do we visualize numerical variables?\nAgain, I find it useful to consider a concrete example: this time, let’s use the bill_length_mm variable from the palmerpenguins dataset."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#discretizationbinning",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#discretizationbinning",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Discretization/Binning",
+    "text": "Discretization/Binning\n\n\nThis is what is known as discretizing or binning our variable.\n\n\n\nIn other words, when we discretize our data, we carve it up into a bunch of chunks of equal width and see how many observations fall in each chunk.\n\nThe width of each chunk is what we call the binwidth. For example, if my categories are “between 30 and 35”, “between 35 and 40”, etc., then the binwidth is 5mm as each category spans a width of 5mm."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#the-importance-of-binwidth",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#the-importance-of-binwidth",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "The Importance of Binwidth",
+    "text": "The Importance of Binwidth\n\nNotice that our notion of a histogram is intimately tied with our choice of binwidth.\nDifferent binwidths can produce wildly different histograms!\nHere is a demo\nIn practice, it is a good idea to play around with different binwidths to find one that results in a histogram that displays a moderate amount of detail without becoming so detailed as to lose sight of the bigger picture."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#boxplots",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#boxplots",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Boxplots",
+    "text": "Boxplots\n\nIt turns out there is another way to summarize numerical data visually: using what is known as a boxplot.\nBoxplots can be a seem a bit peculiar at first, so let’s take a look at one together. Before diving back into the palmerpenguins dataset, let’s look at a slightly different dataset.\n\nThis dataset contains only one variable, which records the scores (out of 100 points) of 140 different students on a final exam.\n\n\n\n\n\n  [1] 88.236 77.348 81.050 74.431 75.083 79.569 74.998 80.099 74.264 83.850\n [11] 89.857 81.427 79.439 84.260 78.565 77.570 78.224 73.780 88.085 79.341\n [21] 80.554 77.317 81.155 83.842 87.051 78.362 81.528 72.148 74.131 78.927\n [31] 75.446 79.791 78.199 90.769 85.640 78.420 83.484 79.045 97.909 86.736\n [41] 73.723 76.973 81.320 79.238 85.803 86.621 85.781 81.844 82.896 80.478\n [51] 75.903 84.565 76.302 83.432 85.448 69.695 81.049 85.575 84.791 82.525\n [61] 78.361 77.803 86.542 84.171 86.103 72.772 78.730 76.189 75.187 79.194\n [71] 77.159 82.048 82.661 84.021 76.008 79.474 79.015 86.992 72.524 76.094\n [81] 78.765 80.623 82.497 75.776 70.614 79.677 81.182 77.943 76.863 85.561\n [91] 89.569 96.695 73.680 77.770 81.584 81.965 78.373 76.295 73.212 79.229\n[101] 87.273 87.364 82.706 83.843 75.864 82.791 82.637 78.685 72.626 69.302\n[111] 93.408 73.189 83.764 77.832 82.803 80.278 94.962 79.616 85.667 82.710\n[121] 86.823 76.656 74.623 71.508 91.131 78.318 81.058 86.239 76.585 85.652\n[131] 77.122 86.036 83.127 83.234 80.746 83.878 75.544 73.780 81.106 85.523"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#anatomy-of-a-boxplot",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#anatomy-of-a-boxplot",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Anatomy of a Boxplot",
+    "text": "Anatomy of a Boxplot"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#understanding-boxplots",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#understanding-boxplots",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Understanding Boxplots",
+    "text": "Understanding Boxplots\n\nLet’s discuss each of the quantities represented on the boxplot separately.\nBefore we do, there’s a bit of math we need to cover.\nThe first quantity we will define is a term you may have heard before- percentile.\nLet’s return to our histogram of scores (since we’re a bit more comfortable with reading histograms than boxplots, at this point)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#percentiles",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#percentiles",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Percentiles",
+    "text": "Percentiles\n\n\n\n\n\n\n\nDefinition\n\n\n\nThe pth percentile of a set of observations \\(X\\) is the value \\(\\pi_{x, \\ 0.5}\\) such that p% of observations lie to the left of (i.e. are less than) \\(\\pi_{x, \\ p}\\).\n\n\n\n\n\n\nMaybe now you can see why I switched over to this data of scores- I think percentiles are sometimes easier to interpret in the context of exam scores, since they are very commonly reported with standardized testing scores (e.g. SAT, GRE, etc.)\n\nIn the context of scores: someone who scored at the pth percentile performed better than p% of all test-takers."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#quartiles",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#quartiles",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Quartiles",
+    "text": "Quartiles\n\nWe give a special name to the 25th and 75th percentiles of a set of observations- we call these the first quartile and third quartile, respectively, and use the notation \\(Q_1\\) and \\(Q_3\\) to denote them, respectively.\n\nSo, \\(Q_1\\) is the value such that 25% of observations are less than \\(Q_1\\), and \\(Q_3\\) is the value such that 75% of observations are less than \\(Q_3\\)\n\nThe second quartile (i.e. the 50th percentile) is called the median.\n\nAs such, the median is the value that “splits the data in half”.\nWe’ll talk more about the median in the next lecture."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#small-caveat",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#small-caveat",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Small Caveat",
+    "text": "Small Caveat\n\nI should quickly mention one small caveat- computing softwares often use a different procedure for computing quartiles.\nThis procedure is quite long and complicated, and is based off an entire paper written back in the 90’s.\nFor example, if we consider the set \\(S = \\{1, 2, 3, 4, 5, 6\\}\\), we would (based on the definition from the previous slide) call the first quartile \\(2\\), whereas most softwares would return a value of \\(2.25\\).\nDon’t worry about why this is- whenever we talk about quartiles in this class, you can just think of the definition I posed on the previous slide."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#whiskers",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#whiskers",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Whiskers",
+    "text": "Whiskers\n\nFinally, we discuss the role of the whiskers on the boxplot.\nThere are several different conventions for how far the whiskers extend. In some conventions, the whiskers extend to the minimum and maximum values of the data.\nThe convention we will use is the following: the whiskers will never reach farther than \\(\\boldsymbol{1.5 \\times (Q_3 - Q_1)}\\).\n\nWhat this means is that there may be points in our dataset that lie beyond the reach of the whiskers. These points are what we call outliers."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#whiskers-1",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#whiskers-1",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Whiskers",
+    "text": "Whiskers\n\n\nThe rationale for constructing the whiskers in this way is to try and highlight any points that are unusually distant from the rest of the data.\n\n\n\nFor example, returning to our dataset of scores, we can see that though the median score was around 80.3% there was one person who scored a 97.9%. Because this score is unusually large, we would label it an outlier."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#time-for-an-exercise-1",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#time-for-an-exercise-1",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Time for an Exercise!",
+    "text": "Time for an Exercise!\n\n\n\n\n\n\nExercise 4\n\n\n\nHere is a boxplot of the bill_length_mm variable from the palmerpenguins dataset:\n\n\n\n\n\n\n\n\nWhat is the median bill length?\nApproximately what percent of penguins had bills shorter than 37mm in length?\nAre there any outliers?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#summary",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#summary",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Summary",
+    "text": "Summary\n\nWe started off by talking about the structure of data, and the data matrix.\nWe then discussed how to classify variables.\nNext, we explored graphical methods for summarizing data.\n\nBargraphs are best-suited for categorical data\nHistograms and boxplots are best-suited for numerical data\n\nWe also introduced the notions of percentiles, the median, and outliers.\nNext time we’ll discuss how to visualize the relationship between two variables.\nWe’ll also discuss some numerical summaries for data, including the mean, median, standard deviation, and IQR."
+  },
+  {
     "objectID": "Pages/schedule.html",
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
