@@ -231,11 +231,67 @@
     "text": "Here you will find all homework assignments and their solutions.\n\nHomework 1: due by 11:59pm on Tuesday, April 11 .pdf Solns"
   },
   {
+    "objectID": "Pages/Lectures/Lecture00/Lec00.html#course-staff",
+    "href": "Pages/Lectures/Lecture00/Lec00.html#course-staff",
+    "title": "PSTAT 5A: Lecture 00",
+    "section": "Course Staff",
+    "text": "Course Staff\n\n\n\n\nInstructor:\n\nEthan (He/Him)\nepmarzban@pstat.ucsb.edu\nT 4:30 - 5:30pm (Zoom) and Th 2 - 3pm (SH607F)\n\n\n\n\n\n\n\n\n\nTeaching Assistants:\n\n\n\n\nMengrui Zhang\nmengrui@ucsb.edu\nOH: MW, 4-6pm (SH 5431W)\n\n\n\n\n\nOlivier Mulkin\nomulkin@ucsb.edu\nOH: T, 1 - 3pm (Zoom; starts next week)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture00/Lec00.html#course-resources",
+    "href": "Pages/Lectures/Lecture00/Lec00.html#course-resources",
+    "title": "PSTAT 5A: Lecture 00",
+    "section": "Course Resources",
+    "text": "Course Resources\n\nCanvas: for grades\nGradescope: for quizzes and labs\nCourse Website: https://pstat5a.github.io\n\nAll relevant course material will be posted to the website!\nOne exception: quizzes, which will be administered through Gradescope\n\nPlease read the syllabus fully and carefully!\n\nThere’s also a small blurb about email policies in the syllabus. Basically, I’m asking that you email me and the TA’s only in case of emergency (and I leave it to you to determine what’s an emergency); instead, I ask that you please use Office Hours (or even the end of lecture) to communicate with us. I do this to help alleviate stress on both ends of email exchanges; thank you for understanding!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture00/Lec00.html#discord",
+    "href": "Pages/Lectures/Lecture00/Lec00.html#discord",
+    "title": "PSTAT 5A: Lecture 00",
+    "section": "Discord",
+    "text": "Discord\n\n\n\n\n\n\n\n\n\n\nbit.ly/ssa5adisc"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture00/Lec00.html#bit.lyssa5adisc",
+    "href": "Pages/Lectures/Lecture00/Lec00.html#bit.lyssa5adisc",
+    "title": "PSTAT 5A: Lecture 00",
+    "section": "bit.ly/ssa5adisc",
+    "text": "bit.ly/ssa5adisc"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture00/Lec00.html#what-is-data-science-1",
+    "href": "Pages/Lectures/Lecture00/Lec00.html#what-is-data-science-1",
+    "title": "PSTAT 5A: Lecture 00",
+    "section": "What is Data Science?",
+    "text": "What is Data Science?\n\nNot a bad definition!\nThough, there isn’t a single agreed-upon definition of what data science is.\nMost people agree that Data science is cross-disciplinary, drawing experience and expertise from a wide variety of different fields.\n\nPerhaps the two main fields from which Data Science draws are Statistics and Computer Science\n\nLike ChatGPT suggested, computation is an integral part of Data Science.\n\nAs we will soon see, the data that is being analyzed these days is huge; certainly too large to be able to do anything with it on pen and paper."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture00/Lec00.html#the-path-forward",
+    "href": "Pages/Lectures/Lecture00/Lec00.html#the-path-forward",
+    "title": "PSTAT 5A: Lecture 00",
+    "section": "The Path Forward",
+    "text": "The Path Forward\n\nSo, how does this course factor into the discourse surrounding Data Science?\nFrom the course description:\n\n\n\nIntroduction to data science. Concepts of statistical thinking. Topics include random variables, sampling distributions, hypothesis testing, correlation and regression. Visualizing, analyzing and interpreting real world data using Python. Computing labs required.\n\n\n\nIndeed, this course will serve as a sort of “table of contents” of Data Science, touching on many (but still not all) of the wonderful subfields and subtopics that comprise the field."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture00/Lec00.html#why-should-i-care",
+    "href": "Pages/Lectures/Lecture00/Lec00.html#why-should-i-care",
+    "title": "PSTAT 5A: Lecture 00",
+    "section": "Why Should I Care?",
+    "text": "Why Should I Care?\n\nA natural question that arises in a class like this is: “why should I care?”"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture00/Lec00.html#why-should-i-care-1",
+    "href": "Pages/Lectures/Lecture00/Lec00.html#why-should-i-care-1",
+    "title": "PSTAT 5A: Lecture 00",
+    "section": "Why Should I Care?",
+    "text": "Why Should I Care?\n\n\nI suspect not all of you are necessarily pursuing a degree in Statistics or Data Science.\n\n\n\nHowever, wherever there is data, there is the need for a Data Scientist (or, at least, some of the principles from Data Science).\n\nSo, even if you are working in (what you might think is) a field that is far removed from Statsitics, the minute you start dealing with Data is the minute you start needing to know Data Science!\n\nHere’s a perhaps more pragmatic answer: even if you think you want to go straight into industry right after this course, no company wants to hire someone to just mindlessly crunch numbers - though computing experience is absolutely crucial in making yourself a good candidate, employers would much rather have someone who is both skilled at running code but also understands why they are running the code they are running!"
+  },
+  {
     "objectID": "Pages/schedule.html",
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Sunday, June 25, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n03: Intro to Probability\n04: Counting\n\nWorksheet 01\nLab 01  Introduction to Python\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nWorksheet 02\nLab02: Data Classes, Comparisons, Conditionals, and Functions\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nWorksheet 04\nLab03: Descriptive Statistics, Sampling Distributions, and Simulations\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n14: Hypothesis Testing for Proportions\n15: Review\n16: Midterm 2\n\nWorksheet 05\nLab04: Percentiles, QQ-Plots, and Loops\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing for Means\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 06\nLab05: Markdown Syntax, and Importing Data\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\n\nLab06: Exploratory Data Analysis"
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Sunday, June 25, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n03: Intro to Probability\n04: Counting\n\nWorksheet 01\nLab 01  Introduction to Python\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nWorksheet 02\nLab02: Data Classes, Comparisons, Conditionals, and Functions\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nWorksheet 04\nLab03: Descriptive Statistics, Sampling Distributions, and Simulations\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n14: Hypothesis Testing for Proportions\n15: Review\n16: Midterm 2\n\nWorksheet 05\nLab04: Percentiles, QQ-Plots, and Loops\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing for Means\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 06\nLab05: Markdown Syntax, and Importing Data\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\n\nLab06: Exploratory Data Analysis"
   },
   {
     "objectID": "Pages/calendar.html",
