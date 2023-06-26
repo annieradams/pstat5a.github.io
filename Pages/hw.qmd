@@ -11,6 +11,6 @@ format: html
 css: "../schedule.css"
 ---
 
-Here you will find all homework assignments and their solutions.
+Here you will find all homework assignments and their solutions. Please remember that solutions to homework will only be released during Exam Weeks; we encourage you to come to Office Hours to ask any questions you may have about the assignments!
 
 -   **Homework 1:** <a href = "../Files/HW/HW01_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a> <a href = "../Files/HW/HW01_Answers.pdf" class = "button label-outline" target = "_blank">Answers</a> <br />
