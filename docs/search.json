@@ -231,6 +231,244 @@
     "text": "Here you will find all homework assignments and their solutions. Please remember that solutions to homework will only be released during Exam Weeks; we encourage you to come to Office Hours to ask any questions you may have about the assignments!\n\nHomework 1: Blank Answers"
   },
   {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#uncertainty",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#uncertainty",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Uncertainty",
+    "text": "Uncertainty\n\n\nUncertainty surrounds us!\n\n\n\nStatistics is, in many ways, the study of uncertainty.\nProbability is the language of uncertainty; it gives us a way to quantify exactly how this uncertainty factors into our decision making process."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#experiment",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#experiment",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Experiment",
+    "text": "Experiment\n\n\nWe begin with the notion of an experiment. In the context of Probability, we have the following definition:\n\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nAn experiment is any procedure that can be repeated an infinite number of times, and each time the procedure is repeated there are a fixed set of things that could occur.\n\n\n\n\n\n\nAn example of an experiment is tossing a coin:\n\nI could go into Storke field and toss a coin an infinite number of times, and each time I toss the coin it will land on either heads or tails."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#outcome-space",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#outcome-space",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Outcome Space",
+    "text": "Outcome Space\n\n\nThe things that could occur on each repetition of an experiment are called outcomes.\n\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nThe outcome space of an experiment is the set \\(\\Omega\\) consisting of all outcomes of the experiment.\n\n\n\n\n\n\nFor instance, in the coin tossing example the outcome space is  \\(\\Omega =\\{\\)heads,  tails\\(\\}\\).\nAs an aside: some textbooks/professors refer to the outcome space as the sample space, and use the letter \\(S\\) to denote it.\n\nSo, if you are doing self-study and encounter the term “sample space”, know that it is the same thing as what we are calling the “outcome space”!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#worked-out-example",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#worked-out-example",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\nLet’s do an example together.\n\n\n\n\n\n\n\n\nWorked-Out Exercise 1\n\n\n\nConsider the experiment of rolling two four-sided dice and recording the faces that appear. What is an appropriate outcome space for this experiment?\n\n\n\n\n\nFirst, let’s find the outcome space.\nOn each dice roll, we will observe either a \\(1\\), \\(2\\), \\(3\\), or \\(4\\).\nBut, we cannot simply say that our outcome space is \\(\\{1, 2, 3, 4\\}\\) as this does not take into account the fact that we rolled two dice!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#now-its-your-turn",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#now-its-your-turn",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Now it’s Your Turn!",
+    "text": "Now it’s Your Turn!\n\n\n\n\n\n\nExercise 1\n\n\n\nConsider the experiment of tossing a coin, rolling a 4-sided die, and then tossing another coin. What is the outcome space of this experiment?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#other-ways-of-describing-outcome-spaces",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#other-ways-of-describing-outcome-spaces",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Other Ways of Describing Outcome Spaces",
+    "text": "Other Ways of Describing Outcome Spaces\n\nThere are a few other ways we can use to describe the outcome space of an experiment.\nLet’s return to the tossing four dice example from a few slides ago. Another way we could have kept track of the outcomes was by using a table, recording the outcome of the first die roll in the rows and the outcomes of the second in the columns:\n\n\n\n\n\n\n\n\n1\n\n\n2\n\n\n3\n\n\n4\n\n\n\n\n1\n\n\n(1, 1)\n\n\n(1, 2)\n\n\n(1, 3)\n\n\n(1, 4)\n\n\n\n\n2\n\n\n(2, 1)\n\n\n(2, 2)\n\n\n(2, 3)\n\n\n(2, 4)\n\n\n\n\n3\n\n\n(3, 1)\n\n\n(3, 2)\n\n\n(3, 3)\n\n\n(3, 4)\n\n\n\n\n4\n\n\n(4, 1)\n\n\n(4, 2)\n\n\n(4, 3)\n\n\n(4, 4)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#other-ways-of-describing-outcome-spaces-1",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#other-ways-of-describing-outcome-spaces-1",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Other Ways of Describing Outcome Spaces",
+    "text": "Other Ways of Describing Outcome Spaces\n\nSo, tables are a good way of keeping track of outcomes.\nBut, they really only work when we have two of something (e.g. two dice, two coins, etc.). What happens if we, for example, toss three coins?\nThis is where tree diagrams can become useful.\n\n\n\n\n\n\n\n\n\ntree_diagram\n\n  \n\nbase\n\no   \n\nH1\n\nH   \n\nbase->H1\n\n    \n\nT1\n\nT   \n\nbase->T1\n\n    \n\nH21\n\nH   \n\nH1->H21\n\n    \n\nT21\n\nT   \n\nH1->T21\n\n    \n\nH22\n\nH   \n\nT1->H22\n\n    \n\nT22\n\nT   \n\nT1->T22\n\n    \n\nH311\n\nH   \n\nH21->H311\n\n    \n\nT311\n\nT   \n\nH21->T311\n\n    \n\nH321\n\nH   \n\nT21->H321\n\n    \n\nT321\n\nT   \n\nT21->T321\n\n    \n\nH312\n\nH   \n\nH22->H312\n\n    \n\nT312\n\nT   \n\nH22->T312\n\n    \n\nH322\n\nH   \n\nT22->H322\n\n    \n\nT322\n\nT   \n\nT22->T322"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#events",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#events",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Events",
+    "text": "Events\n\nSometimes, it will be useful to consider quantities that are a bit more complex than single outcomes.\nFor example, consider the experiment of rolling two 4-sided dice. I could ask myself: in how many outcomes does the second dice roll result in a higher number than the first?\nThis leads us to the notion of an event.\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nAn event is a subset of the outcome space. In other words, an event is just a set consisting of one or more outcomes."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#unions-and-intersections",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#unions-and-intersections",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Unions and Intersections",
+    "text": "Unions and Intersections\n\nRemember how we talked about the union of two sets last lecture?\nWell, since events are just sets, we can talk about the union of two sets.\n\nIn words, the union corresponds to an “or” statement.\nFor example, let \\(E\\) denote the event “it is raining” and \\(F\\) denote the event “the ground is wet”, then the event \\(E \\cup F\\) would be the event “it is raining or the ground is wet”.\n\nThe intersection of two events (denoted with the \\(\\cap\\) symbol), corresponds to an “and” statement\n\nFor example, if \\(E\\) and \\(F\\) are defined as in the bullet point above, then \\(E \\cap F\\) denotes the event “it is raining and the ground is wet”."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#complements",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#complements",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Complements",
+    "text": "Complements\n\nThe complement of an event \\(E\\), denoted \\(E^{\\complement}\\), represents the event “not \\(E\\)”\n\nFor instance, if \\(E\\) again denotes the event “it is raining”, then \\(E^{\\complement}\\) denotes the event “it is not raining”."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#leadup",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#leadup",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Leadup",
+    "text": "Leadup\n\nRecall that \\(E \\cap F\\) denotes the event “both \\(E\\) and \\(F\\) occurred.”\nAlso recall that \\(A^{\\complement}\\) denotes “not \\(A\\)”; i.e. “\\(A\\) did not occur”\nAs such, \\((E \\cap F)^{\\complement}\\) denotes the event “it is not the case that both \\(E\\) or \\(F\\) occurred.”\n\nThis means that either \\(E\\) did not occur, or \\(F\\) did not occur (or both).\nMathematically, this is equivalent to \\(E^\\complement \\cup F^\\complement\\).\n\nAs such, it seems we have arrived at the following equality: \\[ (E \\cap F)^{\\complement} = E^\\complement \\cup F^\\complement \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#demorgans-laws",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#demorgans-laws",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "DeMorgan’s Laws",
+    "text": "DeMorgan’s Laws\n\n\nThis is one of what are known as DeMorgan’s Laws.\n\n\n\n\n\n\n\n\n\n\nDeMorgan’s Laws\n\n\n\nGiven two events \\(E\\) and \\(F\\), we have the following:\n\n\\((E \\cap F)^{\\complement} = E^\\complement \\cup F^\\complement\\)\n\\((E \\cup F)^{\\complement} = E^\\complement \\cap F^\\complement\\)\n\n\n\n\n\n\n\n\nWe will not prove these in this class. However, please familiarize yourself with them as they will be incredibly useful!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#leadup-1",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#leadup-1",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Leadup",
+    "text": "Leadup\n\nNow, there is something interesting about the events defined in the previous example.\nThe outcome space of the underlying experiment is \\[ \\Omega = \\{ (H, H), \\ (H, T), \\ (T, H), \\ (T, T)\\} \\] and\n\n\\(A = \\{(H, H), \\ (T, T)\\}\\)\n\\(B = \\{(H, T), \\ (T, H)\\}\\)\n\\(C = \\{(H, H)\\}\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#probability",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#probability",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Probability",
+    "text": "Probability\n\nNow, you may note that we have yet to mention the term “probability.”\nTo get a better sense of “probability”, let’s examine how we use the word in everyday speech:\n\n“the chance of rain is 50%”\n“odds of winning big at a Casino is 1%”\n“probability of scoring a 100% on the PSTAT 5A Midterm 1 is 95%”\n\nNotice that “rain”, “winning big at a Casino”, and “scoring 100% on the PSTAT 5A Midterm 1” are all events.\nAs such, “probability” seems to take in an event and spit out a number."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#probability-1",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#probability-1",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Probability",
+    "text": "Probability\n\n\nIn other words, we can think of “probability” (or, more accurately, what we refer to as a probability measure) as a function that takes in an event and outputs a number.\n\n\n\nThe symbol we use for a probability measure is \\(\\mathbb{P}\\); i.e. we write \\(\\mathbb{P}(E)\\) to denote “the probability of event \\(E\\)”.\nNow, this doesn’t really tell us how to define \\(\\mathbb{P}(E)\\) for an arbitrary event \\(E\\).\nThere are (roughly) two schools of thought when it comes to defining the probability of an event: the long-run frequency approach, and the classical approach."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#long-run-frequency-approach",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#long-run-frequency-approach",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Long-Run-Frequency Approach",
+    "text": "Long-Run-Frequency Approach\n\nThe long-run frequency approach defines the probability of an event \\(E\\) to be the proportion of times \\(E\\) occurs, if the underlying experiment were to be repeated a large number of times.\nTo help us understand the notion of long-run frequencies, let’s go through an example together. Suppose we toss a coin and record whether the outcome lands heads or tails, and further suppose we observe the following tosses:\n\n\n\nH,  T,   T,   H,   T,   H,   H,   H,   T,   T\n\n\n\nTo compute the relative frequency of heads after each toss, we count the number of times we observed heads and divide by the total number of tosses observed."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#classical-approach",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#classical-approach",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Classical Approach",
+    "text": "Classical Approach\n\nThe second way to define probabilities is what is known as the classical approach.\nAs an important note: we can only apply the classical approach if we believe all outcomes in our experiment to be equally likely.\n\nExamples of situations in which it is safe to assume equally likely outcomes include: tossing a fair coin some number of times, rolling a fair \\(k\\)-sided die, selecting a card at random from a deck of cards, etc.\n\nIf we make the equally likely outcomes assumption, then the classical approach to probability tells us to define \\(\\mathbb{P}(E)\\) as \\[ \\mathbb{P}(E) = \\frac{\\text{number of ways $E$ can occur}}{\\text{total number of outcomes}} \\]\nSo, for example, if we toss a fair coin once, then the classical approach to probability (which can be used since the coin is fair) states that \\[ \\mathbb{P}(\\texttt{heads}) = \\frac{1}{2} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#comparisons",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#comparisons",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Comparisons",
+    "text": "Comparisons\n\nLet’s quickly compare these two approaches to defining the probability of an event.\nThe long-run frequencies definition has the benefit of not requiring the assumption of equally likely outcomes.\n\nHowever, it relies on the (perhaps odd) consideration of considering what happens when we repeat an experiment a large number of times.\n\nThe classical approach does not rely on such considerations, making the definitions it produces perhaps a bit more easily interpretable.\n\nHowever, it crucially requires the assumption of equally likely outcomes."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#comparisons-1",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#comparisons-1",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Comparisons",
+    "text": "Comparisons\n\n\nFor the purposes of this class, we won’t be too concerned with defining the probability of an event: in many cases, we will just give you the probability.\n\n\n\nIn situations where we do not provide a probability a priori, there will likely be some key word or phrase that lets you know we are looking for the classical definition.\n\nAgain, important words/phrases to look out for are: fair, at random, etc."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#axioms-of-probability",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#axioms-of-probability",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Axioms of Probability",
+    "text": "Axioms of Probability\n\nIt turns out that there are three axioms that a probability measure must satisfy, collectively called the axioms of probability:\n\n\\(\\mathbb{P}(E) \\geq 0\\) for any event \\(E\\)\n\\(\\mathbb{P}(\\Omega) = 1\\)\nFor disjoint events \\(E\\) and \\(F\\), \\(\\mathbb{P}(E \\cup F) = \\mathbb{P}(E) + \\mathbb{P}(F)\\).\n\nIf you are not familiar with the notion of axioms: an axiom is a fundamental “truth” of math, that does not need to be proven.\n\nAxioms are like the building blocks, or base assumptions on which a system of math is predicated."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#summary",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#summary",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Summary",
+    "text": "Summary\n\nLet’s quickly summarize the concepts/terms we’ve covered:\n\nExperiment: any procedure that can be repeated an infinite number of times, where each time the procedure is repeated there are a fixed set of outcomes that can occur.\nOutcome Space: the set of all outcomes associated with a particular experiment.\nEvent: a subset of the outcome space\nProbability (measure): a function that takes an event and outputs a number\n\nThese are the basic building blocks of probability.\nWe will now combine them!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#notational-reminder",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#notational-reminder",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Notational Reminder",
+    "text": "Notational Reminder\n\nBefore we go any further, I’d like to stress something:\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nIn this class, using proper notation is very important.\n\n\n\n\n\n\n\nFor example, if we have an event \\(E\\) whose probability of occurring is, say, \\(0.5\\), we must write \\(\\mathbb{P}(E) = 0.5\\); it is NOT correct to say \\(E = 0.5\\), or \\(\\mathbb{P} = 0.5\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#the-complement-rule",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#the-complement-rule",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "The Complement Rule",
+    "text": "The Complement Rule\n\nThe first result we will explore is the so-called complement rule.\n\n\n\n\n\n\n\n\n\nThe Complement Rule\n\n\n\nGiven an event \\(E\\), we have \\(\\mathbb{P}(E^\\complement) = 1 - \\mathbb{P}(E)\\)\n\n\n\n\n\n\n\nAs an example: if we roll a fair six-sided die and if \\(E =\\) “rolling a \\(1\\)”, then \\(E^\\complement =\\) “not rolling a \\(1\\)” and \\[\\mathbb{P}(E^\\complement) = 1 - \\mathbb{P}(E) = 1 - 1/6 = \\boxed{5/6}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#the-probability-of-the-empty-set",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#the-probability-of-the-empty-set",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "The Probability of the Empty Set",
+    "text": "The Probability of the Empty Set\n\nRecall that the empty set (\\(\\varnothing\\)) is the set containing no elements.\n\n\n\n\n\n\n\n\n\nThe Probability of the Empty Set\n\n\n\n\\(\\mathbb{P}(\\varnothing) = 0\\).\n\n\n\n\n\n\n\nThe “proof” of this is relatively simple: note that \\(\\Omega^\\complement = \\varnothing\\) (the opposite of “everything” is “nothing”); we also know that \\(\\mathbb{P}(\\Omega) = 1\\) so \\[ \\mathbb{P}(\\Omega^\\complement) = \\mathbb{P}(\\varnothing) = 1 - 1 = 0 \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#the-addition-rule",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#the-addition-rule",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "The Addition Rule",
+    "text": "The Addition Rule\n\nThe next result we will explore is the so-called addition rule.\n\n\n\n\n\n\n\n\n\nThe Addition Rule\n\n\n\nGiven events \\(E\\) and \\(F\\), we have \\(\\mathbb{P}(E \\cup F) = \\mathbb{P}(E) + \\mathbb{P}(F) - \\mathbb{P}(E \\cap F)\\)\n\n\n\n\n\n\n\nNote that if \\(E\\) and \\(F\\) are disjoint, then we recover the third axiom of probability!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#worked-out-example-1",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#worked-out-example-1",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\nA recent survey at the Isla Vista Co-Op revealed that 50% of shoppers buy bread, 30% buy jam, and 20% buy both bread and jam.\n\nWhat is the probability that a randomly selected shopper will not purchase jam?\nWhat is the probability that a randomly selected shopper will purchase either bread or jam (or both)?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#solution-to-part-a",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#solution-to-part-a",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Solution to Part (a)",
+    "text": "Solution to Part (a)\n\nLet \\(J\\) denote the event “a randomly selected shopper will purchase jam”.\n\nFrom the problem statement, we have that \\(\\mathbb{P}(J) = 0.3\\)\n\nThe event “a randomly selected shopper will not purchase jam” is given by \\(J^\\complement\\), meaning the quantity we seek is \\(\\mathbb{P}(J^\\complement)\\).\nBy the Complement Rule, we have \\[ \\mathbb{P}(J^\\complement) = 1 - \\mathbb{P}(J) = 1 - 0.3 = \\boxed{0.7 = 70\\%} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#solution-to-part-b",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#solution-to-part-b",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Solution to Part (b)",
+    "text": "Solution to Part (b)\n\nLet \\(J\\) be defined as before, and let \\(B\\) denote the event “a randomly selected shopper will purchase bread or jam”\n\nThe first quantity provided in the problem statement tells us that \\(\\mathbb{P}(B) = 0.5\\)\nThe final quantity provided in the problem statement tells us that \\(\\mathbb{P}(B \\cap J) = 0.2\\)\n\nThe event “a randomly selected shopper will purchase either bread or jam” is given by \\(B \\cup J\\), meaning we seek \\(\\mathbb{P}(B \\cup J)\\).\nBy the Addition Rule,\n\n\n\\[\\begin{align*}\n  \\mathbb{P}(B \\cup J)     & = \\mathbb{P}(B) + \\mathbb{P}(J) - \\mathbb{P}(B \\cap J)   \\\\\n  & = 0.5 + 0.3 - 0.2 = \\boxed{0.6 = 60\\%}\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#general-strategy",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#general-strategy",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "General Strategy",
+    "text": "General Strategy\n\n\n\n\n\n\n\n\nGeneral Strategy for Probability Word Problems\n\n\n\n\nStart by defining events\nNext, translate the information provided to you (through the problem statement) to be in terms of the events you defined above\nThen, identify the quantity you are trying to obtain\nFinally, apply the various probability rules to solve for the desired quantity."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#time-to-put-everything-together",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#time-to-put-everything-together",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Time to Put Everything Together!",
+    "text": "Time to Put Everything Together!\n\n\n\n\n\n\nExercise 5\n\n\n\n\nTwo fair six-sided dice are rolled.\n\nWhat is the outcome space of this experiment?\nWhat is the probability that the first die lands on the number 2?\nWhat is the probability that the first die lands on the number 2, or the second die lands on an even number?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#venn-diagrams",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#venn-diagrams",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Venn Diagrams",
+    "text": "Venn Diagrams\n\nI’d like to impart one additional tool that can help with visualizing the relationship between events: Venn Diagrams\nWe denote the outcome space \\(\\Omega\\) by a large rectangle, and denote events by circles.\nSince events are subsets of \\(\\Omega\\), we draw them inside (physically) the rectangle representing \\(\\Omega\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#summary-1",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#summary-1",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Summary",
+    "text": "Summary\n\n\n\n\n\n \\(A^\\complement\\)  (complement)\n\n\n\n\n\n\n\n\n \\(A \\cap B\\)  (intersection)\n\n\n\n\n\n\n\n\n \\(A \\cup B\\)  (union)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#demorgans-laws-2",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#demorgans-laws-2",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "DeMorgan’s Laws",
+    "text": "DeMorgan’s Laws\n\nThis can also help give us some intuition on DeMorgan’s Laws as well!\n\nLet’s do this on the whiteboard together.\n\nWe will return to Venn Diagrams periodically throughout this course- for now, I hope they provide a useful tool to help you visualize the set operations we learned this lecture."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#lecture-summary-1",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#lecture-summary-1",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Lecture Summary",
+    "text": "Lecture Summary\n\nToday, we began our introduction to the field of probability.\n\nProbability, loosely speaking, provides us with a way to quantify uncertainty.\n\nWe discussed the notions of experiments, outcomes, outcome spaces, events, and probabilities.\n\nRemember that there are certain tools/diagrams (namely, tables and tree diagrams) that can help us determine the outcome space of an experiment.\n\nWe then discussed three probability rules: the complement rule, the probability of the empty set, and the addition rule.\nWe also saw how Venn Diagrams can help us visualize set operations.\nNext time, we will start talking about ways to compute the probability of more complex events under the assumption of equally likely outcomes."
+  },
+  {
     "objectID": "Pages/Lectures/Lecture02/Lec02.html#last-time",
     "href": "Pages/Lectures/Lecture02/Lec02.html#last-time",
     "title": "PSTAT 5A: Lecture 02",
@@ -585,7 +823,7 @@
     "href": "Pages/Lectures/Lecture01/Lec01.html#full-classification-scheme",
     "title": "PSTAT 5A: Lecture 01",
     "section": "Full Classification Scheme",
-    "text": "Full Classification Scheme\n\n\nHere is a diagram of the full classification scheme:\n\n\n\n\n\n\n\n\n\ndata_classification\n\n \n\ncluster_main\n\n  \n\ncluster_0\n\n  \n\ncluster_1\n\n  \n\ncluster_2\n\n  \n\ncluster_3\n\n   \n\nData\n\n Variable   \n\nnumerical\n\n Numerical   \n\nData->numerical\n\n    \n\ncategorical\n\n Categorical   \n\nData->categorical\n\n    \n\ncontinuous\n\n Continuous   \n\nnumerical->continuous\n\n    \n\ndiscrete\n\n Discrete   \n\nnumerical->discrete\n\n    \n\nnominal\n\n Nominal   \n\ncategorical->nominal\n\n    \n\nordinal\n\n Ordinal   \n\ncategorical->ordinal"
+    "text": "Full Classification Scheme\n\n\nHere is a diagram of the full classification scheme:\n\n\n\n\n\n\n\n\n\ndata_classification\n\n \n\ncluster_main\n\n  \n\ncluster_2\n\n  \n\ncluster_3\n\n  \n\ncluster_0\n\n  \n\ncluster_1\n\n   \n\nData\n\n Variable   \n\nnumerical\n\n Numerical   \n\nData->numerical\n\n    \n\ncategorical\n\n Categorical   \n\nData->categorical\n\n    \n\ncontinuous\n\n Continuous   \n\nnumerical->continuous\n\n    \n\ndiscrete\n\n Discrete   \n\nnumerical->discrete\n\n    \n\nnominal\n\n Nominal   \n\ncategorical->nominal\n\n    \n\nordinal\n\n Ordinal   \n\ncategorical->ordinal"
   },
   {
     "objectID": "Pages/Lectures/Lecture01/Lec01.html#time-for-an-exercise",
@@ -732,7 +970,7 @@
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Tuesday, June 27, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n03: Intro to Probability\n04: Counting\n\nWorksheet 01\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nWorksheet 02\nLab02: Data Classes, Comparisons, Conditionals, and Functions\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nWorksheet 04\nLab03: Descriptive Statistics, Sampling Distributions, and Simulations\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n14: Hypothesis Testing for Proportions\n15: Review\n16: Midterm 2\n\nWorksheet 05\nLab04: Percentiles, QQ-Plots, and Loops\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing for Means\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 06\nLab05: Markdown Syntax, and Importing Data\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\n\nLab06: Exploratory Data Analysis"
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Tuesday, June 27, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section on “Transformations” on your own\n\n03: Intro to Probability\n04: Counting\n\nWorksheet 01\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nWorksheet 02\nLab02: Data Classes, Comparisons, Conditionals, and Functions\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nWorksheet 04\nLab03: Descriptive Statistics, Sampling Distributions, and Simulations\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n14: Hypothesis Testing for Proportions\n15: Review\n16: Midterm 2\n\nWorksheet 05\nLab04: Percentiles, QQ-Plots, and Loops\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing for Means\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 06\nLab05: Markdown Syntax, and Importing Data\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\n\nLab06: Exploratory Data Analysis"
   },
   {
     "objectID": "Pages/calendar.html",
