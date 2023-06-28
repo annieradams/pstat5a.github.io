@@ -17,7 +17,7 @@ css: "../schedule.css"
 This schedule is tentative, and is subject to change. Please check back regularly for updates!
 :::
 
-Last Updated: *Wednesday, June 28, 2023*\
+Last Updated: *Wednesday, June 28, 2023* \
 
 **As a reminder:** Monday sections are Lab Sections and Wednesday sections are Discussion Sections.
 
