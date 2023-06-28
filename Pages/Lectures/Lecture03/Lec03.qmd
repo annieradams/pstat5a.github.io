@@ -135,7 +135,7 @@ Consider the experiment of rolling two four-sided dice and recording the faces t
 ## Exercise 1
 
 ::: {style="font-size: 30px"}
-Consider the experiment of tossing a coin, rolling a 4-sided die, and then tossing another coin. What is the outcome space of this experiment?
+Consider the experiment of tossing a coin, picking a number from the set $\{1, 2\}$, and then tossing another coin. What is the outcome space of this experiment?
 :::
 :::
 
