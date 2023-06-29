@@ -231,6 +231,132 @@
     "text": "Here you will find all homework assignments and their solutions. Please remember that solutions to homework will only be released during Exam Weeks; we encourage you to come to Office Hours to ask any questions you may have about the assignments!\n\nHomework 1: Blank Answers"
   },
   {
+    "objectID": "Pages/Lectures/Lecture04/Lec04.html#last-time",
+    "href": "Pages/Lectures/Lecture04/Lec04.html#last-time",
+    "title": "PSTAT 5A: Lecture 04",
+    "section": "Last Time",
+    "text": "Last Time\n\nLast time we discussed the basics of probability.\n\nThese included things like: experiments, outcome spaces, events, and probability.\n\nWe briefly talked about the different approaches to defining the probability of an even.\nFinally, we also saw how Venn Diagrams can help visualize set relationships and operations."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture04/Lec04.html#leadup",
+    "href": "Pages/Lectures/Lecture04/Lec04.html#leadup",
+    "title": "PSTAT 5A: Lecture 04",
+    "section": "Leadup",
+    "text": "Leadup\n\nNow, let’s return to the classical approach to probability.\nAssuming the outcomes in our outcome space \\(\\Omega\\) are equally likely, the classical approach tells us to compute the probability of any event \\(E\\) as \\[ \\mathbb{P}(E) = \\frac{\\text{number of ways $E$ can occur}}{\\text{total number of elements in $\\Omega$}} \\]\nUp until now, we’ve computed both the numerator and the denominator by explicitly listing out the elements contained in the respective sets, and then counting the number of elements.\nThis works decently for small sets, but is highly inefficient for large sets."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture04/Lec04.html#ice-cream",
+    "href": "Pages/Lectures/Lecture04/Lec04.html#ice-cream",
+    "title": "PSTAT 5A: Lecture 04",
+    "section": "Ice Cream",
+    "text": "Ice Cream\n\nBefore diving fully into the principles of counting, let’s examine a simple situation.\nSuppose we are at a small boutique ice cream parlor that offers only 3 flavors (Vanilla, Chocolate, and Matcha), and 2 toppings (sprinkles or coconut).\n\nFurther suppose that an order of ice cream must contain only 1 flavor and 1 topping.\n\nWe can list out the different orders that are possible (i.e. the outcome space of the experiment of ordering an ice cream from this shop) using a tree diagram:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture04/Lec04.html#fundamental-principle-of-counting",
+    "href": "Pages/Lectures/Lecture04/Lec04.html#fundamental-principle-of-counting",
+    "title": "PSTAT 5A: Lecture 04",
+    "section": "Fundamental Principle of Counting",
+    "text": "Fundamental Principle of Counting\n\n\nThis is no accident!\n\n\n\n\n\n\n\n\n\n\nFundamental Principle of Counting\n\n\n\nIf an experiment consists of \\(k\\) stages, where the \\(i\\)th stage has \\(n_i\\) possible configurations, then the total number of elements in the outcome space is \\[ n_1 \\times n_2 \\times \\cdots \\times n_k \\]\n\n\n\n\n\n\n\nSo, when we obtained our answer of \\(6\\) on the previous slide, we were implicitly using the Fundamental Principle of Counting with 2 stages (picking a flavor, and picking a topping) where the first stage (picking a flavor) had 3 possible configurations (Vanilla, Chocolate, or Matcha) and the second stage (picking a topping) had two possible configurations (sprinkles or coconut)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture04/Lec04.html#slot-diagrams",
+    "href": "Pages/Lectures/Lecture04/Lec04.html#slot-diagrams",
+    "title": "PSTAT 5A: Lecture 04",
+    "section": "Slot Diagrams",
+    "text": "Slot Diagrams\n\nWhen dealing with the Fundamental Principle of Counting, I find it useful to utilize what are sometimes referred to as slot diagrams.\nHere’s how we use slot diagrams:\n\nFirst put down as many slots as there are stages in our experiment: \\[ \\underline{\\ \\ \\ \\ \\ } \\ \\ \\  \\underline{\\ \\ \\ \\ \\ } \\ \\ \\ \\cdots \\ \\ \\   \\underline{\\ \\ \\ \\ \\ }  \\]\nThen, fill in each slot with the corresponding number of configurations: \\[ \\underline{\\ n_1 \\ } \\ \\ \\  \\underline{\\ n_2 \\ } \\ \\ \\ \\cdots \\ \\ \\  \\underline{\\ n_k \\ }  \\]\nFinally, invoke the Fundamental Principle of Counting to multiply the slots together: \\[ \\underline{\\ n_1 \\ } \\ \\times \\  \\underline{\\ n_2 \\ } \\ \\times \\ \\cdots \\ \\times  \\underline{\\ n_k \\ }\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture04/Lec04.html#worked-out-example",
+    "href": "Pages/Lectures/Lecture04/Lec04.html#worked-out-example",
+    "title": "PSTAT 5A: Lecture 04",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nSuppose a (different) ice cream parlor has 32 flavors, 5 toppings, and 3 drizzles. If a “scoop” consists of a flavor, topping, and drizzle, how many scoops can be created?\n\n\n\n\n\n\nThere are 3 stages: picking a flavor, picking a topping, and picking a drizzle. Hence, we draw three slots: \\[ \\underline{\\ \\ \\ \\ \\ } \\ \\ \\ \\underline{\\ \\ \\ \\ \\ } \\ \\ \\ \\underline{\\ \\ \\ \\ \\ } \\]\nThe first stage has 32 configurations, the second has 5, and the third has 3: \\[ \\underline{\\ 32 \\ } \\ \\ \\ \\underline{\\ 5 \\ } \\ \\ \\ \\underline{\\ 3 \\ } \\]\nFinally, we multiply through: \\[ \\underline{\\ 32 \\ } \\ \\times \\ \\underline{\\ 5 \\ } \\ \\times \\ \\underline{\\ 3 \\ } = \\boxed{480} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture04/Lec04.html#ordering",
+    "href": "Pages/Lectures/Lecture04/Lec04.html#ordering",
+    "title": "PSTAT 5A: Lecture 04",
+    "section": "Ordering",
+    "text": "Ordering\n\nHere’s a question: given \\(n\\) tickets (labeled \\(1\\) through \\(n\\)), how many different ways are there to arrange them in a line?\nLet’s answer this using a slot diagram!\nWe can think of \\(n\\) stages, where the first stage corresponds to placing the first ticket down, the second stage corresponds to placing the second ticket down, and so on and so forth. \\[ \\underbrace{ \\underline{\\ \\ \\ \\ \\ } \\ \\ \\  \\underline{\\ \\ \\ \\ \\ } \\ \\ \\ \\cdots \\ \\ \\   \\underline{\\ \\ \\ \\ \\ } \\ \\ \\   \\underline{\\ \\ \\ \\ \\ } }_{\\text{$n$ slots}} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture04/Lec04.html#factorials",
+    "href": "Pages/Lectures/Lecture04/Lec04.html#factorials",
+    "title": "PSTAT 5A: Lecture 04",
+    "section": "Factorials",
+    "text": "Factorials\n\n\n\n\n\n\n\nDefinition\n\n\n\nFor a positive integer \\(n\\), we define \\(n\\) factorial (denoted \\(n!\\)), to be \\[ n! = n \\times (n - 1) \\times (n - 2) \\times \\cdots \\times 2 \\times 1 \\]\n\n\n\n\n\n\nFor example:\n\n\\(3! = 3 \\times 2 \\times 1 = 6\\)\n\\(4! = 4 \\times 3 \\times 2 \\times 1 = 24\\)\n\\(5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture04/Lec04.html#worked-out-example-2",
+    "href": "Pages/Lectures/Lecture04/Lec04.html#worked-out-example-2",
+    "title": "PSTAT 5A: Lecture 04",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nSiobhan has 4 shirts in her closet: 2 purple shirts and 2 red shirts. When organizing these shirts in her closet she wants to keep the purple shirts together and the red shirts together, but doesn’t care if the purple group is to the left or the right of the red group. How many ways are there for Siobhan to arrange these shirts in her closet?\n\n\n\n\n\n\nLet’s answer this question two ways: using direct enumeration, and then using counting techniques.\nLabel the two purple shirts \\(P_1\\) and \\(P_2\\) respectively, and label the two red shirts \\(R_1\\) and \\(R_2\\) respectively. Then here are all of the possible reorderings of the shirts:\n\n\n\\[\\begin{align*}\n  \\Omega = \\{ & P_1 P_2 R_1 R_2, \\ P_1 P_2 R_2 R_1, \\ P_2 P_1 R_1 R_2, \\ P_2 P_1 R_2 R_1 , \\\\\n  & R_1 R_2 P_1 P_2, \\ R_2 R_1P_1 P_2, \\ R_1 R_2 P_2 P_1, \\  R_2 R_1P_2 P_1 \\}\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture04/Lec04.html#does-order-matter",
+    "href": "Pages/Lectures/Lecture04/Lec04.html#does-order-matter",
+    "title": "PSTAT 5A: Lecture 04",
+    "section": "Does Order Matter?",
+    "text": "Does Order Matter?\n\nLet’s now consider a slightly more abstract experiment: consider drawing two tickets from a box with tickets labeled \\(A\\) through \\(C\\), not replacing my first ticket after I draw it.\n\nHow many elements are in the outcome space of this experiment?\n\nWell, the answer is…. it depends!\nSpecifically, we need to know: does order matter?\nHere’s what I mean by order mattering: in a license plate, 123ABC and ABC123 are clearly two different license plates, despite the fact that they are comprised of the same letters and numbers!\n\nAn example of a situation in which order does not matter is drawing cards from a deck of cards: whether I get the Ace of Hearts before or after the King of Diamonds doesn’t matter- all that mattes is that I have the Ace of Hearts and the King of Diamonds!\nSpeaking of cards, you’ll discuss playing cards a bit more on future assignments."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture04/Lec04.html#if-order-does-matter",
+    "href": "Pages/Lectures/Lecture04/Lec04.html#if-order-does-matter",
+    "title": "PSTAT 5A: Lecture 04",
+    "section": "If Order Does Matter",
+    "text": "If Order Does Matter\n\nLet’s examine what happens when we assume order does matter.\nIn the context of our drawing tickets example, this means that getting \\(A\\) followed by \\(C\\) is different than getting \\(C\\) followed by \\(A\\).\nThen, letting \\((X, Y)\\) denote the outcome “I drew the ticket labelled \\(X\\) first, then the ticket labelled \\(Y\\) second” (for \\(X \\in \\{A, B, C\\}\\) and \\(Y \\in \\{A, B, C\\}\\)), we have \\[\\begin{align*}\n  \\Omega   = \\{ & (A, B), \\ (A, C) \\\\\n      & (B, A), \\ (B, C)  \\\\\n      & (C, A), \\ (C, B) \\}\n\\end{align*}\\]\n\nBy the way, can anyone tell me why I didn’t include outcomes like \\((A, A)\\)?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture04/Lec04.html#generalizing",
+    "href": "Pages/Lectures/Lecture04/Lec04.html#generalizing",
+    "title": "PSTAT 5A: Lecture 04",
+    "section": "Generalizing",
+    "text": "Generalizing\n\nLet’s generalize to picking \\(k\\) tickets from a total \\(n\\): \\[ \\underline{\\ \\ \\ \\ \\ {\\color{blue} {n}} \\ \\ \\ \\ \\ } \\ {\\times} \\\n  \\underline{\\ \\ \\ \\ \\ {\\color{blue}{n - 1}} \\ \\ \\ \\ \\ } \\ {\\times}  \\\n  \\underline{\\ \\ \\ \\ \\ {\\color{blue}{n - 2}} \\ \\ \\ \\ \\ } \\ {\\times}  \\\n  \\cdots \\ {\\times}  \n  \\underline{\\ \\ \\ \\ \\ {\\color{blue} {n - k + 1}} \\ \\ \\ \\ \\ } \\]\nWe can write this a little more succinctly using factorials: \\[ n \\times (n - 1) \\times \\cdots \\times (n - k + 1) = \\frac{n!}{(n - k)!} \\]\nThis is yet another quantity that arises so often, we give it a name: this time we call it \\(n\\) order \\(k\\), and write \\((n)_k\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture04/Lec04.html#n-order-k",
+    "href": "Pages/Lectures/Lecture04/Lec04.html#n-order-k",
+    "title": "PSTAT 5A: Lecture 04",
+    "section": "\\(n\\) order \\(k\\)",
+    "text": "\\(n\\) order \\(k\\)\n\n\n\n\n\n\n\nDefinition\n\n\n\nFor a positive integer \\(n\\) and another positive integer \\(k\\) that is less than \\(n\\), \\[ (n)_k = \\frac{n!}{(n - k)!}  = n \\times (n - 1) \\times \\cdots \\times (n - k + 1)  \\]\n\n\n\n\n\n\nFor example:\n\n\\((5)_3 = 5 \\times 4 \\times 3 = 60\\)\n\\((6)_2 = 6 \\times 5 = 30\\)\n\\((4)_4 = 4 \\times 3 \\times 2 \\times 1 = 24\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture04/Lec04.html#worked-out-example-3",
+    "href": "Pages/Lectures/Lecture04/Lec04.html#worked-out-example-3",
+    "title": "PSTAT 5A: Lecture 04",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\nSuppose now that I have 5 tickets, labeled \\(A\\) through \\(E\\), and I now want to draw 3. How many ways are there to do this, assuming order matters?\n\n\n\n\n\n\nBy our work above, the answer is \\((5)_3 = 5 \\times 4 \\times 3 = \\boxed{60}\\).\nDon’t believe me?\n\n\n\\[{\\tiny \\begin{aligned}[t]\n\\Omega  & = \\{ (A, B, C), \\ (A, B, D), \\ (A, B, E), \\ (A, C, B), \\ (A, C, D), \\ (A, C, E), \\ (A, D, B), \\ (A, D, C), \\ (A, D, E), \\ (A, E, B), \\ (A, E, C), \\ (A, E, D), \\\\\n    %\n    & \\hspace{5mm} (B, A, C), \\ (B, A, D), \\ (B, A, E), \\ (B, C, A), \\ (B, C, D), \\ (B, C, E), \\ (B, D, A), \\ (B, D, C), \\ (B, D, E), \\ (B, E, A), \\ (B, E, C), \\ (B, E, D), \\\\\n    %\n    & \\hspace{5mm} (C, A, B), \\ (C, A, D), \\ (C, A, E), \\ (C, B, A), \\ (C, B, D), \\ (C, B, E), \\ (C, D, A), \\ (C, D, B), \\ (C, D, E), \\ (C, E, A), \\ (C, E, B), \\ (C, E, D), \\\\\n    %\n    & \\hspace{5mm} (D, A, B), \\ (D, A, C), \\ (D, A, E), \\ (D, B, A), \\ (D, B, C), \\ (D, B, E), \\ (D, C, A), \\ (D, C, B), \\ (D, C, E), \\ (D, E, A), \\ (D, E, B), \\ (D, E, C), \\\\\n    %\n    & \\hspace{5mm} (E, A, B), \\ (E, A, C), \\ (E, A, D), \\ (E, B, A), \\ (E, B, C), \\ (E, B, D), \\ (E, C, A), \\ (E, C, B), \\ (E, C, D), \\ (E, D, A), \\ (E, D, B), \\ (E, D, C) \\}\n    \\end{aligned}}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture04/Lec04.html#order-doesnt-matter",
+    "href": "Pages/Lectures/Lecture04/Lec04.html#order-doesnt-matter",
+    "title": "PSTAT 5A: Lecture 04",
+    "section": "Order Doesn’t Matter",
+    "text": "Order Doesn’t Matter\n\nLet’s return to our example of drawing \\(2\\) tickets from a set of tickets labeled \\(A\\) through \\(C\\).\nWe previously saw that if order does matter, there are 6 possible outcomes: \\[\\begin{align*}\n  \\Omega   = \\{ & (A, B), \\ (A, C) \\\\\n      & (B, A), \\ (B, C)  \\\\\n      & (C, A), \\ (C, B) \\}\n\\end{align*}\\]\nIf order doesn’t matter, we actually have fewer outcomes! Specifically:\n\n\\((A, C)\\) and \\((C, A)\\) become equivalent\n\\((A, B)\\) and \\((B, A)\\) become equivalent\n\\((B, C)\\) and \\((C, B)\\) become equivalent\n\nSo, \\(\\Omega\\) becomes \\(\\{(A, B), \\ (A, C), \\ (B, C)\\}\\), so we have only 3 elements in \\(\\Omega\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture04/Lec04.html#dont-worry",
+    "href": "Pages/Lectures/Lecture04/Lec04.html#dont-worry",
+    "title": "PSTAT 5A: Lecture 04",
+    "section": "Don’t Worry!",
+    "text": "Don’t Worry!\n\nI know that was a lot of math, pretty quickly.\nDon’t worry! We will be returning to a few of these concepts over the coming weeks.\nMy main goal for today’s lecture was to give you an overview of the types of arguments we make when dealing with counting problems, as well as to give you some tools to answer counting problems."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture04/Lec04.html#an-exercise",
+    "href": "Pages/Lectures/Lecture04/Lec04.html#an-exercise",
+    "title": "PSTAT 5A: Lecture 04",
+    "section": "An Exercise",
+    "text": "An Exercise\n\n\n\n\n\n\nExercise 1\n\n\n\n\nCalifornia state license plates consist of 7 characters: a digit, followed by 3 letters, followed by 3 digits.\n\nSuppose we do not allow repeated letters or digits in a license plate: i.e. A123BCD456 is a valid plate whereas A122BCC345 is not. How many license plates can be created using this scheme?\nRealistically, license plates are allowed to contain repeated letters or digits. Re-answer the question of how many license plates can be created using this scheme.\nUsing the scheme outlined in part (b), what is the probability of picking a random license plate and having it be B131GHA?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture04/Lec04.html#lecture-summary-1",
+    "href": "Pages/Lectures/Lecture04/Lec04.html#lecture-summary-1",
+    "title": "PSTAT 5A: Lecture 04",
+    "section": "Lecture Summary",
+    "text": "Lecture Summary\n\nThe main topic of today’s lecture was counting, which refers to the tools we use to systematically count the elements in a set without having to list out all of the elements contained in it.\nWe talked briefly about what it means for order to matter (or, consequently, not matter).\n\nThis lead us to the notations \\(n!\\), \\((n)_k\\), and \\(\\binom{n}{k}\\).\n\nNext time, we’ll see how we can use new information to update our beliefs on certain events by way of what are known as conditional probabilities.\n\nWe’ll also be able to work through a few more interesting examples."
+  },
+  {
     "objectID": "Pages/Lectures/Lecture03/Lec03.html#uncertainty",
     "href": "Pages/Lectures/Lecture03/Lec03.html#uncertainty",
     "title": "PSTAT 5A: Lecture 03",
@@ -823,7 +949,7 @@
     "href": "Pages/Lectures/Lecture01/Lec01.html#full-classification-scheme",
     "title": "PSTAT 5A: Lecture 01",
     "section": "Full Classification Scheme",
-    "text": "Full Classification Scheme\n\n\nHere is a diagram of the full classification scheme:\n\n\n\n\n\n\n\n\n\ndata_classification\n\n \n\ncluster_main\n\n  \n\ncluster_2\n\n  \n\ncluster_3\n\n  \n\ncluster_0\n\n  \n\ncluster_1\n\n   \n\nData\n\n Variable   \n\nnumerical\n\n Numerical   \n\nData->numerical\n\n    \n\ncategorical\n\n Categorical   \n\nData->categorical\n\n    \n\ncontinuous\n\n Continuous   \n\nnumerical->continuous\n\n    \n\ndiscrete\n\n Discrete   \n\nnumerical->discrete\n\n    \n\nnominal\n\n Nominal   \n\ncategorical->nominal\n\n    \n\nordinal\n\n Ordinal   \n\ncategorical->ordinal"
+    "text": "Full Classification Scheme\n\n\nHere is a diagram of the full classification scheme:\n\n\n\n\n\n\n\n\n\ndata_classification\n\n \n\ncluster_main\n\n  \n\ncluster_0\n\n  \n\ncluster_1\n\n  \n\ncluster_2\n\n  \n\ncluster_3\n\n   \n\nData\n\n Variable   \n\nnumerical\n\n Numerical   \n\nData->numerical\n\n    \n\ncategorical\n\n Categorical   \n\nData->categorical\n\n    \n\ncontinuous\n\n Continuous   \n\nnumerical->continuous\n\n    \n\ndiscrete\n\n Discrete   \n\nnumerical->discrete\n\n    \n\nnominal\n\n Nominal   \n\ncategorical->nominal\n\n    \n\nordinal\n\n Ordinal   \n\ncategorical->ordinal"
   },
   {
     "objectID": "Pages/Lectures/Lecture01/Lec01.html#time-for-an-exercise",
@@ -970,7 +1096,7 @@
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Wednesday, June 28, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nWorksheet 02\nLab02: Data Classes, Comparisons, Conditionals, and Functions\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nWorksheet 04\nLab03: Descriptive Statistics, Sampling Distributions, and Simulations\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n14: Hypothesis Testing for Proportions\n15: Review\n16: Midterm 2\n\nWorksheet 05\nLab04: Percentiles, QQ-Plots, and Loops\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing for Means\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 06\nLab05: Markdown Syntax, and Importing Data\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\n\nLab06: Exploratory Data Analysis"
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Thursday, June 29, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nWorksheet 02\nLab02: Data Classes, Comparisons, Conditionals, and Functions\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nWorksheet 04\nLab03: Descriptive Statistics, Sampling Distributions, and Simulations\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n14: Hypothesis Testing for Proportions\n15: Review\n16: Midterm 2\n\nWorksheet 05\nLab04: Percentiles, QQ-Plots, and Loops\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing for Means\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 06\nLab05: Markdown Syntax, and Importing Data\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\n\nLab06: Exploratory Data Analysis"
   },
   {
     "objectID": "Pages/calendar.html",

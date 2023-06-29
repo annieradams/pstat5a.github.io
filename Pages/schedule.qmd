@@ -17,7 +17,7 @@ css: "../schedule.css"
 This schedule is tentative, and is subject to change. Please check back regularly for updates!
 :::
 
-Last Updated: *Wednesday, June 28, 2023*\
+Last Updated: *Thursday, June 29, 2023*\
 
 **As a reminder:** Monday sections are Lab Sections and Wednesday sections are Discussion Sections.
 
@@ -36,7 +36,7 @@ Last Updated: *Wednesday, June 28, 2023*\
 |               |                                                                                                                                 |                                                                                                                 |                                                                                                                            |
 |               | -   <a href = "Lectures/Lecture03/Lec03.qmd" class = "button label-outline" target = "_blank">03: Intro to Probability</a>      |                                                                                                                 |                                                                                                                            |
 |               |                                                                                                                                 |                                                                                                                 |                                                                                                                            |
-|               | -   04: Counting                                                                                                                |                                                                                                                 |                                                                                                                            |
+|               | -   <a href = "Lectures/Lecture04/Lec04.qmd" class = "button label-outline" target = "_blank">04: Counting</a>                  |                                                                                                                 |                                                                                                                            |
 +---------------+---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | **2**         | -   05: Conditional Probabilities                                                                                               | Worksheet 02                                                                                                    | Lab02: Data Classes, Comparisons, Conditionals, and Functions                                                              |
 |               |                                                                                                                                 |                                                                                                                 |                                                                                                                            |
