@@ -34,7 +34,7 @@ M, T, W, Th: 11:00am - 12:20pm in **ILP 1101**
 | **Email:**      | [epmarzban\@pstat.ucsb.edu](mailto:epmarzban@pstat.ucsb.edu) (Please use only in case of emergency)                                          |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | **Help Hours:** | -   [**Tuesdays:**]{.underline} 4:30pm - 5:30pm (<a href="https://ucsb.zoom.us/j/86469023392?pwd=aG5zY29wRWJscEFRY2ZYa0dXOVZ6Zz09">Zoom</a>) |
-|                 | -   [**Thursdays:**]{.underline} 1:00pm - 2:00pm (SH 5607 F)                                                                                 |
+|                 | -   [**Thursdays:**]{.underline} 2:30pm - 3:30pm (SH 5607 F)                                                                                 |
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 : {tbl-colwidths="\[20, 30\]"}
