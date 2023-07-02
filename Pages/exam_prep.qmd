@@ -11,4 +11,20 @@ format: html
 css: "../schedule.css"
 ---
 
-### **_Preparatory material for the exams will be posted here as we approach the dates of the exams._**
+## Midterm 1
+
+- Information Document: <a href = "../Files/ExamInfo/mt1_info.pdf" class = "button label-outline" target = "_blank">.pdf</a>
+
+- Spring 2023 Exams: **Solutions will be posted on Wednesday, July 5**
+
+    - Blue Version: <a href = "../Files/Past_Exams/Sp23_MT1_Blue_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a>
+    
+    - Yellow Version: <a href = "../Files/Past_Exams/Sp23_MT1_Yellow_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a>
+    
+    - **Please note that the format of exams this quarter will be slightly different; see the coverpages below**
+
+- Exam Coverpages: <a href = "../Files/ExamInfo/MT1_Coverpage_MC.pdf" class = "button label-outline" target = "_blank">Multiple Choice</a> <a href = "../Files/ExamInfo/MT1_Coverpage_FR.pdf" class = "button label-outline" target = "_blank">Free Response</a>
+    
+- Formula Sheet: **will be posted on Monday, July 3**
+
+- Practice Problems: **will be posted soon**
