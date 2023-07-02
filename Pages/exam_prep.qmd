@@ -15,6 +15,8 @@ css: "../schedule.css"
 
 - Information Document: <a href = "../Files/ExamInfo/mt1_info.pdf" class = "button label-outline" target = "_blank">.pdf</a>
 
+- List of Topics (not comprehensive): <a href = "../Files/ExamInfo/mt1_topics.pdf" class = "button label-outline" target = "_blank">.pdf</a>
+
 - Spring 2023 Exams: **Solutions will be posted on Wednesday, July 5**
 
     - Blue Version: <a href = "../Files/Past_Exams/Sp23_MT1_Blue_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a>
