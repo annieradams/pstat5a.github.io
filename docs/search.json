@@ -284,7 +284,7 @@
     "href": "Pages/hw.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Here you will find all homework assignments and their solutions. Please remember that solutions to homework will only be released during Exam Weeks; we encourage you to come to Office Hours to ask any questions you may have about the assignments!\n\nHomework 1: Blank Answers"
+    "text": "Here you will find all homework assignments and their solutions. Please remember that solutions to homework will only be released during Exam Weeks; we encourage you to come to Office Hours to ask any questions you may have about the assignments!\n\nHomework 1: Blank Answers \nHomework 2: Blank Answers"
   },
   {
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#last-time",
@@ -889,6 +889,195 @@
     "text": "Summary\n\nWe started off by finishing our discussion of data visualizing, identifying ways to visualize the relationship between two variables.\n\nSuch visualizations included: scatterplots and side-by-side boxplots.\nWe also discussed notions of trend.\n\nNext, we discussed various numerical summaries of data.\n\nThese included measures of central tendency (like the mean or the median), along with measures of spread (like the variance, standard deviation, or IQR).\nWe were also introduced to the five number summary, which is closely related to boxplots.\n\nNext time we’ll begin our discussion on Probability, which, as we will see, provides a rigorous way of quantifying uncertainty."
   },
   {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#leadup",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#leadup",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Leadup",
+    "text": "Leadup\n\nRemember how, last week, we discussed ways to compare two variables?\nAt the time, we only considered comparing two numerical variables and comparing one numerical and one categorical variable.\nWhat about comparing two categorical variables?\nAs a concrete example, let’s return to…"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#penguins-revisited",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#penguins-revisited",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Penguins, Revisited",
+    "text": "Penguins, Revisited\n\n\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           NA            NA                  NA          NA\n 5 Adelie  Torgersen           36.7          19.3               193        3450\n 6 Adelie  Torgersen           39.3          20.6               190        3650\n 7 Adelie  Torgersen           38.9          17.8               181        3625\n 8 Adelie  Torgersen           39.2          19.6               195        4675\n 9 Adelie  Torgersen           34.1          18.1               193        3475\n10 Adelie  Torgersen           42            20.2               190        4250\n# ℹ 334 more rows\n# ℹ 2 more variables: sex <fct>, year <int>"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#penguins-subsetted",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#penguins-subsetted",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Penguins, Subsetted",
+    "text": "Penguins, Subsetted\n\n\n   species island   \n 1 Adelie  Torgersen\n 2 Adelie  Torgersen\n 3 Adelie  Torgersen\n 4 Adelie  Torgersen\n 5 Adelie  Torgersen\n 6 Adelie  Torgersen\n 7 Adelie  Torgersen\n 8 Adelie  Torgersen\n 9 Adelie  Torgersen\n10 Adelie  Torgersen\n# ℹ 334 more rows"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#some-questions",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#some-questions",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Some Questions",
+    "text": "Some Questions\n\nHere are some questions we could ask:\n\nHow many Adelie penguins were found on Biscoe island?\nWere any Gentoo penguins found on Torgersen island?\nWhat proportion of Chinstrap penguins were found on Dream island?\n\nThese sorts of questions are very nicely answered by way of what is known as a contingency table:\n\n\n\n\n           \n            Biscoe Dream Torgersen\n  Adelie        44    56        52\n  Chinstrap      0    68         0\n  Gentoo       124     0         0\n\n\n\n\nThus, the answers to the questions above are: “44”, “no”, and “100%”, respectively."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#why-bring-this-up-now",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#why-bring-this-up-now",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Why Bring This Up Now?",
+    "text": "Why Bring This Up Now?\n\nYou may be asking yourselves: “why bring this up now? Weren’t we talking about probability?”\nLet’s re-examine the third question we asked on the previous slide: What proportion of Chinstrap penguins were found on Dream island?\nWhat we really did when we answered this was to first restrict ourselves to the row of the contingency table corresponding to Chinstrap penguins, tally up the entries in that row, and then divided the number of penguins that were both Chinstrap and found on Dream Island by the row total."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#conditional-probability",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#conditional-probability",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Conditional Probability",
+    "text": "Conditional Probability\n\nThis leads us to the main topic of today’s lecture: conditional probabilities.\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nIf \\(E\\) and \\(F\\) are two events with \\(\\mathbb{P}(E) \\neq 0\\), then we define the probability of \\(E\\) given \\(F\\), notated \\(\\mathbb{P}(E \\mid F)\\), to be \\[ \\mathbb{P}(E \\mid F) = \\frac{\\mathbb{P}(E \\cap F)}{\\mathbb{P}(F)} \\] If \\(\\mathbb{P}(F) = 0\\), then \\(\\mathbb{P}(E \\mid F)\\) is not defined."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#interpretation",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#interpretation",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Interpretation",
+    "text": "Interpretation\n\n\\(\\mathbb{P}(E \\mid F)\\) essentially gives us the proportion of \\(F\\) that is explained by \\(E\\).\n\nAs such, another way to think about conditional probabilities is as an “if-then” statement: if \\(F\\) has occurred, what is the probability that \\(E\\) also occurs?\n\nIf we adopt the classical approach to probability, we have \\[\\begin{align*}\n\\mathbb{P}(E \\mid F)    & = \\frac{\\mathbb{P}(E \\cap F)}{\\mathbb{P}(F)}    \\\\\n  & = \\frac{\\left( \\frac{\\#(E \\cap F)}{\\#(\\Omega)} \\right)}{\\left( \\frac{\\#(F)}{\\#(\\Omega)} \\right)} = \\frac{\\#(E \\cap F)}{\\#(F)}\n\\end{align*}\\]\nThis is also why contingency tables are so useful in the context of probability- the numerator above will be an entry in the table, and the denominator will be either a row-sum or a column-sum (depending on how the table was constructed)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#worked-out-example",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#worked-out-example",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\nWorked-Out Exercise 1\n\n\n\n75 UCSB students were surveyed about whether they like pineapple on pizza or not. In addition to their pineapple preference, their standing was also recorded.\n\n\n         Standing\nPineapple Freshman Junior Senior Sophomore\n      No        15      6      1        18\n      Yes       10      7      5        13\n\n\nA student is to be randomly selected. If the student is a Freshman, what is the probability that they like pineapple on pizza?\n\n\n\n\n\nAs always, we begin by defining events and notation. Let \\(P =\\) “the student likes pineapple on pizza” and \\(F =\\) “the student is a freshman”. We then seek \\(\\mathbb{P}(P \\mid F)\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#multiplication-rule",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#multiplication-rule",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Multiplication Rule",
+    "text": "Multiplication Rule\n\nRecall that. provided \\(\\mathbb{P}(F) \\neq 0\\) \\[ \\mathbb{P}(E \\mid F) = \\frac{\\mathbb{P}(E \\cap F)}{\\mathbb{P}(F)} \\]\nWe can multiply both sides of this equation by \\(\\mathbb{P}(F)\\) to obtain the so-called multiplication rule:\n\n\n\n\n\n\n\n\nThe Multiplication Rule\n\n\n\n\\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E \\mid F) \\cdot \\mathbb{P}(F)\\), for any events \\(E\\) and \\(F\\) with \\(\\mathbb{P}(F) \\neq 0\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#leadup-1",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#leadup-1",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Leadup",
+    "text": "Leadup\n\nNote that “\\(E\\) and \\(F\\)” is the same as “\\(F\\) and \\(E\\)”.\nThat is: \\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(F \\cap E)\\).\nSo, if we interchange the place of \\(E\\) and \\(F\\) in the multiplication rule, we obtain \\[ \\mathbb{P}(E \\cap F) = \\mathbb{P}(F \\cap E) = \\mathbb{P}(F \\mid E) \\cdot \\mathbb{P}(E) \\]\nThat is to say, we have \\[\\begin{align*}\n\\mathbb{P}(E \\cap F)    & = \\mathbb{P}(E \\mid F) \\cdot \\mathbb{P}(F) = \\mathbb{P}(F \\mid E) \\cdot \\mathbb{P}(E)\n\\end{align*}\\]\nDividing the last equation by \\(\\mathbb{P}(F)\\) yields an important result:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#bayes-rule",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#bayes-rule",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Bayes’ Rule",
+    "text": "Bayes’ Rule\n\n\n\n\n\n\n\nBaeys’ Rule\n\n\n\n\\[ \\mathbb{P}(E \\mid F) = \\frac{\\mathbb{P}(F \\mid E) \\cdot \\mathbb{P}(E)}{\\mathbb{P}(F)} \\] for events \\(E\\) and \\(F\\) with \\(\\mathbb{P}(E) \\neq 0\\) and \\(\\mathbb{P}(F) \\neq 0\\).\n\n\n\n\n\n\nIn a sense, Bayes’ Rule gives us a way to “reverse the order of a conditional”"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#worked-out-example-1",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#worked-out-example-1",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\nAs an illustration, let’s return to our pineapple-on-pizza contingency table:\n\n\n\n\n         Standing\nPineapple Freshman Junior Senior Sophomore\n      No        15      6      1        18\n      Yes       10      7      5        13\n\n\n\n\nLetting \\(P\\) and \\(F\\) be defined as before, let’s compute \\(\\mathbb{P}(P \\mid F)\\) using Bayes’ Rule.\nWe need to first compute \\(\\mathbb{P}(F \\mid P)\\), which we see to be \\[ \\mathbb{P}(F \\mid P) = \\frac{10}{10 + 7 + 5 + 13} = \\frac{10}{35} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#hang-in-there",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#hang-in-there",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Hang In There!",
+    "text": "Hang In There!\n\nAt the moment, it may not seem obvious why Bayes’ Rule is helpful.\n\nIt seems like it just makes more work!\n\nBut, rest assured, we will see a very practical application of Bayes’ Rule in a few slides.\nBefore we do, there’s just one more concept we need to discuss."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#leadup-2",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#leadup-2",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Leadup",
+    "text": "Leadup\n\nConsider an event \\(F\\), and another event \\(E\\).\nIf \\(F\\) happened, it could have happened along with \\(E\\) or it could have happened along with not-\\(E\\).\nThat is, \\[ F = (F \\cap E) \\cup (F \\cap E^\\complement)\\]\nNow, let’s take the probability of both sides. Since the events on the RHS are disjoint, the probability on the RHS just becomes a sum of probabilities: \\[ \\mathbb{P}(F) = \\mathbb{P}(F \\cap E) + \\mathbb{P}(F \\cap E^\\complement) \\]\nFinally, we apply the Multiplication Rule to the probabilities on the RHS to obtain \\[ \\mathbb{P}(F) = \\mathbb{P}(F \\mid E) \\cdot \\mathbb{P}(E) + \\mathbb{P}(F \\mid E^\\complement) \\cdot \\mathbb{P}(E^\\complement) \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#law-of-total-probability",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#law-of-total-probability",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Law of Total Probability",
+    "text": "Law of Total Probability\n\n\n\n\n\n\n\nThe Law of Total Probability\n\n\n\nGiven two events \\(E\\) and \\(F\\) with \\(\\mathbb{P}(E) \\neq 0\\) and \\(\\mathbb{P}(F) \\neq 0\\), we have \\[ \\mathbb{P}(F) = \\mathbb{P}(F \\mid E) \\cdot \\mathbb{P}(E) + \\mathbb{P}(F \\mid E^\\complement) \\cdot \\mathbb{P}(E^\\complement) \\]\n\n\n\n\n\n\nThis is often useful in the context of a Bayes’ Rule problem."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#worked-out-example-2",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#worked-out-example-2",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\nAlright, let’s get down to business and tackle a slightly more real-world problem.\n\n\n\n\n\n\n\n\nWorked-Out Exercise 1\n\n\n\nIt is known that a particular disease affects 5% of the population. There exists a test for this disease, but it is not perfect: there is a 10% chance it will return a “negative” result for a person who is actually infected, and there is a 8% chance it will return a “positive” result for a person who is actually healthy.\n\nArasha has taken a test for the disease, and it has indicated a “positive” result. What is the probability that Arasha actually has the disease?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#step-1-define-events",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#step-1-define-events",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Step 1: Define Events",
+    "text": "Step 1: Define Events\n\nAs always, we start by defining events.\nLet + denote “the test returns a positive result” and let \\(D\\) denote “Arasha actually has the disease.”\nFirst of all, note that we are not interested in simply finding \\(\\mathbb{P}(D)\\); rather, we are interested in finding \\(\\mathbb{P}(D \\mid +)\\).\n\nThis is because Arasha has already been tested and received a positive result; this is information we need to incorporate into our beliefs!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#step-2-translate-the-information",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#step-2-translate-the-information",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Step 2: Translate the Information",
+    "text": "Step 2: Translate the Information\n\nWith our events from Step 1, we now turn our attention to translating the information provided in the problem.\nSince there is a \\(10\\%\\) chance that the test returns a negative result given that a person actually has the disease, we have \\[ \\mathbb{P}(+^\\complement \\mid D) = 0.1 \\]\nAdditionally, we are told that there is an \\(8\\%\\) chance that the test returns a positive result given that a person does not have disease, we have \\[ \\mathbb{P}(+ \\mid D^\\complement) = 0.08 \\]\nFinally, we are told that 5% of the population has the disease; hence, \\[ \\mathbb{P}(D) = 0.05 \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#step-2-translate-the-information-1",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#step-2-translate-the-information-1",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Step 2: Translate the Information",
+    "text": "Step 2: Translate the Information\n\nBut wait- there’s more!\nGiven that a person has the disease, they will either test positive or test negative.\n\nWhat that means is that \\[ \\mathbb{P}(+ \\mid D) = 1 - \\mathbb{P}(+^\\complement \\mid D) = 1 - 0.1 = 0.9 \\]\nThink of this as a modified complement rule\n\nSimilarly, \\[ \\mathbb{P}(+^\\complement \\mid D^\\complement) = 1 - \\mathbb{P}(+ \\mid D^\\complement) = 1 - 0.08 = 0.92 \\]\nAdditionally, \\[ \\mathbb{P}(D^\\complement) =  1 - \\mathbb{P}(D) = 1 - 0.05 = 0.95 \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#step-2-translate-the-information-2",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#step-2-translate-the-information-2",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Step 2: Translate the Information",
+    "text": "Step 2: Translate the Information\n\nSo, here’s a summary of everything we know, just from the problem statement: \\[\\begin{align*}\n\\mathbb{P}(+ \\mid D) = 0.9    & \\hspace{15mm} \\mathbb{P}(+^\\complement \\mid D) = 0.1    \\\\\n\\mathbb{P}(+ \\mid D^\\complement) = 0.08   & \\hspace{15mm}  \\mathbb{P}(P^\\complement \\mid D^\\complement) = 0.92   \\\\\n\\mathbb{P}(D) = 0.05    & \\hspace{15mm}  \\mathbb{P}(D^\\complement) = 0.95\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#step-3-solve-the-problem",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#step-3-solve-the-problem",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Step 3: Solve the Problem",
+    "text": "Step 3: Solve the Problem\n\nNow we are in a position to begin solving the problem.\nRecall that we seek \\(\\mathbb{P}(D \\mid +)\\).\nBut, we only have information on \\(\\mathbb{P}(+ \\mid D)\\).\nAny ideas what rule/tool we should use?\n\nThat’s right; Bayes’ Rule!\n\nWe use Bayes’ Rule to write \\[ \\mathbb{P}(D \\mid +) = \\frac{\\mathbb{P}(+ \\mid D) \\cdot \\mathbb{P}(D)}{\\mathbb{P}(+)} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#step-3-solve-the-problem-1",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#step-3-solve-the-problem-1",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Step 3: Solve the Problem",
+    "text": "Step 3: Solve the Problem\n\nDo we have \\(\\mathbb{P}(+)?\\)\n\nNo…\nBut how can we get it?\nYup- Law of Total Probability!\n\nWe use the Law of Total Probability to write\n\n\n\\[\\begin{align*}\n  \\mathbb{P}(+)   & = \\mathbb{P}(+ \\mid D) \\cdot \\mathbb{P}(D) + \\mathbb{P}(+ \\mid D^\\complement) \\cdot \\mathbb{P}(D^\\complement)    \\\\\n    & = (0.9) \\cdot (0.05) + (0.08) \\cdot (0.95) = 0.121\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#step-3-solve-the-problem-2",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#step-3-solve-the-problem-2",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Step 3: Solve the Problem",
+    "text": "Step 3: Solve the Problem\n\nFinally, putting everything together:\n\n\n\\[\\begin{align*}\n  \\mathbb{P}(D \\mid +)    & = \\frac{\\mathbb{P}(+ \\mid D) \\cdot \\mathbb{P}(D)}{\\mathbb{P}(+)}   \\\\\n    & = \\frac{(0.9) \\cdot (0.05)}{0.121} \\boxed{\\approx 37.19\\%}\n\\end{align*}\\]\n\n\nIf that seems low… you’re right! But, it is actually in line with the problem- the test for the disease is pretty bad, considering how often it gets things wrong. This is why this probability is low- because the test is so bad, we cannot be confident that Arasha actually has the disease, even though she tested positive!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#some-terminology",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#some-terminology",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Some Terminology",
+    "text": "Some Terminology\n\nBy the way, there’s some terminology I’d like to quickly introduce to make our lives easier going forward.\nThe False Positive Rate of a test is the proportion of times it returns a “positive” result, when the truth is actually “negative”.\n\nSo, in the context of epidemiology, the false positive rate of a test is the proportion of times it says someone has a disease when they do not actually have the disease.\n\nAnalogously, the False Negative Rate of a test is the proportion of times it returns a “negative” result, when the truth is actually “positive”.\n\nSo, in the context of epidemiology, the false negative rate of a test is the proportion of times it says someone does not have a disease when they do actually have the disease."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#some-problems-to-think-on",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#some-problems-to-think-on",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Some Problems To Think On:",
+    "text": "Some Problems To Think On:\n\n\n\n\n\n\nExercise 1\n\n\n\n\nA recent survey interviewed several UCSB students about their pets. The following data was collected:\n\n\n             Animal\nAdopted       Bunny Cat Dog Hamster\n  Adopted         3   5   8       4\n  Not Adopted     1   5   7       7\n\n\n\nIf a pet is to be selected at random, what is the probability that it is either a cat or adopted?\nA pet is selected at random: what is the probability that it is an adopted dog?\nA pet is selected at random: if it is a dog, what is the probability that it was adopted?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#leadup-3",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#leadup-3",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Leadup",
+    "text": "Leadup\n\nThere is a very important concept we need to discuss before concluding our initial discussion on Conditional Probabilities.\nConsider two events \\(E\\) and \\(F\\).\n\n\\(\\mathbb{P}(E)\\) represents our beliefs on the event \\(E\\).\n\\(\\mathbb{P}(E \\mid F)\\) represents our beliefs on the event \\(E\\), in the presence of the additional information contained in \\(F\\).\n\nWhat happens if \\(\\mathbb{P}(E) = \\mathbb{P}(E \\mid F)\\)?\n\nThis asserts that our beliefs on \\(E\\) remain unchanged in the presence of \\(F\\).\nThat is, \\(E\\) is “unaffected” by \\(F\\) ; i.e. \\(E\\) is independent of \\(F\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#independence-1",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#independence-1",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Independence",
+    "text": "Independence\n\n\n\n\n\n\n\nDefinition\n\n\n\nTwo events \\(E\\) and \\(F\\) are defined to be independent (notated \\(E \\perp F\\)) if any of the following hold:\n\n\\(\\mathbb{P}(E \\mid F) = \\mathbb{P}(E)\\)\n\\(\\mathbb{P}(F \\mid E) = \\mathbb{P}(F)\\)\n\\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E) \\cdot \\mathbb{P}(F)\\)\n\n\n\n\n\n\n\nNote- the probability of an intersection equals the product of unconditional (i.e. marginal) probabilities ONLY WHEN THE EVENTS ARE INDEPENDENT.\n\nIn general, the only way to compute the probability of an intersection is to use the Multiplication Rule.\n\nI’ll show you one of the equivalencies on the board."
+  },
+  {
     "objectID": "Pages/Lectures/Lecture00/Lec00.html#course-staff",
     "href": "Pages/Lectures/Lecture00/Lec00.html#course-staff",
     "title": "PSTAT 5A: Lecture 00",
@@ -1152,7 +1341,7 @@
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Sunday, July 2, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nWorksheet 02\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nWorksheet 04\nLab03: Descriptive Statistics, Sampling Distributions, and Simulations\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n14: Hypothesis Testing for Proportions\n15: Review\n16: Midterm 2\n\nWorksheet 05\nLab04: Percentiles, QQ-Plots, and Loops\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing for Means\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 06\nLab05: Markdown Syntax, and Importing Data\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\n\nLab06: Exploratory Data Analysis"
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Monday, July 3, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nWorksheet 02\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nWorksheet 04\nLab03: Descriptive Statistics, Sampling Distributions, and Simulations\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n14: Hypothesis Testing for Proportions\n15: Review\n16: Midterm 2\n\nWorksheet 05\nLab04: Percentiles, QQ-Plots, and Loops\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing for Means\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 06\nLab05: Markdown Syntax, and Importing Data\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\n\nLab06: Exploratory Data Analysis"
   },
   {
     "objectID": "Pages/calendar.html",
