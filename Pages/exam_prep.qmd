@@ -27,6 +27,6 @@ css: "../schedule.css"
 
 - Exam Coverpages: <a href = "../Files/ExamInfo/MT1_Coverpage_MC.pdf" class = "button label-outline" target = "_blank">Multiple Choice</a> <a href = "../Files/ExamInfo/MT1_Coverpage_FR.pdf" class = "button label-outline" target = "_blank">Free Response</a>
     
-- Formula Sheet: **will be posted on Monday, July 3**
+- Formula Sheet: <a href = "../Files/ExamInfo/MT1_Formula_Sheet.pdf" class = "button label-outline" target = "_blank">.pdf</a>
 
-- Practice Problems: **will be posted soon**
+- Practice Problems: <a href = "../Files/ExamInfo/mt1_practice_problems.pdf" class = "button label-outline" target = "_blank">.pdf</a>
