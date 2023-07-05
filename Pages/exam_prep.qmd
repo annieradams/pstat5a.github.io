@@ -17,11 +17,11 @@ css: "../schedule.css"
 
 - List of Topics (not comprehensive): <a href = "../Files/ExamInfo/mt1_topics.pdf" class = "button label-outline" target = "_blank">.pdf</a>
 
-- Spring 2023 Exams: **Solutions will be posted on Wednesday, July 5**
+- Spring 2023 Exams:
 
-    - Blue Version: <a href = "../Files/Past_Exams/Sp23_MT1_Blue_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a>
+    - Blue Version: <a href = "../Files/Past_Exams/Sp23_MT1_Blue_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a> <a href = "../Files/Past_Exams/SP23_MT1_Blue_Solns.pdf" class = "button label-outline" target = "_blank">Solns</a>
     
-    - Yellow Version: <a href = "../Files/Past_Exams/Sp23_MT1_Yellow_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a>
+    - Yellow Version: <a href = "../Files/Past_Exams/Sp23_MT1_Yellow_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a> <a href = "../Files/Past_Exams/SP23_MT1_Yellow_Solns.pdf" class = "button label-outline" target = "_blank">Solns</a>
     
     - **Please note that the format of exams this quarter will be slightly different; see the coverpages below**
 
