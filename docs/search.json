@@ -1138,7 +1138,7 @@
     "href": "Pages/Lectures/Lecture05/Lec05.html#conditional-probability",
     "title": "PSTAT 5A: Lecture 05",
     "section": "Conditional Probability",
-    "text": "Conditional Probability\n\nThis leads us to the main topic of today’s lecture: conditional probabilities.\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nIf \\(E\\) and \\(F\\) are two events with \\(\\mathbb{P}(E) \\neq 0\\), then we define the probability of \\(E\\) given \\(F\\), notated \\(\\mathbb{P}(E \\mid F)\\), to be \\[ \\mathbb{P}(E \\mid F) = \\frac{\\mathbb{P}(E \\cap F)}{\\mathbb{P}(F)} \\] If \\(\\mathbb{P}(F) = 0\\), then \\(\\mathbb{P}(E \\mid F)\\) is not defined."
+    "text": "Conditional Probability\n\nThis leads us to the main topic of today’s lecture: conditional probabilities.\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nIf \\(E\\) and \\(F\\) are two events with \\(\\mathbb{P}(F) \\neq 0\\), then we define the probability of \\(E\\) given \\(F\\), notated \\(\\mathbb{P}(E \\mid F)\\), to be \\[ \\mathbb{P}(E \\mid F) = \\frac{\\mathbb{P}(E \\cap F)}{\\mathbb{P}(F)} \\] If \\(\\mathbb{P}(F) = 0\\), then \\(\\mathbb{P}(E \\mid F)\\) is not defined."
   },
   {
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#interpretation",

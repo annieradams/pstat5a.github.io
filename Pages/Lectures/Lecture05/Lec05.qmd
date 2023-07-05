@@ -131,7 +131,7 @@ table(penguins$species, penguins$island)
 :::{.callout-note}
 ## **Definition**
 ::: {style="font-size: 30px"}
-If $E$ and $F$ are two events with $\mathbb{P}(E) \neq 0$, then we define the probability of $E$ **given** $F$, notated $\mathbb{P}(E \mid F)$, to be
+If $E$ and $F$ are two events with $\mathbb{P}(F) \neq 0$, then we define the probability of $E$ **given** $F$, notated $\mathbb{P}(E \mid F)$, to be
 $$ \mathbb{P}(E \mid F) = \frac{\mathbb{P}(E \cap F)}{\mathbb{P}(F)} $$
 If $\mathbb{P}(F) = 0$, then $\mathbb{P}(E \mid F)$ is not defined.
 :::
