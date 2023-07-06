@@ -20,8 +20,16 @@ css: "../schedule.css"
 - Spring 2023 Exams:
 
     - Blue Version: <a href = "../Files/Past_Exams/Sp23_MT1_Blue_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a> <a href = "../Files/Past_Exams/SP23_MT1_Blue_Solns.pdf" class = "button label-outline" target = "_blank">Solns</a>
+        
+        - **Typo in Solutions:** In 12(b), the $\frac{1}{5 - 1}$ should be $\frac{1}{4 - 1}$
+        
+        - **Typo in Solutions:** Answer to 13(d) should be $A = \{ (1, -1, \ \ 1), \ (1, -1, -1)\}$
     
     - Yellow Version: <a href = "../Files/Past_Exams/Sp23_MT1_Yellow_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a> <a href = "../Files/Past_Exams/SP23_MT1_Yellow_Solns.pdf" class = "button label-outline" target = "_blank">Solns</a>
+    
+        - **Typo in Solutions:** In 12(b), the $\frac{1}{5 - 1}$ should be $\frac{1}{4 - 1}$
+        
+        - **Typo in Solutions:** Answer to 14(d) should be $A = \{ (1, -1, \ \ 1), \ (1, -1, -1)\}$
     
     - **Please note that the format of exams this quarter will be slightly different; see the coverpages below**
 
@@ -29,4 +37,4 @@ css: "../schedule.css"
     
 - Formula Sheet: <a href = "../Files/ExamInfo/MT1_Formula_Sheet.pdf" class = "button label-outline" target = "_blank">.pdf</a>
 
-- Practice Problems: <a href = "../Files/ExamInfo/mt1_practice_problems.pdf" class = "button label-outline" target = "_blank">.pdf</a>
+- Practice Problems: <a href = "../Files/ExamInfo/mt1_practice_problems.pdf" class = "button label-outline" target = "_blank">.pdf</a> <a href = "../Files/ExamInfo/MT1_prac_prob_solns.pdf" class = "button label-outline" target = "_blank">Solns</a>
