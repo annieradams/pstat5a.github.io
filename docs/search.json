@@ -1379,6 +1379,209 @@
     "text": "Why Should I Care?\n\n\nI suspect not all of you are necessarily pursuing a degree in Statistics or Data Science.\n\n\n\nHowever, wherever there is data, there is the need for a Data Scientist (or, at least, some of the principles from Data Science).\n\nSo, even if you are working in (what you might think is) a field that is far removed from Statsitics, the minute you start dealing with Data is the minute you start needing to know Data Science!\n\nHere’s a perhaps more pragmatic answer: even if you think you want to go straight into industry right after this course, no company wants to hire someone to just mindlessly crunch numbers - though computing experience is absolutely crucial in making yourself a good candidate, employers would much rather have someone who is both skilled at running code but also understands why they are running the code they are running!"
   },
   {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#recap-of-probability",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#recap-of-probability",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Recap of Probability",
+    "text": "Recap of Probability\n\nRecall the basic ingredients of probability we have discussed so far:\n\nExperiment: any procedure we can repeat an infinite number of times, where on each repetition there is a fixed set of things (called outcomes) that can happen.\nOutcome space (\\(\\boldsymbol{\\Omega}\\)): the set of all outcomes associated with a particular experiment\nEvent: a subset of the outcome space\nProbability: a function that maps events to a number; specifically, one that quantifies our beliefs about a particular event"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#an-experiment",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#an-experiment",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "An Experiment",
+    "text": "An Experiment\n\nLet’s actually conduct an experiment together!\nSpecifically, suppose we toss a coin 3 times and record the outcomes.\nFirst question: what is the outcome space?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#an-experiment-1",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#an-experiment-1",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "An Experiment",
+    "text": "An Experiment\n\n\n\n\n\n\n\ntree_diagram\n\n  \n\nbase\n\no   \n\nH1\n\nH   \n\nbase->H1\n\n    \n\nT1\n\nT   \n\nbase->T1\n\n    \n\nH21\n\nH   \n\nH1->H21\n\n    \n\nT21\n\nT   \n\nH1->T21\n\n    \n\nH22\n\nH   \n\nT1->H22\n\n    \n\nT22\n\nT   \n\nT1->T22\n\n    \n\nH311\n\nH   \n\nH21->H311\n\n    \n\nT311\n\nT   \n\nH21->T311\n\n    \n\nH321\n\nH   \n\nT21->H321\n\n    \n\nT321\n\nT   \n\nT21->T321\n\n    \n\nH312\n\nH   \n\nH22->H312\n\n    \n\nT312\n\nT   \n\nH22->T312\n\n    \n\nH322\n\nH   \n\nT22->H322\n\n    \n\nT322\n\nT   \n\nT22->T322"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#an-experiment-2",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#an-experiment-2",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "An Experiment",
+    "text": "An Experiment\n\nOkay, let’s conduct this experiment!\n\n\n\n\nviewof toss = Inputs.button(\"Toss\")\n\n\n\n\n\n\n\ndummy = toss + 1\ncoin = [\"H\", \"T\"]\ns1 = coin[Math.floor(Math.random()*coin.length*dummy/dummy)];\ns2 = coin[Math.floor(Math.random()*coin.length*dummy/dummy)];\ns3 = coin[Math.floor(Math.random()*coin.length*dummy/dummy)];\ns4 = coin[Math.floor(Math.random()*coin.length*dummy/dummy)];\n[s1, s2, s3];\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdditionally, let’s keep track of the number of heads we observe each time we run this experiment.\n\nIn fact, let’s do this on the whiteboard."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#an-experiment-3",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#an-experiment-3",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "An Experiment",
+    "text": "An Experiment\n\n\nAlright, let’s make note of a few things.\n\n\n\nNote that each time we run this experiment, we (sure enough) get an element of the outcome space.\nBut, also note that each time we run the experiment, we get a (potentially) different number of heads.\nIn fact, each outcome in the outcome space corresponds to a different number of heads:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#an-experiment-4",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#an-experiment-4",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "An Experiment",
+    "text": "An Experiment\n\n\n\nOutcome\nNumber of Heads\n\n\n\n\n(H,  H,   H)\n3\n\n\n(H,   H,   T)\n2\n\n\n(H,   T,   H)\n2\n\n\n(T,   H,   H)\n2\n\n\n(H,   T,   T)\n1\n\n\n(T,   H,   T)\n1\n\n\n(T,   T,   H)\n1\n\n\n(T,   T,   T)\n0"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#random-variables",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#random-variables",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Random Variables",
+    "text": "Random Variables\n\nThis leads us to the notion of random variables.\nLoosely speaking, a random variable is a variable or process with a random numerical outcome.\nWe denote random variables using capital letters; e.g. \\(X\\), \\(Y\\), \\(Z\\), \\(W\\), etc.\nSo, for example, \\(X =\\) “the number of heads in 3 tosses of a coin” is a random variable because (a) it is a numerical outcome of an experiment and (b) it is random (i.e. its value changes depending on the outcome of the experiment).\n\nBy the way, note that we also use capital letters to denote events. So, how will we know whether something is an event or a random variable?\nThat’s right; based on how it is defined! So, again, make sure you are defining everything clearly and explicitly."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#state-space",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#state-space",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "State Space",
+    "text": "State Space\n\nA key part of the definition of random variables is that they must be numerical.\nWhat this means is we can always look at the set of values a random variable could take: this is what we call the state space of a random variable.\nFor example: if \\(X =\\) “number of heads in 3 tosses of a coin”, we see that \\(X\\) will only ever be \\(0\\), \\(1\\), \\(2\\), or \\(3\\).\n\nThis is because it is not possible to toss 3 coins and get, say, 5 heads, or a negative number of heads!\n\nWe often denote the state space of a random variable using the notation \\(S_{\\verb|<variable>|}\\); e.g. \\(S_X\\) to mean the state space of \\(X\\), \\(S_Y\\) to mean the state space of \\(Y\\), etc."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#classifying-random-variables",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#classifying-random-variables",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Classifying Random Variables",
+    "text": "Classifying Random Variables\n\nBecause random variables are numerical, their state spaces will always be numerical sets of values.\nThis means we can classify state spaces using our Variable Classification scheme from Week 1!\n\nSpecifically: the state space \\(S_X\\) of a random variable will either have “jumps”, or not.\n\nWe extend the same classification language to random variables:\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nGiven a random variable \\(X\\), we say that:\n\n\\(X\\) is a discrete random variable (or just “\\(X\\) is discrete) if \\(S_X\\) is has jumps\n\\(X\\) is a continuous random variable (or just “\\(X\\) is continuous) if \\(S_X\\) has no jumps"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#leadup",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#leadup",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Leadup",
+    "text": "Leadup\n\nLet’s return to our coin tossing example.\nWhat is the probability that we observe zero heads?\nWell, in the language of our random variable \\(X\\) (which counts the number of heads in these three tosses of our fair coin), we can translate “zero heads” to the event “\\(\\{X = 0\\}\\)’’, meaning we want to find \\(\\mathbb{P}(X = 0)\\).\nObserving zero heads is equivalent to observing all tails, meaning the event \\(\\{X = 0\\}\\) is equivalent to the event { (T,  T,  T) }.\nNow, up to this point I have been careful to avoid explicitly mentioning whether our coin is fair or not.\n\nFor the time being, let’s assume that the probability our coin lands ‘heads’ on any given toss is some fixed value \\(p\\). (If the coin were fair, then \\(p = 0.5\\) but let’s not make that assumption yet.)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#probability-mass-function",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#probability-mass-function",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Probability Mass Function",
+    "text": "Probability Mass Function\n\nThe table on the previous slide is called a probability mass function, and is often abbreviated as p.m.f..\nIn general, the p.m.f. of an arbitrary random variable \\(X\\) is a table or formula that specifies all the possible values a random variable can take (i.e. the state space), along with the probability with which the random variable attains those values.\nWe use the term “function” to describe this because, in abstraction, we can notate the p.m.f. as \\[ p_X(k) := \\mathbb{P}(X = k) \\] where \\(k\\) can be any value in the state space of \\(X\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#example",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#example",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Example",
+    "text": "Example\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nSuppose we toss three fair coins independently, and let \\(X\\) denote the number of heads observed. Construct the p.m.f. (probability mass function) of \\(X\\).\n\n\n\n\n\n\nBy our work from above, the p.m.f. of \\(X\\) is given by \\[\\begin{array}{r|cccc}\n\\boldsymbol{k}    &     0   & 1   & 2   & 3   \\\\\n\\hline\n\\boldsymbol{\\mathbb{P}(X = k)}   & 1/8   & 3/8  & 3/8 &  1/8\n\\end{array}\\]\nBy the way, notice that the probabilities in the p.m.f. sum up to 1.\n\nThis is not a coincidence! Because the probabilities represent the probabilities of all values \\(X\\) can take, they must sum up to 1."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#properties-of-pmfs",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#properties-of-pmfs",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Properties of PMF’s",
+    "text": "Properties of PMF’s\n\nThis leads us to posit the following two properties of probability mass functions:\n\n\n\n\n\n\n\n\n\nProperties of a PMF\n\n\n\n\nThe values in a PMF must sum to 1\nThe values in a PMF must always be nonnegative\n\n\n\n\n\n\n\n\nAlso: we implicitly set probabilities not contained in the p.m.f. to be zero.\n\nFor instance: in our coin tossing example, \\(\\mathbb{P}(X = 1.5) = 0\\).\nThis makes sense! If \\(k \\notin S_X\\), then by definition of the state space it is impossible for \\(X\\) to attain the value \\(k\\), and so \\(\\mathbb{P}(X = k) = 0\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#worked-out-example",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#worked-out-example",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\nA random variable \\(X\\) has the following p.m.f.: \\[\\begin{array}{r|cccc}\n  \\boldsymbol{k}    &     -1.4   & 0   & 3   & 4.15   \\\\\n  \\hline\n  \\boldsymbol{\\mathbb{P}(X = k)}   & 0.1 & 0.2 & \\boldsymbol{a} & 0.6\n\\end{array}\\] What must be the value of \\(\\boldsymbol{a}\\)?\n\n\n\n\n\n\nBecause the values in a p.m.f. must sum to 1, we must have \\[ 0.1 + 0.2 + a + 0.6 = 1 \\] which means \\[ a = 1 - (0.1 + 0.2 + 0.6) = \\boxed{0.1} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#worked-out-example-3",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#worked-out-example-3",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\nWorked-Out Example 3\n\n\n\n\nA random variable \\(X\\) has the following p.m.f.: \\[\\begin{array}{r|cccc}\n  \\boldsymbol{k}    &     -1.4   & 0   & 3   & 4.15   \\\\\n  \\hline\n  \\boldsymbol{\\mathbb{P}(X = k)}   & 0.1 & 0.2 & 0.1 & 0.6\n\\end{array}\\] Compute both \\(\\mathbb{P}(X = 0)\\) and \\(\\mathbb{P}(X \\leq 0)\\).\n\n\n\n\n\n\nFor \\(\\mathbb{P}(X = 0)\\), we can simply read off the corresponding element from the p.m.f.:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#expected-value",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#expected-value",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Expected Value",
+    "text": "Expected Value\n\n\n\n\n\n\n\nDefinition\n\n\n\nThe expected value (or just expectation) of a discrete random variable \\(X\\) is \\[ \\mathbb{E}[X] = \\sum_{\\text{all $k$}} k \\cdot \\mathbb{P}(X = k) \\] where the sum ranges over all values of \\(k\\) in the state space.\n\n\n\n\n\n\nIn words: multiply each value in the state space by the corresponding probability, and then sum.\nThe expected value is a sort of ‘center’ of a random variable."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#worked-out-example-4",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#worked-out-example-4",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\nWorked-Out Example 4\n\n\n\n\nA random variable \\(X\\) has the following p.m.f.: \\[\\begin{array}{r|cccc}\n  \\boldsymbol{k}    &     -1.4   & 0   & 3   & 4.15   \\\\\n  \\hline\n  \\boldsymbol{\\mathbb{P}(X = k)}   & 0.1 & 0.2 & 0.1 & 0.6\n\\end{array}\\] Compute \\(\\mathbb{E}[X]\\).\n\n\n\n\n\n\nWe compute \\[\\begin{align*}\n\\mathbb{E}[X]   & = \\sum_{\\text{all $k$}} k \\cdot \\mathbb{P}(X = k)   \\\\[5mm]\n  & = (-1.4) \\cdot \\mathbb{P}(X = -1.4) + (0) \\cdot \\mathbb{P}(X = 0) + (3) \\cdot \\mathbb{P}(X = 3)   \\\\\n    & \\hspace{10mm} + (4.15) \\cdot \\mathbb{P}(X = 4.15)    \\\\[5mm]\n    & = (-1.4) \\cdot (0.1) + (0) \\cdot (0.2) + (3) \\cdot (0.1) + (4.15) \\cdot (0.6) = \\boxed{2.65}\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#variance-and-sd",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#variance-and-sd",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Variance and SD",
+    "text": "Variance and SD\n\n\n\n\n\n\n\nDefinition\n\n\n\nThe variance of a discrete random variable \\(X\\) is \\[ \\mathrm{Var}(X) = \\sum_{\\text{all $k$}} (k - \\mathbb{E}[X])^2 \\cdot \\mathbb{P}(X = k) \\] where the sum ranges over all values of \\(k\\) in the state space. The standard deviation is the square root of the variance: \\[ \\mathrm{SD}(X) = \\sqrt{\\mathrm{Var}(X)} \\]\n\n\n\n\n\n\n\n\n\n\n\n\nSecond Formula for Variance\n\n\n\n\\[ \\mathrm{Var}(X) = \\left( \\sum_{\\text{all $k$}} k^2 \\cdot \\mathbb{P}(X = k) \\right) - \\left( \\mathbb{E}[X] \\right)^2 \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#worked-out-example-5",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#worked-out-example-5",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\nWorked-Out Example 5\n\n\n\n\nA random variable \\(X\\) has the following p.m.f.: \\[\\begin{array}{r|cccc}\n  \\boldsymbol{k}    &     -1.4   & 0   & 3   & 4.15   \\\\\n  \\hline\n  \\boldsymbol{\\mathbb{P}(X = k)}   & 0.1 & 0.2 & 0.1 & 0.6\n\\end{array}\\] Compute \\(\\mathrm{Var}(X)\\) and \\(\\mathrm{SD}(X)\\).\n\n\n\n\n\n\nWe previously found that \\(\\mathbb{E}[X] = 2.65\\).\nHence, we need only to find \\(\\sum_{k} k^2 \\cdot \\mathbb{P}(X = x)\\): \\[\\begin{align*}\n\\sum_{\\text{all $k$}} k^2 \\cdot \\mathbb{P}(X = k) & = (-1.4)^2 \\cdot \\mathbb{P}(X = -1.4) + (0)^2 \\cdot \\mathbb{P}(X = 0) + (3)^2 \\cdot \\mathbb{P}(X = 3)   \\\\\n    & \\hspace{10mm} + (4.15)^2 \\cdot \\mathbb{P}(X = 4.15)    \\\\[5mm]\n    & = (-1.4)^2 \\cdot (0.1) + (0)^2 \\cdot (0.2) + (3)^2 \\cdot (0.1) + (4.15)^2 \\cdot (0.6) = 11.4295\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#your-turn",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#your-turn",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\n\n\n\n\nExercise 1\n\n\n\n\nSuppose \\(X\\) is a random variable with p.m.f. (probability mass function) given by \\[\\begin{array}{r|cccc}\n  \\boldsymbol{k}    &     -1 & 0 & 1 & 2   \\\\\n  \\hline\n  \\boldsymbol{\\mathbb{P}(X = k)}   & 0.3 & 0.2 & 0.1 & \\boldsymbol{a}\n\\end{array}\\]\n\nFind the state space \\(S_X\\) of \\(X\\).\nFind the value of \\(\\boldsymbol{a}\\)\nFind \\(\\mathbb{P}(X = 0.5)\\)\nFind \\(\\mathbb{P}(X \\leq 1)\\)\nFind \\(\\mathbb{P}(X > 1)\\)\nFind \\(\\mathbb{E}[X]\\)\nFind \\(\\mathrm{Var}(X)\\) and \\(\\mathrm{SD}(X)\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#your-turn-1",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#your-turn-1",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\n\n\n\n\nExercise 2\n\n\n\n\nConsider the following game: a fair six-sided die is rolled. If the number showing is 1 or 2, you win a dollar; if the number showing is 3, 4, or 5 you win 2 dollars; if the number showing is 6, you lose 1 dollar. Let \\(W\\) denote your net winnings after playing this game once.\n\nWrite down the state space \\(S_W\\) of \\(W\\).\nFind the p.m.f. of \\(W\\).\nWhat are your expected winnings after one round of the game?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#back-to-coins",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#back-to-coins",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Back to Coins",
+    "text": "Back to Coins\n\nAlright, let’s close out this lecture by returning to our coin tossing example.\nAs a reminder: if we let \\(X\\) denote the number of heads in 3 tosses of a \\(p-\\)coin (i.e. a coin that lands ‘heads’ with probability \\(p\\)), the p.m.f. of \\(X\\) is given by\n\n\n\\[\\begin{array}{r|cccc}\n  \\boldsymbol{k}    &     0   & 1   & 2   & 3   \\\\\n  \\hline\n  \\boldsymbol{\\mathbb{P}(X = k)}   & (1 - p)^3   & 3  p (1 - p)^2  & 3  p^2 (1 - p) &  p^3\n\\end{array}\\]\n\n\nWhat if instead of tossing 3 coins, we had tossed 4? Or 5? Or 10?\nWe could go through the same steps we did before, when deriving the p.m.f. for three tosses, but let’s be a little smarter about this; let’s answer the following more general question:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#binomial-distribution",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#binomial-distribution",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Binomial Distribution",
+    "text": "Binomial Distribution\n\n\n\n\n\n\nThe Binomial Distribution\n\n\n\n\nSuppose the probability of a single trial resulting in a ‘success’ is \\(p\\). Letting \\(X\\) denote the number of successes in \\(n\\) independent trials, then we say that \\(X\\) follows the Binomial Distribution with parameters \\(n\\) and \\(p\\). We use the notation \\(X \\sim \\mathrm{Bin}(n, p)\\) to denote this.\n\n\n\n\n\n\n\n\n\n\n\n\nFacts about the Binomial Distribution\n\n\n\n\nIf \\(X \\sim \\mathrm{Bin}(n, p)\\), then\n\n\\(\\displaystyle \\mathbb{P}(X = k) = \\binom{n}{k} \\cdot p^k \\cdot (1 - p)^{n - k}\\)\n\\(\\mathbb{E}[X] = np\\) and \\(\\mathrm{Var}(X) = np(1 - p)\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#binomial-conditions",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#binomial-conditions",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Binomial Conditions",
+    "text": "Binomial Conditions\n\n\n\n\n\n\nFour Conditions to Check\n\n\n\n\nIf \\(X\\) counts the number of successes in \\(n\\) trials, there are four conditions that need to be satisfied in order for \\(X\\) to follow the Binomial Distribution:\n\nThe trials must be independent\nThe number of trials, \\(n\\), must be fixed\nThere should be a well-defined notion of “success” and “failure” on each trial\nThe probability of “success” must remain constant across trials.\n\n\n\n\n\n\n\nSo, remember: \\(X \\sim \\mathrm{Bin}(n, p)\\) just means “\\(X\\) counts the number of successes in \\(n\\) trials, where success occurs with probability \\(p\\) on any given trial, subject to the four conditions above being satisfied."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#worked-out-example-6",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#worked-out-example-6",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\nWorked-Out Example 6\n\n\n\n\n\nIf we roll a fair \\(6-\\)sided die \\(13\\) times (assume rolls are independent of each other) and let \\(X\\) denote the number of times we observe an even number, is \\(X\\) binomially distributed?\nIn a large population of \\(100\\) students, of which \\(70\\) own Android phones, we draw a random sample of 10 without replacement and let \\(Y\\) denote the number of students in this sample that have Android phones. Is \\(Y\\) binomially distributed?\nConsider the same setup as in part (b) above, except this time suppose students are selected with replacement. Is \\(Y\\) binomially distributed?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#part-a",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#part-a",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Part (a)",
+    "text": "Part (a)\n\nWe check the Binomial Conditions.\n\nIndependent trials? Yup!\nFixed number of trials? Yup! (\\(n = 13\\))\nWell-defined notion of success? Yup! (“success” = “rolling an even number” and “failure” = “rolling an odd number”)\nFixed probability of success? Yup! (\\(p = 1/2\\)).\n\nSince all 4 conditions are satisfied, \\(X\\) binomially distributed: specifically, \\[ X \\sim \\mathrm{Bin}(13, \\ 1/2) \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#part-b",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#part-b",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Part (b)",
+    "text": "Part (b)\n\nWe check the Binomial Conditions.\n\nIndependent trials? ; because sampling is done without replacement, trials are no longer independent (i.e. the result of our second trial is very much dependent on the result of our first).\n\nSince at least one condition is violated, \\(Y\\) does follow the binomial distribution."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#part-c",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#part-c",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Part (c)",
+    "text": "Part (c)\n\nWe check the Binomial Conditions (a.k.a. the Binomial Criteria).\n\nIndependent trials? Yup!\nFixed number of trials? Yup! (\\(n = 10\\))\nWell-defined notion of success? Yup! (“success” = “owning an Android phone” and “failure” = “not owning an Android phone”)\nFixed probability of success? Yup! (\\(p = 7/10\\)).\n\nSince all 4 conditions are satisfied, \\(Y\\) binomially distributed: specifically, \\[ Y \\sim \\mathrm{Bin}(10, \\ 7/10) \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#your-turn-2",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#your-turn-2",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\n\n\n\n\nExercise 3\n\n\n\n\nSuppose Jana tosses \\(65\\) different \\(12-\\)sided dice, independently of each other; let \\(Z\\) denote the number of times a multiple of three results.\n\nVerify that \\(Z\\) follows the Binomial Distribution, and identify its parameters.\nWhat is the probability that Jana observes exactly 23 multiples of three?\nWhat is the expected number of multiples of three Jana will observe?\nWhat is the standard deviation of the number of multiples of three Jana will observe?"
+  },
+  {
     "objectID": "Pages/Lectures/Lecture01/Lec01.html#what-is-data",
     "href": "Pages/Lectures/Lecture01/Lec01.html#what-is-data",
     "title": "PSTAT 5A: Lecture 01",
@@ -1586,7 +1789,7 @@
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Sunday, July 9, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\nQz01 Solns\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nWorksheet 02: Work on the MT1 Practice Problems posted under the “Exam Prep” page\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\nSolns\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nWorksheet 04\nLab 03  Descriptive Statistics and Plotting\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n14: Hypothesis Testing for Proportions\n15: Review\n16: Midterm 2\n\nWorksheet 05\nLab04: Simulations, Sampling, and Loops\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing for Means\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 06\nLab05: Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\n\nLab06: Exploratory Data Analysis"
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Monday, July 10, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\nQz01 Solns\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nMultiple Choice: Blank Solns\nFree Response: Blank Solns\n\n\nWorksheet 02: Work on the MT1 Practice Problems posted under the “Exam Prep” page\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\nSolns\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nWorksheet 04\nLab 03  Descriptive Statistics and Plotting\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n14: Hypothesis Testing for Proportions\n15: Review\n16: Midterm 2\n\nWorksheet 05\nLab04: Simulations, Sampling, and Loops\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing for Means\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 06\nLab05: Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\n\nLab06: Exploratory Data Analysis"
   },
   {
     "objectID": "Pages/calendar.html",
