@@ -1323,6 +1323,125 @@
     "text": "Independence\n\n\n\n\n\n\n\nDefinition\n\n\n\nTwo events \\(E\\) and \\(F\\) are defined to be independent (notated \\(E \\perp F\\)) if any of the following hold:\n\n\\(\\mathbb{P}(E \\mid F) = \\mathbb{P}(E)\\)\n\\(\\mathbb{P}(F \\mid E) = \\mathbb{P}(F)\\)\n\\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E) \\cdot \\mathbb{P}(F)\\)\n\n\n\n\n\n\n\nNote- the probability of an intersection equals the product of unconditional (i.e. marginal) probabilities ONLY WHEN THE EVENTS ARE INDEPENDENT.\n\nIn general, the only way to compute the probability of an intersection is to use the Multiplication Rule.\n\nI’ll show you one of the equivalencies on the board."
   },
   {
+    "objectID": "Pages/Lectures/Lecture11/Lec11.html#leadup",
+    "href": "Pages/Lectures/Lecture11/Lec11.html#leadup",
+    "title": "PSTAT 5A: Lecture 11",
+    "section": "Leadup",
+    "text": "Leadup\n\nLet’s, for the moment, don our Sociology hats and say we’re interested in estimating the average monthly income of US Citizens.\nSurveying every single US Citizen and recording their income is not feasible- doing so would be far too expensive (both in terms of monetary cost as well as temporal cost)\nInstead, a natural idea is to take a sample of some subset of US Citizens, and record the average monthly income of these sampled individuals.\nNow, here’s a question: given two separate samples of, say, 125 US Citizens- do we expect the average income of these two samples to be exactly the same, or slightly different?\n\nProbably slightly different!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture11/Lec11.html#leadup-1",
+    "href": "Pages/Lectures/Lecture11/Lec11.html#leadup-1",
+    "title": "PSTAT 5A: Lecture 11",
+    "section": "Leadup",
+    "text": "Leadup\n\nSo, it seems we have two things to keep track of:\n\nThe true average monthly income of US Citizens\nThe average monthly income of a sample of US Citizens.\n\nBy the last point on the previous slide, we can see that the second quantity above is a random variable.\n\nThis is an example of a sample statistic, which is basically any quantity that is computed from our data.\n\nThe true average monthly income of US Citizens is a fixed number, which we call a population parameter.\n\nIn general, a population parameter is just a parameter that relates to the population (e.g. mean, median, variance, etc.)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture11/Lec11.html#inferential-statistics",
+    "href": "Pages/Lectures/Lecture11/Lec11.html#inferential-statistics",
+    "title": "PSTAT 5A: Lecture 11",
+    "section": "Inferential Statistics",
+    "text": "Inferential Statistics\n\nWe consider the population to be some large group we are interested in studying.\n\nThe population is governed by some set of parameters (e.g. mean, median, variance, etc.)\n\nFrom the population we draw a sample (which is random!), and compute sample statistics to try and make inference about the population parameters.\nThis is the structure of inferential statistics."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture11/Lec11.html#parameter-vs.-statistic",
+    "href": "Pages/Lectures/Lecture11/Lec11.html#parameter-vs.-statistic",
+    "title": "PSTAT 5A: Lecture 11",
+    "section": "Parameter vs. Statistic",
+    "text": "Parameter vs. Statistic\n\nIt is extremely important to be able to distinguish a population parameter from a sample statistic.\nThere are a couple of ways to do this.\nThe first is to consider the general structure of the situation: if a given quatntity is describing the population, then it must be a population parameter.\n\nIf, instead, it is describing a sample, then it must be a sample statistic.\n\nThe other way to think about this is through randomness: remember that different samples correspond to different observed values of our sample statistic.\n\nSo, imagine asking yourself: “if I took a different sample, would this quantity change?” If so, then it is a sample statistic (or, more carefully, an observed instance of a sample statistic)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture11/Lec11.html#worked-out-example",
+    "href": "Pages/Lectures/Lecture11/Lec11.html#worked-out-example",
+    "title": "PSTAT 5A: Lecture 11",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nA veterinarian wishes to determine the true proportion of all cats that suffer from FIV (Feline Immunodeficiency Virus). To that end, she takes a representative sample of 100 cats and finds that 3.2% of cats in this sample have FIV.\n\nIdentify the population.\nIdentify the sample.\nIdentify the population parameter of interest.\nIs the value of \\(3.2\\%\\) a population parameter, or an observed instance of a sample statistic?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture11/Lec11.html#solution",
+    "href": "Pages/Lectures/Lecture11/Lec11.html#solution",
+    "title": "PSTAT 5A: Lecture 11",
+    "section": "Solution",
+    "text": "Solution\n\nthe population is the set of all cats in the world, since we the veterinarian seeks to describe the prevalence of FIV among all cats.\nIn this context, the sample is the set of 100 cats the veterinarian examined.\nThe population parameter of interest is \\(p =\\) “the true proportion of cats that suffer from FIV”.\nThe value of 3.2% is an observed instance of a sample statistic, because if the veterinarian had taken a different sample of 100 cats she likely would have observed a different proportion of FIV-positive cats.\n\nIf, instead, the problem stated that 3.2% of all cats have FIV, then this would be describing a population parameter as it is a statement about the population."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture11/Lec11.html#your-turn",
+    "href": "Pages/Lectures/Lecture11/Lec11.html#your-turn",
+    "title": "PSTAT 5A: Lecture 11",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 1\n\n\n\n\nA group of (slightly bored) college students would like to determine the true average amount of soda (in liters) in 1-liter soda bottles. To that effect, they purchase 12 different 1-liter soda bottles and find the average amount of soda in these 12 bottles is 0.98L.\n\nIdentify the population.\nIdentify the sample.\nIdentify the population parameter of interest.\nIs the value of 0.98 a population parameter, or an observed instance of a sample statistic?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture11/Lec11.html#different-population-parameters",
+    "href": "Pages/Lectures/Lecture11/Lec11.html#different-population-parameters",
+    "title": "PSTAT 5A: Lecture 11",
+    "section": "Different Population Parameters",
+    "text": "Different Population Parameters\n\nSo far we’ve seen examples of two different population parameters:\n\nA population proportion\nA population mean\n\nOther population parameters exist! For instance, we could talk about the population median, the population variance, or even the population IQR.\nUp until now, I’ve been pretty vague about what “inferences” mean. This is because “making inferences” is a broad term!\nOne part of making inferences is trying to estimate the value of a population parameter.\n\nThis process is called parameter estimation."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture11/Lec11.html#parameter-estimation",
+    "href": "Pages/Lectures/Lecture11/Lec11.html#parameter-estimation",
+    "title": "PSTAT 5A: Lecture 11",
+    "section": "Parameter Estimation",
+    "text": "Parameter Estimation\n\nBoth Worked-Out Example 1 and Exercise 1 were (implicitly) problems about parameter estimation.\n\nIn Worked-Out Example 1, the veterinarian wanted to estimate the true proportion of FIV-positive cats\nIn Exercise 1, the college students wanted to estimate the true average amount of soda in 1L soda bottles.\n\nIn general, we use a sample statistic to estimate a population parameter. Some common estimators of some population parameters are:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture11/Lec11.html#a-wrench-in-the-spanner",
+    "href": "Pages/Lectures/Lecture11/Lec11.html#a-wrench-in-the-spanner",
+    "title": "PSTAT 5A: Lecture 11",
+    "section": "A Wrench in the Spanner",
+    "text": "A Wrench in the Spanner\n\nNow, can anyone see a potential problem in using a sample statistic to estimate a population parameter?\n\nThat’s right- the sample statistics are random!\nFor example, every time the veterinarian in Worked-Out Example 1 took a new sample of 100 cats she would obtain a different estimate for the true proportion of cats that have FIV.\nSo, we need some way to express the uncertainty that comes from the randomness of these sample statistics.\n\nTo explore this, let’s do a live demo using Python.\n\nIn the demo, I will simulate drawing several samples of 500 cats, recording the proportion of FIV-positive cats, and drawing the distribution of these sample proportions.\n\nBy the way, the distribution of a sample statistic is called the sampling distribution of that statistic."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture11/Lec11.html#result",
+    "href": "Pages/Lectures/Lecture11/Lec11.html#result",
+    "title": "PSTAT 5A: Lecture 11",
+    "section": "Result",
+    "text": "Result\n\nBefore we summarize these results, we should introduce a bit of notation.\n\nWe let \\(\\widehat{P}\\), read “p-hat” denote the random variable that is the proportion of a hypothetical sample.\nWe let \\(\\widehat{p}\\) denote an observed instance of \\(\\widehat{P}\\); i.e. the sample proportion of a particular sample.\n\nWith this notation in mind, we can see that the demo illustrated the following fact: \\(\\widehat{P}\\) is normally distributed!\n\nIt turns out that the expected value of \\(\\widehat{P}\\) is \\(p\\), the true population proportion, and the standard deviation (which, in the context of estimation, is sometimes called the standard error) is \\[ \\sqrt{\\frac{p(1 - p)}{n} } \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture11/Lec11.html#central-limit-theorem-for-proportions",
+    "href": "Pages/Lectures/Lecture11/Lec11.html#central-limit-theorem-for-proportions",
+    "title": "PSTAT 5A: Lecture 11",
+    "section": "Central Limit Theorem for Proportions",
+    "text": "Central Limit Theorem for Proportions\n\n\n\n\n\n\nImportant\n\n\n\nIf we have reasonably representative samples taken from a population with true proportion \\(p\\) and let \\(\\widehat{P}\\) denote the sample proportion, then \\[ \\widehat{P} \\sim \\mathcal{N}\\left( p, \\ \\sqrt{ \\frac{p(1 - p)}{n} } \\right) \\] provided that\n\n\n\\(np \\geq 10\\)\n\\(np(1 - p) \\geq 10\\)\n\n\n\n\n\n\n\nThe two conditions above are sometimes referred to as the success-failure conditions, and must be satisfied in order to invoke the Central Limit Theorem for Proportions (CLTP).\n\nWe’ll talk a bit more about “reasonably representative” samples later in the course (time-permitting)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture11/Lec11.html#worked-out-example-2",
+    "href": "Pages/Lectures/Lecture11/Lec11.html#worked-out-example-2",
+    "title": "PSTAT 5A: Lecture 11",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nSuppose a recent study has revealed that 87% of Americans are in favor of offering more healthy options at fast-food restaurants. A surveyor takes a representative sample of size 120 Americans, and records the proportion of these Americans that support offering more healthy options at fast-food restaurants.\n\nDefine the random variable of interest.\nWhat is the probability that fewer than 90% of people in the sample support offering more healthy options at fast-food restaurants?\nWhat is the probability that the proportion of people in the sample who support offering more healthy options at fast-food restaurants lies within 2% of the true proportion of 87%?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture11/Lec11.html#solutions",
+    "href": "Pages/Lectures/Lecture11/Lec11.html#solutions",
+    "title": "PSTAT 5A: Lecture 11",
+    "section": "Solutions",
+    "text": "Solutions\n\nLet \\(\\widehat{P} =\\) the proportion of Americans in the sample of size \\(n = 100\\) that support offering more healthy options at fast-food restaurants."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture11/Lec11.html#solutions-1",
+    "href": "Pages/Lectures/Lecture11/Lec11.html#solutions-1",
+    "title": "PSTAT 5A: Lecture 11",
+    "section": "Solutions",
+    "text": "Solutions\n\nWe would like to utilize the Central Limit Theorem for Proportions. First, we check:\n\n\\(np = (100) \\cdot (0.87) = 87 \\geq 10 \\ \\checkmark\\)\n\\(np(1 - p) = (100) \\cdot (0.87) \\cdot (1 - 0.87) \\approx 11.31 \\geq 10 \\ \\checkmark\\)\n\n\nSince both of the success-failure conditions are satisfied, we know that \\[ \\widehat{P} \\sim \\mathcal{N}\\left(0.87, \\ \\sqrt{\\frac{0.87 \\cdot (1 - 0.87)}{100}} \\right) \\sim \\mathcal{N}\\left(0.87, \\ 0.0336 \\right) \\] and so \\[ \\mathbb{P}(\\widehat{P} \\leq 0.9) = \\mathbb{P}\\left( \\frac{\\widehat{P} - 0.87}{0.0336} \\leq \\frac{0.9 - 0.87}{0.0336} \\right) = \\mathbb{P}\\left( \\frac{\\widehat{P} - 0.87}{0.0336} \\leq 0.89 \\right) \\] which equates to around \\(\\boxed{0.8133 = 81.33\\%}\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture11/Lec11.html#solutions-2",
+    "href": "Pages/Lectures/Lecture11/Lec11.html#solutions-2",
+    "title": "PSTAT 5A: Lecture 11",
+    "section": "Solutions",
+    "text": "Solutions\n\nWe seek \\(\\mathbb{P}(0.85 \\leq \\widehat{P} \\leq 0.89)\\).\n\nFirst, we write this as \\(\\mathbb{P}(\\widehat{P} \\leq 0.89) - \\mathbb{P}(\\widehat{P} \\leq 0.85)\\)\nNext, we standardize: \\[\\begin{align*}\nz_1 & = \\frac{0.89 - 0.87}{0.0336} \\approx 0.60   \\\\\nz_2 & = \\frac{0.5 - 0.87}{0.0336} \\approx -0.60\n\\end{align*}\\]\nFinally, we consult a table to see that the desired probability is \\[ 0.7257 - 0.2743 = \\boxed{0.4514 = 45.14\\%} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture11/Lec11.html#your-turn-1",
+    "href": "Pages/Lectures/Lecture11/Lec11.html#your-turn-1",
+    "title": "PSTAT 5A: Lecture 11",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 2\n\n\n\n\nAt a certain company, it is known that 65% of employees are from underrepresented minorities (UMs). A representative sample of 80 employees is taken, and the proportion of people from UMs is recorded.\n\nDefine the random variable of interest, and use the notational convention introduced above.\nWhat is the probability that greater than than 50% of people in the sample are from UMs?\nWhat is the probability that the proportion of people in the sample who are from UMs lies within 5% of the true proportion of 65%?"
+  },
+  {
     "objectID": "Pages/Lectures/Lecture10/Lec10.html#last-time",
     "href": "Pages/Lectures/Lecture10/Lec10.html#last-time",
     "title": "PSTAT 5A: Lecture 10",
@@ -1999,7 +2118,7 @@
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Tuesday, July 11, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\nQz01 Solns\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nMultiple Choice: Blank Solns\nFree Response: Blank Solns\n\n\nWorksheet 02: Work on the MT1 Practice Problems posted under the “Exam Prep” page\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\nSolns\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nWorksheet 04\nLab 03  Descriptive Statistics and Plotting\nSolns\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n14: Hypothesis Testing for Proportions\n15: Review\n16: Midterm 2\n\nWorksheet 05\nLab04: Simulations, Sampling, and Loops\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing for Means\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 06\nLab05: Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\n\nLab06: Exploratory Data Analysis"
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Wednesday, July 12, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\nQz01 Solns\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nMultiple Choice: Blank Solns\nFree Response: Blank Solns\n\n\nWorksheet 02: Work on the MT1 Practice Problems posted under the “Exam Prep” page\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\nSolns\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nWorksheet 03\nLab 03  Descriptive Statistics and Plotting\nSolns\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n14: Hypothesis Testing for Proportions\n15: Review\n16: Midterm 2\n\nWorksheet 04\nLab04: Simulations, Sampling, and Loops\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing for Means\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 05\nLab05: Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\nWorksheet 06\nLab06: Exploratory Data Analysis"
   },
   {
     "objectID": "Pages/calendar.html",
