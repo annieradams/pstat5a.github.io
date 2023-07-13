@@ -180,7 +180,7 @@ $$ \widehat{P} \sim \mathcal{N}\left( p, \ \sqrt{ \frac{p(1 - p)}{n} } \right) $
 
 :::{.nonincremental}
 1) $np \geq 10$
-2) $np(1 - p) \geq 10$
+2) $n(1 - p) \geq 10$
 :::
 :::
 :::
@@ -209,19 +209,19 @@ c. What is the probability that the proportion of people in the sample who suppo
 
 ## Solutions {style="font-size:30px"}
 
-a) Let $\widehat{P} =$ the proportion of Americans in the sample of size $n = 100$ that support offering more healthy options at fast-food restaurants.
+a) Let $\widehat{P} =$ the proportion of Americans in the sample of size $n = 120$ that support offering more healthy options at fast-food restaurants.
 
 ## Solutions {style="font-size:28px"}
 
 b) We would like to utilize the Central Limit Theorem for Proportions. First, we check:
-    1) $np = (100) \cdot (0.87) = 87 \geq 10 \ \checkmark$
-    2) $np(1 - p) = (100) \cdot (0.87) \cdot (1 - 0.87) \approx 11.31 \geq 10 \ \checkmark$
+    1) $np = (120) \cdot (0.87) = 104.4 \geq 10 \ \checkmark$
+    2) $n(1 - p) = (120) \cdot (1 - 0.87) \approx 15.6 \geq 10 \ \checkmark$
     
     - Since both of the success-failure conditions are satisfied, we know that
-$$ \widehat{P} \sim \mathcal{N}\left(0.87, \ \sqrt{\frac{0.87 \cdot (1 - 0.87)}{100}} \right) \sim \mathcal{N}\left(0.87, \ 0.0336 \right) $$
+$$ \widehat{P} \sim \mathcal{N}\left(0.87, \ \sqrt{\frac{0.87 \cdot (1 - 0.87)}{120}} \right) \sim \mathcal{N}\left(0.87, \ 0.031 \right) $$
 and so
-$$ \mathbb{P}(\widehat{P} \leq 0.9) = \mathbb{P}\left( \frac{\widehat{P} - 0.87}{0.0336} \leq \frac{0.9 - 0.87}{0.0336} \right) = \mathbb{P}\left( \frac{\widehat{P} - 0.87}{0.0336} \leq 0.89 \right) $$
-which equates to around $\boxed{0.8133 = 81.33\%}$
+$$ \mathbb{P}(\widehat{P} \leq 0.9) = \mathbb{P}\left( \frac{\widehat{P} - 0.87}{0.031} \leq \frac{0.9 - 0.87}{0.031} \right) = \mathbb{P}\left( \frac{\widehat{P} - 0.87}{0.031} \leq 0.97 \right) $$
+which equates to around $\boxed{0.8340 = 83.40\%}$
 
 ## Solutions {style="font-size:30px"}
 
@@ -229,11 +229,11 @@ c. We seek $\mathbb{P}(0.85 \leq \widehat{P} \leq 0.89)$.
     - First, we write this as $\mathbb{P}(\widehat{P} \leq 0.89) - \mathbb{P}(\widehat{P} \leq 0.85)$
     - Next, we standardize:
     \begin{align*}
-      z_1 & = \frac{0.89 - 0.87}{0.0336} \approx 0.60   \\
-      z_2 & = \frac{0.5 - 0.87}{0.0336} \approx -0.60
+      z_1 & = \frac{0.89 - 0.87}{0.031} \approx 0.65   \\
+      z_2 & = \frac{0.85 - 0.87}{0.031} \approx -0.65
     \end{align*}
     - Finally, we consult a table to see that the desired probability is
-    $$ 0.7257 - 0.2743 = \boxed{0.4514 = 45.14\%} $$
+    $$ 0.7422 - 0.2578 = \boxed{0.4844 = 48.44\%} $$
 
 ## Your Turn!
 :::{.fragment}

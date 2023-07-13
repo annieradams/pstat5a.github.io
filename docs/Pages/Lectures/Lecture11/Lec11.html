@@ -574,7 +574,7 @@
 <div>
 <ol type="1">
 <li><span class="math inline">\(np \geq 10\)</span></li>
-<li><span class="math inline">\(np(1 - p) \geq 10\)</span></li>
+<li><span class="math inline">\(n(1 - p) \geq 10\)</span></li>
 </ol>
 </div>
 </div>
@@ -618,7 +618,7 @@
 <section id="solutions" class="slide level2" style="font-size:30px">
 <h2>Solutions</h2>
 <ol type="a">
-<li class="fragment">Let <span class="math inline">\(\widehat{P} =\)</span> the proportion of Americans in the sample of size <span class="math inline">\(n = 100\)</span> that support offering more healthy options at fast-food restaurants.</li>
+<li class="fragment">Let <span class="math inline">\(\widehat{P} =\)</span> the proportion of Americans in the sample of size <span class="math inline">\(n = 120\)</span> that support offering more healthy options at fast-food restaurants.</li>
 </ol>
 </section>
 <section id="solutions-1" class="slide level2" style="font-size:28px">
@@ -626,11 +626,11 @@
 <ol start="2" type="a">
 <li class="fragment">We would like to utilize the Central Limit Theorem for Proportions. First, we check:
 <ol type="1">
-<li class="fragment"><span class="math inline">\(np = (100) \cdot (0.87) = 87 \geq 10 \ \checkmark\)</span></li>
-<li class="fragment"><span class="math inline">\(np(1 - p) = (100) \cdot (0.87) \cdot (1 - 0.87) \approx 11.31 \geq 10 \ \checkmark\)</span></li>
+<li class="fragment"><span class="math inline">\(np = (120) \cdot (0.87) = 104.4 \geq 10 \ \checkmark\)</span></li>
+<li class="fragment"><span class="math inline">\(n(1 - p) = (120) \cdot (1 - 0.87) \approx 15.6 \geq 10 \ \checkmark\)</span></li>
 </ol>
 <ul>
-<li class="fragment">Since both of the success-failure conditions are satisfied, we know that <span class="math display">\[ \widehat{P} \sim \mathcal{N}\left(0.87, \ \sqrt{\frac{0.87 \cdot (1 - 0.87)}{100}} \right) \sim \mathcal{N}\left(0.87, \ 0.0336 \right) \]</span> and so <span class="math display">\[ \mathbb{P}(\widehat{P} \leq 0.9) = \mathbb{P}\left( \frac{\widehat{P} - 0.87}{0.0336} \leq \frac{0.9 - 0.87}{0.0336} \right) = \mathbb{P}\left( \frac{\widehat{P} - 0.87}{0.0336} \leq 0.89 \right) \]</span> which equates to around <span class="math inline">\(\boxed{0.8133 = 81.33\%}\)</span></li>
+<li class="fragment">Since both of the success-failure conditions are satisfied, we know that <span class="math display">\[ \widehat{P} \sim \mathcal{N}\left(0.87, \ \sqrt{\frac{0.87 \cdot (1 - 0.87)}{120}} \right) \sim \mathcal{N}\left(0.87, \ 0.031 \right) \]</span> and so <span class="math display">\[ \mathbb{P}(\widehat{P} \leq 0.9) = \mathbb{P}\left( \frac{\widehat{P} - 0.87}{0.031} \leq \frac{0.9 - 0.87}{0.031} \right) = \mathbb{P}\left( \frac{\widehat{P} - 0.87}{0.031} \leq 0.97 \right) \]</span> which equates to around <span class="math inline">\(\boxed{0.8340 = 83.40\%}\)</span></li>
 </ul></li>
 </ol>
 </section>
@@ -641,10 +641,10 @@
 <ul>
 <li class="fragment">First, we write this as <span class="math inline">\(\mathbb{P}(\widehat{P} \leq 0.89) - \mathbb{P}(\widehat{P} \leq 0.85)\)</span></li>
 <li class="fragment">Next, we standardize: <span class="math display">\[\begin{align*}
-z_1 &amp; = \frac{0.89 - 0.87}{0.0336} \approx 0.60   \\
-z_2 &amp; = \frac{0.5 - 0.87}{0.0336} \approx -0.60
+z_1 &amp; = \frac{0.89 - 0.87}{0.031} \approx 0.65   \\
+z_2 &amp; = \frac{0.85 - 0.87}{0.031} \approx -0.65
 \end{align*}\]</span></li>
-<li class="fragment">Finally, we consult a table to see that the desired probability is <span class="math display">\[ 0.7257 - 0.2743 = \boxed{0.4514 = 45.14\%} \]</span></li>
+<li class="fragment">Finally, we consult a table to see that the desired probability is <span class="math display">\[ 0.7422 - 0.2578 = \boxed{0.4844 = 48.44\%} \]</span></li>
 </ul></li>
 </ol>
 </section>
