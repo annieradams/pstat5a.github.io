@@ -2114,6 +2114,230 @@
     "text": "Summary\n\nWe started off by talking about the structure of data, and the data matrix.\nWe then discussed how to classify variables.\nNext, we explored graphical methods for summarizing data.\n\nBargraphs are best-suited for categorical data\nHistograms and boxplots are best-suited for numerical data\n\nWe also introduced the notions of percentiles, the median, and outliers.\nNext time we’ll discuss how to visualize the relationship between two variables.\nWe’ll also discuss some numerical summaries for data, including the mean, median, standard deviation, and IQR."
   },
   {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#last-time",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#last-time",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Last Time",
+    "text": "Last Time\n\nLast time we began discussing inference on a proportion.\nWe had a population with proportion \\(p\\), drew representative samples from this population, and used the sample proportion \\(\\widehat{P}\\) (i.e. the proportion observed in the sample) as a proxy for \\(p\\).\nOur main result was the Central Limit Theorem for Proportions which states \\[ \\widehat{P} \\sim \\mathcal{N}\\left( p, \\ \\sqrt{ \\frac{p(1 - p)}{n} } \\right) \\] assuming the success-failure conditions are met:\n\n\\(np \\geq 10\\)\n\\(n(1 - p) \\geq 10\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#substitution-approximation",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#substitution-approximation",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Substitution Approximation",
+    "text": "Substitution Approximation\n\nCan anyone point out a potential difficulty with verifying the success-failure conditions?\nThat’s right; they involve the parameter \\(p\\), which is in many cases unknown!\n\nRemember - in the beginning of last lecture, I mentioned that the whole point of performing statistical inference is to try and make claims about a population parameter that is unknowable, or too difficult to determine exactly.\n\nTo remedy this, we often use the so-called substitution approximation to the success-failure conditions:\n\n\\(n \\widehat{p} \\geq 10\\)\n\\(n(1 - \\widehat{p}) \\geq 10\\)\n\nSometimes, we substitute \\(\\widehat{p}\\) into the formula for the standard deviation of \\(\\widehat{P}\\), as the next example illustrates."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#worked-out-example",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#worked-out-example",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nA veterinarian wishes to determine the true proportion of cats that suffer from FIV (Feline Immunodeficiency Virus). To that end, she takes a representative sample of 500 cats and finds that 3.2% of cats in this sample have FIV. What is the probability that the proportion of cats that are FIV-positive in her sample of 500 cats lies within 1 percent of the true proportion of FIV-positive cats?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#solution",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#solution",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Solution",
+    "text": "Solution\n\nLet \\(p\\) denote the true proportion of FIV-positive cats. Let \\(\\widehat{P}\\) denote the proportion of FIV-positive cats in a representative sample of size 500.\n\nDo we know the value of \\(p\\)?\nNo we do not.\n\nWhat we do have is \\(\\widehat{p} = 0.032\\).\n\nTherefore, we use the substitution approximation to the success-failure conditions:\n\\(n \\widehat{p} = (500)(0.032) = 16 \\geq 10 \\ \\checkmark\\)\n\\(n \\widehat{p} (1 - \\widehat{p}) = (500)(1 - 0.032) = 484 \\geq 10 \\ \\checkmark\\)\n\nSince both conditions are met, the CLT tells us \\[ \\widehat{P} \\sim \\mathcal{N}\\left(p, \\ \\sqrt{\\frac{p(1 - p)}{500}} \\right)\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#solution-1",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#solution-1",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Solution",
+    "text": "Solution\n\nWe seek \\(\\mathbb{P}(p - 0.01 \\leq \\widehat{P} \\leq p + 0.01)\\).\nOur first step is to write this as \\[ \\mathbb{P}(\\widehat{P} \\leq p + 0.01) - \\mathbb{P}(\\widehat{P} \\leq p - 0.01 ) \\]\nNext, we find the associated \\(z-\\)scores: \\[\\begin{align*}\nz_1   & = \\frac{(p + 0.01) - p}{\\sqrt{\\frac{p(1 - p)}{500}}}  = \\frac{0.01}{\\sqrt{\\frac{p(1 - p)}{500}}}    \\\\\nz_2   & = \\frac{(p + 0.01) - p}{\\sqrt{\\frac{p(1 - p)}{500}}} = - \\frac{0.01}{\\sqrt{\\frac{p(1 - p)}{500}}}  \n\\end{align*}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#solution-2",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#solution-2",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Solution",
+    "text": "Solution\n\nNow, we can apply the substitution approximation to plug in \\(\\widehat{p}\\) in place of \\(p\\) in the denominator of our \\(z-\\)scores to compute \\[\\begin{align*}\nz_{1, \\ \\text{sub}}   & = \\frac{0.01}{\\sqrt{\\frac{(0.032)(1 - (0.032))}{500}}} = \\frac{0.01}{0.00787}  = 1.27  \\\\\nz_{2, \\ \\text{sub}}   & = - \\frac{0.01}{\\sqrt{\\frac{(0.032)(1 - (0.032))}{500}}} = - \\frac{0.01}{0.00787}  = -1.27\n\\end{align*}\\]\nFinally, consulting our standard normal table, we find the answer to be \\[ 0.8980 - 0.1020 = \\boxed{0.796 = 79.6\\%} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#a-note",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#a-note",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "A Note",
+    "text": "A Note\n\nI’d like to stress that the substitution approximation is just that- an approximation.\nIt is not, for instance, true that \\(\\mathbb{E}[\\widehat{P}] = \\widehat{p}\\); the center of the distribution of \\(\\widehat{P}\\) will always (provided the success-failure conditions are met) be \\(p\\), the true value of the proportion."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#leadup",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#leadup",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Leadup",
+    "text": "Leadup\n\nLet’s quickly take stock of what we’ve learned.\nIf we have a population with some unknown population parameter \\(p\\), we can repeatedly take representative samples, compute the sample proportion in each sample, and construct the sampling distribution of \\(\\widehat{P}\\).\nAssuming the success-failure conditions are met, this sampling distribution will be centered at \\(p\\), the true proportion value, and hence a decent estimator for \\(p\\) would be \\(\\mathbb{E}[\\widehat{P}]\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#leadup-1",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#leadup-1",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Leadup",
+    "text": "Leadup\n\nHowever, the key assumption in this procedure is our ability to take multiple samples from the population.\nIn many practical situations, this is not feasible.\nSo, here is a new question to consider: given just a single sample from the population, what can we say about \\(p\\)?\nWell, we’ve already seen that it’s risky to simply take \\(\\widehat{p}\\) (i.e. the value of \\(\\widehat{P}\\) that was observed in the sample we took) to be an estimate of \\(p\\), due to the randomness associated with \\(\\widehat{P}\\).\nInstead of looking for point estimates of \\(p\\), what happens if we instead provide intervals we believe may contain \\(p\\)?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#leadup-2",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#leadup-2",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Leadup",
+    "text": "Leadup\n\nLet’s make things a bit more concrete. Since I like cats, let’s go back to our veterinarian example:\n\n\n\nA veterinarian wishes to determine the true proportion of cats that suffer from FIV (Feline Immunodeficiency Virus). To that end, she takes a representative sample of 100 cats and finds that 3.2% of cats in this sample have FIV.\n\n\n\nAgain, it’s risky to say that “the true proportion of FIV-positive cats is 3.2%” based solely on this sample.\nInstead, we are going to start proposing intervals of values that we believe contain \\(p\\).\nNow, clearly the strengths of our beliefs will depend on the interval we provide.\nFor example, I am 100% confident that the true proportion of FIV-positive cats is somewhere in the interval \\((-\\infty, \\infty)\\).\nBut, suppose we instead consider the interval \\((0.030, \\ 0.034)\\); now we can’t really say that we’re 100% certain this interval covers the true value of \\(p\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Confidence Intervals",
+    "text": "Confidence Intervals\n\nThis is the basic idea of what are known as confidence intervals.\nI particularly like the analogy our textbook (OpenIntro Statistics) uses:\n\n\n\n[…] Using only a point estimate is like fishing in a murky lake with a spear. We can throw a spear where we saw a fish, but we will probably miss. On the other hand, if we toss a net in that area, we have a good chance of catching the fish. (page 181)\n\n\n\nFor the purposes of this class, we will construct confidence intervals for an arbitrary parameter \\(\\theta\\) (e.g. a population proportion \\(p\\), a population mean \\(\\mu\\), etc.) of the form \\(\\widehat{\\theta} \\pm \\mathrm{m.e.}\\) where \\(\\widehat{\\theta}\\) represents some point estimate of \\(\\theta\\) and \\(\\mathrm{m.e.}\\) represents a margin of error.\nSo, for the veterinarian example, our confidence interval will be of the form \\(\\widehat{p} \\pm \\mathrm{m.e.}\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-1",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-1",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Confidence Intervals",
+    "text": "Confidence Intervals\n\nBefore constructing a confidence interval, however, we need to specify our confidence level. In other words, we need first have an idea of how confident we want to be that our interval contains the true parameter value.\nFor example, a 95% confidence interval is an interval \\(\\widehat{\\theta} \\pm \\mathrm{m.e.}\\) that we are 95% confident covers the true value of \\(\\theta\\).\nHere’s a question: based on everything we’ve talked about thus far, do you think higher confidence levels correspond to wider or narrower intervals?\n\nThat’s right: the higher our confidence level, the wider our interval will be.\nAs an extreme example, consider again the slightly absurd confidence interval \\((-\\infty, \\ \\infty)\\); this is a 100% confidence interval because we are 100% confident that it covers the true value of the parameter!\n\nSo, therein lies the tradeoff: the more confidence we want, the wider we need to make our intervals and the less informative they become in pinning down the true value of the parameter."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-for-proportions",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-for-proportions",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Confidence Intervals for Proportions",
+    "text": "Confidence Intervals for Proportions\n\nAlright, let’s return to our considerations on population proportions.\nAgain, our confidence interval will take the general form \\(\\widehat{p} \\pm \\mathrm{m.e.}\\).\nIt makes sense that the margin of error should include some information about the variability of \\(\\widehat{P}\\). As such, we take our confidence intervals to be of the form \\[ \\widehat{p} \\pm z^{\\ast} \\cdot \\sqrt{ \\frac{p(1 - p)}{n} } \\] where \\(z^{\\ast}\\) is a constant that depends on our confidence level.\n\n\\(z^{\\ast}\\) is sometimes called the confidence coefficient, though that name is not fully standard."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-for-proportions-1",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-for-proportions-1",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Confidence Intervals for Proportions",
+    "text": "Confidence Intervals for Proportions\n\nTo see exactly how this dependency manifests itself, let’s make things a bit more concrete and consider a 95% confidence level. It turns out that this implies \\[ \\mathbb{P}(-z^{\\ast} \\leq Z \\leq z^{\\ast}) = 0.95 \\] where \\(Z \\sim \\mathcal{N}(0, \\ 1)\\).\n\nI’ll try to post some supplementary material for those of you curious as to why this is- for now, I ask you to just take this fact at face value.\n\nAs always, we draw a picture."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-for-proportions-2",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-for-proportions-2",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Confidence Intervals for Proportions",
+    "text": "Confidence Intervals for Proportions\n\nThe region we will sketch is the area under the standard normal curve between \\(-z^{\\ast}\\) and \\(z^{\\ast}\\):\n\n\n\n\n\n\n\n\n\n\n\n\n\nNow, here’s the slightly peculiar thing- in this case, we know that the area itself must be 0.95. What we don’t know is exactly where those endpoints are."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-for-proportions-3",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-for-proportions-3",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Confidence Intervals for Proportions",
+    "text": "Confidence Intervals for Proportions\n\nSome of you may have an inkling that a normal table may be helpful…. and it will be!\nTo make clear how a normal table will help, let’s convert our picture to be in terms of tail areas:\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat must be the area of the shaded bit above?\n\nThat’s right: 5% (since the area in the middle is, by construction, 95%)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-for-proportions-4",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-for-proportions-4",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Confidence Intervals for Proportions",
+    "text": "Confidence Intervals for Proportions\n\nBecause the standard normal density curve is symmetric, the area of any one of the two tails must be (5% / 2) = 2.5%:\n\n\n\n\n\n\n\n\n\n\n\n\n\nSo, what we have shown, is that \\(z^{\\ast}\\) must satisfy the condition \\[ \\mathbb{P}(Z \\leq -z^{\\ast}) = 0.025 \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-for-proportions-5",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-for-proportions-5",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Confidence Intervals for Proportions",
+    "text": "Confidence Intervals for Proportions\n\nAgain, \\(z^{\\ast}\\) must satisfy \\[ \\mathbb{P}(Z \\leq -z^{\\ast}) = 0.025 \\]\nFrom a normal table, we see that \\[ \\mathbb{P}(Z \\leq -1.96) = 0.025 \\]\nTherefore, we must have \\[ \\mathbb{P}(Z \\leq -z^{\\ast}) = \\mathbb{P}(Z \\leq -1.96) \\] that is, \\(-z^{\\ast} = -1.96\\) or \\(\\boxed{z^{\\ast} = 1.96}\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-for-proportions-6",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-for-proportions-6",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Confidence Intervals for Proportions",
+    "text": "Confidence Intervals for Proportions\n\nSo, in conclusion, a 95% confidence interval for a population proportion will take the form \\[ \\widehat{p} \\pm 1.96 \\cdot \\sqrt{ \\frac{p(1 - p)}{n} } \\]\n\n\n\n\n\n\n\n\nExercise 2\n\n\n\n\nUse a similar set of reasoning to show that a 90% confidence interval for a population proportion \\(p\\) takes the form \\[ \\widehat{p} \\pm 1.645 \\cdot \\sqrt{\\frac{p(1 - p)}{n}} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#quick-aside-percentiles-of-the-standard-normal-distribution",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#quick-aside-percentiles-of-the-standard-normal-distribution",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Quick Aside: Percentiles of the Standard Normal Distribution",
+    "text": "Quick Aside: Percentiles of the Standard Normal Distribution\n\nAs a quick aside: notice that what we’ve done is actually found various percentiles of the standard normal distribution!\nPercentiles of a distribution are defined much in the same way we defined the percentiles of a list of numbers: the pth percentile of a random variable \\(X\\) is the value \\(\\pi_p\\) such that \\(\\mathbb{P}(X \\leq \\pi_p) = p\\).\nTo find the pth percentile of the standard normal table, here are the steps we use:\n\nFind \\(p\\) in the body of the table\nWhatever \\(z-\\)score that corresponds to the value of \\(p\\) in the table will be the pth percentile\n\n\n\n\n\n\n\n\n\nExercise 3\n\n\n\n\nFind the 4.55th, 83.4th, and 96.41th percentiles of the standard normal distribution."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#symmetry-of-the-normal-distribution",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#symmetry-of-the-normal-distribution",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Symmetry of the Normal Distribution",
+    "text": "Symmetry of the Normal Distribution\n\nLet’s also quickly discuss one more property of the standard normal distribution: its density curve is symmetric about the \\(y-\\)axis.\nThis actually leads to an interesting (and very useful) result about percentiles of the standard normal distribution:\n\n\n\n\n\n\n\n\nResult\n\n\n\n\nThe \\(p\\)th percentile of the standard normal distribution is equal to negative one times the \\((1 - p)\\)th percentile of the standard normal distribution."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#symmetry-of-the-normal-distribution-1",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#symmetry-of-the-normal-distribution-1",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Symmetry of the Normal Distribution",
+    "text": "Symmetry of the Normal Distribution\n\nTo see why this is, we sketch a picture. Suppose \\(\\pi_{p}\\) is the \\(p\\)th percentile for the standard normal distribution. Then, the area below must be equal to \\(p\\):"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#symmetry-of-the-normal-distribution-2",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#symmetry-of-the-normal-distribution-2",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Symmetry of the Normal Distribution",
+    "text": "Symmetry of the Normal Distribution\n\n\nBy the complement rule, the red area below must therefore be \\(1 - p\\):"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#symmetry-of-the-normal-distribution-3",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#symmetry-of-the-normal-distribution-3",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Symmetry of the Normal Distribution",
+    "text": "Symmetry of the Normal Distribution\n\n\nFinally, it is precisely the symmetry of the standard normal density curve that guarantees the red area below will also be \\(1 - p\\):\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTherefore, if the area to the left of \\(\\pi_p\\) is \\(p\\) (which was our initial assumption), the area to the left of \\(-\\pi_p\\) is \\((1 - p)\\).\n\nIn other words, the \\(p\\)th percentile (\\(\\pi_p\\)) is negative one times the \\((1 - p)\\)th percentile (\\(-\\pi_p\\))."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-for-proportions-7",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-for-proportions-7",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Confidence Intervals for Proportions",
+    "text": "Confidence Intervals for Proportions\n\nHere are some common confidence levels, and their corresponding values of \\(z^{\\ast}\\).\n\n\n\n\n\nConfidence Level\nValue of \\(\\boldsymbol{z^{\\ast}}\\)\n\n\n\n\n90%\n1.645\n\n\n95%\n1.96\n\n\n99%\n2.575\n\n\n\n\n\nRecall that these \\(z^{\\ast}\\)’s are simply corresponding percentiles (scaled by \\(-1\\)) of the standard normal distribution.\nTo find \\(z^{\\ast}\\) corresponding to an arbitrary \\(100 \\times (1 - \\alpha)\\) interval we either:\n\nfind the \\((\\alpha / 2) \\times 100\\)th percentile of the standard normal distribution and multiply by \\((-1)\\)\nfind the \\([1 - (\\alpha / 2)] \\times 100\\)th percentile of the standard normal distribution."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-for-proportions-8",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-for-proportions-8",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Confidence Intervals for Proportions",
+    "text": "Confidence Intervals for Proportions\n\nFor example, suppose we want to construct a 99% confidence interval.\nThis is equivalent to constructing a \\((1 - 0.01) \\times 100\\%\\) confidence interval, meaning to find the confidence coefficient we can:\n\nfind the \\((0.01 / 2) \\times 100 = 0.5\\)th percentile of the standard normal distribution and scale by \\(-1\\), which yields a value of around \\(2.575\\)\nfind the \\([1 - (0.01 / 2)] \\times 100 = 99.5\\)th percentile of the standard normal distribution, which (again) yields a value of around \\(2.575\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-for-proportions-9",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#confidence-intervals-for-proportions-9",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Confidence Intervals for Proportions",
+    "text": "Confidence Intervals for Proportions\n\nIn practice: since the value of \\(p\\) is unknown, we typically replace \\(p\\) with \\(\\widehat{p}\\) to obtain an approximate confidence interval: \\[ \\widehat{p} \\pm z^{\\ast} \\cdot \\sqrt{ \\frac{\\widehat{p}(1 - \\widehat{p})}{n}} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#worked-out-example-2",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#worked-out-example-2",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\nA veterinarian wishes to determine the true proportion of cats that suffer from FIV (Feline Immunodeficiency Virus). To that end, she takes a representative sample of 500 cats and finds that 3.2% of cats in this sample have FIV. Construct a 95% confidence interval for the true poportion of FIV-positive cats.\n\n\n\n\n\n\n\nWe simply plug into our formula from above: \\[ (0.032) \\pm 1.96 \\cdot \\sqrt{ \\frac{(0.032) \\cdot (1 - 0.032)}{500}} = \\boxed{0.032 \\pm 0.0155}\\] or, written out more explicitly, \\[ \\boxed{ [0.0165 \\ , \\ 0.0475] } \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#interpreting-confidence-intervals",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#interpreting-confidence-intervals",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Interpreting Confidence Intervals",
+    "text": "Interpreting Confidence Intervals\n\nOkay, now that we have an example of a confidence interval under our belt, let’s talk about the correct interpretation of confidence intervals.\nThe following are all correct interpretations of our confidence interval:\n\nWe are 95% confident that the true proportion of FIV-positive cats is between 0.0165 and 0.0475.\nWe are 95% confident that the interval \\([0.0165 \\ , \\ 0.0475]\\) covers the true proportion of FIV-positive cats.\n\nHere is a technically incorrect way of interpreting the confidence interval: there is a 95% probability that the true proportion of FIV-positive cats lies between 0.0165 and 0.0475."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#interpreting-confidence-intervals-1",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#interpreting-confidence-intervals-1",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Interpreting Confidence Intervals",
+    "text": "Interpreting Confidence Intervals\n\nWhy is this typically rejected as an interpretation of a confidence interval?\nBecause this phrasing makes it sound as though the true proportion of FIV-positive cats is a random variable!\n\nThe true proportion of FIV positive cats is a fixed, deterministic value \\(p\\).\nWhat is random are the endpoints of our confidence interval!\nThis is why we phrase our interpretation in terms of “coverage”; it is to highlight the fact that the endpoints of our interval are where our uncertainty (i.e. randomness) comes into play.\n\nI grant that the above is a very subtle point. However, Statisticians are quite particular about wording when it comes to interpreting confidence intervals. As such, we will be particular in this class as well!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#your-turn",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#your-turn",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 3\n\n\n\n\nAs a film critic, you are interested in determining the true proportion of people that have watched The Mandalorian. You take a representative sample of 100 people, and note that 47% of these people have watched The Mandalorian.\n\nConstruct a 95% confidence interval for the proportion of people that have watched The Mandalorian, and interpret your interval in the context of the problem.\nWhen constructing an 85% confidence interval for the proportion of people that have watched The Mandalorian, would you expect this interval to be wider or shorter than the interval you found in part (a)?\nNow, actually construct an 85% confidence interval for the proportion of people that have watched The Mandalorian and see if this agrees with your answer to part (b)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#your-turn-1",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#your-turn-1",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 4\n\n\n\n\nAs a political scientist, Morgan would like to know the true proportion of people in a city that support Candidate A in an upcoming election. To that effect, they take a representative sample of 120 people and determine that 51% of these sampled individuals support Candidate A.\nConstruct an 87% confidence interval for the true proportion of people that support Candidate A."
+  },
+  {
     "objectID": "Pages/schedule.html",
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
