@@ -69,7 +69,7 @@ A veterinarian wishes to determine the true proportion of cats that suffer from 
 - What we *do* have is $\widehat{p} = 0.032$.
     - Therefore, we use the substitution approximation to the success-failure conditions:
     - $n \widehat{p} = (500)(0.032) = 16 \geq 10 \ \checkmark$
-    - $n \widehat{p} (1 - \widehat{p}) = (500)(1 - 0.032) = 484 \geq 10 \ \checkmark$
+    - $n (1 - \widehat{p}) = (500)(1 - 0.032) = 484 \geq 10 \ \checkmark$
 - Since both conditions are met, the CLT tells us
 $$ \widehat{P} \sim \mathcal{N}\left(p, \ \sqrt{\frac{p(1 - p)}{500}} \right)$$
 
@@ -81,7 +81,7 @@ $$ \mathbb{P}(\widehat{P} \leq p + 0.01) - \mathbb{P}(\widehat{P} \leq p - 0.01 
 - Next, we find the associated $z-$scores:
 \begin{align*}
   z_1   & = \frac{(p + 0.01) - p}{\sqrt{\frac{p(1 - p)}{500}}}  = \frac{0.01}{\sqrt{\frac{p(1 - p)}{500}}}    \\
-  z_2   & = \frac{(p + 0.01) - p}{\sqrt{\frac{p(1 - p)}{500}}} = - \frac{0.01}{\sqrt{\frac{p(1 - p)}{500}}}  
+  z_2   & = \frac{(p - 0.01) - p}{\sqrt{\frac{p(1 - p)}{500}}} = - \frac{0.01}{\sqrt{\frac{p(1 - p)}{500}}}  
 \end{align*}
 
 

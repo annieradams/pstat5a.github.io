@@ -392,7 +392,7 @@
 <ul>
 <li class="fragment">Therefore, we use the substitution approximation to the success-failure conditions:</li>
 <li class="fragment"><span class="math inline">\(n \widehat{p} = (500)(0.032) = 16 \geq 10 \ \checkmark\)</span></li>
-<li class="fragment"><span class="math inline">\(n \widehat{p} (1 - \widehat{p}) = (500)(1 - 0.032) = 484 \geq 10 \ \checkmark\)</span></li>
+<li class="fragment"><span class="math inline">\(n (1 - \widehat{p}) = (500)(1 - 0.032) = 484 \geq 10 \ \checkmark\)</span></li>
 </ul></li>
 <li class="fragment">Since both conditions are met, the CLT tells us <span class="math display">\[ \widehat{P} \sim \mathcal{N}\left(p, \ \sqrt{\frac{p(1 - p)}{500}} \right)\]</span></li>
 </ul>
@@ -404,7 +404,7 @@
 <li class="fragment">Our first step is to write this as <span class="math display">\[ \mathbb{P}(\widehat{P} \leq p + 0.01) - \mathbb{P}(\widehat{P} \leq p - 0.01 ) \]</span></li>
 <li class="fragment">Next, we find the associated <span class="math inline">\(z-\)</span>scores: <span class="math display">\[\begin{align*}
 z_1   &amp; = \frac{(p + 0.01) - p}{\sqrt{\frac{p(1 - p)}{500}}}  = \frac{0.01}{\sqrt{\frac{p(1 - p)}{500}}}    \\
-z_2   &amp; = \frac{(p + 0.01) - p}{\sqrt{\frac{p(1 - p)}{500}}} = - \frac{0.01}{\sqrt{\frac{p(1 - p)}{500}}}  
+z_2   &amp; = \frac{(p - 0.01) - p}{\sqrt{\frac{p(1 - p)}{500}}} = - \frac{0.01}{\sqrt{\frac{p(1 - p)}{500}}}  
 \end{align*}\]</span></li>
 </ul>
 </section>
