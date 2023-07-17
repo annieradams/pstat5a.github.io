@@ -2373,11 +2373,256 @@
     "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 4\n\n\n\n\nAs a political scientist, Morgan would like to know the true proportion of people in a city that support Candidate A in an upcoming election. To that effect, they take a representative sample of 120 people and determine that 51% of these sampled individuals support Candidate A.\nConstruct an 87% confidence interval for the true proportion of people that support Candidate A."
   },
   {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#previously",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#previously",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Previously",
+    "text": "Previously\n\nOver the course of the past few lectures, we’ve been dealing primarily with population proportions.\nA natural point estimate of \\(p\\) is \\(\\widehat{P}\\), the sample proportion.\n\nThe Central Limit Theorem for Proportions helped us even further by providing the sampling distribution of \\(\\widehat{P}\\), under certain conditions (the success-failure conditions).\n\nWe then used the sampling distribution of \\(\\widehat{P}\\) to construct confidence intervals for the true proportion \\(p\\).\nNow we will turn our attention to a different population parameter."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#leadup",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#leadup",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Leadup",
+    "text": "Leadup\n\nRecall from last lecture that any of the descriptive statistics we discussed in Week 1 can be viewed as population parameters, when they apply to the population.\n\nE.g. population proportion (\\(p\\)), population variance (\\(\\sigma^2\\)), etc.\n\nOf particular interest to statisticians is often the population mean, \\(\\mu\\).\nLet’s try and draw some analogies from our work with population proportions.\nWhen trying to make inferences on a population proportion \\(p\\), we used the sample proportion \\(\\widehat{P}\\) as a proxy (specifically, a point estimator).\n\nAny guesses on what we might use as a point estimator of \\(\\mu\\)?\nThat’s right- the sample mean \\(\\overline{X}\\)!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#notation",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#notation",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Notation",
+    "text": "Notation\n\nAgain, it will be useful to establish some notation:\n\n\\(\\mu\\) represents the population mean, and is deterministic (i.e. fixed) but unknown.\n\\(\\overline{X}\\) represents the mean of some hypothetical sample, and is therefore random (as different samples result in different sample means)\n\\(\\overline{x}\\) represents the mean of a specific sample, and is therefore deterministic (i.e. “we’ve taken this particular sample right here and computed its mean”).\n\nJust as \\(\\widehat{P}\\) has a sampling distribution, so too does \\(\\overline{X}\\).\nThe sampling distribution of \\(\\overline{X}\\), however, will end up requiring a few more considerations than the sampling distribution of \\(\\widehat{P}\\).\n\nWe will need it, however, in order to construct confidence intervals for \\(\\mu\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#general-confidence-intervals",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#general-confidence-intervals",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "General Confidence Intervals",
+    "text": "General Confidence Intervals\n\nWe will follow the general idea we used before of constructing confidence intervals as \\(\\widehat{\\theta} \\pm \\mathrm{m.e.}\\).\nIn this case, we use \\(\\overline{X}\\) as our point estimator.\nHere is a useful result from Probability Theory:\n\n\n\n\n\n\n\n\nResult\n\n\n\n\nConsider a population with mean \\(\\mu\\) and standard deviation \\(\\sigma\\). If \\(\\overline{X}\\) denotes the mean of a sample of size \\(n\\) taken from this population, then \\[ \\mathrm{SD}(\\overline{X}) = \\frac{\\sigma}{\\sqrt{n}} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#general-confidence-intervals-1",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#general-confidence-intervals-1",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "General Confidence Intervals",
+    "text": "General Confidence Intervals\n\nTherefore, our confidence intervals will take the form \\[ \\overline{X} \\pm c \\cdot \\frac{\\sigma}{\\sqrt{n}} \\] where the constant \\(c\\) depends on both the sampling distribution of \\(\\overline{X}\\) as well as the confidence level."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#normal-population",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#normal-population",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Normal Population",
+    "text": "Normal Population\n\nLet’s work on finding the sampling distribution of \\(\\overline{X}\\).\nIt turns out that the first thing we need to ask is whether the underlying population is normally distributed or not.\nIf the underlying population is normally distributed [again with population mean \\(\\mu\\) and population standard deviation \\(\\sigma\\)], we have that \\[ \\frac{\\overline{X} - \\mu}{\\sigma / \\sqrt{n}} \\sim \\mathcal{N}(0, \\ 1) \\] meaning the constant \\(c\\) should be selected as the appropriate percentile of the standard normal distribution: \\[ \\overline{x} \\pm z^{\\ast} \\cdot \\frac{\\sigma}{\\sqrt{n}} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nThe heights of adult males are assumed to follow a normal distribution with mean 70 in and standard deviation 15 in. A representative sample of 120 adult males is taken, and the average height of males in this sample is recorded.\n\nWhat is the random variable of interest?\nIs the value of 70 in a population parameter or a sample statistic?\nWhat is the probability that the average height of males in the sample is between 69.5 in and 71.5 in?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#solutions",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Solutions",
+    "text": "Solutions\n\n\\(\\overline{X} =\\) the average height of a sample of 120 adult males.\nThe value of 70 in is a population parameter, as it is the true average height of all adult males.\nThe quantity we seek is \\(\\mathbb{P}(69.5 \\leq \\overline{X} \\leq 71.5)\\). Because the population is normally distributed, we can use our result above to conclude \\[ \\overline{X} \\sim \\mathcal{N}\\left( 70, \\ \\frac{15}{\\sqrt{120}} \\right) \\sim \\mathcal{N}\\left( 70, \\ 1.369 \\right) \\]\n\n\nTo find \\(\\mathbb{P}(69.5 \\leq \\overline{X} \\leq 71.5)\\), we therefore utilize the same techniques we used previously, when dealing with normal distribution problems: \\[\\mathbb{P}(69.5 \\leq \\overline{X} \\leq 71.5) = \\mathbb{P}(\\overline{X} \\leq 71.5) - \\mathbb{P}(\\overline{X} \\leq 69.5) \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-1",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-1",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Solutions",
+    "text": "Solutions\n\n\nThe associated \\(z-\\)scores are \\[\\begin{align*}\nz_1     & = \\frac{71.5 - 70}{\\left( \\frac{15}{\\sqrt{120}} \\right)} \\approx 1.10    \\\\\nz_2     & = \\frac{69.5 - 70}{\\left( \\frac{15}{\\sqrt{120}} \\right)} \\approx -0.37\n\\end{align*}\\]\n\n\n\nThe associated probabilities (from a \\(z-\\)table) are \\(0.8643\\) and \\(0.3557\\), respectively, meaning the desired probability is \\[ 0.8643 - 0.3557 = \\boxed{ 0.5086 = 50.86\\% } \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#non-normal-population",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#non-normal-population",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Non-Normal Population",
+    "text": "Non-Normal Population\n\nAlright, so that explains what to do if the population values follow a normal distribution.\nBut what if they don’t? In real-world settings, we don’t typically get to know exactly what the population distribution is.\nIf our population is not normally distributed, we need to ask ourselves whether we have a “large enough sample”.\nAdmittedly, there isn’t a single agreed-upon cutoff for “large enough”- for the purposes of this class, we will use \\(n \\geq 30\\) to mean “large enough” and \\(n < 30\\) to therefore be “not large enough.”"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#non-normal-population-n-30",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#non-normal-population-n-30",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Non-Normal Population, \\(n < 30\\)",
+    "text": "Non-Normal Population, \\(n < 30\\)\n\nIf the population is non-normal, and the sample size is not large enough…\n… we can’t do anything.\nMore specifically, there aren’t any results we can use to confidently make inferences about the population mean- there is just too much uncertainty, between the uncertainty regarding the population’s distribution and the small sample size."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#non-normal-population-n-geq-30",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#non-normal-population-n-geq-30",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Non-Normal Population, \\(n \\geq 30\\)",
+    "text": "Non-Normal Population, \\(n \\geq 30\\)\n\nIf the population is non-normal, and the sample size is large enough…\n… we’re still (perhaps surprisingly) in business!\nIt turns out that if \\(n\\) is large enough, \\[ \\frac{\\overline{X} - \\mu}{\\sigma / \\sqrt{n}} \\sim \\mathcal{N}(0, \\ 1) \\] that is, the sample mean once again has a normal sampling distribution!\nIn fact, this is such an important result, we give it a name:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#central-limit-theorem-for-the-sample-mean",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#central-limit-theorem-for-the-sample-mean",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Central Limit Theorem for the Sample Mean",
+    "text": "Central Limit Theorem for the Sample Mean\n\n\n\n\n\n\n\nCentral Limit Theorem for the Sample Mean\n\n\n\nIf we have reasonably representative samples of large enough size \\(n\\), taken from a population with true mean \\(\\mu\\) and true standard deviation \\(\\sigma\\), then \\[ \\frac{\\overline{X} - \\mu}{\\sigma / \\sqrt{n}} \\sim \\mathcal{N}\\left(0, \\ 1 \\right) \\] or, equivalently, \\[ \\overline{X} \\sim \\mathcal{N}\\left( \\mu, \\ \\frac{\\sigma}{\\sqrt{n}} \\right) \\] where \\(\\overline{X}\\) denotes the sample mean."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example-2",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example-2",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\nThe temperatures collected at all weather stations in Antarctica follow some unknown distribution with unknown mean and known standard deviation 8oF. A researcher records the temperature measurements from a representative sample of 81 different weather stations, and finds the average temperature to be 26oF.\n\nWhat is the population?\nWhat is the sample?\nDefine the random variable of interest.\nWhat is the probability that this observed average of 26oF lies within 1oF of the true average temperature across all weather stations in Antarctica?\nConstruct a 90% confidence interval for the true average temperature across all weather stations in Antarctica."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-2",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-2",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Solutions",
+    "text": "Solutions\n\nThe population is the set of all weather stations in Antarctica.\nThe sample is the 81 weather stations selected by the researcher.\nThe random variable of interest is \\(\\overline{X}\\), the average temperature across 81 randomly-selected weather stations in Antarctica.\n\n\nPart (d): This is where things get interesting!\n\n\nIs the population normally distributed?\n\nNo. Or, at least, we don’t know for certain, so it’s safer not to assume it is.\n\nIs our sample size large enough to invoke the CLT?\n\nYes, since \\(n = 81 \\geq 30\\).\n\nTherefore, the CLT applies and tells us that \\[ \\overline{X} \\sim \\mathcal{N}\\left(\\mu, \\ \\frac{8}{\\sqrt{81}} \\right) \\sim \\mathcal{N}\\left(\\mu, \\ \\frac{8}{9} \\right) \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-3",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-3",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Solutions",
+    "text": "Solutions\n\nAgain, what we have found is \\[ \\overline{X} \\sim \\mathcal{N}\\left(\\mu, \\ \\frac{8}{\\sqrt{81}} \\right) \\sim \\mathcal{N}\\left(\\mu, \\ \\frac{8}{9} \\right) \\]\nWe seek \\(\\mathbb{P}(\\mu - 1 \\leq \\overline{X} \\leq \\mu + 1)\\), which we first write as \\[ \\mathbb{P}(\\overline{X} \\leq \\mu + 1) - \\mathbb{P}(\\overline{X} \\leq \\mu - 1) \\]\nComputing the necessary \\(z-\\)scores yields \\[\\begin{align*}\nz_1   &  = \\frac{(\\mu + 1) - \\mu}{8/9} = \\frac{9}{8} \\approx 1.13    \\\\\nz_2   &  = \\frac{(\\mu - 1) - \\mu}{8/9} = -\\frac{9}{8} \\approx -1.13\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-4",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-4",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Solutions",
+    "text": "Solutions\n\nThe corresponding values from the normal table are \\(0.8708\\) and \\(0.1292\\), respectively, meaning the desired probability is \\[ 0.8708 - 0.1292 = \\boxed{74.16\\%} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#unknown-sigma",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#unknown-sigma",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Unknown \\(\\sigma\\)?",
+    "text": "Unknown \\(\\sigma\\)?\n\nNotice that in the previous worked-out example (and, indeed, in the CLT for sample means), we need information on the true population standard deviation \\(\\sigma\\).\nWhat happens if we don’t have access to \\(\\sigma\\)?\nWell, we encountered a somewhat similar situation in our discussion on proportions; the standard error of \\(\\widehat{P}\\) depended on \\(p\\), which proves to be a problem in practice (as, again, the true value of \\(p\\) is often unknown).\nDoes anyone remember how we solved this issue in the context of population proportions?\n\nThat’s right- we used the substitution approximation!\nSpecifically, we replaced the unknown parameter (\\(p\\)) with a natural point estimator of it."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#unknown-sigma-1",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#unknown-sigma-1",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Unknown \\(\\sigma\\)?",
+    "text": "Unknown \\(\\sigma\\)?\n\nCan anyone propose a point estimator for \\(\\sigma\\)?\nThat’s right; \\(s\\), the sample standard deviation! \\[ s = \\sqrt{ \\frac{1}{n - 1} \\sum_{i=1}^{n} (X_i - \\overline{X})^2} \\]\nIn other words, our proposition is to use confidence intervals of the form \\[ \\overline{x} \\pm c \\cdot \\frac{s}{\\sqrt{n}} \\]\nNotice, however, that this introduces additional uncertainty into the problem as \\(s\\) itself is a random variable (different samples result in different sample standard deviations).\nIt turns out that the additional uncertainty introduced is so large that we become no longer able to use the normal distribution."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#using-s-in-place-of-sigma",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#using-s-in-place-of-sigma",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Using \\(s\\) in place of \\(\\sigma\\)",
+    "text": "Using \\(s\\) in place of \\(\\sigma\\)\n\nFirstly, recall that we used percentiles of the standard normal distribution because \\[ \\frac{\\overline{X} - \\mu}{\\sigma / \\sqrt{n}} \\sim \\mathcal{N}(0, \\ 1) \\]\nMathematically, what the above discussion is saying is that the distribution of \\[ \\frac{\\overline{X} - \\mu}{s / \\sqrt{n}} \\] is no longer normal.\nIt turns out that, still assuming a large enough sample size, the quantity above follows what is known as a t-distribution."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#the-t-distribution",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#the-t-distribution",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "The t-distribution",
+    "text": "The t-distribution\n\nThe \\(t-\\)distribution looks very similar to the standard normal distribution in that it is centered at 1, and has a bell-like density curve.\nHowever, one key difference is that the \\(t-\\)distribution is parameterized by a single parameter, called the degrees of freedom, which we abbreviate \\(\\mathrm{df}\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#the-t-distribution-1",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#the-t-distribution-1",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "The t-distribution",
+    "text": "The t-distribution\n\nAnother key property is that, for all finite degrees of freedom, the tails of the t-distribution density curve are “wider” (i.e. higher) than the tails of the standard normal density curve.\n\nWhat this means is that the t-distribution allows for higher probabilities of tail events, thereby incorporating the additional uncertainty injected into our confidence intervals by using \\(s\\) in place of \\(\\sigma\\)\n\nAn interesting fact is that the t-distribution with \\(\\infty\\) degrees of freedom is equivalent to the standard normal distribution.\n\nAs such, with greater degrees of freedom, the t-distribution - and its percentiles - more and more closely resembles the standard normal distribution."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#back-to-confidence-intervals",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#back-to-confidence-intervals",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Back to Confidence Intervals",
+    "text": "Back to Confidence Intervals\n\nHere is the result we’ve been working toward: with samples of reasonably large size \\(n\\) from a distribution with mean \\(mu\\) and standard deviation \\(\\sigma\\), \\[ \\frac{\\overline{X} - \\mu}{s / \\sqrt{n}} \\sim t_{n - 1} \\] where \\(t_{n - 1}\\) denotes the \\(t-\\)distribution with \\(n - 1\\) degrees of freedom.\nAs such, our confidence intervals become \\[ \\overline{x} \\pm t_{n - 1, \\ \\alpha} \\cdot \\frac{s}{\\sqrt{n}} \\] where \\(t_{n - 1, \\ \\alpha}\\) denotes the appropriate quantile (corresponding to our desired confidence level) of the \\(t_{n - 1}\\) distribution."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example-3",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example-3",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 3\n\n\n\n\nA sociologist is interested in performing inference on the true average monthly income (in thousands of dollars) of all citizens of the nation of Gauchonia. As such, she takes a representative sample of 49 people, and finds that these 49 people have an average monthly income of 2.25 and a standard deviation of 1.66.\n\nWhat is the population?\nWhat is the sample?\nDefine the random variable of interest.\nConstruct a 95% confidence interval for the true average monthly income (in thousands of dollars) of Gauchonian citizens."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-5",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-5",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Solutions",
+    "text": "Solutions\n\nThe population is the set of all Gauchonian residents.\nThe sample is the set of 49 Gauchonian residents included in the sociologist’s sample.\nThe random variable of interest is \\(\\overline{X}\\), the sample average monthly income (in thousands of dollars) of a representative sample of 49 Gauchonian* residents."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-contd",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-contd",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Solutions (cont’d)",
+    "text": "Solutions (cont’d)\nPart (d)\n\nIs the population normally distributed?\n\nNo.\n\nIs the sample size large enough?\n\nYes; \\(n = 49 \\geq 30\\).\n\nDo we know the population standard deviation?\n\nNo, we only know \\(s\\).\n\nTherefore, we need to use the t-distribution with \\(n - 1 = 49 - 1 = 48\\) degrees of freedom.\nSpecifically, we need to find the 2.5th percentile of the \\(t_{48}\\) distribution.\nLet’s go over how to read a t-table."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#reading-a-t-table",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#reading-a-t-table",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Reading a t-table",
+    "text": "Reading a t-table\n(In-Class Exercise)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-contd-1",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-contd-1",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Solutions (cont’d)",
+    "text": "Solutions (cont’d)\n\nI’d also like to mention that we can use Python to help us:\n\n\n\nimport scipy.stats as sps\nsps.t.ppf(0.025, 48)\n\n-2.010634754696446\n\n\n\n\nYou’ll learn more about this code during Lab today!\nTherefore, our 95% confidence interval takes the form \\[ \\overline{x} \\pm 2.01 \\cdot \\frac{s}{\\sqrt{49}} \\] or, equivalently, \\[ (2.25) \\pm (2.01) \\cdot \\frac{1.66}{7} = 2.25 \\pm 0.477 = \\boxed{[1.773 \\ , \\ 2.727]}\\]\nThe interpretation of this interval is much the same as our intervals for proportions:\n\n\n\nWe are 95% confident that the true average monthly income (in thousands of dollars) of Gauchonian residents is between 1.773 and 2.727."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#general-flowchart",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#general-flowchart",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "General Flowchart",
+    "text": "General Flowchart\n\n\n\n\ngraph TB\n  A[Is the population Normal?  . ] --> |Yes| B{{Use Normal .}}\n  A --> |No| C[Is n >= 30?  .]\n  C --> |Yes| D[sigma or s?  .]\n  C --> |No| E{{cannot proceed   .}}\n  D --> |sigma| F{{Use Normal .}}\n  D --> |s| G{{Use t }}"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#testing-distributional-fits",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#testing-distributional-fits",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Testing Distributional Fits",
+    "text": "Testing Distributional Fits\n\nNotice that the first question we need to ask ourselves when trying to perform inference on a sample mean is whether or not we believe our population to be normally distributed.\nThis begs the question: given a set of numbers, how can we tell if these numbers were drawn from a normal distribution or not?\nFor example, consider the following set of numbers (which have been assigned to a variable called x):\n\n\n\n\n[ 1.3315865   0.71527897 -1.54540029 -0.00838385  0.62133597 -0.72008556\n  0.26551159  0.10854853  0.00429143 -0.17460021  0.43302619  1.20303737\n -0.96506567  1.02827408  0.22863013  0.44513761 -1.13660221  0.13513688\n  1.484537   -1.07980489 -1.97772828 -1.7433723   0.26607016  2.38496733\n  1.12369125  1.67262221  0.09914922  1.39799638 -0.27124799  0.61320418\n -0.26731719 -0.54930901  0.1327083  -0.47614201  1.30847308  0.19501328\n  0.40020999 -0.33763234  1.25647226 -0.7319695   0.66023155 -0.35087189\n -0.93943336 -0.48933722 -0.80459114 -0.21269764 -0.33914025  0.31216994\n  0.56515267 -0.14742026 -0.02590534  0.2890942  -0.53987907  0.70816002\n  0.84222474  0.2035808   2.39470366  0.91745894 -0.11227247 -0.36218045\n -0.23218226 -0.5017289   1.12878515 -0.69781003 -0.08112218 -0.52929608\n  1.04618286 -1.41855603 -0.36249918 -0.12190569  0.31935642  0.4609029\n -0.21578989  0.98907246  0.31475378  2.46765106 -1.50832149  0.62060066\n -1.04513254 -0.79800882  1.98508459  1.74481415 -1.85618548 -0.2227737\n -0.06584785 -2.13171211 -0.04883051  0.39334122  0.21726515 -1.99439377\n  1.10770823  0.24454398 -0.06191203 -0.75389296  0.71195902  0.91826915\n -0.48209314  0.08958761  0.82699862 -1.95451212]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#idea-1-histogram",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#idea-1-histogram",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Idea 1: Histogram",
+    "text": "Idea 1: Histogram\n\nOne idea would be to generate the histogram of x:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#downsides",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#downsides",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Downsides",
+    "text": "Downsides\n\nHowever, we know that histograms are visually very dependent on the binwidth that was selected!\n\nFurthermore, there are some distributions that look bell-shaped, but are not normal; e.g. the t-distribution!\n\nAs such, we would like a slightly more rigorous way to check for normality.\nThe tool statisticians most often use is called a quantile-quantile plot, or QQ-Plot for short.\nYou don’t have to worry too much (for now) about the details of how they are constructed; for now, we’ll just use Python to generate them and then interpret them ourselves."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#qq-plot",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#qq-plot",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "QQ-Plot",
+    "text": "QQ-Plot\n\n\nscipy.stats.probplot(x, plot = plt);"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#interpreting-qq-plots",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#interpreting-qq-plots",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Interpreting QQ-Plots",
+    "text": "Interpreting QQ-Plots\n\nThe more linear the QQ-plot, the more likely it is that the data came from a normal distribution.\nWhen checking for deviations from linearity, however, make sure to check the tails as that is most often where non-normality manifests itself the clearest."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#normal-or-not",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#normal-or-not",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "Normal or Not?",
+    "text": "Normal or Not?"
+  },
+  {
     "objectID": "Pages/schedule.html",
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Sunday, July 16, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\nQz01 Solns\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nMultiple Choice: Blank Solns\nFree Response: Blank Solns\n\n\nWorksheet 02: Work on the MT1 Practice Problems posted under the “Exam Prep” page\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\nSolns\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\n\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\nSolns\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n14: Hypothesis Testing for Proportions\n15: Review\n16: Midterm 2\n\nWorksheet 04\nLab 04  Simulations, Sampling, and Loops\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing for Means\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 05\nLab05: Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\nWorksheet 06\nLab06: Exploratory Data Analysis"
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Monday, July 17, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\nQz01 Solns\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nMultiple Choice: Blank Solns\nFree Response: Blank Solns\n\n\nWorksheet 02: Work on the MT1 Practice Problems posted under the “Exam Prep” page\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\nSolns\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\n\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\nSolns\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n\nT-Table\n\n14: Hypothesis Testing for Proportions\n15: Review\n16: Midterm 2\n\nWorksheet 04\nLab 04  Simulations, Sampling, and Loops\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing for Means\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 05\nLab05: Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\nWorksheet 06\nLab06: Exploratory Data Analysis"
   },
   {
     "objectID": "Pages/calendar.html",
