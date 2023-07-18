@@ -49,9 +49,9 @@ css: "../schedule.css"
 
 - Spring 2023 Exams (Solutions will be posted on Wednesday, July 19, 2023):
 
-    - Salmon Version: <a href = "../Files/Past_Exams/Sp23_MT2_Salmon_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a> 
+    - Salmon Version: <a href = "../Files/Past_Exams/SP23_MT2_Salmon_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a> 
     
-    - Yellow Version: <a href = "../Files/Past_Exams/Sp23_MT2_Yellow_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a> 
+    - Yellow Version: <a href = "../Files/Past_Exams/SP23_MT2_Yellow_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a> 
 
 - Exam Coverpages: <a href = "../Files/ExamInfo/MT2_Coverpage_MC.pdf" class = "button label-outline" target = "_blank">Multiple Choice</a> <a href = "../Files/ExamInfo/MT2_Coverpage_FR.pdf" class = "button label-outline" target = "_blank">Free Response</a>
 
