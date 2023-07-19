@@ -315,7 +315,7 @@ If flight GA5A has only 186 seats, but sells 195 tickets, what is the probabilit
 
 - The video claims that $X$ follows a Binomial Distribution- let's work with that claim for a moment (and then we can revisit that assumption later).
 
-- Specifically, $X \sim \mathrm{Bin}(195, \ 90)$. 
+- Specifically, $X \sim \mathrm{Bin}(195, \ 0.9)$. 
 
 - Now, the airline will only need to re-book passengers when the number of passengers that arive ($X$) exceeds the capacity of the plane (186).
 

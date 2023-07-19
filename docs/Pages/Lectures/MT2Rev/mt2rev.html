@@ -705,7 +705,7 @@ H_A:    p \neq 0.24
 <li class="fragment"><p>As always, we start by defining quantities.</p></li>
 <li class="fragment"><p>Let <span class="math inline">\(X\)</span> denote the number of passengers, out of the 195 booked on the flight, that actually show up for the flight.</p></li>
 <li class="fragment"><p>The video claims that <span class="math inline">\(X\)</span> follows a Binomial Distribution- let’s work with that claim for a moment (and then we can revisit that assumption later).</p></li>
-<li class="fragment"><p>Specifically, <span class="math inline">\(X \sim \mathrm{Bin}(195, \ 90)\)</span>.</p></li>
+<li class="fragment"><p>Specifically, <span class="math inline">\(X \sim \mathrm{Bin}(195, \ 0.9)\)</span>.</p></li>
 <li class="fragment"><p>Now, the airline will only need to re-book passengers when the number of passengers that arive (<span class="math inline">\(X\)</span>) exceeds the capacity of the plane (186).</p></li>
 <li class="fragment"><p>So, the quantity we seek is <span class="math inline">\(\mathbb{P}(X &gt; 186) = \mathbb{P}(X \geq 187)\)</span>.</p></li>
 <li class="fragment"><p>Though we could do this by hand, let’s use Python.</p></li>
