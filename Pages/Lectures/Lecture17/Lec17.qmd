@@ -1,5 +1,5 @@
 ---
-title: "PSTAT 5A: Lecture 16"
+title: "PSTAT 5A: Lecture 17"
 subtitle: "Hypothesis Testing, Part II"
 author: "Ethan P. Marzban"
 date: "07/24/23"
