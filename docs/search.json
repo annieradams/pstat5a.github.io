@@ -70,6 +70,34 @@
     "text": "Introduction to Loops\nSuppose we have the following outcomes of an experiment:\n\nx = ['success', 'failure', 'failure', 'success', 'failure', 'failure', 'failure', 'success']\n\nHow might we write code to count the number of successes in this string of outcomes? There are several different ways to accomplish this: one involves what is known as a for loop.\n\n\n\nfigure source: https://i.kym-cdn.com/photos/images/newsfeed/001/393/656/da7.jpg\n\n\nHere’s the general idea: we would like to perform an element-wise comparison; that is, we would like to iteratively check whether each element of x is a success or a failure. The “brute-force” way would be to check each element individually, using comparisons:\n\nx[0] == 'success'\n\nTrue\n\n\n\nx[1] == 'success'\n\nFalse\n\n\n\nx[2] == 'success'\n\nFalse\n\n\nAs you can imagine, though, this would get incredibly tedious, especially if x were large! This is where for loops become useful: they allow us to automate this iterative process.\nBefore returning to this success/failure problem, let’s look at an example to see how for loops work.\n\nfor fruit in ['apple', 'banana', 'pear']:\n  print(fruit)\n\napple\nbanana\npear\n\n\nHere are how the different components work:\n\nThe for keyword signifies the beginning of the for loop.\nThe name fruit is the variable.\nThe list following the in keyword contains all of the different values the variable will take during the execution of the for loop.\nThe code after the initial colon : is called the body of the loop. (Note that the body of a for loop must be indented properly!) Here is how the body is executed:\n\nFirst, the variable fruit is assigned the first value in the list of possible values specified in the first line of the loop\nThen, after assigning fruit this value, the code in the body is executed once.\nNext, the variable fruit is assigned the second value of the list of values, and the body is run again.\nThis continues until the list of all possible values is exhausted.\n\n\nSometimes, it may be useful to sketch a diagram/table to keep track of the code at each iteration of the loop:\n\n\n\n\nFIRST ITERATION\n\n\n\n\nStart of Iteration\n\n\n\n\nfruit: ‘apple’\n\n\n\n\n\n\nEnd of Iteration\n\n\n\n\nfruit: ‘apple’\n\n\n\n\n\n\n\nSECOND ITERATION\n\n\n\n\nStart of Iteration\n\n\n\n\nfruit: ‘banana’\n\n\n\n\n\n\nEnd of Iteration\n\n\n\n\nfruit: ‘banana’\n\n\n\n\n\n\n\nTHIRD ITERATION\n\n\n\n\nStart of Iteration\n\n\n\n\nfruit: ‘pear’\n\n\n\n\n\n\nEnd of Iteration\n\n\n\n\nfruit: ‘pear’\n\n\n\n\n\n\nIt may seem strange to keep track of the values of the variables at the end of each iteration. The reason we do so is because sometimes the body of the loop will actually change the value of a variable! For example, consider the code\n\nfor n in [1, 2, 3]:\n  n += 2\n  print(n)\n\n3\n4\n5\n\n\nthe associated diagram would look like\n\n\n\n\nFIRST ITERATION\n\n\n\n\nStart of Iteration\n\n\n\n\nn: 1\n\n\n\n\n\n\nEnd of Iteration\n\n\n\n\nn: 3\n\n\n\n\n\n\n\nSECOND ITERATION\n\n\n\n\nStart of Iteration\n\n\n\n\nn: 2\n\n\n\n\n\n\nEnd of Iteration\n\n\n\n\nn: 4\n\n\n\n\n\n\n\nTHIRD ITERATION\n\n\n\n\nStart of Iteration\n\n\n\n\nn: 3\n\n\n\n\n\n\nEnd of Iteration\n\n\n\n\nn: 5\n\n\n\n\n\n\nBy the way, notice the shorthand notation += that was used above:\n\n\n\n\n\n\nTip\n\n\n\nThe code x += y is equivalent to x = x + y.\n\n\nFinally, one thing that should be mentioned is that you can call the variable in a loop whatever you like!\n\nfor yummy in ['apple', 'banana', 'pear']:\n  print(yummy)\n\napple\nbanana\npear\n\n\n\n\n\n\n\n\nTask 8\n\n\n\nCopy-paste the code\n\nx = ['success', 'failure', 'failure', 'success', 'failure', 'failure', 'failure', 'success']\n\ninto a cell, and run it. Then, create a for loop that iterates through the elements of x and at each iteration prints True if the corresponding element of x is a 'success' and False if the corresponding element of x is a 'failure'. Your final output should look like:\n\n\nTrue\nFalse\nFalse\nTrue\nFalse\nFalse\nFalse\nTrue\n\n\n\n\nBy the way, the set of values a variable will take during a for loop doesn’t have to be a list- it could also be an array! This is particularly useful when there are multiple things we would like to iterate over. For example:\n\nimport datascience as ds\ncredit_scores = ds.make_array(\n  [\"Anne\", 750],\n  [\"Barbara\", 755],\n  [\"Cassandra\", 745]\n)\n\nfor k in credit_scores:\n  print(k[0], \"has a credit score of\", k[1])\n\nAnne has a credit score of 750\nBarbara has a credit score of 755\nCassandra has a credit score of 745\n\n\n\n\n\n\n\n\nTask 9\n\n\n\nMake a table like the one above that keeps track of the variables and their values in the above loop. You do not need to turn this in; do it on a separate sheet of paper and in your .ipynb file simply state “I have done Task 2 on a separate sheet of paper.”\n\n\nNow, we never quite finished our problem of counting the number of successes in the variable x. We were able to iterate through the elements of x to determine which were successes and which were failures, but we never counted the number of successes.\n\nHere is the general idea:\n\nWe initialize a counter variable, which starts off with the value of 0.\nThen, we iterate through the elements of x as we did in Task 1 above. Instead of printing True or False, however, we use a conditional statement to add 1 to count if the corresponding element of x (i.e. the element of x under consideration in the current iteration of the loop).\nFinally, we see what the value of our counter variable is- this will be exactly the number of successes in x!\n\n\n\n\n\n\n\nTask 10\n\n\n\nCombine everything we’ve learned so far to count the number of successes in x. Here is a rough template of how your code should look:\n\ncount = 0     # initialize the counter variable\n\n<for loop code here, containing a conditional and a 'count += 1'>\n\ncount       # display the final value of our counter variable\n\n\n\nThere is another way to iterate through the elements in a list, and this is to use indexing. Before talking about how this works, we should quickly introduce another function: the arange() function from the numpy module. Here is how a general call to numpy.arange() works:\n\nnumpy.arange(a, b, n)\n\nThis code returns the array of evenly spaced integers between a and b - including a but excluding b, where each element is s more than the previous element. That is, the code above is equivalent to array([a, a+s, a+2s, ...]) As a concrete example:\n\nimport numpy as np\nnp.arange(0, 5, 2)\n\narray([0, 2, 4])\n\n\nThe arange() function is particularly useful when we are iterating using indices. For example, given a list x = [1, 2, 3, 4, 5], we can loop through the entries of x using:\n\nfor k in np.arange(0, len(x)):\n  print(x[k])\n\n1\n2\n3\n4\n5\n\n\nNote that this is equivalent to\n\nfor k in x:\n  print(k)\n\n1\n2\n3\n4\n5\n\n\n\n\n\n\n\n\nTask 11\n\n\n\nRewrite your loop from Task 10, except now iterate through the indices of x. Check that your output is the same as in Task 10.\n\n\n\nQuick Aside: arange() vs linspace()\nSome of you may recall that we previously used the numpy.linspace() function to generate a list of numbers between two specified endpoints. The key difference between these two functions is that:\n\narange() allows you to specify the step size\nlinspace() allows you to specify the final number of elements\n\n\n\n\n\n\n\nTask 12\n\n\n\nGenerate the list of numbers [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 2.9, 2] in two ways: one using arange() and the other using linspace()."
   },
   {
+    "objectID": "Pages/Labs/Lab05/lab05.html",
+    "href": "Pages/Labs/Lab05/lab05.html",
+    "title": "Lab05",
+    "section": "",
+    "text": "Let’s start off this week’s lab by taking a quick break from Python and instead learn some tools for making our Jupyter Notebooks look a little nicer (and help incorporate some mathematical equations into them!).\nAlso, the format of this lab is a little different in that there aren’t any numbered “Tasks”; instead, there are “Action Items” which you need to perform in a .ipynb file. As such, you don’t need to label your tasks; we will only be looking at your final product (i.e. your final PDF)."
+  },
+  {
+    "objectID": "Pages/Labs/Lab05/lab05.html#introduction-to-markdown-syntax",
+    "href": "Pages/Labs/Lab05/lab05.html#introduction-to-markdown-syntax",
+    "title": "Lab05",
+    "section": "Introduction to Markdown Syntax",
+    "text": "Introduction to Markdown Syntax\nRemember way back in Week 1, when we started adding “Markdown Cells” to our Jupyter Notebooks? Unbeknownst to you, you’ve actually been using a different computing language than Python! Wikipedia defines Markdown as:\n\n[…] a lightweight markup language for creating formatted text using a plain-text editor.\n\nWhat this means is that Markdown is a language that is specifically designed to communicate with your computer and facilitate the formatting of text and equations."
+  },
+  {
+    "objectID": "Pages/Labs/Lab05/lab05.html#markdown-syntax",
+    "href": "Pages/Labs/Lab05/lab05.html#markdown-syntax",
+    "title": "Lab05",
+    "section": "Markdown Syntax",
+    "text": "Markdown Syntax\nAs with Python, Markdown has some specific syntax as well. We will take a few moments to explore some of this syntax.\n\n1. Headers\n\n\n\n\n\n\nImportant Information\n\n\n\nThere are several different “levels” of headers:\n\nA main (first-level) header\nA second-level header\nA third-level header\nAnd so on and so forth\n\nIn Markdown, the level of the header is specified by how many hashtags (#’s) we include before the header text.\n\n\nFor example: all of the headers used in this explanation document are either second- or third-level headers.\n\n\n\n\n\n\nAction Item\n\n\n\nAdd a first-level (main) header that says Section 1: Markdown Syntax. Run this cell, and ensure it displays properly.\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nAfter your first-level (main) Section 1: Markdown Syntax header, add a second-level header that says Subsection 1.1. Again, run this cell and ensure that this header appears smaller than the first-level (main) header you created in the action item above.\n\n\n\n\n2. Text Formatting\nAs we have previously seen, text written in a Markdown cell will display exactly as it is written in your final PDF. We can, however, also spice up the formatting of our text!\n\n\n\n\n\n\nNote\n\n\n\nThere are several different text formatting options available to us in Markdown:\n\nBoldface Text: **Boldface Text**\nItalicized Text: _Italicized Text_ or *Italicized Text*\nFixed-Width Text: `Fixed-Width Text`\n\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nUnderneath your second-level header \"Subsection 1.1\", write the following sentence including all formatting as it appears here:\n\nThe quick brown fox jumps over the lazy dog\n\n\n\nBy the way, notice how we managed to display the sentence above as a block-quote? The syntax to do that in Markdown is using a single > symbol, followed by a space. For example,\n\nThis text\n\nwas generated using the code > This text.\n\n\n\n\n\n\nCaution\n\n\n\nBe mindful about line breaks and spaces when using Markdown syntax.\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nUnderneath your “quick brown fox” text, add a block-quote that says\n\nThat was a really cool sentence!\n\nRun your Markdown cell, and ensure the block-quote is displaying properly. (Again: line breaks and indentation will be important!)\n\n\n\n\n3. Itemized and Enumerated Lists\n\n\n\n\n\n\nImportant Information\n\n\n\nThere are two main types of lists: itemized and enumerated lists. Itemized lists have no explicit ordering: these are sometimes called “bulleted” lists, and look like this:\n\nItem 1\nItem 2\nItem 3\n\nEnumerated lists do have an explicit ordering:\n\nItem 1\nItem 2\nItem 3\n\nIn Markdown, itemized lists are created by navigating to a new line, writing a dash (-) or an asterisk (*), followed by a space, followed by the text you wish to have displayed in the corresponding item. For instance: the itemized list above was generated using the code\n\n- Item 1\n- Item 2\n- Item 3\n\nIn Markdown, enumerated lists are created by navigating to a new line, writing the number of the item (e.g. 1, 2, etc.) either either a close-parenthesis ()), or a period (.) For instance: both of the following codes will generate an enumerated list:\n\n1) Item 1\n2) Item 2\n3) Item 3\n\n\n1. Item 1\n2. Item 2\n3. Item 3\n\nTo add sublevel items, navitage to a new line, hit the space bar 4 times, and then add the corresponding item symbol (i.e. - or * for itemized lists; 1) or a) or 1. or a. for enumerated lists; etc.)\n\nAs an example, this is a main-level item\n\nFollowed by a sublevel item!\n\n\nThis was generated using\n\n- As an example, this is a main-level item\n    - Followed by a sublevel item!\n\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nAdd a new second-level header to your document that says Subsection 1.2: Itemized and Enumerated Lists. Underneath this, include the following list (making sure it displays properly when you run the cell!)\n\nIt is very important to check the Binomial Conditions before using the Binomial Distribution!\n\nFailure to check the necessary conditions can lead to incorrect results.\nIncorrect results are not good!\n\n\n\n\n\n\n4. Equations in Markdown\nOne of the very nice things about Markdown is that it is able to (very nicely) combine both plain-text as well as equations!\n\nThe language used to specify equations in Markdown is called LaTeX (pronounced “lay-TECH”, or “lah-TECH”). LaTeX equations have two main styles: inline, like \\(x + y\\), and “display-style”, like \\[ \\sum_{i=1}^{k} x_i \\]\n\n\n\n\n\n\nImportant Information\n\n\n\nIn LaTeX, inline equations are specified by single dollar signs and display-style equations are specified by double-dollar signs. For instance:\n\n$x + y$ will display as \\(x + y\\)\n$$x + y$$ will display as \\[x + y\\]\n\n\n\nInside either an inline or display-style equation environment, we can use LaTeX-specific syntax to generate equations.\n\n\n\n\n\n\nImportant Information\n\n\n\n\nStandard mathematical symbols display in LaTeX as they would in text: this includes addition (+), subtraction (-), division (/), and multiplication (*).\nThe symbol for “less than or equal to” (≤) is typeset as \\leq; the symbol for “greater than or equal to” (≥) is typeset as \\geq.\nExponents are generated using the caret (^): for example, $x^2$ displays as \\(x^2\\)\nSubscripts are generated using the underscore (_): for example, $x_2$ displays as \\(x_2\\)\n\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nAdd a second-level (main) header that says \"Subsection 1.3: Typesetting Equations\", and underneath it write the following sentence (including all LaTeX formatting!):\n\nThe Pythagorean Theorem states that \\(a^2 + b^2 = c^2\\).\n\nRun this cell, and ensure it displays properly.\n\n\nWe can also typeset more advanced formulas and symbols:\n\n\n\n\n\n\nImportant Information\n\n\n\n\nSums (using sigma-notation) are generated using the \\sum command: for example, $\\sum_{x = 0}^{1} x$ displays as \\(\\sum_{x = 0}^{1} x\\)\nIntegrals are generated using the \\int command: for example, $\\int_{a}^{b} f(x) \\ dx$ displays as \\(\\int_{a}^{b} f(x) \\ dx\\)\nFractions are generated using the \\frac command: for example, $\\frac{1}{2}$ displays as \\(\\frac{1}{2}\\)\nSquare-roots are generated using the \\sqrt command: for example, $\\sqrt{2}$ displays as \\(\\sqrt{2}\\)\nThe symbol \\(\\pi\\) is generated using $\\pi$\nAdding a bar on top of a variable can be done using \\overline{}; e.g. $\\overline{y}$ typesets as \\(\\overline{y}\\)\nThe probability symbol can be typeset using $\\mathbb{P}$; e.g. \\(\\mathbb{P}\\).\nThe symbol for Expected Value can be typeset using $\\mathbb{E}$; e.g. \\(\\mathbb{E}\\).\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nIn LaTeX, curly braces ({, }) are used to delineate “chunks” of code/text. For example, if you just write $x^-2$, this displays as \\(x^-2\\). If we want to display \\(x^{-2}\\), we need to use $x^{-2}$.\n\n\n\n\n\n\n\n\nNote\n\n\n\nWhen writing fractions inside parentheses, it is important to use \\left( and \\right) to ensure the size of the parentheses scale with the fractions. For example, \\[ (\\frac{1}{2}) \\] which was generated using $$ (\\frac{1}{2}) $$, looks a bit worse than \\[ \\left(\\frac{1}{2}\\right) \\] which was generated using $$ \\left(\\frac{1}{2}\\right) $$.\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nAdd the following equation to your document: \\[ f_X(x) = \\frac{1}{\\sigma \\sqrt{2\\pi}} e^{-\\frac{1}{2} \\left( \\frac{x - \\mu}{\\sigma} \\right)^2}  \\]\n\n\nThere is nothing stopping us from including equations in itemized and enumerated lists!\n\n\n\n\n\n\nAction Item\n\n\n\nAdd the following list to your document, ensuring that it displays properly when the cell is run (pay attention to the formatting of the text as well!):\n\nPythagorean Theorem: \\(a^2 + b^2 = c^2\\)\nEuler’s Identity: \\(e^{i \\pi} + 1 = 0\\)\n\n\n\nIt may also be useful to learn how to make piecewise-defined equations using LaTeX. To typeset piecewise-defined functions, we use the cases environment: \\[ \\begin{cases}\n    a   & \\text{if condition 1}   \\\\\n    b   & \\text{if condition 2}   \\\\\n    c   & \\text{if condition 3}   \\\\\n\\end{cases} \\] was generated using the code\n$$ \\begin{cases} \n    a   & \\text{if condition 1}   \\\\\n    b   & \\text{if condition 2}   \\\\\n    c   & \\text{if condition 3}   \\\\\n\\end{cases} $$\n\n\n\n\n\n\nAction Item\n\n\n\nAdd the probability density function \\(f_X(x)\\) of the \\(\\mathrm{Unif}(a, \\ b)\\) distribution to your Notebook: \\[ f_X(x) = \\begin{cases} \\frac{1}{b - a} & \\text{if } a \\leq x \\leq b \\\\ 0 & \\text{otherwise} \\\\ \\end{cases} \\]\n\n\nFinally, we should talk about how to align equations. The easiest way to align display-style equations is using an align* environment. For example: \\[\\begin{align*}\n  a + b       & = c + d + e   \\\\\n  a + b + 0   & = c + d\n\\end{align*}\\] was typeset using\n\\begin{align*}\n  a + b       & = c + d + e   \\\\\n  a + b + 0   & = c + d + 0\n\\end{align*}\n\n\n\n\n\n\nAction Item\n\n\n\nAdd the following set of equations into your Markdown document, taking care to use appropriate alignment.\n\\[\\begin{align*}\n  \\overline{x}            & = \\frac{1}{n} \\sum_{i=1}^{n} x_i    \\\\\n  n \\overline{x}    & = \\sum_{i=1}^{n} x_i\n\\end{align*}\\]\n\n\nThis is only just the surface of what LaTeX can do! If you are planning on going into any STEM-related field, we highly encourage you to delve deeper into the world of LaTeX as it will be a very valuable skill to have.\n\n\nHyperlinks\nSometimes it will be necessary to include hyperlinks into our reports. With Markdown, this is fairly straightforward!\n\n\n\n\n\n\nImportant Information\n\n\n\nThe syntax of including a hyperlink in a Markdown cell is as follows:\n\n[text](link)\n\nFor example, Click Here was generated using [Click Here](https://google.com).\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nMake a new second-level header in your document called Section 1.4: Hyperlinks. Underneath this header, create clickable text that says “PSTAT Department Website” and, when clicked, navigates the user to the main website of the Department of Statistics and Applied Probability here at UCSB (https://pstat.ucsb.edu). Your final result should look and function like PSTAT Department Website."
+  },
+  {
+    "objectID": "Pages/Labs/Lab05/lab05.html#importing-and-manipulating-data",
+    "href": "Pages/Labs/Lab05/lab05.html#importing-and-manipulating-data",
+    "title": "Lab05",
+    "section": "Importing and Manipulating Data",
+    "text": "Importing and Manipulating Data\nFinally, let’s play with some real-world data!\n\nIntroduction to the Dataset\nThe dataset we will explore is called air22.csv, and can be accessed at https://pstat5a.github.io/Files/Datasets/air22.csv. It contains observations from the Bureau of Transportation Statistics https://www.transtats.bts.gov/ on flights taking place during 2022.\nHere is an abridged version of the data dictionary:\n\nyear: the year in which the data was collected\nmonth: the month in which the data was collected\ncarrier: the carrier abbreviation (e.g. AS for Alaska, AA for American Airlines, etc.)\ncarrier_name: the full name of the carrier (e.g. Alaska, American, etc.)\nairport: the airport IATA code (e.g. SEA for SeaTac International Airport, etc.)\nairport_name: the full name of the airport\narr_flights: the number of flights that arrived\narr_del15: the number of flights that were delayed for more than 15 minutes\ncarrier_ct: the number of flights delayed due to carrier-related issues (e.g. no crew, delayed captain, etc.)\nweather_ct: the number of flights delayed due to weather-related issues\nnas_ct: the number of flights delayed due to National Air Security (NAS)-related issues (e.g. heavy traffic)\nsecurity_ct: the number of flights cancelled due to security-related issues\nlate_aircraft_ct: the number of flights delayed due to the arriving aircraft being delayed\narr_cancelled: the number of cancelled flights\narr_diverted: the number of flights that were diverted\narr_delay: the total time (in minutes) of delayed flight\ncarrier_delay: the total time (in minutes) of delay due to air carrier-related issues\nweather_delay: the total time (in minutes) of delay due to air weather-related issues\nnas_delay: the total time (in minutes) of delay due to air NAS-related issues\nsecurity_delay: the total time (in minutes) of delay due to air security-related issues\nlate_aircraft_delay: the total time (in minutes) of delay due to the arriving aircraft being delayed\n\n\n\nPart 1: Importing\nWe should start by importing the dataset into our JupyterHub environment! In this class, we will almost exclusively import datasets to datascience tables (remember those, from Lab 1?) The syntax we use to import a dataset and store it in a table called table_name is:\n\ntable_name = Table.read_table(<location of dataset>)\n\nBy default, the read_table method will use the first line of data as labels for each of the columns. If, however, your data does not include labels as its first line you will need to manually specify the labels:\n\ntable_name = Table.read_table(<location of dataset>, names = [labl1, ...])\n\n\n\n\n\n\n\nAction Item\n\n\n\nAdd a first-level header that says Section 2: Importing and Manipulating Data.\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nImport the air22.csv dataset, and save it as a table called air. Hint: make sure you import any necessary modules first!\n\n\n\n\n\n\n\n\nTip\n\n\n\nThe list of Table()-related methods at http://data8.org/datascience/tables.html may prove very useful for this lab!\n\n\n\n\nPart 2: Getting a Feel for the Dataset\nLet’s start of easy by answering a few questions. You should use code to determine the answers to these questions, but should write your answers using descriptive sentences in a markdown cell.\n\n\n\n\n\n\nAction Item\n\n\n\nHow many rows are in the dataset? (Recall: in the language introduced in Week 1, this is the number of observational units in the data matrix.)\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nHow many columns are in the dataset? (Recall: in the language introduced in Week 1, this is the number of variables in the data matrix.)\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nReturn a list of the column names in the dataset. Hint: Recall that the column names, in the context of the datascience module, are sometimes called the labels of the table. Again, consult the help file if you need help!\n\n\n\n\nPart 3: Accessing Specific Elements of the Dataset\nThere are a few methods we can use to access specific parts of a Table:\n\ntable_name.column(<index or label>): returns an array containing the data in the specified column\ntable_name.row(<index or label>): returns an array containing the data in the specified column\ntable_name.column(i).item(j): returns the value in column i + 1, row j + 1 (note the plus ones!)\n\n\n\n\n\n\n\nAction Item\n\n\n\nDisplay only the arr_del15 column of the dataset.\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nWhat years are included in the dataset?\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nCreate a histogram of the delay times caused by weather-related issues. Use 100 bins, and include axis labels as well as a plot title.\n\n\nWe can also get creative, and use comparisons to subset various parts of our dataset. For example,\n\nair.column(\"carrier\") == \"AS\"\n\nwill return a Boolean vector (i.e. a vector of True and False elements), with True elements corresponding to values in the carrier column that have value \"AS\". In words: this would give us the indices of rows corresponding to data on Alaska Airlines.\n\n\n\n\n\n\nAction Item\n\n\n\nHow many observational units were recorded from Alaska Airlines? Hint: Think about how a sum could help us here.\n\n\n\n\nPart 4: A Mini-Project\nAlright, let’s close off this lab with a bit of a mini-project. Our goal is to examine the number of arrivals over time. Specifically, we would ultimately like to plot the average number of arrivals per month vs. month.\n\n\n\n\n\n\nAction Item\n\n\n\nExplain, in words, what the following line of code is doing:\n\nair.row(air.column(1) == 1)\n\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nExplain, in words, what the following line of code is doing:\n\nair.row(air.column(1) == 2)[6]\n\nHint: arr_flights is the 7th column in the dataset.\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nBased on your answers to the previous two Action Items, complete the following code to compute the average number of flights per month:\n\nmeans = []\nfor k in _________________:\n  means.______(np.nanmean(air.row(air.column(___) == ___)[___]))\n\n(By the way, the nanmeans() function is a variant of the mean() function from the numpy module that ignores missing values when computing the mean.)\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nPlot your means list against the list containing the integers 1, 2, 3, …, 12 (this list functions like a list of month names.)"
+  },
+  {
     "objectID": "Pages/Labs/Lab02/lab02.html#data-classes",
     "href": "Pages/Labs/Lab02/lab02.html#data-classes",
     "title": "Lab02",
@@ -1356,6 +1384,314 @@
     "title": "PSTAT 5A: Lecture 05",
     "section": "Independence",
     "text": "Independence\n\n\n\n\n\n\n\nDefinition\n\n\n\nTwo events \\(E\\) and \\(F\\) are defined to be independent (notated \\(E \\perp F\\)) if any of the following hold:\n\n\\(\\mathbb{P}(E \\mid F) = \\mathbb{P}(E)\\)\n\\(\\mathbb{P}(F \\mid E) = \\mathbb{P}(F)\\)\n\\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E) \\cdot \\mathbb{P}(F)\\)\n\n\n\n\n\n\n\nNote- the probability of an intersection equals the product of unconditional (i.e. marginal) probabilities ONLY WHEN THE EVENTS ARE INDEPENDENT.\n\nIn general, the only way to compute the probability of an intersection is to use the Multiplication Rule.\n\nI’ll show you one of the equivalencies on the board."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#recap",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#recap",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Recap",
+    "text": "Recap\n\nBefore the second midterm, we discussed Hypothesis Testing on population proportions.\nThat is: given a population with true proportion \\(p\\), we took samples and tried to use the data collected in these samples to assess the validity of the claim \\(H_0: \\ p = p_0\\) (for some fixed value \\(p_0\\)) against some alternative hypothesis (two-sided, lower-tailed, or upper-tailed)\nIndeed, we can conduct hypothesis testing on any population parameter.\nOne parameter of interest to statisticians is the population mean \\(\\mu\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#hypothesis-testing-for-the-mean-1",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#hypothesis-testing-for-the-mean-1",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Hypothesis Testing for the Mean",
+    "text": "Hypothesis Testing for the Mean\n\nThe classification of tests doesn’t change much: we still have two-sided, lower-tailed and upper-tailed tests for the mean.\nMore specifically, if our null is \\(H_0: \\ \\mu = \\mu_0\\) then:\n\nA two-sided alternative is \\(H_A: \\ \\mu \\neq \\mu_0\\)\nA lower-tailed alternative is \\(H_A: \\ \\mu < \\mu_0\\)\nAn upper-tailed alternative is \\(H_A: \\ \\mu > \\mu_0\\)\nA simple-vs-simple alternative is \\(H_A: \\ \\mu = \\mu_1\\) for some \\(\\mu_1 \\neq \\mu_0\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#hypothesis-testing-for-the-mean-2",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#hypothesis-testing-for-the-mean-2",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Hypothesis Testing for the Mean",
+    "text": "Hypothesis Testing for the Mean\n\nOur testing procedure will be similar to that of hypothesis tests for a proportion: we compute a test statistic, and then compare this value of the test statistic to a critical value that is determined by both the distribution of the test statistic under the null as well as the significance level \\(\\alpha\\).\nLet’s focus on a two-sided test for now.\nOur test statistic will certainly involve \\(\\overline{X}\\), the sample mean.\n\nSpecifically, it will be some standardized version of \\(\\overline{X}\\).\nHowever, exactly how we standardize will be dependent upon the sampling distribution of \\(\\overline{X}\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#sampling-distribution-of-overlinex",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#sampling-distribution-of-overlinex",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Sampling Distribution of \\(\\overline{X}\\)",
+    "text": "Sampling Distribution of \\(\\overline{X}\\)\n\n\n\n\n\ngraph TB\n  A[Is the population Normal?  . ] --> |Yes| B{{Use Normal .}}\n  A --> |No| C[Is n >= 30?  .]\n  C --> |Yes| D[sigma or s?  .]\n  C --> |No| E{{cannot proceed   .}}\n  D --> |sigma| F{{Use Normal .}}\n  D --> |s| G{{Use t }}"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#test-statistic",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#test-statistic",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Test Statistic",
+    "text": "Test Statistic\n\nWhat this means is that our test statistic itself will take different forms depending on the information that is provided.\nSpecifically, we have \\[ \\mathrm{TS} = \\begin{cases}\n\\displaystyle \\frac{\\overline{X} - \\mu_0}{\\sigma / \\sqrt{n}}    & \\text{if } \\quad  \\begin{array}{rl} \\bullet & \\text{pop. is normal, OR} \\\\ \\bullet & \\text{$n \\geq 30$ AND $\\sigma$ is known} \\end{array} \\quad \\stackrel{H_0}{\\sim} \\mathcal{N}(0, \\ 1) \\\\[5mm]\n\\displaystyle \\frac{\\overline{X} - \\mu_0}{s / \\sqrt{n}}         & \\text{if } \\quad  \\begin{array}{rl} \\bullet & \\text{$n \\geq 30$ AND $\\sigma$ is not known} \\end{array} \\quad \\stackrel{H_0}{\\sim} t_{n - 1}\n\\end{cases} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#test-statistic-1",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#test-statistic-1",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Test Statistic",
+    "text": "Test Statistic\n\nIn the two-sided case, our critical value will still be the value \\(c\\) that ensures \\[ \\mathbb{P}(|\\mathrm{TS}| > c) = \\alpha \\] (i.e. we reject \\(H_0\\) whenever \\(\\overline{X}\\) is far away from \\(\\mu_0\\)) meaning \\(c\\) will the \\((\\alpha /2) \\times 100\\%\\) percentile, scaled by negative 1, of either the standard normal distribution or the \\(t_{n - 1}\\) distribution.\n\nAgain, don’t forget about how the symmetry of the normal and t-distributions translates to relationships between percentiles!\n\nOur test in the two-sided case will then take the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| > c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]\nLet’s do an example."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#worked-out-example",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#worked-out-example",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nAn article published by the US Census claims that in 2019 the average American took around 27.6 minutes to commute to work. To test this claim, Jenny took a representative sample of 101 Americans in 2019 and observed that these individuals had a combined average commute time of around 20.1 minutes and a standard deviation of around 12.4 minutes.\nUse the information from Jenny’s sample, along with an \\(\\alpha = 0.05\\) level of significance, to test the claim that the average commute time is 27.6 minutes against a two-sided alternative."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nIt’s a good idea to first determine which distribution we need to use.\nIs the population normally distributed?\n\nIn other words, are the commute times of all Americans normally distributed?\nNo; or, at least, there is not enough inforamtion to conclude that they are.\n\nIs our sample large enough?\n\nYes; \\(n = 101 \\geq 30\\)\n\nDo we have \\(\\sigma\\) or \\(s\\)?\n\nWe only have \\(s\\), the standard devaition of commute times of Jenny’s sample."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-1",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-1",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nTherefore, what distribution are we going to use?\n\nThe \\(t_{100}\\) distribution.\n\nIn other words, \\[ \\mathrm{TS} = \\frac{\\overline{X} - 27.6}{12.4 / \\sqrt{101}} \\stackrel{H_0}{\\sim} t_{100} \\]\nFrom the \\(t-\\)table, we see that the critical value will be \\(1.98\\).\nAdditionally, the observed value of our test statistic (based on Jenny’s sample) is \\[ \\frac{20.1 - 27.6}{12.4 / \\sqrt{101}} \\approx -6.08 \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-2",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-2",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nOur test rejects \\(H_0\\) when \\(|\\mathrm{TS}| > c\\).\nIn this case, \\(|\\mathrm{TS}| = |-6.07| = 6.07 > 1.98\\)\nTherefore, we reject the null:\n\n\n\nAt an \\(\\alpha = 0.05\\) level of significance, there was sufficient evidence to reject the Census’ claim that the average commute time of Americans was 27.6 minutes in favor of the alternative that the true average commute time was not 27.6 minutes."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#one-sided-tests",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#one-sided-tests",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "One-Sided Tests",
+    "text": "One-Sided Tests\n\nAnalogously as with the hypothesis testing for proportions, the lower-tailed test of a population mean takes the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\mathrm{TS} < c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] and the upper-tailed test of a population mean takes the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\mathrm{TS} > c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]\nI’ll keep stressing this: there is no need to memorize these forms if you understand what the null and alternative are saying and how that translates to comparing \\(\\overline{X}\\) to \\(\\mu_0\\)!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#worked-out-example-2",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#worked-out-example-2",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\nMcGaucho’s claims that, on average, customers will only need to wait 10 minutes before getting their food. Dubious of these claims, Markus takes a representative sample of 40 customers and finds that these customers waited an combined average of 15 minutes before receiving their food, with a standard deviation of 10 minutes. Based on this, he decides to perform an upper-tailed test on McGaucho’s claims at an \\(\\alpha = 0.01\\) level of significance. Conduct the test, and state your conclusions."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-3",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-3",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nAgain, we should ask ourselves what distribution we are going to use.\nIs the population normally distributed?\n\nIn other words, are the wait times of all customers normally distributed?\nNo; or, at least, there is not enough inforamtion to conclude that they are.\n\nIs our sample large enough?\n\nYes; \\(n = 40 \\geq 30\\)\n\nDo we have \\(\\sigma\\) or \\(s\\)?\n\nWe only have \\(s\\), the standard devaition of commute times of Markus’ sample.\n\nHence, we will use the \\(t_{39}\\) distribution."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-4",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-4",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nNow, we are using an upper-tailed alternative, meaning our critical value is the point such that \\((1 - 0.01) = 0.99\\) area lies to the left (or, equivalently, \\(0.01\\) lies to the right).\nThis means our critical value is 2.43, and we reject the null whenever \\(\\mathrm{TS} > 2.43\\).\nThe observed value of our test statistic is \\[ \\frac{15 - 10}{10 / \\sqrt{40}} = 3.162 \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-5",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-5",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nSince \\(\\mathrm{TS} = 3.162 > 2.43\\), we reject the null:\n\n\n\nAt an \\(\\alpha = 0.01\\) level of significance, there was sufficient evidence to reject McGaucho’s’ claim that the average wait time of customers is 10 minutes in favor of the alternative that the true wait time is longer than 10 minutes."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#your-turn",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#your-turn",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 1\n\n\n\n\nA university administrator at Gaucho University (GU) claims that GU students get, on average, 8 hours of sleep per night. A sample of 35 students had a combined average of 7.72 hours of sleep and a standard deviation of 3.8 hours. Using an \\(\\alpha = 0.05\\) level of significance, test the administrator’s claims against a…\n\n…two-sided alternative\n…lower-tailed alternative"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#recap-1",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#recap-1",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Recap",
+    "text": "Recap\n\nLast time, we discussed Hypothesis Testing on population proportions.\nThat is: given a population with true proportion \\(p\\), we took samples and tried to use the data collected in these samples to assess the validity of the claim \\(H_0: \\ p = p_0\\) (for some fixed value \\(p_0\\)) against some alternative hypothesis (two-sided, lower-tailed, or upper-tailed)\nThe test we constructed last time compared the value of the test statistic to some critical value, and made a decision about rejection based on the comparison between these two values."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#lower-tailed-example",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#lower-tailed-example",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Lower-Tailed Example",
+    "text": "Lower-Tailed Example\n\nFor illustrative purposes, let’s consider a lower-tailed test: \\[ \\left[ \\begin{array}{rr}\nH_0:    & p = p_0   \\\\\nH_A:    & p < p_0\n\\end{array} \\right.\\]\nUnder appropriate conditions, our test statistic \\[ \\mathrm{TS} = \\frac{\\widehat{P} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}} \\] follows the standard normal distribution under the null."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#lower-tailed-example-1",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#lower-tailed-example-1",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Lower-Tailed Example",
+    "text": "Lower-Tailed Example\n\n\nRecall that \\(\\alpha\\), the level of significance, is constructed to be the \\(\\alpha \\times 100\\)th percentile of the standard normal distribution:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#reject-or-not",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#reject-or-not",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Reject or Not?",
+    "text": "Reject or Not?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#reject-or-not-1",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#reject-or-not-1",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Reject or Not?",
+    "text": "Reject or Not?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#leadup",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#leadup",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Leadup",
+    "text": "Leadup\n\nSo, up until now, our decision has been based on comparing the raw value of the test statistic to the critical value.\n\nIf the test statistic is smaller than the critical value, we reject.\nOtherwise, we fail to reject.\n\nAgain, remember the intuition behind why this is: if we observe a value of \\(\\widehat{P}\\) that is much smaller than \\(p_0\\), this leads credence to the claim that \\(p < p_0\\) (i.e. this leads credence to our alternative and away from our null).\n\nValues of \\(\\widehat{P}\\) less than \\(p_0\\) lead to very negative values of \\(\\mathrm{TS}\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#leadup-1",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#leadup-1",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Leadup",
+    "text": "Leadup\n\nNow, we like to think in terms of areas.\nSo, here’s an idea: let’s translate our reject/fail to reject scheme to be in terms of areas.\nSpecifically, here is what I mean.\nConsider again a situation in which we reject the null:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#leadup-2",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#leadup-2",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Leadup",
+    "text": "Leadup\n\nSo, we can rephrase our decision as follows:\n\nReject \\(H_0\\) if the area to the left of the test statistic is smaller than \\(\\alpha\\).\nOtherwise, fail to reject \\(H_0\\).\n\nNotice that the area to the left of the test statistic, since we are dealing with a lower-tailed test, is equivalent to “the probability of observing something as or more extreme, under the null, as the value we currently observe”.\n\nHere, “extreme” can be thought of as in the direction of the alternative; in other words, we consider the area in the direction of the sign in the alternative hypothesis.\n\nThis is an example of what we call a p-value."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#p-values",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#p-values",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "p-Values",
+    "text": "p-Values\n\nThe textbook defines \\(p-\\)values as:\n\n\n\n[…] the probability of observing data at least as favorable to the alternative hypothesis as our current data set, if the null hypothesis were true.\n\n\n\nAnother way to think about it is this: if the null were true, what is the probability that we would observe something even more extreme (i.e. even “farther away”, in the direction of the alternative) as our current observations?\nNote that exactly how we compute \\(p-\\)values depends heavily on our alternative."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#the-test-statistic",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#the-test-statistic",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "The Test Statistic",
+    "text": "The Test Statistic"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#p-value-lower-tailed-test",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#p-value-lower-tailed-test",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "p-value; Lower-Tailed Test",
+    "text": "p-value; Lower-Tailed Test"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#p-value-upper-tailed-test",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#p-value-upper-tailed-test",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "p-value; Upper-Tailed Test",
+    "text": "p-value; Upper-Tailed Test"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#p-value-two-sided-test",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#p-value-two-sided-test",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "p-value; Two-Sided Test",
+    "text": "p-value; Two-Sided Test"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#worked-out-example-3",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#worked-out-example-3",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 3\n\n\n\n\nForbes magazine has claimed that, as of May 2023, 91.7% of US households own a vehicle. To test that claim, we take a representative sample of 500 US households and observe that 89.4% of these households own a vehicle.\n\nCompute the \\(p-\\)value of our observed value of the statistic, assuming we are using a lower-tailed alternative.\nCompute the \\(p-\\)value of our observed value of the statistic, assuming we are using a two-sided alternative."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-6",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-6",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nLet’s first compute the observed value of our test statistic: \\[ \\mathrm{TS} = \\frac{0.894 - 0.917}{\\sqrt{\\frac{(0.917) \\cdot (1 - 0.917)}{500}}} = -1.86 \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-7",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-7",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nIn the lower-tailed case, our p-value is\n\n\n\n\n\n\n\n\n\nWe can compute this in one of two ways."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-8",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-8",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nWe could simply use Python:\n\n\n\nimport scipy.stats as sps\nsps.norm.cdf(-1.86)\n\n0.03144276298075271\n\n\n\n\n\n\nOr, we could use our z-table: \\(0.0314\\)\n\n\n\n\nEither way, looks like our p-value in the lower-tailed case is \\(0.0314\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-9",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-9",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nIn the two-sided case, our p-value is\n\n\n\n\n\n\n\n\n\nSame deal as before: we can compute this using either Python or our table."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-10",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-10",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nAlternatively, note that we can utilize the symmetry of the normal distribution in our favor- the area we’re interested in is simply twice the area we found in the lower-tailed case!\nSo, our \\(p-\\)value in the two-sided case is simply \\(2 \\times (0.0314) = 0.0628\\).\nIf you don’t believe me:\n\n\n\nsps.norm.cdf(-1.86) + (1 - sps.norm.cdf(1.86))\n\n0.06288552596150537"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#p-values-1",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#p-values-1",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "p-Values",
+    "text": "p-Values\n\nOf course, p-values are not restricted to the case of hypothesis testing a proportion; we can absolutely compute \\(p-\\)values in a setting where we are testing a population mean!\n\n\n\n\n\n\n\n\nWorked-Out Example 4\n\n\n\n\nConsider again the setup of Worked-Out Example 2: McGaucho’s claims that, on average, they are able to serve customers their food in 10 minutes. Dubious of these claims, Markus takes a representative sample of 40 customers and finds that these customers waited an combined average of 15 minutes before receiving their food, with a standard deviation of 10 minutes.\n\nCompute the p-value if we were to use a lower-tailed alternative.\nCompute the p-value if we were to use a two-sided alternative."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-11",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-11",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nRecall that we ended up needing to use the \\(t_{39}\\) distribution as opposed to the standard normal distribution.\nThis doesn’t affect our computations of the p-value much, except for the fact that now we will need to use Python (as our \\(t-\\)table doesn’t really give us probabilities).\nThe observed value of the test statistic is \\[ \\frac{15 - 10}{10 / \\sqrt{40}} = 3.162 \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-12",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-12",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nOn a graph, this looks like:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-13",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-13",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nUsing a lower-tailed alternative:\n\n\n\n\n\n\n\n\n\n\nsps.t.cdf(3.162, 39)\n\n0.998485142798897"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-14",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-14",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nUsing a two-sided alternative:\n\n\n\n\n\n\n\n\n\n\n2 * sps.t.cdf(-3.162, 39)\n\n0.0030297144022061392\n\n\nor\n\nsps.t.cdf(-3.162, 39) + (1 - sps.t.cdf(3.162, 39))\n\n0.0030297144022060733"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#what-do-we-do-with-a-p-value",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#what-do-we-do-with-a-p-value",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "What Do We Do with a p-Value?",
+    "text": "What Do We Do with a p-Value?\n\nOkay, so after we’ve computed our p-value… what do we do?\nWe reject when p is small; specifically, we reject when p is less than the level of significance.\nSo, in other words, we now have two ways to conduct hypothesis tests under our belt: using critical values, and using p-values.\nI’d like to stress- these two frameworks are completely equivalent!\n\nYour decision using critical values will always be the same as your decision using p-values, by construction."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#your-turn-1",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#your-turn-1",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 2\n\n\n\n\nUCSB claims that 40% of its undergraduate student body are first-generation students (as in, the first in their families to earn a Bachelor’s degree). To test this claim, a representative sample of 120 undergraduates is taken and it is found that 43% of these students are first-generation. Suppose we use an \\(\\alpha = 0.05\\) level of significance, and we test the University’s claims against a two-sided alternative.\n\nConduct the test using critical values.\nConduct the test using p-values."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#your-turn-2",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#your-turn-2",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 3\n\n\n\n\nA botanist claims that the average weight of a chestnut is around 5 grams. To test this claim, a representative sample of 35 chestnuts is taken; these chestnuts have a combined average weight of 4.87 grams and a standard deviation of 1.82 grams. Suppose we use an \\(\\alpha = 0.05\\) level of significance, and a lower-tailed alternative.\n\nConduct the test using critical values.\nConduct the test using p-values."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#criticisms-of-p-values",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#criticisms-of-p-values",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Criticisms of p-Values",
+    "text": "Criticisms of p-Values\n\nI should note that there are some growing criticism within the statistical and data scientific communities regarding p-values.\nFor one thing, they can be easily misinterpreted.\n\nTake a look at this Wikipedia page for a list of common misinterpretations of p-values to make sure you don’t make any of these (and yes, I might test you on some of these on a quiz/exam!)\n\nTo fully understand and appreciate the more nuanced criticisms, however, we would need a bit of extra background/theory pertaining to the framework of Hypothesis Testing - material that we don’t cover in this class.\n\nI encourage you to take PSTAT 120B and PSTAT 120C if you’d like to learn more about this!"
   },
   {
     "objectID": "Pages/Lectures/Lecture11/Lec11.html#leadup",
@@ -3210,7 +3546,7 @@
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Wednesday, July 19, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\nQz01 Solns\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nMultiple Choice: Blank Solns\nFree Response: Blank Solns\n\n\nWorksheet 02: Work on the MT1 Practice Problems posted under the “Exam Prep” page\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\nSolns\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\nQz02 Solns\n\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\nSolns\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n\nT-Table\n\n14: Hypothesis Testing for Proportions\n15: Review\n\nFinal answer for Chalkboard Exercise 2 is approximately 0.2001. Be sure to check the Binomial Conditions!\n\n16: Midterm 2\n\nWorksheet 04: Work on the MT2 Practice Problems posted under the “Exam Prep” page\nLab 04  Simulations, Sampling, and Loops\nSolns\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing for Means\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 05\nLab05: Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\nWorksheet 06\nLab06: Exploratory Data Analysis"
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Sunday, July 23, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\nQz01 Solns\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nMultiple Choice: Blank Solns\nFree Response: Blank Solns\n\n\nWorksheet 02: Work on the MT1 Practice Problems posted under the “Exam Prep” page\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\nSolns\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\nQz02 Solns\n\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\nSolns\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n\nT-Table\n\n14: Hypothesis Testing for Proportions\n15: Review\n\nFinal answer for Chalkboard Exercise 2 is approximately 0.2001. Be sure to check the Binomial Conditions!\n\n16: Midterm 2\n\nWorksheet 04: Work on the MT2 Practice Problems posted under the “Exam Prep” page\nLab 04  Simulations, Sampling, and Loops\nSolns\n\n\n5\n(7/24 - 7/30)\n\n17: 16: Hypothesis Testing, Part II\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 05\nLab 05  Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\nWorksheet 06\nLab06: Exploratory Data Analysis"
   },
   {
     "objectID": "Pages/calendar.html",
