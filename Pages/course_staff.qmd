@@ -89,7 +89,7 @@ linkcolor: "#ffa07a"
         </tr>
         <tr>
           <td><b>OH:</b></td>
-          <td>T, 1 - 3pm (Zoom) <font color="red">Starts in Week 2</font></td>
+          <td>T, 1 - 3pm (<a href="https://ucsb.zoom.us/j/86888340042?pwd=Y3RzL0k1Ykx2VVNIZmd6OG5mdWVaUT09" target = "_blank">Zoom</a>)</td>
         </tr>
       </table>
     </td>
