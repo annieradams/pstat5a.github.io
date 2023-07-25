@@ -22,4 +22,4 @@ Here you will find all homework assignments and their solutions. Please remember
 
 -   **Homework 4:** <a href = "../Files/HW/HW04_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a> <a href = "../Files/HW/HW04_Answers.pdf" class = "button label-outline" target = "_blank">Answers</a><a href = "../Files/HW/HW04_Solns.pdf" class = "button label-outline" target = "_blank">Solns</a> <br />
 
--   **Homework 5:** Will be posted early Tuesday morning (July 25)
+-   **Homework 5:** <a href = "../Files/HW/HW05_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a> <a href = "../Files/HW/HW05_Answers.pdf" class = "button label-outline" target = "_blank">Answers</a>

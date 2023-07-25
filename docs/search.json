@@ -382,7 +382,7 @@
     "href": "Pages/hw.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Here you will find all homework assignments and their solutions. Please remember that solutions to homework will only be released during Exam Weeks; we encourage you to come to Office Hours to ask any questions you may have about the assignments!\n\nHomework 1: Blank Answers Solns \nHomework 2: Blank Answers Solns \nHomework 3: Blank Answers Solns \nHomework 4: Blank AnswersSolns \nHomework 5: Will be posted early Tuesday morning (July 25)"
+    "text": "Here you will find all homework assignments and their solutions. Please remember that solutions to homework will only be released during Exam Weeks; we encourage you to come to Office Hours to ask any questions you may have about the assignments!\n\nHomework 1: Blank Answers Solns \nHomework 2: Blank Answers Solns \nHomework 3: Blank Answers Solns \nHomework 4: Blank AnswersSolns \nHomework 5: Blank Answers"
   },
   {
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#last-time",
@@ -1384,6 +1384,209 @@
     "title": "PSTAT 5A: Lecture 05",
     "section": "Independence",
     "text": "Independence\n\n\n\n\n\n\n\nDefinition\n\n\n\nTwo events \\(E\\) and \\(F\\) are defined to be independent (notated \\(E \\perp F\\)) if any of the following hold:\n\n\\(\\mathbb{P}(E \\mid F) = \\mathbb{P}(E)\\)\n\\(\\mathbb{P}(F \\mid E) = \\mathbb{P}(F)\\)\n\\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E) \\cdot \\mathbb{P}(F)\\)\n\n\n\n\n\n\n\nNote- the probability of an intersection equals the product of unconditional (i.e. marginal) probabilities ONLY WHEN THE EVENTS ARE INDEPENDENT.\n\nIn general, the only way to compute the probability of an intersection is to use the Multiplication Rule.\n\nI’ll show you one of the equivalencies on the board."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#multiple-populations",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#multiple-populations",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Multiple Populations",
+    "text": "Multiple Populations\n\nSo far, we’ve talked about constructing confidence intervals and performing hypothesis tests for both population proportions and population means.\nOne crucial thing to note is that everything we’ve done has been in the context of a single population\nSometimes, as Data Scientists, we may want to test claims about the differences between two populations\n\nE.g. Is the average monthly income in Santa Barbara different from the average monthly income in San Francisco?\nE.g. Is the proportion of people who test positive for a disease in one country different than the proportion that test positive in a second country?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#two-populations-1",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#two-populations-1",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Two Populations",
+    "text": "Two Populations\n\nStatistically: we are imagining two populations, Population 1 and Population 2, governed by parameters \\(\\theta_1\\) and \\(\\theta_2\\), respectively, and trying to test claims about the relationship between \\(\\theta_1\\) and \\(\\theta_2\\).\n\nFor example, we could consider two populations with means \\(\\mu_1\\) and \\(\\mu_2\\), respectively, and try to make claims about whether or not \\(\\mu_1\\) and \\(\\mu_2\\) are equal.\n\nThe trick Statisticians use is to think in terms of the difference \\(\\theta_2 - \\theta_1.\\)\n\nFor example, if our null hypothesis is that \\(\\theta_1 = \\theta_2\\), this can be rephrased as \\(H_0: \\ \\theta_2 - \\theta_1 = 0\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#two-populations-2",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#two-populations-2",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Two Populations",
+    "text": "Two Populations\n\nThe reason we do this is because we have now effectively reduced our two-parameter problem into a one-parameter problem, involving only the parameter \\(\\delta := \\theta_2 - \\theta_1\\).\nNow, we will need a point estimator of \\(\\delta\\).\nIf \\(\\widehat{\\theta}_1\\) and \\(\\widehat{\\theta}_2\\) are point estimators of \\(\\theta_1\\) and \\(\\theta_2\\), respectively, then a natural point estimator of \\(\\delta\\) is \\(\\widehat{\\delta} = \\widehat{\\theta}_2 - \\widehat{\\theta}_1\\).\n\nFor example, a natural point estimator for the difference \\(\\mu_2 - \\mu_1\\) of population means is \\(\\overline{X}_2 - \\overline{X}_1\\), the difference in sample means."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#two-populations-3",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#two-populations-3",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Two Populations",
+    "text": "Two Populations\n\nWe will ultimately need access to the sampling distribution of \\(\\widehat{\\delta}\\).\nBefore delving into that, however, we will need a little more probability knowledge; specifically, knowledge on how linear combinations of random variables work."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#linear-combinations-of-random-variables-1",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#linear-combinations-of-random-variables-1",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Linear Combinations of Random Variables",
+    "text": "Linear Combinations of Random Variables\n\nRecall, from many weeks ago, that a random variable \\(X\\) is simply some numerical variable that tracks a random outcome of an experiment.\n\nE.g. number of heads in 10 tosses of a fair coin; number of people in a population that test positive for a disease; etc.\n\nA random variable \\(X\\), whether it be discrete or continuous, has an expected value \\(\\mathbb{E}[X]\\) and a variance \\(\\mathrm{Var}(X)\\).\nNow, suppose we have two random variables \\(X\\) and \\(Y\\), and three constants \\(a\\), \\(b\\), and \\(c\\).\nOur task for now is to say as much as we can about the quantity \\(aX + bY + c\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#linear-combinations-of-random-variables-2",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#linear-combinations-of-random-variables-2",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Linear Combinations of Random Variables",
+    "text": "Linear Combinations of Random Variables\n\n\n\n\n\n\n\nTheorem\n\n\n\n\nGiven two random variables \\(X\\) and \\(Y\\), and constants \\(a, \\ b,\\) and \\(c\\), \\[ \\mathbb{E}[aX + bY + c] = a \\cdot \\mathbb{E}[X] + b \\cdot \\mathbb{E}[Y] + c \\]\n\n\n\n\n\n\n\nAs an example: if \\(\\mathbb{E}[X] = 2\\) and \\(\\mathbb{E}[Y] = -1\\), then \\[\\mathbb{E}[2X + 3Y + 1] = 2(2) + 3(-1) + 1 = 2 \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#linear-combinations-of-random-variables-3",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#linear-combinations-of-random-variables-3",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Linear Combinations of Random Variables",
+    "text": "Linear Combinations of Random Variables\n\n\n\n\n\n\n\nTheorem\n\n\n\n\nGiven two independent random variables \\(X\\) and \\(Y\\), and constants \\(a, \\ b,\\) and \\(c\\), \\[ \\mathrm{Var}(aX + bY + c) = a^2 \\mathrm{Var}(X) + b^2 \\mathrm{Var}(Y) \\]\n\n\n\n\n\n\n\nYou will not be responsible for the proof of this fact.\nAlso, we haven’t explicitly talked about what independence means in the context of random variables; for now, suffice it to say that it works analogously to the concept of independence of events. That is, if the random variables \\(X\\) and \\(Y\\) come from two experiments that don’t have any relation to each other, then \\(X\\) and \\(Y\\) will be independent."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#linear-combinations-of-normally-distributed-random-variables",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#linear-combinations-of-normally-distributed-random-variables",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Linear Combinations of Normally-Distributed Random Variables",
+    "text": "Linear Combinations of Normally-Distributed Random Variables\n\nSomething interesting happens when we consider taking linear combinations of normally-distributed random variables.\nSay we have \\(X \\sim \\mathcal{N}(\\mu_x, \\ \\sigma_x)\\) and \\(Y \\sim \\mathcal{N}(\\mu_y, \\ \\sigma_y)\\) with \\(X \\perp Y\\).\nThen, \\[ (aX + bY + c) \\sim \\mathcal{N}\\left( a\\mu_x + b \\mu_y + c, \\ \\sqrt{a^2 \\sigma_x^2 + b^2 \\sigma_y^2} \\right) \\]\n\nNote that the expectation and standard deviation simply follow from the previous fact. What is unique/impotant about this result is that it tells us linear combinations of normally-distributed random variables are also normally-distributed!\nThis is not true of all distributions; for example, linear combinations of uniformly-distributed random variables are not uniformly distributed."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#worked-out-example",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#worked-out-example",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nSuppose that wait times at the Goleta and Santa Barbara DMVs are normally distributed and independent. Specifically, if \\(X\\) denotes the wait time (in minutes) of a randomly-selected customer from the Goleta location and \\(Y\\) denotes the wait time (in minutes) of a randomly-selected customer from the Santa Barbara location, then \\[ X \\sim \\mathcal{N}(5, \\ 1.5)   \\quad Y \\sim \\mathcal{N}(7, 1.75)  \\] What is the probability that a randomly-selected person from the Goleta location and a randomly-selected person from the Santa Barbara location are served within 2 minutes of each other?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#solutions",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#solutions",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Solutions",
+    "text": "Solutions\n\nFirst, let \\(X\\) denote the wait time of the person from the Goleta location and let \\(Y\\) denote the wait time of the person from the Santa Barbara location. Then \\[ X \\sim \\mathcal{N}(5, \\ 1.5)   \\quad Y \\sim \\mathcal{N}(7, 1.75)  \\] with \\(X \\perp Y\\).\nThe quantity we seek is \\(\\mathbb{P}(|X - Y| < 2)\\), which we can first write as \\[ \\mathbb{P}(-2 \\leq X - Y \\leq 2) \\]\nNow, by the result above we know what the distribution of \\((X - Y)\\) is: \\[ (X - Y) \\sim \\mathcal{N}\\left( 5 - 7 , \\ \\sqrt{1.5^2 + 1.75^2} \\right) \\sim \\mathcal{N}\\left(-2, \\  \\sqrt{1.5^2 + 1.75^2} \\right)\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#solutions-1",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#solutions-1",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Solutions",
+    "text": "Solutions\n\nFor ease of notation, let \\(D = X - Y\\). Then what we just showed is that \\[ D \\sim \\mathcal{N}(-2, \\  \\sqrt{1.5^2 + 1.75^2}) \\]\nFurthermore, the quantity we seek is \\[ \\mathbb{P}(-2 \\leq D \\leq 2) \\]\nHence, we are now in business!\n\nNamely, we can just use the same procedure we have been using for normal distribution problems all along in this class."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#solutions-2",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#solutions-2",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Solutions",
+    "text": "Solutions\n\\[\\begin{align*}\n  \\mathbb{P}(-2 \\leq D \\leq 2)   & = \\mathbb{P}(D \\leq 2) - \\mathbb{P}(D \\leq -2)    \\\\\n    & = \\mathbb{P}\\left( \\frac{D + 2}{\\sqrt{1.5^2 + 1.75^2}} \\leq \\frac{2 + 2}{\\sqrt{1.5^2 + 1.75^2}} \\right)     \\\\\n      & \\hspace{20mm} - \\mathbb{P}\\left( \\frac{D + 2}{\\sqrt{1.5^2 + 1.75^2}} \\leq \\frac{-2 + 2}{\\sqrt{1.5^2 + 1.75^2}} \\right)   \\\\\n    & = \\mathbb{P}\\left( \\frac{D + 2}{\\sqrt{1.5^2 + 1.75^2}} \\leq 1.74 \\right)     \\\\\n      & \\hspace{20mm} - \\mathbb{P}\\left( \\frac{D + 2}{\\sqrt{1.5^2 + 1.75^2}} \\leq 0 \\right)    \\\\\n    & = 0.9591 - 0.5000 = \\boxed{0.4591}\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#two-populations-4",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#two-populations-4",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Two Populations",
+    "text": "Two Populations\n\nAlright, so what does this mean in the context of our two-proportion problem?\nWell, for one thing, we can easily construct a confidence interval for \\((\\theta_2 - \\theta_1)\\) using: \\[ (\\widehat{\\theta}_2 - \\widehat{\\theta}_1) \\pm c \\cdot \\sqrt{\\mathrm{Var}(\\widehat{\\theta}_1) + \\mathrm{Var}(\\widehat{\\theta}_2)} \\] where \\(c\\) is a constant that is determined by both the sampling distribution of \\(\\widehat{\\theta}_2 - \\widehat{\\theta}_1\\) as well as our confidence level.\nBy the way, can anyone tell me why the variances are added, and not subtracted?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#two-means",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#two-means",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Two Means",
+    "text": "Two Means\n\nTo make things more specific, let’s consider comparing two population means.\nSpecifically: imagine we have two populations (which we will call Population 1 and Population 2), governed by population means \\(\\mu_1\\) and \\(\\mu_2\\), respectively.\nFor now, let’s focus a two-sided test, where our hypotheses are \\[\\left[ \\begin{array}{rr}\nH_0:    & \\mu_1 = \\mu_2   \\\\\nH_A:    & \\mu_1 \\neq \\mu_2\n\\end{array} \\right.\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#two-means-1",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#two-means-1",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Two Means",
+    "text": "Two Means\n\nAgain, it’s customary to rephrase things to be in terms of differences: \\[\\left[ \\begin{array}{rr}\nH_0:    & \\mu_2 - \\mu_1 = 0   \\\\\nH_A:    & \\mu_2 - \\mu_1 \\neq 0\n\\end{array} \\right.\\]\nNow, we need data!\nSuppose we have a sample \\(X = \\{X_i\\}_{i=1}^{n_1}\\) taken from Population 1 and a sample \\(Y = \\{Y_i\\}_{i=1}^{n_2}\\) taken from Population 2.\n\nNote that we are allowing for different sample sizes, \\(n_1\\) and \\(n_2\\)!\n\nLet’s also assume that, in addition to being representative samples, the two samples are both independent within themselves and independent from each other (i.e. assume the \\(X_i\\)’s and \\(Y_i\\)’s are independent, and that the \\(X\\)’s are independent from the \\(Y\\)’s)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#two-means-2",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#two-means-2",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Two Means",
+    "text": "Two Means\n\nAgain, we are interested in finding a point estimator for \\(\\mu_2 - \\mu_1\\).\nHere’s a question: do we have a natural point estimator for \\(\\mu_2\\)? What about for \\(\\mu_1\\)?\nSo, it seems that a natural point estimator for \\(\\delta = \\mu_2 - \\mu_1\\) is \\[ \\widehat{\\delta} = \\overline{Y} - \\overline{X} \\]\nWhat is the sampling distribution of \\(\\widehat{\\delta}\\)?\nWell, there are a few cases to consider."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#sampling-distribution-of-widehatdelta",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#sampling-distribution-of-widehatdelta",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Sampling Distribution of \\(\\widehat{\\delta}\\)",
+    "text": "Sampling Distribution of \\(\\widehat{\\delta}\\)\n\nSuppose that our two populations had known variances \\(\\sigma_1^2\\) and \\(\\sigma_2^2\\), respectively.\nThen, if both \\(\\overline{X}\\) and \\(\\overline{Y}\\) were normally distributed, we could one of the facts we previously saw in this lecture to conclude that \\[ \\widehat{\\delta} \\sim \\mathcal{N}\\left( \\delta, \\ \\sqrt{ \\frac{\\sigma_1^2}{n_1} + \\frac{\\sigma_2^2}{n_2} } \\right) \\]\n\nSee the whiteboard for more details"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#the-test-statistc",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#the-test-statistc",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "The Test Statistc",
+    "text": "The Test Statistc\n\nIn this case, a natural candidate for our test statistic would be \\[ \\frac{\\widehat{\\delta}}{\\sqrt{ \\frac{\\sigma_1^2}{n_1} + \\frac{\\sigma_2^2}{n_2}}} =  \\frac{\\overline{Y} - \\overline{X}}{\\sqrt{ \\frac{\\sigma_1^2}{n_1} + \\frac{\\sigma_2^2}{n_2}}} \\] as, under the null, this would follow a standard normal distribution.\nHowever, there are a few problems with this.\nFor one, it requires both \\(\\overline{X}\\) and \\(\\overline{Y}\\) to be normally distributed, which we know is not always the case.\nAlright, that’s fine though- so long as our sample sizes are large enough, the Central Limit Theorem kicks in and we can be reasonably certain that \\(\\overline{X}\\) and \\(\\overline{Y}\\) will be pretty close to normally distributed."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#the-test-statistic",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#the-test-statistic",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "The Test Statistic",
+    "text": "The Test Statistic\n\nHowever, the main problem in using this test statistic is that it requires access to the population variances \\(\\sigma_1^2\\) and \\(\\sigma_2^2\\)!\nAny ideas on how to remedy this?\n\nRight; let’s just replace the population variances with their sample analogues: \\[ \\mathrm{TS} = \\frac{\\overline{Y} - \\overline{X}}{\\sqrt{ \\frac{s_X^2}{n_1} + \\frac{s_Y^2}{n_2}}}\\] where \\[\\begin{align*}\ns_X^2   & = \\frac{1}{n_1 - 1} \\sum_{i=1}^{n_1} (X_i - \\overline{X})^2   \\\\\ns_Y^2   & = \\frac{1}{n_2 - 1} \\sum_{i=1}^{n_2} (Y_i - \\overline{Y})^2\n  \\end{align*}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#the-test-statistic-1",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#the-test-statistic-1",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "The Test Statistic",
+    "text": "The Test Statistic\n\nAny guesses on what distribution this follows under the null?\nIf you said t….. you’d be wrong! (But pretty close.)\nIt turns out that, under the null (i.e. assuming that \\(\\mu_1 = \\mu_2\\), or, equivalently, that \\(\\delta = \\mu_2 - \\mu_1 = 0\\)), this test statistic approximately follows a t-distribution.\nWhat degrees of freedom?\nThat’s right: \\[ \\mathrm{df} = \\mathrm{round}\\left\\{ \\frac{ \\left[ \\left( \\frac{s_X^2}{n_1} \\right) + \\left( \\frac{s_Y^2}{n_2} \\right) \\right]^2 }{ \\frac{\\left( \\frac{s_X^2}{n_1} \\right)^2}{n_1 - 1} + \\frac{\\left( \\frac{s_Y^2}{n_2} \\right)^2}{n_2 - 1} } \\right\\} \\]\n\nThis is related to what is known as the Satterthwaite Approximation, sometimes called the Welch-Satterthwaite Equation"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#the-test",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#the-test",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "The Test",
+    "text": "The Test\n\nAlright, so we finally have a test statistic: \\[ \\mathrm{TS} = \\frac{\\overline{Y} - \\overline{X}}{\\sqrt{ \\frac{\\sigma_1^2}{n_1} + \\frac{\\sigma_2^2}{n_2}}} \\] and its (approximate) distribution under the null: \\[ \\mathrm{TS} \\stackrel{H_0}{\\sim} t_{\\nu} \\] where \\(\\nu\\) is given by the Satterthwaite Approximation.\nRecall our hypotheses: \\[ \\left[ \\begin{array}{rr}\nH_0:    & \\mu_2 - \\mu_1 = 0   \\\\\nH_A:    & \\mu_2 - \\mu_1 \\neq 0\n\\end{array} \\right. \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#the-test-1",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#the-test-1",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "The Test",
+    "text": "The Test\n\nWe can see that large values of \\(|\\mathrm{TS}|\\) lead credence to the alternative over the null; as such, our decision will take the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| > c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] where \\(c\\) is the appropriately-selected quantile of the appropriate t-distribution."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#worked-out-example-2",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#worked-out-example-2",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nGaucho Gourmande has two locations: one in Goleta and one in Santa Barbara. The owner would like to determine whether the average revenue generated by the two locations are equal or not. To that end, he computes the net revenue generated by the Goleta location over 30 days and also computes the net revenue generated by the Santa Barbara location over 35 days (assume all of the necessary independence conditions hold), and produced the following information:\n\\[\\begin{array}{r|cc}\n                    & \\text{Sample Average}     & \\text{Sample Standard Deviation}    \\\\\n  \\hline\n  \\textbf{Goleta}   &     \\$13                    & \\$3.45        \\\\\n  \\textbf{Santa Barbara}   &     \\$15                    & \\$4.23\n\\end{array}\\]\nTest the owner’s claims at an \\(\\alpha = 0.05\\) level of significance, using a two-sided alternative."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#solutions-3",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#solutions-3",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Solutions",
+    "text": "Solutions\n\nOur first step should be to figure out what “Population 1” and “Population 2” are in the context of the problem.\nLet “Goleta Location” be Population 1 and “Santa Barbara Location” be Population 2.\n\nIt is perfectly acceptable to swap these two, but just be sure you remain consistent throughout the problem!\nAlso, I will expect you to explicitly write out your definitions of the populations (like above), even if the problem doesn’t explicitly ask you to do so.\n\nIn this way, \\[ \\overline{X} = 13; \\quad s_X = 3.45; \\quad \\overline{Y} = 15; \\quad s_Y = 4.23 \\]\nAdditionally, \\(n_1 = 30\\) and \\(n_2 = 35\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#solutions-4",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#solutions-4",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Solutions",
+    "text": "Solutions\n\nNow, let’s compute the value of the test statistic. \\[ \\mathrm{TS} =   \\frac{\\overline{Y} - \\overline{X}}{\\sqrt{ \\frac{s_X^2}{n_1} + \\frac{s_Y^2}{n_2}}} = \\frac{15 - 13}{\\sqrt{\\frac{3.45^2}{30}  + \\frac{4.23^2}{35} }} = 2.10 \\]\nWe should next figure out the degrees of freedom: \\[\\begin{align*}\n\\mathrm{df}   &  = \\mathrm{round}\\left\\{ \\frac{ \\left[ \\left( \\frac{s_X^2}{n_1} \\right) + \\left( \\frac{s_Y^2}{n_2} \\right) \\right]^2 }{ \\frac{\\left( \\frac{s_X^2}{n_1} \\right)^2}{n_1 - 1} + \\frac{\\left( \\frac{s_Y^2}{n_2} \\right)^2}{n_2 - 1} } \\right\\}     \\\\\n  & =  \\mathrm{round}\\left\\{ \\frac{ \\left[ \\left( \\frac{3.45^2}{30} \\right) + \\left( \\frac{4.23^2}{35} \\right) \\right]^2 }{ \\frac{\\left( \\frac{3.45^2}{30} \\right)^2}{30 - 1} + \\frac{\\left( \\frac{4.23^2}{35} \\right)^2}{35 - 1} } \\right\\} = 63\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#solutions-5",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#solutions-5",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Solutions",
+    "text": "Solutions\n\nAt this point, we could either proceed using critical values or using p-values.\nLet’s use p-values, for practice.\nOur p-value is computed as\n\n\n\nimport scipy.stats as sps\n2*sps.t.cdf(-2.10, 63)\n\n0.03973904581390475\n\n\n\n\nThis is below our level of significance \\(\\alpha = 0.05\\) meaning we would reject the null.\nIf we wanted to instead use critical values:\n\n\n\n-sps.t.ppf(0.05, 63)\n\n1.6694022215079614\n\n\n\n\nThis means our critical value is 1.67; since \\(|\\mathrm{TS}| = |2.10| = 2.10 > 1.67\\), we would again reject at an \\(\\alpha = 0.05\\) level of significance."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#solutions-6",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#solutions-6",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Solutions",
+    "text": "Solutions\n\nAt a 5% level of significance, there was sufficient evidence to reject the owner’s claims that the revenue generated by the two locations are equal, in favor of the alternative that the revenue generated by the two locations are not equal."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#extensions",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#extensions",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Extensions",
+    "text": "Extensions\n\nUnsurprisingly, we can adapt the above procedure to account for one-sided alternatives as well.\nFor instance, suppose we wish to test \\[ \\left[ \\begin{array}{rr}\nH_0:    & \\mu_1 = \\mu_2   \\\\\nH_A:    & \\mu_1 < \\mu_2\n\\end{array} \\right.\\]\nAgain, we rephrase things as: \\[ \\left[ \\begin{array}{rr}\nH_0:    & \\mu_2 - \\mu_1 = 0   \\\\\nH_A:    & \\mu_2 - \\mu_1 > 0\n\\end{array} \\right.\\] which is now a familiar upper-tailed test on \\(\\delta = \\mu_2 - \\mu_1\\) and \\(\\mu_0 = 0.\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture18/Lec18.html#extensions-1",
+    "href": "Pages/Lectures/Lecture18/Lec18.html#extensions-1",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Extensions",
+    "text": "Extensions\n\nSpecifically, we would take the same test statistic (which would still follow the same distribution under the null) and use the decision rule \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\mathrm{TS} > c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] where \\(c\\) is the appropriate quantile of the approximate t distribution (with degrees of freedom given by the Satterthwaite Approximation).\nA similar result holds for the lower-tailed test- I encourage you to work it out on your own."
   },
   {
     "objectID": "Pages/Lectures/Lecture11/Lec11.html#leadup",
@@ -3546,7 +3749,7 @@
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Monday, July 24, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\nQz01 Solns\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nMultiple Choice: Blank Solns\nFree Response: Blank Solns\n\n\nWorksheet 02: Work on the MT1 Practice Problems posted under the “Exam Prep” page\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\nSolns\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\nQz02 Solns\n\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\nSolns\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n\nT-Table\n\n14: Hypothesis Testing for Proportions\n15: Review\n\nFinal answer for Chalkboard Exercise 2 is approximately 0.2001. Be sure to check the Binomial Conditions!\n\n16: Midterm 2\n\nWorksheet 04: Work on the MT2 Practice Problems posted under the “Exam Prep” page\nLab 04  Simulations, Sampling, and Loops\nSolns\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing, Part II\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 05\nLab 05  Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\nWorksheet 06\nLab06: Exploratory Data Analysis"
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Tuesday, July 25, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\nQz01 Solns\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nMultiple Choice: Blank Solns\nFree Response: Blank Solns\n\n\nWorksheet 02: Work on the MT1 Practice Problems posted under the “Exam Prep” page\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\nSolns\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\nQz02 Solns\n\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\nSolns\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n\nT-Table\n\n14: Hypothesis Testing for Proportions\n15: Review\n\nFinal answer for Chalkboard Exercise 2 is approximately 0.2001. Be sure to check the Binomial Conditions!\n\n16: Midterm 2\n\nWorksheet 04: Work on the MT2 Practice Problems posted under the “Exam Prep” page\nLab 04  Simulations, Sampling, and Loops\nSolns\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing, Part II\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 05\nLab 05  Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\nWorksheet 06\nLab06: Exploratory Data Analysis"
   },
   {
     "objectID": "Pages/calendar.html",
