@@ -2226,6 +2226,188 @@
     "text": "Criticisms of p-Values\n\nI should note that there are some growing criticism within the statistical and data scientific communities regarding p-values.\nFor one thing, they can be easily misinterpreted.\n\nTake a look at this Wikipedia page for a list of common misinterpretations of p-values to make sure you don’t make any of these (and yes, I might test you on some of these on a quiz/exam!)\n\nTo fully understand and appreciate the more nuanced criticisms, however, we would need a bit of extra background/theory pertaining to the framework of Hypothesis Testing - material that we don’t cover in this class.\n\nI encourage you to take PSTAT 120B and PSTAT 120C if you’d like to learn more about this!"
   },
   {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#announcementsreminders",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#announcementsreminders",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Announcements/Reminders:",
+    "text": "Announcements/Reminders:\n\nLab05 is now due tonight (Wednesday, July 26).\n\nYou must submit a PDF to avoid incurring a 0.25pt penalty.\nPlease see the recent announcements from Olivier and myself regarding some troubleshooting advice.\n\nQuiz 3 is taking place this friday (July 28); you will have 50 minutes to complete the quiz.\n\nPlease make sure to give yourself enough time to upload your work!\n\nI will reserve some time at the end of today’s lecture to talk about Midterm 2."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#leadup",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#leadup",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Leadup",
+    "text": "Leadup\n\nConsider the following situation: a new drug claims to significantly lower systolic blood pressure.\nTo ensure these claims are validated, a clinical trial collects several volunteers and groups them into four groups: a control group, and three groups which each are administered a different dosage of the drug.\nIf the drug is truly ineffective, we would imagine the average systolic blood pressure of each group to be fairly similar to the average systolic blood pressures of the other groups.\nIn other words, given \\(k\\) groups, each with some population mean \\(\\mu_i\\) (for \\(i = 1, 2, \\cdots, k\\)), we wish to determine whether or not all of the \\(\\mu_i\\)’s are the same."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#anova",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#anova",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "ANOVA",
+    "text": "ANOVA\n\nThis is the basic setup of Analysis of Variance (often abbreviated as ANOVA).\nGiven \\(k\\) groups, each with mean \\(\\mu_i\\), we wish to test the null hypothesis that all group means are equal (i.e. \\(H_0: \\ \\mu_1 = \\mu_2 = \\cdots = \\mu_k\\)) against the alternative that at least one of the group means differs significantly from the others.\n\n\n\n\n\n\n\n\nCAUTION\n\n\nNote the alternative hypothesis!\n\n\n\n\n\nIt is NOT correct to write the alternative as \\(H_A: \\ \\mu_1 \\neq \\mu_2 \\neq \\cdots \\neq \\mu_k\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#anova-1",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#anova-1",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "ANOVA",
+    "text": "ANOVA\n\nHere is the general idea.\nObservations within each group will have some amount of variability (by virtue of being random observations).\nHowever, the sample means (of the groups) themselves will also have some variability (again, due to the fact that sample means are random).\nThe question ANOVA seeks to answer is: is the variability between sample means greater than what we would expect due to chance alone?\n\nIf so, we may have reason to believe that at least one of the group means differs significantly from the others; i.e. we would have evidence to reject the null."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#anova-2",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#anova-2",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "ANOVA",
+    "text": "ANOVA\n\nAlright, let’s see if we can make things a little more concrete.\nSuppose we have some measure of variability between sample means; perhaps we could call this \\(\\mathrm{MS}_{\\mathrm{G}}\\) (for mean-squared between groups).\nSuppose we also have some measure of variability within each group (i.e. variability due to chance); perhaps we could call this \\(\\mathrm{MS}_{\\mathrm{E}}\\) can be thought of as a measure of variability within groups; i.e. as a sort of variance due to error/randomness.\nThen, the ratio \\[ F = \\frac{\\mathrm{MS}_\\mathrm{G}}{\\mathrm{MS}_{\\mathrm{E}}} \\] could be used as a test statistic."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#anova-3",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#anova-3",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "ANOVA",
+    "text": "ANOVA\n\nWhy would this be a good test statistic?\nWell, we previously stated that we would reject the null (that all group means are the same) in favor of the alternative when the variability across groups is much larger than the variability due to chance.\n\nAnother way to say “the variability across groups is much larger than the variability due to chance” is to say that \\(\\mathrm{MS}_{\\mathrm{G}}\\) is much larger than \\(\\mathrm{MS}_{\\mathrm{E}}\\).\nWhen this is true, \\(F\\) will be much larger than 1.\nHence, we would reject \\(H_0\\) for large values of \\(F\\).\n\nSo, this quantity (which we call the F-statistic) is a good test statistic for our test!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#anova-4",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#anova-4",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "ANOVA",
+    "text": "ANOVA\n\nAlright, so how would we compute this statistic mathematically?\n\nIn other words, what are good formulas for \\(\\mathrm{MS}_{\\mathrm{G}}\\) and \\(\\mathrm{MS}_{\\mathrm{E}}\\)?\n\nTo answer this, let’s establish some notation.\nRecall that we have \\(k\\) groups; our assumption is that we have some set of observations from each group.\nLet’s use the notation \\(X_{ij}\\) to mean the ith observation from the jth group.\n\nFor instance, \\(X_{2, 4}\\) would denote the second observation from the fourth group.\nSince we have \\(k\\) groups, the index \\(j\\) is allowed to take values from \\(\\{1, 2, \\cdots, k\\}\\).\nLet’s also assume that we have \\(n_k\\) observations from group \\(k\\), so that \\(i\\) takes values from \\(\\{1, 2, \\cdots, n_k\\}\\) for the different values of \\(k\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#the-data",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#the-data",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "The Data",
+    "text": "The Data"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#the-data-example",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#the-data-example",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "The Data: Example",
+    "text": "The Data: Example\n\n\nHere we have \\(k = 3\\) groups, with \\(n_1 = 5\\) observations from group 1, \\(n_2 = 3\\) observations from group 2, and \\(n_3 = 4\\) observations from group 3."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#msg",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#msg",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "MSG",
+    "text": "MSG\n\nLet’s start with MSG, our quantity that is supposed to measure variability between group means.\nWe start by computing the means of our \\(k\\) sets of observations. In other words, we compute \\[ \\overline{X}_j = \\frac{1}{n_j} \\sum_{i=1}^{n} X_{ij} \\] for each \\(j = 1, 2, \\cdots, k\\).\nNext, we compute the grand mean, which is simply the mean of all observations: \\[ \\overline{X} = \\frac{1}{n} \\sum_{j = 1}^{k} \\sum_{i=1}^{n_j} X_{ij}; \\quad n = \\sum_{j=1}^{k} n_j \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#msg-1",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#msg-1",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "MSG",
+    "text": "MSG\n\nThen, we compute the sum of squares between groups \\[ \\mathrm{SS}_{\\mathrm{G}} = \\sum_{j = 1}^{k} n_j (\\overline{X}_j - \\overline{X})^2 \\] and obtain our quantity for MSG by dividing this by \\(k - 1\\): \\[ \\mathrm{MS}_{\\mathrm{G}} = \\frac{1}{k - 1} \\cdot \\mathrm{SS}_{\\mathrm{G}} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#mse",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#mse",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "MSE",
+    "text": "MSE\n\nNow, let’s discuss MSE, our quantity that is supposed to measure variability due to chance/within each group.\nThere are two main ways statisticians go about finding this quantity.\nFirst, we compute the sum of squares total \\[ \\mathrm{SS}_{\\mathrm{T}} = \\sum_{j=1}^{k} \\sum_{i=1}^{n_j} (X_{ij} - \\overline{X})^2 \\]\nThen we compute the sum of squared errors \\[ \\mathrm{SS}_{\\mathrm{E}} = \\mathrm{SS}_{\\mathrm{T}} - \\mathrm{SS}_{\\mathrm{G}} \\]\nAnd finally we divide by \\(n - k\\) to obtain MSE: \\[ \\mathrm{MS}_{\\mathrm{E}} = \\frac{1}{n - k} (\\mathrm{SS}_{\\mathrm{E}}) \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#what-we-have-so-far",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#what-we-have-so-far",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "What We Have So Far",
+    "text": "What We Have So Far\n\nLet’s take stock of what we have so far.\nOur hypotheses are \\[ \\left[ \\begin{array}{rl}\nH_0:    & \\mu_1 = \\mu_2 = \\cdots = \\mu_k    \\\\\nH_A:    & \\text{at least one of the group means is different}\n\\end{array} \\right. \\]\nOur test statistic is \\[ F = \\frac{\\mathrm{MS}_\\mathrm{G}}{\\mathrm{MS}_{\\mathrm{E}}} \\]\nOur test takes the form \\[ \\texttt{decision}(\\mathrm{F}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } F > c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#whats-left",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#whats-left",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "What’s Left?",
+    "text": "What’s Left?\n\nSo, what’s left?\n\nThat’s right; the critical value \\(c\\).\n\nJust as we did before, we construct our test to control for Type I errors.\nThat is, given a significance level \\(\\alpha\\), we select the value of \\(c\\) that ensures \\[ \\mathbb{P}_{H_0}(F > c) = \\alpha \\]\nThis requires knowledge about the sampling distribution of \\(F\\)!\nIt turns out that, if we assume observations within each group are normally distributed (which ends up being a very crucial assumption), the statistic \\(F\\) follows what is known as the F-distribution.\nAs such, the critical value of our test is the appropriate percentile of the F-distribution."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#the-f-distribution",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#the-f-distribution",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "The F-Distribution",
+    "text": "The F-Distribution\n\nThe F-distribution is quite different from the distributions we have encountered thus far.\nFor one thing, it admits only nonnegative values in its state space (i.e. it has state space \\([0, \\infty)\\)).\nAdditionally, it takes two parameters, referred to as the numerator degrees of freedom and the denominator degrees of freedom (sometimes abbreviated as just “degree of freedom 1” and “degree of freedom 2”.)\nTo notate the fact that a random variable \\(X\\) follows the F-distribution with degrees of freedom d1 and d2, respectively, we write \\[ X \\sim F_{\\texttt{d1}, \\ \\texttt{d2}} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#the-f-distribution-1",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#the-f-distribution-1",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "The F-Distribution",
+    "text": "The F-Distribution"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#the-test-statistic",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#the-test-statistic",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "The Test Statistic",
+    "text": "The Test Statistic\n\nRecall that our test statistic in ANOVA is \\[ F = \\frac{\\mathrm{MS}_\\mathrm{G}}{\\mathrm{MS}_{\\mathrm{E}}} \\]\nAs mentioned previously, if we assume normality within groups, then, under the null, \\(F\\) follows the F-distribution with \\(k - 1\\) and \\(n - k\\) degrees of freedom, respectively, where \\(k\\) is the number of groups and \\(n\\) is the combined number of observations: \\[ F = \\frac{\\mathrm{MS}_\\mathrm{G}}{\\mathrm{MS}_{\\mathrm{E}}}  \\stackrel{H_0}{\\sim} F_{k - 1, \\ n - k} \\]\nSince we reject only for large values of \\(F\\), our p-values are always computed as upper-tail probabilities:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#p-values-in-anova",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#p-values-in-anova",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "p-Values in ANOVA",
+    "text": "p-Values in ANOVA"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#anova-tables",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#anova-tables",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "ANOVA Tables",
+    "text": "ANOVA Tables\n\nAs mentioned previously, computing \\(\\mathrm{MS}_{\\mathrm{G}}\\) and \\(\\mathrm{MS}_{\\mathrm{E}}\\) is not particularly challenging, but it can be quite tedious.\n\nThe process can be somewhat illuminating, though, so I have put a question on this week’s homework walking you through how to perform an ANOVA by hand.\n\nAs such, computer software is usually utilized to carry out an ANOVA.\nOften times, the results of such a computer-generated ANOVA are displayed in what is known as an ANOVA Table.\nI find ANOVA tables to be best described by way of an example."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#example",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#example",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Example",
+    "text": "Example\n\n\n\n\n\n\n\nReference Example 1\n\n\n\n\nA state official would like to determine whether or not the average fluoride levels in the water supplies across three cities, called A, B, and C, are the same.\nTo that end, they took a sample of 100 fluoride measurements from city A, 110 from city B, and 100 from city C.\n\n\n\n\n\n\n\nAfter running an ANOVA in a computer software, the following output was produced:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDF\nSum Sq\nMean Sq\nF value\nPr(>F)\n\n\n\n\nBetween Groups\n2\n0.541799\n0.2709\n1.30682497808\n0.272179497817\n\n\nResiduals\n307\n63.6399\n0.207296\n\n\n\n\n\n\n\nLet’s go through this table in more detail."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#interpreting-an-anova-table",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#interpreting-an-anova-table",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Interpreting an ANOVA Table",
+    "text": "Interpreting an ANOVA Table\n\n\n\n\n\n\n\n\n\n\n\n\n\nDF\nSum Sq\nMean Sq\nF value\nPr(>F)\n\n\n\n\nBetween Groups\n2\n0.343981\n0.171991\n0.927001041587\n0.396843557892\n\n\nResiduals\n307\n56.9591\n0.185534\n\n\n\n\n\n\n\n\n\nThe DF column gives the degrees of freedom of the resulting F-statistic.\n\nRecall that these are meant to be \\(k - 1\\) and \\(n - k\\) respectively.\n\\(k\\) is the number of groups (i.e. 3, in this example), hence the numerator d.f. of 2.\n\\(n\\) is the total number of observations (i.e. 100 + 110 + 100 = 310, in this example), hence the denominator d.f. of 307 (310 - 3 = 307).\n\nThe rownames (“Between Groups” and “Residuals”) refer to whether the specified entry is in relation to a between group calculation or a within group calculation.\n\nThe reason for calling the second row “Residuals” instead of “Within Group” will become clear next week, after we talk about Regression."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#interpreting-an-anova-table-1",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#interpreting-an-anova-table-1",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Interpreting an ANOVA Table",
+    "text": "Interpreting an ANOVA Table\n\n\n\n\n\n\n\n\n\n\n\n\nDF\nSum Sq\nMean Sq\nF value\nPr(>F)\n\n\n\n\nBetween Groups\n2\n0.343981\n0.171991\n0.927001041587\n0.396843557892\n\n\nResiduals\n307\n56.9591\n0.185534\n\n\n\n\n\n\n\n\nThe Sum Sq column is precisely the sum of squares between groups and the sum of squared errors, SSG and SSE respectively.\nThe Mean Sq entries are found by dividing the corresponding Sum Sq entry by the corresponding degree of freedom.\n\nThat is: 0.171991 = 0.343981 / 2\nAnd: 0.185534 = 56.9591 / 307\n\nFinally, the F value is simply the ration of the two Mean Sq values, and represents the value of our test statistic.\n\nThe Pr(>F) is just our p-value."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#analyzing-the-data",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#analyzing-the-data",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Analyzing the Data",
+    "text": "Analyzing the Data\n\nMaybe that was a little too opaque.\nIf you’d like, there is the actual data:\n\n\n\n\n                A          B               C\n1     1.765793252  1.0969903    0.8893372313\n2     1.457639487  0.2870172     1.673980678\n3    0.3272998539  0.6808363     1.251111092\n4     1.095808075  1.2379006    0.9022573626\n5     1.410667987  0.9922533    0.7675894536\n6    0.7399572196  0.8899447     1.117615437\n7     1.232755793  0.9316065    0.3737125741\n8     1.154274263  1.3892834      1.67516293\n9     1.102145715  1.3327322     1.296435132\n10    1.012699895  0.7350924     1.607457771\n11    1.316513095  1.1671763     0.816422448\n12    1.701518687  0.8616771      1.45467294\n13   0.6174671647  2.0117302     1.379557127\n14    1.614137039  0.7542573    0.3801190768\n15    1.214315065  0.9248685     1.137032315\n16    1.322568806  0.9104472     1.211800026\n17   0.5316988941  0.8743895    0.8112870512\n18    1.167568439  1.1064417    0.9079229895\n19    1.842268501  1.1592197     1.266283383\n20   0.5600975571  0.4025717     1.052936953\n21   0.1111358597  0.8207547    0.6178776414\n22   0.2283138521  0.5218210     1.336153889\n23    1.233035082  1.5444821     1.172517814\n24    2.292483665  2.0361300     1.182130396\n25    1.661845627  1.6032929     1.113093457\n26    1.936311107  1.1884932     1.272059779\n27    1.149574608  1.4590064    0.9412990966\n28    1.798998189  1.1167241    0.6817587653\n29    0.964376006  1.7126866    0.7361788226\n30    1.406602092  1.3171558     1.567508811\n31   0.9663414057  0.9580213    0.1620266063\n32   0.8253454929  0.5981795     1.313243321\n33    1.166354148  0.7940150    0.4209655028\n34   0.8619289925  1.1755322    0.3460173367\n35     1.75423654  0.5596656    0.6170441472\n36     1.19750664  0.9612827    0.9541098688\n37    1.300104994  1.5859705     1.398728351\n38   0.9311838315  1.0617239     0.305719329\n39    1.728236132  1.8441543     1.823333996\n40    0.734015249  1.6288662     1.593675665\n41    1.430115776  0.9349482     1.010341883\n42   0.9245640543  0.5062758    0.9393893861\n43   0.6302833201  1.0307835    0.6409104121\n44   0.8553313916  0.8576851     1.334618267\n45   0.6977044289  1.2011012     1.100960662\n46   0.9936511806  1.6957632     1.705428937\n47    0.930429877  0.6007584    0.7612029733\n48    1.256084968  0.8945088     1.316574767\n49    1.382576335  1.1829400     1.053627858\n50    1.026289871  1.5039893    0.6888426861\n51    1.087047332  1.2542858     1.926036819\n52    1.244547102  1.2157191     1.195822426\n53   0.8300604643  1.5878198     1.349114526\n54     1.45408001  1.2474061    0.5891445312\n55    1.521112369  0.9551983    0.7448206699\n56    1.201790399  1.0729141       1.1078628\n57    2.297351832  0.7671714    0.8069951795\n58    1.558729469  1.2686659     1.340910022\n59    1.043863764  1.4270002     1.267264358\n60   0.9189097764 -0.1418387    0.7179455626\n61    0.983908872  1.5372595     1.156821193\n62   0.8491355502  1.0273917      1.07181121\n63    1.664392577  1.2343554    0.9961661192\n64   0.7510949848  1.3149496     0.553034481\n65    1.059438908  0.1319587    0.6940211732\n66   0.8353519595  0.5716283     1.164702828\n67    1.623091428  0.9167595     1.526293084\n68   0.3907219854  0.7334437    0.6334109797\n69   0.9187504084  1.1596691     1.617731702\n70    1.039047154  0.8440360      1.15219132\n71    1.259678211  0.3655715    0.4985811837\n72    1.330451451  1.2949189     1.215525468\n73   0.9921050538  1.4900517     1.468598686\n74    1.594536229  1.2757410     1.188977611\n75    1.257376889  0.7648802     2.113607293\n76    2.333825528  0.9456562     1.208900453\n77   0.3458392564  1.2693712     1.471653814\n78    1.410300332  1.2912796     1.074960214\n79   0.5774337312  1.4527445     1.511033358\n80   0.7009955912  0.9322296 -0.008007406026\n81    2.092542296  0.4816478    0.6841148682\n82    1.972407074  0.7784213    0.9060748612\n83   0.1719072597  1.2635539     1.296767106\n84   0.9886131504  1.3475898     1.154749047\n85    1.067076076  1.9400199     1.558352183\n86  0.03414394576  1.0968726      1.23062258\n87    1.075584744  1.1478458     1.163298305\n88    1.296670609  0.9790805     1.004720958\n89    1.208632573  0.8877082     1.143756914\n90   0.1028031151  1.3627101     1.443280618\n91    1.653854117  1.1913910     1.409884981\n92    1.222271988  0.9670882     1.465768561\n93    1.069043985  0.6181210    0.9620196655\n94   0.7230535196  1.0007721    0.7572245096\n95    1.455979508  0.8936071    0.8578699627\n96    1.559134576  1.5520695     1.227264384\n97   0.8589534306  1.4288504     1.795155782\n98    1.144793806  0.6410757      1.17770267\n99    1.513499311  1.5168673     1.288251183\n100    0.12274394  0.8212093     0.323627882\n101            NA  1.1032550              NA\n102            NA  1.5310975              NA\n103            NA  0.6400988              NA\n104            NA  1.1141597              NA\n105            NA  0.5978099              NA\n106            NA  0.2734801              NA\n107            NA  1.4446391              NA\n108            NA  1.0612909              NA\n109            NA  0.7210530              NA\n110            NA  0.4153793              NA"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#analyzing-the-data-1",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#analyzing-the-data-1",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Analyzing the Data",
+    "text": "Analyzing the Data\n\nWhoops- maybe that’s too detailed.\nAny ideas on how we might be able to get a better sense of the data that doesn’t involve looking at all those numbers?\nMaybe… something we learned in Week 1?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#checking-assumptions",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#checking-assumptions",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Checking Assumptions",
+    "text": "Checking Assumptions\n\nFinally, I should mention: every good statistician and data scientists starts by checking assumptions.\nOne of the key assumptions in ANOVA is that observations within each group are normally distributed.\nHow can we check that?\n\nThat’s right: QQ-plots!\n\nIn the upcoming lab, you’ll begin to start talking about how to start statistical analyses.\n\nSpecifically, you will learn about something called Exploratory Data Analysis (EDA), part of which entails producing any diagnostic tools you may need to produce in order to ensure assumptions are being satisfied!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#qq-plots-for-the-fluoride-dataset",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#qq-plots-for-the-fluoride-dataset",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "QQ-Plots for the Fluoride Dataset",
+    "text": "QQ-Plots for the Fluoride Dataset"
+  },
+  {
     "objectID": "Pages/Lectures/Lecture00/Lec00.html#course-staff",
     "href": "Pages/Lectures/Lecture00/Lec00.html#course-staff",
     "title": "PSTAT 5A: Lecture 00",
@@ -3749,7 +3931,7 @@
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Tuesday, July 25, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\nQz01 Solns\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nMultiple Choice: Blank Solns\nFree Response: Blank Solns\n\n\nWorksheet 02: Work on the MT1 Practice Problems posted under the “Exam Prep” page\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\nSolns\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\nQz02 Solns\n\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\nSolns\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n\nT-Table\n\n14: Hypothesis Testing for Proportions\n15: Review\n\nFinal answer for Chalkboard Exercise 2 is approximately 0.2001. Be sure to check the Binomial Conditions!\n\n16: Midterm 2\n\nWorksheet 04: Work on the MT2 Practice Problems posted under the “Exam Prep” page\nLab 04  Simulations, Sampling, and Loops\nSolns\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing, Part II\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 05\nLab 05  Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\nWorksheet 06\nLab06: Exploratory Data Analysis"
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Wednesday, July 26, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\nQz01 Solns\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nMultiple Choice: Blank Solns\nFree Response: Blank Solns\n\n\nWorksheet 02: Work on the MT1 Practice Problems posted under the “Exam Prep” page\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\nSolns\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\nQz02 Solns\n\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\nSolns\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n\nT-Table\n\n14: Hypothesis Testing for Proportions\n15: Review\n\nFinal answer for Chalkboard Exercise 2 is approximately 0.2001. Be sure to check the Binomial Conditions!\n\n16: Midterm 2\n\nWorksheet 04: Work on the MT2 Practice Problems posted under the “Exam Prep” page\nLab 04  Simulations, Sampling, and Loops\nSolns\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing, Part II\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 05\nLab 05  Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\nWorksheet 06\nLab06: Exploratory Data Analysis"
   },
   {
     "objectID": "Pages/calendar.html",
