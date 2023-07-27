@@ -1589,6 +1589,349 @@
     "text": "Extensions\n\nSpecifically, we would take the same test statistic (which would still follow the same distribution under the null) and use the decision rule \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\mathrm{TS} > c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] where \\(c\\) is the appropriate quantile of the approximate t distribution (with degrees of freedom given by the Satterthwaite Approximation).\nA similar result holds for the lower-tailed test- I encourage you to work it out on your own."
   },
   {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#taking-stock",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#taking-stock",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Taking Stock",
+    "text": "Taking Stock\n\nLet’s start off today’s lecture by taking stock of what we’ve done in this class so far.\nWe started off by talking about descriptive statistics, which seems to describe data.\n\nThese descriptions can be visual (e.g. boxplots, scatterplots, etc.) or numerical (e.g. measures of central tendency, measures of spread, etc.)\n\nNext, we talked about probability, which sought to give us a framework with which to discuss randomness.\n\nKey notions include: random variables, and distributions (e.g. uniform, normal, etc.)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#taking-stock-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#taking-stock-1",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Taking Stock",
+    "text": "Taking Stock\n\nAfter that, we spent a few weeks talking about inference.\n\nThis refers to the situation in which we have a population governed by a parameter, and we wish to take samples from this population and use these samples to make inferences about the population parameter.\nWe also discussed how to compare population means across multiple populations, using two-sample t-tests and ANOVA."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#scatterplots-and-trends",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#scatterplots-and-trends",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Scatterplots and Trends",
+    "text": "Scatterplots and Trends\n\nLet’s take a moment to revisit some material from Lecture 2.\nSpecifically, suppose we have data of the form \\(\\{(y_i, \\ x_i)\\}_{i=1}^{n}\\).\n\nFor simplicity’s sake, let’s assume both x and y are numerical.\n\nWe have previously seen that the best way to visualize the relationship between y and x is with a scatterplot"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#no-relationship",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#no-relationship",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "No Relationship",
+    "text": "No Relationship\n\nSometimes, two variables will have no relationship at all:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#statistical-modeling",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#statistical-modeling",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Statistical Modeling",
+    "text": "Statistical Modeling\n\nThe goal of statistical modeling, loosely speaking, is to try and model the relationship between x and y.\nSpecifically, we assume the relationship takes the form \\[ \\texttt{y} = f(\\texttt{x}) + \\texttt{noise} \\] where \\(f()\\) is some function (e.g. linear, nonlinear, etc.)\nHang on, what’s the noise term doing?\nWell, take a look at the previous scatterplots. Even though many of these display (what we visually would describe as) relationships between x and y, the datapoints do not fall perfectly along a single curve."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#statistical-modeling-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#statistical-modeling-1",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Statistical Modeling",
+    "text": "Statistical Modeling\n\nAs a concrete example, suppose y represents weight and x represents height.\nWe do believe there would be some sort of a positive association between weight and height (taller people tend to, in general, weigh more) and we may even assume the relationship is linear.\nHowever, just because we know someone’s height, we don’t exactly know what their weight will be.\n\nAgain, this is because there is uncertainty and randomness inherent in pretty much everything!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#terminology",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#terminology",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Terminology",
+    "text": "Terminology\n\nAlright, so: given variables y and x, we assume the relationship between them can be modeled as \\[ \\texttt{y} = f(\\texttt{x}) + \\texttt{noise} \\]\nHere is some terminology we use:\n\ny is referred to as the response variable, or sometimes the dependent variable.\nx is referred to as the explanatory variable, or sometimes the independent variable.\nThe function \\(f()\\) is sometimes referred to as the signal function."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#terminology-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#terminology-1",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Terminology",
+    "text": "Terminology\n\nWe also have some additional terminology about the entire model, based on the type of the response variable.\n\nIf y is numerical, we call the resulting model a regression model (or we just say we are in a regression setting)\nIf y is categorical, we call the resulting model a classification model (or we just say we are in a classification setting)\n\nSo, for example, trying to model the relationship between weight and height (assuming weight is our response variable) is a regression problem, since weight is a numerical variable."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#classification-problem",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#classification-problem",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Classification Problem",
+    "text": "Classification Problem\n\nAs an illustration of a classic classification problem, suppose we have access to a roster of passengers on the Titanic.\n\nFor those who don’t know, the RMS Titanic was a British passenger line that crahsed into an iceberg on April 15, 1912.\n\nTragically, not all passengers survived.\nOne question we may want to ask is: how did various factors (e.g. class, gender, etc.) affect whether or not a given passenger survived?\n\nFor instance, since women and children boarded lifeboats first, it may be plausible surmise that women and children had a higher likelihood of surviving."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#classification-problem-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#classification-problem-1",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Classification Problem",
+    "text": "Classification Problem\n\nNotice how here, the response variable (i.e. whether or not someone survived) is a binary variable; that is, it takes only one of two values (survived or did not survive). As such, this is a classification problem.\n\nI should note: perhaps confusingly, a problem in which the response is binary is sometimes called logistic regression.\nBut, that is a bit of a misnomer- it is technically a classification problem, since the response variable is categorical.\n\nBy the way, there is an actual dataset on the Titanic at https://www.kaggle.com/competitions/titanic\nAgain, we won’t have a chance to talk about logistic regression in this class- for that, I refer you to a Machine Learning class like PSTAT 131/231!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#multivariate-models",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#multivariate-models",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Multivariate Models",
+    "text": "Multivariate Models\n\nWe don’t have to restrict ourselves to modeling the relationship between a response variable and a single explanatory variable.\n\nFor example, suppose y measures income.\nThere are several factors that might contribute to someone’s monthly income: things like education_level, gender, industry, etc.\n\nWe can easily adapt a linear regression model to allow for multiple explanatory variables, which leads to what is known as a multivariate regression/classification model: \\[ \\texttt{y} = f(\\texttt{x}_1, \\ \\cdots , \\ \\texttt{x}_k) + \\texttt{noise} \\]\n\nA full treatment of multivariate models requires linear alebra, so I refer you to a course like PSTAT 126 or PSTAT 131/231 for further details."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#linear-models",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#linear-models",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Linear Models",
+    "text": "Linear Models\n\nFor now, let’s focus on modeling the relationship between a numerical response variable and a single numerical explanatory variable: \\[ \\texttt{y} = f(\\texttt{x}) + \\texttt{noise} \\]\nOf particular interest to statisticians are the class of linear models, which assume a linear form for the signal function.\nRecall that a line is described by two parameters: an intercept and a slope. As such, to say we are assuming a “linear form” for \\(f()\\) is to say we are assuming \\(f(x) = \\beta_0 + \\beta_1 \\cdot x\\), so our model becomes \\[ \\texttt{y} = \\beta_0 + \\beta_1 \\cdot \\texttt{x} + \\texttt{noise} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#strength-of-a-relationship",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#strength-of-a-relationship",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Strength of a Relationship",
+    "text": "Strength of a Relationship\n\nNow, before we delve into the mathematics and mechanics of model fitting, there is another thing we should be aware of.\nAs an example, consider the following two scatterplots:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBoth scatterplots display a positive linear trend. However, the relationship between Y2 and X2 seems to be “stronger” than the relationship between Y1 and X1, does it not?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#correlation-coefficient",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#correlation-coefficient",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Correlation Coefficient",
+    "text": "Correlation Coefficient\n\nUltimately, we would like to develop a mathematical metric to quantify not only the relationship between two variables, but also the strength of the relationship between these two variables.\nThis quantity is referred to as the correlation coefficient.\nNow, it turns out there are actually a few different correlation coefficients out there. The one we will use in this class (and one of the metrics that is very widely used by statisticians) is called Pearson’s Correlation Coefficient, or often just Pearson’s r (as we use the letter r to denote it.)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#pearsons-r",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#pearsons-r",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Pearson’s r",
+    "text": "Pearson’s r\n\nGiven two sets \\(X = \\{y_i\\}_{i=1}^{n}\\) and \\(Y = \\{y_i\\}_{i=1}^{n}\\) (note that we require the two sets to have the same number of elements!), we compute r using the formula \\[ r = \\frac{1}{n - 1} \\sum_{i=1}^{n} \\left( \\frac{x_i - \\overline{x}}{s_X} \\right) \\left( \\frac{y_i - \\overline{y}}{s_Y} \\right)  \\] where:\n\n\\(\\overline{x}\\) and \\(\\overline{y}\\) denote the sample means of \\(X\\) and \\(Y\\), respectively\n\\(s_X\\) and \\(s_Y\\) denote the sample standard deviations of \\(X\\) and \\(Y\\), respectively."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#example",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#example",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Example",
+    "text": "Example\n\nI find it useful to sometimes consider extreme cases, and ensure that the math matches up with our intuition.\nFor example, consider the sets \\(X = \\{1, 2, 3\\}\\) and \\(Y = \\{1, 2, 3\\}\\).\nFrom a scatterplot, I think we would all agree that \\(X\\) and \\(Y\\) have a positive linear relationship, and that the relationship is very strong!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#example-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#example-1",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Example",
+    "text": "Example\n\nIndeed, \\(\\overline{x} = 2 = \\overline{y}\\) and \\(s_X = 1 = s_Y\\), meaning \\[\\begin{align*}\nr   & = \\frac{1}{3 - 1} \\left[ \\left( \\frac{1 - 2}{1} \\right) \\left( \\frac{1 - 2}{1} \\right)  + \\left( \\frac{2 - 2}{1} \\right) \\left( \\frac{2 - 2}{1} \\right)  \\right.   \\\\\n  & \\hspace{45mm} \\left. +  \\left( \\frac{3 - 2}{1} \\right) \\left( \\frac{3 - 2}{1} \\right)  \\right] \\\\\n  & = \\frac{1}{2} \\left[ 1 + 0 + 1 \\right] = \\boxed{1}\n\\end{align*}\\]\nIt turns out, r will always be between \\(-1\\) and \\(1\\), inclusive, regardless of what two sets we are comparing!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#interpretation",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#interpretation",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Interpretation",
+    "text": "Interpretation\n\nSo, here is how we interpret the value of r.\n\nThe sign of r (i.e. whether it is positive or negative) indicates whether or not the linear association between the two variables is positive or negative.\nThe magnitude of r indicates how strong the linear relationship between the two variables is, with magnitudes close to \\(1\\) or \\(-1\\) indicating very strong linear relationships.\nAn r value of 0 indicates no linear relationship between the variables."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#important-distinction",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#important-distinction",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Important Distinction",
+    "text": "Important Distinction\n\nNow, something that is very important to mention is that r only quantifies linear relationships- it is very bad at quantifying nonlinear relationships.\nFor example, consider the following scatterplot:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#important-distinction-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#important-distinction-1",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Important Distinction",
+    "text": "Important Distinction\n\nI think we would all agree that Y and X have a fairly strong relationship.\nHowever, the correlation between Y and X is actually only 0.1953333!\nSo, again- r should only be used as a determination of the strength of linear trends, not nonlinear trends."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#your-turn",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#your-turn",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Your Turn!",
+    "text": "Your Turn!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#your-turn-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#your-turn-1",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 1\n\n\n\n\nCompute the correlation between the following two sets of numbers: \\[\\begin{align*}\n  \\boldsymbol{x}    & = \\{-1, \\ 0, \\ 1\\}    \\\\\n  \\boldsymbol{y}    & = \\{1, \\ 2, \\ 0\\}\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#leadup",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#leadup",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Leadup",
+    "text": "Leadup\n\nThere is another thing to note about correlation.\nLet’s see this by way of an example: consider the following two scatterplots:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBoth cor(X, Y1) and cor(X, Y2) are equal to 1, despite the fact that a one unit increase in x corresponds to a different unit increase in y1 as opposed to y2."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#leadup-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#leadup-1",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Leadup",
+    "text": "Leadup\n\nSo, don’t be fooled- the magnitude of r says nothing about how a one-unit increase in x translates to a change in y!\n\nAgain, the magnitude of r only tells us how strongly the two variables are related.\n\nTo figure out exactly how a change in x translates to a change in y, we need to return to our model."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#regression-problem",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#regression-problem",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Regression Problem",
+    "text": "Regression Problem\n\nAs a concrete example, let’s examine a dataset that contains several measurements on heights and weights:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#regression-model",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#regression-model",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Regression Model",
+    "text": "Regression Model\n\nLetting y denote our response variable (weight) and x denote our explanatory variable (height), our model is \\[ \\texttt{y} = \\beta_0 + \\beta_1 \\cdot \\texttt{x} + \\texttt{noise} \\]\n\nIf you wanted to be a little more explicit, you could also write \\[ \\texttt{weight} = \\beta_0 + \\beta_1 \\cdot (\\texttt{height}) + \\texttt{noise} \\]\n\nUltimately, we would like to know the values of \\(\\beta_0\\) and \\(\\beta_1\\).\nHowever, we will never be able to determine their values exactly!\nWhy? Well, take a look at the model again- though we are assuming a linear relationship between height and weight, our weight observations contain some noise, the magnitude of which we never get to see!\n\nIn this way, we can think of \\(\\beta_0\\) and \\(\\beta_1\\) as population parameters."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#fitting-the-model",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#fitting-the-model",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Fitting the Model",
+    "text": "Fitting the Model\n\nOur goal, therefore, is to try and determine good estimators \\(\\widehat{\\beta}_0\\) and \\(\\widehat{\\beta}_1\\) of \\(\\beta_0\\) and \\(\\beta_1\\), respectively.\nIn the more general setting, given a model \\[ \\texttt{y} = f(\\texttt{x}) + \\texttt{noise} \\] the goal of model fitting is to take data \\(\\{(y_i, \\ x_i)\\}_{i=1}^{n}\\) and use it to construct a function \\(\\widehat{f}()\\) that we believe best approximates the function \\(f():\\) \\[ \\widehat{\\texttt{y}} = \\widehat{f}(\\texttt{x}) + \\texttt{noise} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#height-and-weight",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#height-and-weight",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Height and Weight",
+    "text": "Height and Weight\n\nOkay, back to our height and weight example:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#height-and-weight-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#height-and-weight-1",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Height and Weight",
+    "text": "Height and Weight\n\nThe regression problem basically boils down to finding the line that best fits the data.\nThe specific line we will discuss in a bit is called the ordinary least squares line (or just OLS line):"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#simple-linear-regression",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#simple-linear-regression",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Simple Linear Regression",
+    "text": "Simple Linear Regression\n\nHere is how simple linear regression works.\nWe are given observations \\(\\{(y_i, \\ x_i)\\}_{i=1}^{n}\\) on a response variable y and an explanatory variable x.\nIn simple linear regression, we adopt the following model: \\[ \\texttt{y} = \\beta_0 + \\beta_1 \\cdot \\texttt{x} + \\texttt{noise} \\]\nOur goal is to use the data \\(\\{(y_i, \\ x_i)\\}_{i=1}^{n}\\) to determine suitable estimators for \\(\\beta_0\\) and \\(\\beta_1\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#simple-linear-regression-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#simple-linear-regression-1",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Simple Linear Regression",
+    "text": "Simple Linear Regression\n\nHere’s a visual way of thinking about this. Consider the following scatterplot:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#goals",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#goals",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Goals",
+    "text": "Goals\n\n\nWe are assuming that there exists some true linear relationship (i.e. some “fit”) between y and x. But, because of natural variability due to randomness, we cannot figure out exactly what the true relationship is."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#goals-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#goals-1",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Goals",
+    "text": "Goals\n\n\nFinding the “best” estimate of the signal function is, therefore, akin to finding the line that “best” fits the data."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#line-of-best-fit",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#line-of-best-fit",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Line of Best Fit",
+    "text": "Line of Best Fit\n\nNow, if we are to find the line that best fits the data, we first need to quantify what we mean by “best”.\nHere is one idea: consider minimizing the average distance from the datapoints to the line.\nAs a measure of “average distance from the points to the line”, we will use the so-called residual sum of squares (often abbreviated as RSS)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#residuals",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#residuals",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Residuals",
+    "text": "Residuals\n\nThe ith residual is defined to be the quantity \\(e_i\\) below:\n\n\n\n\n\nRSS is then just \\(\\displaystyle \\mathrm{RSS} = \\sum_{i=1}^{n} e_i^2\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#results",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#results",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Results",
+    "text": "Results\n\nIt turns out, using a bit of Calculus, the estimators we seek (i.e. the ones that minimize the RSS) are \\[\\begin{align*}\n\\widehat{\\beta_1}   & = \\frac{\\sum\\limits_{i=1}^{n} (x_i - \\overline{x})(y_i - \\overline{y})}{\\sum\\limits_{i=1}^{n} (x_i - \\overline{x})^2}    \\\\\n\\widehat{\\beta_0}   & = \\overline{y} - \\widehat{\\beta_1} \\overline{x}\n\\end{align*}\\]\nThese are what are known as the ordinary least squares estimators of \\(\\beta_0\\) and \\(\\beta_1\\), and the line \\(\\widehat{\\beta_0} + \\widehat{\\beta_1} x\\) is called the ordinary least-squares regression line (or just OLS regression line, for short).\nPerhaps an example may illustrate what I am talking about."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#example-2",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#example-2",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Example",
+    "text": "Example"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#example-3",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#example-3",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Example",
+    "text": "Example\n\n\n\\(\\widehat{\\beta_0} =\\) -0.2056061; \\(\\widehat{\\beta_1} =\\) -2.1049432.\nI.e. the equation of the line in blue is -0.2056061 + -2.1049432 * x."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#fitted-values",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#fitted-values",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Fitted Values",
+    "text": "Fitted Values\n\nLet’s return to our cartoon picture of OLS regression:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#fitted-values-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#fitted-values-1",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Fitted Values",
+    "text": "Fitted Values\n\nNotice that each point in our dataset (i.e. the blue points) have a corresponding point on the OLS regression line:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#fitted-values-2",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#fitted-values-2",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Fitted Values",
+    "text": "Fitted Values\n\nThese points are referred to as fitted values; the y-values of the fitted values are denoted as \\(\\widehat{y}_i\\).\nIn this way, the OLS regression line is commonly written as a relationship between the fitted values and the x-values: \\[ \\widehat{y} = \\widehat{\\beta_0} + \\widehat{\\beta_1} x \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#back-to-height-and-weight",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#back-to-height-and-weight",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Back to height and weight",
+    "text": "Back to height and weight\n\nBefore we work through the math once, let’s apply this technique to the height and weight data from before."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#back-to-height-and-weight-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#back-to-height-and-weight-1",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Back to height and weight",
+    "text": "Back to height and weight\n\nUsing a computer software, the OLS regression line can be found to be:\n\n\n\n\n\n\n\n\n\n\n\n\nSpecifically, \\(\\widehat{\\beta_0} =\\) 3.366744 and \\(\\widehat{\\beta_1} =\\) 0.9790114\n\n\n\n\nWe will return to the notion of fitted values in a bit."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#back-to-height-and-weight-2",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#back-to-height-and-weight-2",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Back to height and weight",
+    "text": "Back to height and weight\n\nA quick note:\nThough there was no way to know this, the true \\(\\beta_1\\) was actually \\(1.0\\). Again, this is just to demonstrate that the OLS estimate \\(\\widehat{\\beta_1}\\) is just that- an estimate!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#worked-out-example",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#worked-out-example",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\nAlright, let’s work through a computation by hand once.\nSuppose we have the variables \\[\\begin{align*}\n\\boldsymbol{x}    & = \\{3, \\ 7, \\ 8\\}   \\\\\n\\boldsymbol{y}    & = \\{20, \\ 14, \\ 17\\}\n\\end{align*}\\] and suppose we wish to construct the least-squares regression line when regressing \\(\\boldsymbol{y}\\) onto \\(\\boldsymbol{x}\\).\nFirst, we compute \\[\\begin{align*}\n\\overline{x}    & = 6   \\\\\n\\overline{y}    & = 17\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#worked-out-example-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#worked-out-example-1",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\nNext, we compute \\[\\begin{align*}\n\\sum_{i=1}^{n} (x_i - \\overline{x})^2   & = (3 - 6)^2 + (7 - 6)^2 + (8 - 6)^2 = 14   \\\\\n\\sum_{i=1}^{n} (y_i - \\overline{y})^2   & = (20 - 17)^2 + (14 - 17)^2 + (17 - 17)^2 = 18\n\\end{align*}\\]\nAdditionally, \\[\\begin{align*}\n\\sum_{i=1}^{n} (x_i - \\overline{x})(y_i - \\overline{y})   & = (3 - 6)(20 - 17) + (7 - 6)(14 - 17)    \\\\[-7mm]\n  & \\hspace{10mm} + (8 - 6)(17 - 17)    \\\\[5mm]\n  & = -12\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#worked-out-example-2",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#worked-out-example-2",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\nTherefore, \\[ \\widehat{\\beta_1} = \\frac{\\sum_{i=1}^{n} (x_i - \\overline{x})(y_i - \\overline{y})}{\\sum_{i=1}^{n} (x_i - \\overline{x})^2}   = \\frac{-12}{14} = - \\frac{6}{7} \\]\nAdditionally, \\[ \\widehat{\\beta_0} = \\overline{y} - \\widehat{\\beta_1} \\overline{x} = 17 - \\left( - \\frac{6}{7} \\right) (6) = \\frac{155}{7} \\]\nThis means that the ordinary least-squares regression line is \\[ \\boxed{\\widehat{y} = \\frac{1}{7} ( 155 - 6 x )} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#interpreting-the-coefficients",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#interpreting-the-coefficients",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Interpreting the Coefficients",
+    "text": "Interpreting the Coefficients\n\nAlright, so how do we interpret the OLS regression line? \\[\\widehat{y} = \\widehat{\\beta_0} + \\widehat{\\beta_1} x\\]\nWe can see that a one-unit increase in x corresponds to a \\(\\widehat{\\beta_1}\\)-unit increase in y.\n\nFor example, in our height and weight example we found \\[ \\widehat{\\texttt{weight}} = 3.367 + 0.979 \\cdot \\texttt{height} \\]\nThis means that a one-cm change in height is associated with a (predicted/estimated) 0.979 lbs change in weight."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#next-time",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#next-time",
+    "title": "PSTAT 5A: Lecture 20",
+    "section": "Next Time",
+    "text": "Next Time\n\nNext time, we’ll discuss how to use the OLS regression line to make predictions."
+  },
+  {
     "objectID": "Pages/Lectures/Lecture11/Lec11.html#leadup",
     "href": "Pages/Lectures/Lecture11/Lec11.html#leadup",
     "title": "PSTAT 5A: Lecture 11",
@@ -3931,7 +4274,7 @@
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Wednesday, July 26, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\nQz01 Solns\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nMultiple Choice: Blank Solns\nFree Response: Blank Solns\n\n\nWorksheet 02: Work on the MT1 Practice Problems posted under the “Exam Prep” page\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\nSolns\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\nQz02 Solns\n\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\nSolns\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n\nT-Table\n\n14: Hypothesis Testing for Proportions\n15: Review\n\nFinal answer for Chalkboard Exercise 2 is approximately 0.2001. Be sure to check the Binomial Conditions!\n\n16: Midterm 2\n\nMultiple Choice (Version A): Blank Solns\nFree Response (Yellow Version): Blank Solns\n\nNote: It was clarified during the exam that, on the GauchoSteel problem, all units were meant to be in feet (not meters); conversion between feet and meters was not expected.\n\n\n\nWorksheet 04: Work on the MT2 Practice Problems posted under the “Exam Prep” page\nLab 04  Simulations, Sampling, and Loops\nSolns\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing, Part II\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Correlation, and an Intro to Statistical Modeling\n\nWorksheet 05\nLab 05  Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\nWorksheet 06\nLab06: Exploratory Data Analysis"
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Thursday, July 27, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\nQz01 Solns\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nMultiple Choice: Blank Solns\nFree Response: Blank Solns\n\n\nWorksheet 02: Work on the MT1 Practice Problems posted under the “Exam Prep” page\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\nSolns\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\nQz02 Solns\n\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\nSolns\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n\nT-Table\n\n14: Hypothesis Testing for Proportions\n15: Review\n\nFinal answer for Chalkboard Exercise 2 is approximately 0.2001. Be sure to check the Binomial Conditions!\n\n16: Midterm 2\n\nMultiple Choice (Version A): Blank Solns\nFree Response (Yellow Version): Blank Solns\n\nNote: It was clarified during the exam that, on the GauchoSteel problem, all units were meant to be in feet (not meters); conversion between feet and meters was not expected.\n\n\n\nWorksheet 04: Work on the MT2 Practice Problems posted under the “Exam Prep” page\nLab 04  Simulations, Sampling, and Loops\nSolns\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing, Part II\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Intro to Statistical Modeling, and Correlation\n\nWorksheet 05\nSolns\nLab 05  Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/31 - 8/06)\n\n21: Regression\n22: Regression Diagnostics\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\nWorksheet 06\nLab06: Exploratory Data Analysis"
   },
   {
     "objectID": "Pages/calendar.html",
