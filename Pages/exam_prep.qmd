@@ -65,11 +65,17 @@ css: "../schedule.css"
 
 ## Final Exam
 
-- Information Document: **Coming Soon**
+- Information Document: <a href = "../Files/ExamInfo/final_exam_info.pdf" class = "button label-outline" target = "_blank">.pdf</a>
 
-- List of Topics (not comprehensive):  **Coming Soon**
+- List of Topics (not comprehensive):  <a href = "../Files/ExamInfo/final_exam_topics.pdf" class = "button label-outline" target = "_blank">.pdf</a>
 
-- Spring 2023 Exams:  **Coming Soon**
+- Spring 2023 Exams:  
+
+    - Free Response, Version A: <a href = "../Files/Past_Exams/SP23_Final_Free_Response_VA.pdf" class = "button label-outline" target = "_blank">Blank</a>
+    
+    - Multiple Choice, Version A: <a href = "../Files/Past_Exams/SP23_Final_MC.pdf" class = "button label-outline" target = "_blank">Blank</a>
+    
+    - **Please note:** There were a few versions last quarter; I've only posted one version above. Additionally, please note that solutions for last quarter's exam may not be posted.
 
 - Exam Coverpages:  **Coming Soon**
 
