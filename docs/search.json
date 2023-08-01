@@ -4557,11 +4557,256 @@
     "text": "Normal or Not?"
   },
   {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#recap",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#recap",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Recap",
+    "text": "Recap\n\nGiven observations \\(\\{(x_i, \\ y_i)\\}_{i=1}^{n}\\) on a response variable y and an explanatory variable x, we adopt the model \\[ \\texttt{y} = f(\\texttt{x}) + \\texttt{noise} \\]\nAssuming a linear signal function, we obtain a model \\[ \\texttt{y} = \\beta_0 + \\beta_1 \\cdot \\texttt{x} + \\texttt{noise} \\] and we have previously seen how to use our data to obtain good estimates \\(\\widehat{\\beta}_0\\) and \\(\\widehat{\\beta}_1\\) of \\(\\beta_0\\) and \\(\\beta_1\\), respectively.\nA natural question arises- how can we assess how good our fit is?\nTo answer this question, it turns out we need to be a little more specific in our model."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#modelling-noise",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#modelling-noise",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Modelling Noise",
+    "text": "Modelling Noise\n\nLet’s start off by rewriting our model as \\[ \\texttt{y} = f(\\texttt{x}) + \\varepsilon \\] where we use \\(\\varepsilon\\) to now denote our noise.\nThe reason we do this is we can now rewrite the model to be in terms of the individual observations \\(x_i\\) and \\(y_i\\) (as opposed to the variables x and y): \\[ y_i = f(x_i) + \\varepsilon_i \\] where \\(\\varepsilon_i\\) represents the noise associated with a single observation.\nIn a wide array of situations, it turns out to be a good idea to assume normally-distributed noise; that is, we often assume \\(\\varepsilon_i \\sim \\mathcal{N}(0, \\ \\sigma^2)\\) for all indices i."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#modelling-noise-1",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#modelling-noise-1",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Modelling Noise",
+    "text": "Modelling Noise\n\nAgain, crucially, we never get to see exactly what the observed value of \\(\\varepsilon_i\\) is for any particular i.\nHowever, if we rewrite our model as \\[ \\varepsilon_i = y_i - f(x_i) \\] then we see that we actually already have a pretty good estimator for \\(\\varepsilon_i\\)- the ith residual!\n\nThat is, \\[ e_i = y_i - \\widehat{y}_i \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#residual-plots",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#residual-plots",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Residual Plots",
+    "text": "Residual Plots\n\nThis leads us to one of the most important regression diagnostic tools: residual plots.\nPoints in a residual plot have x-coordinate given by the value of the residual and y-coordinate given by the corresponding fitted value.\nLet’s do an example quickly to illustrate how to construct one by hand, using our toy example from last lecture: \\[\\begin{align*}\n\\boldsymbol{x}    & = \\{3, \\ 7, \\ 8\\}   \\\\\n\\boldsymbol{y}    & = \\{20, \\ 14, \\ 17\\}\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#residual-plots-1",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#residual-plots-1",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Residual Plots",
+    "text": "Residual Plots\n\n\nThe fitted value of the blue point above is \\((155 - 6 \\cdot 3) / 7 = 19.57143\\) and its corresponding residual is \\(20 - 19.57143 = 0.42857\\), meaning one of the points on our residual plot will be \\[ (0.42857, \\ 19.57143) \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#residual-plots-2",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#residual-plots-2",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Residual Plots",
+    "text": "Residual Plots\n\n\nThe fitted value of the blue point above is \\((155 - 6 \\cdot 7) / 7 = 16.14286\\) and its corresponding residual is \\(14 - 16.14286 = -2.14286\\), meaning one of the points on our residual plot will be \\[ (-2.14286, \\ 16.14286) \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#residual-plots-3",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#residual-plots-3",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Residual Plots",
+    "text": "Residual Plots\n\n\nThe fitted value of the blue point above is \\((155 - 6 \\cdot 7) / 7 = 15.28571\\) and its corresponding residual is \\(17 - 15.28571 = 1.71429\\), meaning one of the points on our residual plot will be \\[ (1.71429, \\ 15.28571) \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#residual-plots-4",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#residual-plots-4",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Residual Plots",
+    "text": "Residual Plots\n\nHence, the residual plot for the above regression would be"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#residual-plots-5",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#residual-plots-5",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Residual Plots",
+    "text": "Residual Plots\n\nOne of the main purposes of examining residual plots is to see whether or not there are any remaining patterns in the data after fitting a model.\nRemember- residuals are meant to mimic the noise apparent in our observations.\nHence, if our model fit truly capture all of the relationship present in the data, we would expect the residuals to not display any noticeable pattern.\nThis leads us to how we use residual plots:\n\n\n\n\n\n\n\n\nTip\n\n\nIf the residual plot displays a pattern, then the fitted model is not capturing all of the relationship present in the data."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#residual-plots-6",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#residual-plots-6",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Residual Plots",
+    "text": "Residual Plots"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#residual-plots-7",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#residual-plots-7",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Residual Plots",
+    "text": "Residual Plots"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#residual-plots-8",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#residual-plots-8",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Residual Plots",
+    "text": "Residual Plots"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#other-diagnostics",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#other-diagnostics",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Other Diagnostics",
+    "text": "Other Diagnostics\n\nThere are, of course, many other diagnostics one can perform after performing regression.\n\nEven within the residual plot, there are other things to look for (things like homoskedasticity and heterodskedasticity)\nThere are also numerical tools we can use to diagnose our model performance.\n\nI save these for your future courses to cover."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#where-does-data-come-from-1",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#where-does-data-come-from-1",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Where Does Data Come From?",
+    "text": "Where Does Data Come From?\n\nThroughout this course, we have been using various pieces of data.\nOne thing we should discuss, as good Data Scientists, is where this data actually came from?\n\nWho collected it? How was the data collected? Who were the subjects included in the data?\n\nWe will now begin to discuss some possible answers to these questions, as well as some practical strategies for collecting data of our own!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#the-research-process",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#the-research-process",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "The Research Process",
+    "text": "The Research Process\n\nIndeed, most experiments and studies begin with some sort of question.\n\nFor example: “does this new drug truly reduce blood pressure?”\nOr: “is smoking really linked with higher rates of lung cancer?”\nOr: “what is the average mercury content in swordfish in the Atlantic Ocean?”\nOr: “over the past 3 years, what is the average number of people that have been admitted into the PSTAT major?”\n\nThe next step is something we’ve actually done several times in this class already: identify the population of interest!\n\nCan anyone tell me what the populations associated with the above research questions are?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#sampling-procedures",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#sampling-procedures",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Sampling Procedures",
+    "text": "Sampling Procedures\n\nNow, we need the most crucial piece of all: data!\n\nSpecifically, we need to collect our data.\n\nThis will entail taking a sample (or possibly many samples) from our population.\n\nThis is why it’s important to know what our population is- so we know where to start taking samples from.\n\nThere are many ways to take a sample!\nOne way is to take what is known as a simple random sample (or SRS, for short).\nA simple random sample is akin to assigning a unique number to each person in the population, and then picking some subset of these numbers uniformly at random.\n\nCrucially, in this way, each member of the population has an equal chance of being included in the sample."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#sampling-procedures-1",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#sampling-procedures-1",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Sampling Procedures",
+    "text": "Sampling Procedures\n\nNow, Simple Random Samples do have some potential downsides.\nAs an example, let’s consider the following situation: suppose our population is the workplace at some company (which we will call Company X).\nSay we are interested in determining whether or not there is systemic racism present in Company X.\nTo determine whether or not this is the case, we might take a sample and administer a survey (we’ll talk more about surveys in a bit).\nCan anyone tell me a potential problem with this setup if we were to take a Simple Random Sample?\n\nWhat if I tell you, for example, that 80% of people in this company are Caucasian and only 20% are not?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#sampling-procedures-2",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#sampling-procedures-2",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Sampling Procedures",
+    "text": "Sampling Procedures\n\nThat’s right- we run the risk of obtaining a biased sample.\nSaid differently: if we take an SRS of employees at this company, there is a high probability that this sample will contain a disproportionately larger number of Caucasians than non-Caucasians.\n\nThis would almost certainly affect the results of our survey!\n\nOne way to remedy this would be to perform what is known as in which we first divide the population into several strata (i.e. groups), and then take an SRS from each stratum.\n\nThis has the benefit of ensuring a roughly equal number of participants from each stratum, but has the downsides of being very dependent on the strata that are created.\nThat is, sometimes it won’t necessarily be obvious how to divide the population!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#sampling-procedures-3",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#sampling-procedures-3",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Sampling Procedures",
+    "text": "Sampling Procedures\n\nAnother type of sampling is called cluster sampling. Similar to stratified sampling, the population is first divided into several groups (now called clusters). But, instead of taking an SRS from every cluster we instead take an SRS of clusters and then take an SRS from each included cluster\n\nNote, then, that we are not including every cluster in our sample in this way of sampling.\nThis has the benefit of being (potentially) cheaper, but has the (obvious) downside of potentially skewing results due to the lack of certain clusters.\n\nBy the way, this is slightly different than the notion of Cluster Sampling outlined in the textbook; the textbook calls the above scheme “multistage sampling”. However, this term is not widely used, and as such we will simply refer to the above as “Cluster Sampling”, as most statisticians do."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#example",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#example",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Example",
+    "text": "Example\n\nLet’s consider an example from the textbook:\n\n\n\n\n\n\n\n\nExample (credit to OpenIntro Statistics)\n\n\n\n\nSuppose we are interested in estimating the malaria rate in a densely tropical portion of rural Indonesia. We learn that there are 30 villages in that part of the Indonesian jungle, each more or less similar to the next. Our goal is to test 150 individuals for malaria. What sampling method should be employed?\n\n\n\n\n\n\n\nAt surface level, an SRS may seem tempting.\n\nAfter all, the villages are “more or less similar to the next”.\n\nHowever, an SRS will likely contain individuals from all (or certainly most) of the villages.\nThis would require someone to actually visit these villages to collect data, which will be incredibly costly.\nAs such, an SRS is probably not a good idea."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#example-1",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#example-1",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Example",
+    "text": "Example\n\nIndeed, cluster sampling seems to be the way to go.\nSpecifically, we could assign each village to its own cluster, then select some number of villages (say, maybe 15 or so) randomly, and then select some number of people (say, 10 or so) from each of the selected villages.\nBecause the villages are “more or less similar”, the people included in our sample would likely not have many obvious differences (in the context of the experiment) and we would believe our sample to be relatively representative.\nAdditionally, the experimenter (or a volunteer) would only need to visit 15 villages instead of all 30.\nOf course, we would need to modify our statistical tools slightly to reflect the fact that our sample was actually collected via a clustering scheme- such modifications (though not too challenging) are outside the scope of this course.\n\nRight now, I’m merely trying to get us to think about the practicalities of data collection!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#bias",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#bias",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Bias",
+    "text": "Bias\n\nEven if we end up with a fairly representative sample, there are ways bias can creep in.\nSuppose we administer a survey to a representative sample of people.\nIt is not guaranteed that everyone in our sample will actually fill out the survey; even if a particular individual does attempt the survey, there is no guarantee they will finish the entirety of the survey.\nThis can lead to gaps in our data with respect to certain demographics, which is itself a form of bias.\nWe call this non-response bias."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#bias-1",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#bias-1",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Bias",
+    "text": "Bias\n\nAnother sampling strategy that is prone to bias is known as convenience sampling.\nWe can think of convenience sampling as any sort of sampling scheme where individuals who are easily accessed have a higher chance of being included in the sample.\nFor example, suppose we poll students about their views on the housing crisis in Santa Barbara.\n\nIf we conduct this poll at UCSB, we are more likely to get UCSB students and much less likely to get, say, UCLA students.\nSimilarly, if we conducted our study at UCLA, we would be more likely to include UCLA students than, say, NYU students."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#bias-2",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#bias-2",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Bias",
+    "text": "Bias\n\nSo, why would we ever use a convenience sample?\nWell, as the name suggests- it is convenient!\nConvenience samples are often both the easiest to obtain, as well as the cheapest.\nHaving said that, most statisticans agree thate convenience samples are bad. This is due to what is known as the garbage in garbage out philosophy.\nLoosely speaking, the “garbage in garbage out” philosophy states that our results are only as good as our data- even the most sophisticated statistical models will output nonsensical or skewed results if we are feeding them nonsensical or skewed data!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#another-distinction",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#another-distinction",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Another Distinction",
+    "text": "Another Distinction\n\nThere is another distinction we should be aware of: the difference between an observational study and an experiment.\nIn an observational study, no treatment is ever explicitly applied (or withheld).\nThis is in contrast to an experiment, in which researchers assign treatments to cases.\nFor example, suppose a researcher is interested in determining the relationship between cancer rates and tanning beds.\nIn an experiment, the researcher would take some sample of volunteers, split them into groups, and assign one group to tan regularly and another to not use tanning beds at all for the duration of the study.\n\nAt the end of the study, the researcher would collect data and analyze."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#another-distinction-1",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#another-distinction-1",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Another Distinction",
+    "text": "Another Distinction\n\nIf instead the researcher were to conduct an observational study, they might take some sample of people who already use tanning beds, analyze cancer rates, and repeat for a sample of people who do not use tanning beds.\n\nNote that in this case, the experimenter has not explicitly assigned a treatment (i.e. using a tanning bed) to either group. In a sense, the groups were formed around the treatment.\n\nNaturally, experiments come with all sorts of ethical considerations.\n\nFor instance, in trying to determine the relationship between cancer rates and smoking, nobody would actually force a group of participants to smoke, just for the purposes of an experiment.\nThis is one “pro” in favor of observational studies- the experimenter is not responsible for forcing a group of people to do (or not do something) they wouldn’t want to."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#another-distinction-2",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#another-distinction-2",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Another Distinction",
+    "text": "Another Distinction\n\nOf course, observational studies are not perfect either.\nSpecifically, observational studies cannot be used to identify causal relationships; they can only ever identify associations (or a lack thereof).\nRemember that assocations are not the same things as causation!\n\nSo, just because an observational study indicates a link between smoking and increased lung cancer rates, that is not sufficient justification to say that smoking causes increased lung cancer rates. To make that causal claim, an experiment would need to be conducted."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#example-2",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#example-2",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Example",
+    "text": "Example\n\n\n\n\n\n\n\nExample (OpenIntro Statistics, 1.19)\n\n\n\n\nA large college class has 160 students. All 160 students attend the lectures together, but the students are divided into 4 groups, each of 40 students, for lab sections administered by different teaching assistants. The professor wants to conduct a survey about how satisfied the students are with the course, and he believes that the lab section a student is in might affect the student’s overall satisfaction with the course.\n\nWhat type of study is this?\nSuggest a sampling strategy for carrying out this study."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#solutions",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#solutions",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Solutions",
+    "text": "Solutions\n\nBecause treatment has neither been administered nor withheld by the researcher, this is an example of an observational study.\nIn this case, stratified sampling would likely be a good idea, with each lab section assigned to a stratum. This ensures each stratum (lab section) is represented in the sample."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#longitudinal-vs.-cross-sectional-studies",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#longitudinal-vs.-cross-sectional-studies",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Longitudinal vs. Cross-Sectional Studies",
+    "text": "Longitudinal vs. Cross-Sectional Studies\n\nSuppose a particular drug claims to significantly reduce blood sugar levels. Consider the following two scenarios:\n\nAn SRS of 100 people is taken from a certain demographic, and divided randomly into two groups: group A and group B. Group A is administered the drug and Group B is not administered the drug. After a week, the researcher collects data on the blood sugar levels of the two groups.\nAn SRS of 50 people is taken from a certain demographic. These 50 people have their blood sugar levels recorded, and are then all administered the drug. A week later, the participants have their blood sugar levels recorded."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#longitudinal-vs.-cross-sectional-studies-1",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#longitudinal-vs.-cross-sectional-studies-1",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Longitudinal vs. Cross-Sectional Studies",
+    "text": "Longitudinal vs. Cross-Sectional Studies\n\nNote that both of these situations seemingly end up with the same data: 50 measurements of pre-treatment blood sugar levels, and 50 measurements of post-treatment blood sugar levels.\nHowever, we can see that these two studies are fundamentally different.\nIn the first study, people were divided into two groups (called the treatment and control groups, respectively).\nIn the second, the same 50 individuals were tracked over time.\nThis is an example of the distinction between a cross-sectional study and a longitudinal study."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#longitudinal-vs.-cross-sectional-studies-2",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#longitudinal-vs.-cross-sectional-studies-2",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Longitudinal vs. Cross-Sectional Studies",
+    "text": "Longitudinal vs. Cross-Sectional Studies\n\nIn a longitudinal study, the same set of individuals is tracked over time.\nIn a cross-sectional study, individuals are divided into several groups.\nNotice that data in longitudinal studies necessarily possess serial correlation: that is, measurements are correlated!\n\nPre-treatment measurements for, say, John, are very likely correlated with John’s post-treatment measurements since these measurements were still collected from John!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#principles-of-experimental-design",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#principles-of-experimental-design",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Principles of Experimental Design",
+    "text": "Principles of Experimental Design\n\nLet’s quickly return to our distinction between observational studies and experiments.\nSuppose it is decided that we want to conduct an experiment.\nWe then need to think very carefully about how we want to design our experiment.\nThis leads us into our final discussion for this course: Experimental Design."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#treatment-vs.-control-groups",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#treatment-vs.-control-groups",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Treatment vs. Control Groups",
+    "text": "Treatment vs. Control Groups\n\nFirst, let me make clear the distinction between treatment and control groups.\nTreatment groups are groups to which one or more treatments is/are administered.\n\nThere can potentially be multiple treatment groups; for example, we could have 4 groups each testing a different medicine\n\nTypically, we always leave at least one group “alone”; i.e. one group to which no treatment is administered. This group is called the control group.\n\nIt is also possible to have multiple control groups!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture22/Lec22.html#experimental-design",
+    "href": "Pages/Lectures/Lecture22/Lec22.html#experimental-design",
+    "title": "PSTAT 5A: Lecture 22",
+    "section": "Experimental Design",
+    "text": "Experimental Design\n\nExperimental Design loosely refers to the principles of and procedures related to setting up an experiment.\nI won’t go into this in too much detail.\nI do highly encourage you to read Section 1.4 of your textbook, as it provides a very nice summary of some of the main tenants of experimental design.\nRemember - as Data Scientists, it is very important we understand our data as much as possible before performing analyses.\n\nPart of knowing our data is knowing how it was collected, and, indeed, how we might go about collecting our own!"
+  },
+  {
     "objectID": "Pages/schedule.html",
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Monday, July 31, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\nQz01 Solns\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nMultiple Choice: Blank Solns\nFree Response: Blank Solns\n\n\nWorksheet 02: Work on the MT1 Practice Problems posted under the “Exam Prep” page\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\nSolns\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\nQz02 Solns\n\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\nSolns\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n\nT-Table\n\n14: Hypothesis Testing for Proportions\n15: Review\n\nFinal answer for Chalkboard Exercise 2 is approximately 0.2001. Be sure to check the Binomial Conditions!\n\n16: Midterm 2\n\nMultiple Choice (Version A): Blank Solns\nFree Response (Yellow Version): Blank Solns\n\nNote: It was clarified during the exam that, on the GauchoSteel problem, all units were meant to be in feet (not meters); conversion between feet and meters was not expected.\nNote: The solutions to the “households in Ethiopia” problem have been updated.\n\n\n\nWorksheet 04: Work on the MT2 Practice Problems posted under the “Exam Prep” page\nLab 04  Simulations, Sampling, and Loops\nSolns\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing, Part II\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Intro to Statistical Modeling, and Correlation\n\nWorksheet 05\nSolns\nLab 05  Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/31 - 8/06)\n\n21: Regression, Part II\n22: TBD\n23: Sampling Techniques and Experimental Design\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\nWorksheet 06\nLab 06  A Trip To the Movies"
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Tuesday, August 1, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\nQz01 Solns\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nMultiple Choice: Blank Solns\nFree Response: Blank Solns\n\n\nWorksheet 02: Work on the MT1 Practice Problems posted under the “Exam Prep” page\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\nSolns\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\nQz02 Solns\n\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\nSolns\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n\nT-Table\n\n14: Hypothesis Testing for Proportions\n15: Review\n\nFinal answer for Chalkboard Exercise 2 is approximately 0.2001. Be sure to check the Binomial Conditions!\n\n16: Midterm 2\n\nMultiple Choice (Version A): Blank Solns\nFree Response (Yellow Version): Blank Solns\n\nNote: It was clarified during the exam that, on the GauchoSteel problem, all units were meant to be in feet (not meters); conversion between feet and meters was not expected.\nNote: The solutions to the “households in Ethiopia” problem have been updated.\n\n\n\nWorksheet 04: Work on the MT2 Practice Problems posted under the “Exam Prep” page\nLab 04  Simulations, Sampling, and Loops\nSolns\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing, Part II\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Intro to Statistical Modeling, and Correlation\n\nWorksheet 05\nSolns\nLab 05  Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/31 - 8/06)\n\n21: Regression, Part II\n22: Regression Diagnostics, and Sampling Procedures\n23: TBD\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\nNo Section\nLab 06  A Trip To the Movies"
   },
   {
     "objectID": "Pages/calendar.html",
