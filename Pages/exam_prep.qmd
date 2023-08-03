@@ -79,8 +79,6 @@ css: "../schedule.css"
     
     - Free Response Final Answers: <a href = "../Files/Past_Exams/SP23_Final_Answers.pdf" class = "button label-outline" target = "_blank">`.pdf`</a>
 
-- Exam Coverpages:  **Coming Soon**
-
 - Formula Sheet:  <a href = "../Files/ExamInfo/Final_Formula_Sheet.pdf" class = "button label-outline" target = "_blank">.pdf</a>
 
-- Practice Problems: <a href = "../Files/ExamInfo/FinRev_Blank.pdf" class = "button label-outline" target = "_blank">.pdf</a> (for additional practice problems, including multiple choice ones, please consult the Spring 2023 final exam above.)
+- Practice Problems: <a href = "../Files/ExamInfo/FinRev_Blank.pdf" class = "button label-outline" target = "_blank">.pdf</a> (for additional practice problems, including multiple choice ones, please consult the Spring 2023 final exam above.) <a href = "../Files/ExamInfo/FinRev_Solns.pdf" class = "button label-outline" target = "_blank">Solns</a> 
