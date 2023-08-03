@@ -340,7 +340,7 @@
     "href": "Pages/exam_prep.html#final-exam",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Final Exam",
-    "text": "Final Exam\n\nInformation Document: .pdf\nList of Topics (not comprehensive): .pdf\nSpring 2023 Exams:\n\nFree Response, Version A: Blank\nMultiple Choice, Version A: Blank\nPlease note: There were a few versions last quarter; I’ve only posted one version above. Additionally, please note that solutions for last quarter’s exam may not be posted.\n\nExam Coverpages: Coming Soon\nFormula Sheet: Coming Soon\nPractice Problems, Part I: .pdf"
+    "text": "Final Exam\n\nInformation Document: .pdf\nList of Topics (not comprehensive): .pdf\nSpring 2023 Exams:\n\nFree Response, Version A: Blank\nMultiple Choice, Version A: Blank\nPlease note: There were a few versions last quarter; I’ve only posted one version above. Additionally, please note that full solutions for last quarter’s exam will not be posted.\nFree Response Final Answers: .pdf\n\nExam Coverpages: Coming Soon\nFormula Sheet: .pdf\nPractice Problems: .pdf (for additional practice problems, including multiple choice ones, please consult the Spring 2023 final exam above.)"
   },
   {
     "objectID": "Pages/syllabus.html",
@@ -3507,6 +3507,111 @@
     "text": "Summary\n\nWe started off by talking about the structure of data, and the data matrix.\nWe then discussed how to classify variables.\nNext, we explored graphical methods for summarizing data.\n\nBargraphs are best-suited for categorical data\nHistograms and boxplots are best-suited for numerical data\n\nWe also introduced the notions of percentiles, the median, and outliers.\nNext time we’ll discuss how to visualize the relationship between two variables.\nWe’ll also discuss some numerical summaries for data, including the mean, median, standard deviation, and IQR."
   },
   {
+    "objectID": "Pages/Lectures/Lecture23/Lec23.html#smoking",
+    "href": "Pages/Lectures/Lecture23/Lec23.html#smoking",
+    "title": "PSTAT 5A: Lecture 23",
+    "section": "Smoking",
+    "text": "Smoking\n\nI previously emphasized that observational studies cannot be used to draw causal conclusions, even if they reveal associations.\nI mentioned this is because of the potential presence of so-called confounding variables.\nLet’s think through a concrete example together.\n\n\n\n\n\n\n\n\nSetup\n\n\nA researcher would like to determine whether or not there is an association between smoking and increased rates of lung cancer. To that end, they perform an observational study in which 50 people who regularly smoke were observed along with 50 people who do not smoke. Lung cancer rates within each group were recorded at the end of the study, and the data clearly (and statistically) displays that the average lung cancer rates among smokers is higher than that among non-smokers."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture23/Lec23.html#smoking-1",
+    "href": "Pages/Lectures/Lecture23/Lec23.html#smoking-1",
+    "title": "PSTAT 5A: Lecture 23",
+    "section": "Smoking",
+    "text": "Smoking\n\nAgain, we cannot then simply conclude that smoking causes lung cancer.\nAll we can conclude is precisely what was stated above: there is statistical evidence to suggest that smoking is associated with higher lung cancer rates.\nWhy? It really boils down to asking: was the control (i.e. non-smoking) group truly similar to the treatment (i.e. smoking) group?\nFor example, what if it turns out that the group of smokers that were selected were also heavy drinkers? In that case, whether or not someone regularly drinks could be a confounding variable as it is one the researcher did not explicitly control for, but that could potentially skew results.\nAdditionally, some studies have shown that smokers tend to be predominantly male. As such, gender could also be a confounding variable."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture23/Lec23.html#confounding-variables",
+    "href": "Pages/Lectures/Lecture23/Lec23.html#confounding-variables",
+    "title": "PSTAT 5A: Lecture 23",
+    "section": "Confounding Variables",
+    "text": "Confounding Variables\n\nThe main point is: there are lots of variables that were not controlled for in this study, but that could be also contributing to the increased rates of lung cancer that was observed.\nHence, the study (as it was conducted above) cannot be used to say that smoking definitively causes lung cancer.\nNow, I’d also like to stress- even if the researcher were to re-do the study as an experiment, we still wouldn’t be able to simply declare that smoking causes lung cancer.\nTo truly establish causal relationships, one must use results from causal inference (which is outside the scope of this course)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture23/Lec23.html#case-study-admissions-at-uc-berkeley",
+    "href": "Pages/Lectures/Lecture23/Lec23.html#case-study-admissions-at-uc-berkeley",
+    "title": "PSTAT 5A: Lecture 23",
+    "section": "Case Study: Admissions at UC Berkeley",
+    "text": "Case Study: Admissions at UC Berkeley\n\nIn the 1970’s, UC Berkeley conducted an observational study to determine whether or not there was gender bias in the graduate student admittance practices at the university.\n\nA disclaimer: at the time, “gender” was treated as a binary variable with values male and female. I would like to also acknowledge that we now recognize that there are a great deal many more genders than simply “male” and “female”.\n\nOverall, the survey included 8,422 men and 4,321 women.\nOf the men 44% were admitted; of the women only 35% were admitted.\n\nThis difference was also deemed statistically significant.\n\nSo, on the surface, it does appear as though women are being disproportionately denied entry."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture23/Lec23.html#case-study-admissions-at-uc-berkeley-1",
+    "href": "Pages/Lectures/Lecture23/Lec23.html#case-study-admissions-at-uc-berkeley-1",
+    "title": "PSTAT 5A: Lecture 23",
+    "section": "Case Study: Admissions at UC Berkeley",
+    "text": "Case Study: Admissions at UC Berkeley\n\nSomething puzzling happens, however, when we take a look at the data after grouping by major:\n\n\n\n\n\n\n\n\n\nMen\n\n\nWomen\n\n\n\n\nMajor\n\n\nNum. Applicants\n\n\n% Admitted\n\n\nNum. Applicants\n\n\n% Admitted\n\n\n\n\n\n\nA\n\n\n825\n\n\n62\n\n\n108\n\n\n82\n\n\n\n\nB\n\n\n560\n\n\n63\n\n\n25\n\n\n68\n\n\n\n\nC\n\n\n325\n\n\n37\n\n\n593\n\n\n34\n\n\n\n\nD\n\n\n417\n\n\n33\n\n\n375\n\n\n35\n\n\n\n\nE\n\n\n191\n\n\n28\n\n\n393\n\n\n24\n\n\n\n\nF\n\n\n373\n\n\n6\n\n\n341\n\n\n7"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture23/Lec23.html#case-study-admissions-at-uc-berkeley-2",
+    "href": "Pages/Lectures/Lecture23/Lec23.html#case-study-admissions-at-uc-berkeley-2",
+    "title": "PSTAT 5A: Lecture 23",
+    "section": "Case Study: Admissions at UC Berkeley",
+    "text": "Case Study: Admissions at UC Berkeley\n\nNearly none of the majors on their own display this bias against women.\n\nIndeed, in Major A there almost appears to be a bias against men\n\nSo, what’s going on? How can it be that none of the majors individually display a discrimination against women, but overall they display discrimination against women?\nThe answer actually lies in how difficult each major was to get into.\nFor instance, Major A appears to have an overall 64% acceptance rate, whereas Major E appears to have an overall 53.62% acceptance rate.\n\nMajor A seems to be harder to get into than, say, Major E.\nIndeed, Majors A and B are easier to get into than majors C through F."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture23/Lec23.html#case-study-admissions-at-uc-berkeley-3",
+    "href": "Pages/Lectures/Lecture23/Lec23.html#case-study-admissions-at-uc-berkeley-3",
+    "title": "PSTAT 5A: Lecture 23",
+    "section": "Case Study: Admissions at UC Berkeley",
+    "text": "Case Study: Admissions at UC Berkeley\n\nIndeed, if we look at the Num. Applicants column within each gender, we see that, on the aggregate, men were applying to easier majors!\n\nOver half (i.e. \\((825 + 560) / (825 + 560 + 325 + 417 + 191 + 373) \\approx 51.5\\%\\)) of men applied to Majors A and B, whereas nearly 90% (i.e. $(593 + 375 + 393 + 341) / (108 + 25 + 593 + 375 + 393 + 341) $) of women applied to Majors C through F.\n\nIn other words, difficulty of major was a confounding variable that influenced the acceptance rates.\n\nAfter controlling for this variable, it was actually found that there was no significant difference in addmittance rates between men and women."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture23/Lec23.html#simpsons-paradox",
+    "href": "Pages/Lectures/Lecture23/Lec23.html#simpsons-paradox",
+    "title": "PSTAT 5A: Lecture 23",
+    "section": "Simpson’s Paradox",
+    "text": "Simpson’s Paradox\n\nWhat this shows us is that relationships between percentages in subgroups can sometimes be reversed after the subgroups are aggregated.\nThis is what we call Simpson’s Paradox."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture23/Lec23.html#on-the-subject-of-misleading",
+    "href": "Pages/Lectures/Lecture23/Lec23.html#on-the-subject-of-misleading",
+    "title": "PSTAT 5A: Lecture 23",
+    "section": "On the Subject of Misleading",
+    "text": "On the Subject of Misleading"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture23/Lec23.html#what-now-1",
+    "href": "Pages/Lectures/Lecture23/Lec23.html#what-now-1",
+    "title": "PSTAT 5A: Lecture 23",
+    "section": "What Now?",
+    "text": "What Now?\n\nAlright, so that was the last bit of new material I wanted to cover in this class.\nBut…. why did we do all of this?\nWhat was the point of this course?\n\nIf you say “the point was for me to finish my major”, well, then, fair enough!\n\nBut, more fundamentally, this course is designed to try and provide an introduction to Data Science."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture23/Lec23.html#what-now-2",
+    "href": "Pages/Lectures/Lecture23/Lec23.html#what-now-2",
+    "title": "PSTAT 5A: Lecture 23",
+    "section": "What Now?",
+    "text": "What Now?\n\nThe key operating word in this is “introduction-” we only just scratched the surface of the topics we discussed!\n\nI sometimes (affectionately) refer to PSTAT 5A as a “table of contents” of statistics and data science.\n\nEven within our own PSTAT department, there are lots of different courses that dive deeper into the subjects we discussed."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture23/Lec23.html#what-now-3",
+    "href": "Pages/Lectures/Lecture23/Lec23.html#what-now-3",
+    "title": "PSTAT 5A: Lecture 23",
+    "section": "What Now?",
+    "text": "What Now?\n\nIf you’d like to learn some more programming (and get a recap of some probability), take PSTAT 10 (where you will learn a very popular programming language among statisticians, called R).\nPSTAT 120A provides a deeper look at Probability, and some more sophisticated probability tools.\nPSTAT 120B and 120C provide a deeper look at inferential statistics, and how to answer much more interesting and complex problems than those we looked at in this course.\n\nYou’ll even learn a third, strange yet useful appraoach to probability called the Bayesian approach.\n\nInterested in Experimental Design? PSTAT 122 is devoted entirely to that!\nWant to learn more about regression (including logistic regression)? Take PSTAT 126 and 131!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture23/Lec23.html#story",
+    "href": "Pages/Lectures/Lecture23/Lec23.html#story",
+    "title": "PSTAT 5A: Lecture 23",
+    "section": "Story",
+    "text": "Story\n\nNow, I know many of you are graduating this quarter (or have recently graduated).\n\nCongratulations, by the way!!!\n\nFor those of you who are not, and especially for those of you who aren’t quite sure what you want to do, I’d like to leave you with a story.\nI encountered a student who had come into undergrad not knowing what they wanted to do at all.\nThey had a vague inkling that they might want to do math, but after a quarter switched to Econ, then Physics, and finally wound their way into the equivalent of PSTAT 5A at their undergraduate institution.\nBy the end of the quarter, they were so intrigued to learn more the decided to take the analog of 120A, and then 120B, and then, before they knew it, they had completed a degree in statistics!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture23/Lec23.html#story-1",
+    "href": "Pages/Lectures/Lecture23/Lec23.html#story-1",
+    "title": "PSTAT 5A: Lecture 23",
+    "section": "Story",
+    "text": "Story\n\nThat student…. was me!\nYears ago, I stumbled into the analog of PSTAT 5A and was so enamored by the field that here I am now, pursuing a PhD in it!\nI truly believe statistics and data science are some of the most useful and applicable fields around.\nWherever there is data, there is the need for a data scientist.\nWhenever there is uncertainty, there is the need for a statistician.\nStatistics and Data Science have far reaching applications in so many fields!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture23/Lec23.html#story-2",
+    "href": "Pages/Lectures/Lecture23/Lec23.html#story-2",
+    "title": "PSTAT 5A: Lecture 23",
+    "section": "Story",
+    "text": "Story\n\nThere is a famous quote from an extremely influential statistician named John Tukey:\n\n\n\nThe best thing about being a statistician is that you get to play in everyone’s backyard.\n\n\n\nI couldn’t agree more!\n\nThough, I would perhaps update this quote to say “statistician and/or data scientist”\n\nSo, now that you’ve learned the basics…\n\n\n…go out and play!"
+  },
+  {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#hypothesis-testing-1",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#hypothesis-testing-1",
     "title": "PSTAT 5A: Lecture 14",
@@ -4813,7 +4918,7 @@
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Wednesday, August 2, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\nQz01 Solns\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nMultiple Choice: Blank Solns\nFree Response: Blank Solns\n\n\nWorksheet 02: Work on the MT1 Practice Problems posted under the “Exam Prep” page\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\nSolns\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\nQz02 Solns\n\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\nSolns\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n\nT-Table\n\n14: Hypothesis Testing for Proportions\n15: Review\n\nFinal answer for Chalkboard Exercise 2 is approximately 0.2001. Be sure to check the Binomial Conditions!\n\n16: Midterm 2\n\nMultiple Choice (Version A): Blank Solns\nFree Response (Yellow Version): Blank Solns\n\nNote: It was clarified during the exam that, on the GauchoSteel problem, all units were meant to be in feet (not meters); conversion between feet and meters was not expected.\nNote: The solutions to the “households in Ethiopia” problem have been updated.\n\n\n\nWorksheet 04: Work on the MT2 Practice Problems posted under the “Exam Prep” page\nLab 04  Simulations, Sampling, and Loops\nSolns\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing, Part II\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Intro to Statistical Modeling, and Correlation\nQz03 Solns\n\nWorksheet 05\nSolns\n\nNOTE: There is a mistake in the solutions to Problem 2. As stated in lecture, the denominator degrees of freedom is n - k, not n - k - 1.\n\nLab 05  Markdown Syntax, Importing Data, and Manipulating Tables\nSolns (PDF)\nSolns (.ipynb)\n\n\n6\n(7/31 - 8/06)\n\n21: Regression, Part II\n22: Regression Diagnostics, and Sampling Procedures\n23: TBD\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\nNo Section\nLab 06  A Trip To the Movies"
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: Wednesday, August 2, 2023\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/26 - 7/02)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\nQz01 Solns\n\nWorksheet 01\nSolns\nLab 01  Introduction to Python\nSolns\n\n\n2\n(7/03 - 7/09)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n07: Review\n08: Midterm 1\n\nMultiple Choice: Blank Solns\nFree Response: Blank Solns\n\n\nWorksheet 02: Work on the MT1 Practice Problems posted under the “Exam Prep” page\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\nSolns\n\n\n3\n(7/10 - 7/16)\n\n09: Discrete Random Variables\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\nQz02 Solns\n\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\nSolns\n\n\n4\n(7/17 - 7/23)\n\n13: Confidence Intervals for Means\n\nT-Table\n\n14: Hypothesis Testing for Proportions\n15: Review\n\nFinal answer for Chalkboard Exercise 2 is approximately 0.2001. Be sure to check the Binomial Conditions!\n\n16: Midterm 2\n\nMultiple Choice (Version A): Blank Solns\nFree Response (Yellow Version): Blank Solns\n\nNote: It was clarified during the exam that, on the GauchoSteel problem, all units were meant to be in feet (not meters); conversion between feet and meters was not expected.\nNote: The solutions to the “households in Ethiopia” problem have been updated.\n\n\n\nWorksheet 04: Work on the MT2 Practice Problems posted under the “Exam Prep” page\nLab 04  Simulations, Sampling, and Loops\nSolns\n\n\n5\n(7/24 - 7/30)\n\n17: Hypothesis Testing, Part II\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Intro to Statistical Modeling, and Correlation\nQz03 Solns\n\nWorksheet 05\nSolns\n\nNOTE: There is a mistake in the solutions to Problem 2. As stated in lecture, the denominator degrees of freedom is n - k, not n - k - 1.\n\nLab 05  Markdown Syntax, Importing Data, and Manipulating Tables\nSolns (PDF)\nSolns (.ipynb)\n\n\n6\n(7/31 - 8/06)\n\n21: Regression, Part II\n22: Regression Diagnostics, and Sampling Procedures\n23: Ways Statistics Can Deceive\n24: Review\nFINAL EXAM: Friday, August 4 from 4 - 7pm\n\nNo Section\nLab 06  A Trip To the Movies"
   },
   {
     "objectID": "Pages/calendar.html",

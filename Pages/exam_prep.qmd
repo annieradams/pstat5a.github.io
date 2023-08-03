@@ -75,10 +75,12 @@ css: "../schedule.css"
     
     - Multiple Choice, Version A: <a href = "../Files/Past_Exams/SP23_Final_MC.pdf" class = "button label-outline" target = "_blank">Blank</a>
     
-    - **Please note:** There were a few versions last quarter; I've only posted one version above. Additionally, please note that solutions for last quarter's exam may not be posted.
+    - **Please note:** There were a few versions last quarter; I've only posted one version above. Additionally, please note that full solutions for last quarter's exam will not be posted.
+    
+    - Free Response Final Answers: <a href = "../Files/Past_Exams/SP23_Final_Answers.pdf" class = "button label-outline" target = "_blank">`.pdf`</a>
 
 - Exam Coverpages:  **Coming Soon**
 
-- Formula Sheet:  **Coming Soon**
+- Formula Sheet:  <a href = "../Files/ExamInfo/Final_Formula_Sheet.pdf" class = "button label-outline" target = "_blank">.pdf</a>
 
-- Practice Problems, Part I: <a href = "../Files/ExamInfo/FinRev_Blank.pdf" class = "button label-outline" target = "_blank">.pdf</a>
+- Practice Problems: <a href = "../Files/ExamInfo/FinRev_Blank.pdf" class = "button label-outline" target = "_blank">.pdf</a> (for additional practice problems, including multiple choice ones, please consult the Spring 2023 final exam above.)
