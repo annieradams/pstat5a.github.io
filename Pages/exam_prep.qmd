@@ -78,7 +78,11 @@ css: "../schedule.css"
     - **Please note:** There were a few versions last quarter; I've only posted one version above. Additionally, please note that full solutions for last quarter's exam will not be posted.
     
     - Free Response Final Answers: <a href = "../Files/Past_Exams/SP23_Final_Answers.pdf" class = "button label-outline" target = "_blank">`.pdf`</a>
+    
+        - **Please note:** This was updated at 6pm on Thursday August 3.
 
 - Formula Sheet:  <a href = "../Files/ExamInfo/Final_Formula_Sheet.pdf" class = "button label-outline" target = "_blank">.pdf</a>
 
+    - **Please note:** This was updated at 6pm on Thursday August 3.
+    
 - Practice Problems: <a href = "../Files/ExamInfo/FinRev_Blank.pdf" class = "button label-outline" target = "_blank">.pdf</a> (for additional practice problems, including multiple choice ones, please consult the Spring 2023 final exam above.) <a href = "../Files/ExamInfo/FinRev_Solns.pdf" class = "button label-outline" target = "_blank">Solns</a> 
