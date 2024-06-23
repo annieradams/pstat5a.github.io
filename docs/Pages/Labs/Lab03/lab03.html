@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.5.45">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="PSTAT 5A, with Ethan Marzban">
 
-<title>PSTAT 5A: Summer Session A, 2023 - Lab03</title>
+<title>Lab03 – PSTAT 5A: Summer Session A, 2024</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -18,11 +18,12 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -47,47 +48,17 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -110,7 +81,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -119,43 +96,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <style>
-    .quarto-title-block .quarto-title-banner {
-      background: #4144a6;
-    }
-    </style>
+
+      .quarto-title-block .quarto-title-banner {
+        background: #4144a6;
+      }
+</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked">
+<body>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Lab03</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
-      </button>
-    </div>
-  </nav>
-</header>
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">Lab03</h1>
+      <h1 class="title">Lab03</h1>
             <p class="subtitle lead">Descriptive Statistics</p>
                       </div>
   </div>
@@ -165,14 +163,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div class="quarto-title-meta-heading">Quarter</div>
     
       <div class="quarto-title-meta-contents">
-      PSTAT 5A, with Ethan Marzban 
+      <p class="author">PSTAT 5A, with Ethan Marzban </p>
     </div>
-      <div class="quarto-title-meta-contents">
+    <div class="quarto-title-meta-contents">
           <p class="affiliation">
               Summer Session A, 2023
             </p>
         </div>
-      </div>
+    </div>
 
   <div class="quarto-title-meta">
 
@@ -184,85 +182,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../../../index.html" class="sidebar-logo-link">
-      <img src="../../../Images/Logos_Icons/5a_hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
-      </a>
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../../../">PSTAT 5A: Summer Session A, 2023</a> 
-    </div>
-      </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-      </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Course Info</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../Pages/syllabus.html" class="sidebar-item-text sidebar-link">Syllabus</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../Pages/schedule.html" class="sidebar-item-text sidebar-link">Schedule of Topics</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../Pages/calendar.html" class="sidebar-item-text sidebar-link">Sections and Calendar</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../Pages/course_staff.html" class="sidebar-item-text sidebar-link">Course Staff / OH</a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Homework</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../Pages/hw.html" class="sidebar-item-text sidebar-link">HW and Solns</a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Exam Prep</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../Pages/exam_prep.html" class="sidebar-item-text sidebar-link">Exam Prep</a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -293,20 +212,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
+
 <hr>
 <p>It’s finally time for us to revisit our notions of <strong>descriptive statistics</strong> (from Week 1 of the course), now in the context of Python!</p>
 <section id="modules-revisited" class="level2">
 <h2 class="anchored" data-anchor-id="modules-revisited">Modules, Revisited</h2>
 <p>Before we talk about plotting, we will need to quickly talk about <strong>modules</strong> again. Recall from Lab01 that modules are Python files containing definitions for functions and classes. Up until now, we’ve been importing all functions and classes from a module using the command</p>
-<div class="cell" data-execution_count="1">
+<div id="ce9942c0" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> <span class="op">&lt;</span>module name<span class="op">&gt;</span> <span class="im">import</span> <span class="op">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>There is another way to import modules, which is the following:</p>
-<div class="cell" data-execution_count="2">
+<div id="db3c8559" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="op">&lt;</span>module name<span class="op">&gt;</span> <span class="im">as</span> <span class="op">&lt;</span>abbreviation<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For example,</p>
-<div class="cell" data-execution_count="3">
+<div id="4c17b730" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>not only imports the <code>numpy</code> module but imports it with the abbreviation (i.e.&nbsp;nickname) <code>np</code> so that we can simply write <code>np</code> in place of <code>numpy</code>.<br>
@@ -314,23 +234,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The reason this is particularly useful is because module names can sometimes be quite long, so being able to refer to the module with a shortened nickname will save a lot of time!<br>
 </p>
 <p>In general, if we import a module using</p>
-<div class="cell" data-execution_count="4">
+<div id="2acacbf4" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="op">&lt;</span>module name<span class="op">&gt;</span> <span class="im">as</span> <span class="op">&lt;</span>abbreviation<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>we reference functions from <code>&lt;module name&gt;</code> using the syntax</p>
-<div class="cell" data-execution_count="5">
+<div id="c66e6074" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>abbreviation<span class="op">&gt;</span>.<span class="op">&lt;</span>function name<span class="op">&gt;</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For example, after having imported the <code>numpy</code> module with the nickname <code>np</code>, we access the <code>sin()</code> function contained in the <code>numpy</code> module by calling</p>
-<div class="cell" data-execution_count="6">
+<div id="6f9c114e" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>np.sin()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task 1
 </div>
 </div>
@@ -339,44 +259,47 @@ Task 1
 <li><p>Import the <code>numpy</code> module as <code>np</code>, and check that <code>np.sin(0)</code> returns a value of <code>0</code>.</p></li>
 <li><p>Import the <code>datascience</code> module as <code>ds</code>, and check that</p></li>
 </ol>
-<div class="cell" data-execution_count="7">
+<div id="c976019b" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ds.Table().with_columns(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Col1"</span>, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Col2"</span>, [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>correctly displays as</p>
-<div class="cell" data-execution_count="8">
+<div id="541c2082" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display" data-execution_count="1">
-
-<table class="dataframe table table-sm table-striped">
-    <thead>
-        <tr>
-            <th>Col1</th> <th>Col2</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1   </td> <td>2   </td>
-        </tr>
-        <tr>
-            <td>2   </td> <td>3   </td>
-        </tr>
-        <tr>
-            <td>3   </td> <td>4   </td>
-        </tr>
-    </tbody>
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Col1</th>
+<th data-quarto-table-cell-role="th">Col2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>4</td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
 </div>
 </div>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Important
 </div>
 </div>
@@ -391,12 +314,12 @@ Important
 <section id="measures-of-central-tendency" class="level3">
 <h3 class="anchored" data-anchor-id="measures-of-central-tendency">Measures of Central Tendency</h3>
 <p>Recall that for a list of numbers <span class="math inline">\(X = \{x_i\}_{i=1}^{n}\)</span>, the mean is defined to be <span class="math display">\[ \overline{x} = \frac{1}{n} \sum_{i=1}^{n} x_i = \frac{1}{n} (x_1 + \cdots + x_n) \]</span> Computing the mean of a list or array of numbers in Python is relatively simple, using the <code>np.mean()</code> function [recall that we imported the <code>numpy</code> module with the abbreviation <code>np</code>, meaning <code>np.mean()</code> is a shorthand for <code>numpy.mean()</code>]. Similarly, to compute the median of a list or array we can use <code>np.median()</code>.</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task 2
 </div>
 </div>
@@ -414,12 +337,12 @@ Task 2
 <li>Range</li>
 </ul>
 <p>Sure enough, the <code>numpy</code> module contains several functions which help us compute these measures. Let’s examine each separately.</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task 3
 </div>
 </div>
@@ -431,12 +354,12 @@ Task 3
 </div>
 </div>
 <p>Next, we tackle a slightly peculiar function: <code>np.std()</code>. We expect this to compute the standard deviation of a list/array, but…</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task 4
 </div>
 </div>
@@ -449,12 +372,12 @@ Task 4
 </div>
 </div>
 <p>The result of the previous Task is the following: given a list <code>x = [x1, x2, ..., xn]</code>, running <code>np.std(x)</code> actually computes <span class="math display">\[ \sqrt{ \frac{1}{n} \sum_{i=1}^{n} (x_i - \overline{x})^2 } \]</span> as opposed to our usual definition of standard deviation <span class="math display">\[ s_X = \sqrt{ \frac{1}{n - 1} \sum_{i=1}^{n} (x_i - \overline{x})^2} \]</span> We can actually fix this issue by passing in an additional argument to the <code>np.std()</code> function:</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task 4 (cont’d)
 </div>
 </div>
@@ -464,12 +387,12 @@ Task 4 (cont’d)
 </ol>
 </div>
 </div>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Result
 </div>
 </div>
@@ -478,7 +401,7 @@ Result
 </div>
 </div>
 <p>Finally, we turn to the IQR: to compute the IQR of a list/array <code>x</code>, we use (after importing <code>numpy</code> as <code>np</code>)</p>
-<div class="cell" data-execution_count="9">
+<div id="e38f309a" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>np.diff(np.percentile(x, [<span class="dv">25</span>,<span class="dv">75</span>]))[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -488,7 +411,7 @@ Result
 <p>It’s finally time to make pretty pictures! The module we will use to generate visualizations in this class is the <code>matplotlib</code> module (though there are quite a few other modules that work for visualizations as well). The official website for <code>matplotlib</code> can be found at <a href="https://matplotlib.org/">https://matplotlib.org/</a>.<br>
 </p>
 <p>Before we generate any plots, we will need to run the following code once:</p>
-<div class="cell" data-execution_count="10">
+<div id="086bc722" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -505,12 +428,12 @@ Result
 <section id="boxplots-and-histograms" class="level3">
 <h3 class="anchored" data-anchor-id="boxplots-and-histograms">Boxplots and Histograms</h3>
 <p>Now, let’s proceed on to make some plots. The first two types of plots we will look at are the two we used to describe numerical data: namely, <strong>boxplots</strong> and <strong>histograms</strong>. The functions we will use are the <code>plt.boxplot()</code> and <code>plt.his()</code> functions, respectively.</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task 5
 </div>
 </div>
@@ -519,33 +442,49 @@ Task 5
 <li><p>Make a list called <code>y</code> that contains the following elements: <code>[1, 2, 3, 4, 5, 4, 3, 5, 4, 1, 2]</code>.</p></li>
 <li><p>Run <code>plt.boxplot(y);</code> (be sure to include the semicolon!). With any luck, your plot should look like:</p></li>
 </ol>
-<div class="cell" data-execution_count="11">
+<div id="3bd26044" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display">
-<p><img src="lab03_files/figure-html/cell-12-output-1.png" width="366" height="202"></p>
+<div>
+<figure class="figure">
+<p><img src="lab03_files/figure-html/cell-12-output-1.png" width="366" height="202" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <ol start="3" type="a">
 <li>Let’s make our boxplot horizontal, as opposed to vertical. Consult the help file on the <code>matplotlib.pyplot.boxplot()</code> function <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html">here</a> and figure out how to position your boxplot horizontally. Your new plot should look like:</li>
 </ol>
-<div class="cell" data-execution_count="12">
+<div id="540ecf50" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display">
-<p><img src="lab03_files/figure-html/cell-13-output-1.png" width="366" height="202"></p>
+<div>
+<figure class="figure">
+<p><img src="lab03_files/figure-html/cell-13-output-1.png" width="366" height="202" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <ol start="4" type="a">
 <li>Next, let’s add some color to our plot. Within your call to <code>plt.boxplot()</code>, add the following: <code>patch_artist=True, boxprops = dict(facecolor = "aquamarine")</code> (don’t worry too much about what exactly this code is doing). Your boxplot should now look like this:</li>
 </ol>
-<div class="cell" data-execution_count="13">
+<div id="6c466ccc" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-display">
-<p><img src="lab03_files/figure-html/cell-14-output-1.png" width="366" height="202"></p>
+<div>
+<figure class="figure">
+<p><img src="lab03_files/figure-html/cell-14-output-1.png" width="366" height="202" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <ol start="5" type="a">
 <li>Finally, let’s add a Title! Right below your call to <code>plt.boxplot()</code>, add the following: <code>plt.title("My First Python Boxplot");</code> (again, note the semicolons). Your final plot should look like this:</li>
 </ol>
-<div class="cell" data-execution_count="14">
+<div id="49ddbfcd" class="cell" data-execution_count="14">
 <div class="cell-output cell-output-display">
-<p><img src="lab03_files/figure-html/cell-15-output-1.png" width="366" height="222"></p>
+<div>
+<figure class="figure">
+<p><img src="lab03_files/figure-html/cell-15-output-1.png" width="366" height="222" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <ol start="6" type="a">
@@ -554,20 +493,24 @@ Task 5
 </div>
 </div>
 <p>Of course, boxplots are not the only way to summarize numerical variables: we also have histograms!</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task 6
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Call the <code>plt.hist()</code> function on the <code>y</code> list defined in Task 3, and use the <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html">help file</a> to add arguments to your call to <code>plt.hist()</code> function to generate the following plot:</p>
-<div class="cell" data-execution_count="15">
+<div id="19c62ebb" class="cell" data-execution_count="15">
 <div class="cell-output cell-output-display">
-<p><img src="lab03_files/figure-html/cell-16-output-1.png" width="366" height="222"></p>
+<div>
+<figure class="figure">
+<p><img src="lab03_files/figure-html/cell-16-output-1.png" width="366" height="222" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Pay attention to the number of bins!</p>
@@ -577,12 +520,12 @@ Task 6
 <section id="scatterplots" class="level3">
 <h3 class="anchored" data-anchor-id="scatterplots">Scatterplots</h3>
 <p>We should also quickly discuss how to generate scatterplots in Python.</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task 7
 </div>
 </div>
@@ -590,7 +533,7 @@ Task 7
 <ol type="a">
 <li>Copy-paste the following code into a code cell, and then run that cell (don’t worry about what this code is doing- we’ll discuss that in a future lab).</li>
 </ol>
-<div class="cell" data-execution_count="16">
+<div id="d8347e4b" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">5</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.random.normal(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">100</span>)</span>
@@ -599,17 +542,25 @@ Task 7
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>plt.scatter(x1, x2)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Your plot should look like this:</p>
-<div class="cell" data-execution_count="17">
+<div id="ed4a51c8" class="cell" data-execution_count="17">
 <div class="cell-output cell-output-display">
-<p><img src="lab03_files/figure-html/cell-18-output-1.png" width="374" height="202"></p>
+<div>
+<figure class="figure">
+<p><img src="lab03_files/figure-html/cell-18-output-1.png" width="374" height="202" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <ol start="2" type="a">
 <li>Add an x-axis label that says <code>"x1"</code> and a y-axis label that says <code>"x2"</code>, along with the title “My First Python Scatterplot”. Your final plot should look like:</li>
 </ol>
-<div class="cell" data-execution_count="18">
+<div id="22572245" class="cell" data-execution_count="18">
 <div class="cell-output cell-output-display">
-<p><img src="lab03_files/figure-html/cell-19-output-1.png" width="391" height="239"></p>
+<div>
+<figure class="figure">
+<p><img src="lab03_files/figure-html/cell-19-output-1.png" width="391" height="239" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <ol start="3" type="a">
@@ -623,15 +574,15 @@ Task 7
 <h2 class="anchored" data-anchor-id="plotting-a-function">Plotting a Function</h2>
 <p>Finally, I’d like to take a quick detour from descriptive statistics and talk about how to plot a function using Python. As a concrete example, let’s try and plot a sine curve from <span class="math inline">\(0\)</span> to <span class="math inline">\(2\pi\)</span>.</p>
 <p>If you recall, on Lab01 we used the <code>sin()</code> function from the <code>math</code> module- it turns out that the <code>numpy</code> module (which, recall, we have imported as <code>np</code>) also has a <code>sin()</code> function, so let’s use that one today:</p>
-<div class="cell" data-execution_count="19">
+<div id="80cce849" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>np.sin()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Next, we create a set of finely-spaced points between our two desired endpoints (in this case, <span class="math inline">\(0\)</span> and <span class="math inline">\(2\pi\)</span>, respectively). We will do so using the <code>np.linspace()</code> function, which works as follows:</p>
-<div class="cell" data-execution_count="20">
+<div id="7d522bc5" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>np.linspace(start, stop, num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>creates a set of <code>num</code> evenly-spaced values between <code>start</code> and <code>stop</code>, respectively. For instance:</p>
-<div class="cell" data-execution_count="21">
+<div id="21d72c40" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>array([ 0.        ,  0.11111111,  0.22222222,  0.33333333,  0.44444444,
@@ -639,25 +590,33 @@ Task 7
 </div>
 </div>
 <p>In the context of plotting, the more points we generate the smoother our plot will seem (you will see what this means in a minute). As such, let’s start with <code>150</code> points between <code>0</code> and <code>2 * pi</code>:</p>
-<div class="cell" data-execution_count="22">
+<div id="bff5b05f" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span> <span class="op">*</span> np.pi, <span class="dv">150</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Finally, we call the <code>plt.plot()</code> function on <code>x</code> and <code>np.sin(x)</code> to generate our plot:</p>
-<div class="cell" data-execution_count="23">
+<div id="b0e1d131" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="fl">4.5</span>, <span class="fl">2.25</span>))</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>plt.plot(x, np.sin(x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="lab03_files/figure-html/cell-24-output-1.png" width="385" height="202"></p>
+<div>
+<figure class="figure">
+<p><img src="lab03_files/figure-html/cell-24-output-1.png" width="385" height="202" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Let’s see what would have happened if we used fewer values in our <code>np.linspace()</code> call:</p>
-<div class="cell" data-execution_count="24">
+<div id="04bf99ce" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>xnew <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span> <span class="op">*</span> np.pi, <span class="dv">10</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>plt.plot(xnew, np.sin(xnew))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="25">
+<div id="19410579" class="cell" data-execution_count="25">
 <div class="cell-output cell-output-display">
-<p><img src="lab03_files/figure-html/cell-26-output-1.png" width="385" height="202"></p>
+<div>
+<figure class="figure">
+<p><img src="lab03_files/figure-html/cell-26-output-1.png" width="385" height="202" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>So, the more points we include in our call to <code>np.linspace()</code>, the smoother our final function will look!<br>
@@ -668,30 +627,34 @@ Task 7
 <li>Call <code>plt.plot(x, f(x))</code></li>
 <li>Add labels/titles as necessary</li>
 </ol>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task 8
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Generate a plot of the function <span class="math inline">\(f(x) = x - x^2 \sin(x)\)</span> between <span class="math inline">\(x = -10\)</span> and <span class="math inline">\(x = 10\)</span>. Experiment around with the number of values generated by <code>np.linspace()</code> to ensure your plot is relatively smooth. Be sure to include axis labels; also, change the color of the graph to red. Your final plot should look something like this:</p>
-<div class="cell" data-execution_count="26">
+<div id="a553fb8e" class="cell" data-execution_count="26">
 <div class="cell-output cell-output-display">
-<p><img src="lab03_files/figure-html/cell-27-output-1.png" width="399" height="239"></p>
+<div>
+<figure class="figure">
+<p><img src="lab03_files/figure-html/cell-27-output-1.png" width="399" height="239" class="figure-img"></p>
+</figure>
 </div>
 </div>
 </div>
 </div>
-<div class="callout-caution callout callout-style-default callout-captioned">
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 <strong>NOTICE</strong>
 </div>
 </div>
@@ -702,39 +665,43 @@ Task 8
 <section id="overlaying-plots" class="level3">
 <h3 class="anchored" data-anchor-id="overlaying-plots">Overlaying Plots</h3>
 <p>Sometimes it will be useful to overlay two plots on top of each other. Recall that, for a function <code>f()</code> and a variable <code>x</code> that has been assigned a value resulting from a call to <code>numpy.linspace()</code>, we generate a graph of <code>f()</code> using (assuming <code>matplotlib.pyplot</code> has been imported as <code>plt</code>)</p>
-<div class="cell" data-execution_count="27">
+<div id="187db862" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>plt.plot(x, f(x))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>It stands to reason, then that given another function <code>g()</code> we should be able to superimpose the graph of <code>g()</code> onto the graph of <code>f()</code> by simply adding another call to <code>plt.plot()</code>:</p>
-<div class="cell" data-execution_count="28">
+<div id="01899cc5" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>plt.plot(x, f(x))<span class="op">;</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>plt.plot(x, g(x))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task 9
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Generate a graph of <code>sin()</code>; on top of this graph, superimpose the graph of <code>cos()</code>. Restrict the <code>x</code> values on your graph to be between <span class="math inline">\(-4\pi\)</span> and <span class="math inline">\(4\pi\)</span>. Your final graph should look like the following (pay attention to the axis labels and title!):</p>
-<div class="cell" data-execution_count="29">
+<div id="20e7be46" class="cell" data-execution_count="29">
 <div class="cell-output cell-output-display">
-<p><img src="lab03_files/figure-html/cell-30-output-1.png" width="402" height="239"></p>
+<div>
+<figure class="figure">
+<p><img src="lab03_files/figure-html/cell-30-output-1.png" width="402" height="239" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 </div>
 <p>Now, as it stands, it’s a bit difficult to determine which curve corresponds to the sine curve and which corresponds to the cosine curve. As such, we should add some labels!</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task 10
 </div>
 </div>
@@ -748,58 +715,70 @@ Task 10
 </div>
 </div>
 <p>Hm, doesn’t look like anything changed… That’s because we didn’t add a <strong>legend</strong> to our plot! To add a legend, we simply tack on a call to <code>plt.legend()</code> after our code from above.</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task 11
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Copy your code from Task 10 above into a new code cell, and add a line underneath it containing a call to <code>plt.legend()</code>. Look up the help file to figure out what arguments you need to pass in to obtain the following graph (note the <strong>position</strong> of the legend):</p>
-<div class="cell" data-execution_count="30">
+<div id="e5619161" class="cell" data-execution_count="30">
 <div class="cell-output cell-output-display">
-<p><img src="lab03_files/figure-html/cell-31-output-1.png" width="402" height="239"></p>
+<div>
+<figure class="figure">
+<p><img src="lab03_files/figure-html/cell-31-output-1.png" width="402" height="239" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 </div>
 <p>Okay, we’re almost there! The only issue is that now the legend is covered up by the actual graphs. One way we can fix this is by extending the <span class="math inline">\(y-\)</span>axis further, using the function <code>plt.ylim()</code>:</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task 12
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Copy your code from Task 11 above into a new code cell, and add a line underneath it containing a call to <code>plt.ylim()</code>. Look up the help file to figure out what arguments you need to pass in to obtain a lower <span class="math inline">\(y-\)</span>limit of <span class="math inline">\(-1.5\)</span> and an upper <span class="math inline">\(y-\)</span>limit of <span class="math inline">\(2.0\)</span>. Your final graph should look like this:</p>
-<div class="cell" data-execution_count="31">
+<div id="7b09002a" class="cell" data-execution_count="31">
 <div class="cell-output cell-output-display">
-<p><img src="lab03_files/figure-html/cell-32-output-1.png" width="391" height="239"></p>
+<div>
+<figure class="figure">
+<p><img src="lab03_files/figure-html/cell-32-output-1.png" width="391" height="239" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
 </div>
 <p>Finally, it is sometimes considered bad form to rely too heavily on colors in plots. This is because doing so alienates readers who are colorblind. One way around this is to rely on different <em>line types</em>; e.g.&nbsp;used dashed lines for one graph and dotted lines for another.</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task 13
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Copy your code from Task 12 above into a new code cell. Read the following <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html">help file</a> and figure out how to pass in a value to the <code>linestyle</code> argument to your two calls to <code>plt.plot()</code> to generate the following plot:</p>
-<div class="cell" data-execution_count="32">
+<div id="88710772" class="cell" data-execution_count="32">
 <div class="cell-output cell-output-display">
-<p><img src="lab03_files/figure-html/cell-33-output-1.png" width="391" height="239"></p>
+<div>
+<figure class="figure">
+<p><img src="lab03_files/figure-html/cell-33-output-1.png" width="391" height="239" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Note that the sine curve is now dotted, and the cosine curve is now dashed.</p>
@@ -838,12 +817,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
     }
-  });
-  clipboard.on('success', function(e) {
+    return false;
+  }
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -875,11 +857,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -889,8 +910,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -902,9 +932,245 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -947,9 +1213,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center">Site Designed by Ethan Marzban using Quarto; ©2023</div>
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Site Designed by Ethan Marzban using Quarto; ©2023</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
+
 
 
 
