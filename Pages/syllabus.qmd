@@ -2,25 +2,25 @@
 title: "PSTAT 5A: Understanding Data"
 subtitle: "Course Syllabus"
 author:
-  - name: "Ethan Marzban"
+  - name: "Mallory Wang"
     affiliations:
-      - name: "Summer Session A, 2023"
+      - name: "Summer Session A, 2024"
 author-title: "Instructor"
 affiliation-title: "Quarter"
 format: html
 linkcolor: "#ffa07a"
 ---
 
-**WELCOME TO PSTAT 5A**! I am very excited to introduce to you the wonderful fields of Statistics and Data Science. As our world becomes ever more saturated with data, the need for data literacy becomes increasingly important. By the end of this course, I hope you will be able to think critically about statistical studies and results, understand how data can be used to simultaneously inform and manipulate, and begin applying your newfound techniques to your future endeavors. I am very much looking forward to a great quarter with all of you!
+**WELCOME TO PSTAT 5A**! I am very excited to introduce to you the wonderful fields of Statistics and Data Science. As our world becomes ever more saturated with data, the need for data literacy becomes increasingly important. By the end of this course, I hope you will be able to think critically about statistical studies and results, understand how data can be used to simultaneously inform and manipulate, and begin applying your new skills to your future endeavors. I am very much looking forward to a great quarter with all of you!
 
---- Ethan
+--- Mallory
 
 ## Lecture Information
 
 ::: callout-note
 ## **Lecture Times and Locations**
 
-M, T, W, Th: 11:00am - 12:20pm in **ILP 1101**
+M, T, W, Th: 8am - 9:20pm in **HSSB 1173**
 :::
 
 ## Course Staff
@@ -29,36 +29,37 @@ M, T, W, Th: 11:00am - 12:20pm in **ILP 1101**
 
 ::: {layout-ncol="2"}
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| **Instructor:** | Ethan P. Marzban                                                                                                                             |
+| **Instructor:** | Mallory Wang                                                                                                                                 |
 +:================+:=============================================================================================================================================+
-| **Email:**      | [epmarzban\@pstat.ucsb.edu](mailto:epmarzban@pstat.ucsb.edu) (Please use only in case of emergency)                                          |
+| **Email:**      | [mallorywang\@ucsb.edu](mailto:mallorywang@ucsb.edu)  
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| **Help Hours:** | -   [**Tuesdays:**]{.underline} 4:30pm - 5:30pm (<a href="https://ucsb.zoom.us/j/86469023392?pwd=aG5zY29wRWJscEFRY2ZYa0dXOVZ6Zz09">Zoom</a>) |
-|                 | -   [**Thursdays:**]{.underline} 2:30pm - 3:30pm (SH 5607 F)                                                                                 |
+| **Help Hours:** | -   [**Tuesdays:**]{.underline} 9:30am - 10:30am [zoom](https://ucsb.zoom.us/j/83301329982)
+|                 | -   [**Thursdays:**]{.underline} 9:30am - 10:30am [zoom](https://ucsb.zoom.us/j/83294791272) 
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 : {tbl-colwidths="\[20, 30\]"}
 
 +------------------------------------------------+
 | **TAs**                                        |
-+:===============================================+
-| **Mengrui Zhang**\                             |
-| ([mengrui\@ucsb.edu](mailto:mengrui@ucsb.edu)) |
 +------------------------------------------------+
-| **Olivier Mulkin**\                            |
-| ([omulkin\@ucsb.edu](mailto:omulkin@ucsb.edu)) |
+| **Daniel Silva**\                             |
+| ([dcsilva\@ucsb.edu](mailto:dcsilva@ucsb.edu)) |
++------------------------------------------------+
+| **Hezhong Zhang**\                            |
+| ([hzhang586\@umail.ucsb.edu](mailto:hzhang586@umail.ucsb.edu)) |
 +------------------------------------------------+
 
 : {tbl-colwidths="\[50\]"}
 :::
 
+
 ## Schedule of Sections
 
 |       Times       |       TA       |  Location   |
 |:-----------------:|:--------------:|:-----------:|
-| MW 12:30 - 1:20pm | Olivier Mulkin | PHELPS 1513 |
-| MW 2:00 - 2:50pm  | Mengrui Zhang  | PHELPS 1513 |
-| MW 3:00 - 3:50pm  | Mengrui Zhang  | PHELPS 1513 |
+| MW 10:00 - 10:50pm | Daniel Silva | PHELPS 1513 |
+| MW 11:00 - 11:50pm | Hezhong Zhang | PHELPS 1513 |
+| MW 12:00 - 12:50pm | Hezhong Zhang | PHELPS 1513 |
 
 ## Course Description
 
@@ -86,41 +87,39 @@ Every Monday you will work through a Lab worksheet that will be posted to the we
 
 ### Quizzes
 
-Quizzes will be administered **asynchronously** on **Fridays**, through **Gradescope**. Specifically, the quiz will remain open from 10am until 11:59pm, and you must find **40 consecutive minutes** to take the quiz. (Consecutive means you cannot start the quiz, and then come back to it later- once you start, you will have 40 minutes to both complete the quiz as well as upload your work). I encourage you to spend **25 minutes working on the quiz, and 15 minutes uploading**. No quiz scores will be dropped. There are no quizzes in Exam Weeks.
+Quizzes will be administered **asynchronously** on **Fridays**, through **Gradescope**. Specifically, the quiz will remain open from 8am until 11:59pm, and you must find **40 consecutive minutes** to take the quiz. (Consecutive means you cannot start the quiz, and then come back to it later- once you start, you will have 40 minutes to both complete the quiz as well as upload your work). I encourage you to spend **25 minutes working on the quiz, and 15 minutes uploading**. No quiz scores will be dropped. There are no quizzes in Exam Week.
 
-### Exams
+### Exam
 
-There are **two midterms** and a **final** exam for this class. You are required to take all three exams; failure to do so will result in an automatic grade of "F", so please ensure you are able to take the exams on the dates listed below.
+There is a **final** exam for this class. You are required to take the final exam, which will take place during the last lecture.
 
-::: callout-note
-## **Exam Dates**:
-
--   Midterm 1 is scheduled to take place **Thursday July 6 from 11:00am - 12:20pm** (lecture time)
--   Midterm 2 is scheduled to take place **Thursday July 20 from 11:00am - 12:20pm** (lecture time)
--   The final is scheduled to take place [**FRIDAY, AUGUST 4 from 4 - 7pm**]{style="color:red"}
-:::
-
-All exams are scheduled to take place in our lecture classroom, **ILP 1101.** Unless stated otherwise, all exams will be cumulative.
 
 ### Homework:
 
-Homework for this class will be **neither collected nor graded**. However, the weekly quizzes will be based heavily (though potentially not entirely) off the homework assignments. Homework assignments will be released on Mondays, along with their final answers. Solutions will be posted **biweekly**, on the Tuesdays before exams. As such, you should **not** rely on the solutions to help you study; instead, please come to office hours to check your work regularly!
+There will be weekly homework due on Tuesday before lecture. Detail TBD. 
 
 ### Schedule of Due Dates
 
-A tentative schedule of release and due dates can be found <a href = "https://docs.google.com/spreadsheets/d/1YRFMMJWNRU6NxGLHSToy3abj3bK8LelXyBKTcgFjl5M/" target = "_blank">here</a>
+TBD
 
 ## Grading Scheme
 
-Your final grade will be computed using the following weights:
+Your final grade will be computed using *your choice* of the following weights:
 
 |                    |     |
 |:-------------------|:----|
-| Labs:              | 10% |
-| Quizzes:           | 15% |
-| Midterm 1          | 20% |
-| Midterm 2          | 20% |
-| Final Examination: | 35% |
+| Homework:          | 25% |
+| Labs:              | 25% |
+| Quizzes:           | 25% |
+| Final Examination: | 25% |
+
+or 
+
+|                    |     |
+|:-------------------|:----|
+| Labs:              | 25% |
+| Quizzes:           | 35% |
+| Final Examination: | 40% |
 
 Please note that late submissions for any of the above will **not** be accepted. Additionally, make-up exams cannot be accommodated.
 
@@ -146,11 +145,11 @@ Basically, don't cheat- please! If you're ever struggling with course material, 
 
 <!-- It is perhaps evident that the recent rise of Artificial Intelligence-driven chatbots has somewhat shifted the general paradigm of education. Though these resources pose obvious concerns with regards to Academic Integrity, their merit as a useful tool for learning cannot be overlooked. As such, I have adopted the following policy with regards to the use of ChatGPT (and its equivalents) in this course: its use is permitted on homework and labs, **so long as you clearly indicate, somewhere on the work you turn in, that you have utilized it**. It is, however, **strictly forbidden** to use ChatGPT (or any of its equivalents) on quizzes and exams; students found to be in violation of this risk academic sanctions in line with the section on Academic Integrity above. -->
 
-## Intellectual Property
+<!-- ## Intellectual Property -->
 
-You've probably seen a clause on other syllabi stating something to the effect of "all material in this course is the intellectual property of myself and may not be shared with anyone outside this class without my explicit written permission."
+<!-- You've probably seen a clause on other syllabi stating something to the effect of "all material in this course is the intellectual property of myself and may not be shared with anyone outside this class without my explicit written permission." -->
 
-Though this does still hold true for this course, I will be making most course-related material available on a public GitHub site, which can be accessed here: <a href = "https://pstat5a.github.io" target = "_blank">https://pstat5a.github.io</a>.
+<!-- Though this does still hold true for this course, I will be making most course-related material available on a public GitHub site, which can be accessed here: <a href = "https://pstat5a.github.io" target = "_blank">https://pstat5a.github.io</a>. -->
 
 ## Disabled Students Program (DSP)
 
@@ -166,7 +165,7 @@ As mentioned above, Sections (both Discussion and Lab) take place in special "Co
 
 ## Email Policy
 
-Please note that we have a **no-email** (including Canvas messages) policy, except for emergencies; I leave it to you to decide what's an 'emergency'. Please bring all of your questions to me during Office Hours or at the end of lectures. (Also, please note that DMs \[Direct Messages\] sent to the course staff through Discord will be ignored.) Thank you!
+I will try my best to answer all emails within 48 hours. If you have not gotten a response from me in that time frame, please send me a followup as I probably missed it.
 
 <!-- This quarter, I am adopting a **no-email policy**. If you have any questions or concerns, please come to my office hours to express them; if you are unable to make either of my office hours, please see me after class to set up a meeting time. Please note that I will ignore any emails sent to my inbox. Thank you! -->
 
@@ -178,4 +177,4 @@ Please note that we have a **no-email** (including Canvas messages) policy, exce
 
 ## Disclaimer
 
-The instructor reserves the right to modify this syllabus if he deems such modifications academically advisable. Such modifications, should they occur, will be announced publicly.
+This syllabus and much of the content for this course has been graciously borrowed from the original work of Ethan P. Marzban with some modifications. Thank you, Ethan!
