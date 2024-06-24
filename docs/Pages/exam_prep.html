@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ethan Marzban">
+<meta name="author" content="Mallory Wang">
 
 <title>PSTAT 5A: Understanding Data – PSTAT 5A: Summer Session A, 2024</title>
 <style>
@@ -69,35 +69,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="../schedule.css">
@@ -214,16 +185,8 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#midterm-1" id="toc-midterm-1" class="nav-link active" data-scroll-target="#midterm-1">Midterm 1</a></li>
-  <li><a href="#midterm-2" id="toc-midterm-2" class="nav-link" data-scroll-target="#midterm-2">Midterm 2</a></li>
-  <li><a href="#final-exam" id="toc-final-exam" class="nav-link" data-scroll-target="#final-exam">Final Exam</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -240,11 +203,11 @@ window.Quarto = {
   <div class="quarto-title-meta-heading">Quarter</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author">Ethan Marzban </p>
+    <p class="author">Mallory Wang </p>
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
-            Summer Session A, 2023
+            Summer Session A, 2024
           </p>
       </div>
   </div>
@@ -261,69 +224,8 @@ window.Quarto = {
 </header>
 
 
-<section id="midterm-1" class="level2">
-<h2 class="anchored" data-anchor-id="midterm-1">Midterm 1</h2>
-<ul>
-<li><p>Information Document: <a href="../Files/ExamInfo/mt1_info.pdf" class="button label-outline" target="_blank">.pdf</a></p></li>
-<li><p>List of Topics (not comprehensive): <a href="../Files/ExamInfo/mt1_topics.pdf" class="button label-outline" target="_blank">.pdf</a></p></li>
-<li><p>Spring 2023 Exams:</p>
-<ul>
-<li><p>Blue Version: <a href="../Files/Past_Exams/Sp23_MT1_Blue_Blank.pdf" class="button label-outline" target="_blank">Blank</a> <a href="../Files/Past_Exams/SP23_MT1_Blue_Solns.pdf" class="button label-outline" target="_blank">Solns</a></p>
-<ul>
-<li><p><strong>Typo in Solutions:</strong> In 12(b), the <span class="math inline">\(\frac{1}{5 - 1}\)</span> should be <span class="math inline">\(\frac{1}{4 - 1}\)</span></p></li>
-<li><p><strong>Typo in Solutions:</strong> Answer to 13(d) should be <span class="math inline">\(A = \{ (1, -1, \ \ 1), \ (1, -1, -1)\}\)</span></p></li>
-</ul></li>
-<li><p>Yellow Version: <a href="../Files/Past_Exams/Sp23_MT1_Yellow_Blank.pdf" class="button label-outline" target="_blank">Blank</a> <a href="../Files/Past_Exams/SP23_MT1_Yellow_Solns.pdf" class="button label-outline" target="_blank">Solns</a></p>
-<ul>
-<li><p><strong>Typo in Solutions:</strong> In 12(b), the <span class="math inline">\(\frac{1}{5 - 1}\)</span> should be <span class="math inline">\(\frac{1}{4 - 1}\)</span></p></li>
-<li><p><strong>Typo in Solutions:</strong> Answer to 14(d) should be <span class="math inline">\(A = \{ (1, -1, \ \ 1), \ (1, -1, -1)\}\)</span></p></li>
-</ul></li>
-<li><p><strong>Please note that the format of exams this quarter will be slightly different; see the coverpages below</strong></p></li>
-</ul></li>
-<li><p>Exam Coverpages: <a href="../Files/ExamInfo/MT1_Coverpage_MC.pdf" class="button label-outline" target="_blank">Multiple Choice</a> <a href="../Files/ExamInfo/MT1_Coverpage_FR.pdf" class="button label-outline" target="_blank">Free Response</a></p></li>
-<li><p>Formula Sheet: <a href="../Files/ExamInfo/MT1_Formula_Sheet.pdf" class="button label-outline" target="_blank">.pdf</a></p></li>
-<li><p>Practice Problems: <a href="../Files/ExamInfo/mt1_practice_problems.pdf" class="button label-outline" target="_blank">.pdf</a> <a href="../Files/ExamInfo/MT1_prac_prob_solns.pdf" class="button label-outline" target="_blank">Solns</a></p></li>
-</ul>
-</section>
-<section id="midterm-2" class="level2">
-<h2 class="anchored" data-anchor-id="midterm-2">Midterm 2</h2>
-<ul>
-<li><p>Information Document: <a href="../Files/ExamInfo/mt2_info.pdf" class="button label-outline" target="_blank">.pdf</a></p></li>
-<li><p>List of Topics (not comprehensive): <a href="../Files/ExamInfo/mt2_topics.pdf" class="button label-outline" target="_blank">.pdf</a></p></li>
-<li><p>Spring 2023 Exams</p>
-<ul>
-<li><p>Salmon Version: <a href="../Files/Past_Exams/SP23_MT2_Salmon_Blank.pdf" class="button label-outline" target="_blank">Blank</a> <a href="../Files/Past_Exams/SP23_MT2_Salmon_Solns.pdf" class="button label-outline" target="_blank">Solns</a></p></li>
-<li><p>Yellow Version: <a href="../Files/Past_Exams/SP23_MT2_Yellow_Blank.pdf" class="button label-outline" target="_blank">Blank</a> <a href="../Files/Past_Exams/SP23_MT2_Yellow_Solns.pdf" class="button label-outline" target="_blank">Solns</a></p></li>
-</ul></li>
-<li><p>Exam Coverpages: <a href="../Files/ExamInfo/MT2_Coverpage_MC.pdf" class="button label-outline" target="_blank">Multiple Choice</a> <a href="../Files/ExamInfo/MT2_Coverpage_FR.pdf" class="button label-outline" target="_blank">Free Response</a></p></li>
-<li><p>Formula Sheet: <a href="../Files/ExamInfo/MT2_Formula_Sheet.pdf" class="button label-outline" target="_blank">.pdf</a></p></li>
-<li><p>Practice Problems: <a href="../Files/ExamInfo/mt2_practice_problems.pdf" class="button label-outline" target="_blank">.pdf</a> <a href="../Files/ExamInfo/mt2_practice_problems_solns.pdf" class="button label-outline" target="_blank">Solns</a></p></li>
-</ul>
-</section>
-<section id="final-exam" class="level2">
-<h2 class="anchored" data-anchor-id="final-exam">Final Exam</h2>
-<ul>
-<li><p>Information Document: <a href="../Files/ExamInfo/final_exam_info.pdf" class="button label-outline" target="_blank">.pdf</a></p></li>
-<li><p>List of Topics (not comprehensive): <a href="../Files/ExamInfo/final_exam_topics.pdf" class="button label-outline" target="_blank">.pdf</a></p></li>
-<li><p>Spring 2023 Exams:</p>
-<ul>
-<li><p>Free Response, Version A: <a href="../Files/Past_Exams/SP23_Final_Free_Response_VA.pdf" class="button label-outline" target="_blank">Blank</a></p></li>
-<li><p>Multiple Choice, Version A: <a href="../Files/Past_Exams/SP23_Final_MC.pdf" class="button label-outline" target="_blank">Blank</a></p></li>
-<li><p><strong>Please note:</strong> There were a few versions last quarter; I’ve only posted one version above. Additionally, please note that full solutions for last quarter’s exam will not be posted.</p></li>
-<li><p>Free Response Final Answers: <a href="../Files/Past_Exams/SP23_Final_Answers.pdf" class="button label-outline" target="_blank"><code>.pdf</code></a></p>
-<ul>
-<li><strong>Please note:</strong> This was updated at 6pm on Thursday August 3.</li>
-</ul></li>
-</ul></li>
-<li><p>Formula Sheet: <a href="../Files/ExamInfo/Final_Formula_Sheet.pdf" class="button label-outline" target="_blank">.pdf</a></p>
-<ul>
-<li><strong>Please note:</strong> This was updated at 6pm on Thursday August 3.</li>
-</ul></li>
-<li><p>Practice Problems: <a href="../Files/ExamInfo/FinRev_Blank.pdf" class="button label-outline" target="_blank">.pdf</a> (for additional practice problems, including multiple choice ones, please consult the Spring 2023 final exam above.) <a href="../Files/ExamInfo/FinRev_Solns.pdf" class="button label-outline" target="_blank">Solns</a></p></li>
-</ul>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

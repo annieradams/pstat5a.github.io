@@ -11,8 +11,8 @@
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.45">
 
-  <meta name="author" content="Ethan P. Marzban">
-  <meta name="dcterms.date" content="2023-06-26">
+  <meta name="author" content="Mallory Wang">
+  <meta name="dcterms.date" content="2024-06-24">
   <title>PSTAT 5A: Summer Session A, 2024 – PSTAT 5A: Lecture 00</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -330,8 +330,8 @@
 <section id="title-slide" data-background-image="5a_hex.png" data-background-opacity="0.5" data-background-position="left" data-background-size="contain" class="center">
   <h1 class="title" style="text-align: right">PSTAT 5A: Lecture 00</h1>
   <h2 class="subtitle" style="text-align: right">Introduction to Data Science</h2>
-  <p class="author" style="text-align: right">Ethan P. Marzban</p>
-  <p class="date" style="text-align: right">2023-06-26</p>
+  <p class="author" style="text-align: right">Mallory Wang</p>
+  <p class="date" style="text-align: right">2024-06-24</p>
 </section>
 <section>
 <section id="welcome" class="title-slide slide level1 center">
@@ -346,34 +346,32 @@
 <ul>
 <li><strong>Instructor:</strong>
 <ul>
-<li>Ethan (He/Him)</li>
-<li>epmarzban@pstat.ucsb.edu</li>
-<li>T 4:30 - 5:30pm (Zoom) and Th 2 - 3pm (SH607F)</li>
+<li>Mallory (she/her)</li>
+<li>mallorywang@ucsb.edu</li>
+<li>T 9:30 - 10:30a (zoom) and 4 - 5p (zoom)</li>
 </ul></li>
 </ul>
 </div>
 </div><div class="column" style="width:40%;">
-<p><img src="ethan.jpg" width="60%"></p>
+
 </div>
 </div>
-<p><br>
-</p>
 <p><strong>Teaching Assistants:</strong></p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div>
 <ul>
-<li><strong>Mengrui Zhang</strong></li>
-<li>mengrui@ucsb.edu</li>
-<li>OH: MW, 4-6pm (SH 5431W)</li>
+<li><strong>Daniel Silva</strong></li>
+<li>dcsilva@ucsb.edu</li>
+<li>OH: TBD</li>
 </ul>
 </div>
 </div><div class="column" style="width:50%;">
 <div>
 <ul>
-<li><strong>Olivier Mulkin</strong></li>
-<li>omulkin@ucsb.edu</li>
-<li>OH: T, 1 - 3pm (Zoom; starts next week)</li>
+<li><strong>Hezhong Zhang</strong></li>
+<li>hzhang586@umail.ucsb.edu</li>
+<li>OH: TBD</li>
 </ul>
 </div>
 </div>
@@ -382,35 +380,15 @@
 <section id="course-resources" class="slide level2">
 <h2>Course Resources</h2>
 <ul>
-<li class="fragment"><p><strong>Canvas</strong>: for grades</p></li>
-<li class="fragment"><p><strong>Gradescope:</strong> for quizzes and labs</p></li>
-<li class="fragment"><p><strong>Course Website:</strong> <a href="https://pstat5a.github.io" target="_blank">https://pstat5a.github.io</a></p>
+<li class="fragment"><strong>Canvas</strong>: for grades</li>
+<li class="fragment"><strong>Gradescope:</strong> for homework, quizzes, and labs</li>
+<li class="fragment"><strong>Course Website:</strong> <a href="https://pstat5a.github.io/Pages/syllabus.html" target="_blank">https://pstat5a.github.io/Pages/syllabus.html</a>
 <ul>
 <li class="fragment">All relevant course material will be posted to the website!</li>
 <li class="fragment">One exception: quizzes, which will be administered through Gradescope</li>
 </ul></li>
-<li class="fragment"><p>Please read the syllabus fully and carefully!</p>
-<ul>
-<li class="fragment">There’s also a small blurb about email policies in the syllabus. Basically, I’m asking that you email me and the TA’s <u>only in case of emergency</u> (and I leave it to you to determine what’s an emergency); instead, I ask that you please use Office Hours (or even the end of lecture) to communicate with us. I do this to help alleviate stress on <em>both</em> ends of email exchanges; thank you for understanding!</li>
-</ul></li>
+<li class="fragment">Please read the syllabus fully and carefully!</li>
 </ul>
-</section>
-<section id="discord" class="slide level2">
-<h2>Discord</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="discord.svg"></p>
-</div><div class="column" style="width:50%;">
-<p><br>
-<br>
-<br>
-<br>
-</p>
-<section id="bit.lyssa5adisc" class="slide level2">
-<h2>bit.ly/ssa5adisc</h2>
-</section>
-</div>
-</div>
 </section></section>
 <section id="any-questions-about-the-syllabus" class="title-slide slide level1 center">
 <h1>Any Questions about the syllabus?</h1>
@@ -429,8 +407,8 @@
 <section id="what-is-data-science-1" class="slide level2" style="font-size:33px">
 <h2>What is Data Science?</h2>
 <ul>
-<li class="fragment"><p>Not a bad definition!</p></li>
-<li class="fragment"><p>Though, there isn’t a single agreed-upon definition of what data science is.</p></li>
+<li class="fragment"><p>Not a bad definition! To be fair, data science means different things to different people / companies.</p></li>
+<li class="fragment"><p>There isn’t a single agreed-upon definition of what data science is.</p></li>
 <li class="fragment"><p>Most people agree that Data science is <strong>cross-disciplinary</strong>, drawing experience and expertise from a wide variety of different fields.</p>
 <ul>
 <li class="fragment">Perhaps the two main fields from which Data Science draws are Statistics and Computer Science</li>
@@ -450,10 +428,7 @@
 </div>
 <ul>
 <li class="fragment"><p>An equally integral part of Data Science is the <strong>theory</strong> that surrounds data, modeling, and randomness- theory that comes from the field of <strong>Statistics</strong>.</p></li>
-<li class="fragment"><p>Even if you are planning on going into industry right after university, you will still need to know some of the theory.</p>
-<ul>
-<li class="fragment">One of my undergrad professors put it well- companies don’t want to hire people to mindlessly pass data through computer programs. Rather, they want people that are not only well-versed in the programmatic applications of data but also the reasons behind <em>why</em> they are applying the programming tools they are applying!</li>
-</ul></li>
+<li class="fragment"><p>Even if you are planning on going into industry right after university, you will still need to know some of the theory.</p></li>
 </ul>
 </section>
 <section id="the-path-forward" class="slide level2">
@@ -490,18 +465,9 @@
 </section>
 <section id="why-should-i-care" class="slide level2">
 <h2>Why Should I Care?</h2>
-<ul>
-<li class="fragment">A natural question that arises in a class like this is: “why should I care?”</li>
-</ul>
-<div class="fragment">
-<p><img data-src="results.svg"></p>
-</div>
-</section>
-<section id="why-should-i-care-1" class="slide level2">
-<h2>Why Should I Care?</h2>
 <div>
 <ul>
-<li>I suspect not all of you are necessarily pursuing a degree in Statistics or Data Science.</li>
+<li>I suspect not all of you are necessarily pursuing a degree in Statistics or Data Science. However, this day in age, data is truly everywhere, and having strong mathematical thinking will give you a leg up in any role you want.</li>
 </ul>
 </div>
 <ul>

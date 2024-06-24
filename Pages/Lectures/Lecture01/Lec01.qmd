@@ -1,8 +1,8 @@
 ---
 title: "PSTAT 5A: Lecture 01"
 subtitle: "Descriptive Statistics, Part I"
-author: "Ethan P. Marzban"
-date: "06/26/23"
+author: "Mallory Wang"
+date: "06/24/24"
 format: 
     revealjs:
       html-math-method: mathjax
@@ -52,9 +52,11 @@ library(ggthemes)
 
 ## Example of Data
 
-- As a concrete example of a **dataset**, let's explore the so-called `palmerpenguins` dataset. 
+- As a concrete example of a **dataset**, let's explore the `palmerpenguins` dataset. 
 
 - Collected by Dr. Kristen Gorman at the Palmer Station in Antarctica, this dataset contains various measurements of 344 different penguins Dr. Gorman encountered.
+
+* When using data, it is critical to know how the data was collected and how each column (or variable is defined).
 
 ---
 
@@ -63,8 +65,9 @@ library(ggthemes)
 
 library(palmerpenguins)
 library(tidyverse)
+library(kableExtra)
 # penguins
-cat(format(as_tibble(penguins))[-c(3L, 1L)], sep = "\n")
+kable(head(penguins))
 ```
 
 ```{css, echo=FALSE}
@@ -74,7 +77,7 @@ cat(format(as_tibble(penguins))[-c(3L, 1L)], sep = "\n")
 }
 ```
 
-- Notice that our data is formatted as a table. This table is what data scientists refer to as the **data matrix.**
+- Notice that our data is formatted as a table. This table is what data scientists refer to as the **data matrix** or data frame.
 
 ---
 
@@ -140,9 +143,9 @@ cat(format(as_tibble(penguins))[-c(3L, 1L)], sep = "\n")
 
     -   Examples: heights, temperatures, number of free throws, etc.
 
--   Not all variables are numerical. For example, I could take a poll asking people's **opinions** on the movie *Ant-Man and the Wasp: Quantumania*- the observations of this variable will most certainly not be numerical. 
+-   Not all variables are numerical. For example, I could take a poll asking people's **opinions** on the movie *Dune 2*- the observations of this variable will most certainly not be numerical. 
 
-    - Rather, the observations of this variable will fall into one of a series of fixed *categories* (e.g. "Enjoyed the movie", "Neutral about the movie", "Too many bugs", etc.).
+    - Rather, the observations of this variable will fall into one of a series of fixed *categories* (e.g. "Enjoyed the movie", "Neutral about the movie", "Too much sand", etc.).
     
     - As such, we describe non-numerical variables as **categorical variables**.
 
@@ -352,9 +355,7 @@ penguins$species
 
 - Let's start with the latter- that is, let's discuss how we might summarize our data using graphs.
 
-# Graphical Summaries {background-color="black" background-image="https://media3.giphy.com/media/LedVYzRx24nkI/giphy.gif?cid=ecf05e47e33eyorvdby4yoz750pdnhwi0l1s73mo68asau3c&rid=giphy.gif&ct=g" background-size="contain"}
-
-<!-- # Graphical Summaries {background-color="black" background-image="https://media1.giphy.com/media/3o6MbrACMlFCny8zmw/giphy.gif?cid=ecf05e474pzqjvwrr3qujf8hxpswv63bbdw2pp9tes7870sm&rid=giphy.gif&ct=g" background-size="contain"} -->
+# Graphical Summaries 
 
 ## Back To Penguins
 

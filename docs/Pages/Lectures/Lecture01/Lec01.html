@@ -11,8 +11,8 @@
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.45">
 
-  <meta name="author" content="Ethan P. Marzban">
-  <meta name="dcterms.date" content="2023-06-26">
+  <meta name="author" content="Mallory Wang">
+  <meta name="dcterms.date" content="2024-06-24">
   <title>PSTAT 5A: Summer Session A, 2024 – PSTAT 5A: Lecture 01</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -395,8 +395,8 @@
 <section id="title-slide" data-background-image="5a_hex.png" data-background-opacity="0.5" data-background-position="left" data-background-size="contain" class="center">
   <h1 class="title" style="text-align: right">PSTAT 5A: Lecture 01</h1>
   <h2 class="subtitle" style="text-align: right">Descriptive Statistics, Part I</h2>
-  <p class="author" style="text-align: right">Ethan P. Marzban</p>
-  <p class="date" style="text-align: right">2023-06-26</p>
+  <p class="author" style="text-align: right">Mallory Wang</p>
+  <p class="date" style="text-align: right">2024-06-24</p>
 </section>
 <section>
 <section id="data" class="title-slide slide level1 center">
@@ -433,27 +433,101 @@
 <section id="example-of-data" class="slide level2">
 <h2>Example of Data</h2>
 <ul>
-<li class="fragment"><p>As a concrete example of a <strong>dataset</strong>, let’s explore the so-called <code>palmerpenguins</code> dataset.</p></li>
+<li class="fragment"><p>As a concrete example of a <strong>dataset</strong>, let’s explore the <code>palmerpenguins</code> dataset.</p></li>
 <li class="fragment"><p>Collected by Dr.&nbsp;Kristen Gorman at the Palmer Station in Antarctica, this dataset contains various measurements of 344 different penguins Dr.&nbsp;Gorman encountered.</p></li>
+<li class="fragment"><p>When using data, it is critical to know how the data was collected and how each column (or variable is defined).</p></li>
 </ul>
 </section>
 <section class="slide level2">
 
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource hscroll number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g</span>
-<span id="cb1-2"><a></a> 1 Adelie  Torgersen           39.1          18.7               181        3750</span>
-<span id="cb1-3"><a></a> 2 Adelie  Torgersen           39.5          17.4               186        3800</span>
-<span id="cb1-4"><a></a> 3 Adelie  Torgersen           40.3          18                 195        3250</span>
-<span id="cb1-5"><a></a> 4 Adelie  Torgersen           NA            NA                  NA          NA</span>
-<span id="cb1-6"><a></a> 5 Adelie  Torgersen           36.7          19.3               193        3450</span>
-<span id="cb1-7"><a></a> 6 Adelie  Torgersen           39.3          20.6               190        3650</span>
-<span id="cb1-8"><a></a> 7 Adelie  Torgersen           38.9          17.8               181        3625</span>
-<span id="cb1-9"><a></a> 8 Adelie  Torgersen           39.2          19.6               195        4675</span>
-<span id="cb1-10"><a></a> 9 Adelie  Torgersen           34.1          18.1               193        3475</span>
-<span id="cb1-11"><a></a>10 Adelie  Torgersen           42            20.2               190        4250</span>
-<span id="cb1-12"><a></a># ℹ 334 more rows</span>
-<span id="cb1-13"><a></a># ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 15%">
+<col style="width: 20%">
+<col style="width: 13%">
+<col style="width: 7%">
+<col style="width: 5%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">species</th>
+<th style="text-align: left;">island</th>
+<th style="text-align: right;">bill_length_mm</th>
+<th style="text-align: right;">bill_depth_mm</th>
+<th style="text-align: right;">flipper_length_mm</th>
+<th style="text-align: right;">body_mass_g</th>
+<th style="text-align: left;">sex</th>
+<th style="text-align: right;">year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Torgersen</td>
+<td style="text-align: right;">39.1</td>
+<td style="text-align: right;">18.7</td>
+<td style="text-align: right;">181</td>
+<td style="text-align: right;">3750</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">2007</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Torgersen</td>
+<td style="text-align: right;">39.5</td>
+<td style="text-align: right;">17.4</td>
+<td style="text-align: right;">186</td>
+<td style="text-align: right;">3800</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">2007</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Torgersen</td>
+<td style="text-align: right;">40.3</td>
+<td style="text-align: right;">18.0</td>
+<td style="text-align: right;">195</td>
+<td style="text-align: right;">3250</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">2007</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Torgersen</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">2007</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Torgersen</td>
+<td style="text-align: right;">36.7</td>
+<td style="text-align: right;">19.3</td>
+<td style="text-align: right;">193</td>
+<td style="text-align: right;">3450</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">2007</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Torgersen</td>
+<td style="text-align: right;">39.3</td>
+<td style="text-align: right;">20.6</td>
+<td style="text-align: right;">190</td>
+<td style="text-align: right;">3650</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">2007</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="cell">
@@ -465,7 +539,7 @@
 </style>
 </div>
 <ul>
-<li class="fragment">Notice that our data is formatted as a table. This table is what data scientists refer to as the <strong>data matrix.</strong></li>
+<li class="fragment">Notice that our data is formatted as a table. This table is what data scientists refer to as the <strong>data matrix</strong> or data frame.</li>
 </ul>
 </section>
 <section id="the-data-matrix" class="slide level2">
@@ -579,9 +653,9 @@
 <ul>
 <li class="fragment">Examples: heights, temperatures, number of free throws, etc.</li>
 </ul></li>
-<li class="fragment"><p>Not all variables are numerical. For example, I could take a poll asking people’s <strong>opinions</strong> on the movie <em>Ant-Man and the Wasp: Quantumania</em>- the observations of this variable will most certainly not be numerical.</p>
+<li class="fragment"><p>Not all variables are numerical. For example, I could take a poll asking people’s <strong>opinions</strong> on the movie <em>Dune 2</em>- the observations of this variable will most certainly not be numerical.</p>
 <ul>
-<li class="fragment"><p>Rather, the observations of this variable will fall into one of a series of fixed <em>categories</em> (e.g.&nbsp;“Enjoyed the movie”, “Neutral about the movie”, “Too many bugs”, etc.).</p></li>
+<li class="fragment"><p>Rather, the observations of this variable will fall into one of a series of fixed <em>categories</em> (e.g.&nbsp;“Enjoyed the movie”, “Neutral about the movie”, “Too much sand”, etc.).</p></li>
 <li class="fragment"><p>As such, we describe non-numerical variables as <strong>categorical variables</strong>.</p></li>
 </ul></li>
 </ul>
@@ -846,6 +920,106 @@ Ordinal vs.&nbsp;Nominal Variables
 <div class="fragment">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource hscroll number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>  [1] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
+<span id="cb1-2"><a></a>  [8] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
+<span id="cb1-3"><a></a> [15] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
+<span id="cb1-4"><a></a> [22] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
+<span id="cb1-5"><a></a> [29] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
+<span id="cb1-6"><a></a> [36] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
+<span id="cb1-7"><a></a> [43] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
+<span id="cb1-8"><a></a> [50] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
+<span id="cb1-9"><a></a> [57] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
+<span id="cb1-10"><a></a> [64] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
+<span id="cb1-11"><a></a> [71] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
+<span id="cb1-12"><a></a> [78] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
+<span id="cb1-13"><a></a> [85] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
+<span id="cb1-14"><a></a> [92] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
+<span id="cb1-15"><a></a> [99] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
+<span id="cb1-16"><a></a>[106] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
+<span id="cb1-17"><a></a>[113] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
+<span id="cb1-18"><a></a>[120] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
+<span id="cb1-19"><a></a>[127] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
+<span id="cb1-20"><a></a>[134] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
+<span id="cb1-21"><a></a>[141] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
+<span id="cb1-22"><a></a>[148] Adelie    Adelie    Adelie    Adelie    Adelie    Gentoo    Gentoo   </span>
+<span id="cb1-23"><a></a>[155] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
+<span id="cb1-24"><a></a>[162] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
+<span id="cb1-25"><a></a>[169] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
+<span id="cb1-26"><a></a>[176] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
+<span id="cb1-27"><a></a>[183] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
+<span id="cb1-28"><a></a>[190] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
+<span id="cb1-29"><a></a>[197] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
+<span id="cb1-30"><a></a>[204] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
+<span id="cb1-31"><a></a>[211] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
+<span id="cb1-32"><a></a>[218] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
+<span id="cb1-33"><a></a>[225] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
+<span id="cb1-34"><a></a>[232] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
+<span id="cb1-35"><a></a>[239] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
+<span id="cb1-36"><a></a>[246] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
+<span id="cb1-37"><a></a>[253] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
+<span id="cb1-38"><a></a>[260] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
+<span id="cb1-39"><a></a>[267] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
+<span id="cb1-40"><a></a>[274] Gentoo    Gentoo    Gentoo    Chinstrap Chinstrap Chinstrap Chinstrap</span>
+<span id="cb1-41"><a></a>[281] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap</span>
+<span id="cb1-42"><a></a>[288] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap</span>
+<span id="cb1-43"><a></a>[295] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap</span>
+<span id="cb1-44"><a></a>[302] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap</span>
+<span id="cb1-45"><a></a>[309] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap</span>
+<span id="cb1-46"><a></a>[316] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap</span>
+<span id="cb1-47"><a></a>[323] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap</span>
+<span id="cb1-48"><a></a>[330] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap</span>
+<span id="cb1-49"><a></a>[337] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap</span>
+<span id="cb1-50"><a></a>[344] Chinstrap</span>
+<span id="cb1-51"><a></a>Levels: Adelie Chinstrap Gentoo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="cell">
+<style type="text/css">
+.hscroll {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+</style>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div>
+<ul>
+<li>That’s a lot of information!</li>
+</ul>
+</div>
+<ul>
+<li class="fragment">Indeed, trying to draw conclusions about the data using the data in its <em>entirety</em> is often not a good idea.</li>
+<li class="fragment">Rather, we would like to find different ways to <em>summarize</em>, or <em>describe</em> our data.</li>
+</ul>
+</section>
+<section id="descriptive-statistics" class="slide level2">
+<h2>Descriptive Statistics</h2>
+<div>
+<ul>
+<li>This is the goal of <strong>Descriptive Statistics</strong>- to find different summarizing techniques to <em>desribe</em> the data.</li>
+</ul>
+</div>
+<ul>
+<li class="fragment"><p>There are two ways we can seek to summarize data: numerically (using numbers), and graphically.</p></li>
+<li class="fragment"><p>Let’s start with the latter- that is, let’s discuss how we might summarize our data using graphs.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="graphical-summaries" class="title-slide slide level1 center">
+<h1>Graphical Summaries</h1>
+
+</section>
+<section id="back-to-penguins" class="slide level2">
+<h2>Back To Penguins</h2>
+<ul>
+<li class="fragment">Here is the <code>species</code> variable one more time:</li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource hscroll number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>  [1] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
 <span id="cb2-2"><a></a>  [8] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
 <span id="cb2-3"><a></a> [15] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
@@ -897,106 +1071,6 @@ Ordinal vs.&nbsp;Nominal Variables
 <span id="cb2-49"><a></a>[337] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap</span>
 <span id="cb2-50"><a></a>[344] Chinstrap</span>
 <span id="cb2-51"><a></a>Levels: Adelie Chinstrap Gentoo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div class="cell">
-<style type="text/css">
-.hscroll {
-  overflow-x: auto;
-  white-space: nowrap;
-}
-</style>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<div>
-<ul>
-<li>That’s a lot of information!</li>
-</ul>
-</div>
-<ul>
-<li class="fragment">Indeed, trying to draw conclusions about the data using the data in its <em>entirety</em> is often not a good idea.</li>
-<li class="fragment">Rather, we would like to find different ways to <em>summarize</em>, or <em>describe</em> our data.</li>
-</ul>
-</section>
-<section id="descriptive-statistics" class="slide level2">
-<h2>Descriptive Statistics</h2>
-<div>
-<ul>
-<li>This is the goal of <strong>Descriptive Statistics</strong>- to find different summarizing techniques to <em>desribe</em> the data.</li>
-</ul>
-</div>
-<ul>
-<li class="fragment"><p>There are two ways we can seek to summarize data: numerically (using numbers), and graphically.</p></li>
-<li class="fragment"><p>Let’s start with the latter- that is, let’s discuss how we might summarize our data using graphs.</p></li>
-</ul>
-</section></section>
-<section>
-<section id="graphical-summaries" class="title-slide slide level1 center" data-background-color="black" data-background-image="https://media3.giphy.com/media/LedVYzRx24nkI/giphy.gif?cid=ecf05e47e33eyorvdby4yoz750pdnhwi0l1s73mo68asau3c&amp;rid=giphy.gif&amp;ct=g" data-background-size="contain">
-<h1>Graphical Summaries</h1>
-<!-- # Graphical Summaries {background-color="black" background-image="https://media1.giphy.com/media/3o6MbrACMlFCny8zmw/giphy.gif?cid=ecf05e474pzqjvwrr3qujf8hxpswv63bbdw2pp9tes7870sm&rid=giphy.gif&ct=g" background-size="contain"} -->
-</section>
-<section id="back-to-penguins" class="slide level2">
-<h2>Back To Penguins</h2>
-<ul>
-<li class="fragment">Here is the <code>species</code> variable one more time:</li>
-</ul>
-<div class="fragment">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource hscroll number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a>  [1] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
-<span id="cb3-2"><a></a>  [8] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
-<span id="cb3-3"><a></a> [15] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
-<span id="cb3-4"><a></a> [22] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
-<span id="cb3-5"><a></a> [29] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
-<span id="cb3-6"><a></a> [36] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
-<span id="cb3-7"><a></a> [43] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
-<span id="cb3-8"><a></a> [50] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
-<span id="cb3-9"><a></a> [57] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
-<span id="cb3-10"><a></a> [64] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
-<span id="cb3-11"><a></a> [71] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
-<span id="cb3-12"><a></a> [78] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
-<span id="cb3-13"><a></a> [85] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
-<span id="cb3-14"><a></a> [92] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
-<span id="cb3-15"><a></a> [99] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
-<span id="cb3-16"><a></a>[106] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
-<span id="cb3-17"><a></a>[113] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
-<span id="cb3-18"><a></a>[120] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
-<span id="cb3-19"><a></a>[127] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
-<span id="cb3-20"><a></a>[134] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
-<span id="cb3-21"><a></a>[141] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   </span>
-<span id="cb3-22"><a></a>[148] Adelie    Adelie    Adelie    Adelie    Adelie    Gentoo    Gentoo   </span>
-<span id="cb3-23"><a></a>[155] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
-<span id="cb3-24"><a></a>[162] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
-<span id="cb3-25"><a></a>[169] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
-<span id="cb3-26"><a></a>[176] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
-<span id="cb3-27"><a></a>[183] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
-<span id="cb3-28"><a></a>[190] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
-<span id="cb3-29"><a></a>[197] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
-<span id="cb3-30"><a></a>[204] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
-<span id="cb3-31"><a></a>[211] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
-<span id="cb3-32"><a></a>[218] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
-<span id="cb3-33"><a></a>[225] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
-<span id="cb3-34"><a></a>[232] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
-<span id="cb3-35"><a></a>[239] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
-<span id="cb3-36"><a></a>[246] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
-<span id="cb3-37"><a></a>[253] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
-<span id="cb3-38"><a></a>[260] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
-<span id="cb3-39"><a></a>[267] Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo    Gentoo   </span>
-<span id="cb3-40"><a></a>[274] Gentoo    Gentoo    Gentoo    Chinstrap Chinstrap Chinstrap Chinstrap</span>
-<span id="cb3-41"><a></a>[281] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap</span>
-<span id="cb3-42"><a></a>[288] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap</span>
-<span id="cb3-43"><a></a>[295] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap</span>
-<span id="cb3-44"><a></a>[302] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap</span>
-<span id="cb3-45"><a></a>[309] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap</span>
-<span id="cb3-46"><a></a>[316] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap</span>
-<span id="cb3-47"><a></a>[323] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap</span>
-<span id="cb3-48"><a></a>[330] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap</span>
-<span id="cb3-49"><a></a>[337] Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap Chinstrap</span>
-<span id="cb3-50"><a></a>[344] Chinstrap</span>
-<span id="cb3-51"><a></a>Levels: Adelie Chinstrap Gentoo</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="cell">
@@ -1126,29 +1200,29 @@ Ordinal vs.&nbsp;Nominal Variables
 
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource hscroll number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a>  [1] 39.1 39.5 40.3   NA 36.7 39.3 38.9 39.2 34.1 42.0 37.8 37.8 41.1 38.6 34.6</span>
-<span id="cb5-2"><a></a> [16] 36.6 38.7 42.5 34.4 46.0 37.8 37.7 35.9 38.2 38.8 35.3 40.6 40.5 37.9 40.5</span>
-<span id="cb5-3"><a></a> [31] 39.5 37.2 39.5 40.9 36.4 39.2 38.8 42.2 37.6 39.8 36.5 40.8 36.0 44.1 37.0</span>
-<span id="cb5-4"><a></a> [46] 39.6 41.1 37.5 36.0 42.3 39.6 40.1 35.0 42.0 34.5 41.4 39.0 40.6 36.5 37.6</span>
-<span id="cb5-5"><a></a> [61] 35.7 41.3 37.6 41.1 36.4 41.6 35.5 41.1 35.9 41.8 33.5 39.7 39.6 45.8 35.5</span>
-<span id="cb5-6"><a></a> [76] 42.8 40.9 37.2 36.2 42.1 34.6 42.9 36.7 35.1 37.3 41.3 36.3 36.9 38.3 38.9</span>
-<span id="cb5-7"><a></a> [91] 35.7 41.1 34.0 39.6 36.2 40.8 38.1 40.3 33.1 43.2 35.0 41.0 37.7 37.8 37.9</span>
-<span id="cb5-8"><a></a>[106] 39.7 38.6 38.2 38.1 43.2 38.1 45.6 39.7 42.2 39.6 42.7 38.6 37.3 35.7 41.1</span>
-<span id="cb5-9"><a></a>[121] 36.2 37.7 40.2 41.4 35.2 40.6 38.8 41.5 39.0 44.1 38.5 43.1 36.8 37.5 38.1</span>
-<span id="cb5-10"><a></a>[136] 41.1 35.6 40.2 37.0 39.7 40.2 40.6 32.1 40.7 37.3 39.0 39.2 36.6 36.0 37.8</span>
-<span id="cb5-11"><a></a>[151] 36.0 41.5 46.1 50.0 48.7 50.0 47.6 46.5 45.4 46.7 43.3 46.8 40.9 49.0 45.5</span>
-<span id="cb5-12"><a></a>[166] 48.4 45.8 49.3 42.0 49.2 46.2 48.7 50.2 45.1 46.5 46.3 42.9 46.1 44.5 47.8</span>
-<span id="cb5-13"><a></a>[181] 48.2 50.0 47.3 42.8 45.1 59.6 49.1 48.4 42.6 44.4 44.0 48.7 42.7 49.6 45.3</span>
-<span id="cb5-14"><a></a>[196] 49.6 50.5 43.6 45.5 50.5 44.9 45.2 46.6 48.5 45.1 50.1 46.5 45.0 43.8 45.5</span>
-<span id="cb5-15"><a></a>[211] 43.2 50.4 45.3 46.2 45.7 54.3 45.8 49.8 46.2 49.5 43.5 50.7 47.7 46.4 48.2</span>
-<span id="cb5-16"><a></a>[226] 46.5 46.4 48.6 47.5 51.1 45.2 45.2 49.1 52.5 47.4 50.0 44.9 50.8 43.4 51.3</span>
-<span id="cb5-17"><a></a>[241] 47.5 52.1 47.5 52.2 45.5 49.5 44.5 50.8 49.4 46.9 48.4 51.1 48.5 55.9 47.2</span>
-<span id="cb5-18"><a></a>[256] 49.1 47.3 46.8 41.7 53.4 43.3 48.1 50.5 49.8 43.5 51.5 46.2 55.1 44.5 48.8</span>
-<span id="cb5-19"><a></a>[271] 47.2   NA 46.8 50.4 45.2 49.9 46.5 50.0 51.3 45.4 52.7 45.2 46.1 51.3 46.0</span>
-<span id="cb5-20"><a></a>[286] 51.3 46.6 51.7 47.0 52.0 45.9 50.5 50.3 58.0 46.4 49.2 42.4 48.5 43.2 50.6</span>
-<span id="cb5-21"><a></a>[301] 46.7 52.0 50.5 49.5 46.4 52.8 40.9 54.2 42.5 51.0 49.7 47.5 47.6 52.0 46.9</span>
-<span id="cb5-22"><a></a>[316] 53.5 49.0 46.2 50.9 45.5 50.9 50.8 50.1 49.0 51.5 49.8 48.1 51.4 45.7 50.7</span>
-<span id="cb5-23"><a></a>[331] 42.5 52.2 45.2 49.3 50.2 45.6 51.9 46.8 45.7 55.8 43.5 49.6 50.8 50.2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource hscroll number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a>  [1] 39.1 39.5 40.3   NA 36.7 39.3 38.9 39.2 34.1 42.0 37.8 37.8 41.1 38.6 34.6</span>
+<span id="cb4-2"><a></a> [16] 36.6 38.7 42.5 34.4 46.0 37.8 37.7 35.9 38.2 38.8 35.3 40.6 40.5 37.9 40.5</span>
+<span id="cb4-3"><a></a> [31] 39.5 37.2 39.5 40.9 36.4 39.2 38.8 42.2 37.6 39.8 36.5 40.8 36.0 44.1 37.0</span>
+<span id="cb4-4"><a></a> [46] 39.6 41.1 37.5 36.0 42.3 39.6 40.1 35.0 42.0 34.5 41.4 39.0 40.6 36.5 37.6</span>
+<span id="cb4-5"><a></a> [61] 35.7 41.3 37.6 41.1 36.4 41.6 35.5 41.1 35.9 41.8 33.5 39.7 39.6 45.8 35.5</span>
+<span id="cb4-6"><a></a> [76] 42.8 40.9 37.2 36.2 42.1 34.6 42.9 36.7 35.1 37.3 41.3 36.3 36.9 38.3 38.9</span>
+<span id="cb4-7"><a></a> [91] 35.7 41.1 34.0 39.6 36.2 40.8 38.1 40.3 33.1 43.2 35.0 41.0 37.7 37.8 37.9</span>
+<span id="cb4-8"><a></a>[106] 39.7 38.6 38.2 38.1 43.2 38.1 45.6 39.7 42.2 39.6 42.7 38.6 37.3 35.7 41.1</span>
+<span id="cb4-9"><a></a>[121] 36.2 37.7 40.2 41.4 35.2 40.6 38.8 41.5 39.0 44.1 38.5 43.1 36.8 37.5 38.1</span>
+<span id="cb4-10"><a></a>[136] 41.1 35.6 40.2 37.0 39.7 40.2 40.6 32.1 40.7 37.3 39.0 39.2 36.6 36.0 37.8</span>
+<span id="cb4-11"><a></a>[151] 36.0 41.5 46.1 50.0 48.7 50.0 47.6 46.5 45.4 46.7 43.3 46.8 40.9 49.0 45.5</span>
+<span id="cb4-12"><a></a>[166] 48.4 45.8 49.3 42.0 49.2 46.2 48.7 50.2 45.1 46.5 46.3 42.9 46.1 44.5 47.8</span>
+<span id="cb4-13"><a></a>[181] 48.2 50.0 47.3 42.8 45.1 59.6 49.1 48.4 42.6 44.4 44.0 48.7 42.7 49.6 45.3</span>
+<span id="cb4-14"><a></a>[196] 49.6 50.5 43.6 45.5 50.5 44.9 45.2 46.6 48.5 45.1 50.1 46.5 45.0 43.8 45.5</span>
+<span id="cb4-15"><a></a>[211] 43.2 50.4 45.3 46.2 45.7 54.3 45.8 49.8 46.2 49.5 43.5 50.7 47.7 46.4 48.2</span>
+<span id="cb4-16"><a></a>[226] 46.5 46.4 48.6 47.5 51.1 45.2 45.2 49.1 52.5 47.4 50.0 44.9 50.8 43.4 51.3</span>
+<span id="cb4-17"><a></a>[241] 47.5 52.1 47.5 52.2 45.5 49.5 44.5 50.8 49.4 46.9 48.4 51.1 48.5 55.9 47.2</span>
+<span id="cb4-18"><a></a>[256] 49.1 47.3 46.8 41.7 53.4 43.3 48.1 50.5 49.8 43.5 51.5 46.2 55.1 44.5 48.8</span>
+<span id="cb4-19"><a></a>[271] 47.2   NA 46.8 50.4 45.2 49.9 46.5 50.0 51.3 45.4 52.7 45.2 46.1 51.3 46.0</span>
+<span id="cb4-20"><a></a>[286] 51.3 46.6 51.7 47.0 52.0 45.9 50.5 50.3 58.0 46.4 49.2 42.4 48.5 43.2 50.6</span>
+<span id="cb4-21"><a></a>[301] 46.7 52.0 50.5 49.5 46.4 52.8 40.9 54.2 42.5 51.0 49.7 47.5 47.6 52.0 46.9</span>
+<span id="cb4-22"><a></a>[316] 53.5 49.0 46.2 50.9 45.5 50.9 50.8 50.1 49.0 51.5 49.8 48.1 51.4 45.7 50.7</span>
+<span id="cb4-23"><a></a>[331] 42.5 52.2 45.2 49.3 50.2 45.6 51.9 46.8 45.7 55.8 43.5 49.6 50.8 50.2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="cell">
@@ -1310,20 +1384,20 @@ Ordinal vs.&nbsp;Nominal Variables
 <div class="fragment">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource hscroll number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a></a>  [1] 88.236 77.348 81.050 74.431 75.083 79.569 74.998 80.099 74.264 83.850</span>
-<span id="cb7-2"><a></a> [11] 89.857 81.427 79.439 84.260 78.565 77.570 78.224 73.780 88.085 79.341</span>
-<span id="cb7-3"><a></a> [21] 80.554 77.317 81.155 83.842 87.051 78.362 81.528 72.148 74.131 78.927</span>
-<span id="cb7-4"><a></a> [31] 75.446 79.791 78.199 90.769 85.640 78.420 83.484 79.045 97.909 86.736</span>
-<span id="cb7-5"><a></a> [41] 73.723 76.973 81.320 79.238 85.803 86.621 85.781 81.844 82.896 80.478</span>
-<span id="cb7-6"><a></a> [51] 75.903 84.565 76.302 83.432 85.448 69.695 81.049 85.575 84.791 82.525</span>
-<span id="cb7-7"><a></a> [61] 78.361 77.803 86.542 84.171 86.103 72.772 78.730 76.189 75.187 79.194</span>
-<span id="cb7-8"><a></a> [71] 77.159 82.048 82.661 84.021 76.008 79.474 79.015 86.992 72.524 76.094</span>
-<span id="cb7-9"><a></a> [81] 78.765 80.623 82.497 75.776 70.614 79.677 81.182 77.943 76.863 85.561</span>
-<span id="cb7-10"><a></a> [91] 89.569 96.695 73.680 77.770 81.584 81.965 78.373 76.295 73.212 79.229</span>
-<span id="cb7-11"><a></a>[101] 87.273 87.364 82.706 83.843 75.864 82.791 82.637 78.685 72.626 69.302</span>
-<span id="cb7-12"><a></a>[111] 93.408 73.189 83.764 77.832 82.803 80.278 94.962 79.616 85.667 82.710</span>
-<span id="cb7-13"><a></a>[121] 86.823 76.656 74.623 71.508 91.131 78.318 81.058 86.239 76.585 85.652</span>
-<span id="cb7-14"><a></a>[131] 77.122 86.036 83.127 83.234 80.746 83.878 75.544 73.780 81.106 85.523</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource hscroll number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a></a>  [1] 88.236 77.348 81.050 74.431 75.083 79.569 74.998 80.099 74.264 83.850</span>
+<span id="cb6-2"><a></a> [11] 89.857 81.427 79.439 84.260 78.565 77.570 78.224 73.780 88.085 79.341</span>
+<span id="cb6-3"><a></a> [21] 80.554 77.317 81.155 83.842 87.051 78.362 81.528 72.148 74.131 78.927</span>
+<span id="cb6-4"><a></a> [31] 75.446 79.791 78.199 90.769 85.640 78.420 83.484 79.045 97.909 86.736</span>
+<span id="cb6-5"><a></a> [41] 73.723 76.973 81.320 79.238 85.803 86.621 85.781 81.844 82.896 80.478</span>
+<span id="cb6-6"><a></a> [51] 75.903 84.565 76.302 83.432 85.448 69.695 81.049 85.575 84.791 82.525</span>
+<span id="cb6-7"><a></a> [61] 78.361 77.803 86.542 84.171 86.103 72.772 78.730 76.189 75.187 79.194</span>
+<span id="cb6-8"><a></a> [71] 77.159 82.048 82.661 84.021 76.008 79.474 79.015 86.992 72.524 76.094</span>
+<span id="cb6-9"><a></a> [81] 78.765 80.623 82.497 75.776 70.614 79.677 81.182 77.943 76.863 85.561</span>
+<span id="cb6-10"><a></a> [91] 89.569 96.695 73.680 77.770 81.584 81.965 78.373 76.295 73.212 79.229</span>
+<span id="cb6-11"><a></a>[101] 87.273 87.364 82.706 83.843 75.864 82.791 82.637 78.685 72.626 69.302</span>
+<span id="cb6-12"><a></a>[111] 93.408 73.189 83.764 77.832 82.803 80.278 94.962 79.616 85.667 82.710</span>
+<span id="cb6-13"><a></a>[121] 86.823 76.656 74.623 71.508 91.131 78.318 81.058 86.239 76.585 85.652</span>
+<span id="cb6-14"><a></a>[131] 77.122 86.036 83.127 83.234 80.746 83.878 75.544 73.780 81.106 85.523</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="cell">
