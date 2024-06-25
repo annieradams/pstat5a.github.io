@@ -1,8 +1,8 @@
 ---
 title: "PSTAT 5A: Lecture 02"
 subtitle: "Descriptive Statistics, Part II"
-author: "Ethan P. Marzban"
-date: "06/27/23"
+author: "Mallory Wang"
+date: "06/25/24"
 format: 
     revealjs:
       html-math-method: mathjax
