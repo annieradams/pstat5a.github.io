@@ -62,6 +62,7 @@ linkcolor: "#ffa07a"
         </tr>
         <tr>
           <td><b>OH:</b></td>
+          <td>Tuesdays 2:00pm - 3:00pm in Building 434, Room 113</td>
         </tr>
       </table>
     </td>
