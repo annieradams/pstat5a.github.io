@@ -1,8 +1,8 @@
 ---
-title: "PSTAT 5A: Midterm 1 Review"
+title: "PSTAT 5A: Review 1"
 subtitle: "Overview of Weeks 1 and 2"
-author: "Ethan P. Marzban"
-date: "07/05/23"
+author: "Mallory Wang"
+date: "07/02/23"
 format: 
     revealjs:
       html-math-method: mathjax

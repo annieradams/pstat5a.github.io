@@ -3481,210 +3481,210 @@
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#structure-of-data",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#structure-of-data",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Structure of Data",
     "text": "Structure of Data\n\nWe started by talking about the structure of data.\nWe were exposed to the notion of a data matrix, which is comprised of a series of observational units (i.e. rows) on a series of variables (i.e. columns)\nFor instance, the palmerpenguins data matrix is:\n\n\n\n\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           NA            NA                  NA          NA\n 5 Adelie  Torgersen           36.7          19.3               193        3450\n 6 Adelie  Torgersen           39.3          20.6               190        3650\n 7 Adelie  Torgersen           38.9          17.8               181        3625\n 8 Adelie  Torgersen           39.2          19.6               195        4675\n 9 Adelie  Torgersen           34.1          18.1               193        3475\n10 Adelie  Torgersen           42            20.2               190        4250\n# ℹ 334 more rows\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;"
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#structure-of-data-1",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#structure-of-data-1",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Structure of Data",
     "text": "Structure of Data\n\n\nOf course, the reader is not expected to a priori know what the variables in a dataset represent; as such, most datasets come equipped with a data dictionary that lists out the variables included in the dataset along with a brief description of each.\n\n\n\n\n\n\n\n\n\n\nVariable\nDescription\n\n\n\n\nspecies\nThe species of penguin (either Adelie, Chinstrap, or Gentoo)\n\n\nisland\nThe island on which the penguin was found (either Biscoe, Dream, or Torgersen)\n\n\nbill_length_mm\nThe length (millimeters) of the penguin’s bill\n\n\nbill_depth_mm\nThe depth (in millimeters) of the penguin’s bill\n\n\nflipper_length_mm\nThe length (in millimeters) of the penguin’s flipper\n\n\nbody_mass_g\nThe mass (in grams) of the penguin\n\n\nsex\nThe sex of the penguin (either Male or Female)\n\n\nyear\nThe year in which the penguin was observed"
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#classification-of-variables",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#classification-of-variables",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Classification of Variables",
     "text": "Classification of Variables\n\nWe also saw that variables fall into two main types: numerical and categorical.\n\nRemember that it is not enough to simply check whether our data is comprised of numbers, as categorical data can be encoded using numbers (e.g. months in a year).\nRather, we should check whether it makes interpretable sense to add two elements in our variable (e.g. 1 + 2 is 3, whereas Jan + Feb is not March)."
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#classification-of-variables-1",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#classification-of-variables-1",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Classification of Variables",
     "text": "Classification of Variables\n\nWithin numerical data, we have a further subdivision into discrete and continuous variables.\n\nThe set of possible values of a discrete variable has jumps, whereas the set possible values of a continuous variable has no jumps.\n\nWithin categorical data, we have a further subdivision into ordinal and nominal variables.\n\nOrdinal variables have a natural ordering (e.g. letter grades, months of the year, etc.) whereas nominal variables do not (e.g. favorite color)"
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#full-classification-scheme",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#full-classification-scheme",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Full Classification Scheme",
     "text": "Full Classification Scheme\n\n\n\n\n\n\n\ndata_classification\n\n\ncluster_main\n\n\n\ncluster_0\n\n\n\ncluster_1\n\n\n\ncluster_2\n\n\n\ncluster_3\n\n\n\n\nData\n\nVariable\n\n\n\nnumerical\n\nNumerical\n\n\n\nData-&gt;numerical\n\n\n\n\n\ncategorical\n\nCategorical\n\n\n\nData-&gt;categorical\n\n\n\n\n\ncontinuous\n\nContinuous\n\n\n\nnumerical-&gt;continuous\n\n\n\n\n\ndiscrete\n\nDiscrete\n\n\n\nnumerical-&gt;discrete\n\n\n\n\n\nnominal\n\nNominal\n\n\n\ncategorical-&gt;nominal\n\n\n\n\n\nordinal\n\nOrdinal\n\n\n\ncategorical-&gt;ordinal"
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#visualization",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#visualization",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Visualization",
     "text": "Visualization\n\nOnce we have classified a variable as being either numerical or categorical, we can ask ourselves: how can we best visualize this variable?\nFor categorical data, we use a bargraph and for numerical data we use either a histogram or a boxplot."
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#bargraph",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#bargraph",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Bargraph",
     "text": "Bargraph"
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#histogram",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#histogram",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Histogram",
     "text": "Histogram\n\n\nRemember the importance of binwidth: demo"
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#boxplot",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#boxplot",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Boxplot",
     "text": "Boxplot\n\n\nRemember that the whiskers are never allowed to extend beyond 1.5 times the IQR (and recall that the IQR is just the width of the box)."
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#numerical-summaries",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#numerical-summaries",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Numerical Summaries",
     "text": "Numerical Summaries\n\nWe can also produce numerical summaries of numerical variables.\nMeasures of Central Tendency are different quantities that summarize the “center” of a variable\n\nThere are two main measures of central tendency we discussed: the mean and the median."
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#the-mean",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#the-mean",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "The Mean",
     "text": "The Mean\n\nThe mean (or arithmetic mean) is a sort of “balancing point”:\n\n\n\n\n\n\n\n\n\n\\[ \\overline{x} = \\frac{1}{n} \\sum_{i=1}^{n} x_i \\]\n\n\nAlso recall our discussion on data aggregation, and how the incorporation of new data changes the mean."
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#spread",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#spread",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Spread",
     "text": "Spread\n\nAnother way we could summarize a numerical dataset (i.e. a dataset containing only one variable, one that is numerical) is to describe how “spread out” the values are.\nThe variance is a sort of “average distance of points to the mean”:\n\n\n\n\n\n\n\n\n\n\\[ s_x^2 = \\frac{1}{n - 1} \\sum_{i=1}^{n} (x_i - \\overline{x})^2 \\]\n\n\nThe standard deviation is just the square root of the variance"
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#spread-1",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#spread-1",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Spread",
     "text": "Spread\n\nThe interquartile range (IQR) is another measure of spread: \\[ \\mathrm{IQR} = Q_3 - Q_1 \\] where \\(Q_1\\) and \\(Q_3\\) denote the first and third quartiles, respectively.\n\nRecall that the \\(p\\)th percentile of a dataset \\(X\\) is the value \\(\\pi_{x, \\ 0.5}\\) such that p% of observations lie to the left of (i.e. are less than) \\(\\pi_{x, \\ 0.5}\\).\n\\(Q_1\\) is the 25th percentile and \\(Q_3\\) is the 75th percentile\n\nThe third measure of spread we discussed is the range: \\[ \\mathrm{range}(X) = \\max\\{x_1, \\cdots, x_n\\} - \\min\\{x_1, \\ \\cdots, \\ x_n\\} \\]"
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#number-summary",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#number-summary",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "5-Number Summary",
     "text": "5-Number Summary\n\nRecall the five number summary, which contains:\n\nThe minimum\nThe first quartile\nThe median\nThe third quartile\nThe maximum\n\nAlso recall how all of these quantities appear on a boxplot!"
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#comparisons-of-variables",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#comparisons-of-variables",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Comparisons of Variables",
     "text": "Comparisons of Variables\n\nIf we want to compare two variables, there are three cases to consider:\n\nNumerical vs. Numerical\nNumerical vs. Categorical\nCategorical vs. Categorical\n\nWhen comparing two numerical variables, we use a scatterplot\nWhen comparing a numerical variable to a categorical variable, we use a side-by-side boxplot\nWhen comparing two categorical variables, we construct a contingency table"
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#basics-of-probability",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#basics-of-probability",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Basics of Probability",
     "text": "Basics of Probability\n\nProbability is, in many ways, the language of uncertainty.\nAn experiment is any procedure we can repeat an infinite number of times, where each time we repeat the procedure the same fixed set of “things” can occur\n\nThese “things” are called outcomes\nThe outcome space, denoted \\(\\Omega\\), is the set containing all outcomes associated with a particular experiment.\nEvents are just subset of the outcome space.\n\nWe can express outcome spaces using tables or trees."
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#probability-1",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#probability-1",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Probability",
     "text": "Probability\n\nProbability is a function that acts on events\n\nNotationally: \\(\\mathbb{P}(E)\\)\n\nThere are two main approaches to computing probabilities:\n\nThe Classical Aproach: if outcomes are equally likely, then for any event \\(E\\) \\[ \\mathbb{P}(E) = \\frac{\\#(E)}{\\#(\\Omega)} \\]\nThe long-run [relative] frequency approach: repeat the experiment an infinite number of times and define \\(\\mathbb{P}(E)\\) to be the proportion of times \\(E\\) occurs"
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#long-run-frequencies-example",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#long-run-frequencies-example",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Long-Run Frequencies Example",
     "text": "Long-Run Frequencies Example\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nToss\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n\n\n\n\nOutcome\nH\nT\nT\nH\nT\nH\nH\nH\nT\nT\n\n\nRaw freq. of H\n1\n1\n1\n2\n2\n3\n4\n5\n5\n5\n\n\nRel. freq of H\n1/1\n1/2\n1/3\n2/4\n2/5\n3/6\n4/7\n5/8\n5/9\n5/10"
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#set-operations",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#set-operations",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Set Operations",
     "text": "Set Operations\n\nGiven two events \\(E\\) and \\(F\\), there are several operations we can perform:\n\nComplement: \\(E^\\complement\\); denotes “not \\(E\\)”\nUnion: \\(E \\cup F\\); denotes \\(E\\) or \\(F\\) (or both)\nIntersection: \\(E \\cap F\\); denotes \\(E\\) and \\(F\\)"
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#venn-diagrams",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#venn-diagrams",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Venn Diagrams",
     "text": "Venn Diagrams\n\n\n\n\n\n \\(A^\\complement\\)  (complement)\n\n\n\n\n\n\n\n\n \\(A \\cap B\\)  (intersection)\n\n\n\n\n\n\n\n\n \\(A \\cup B\\)  (union)"
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#axioms-of-probability",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#axioms-of-probability",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Axioms of Probability",
     "text": "Axioms of Probability\n\n\\(\\mathbb{P}(E) \\geq 0\\) for any event \\(E\\)\n\\(\\mathbb{P}(\\Omega) = 1\\)\nFor disjoint events \\(E\\) and \\(F\\) (i.e. for \\(E \\cap F = \\varnothing\\)), \\(\\mathbb{P}(E \\cup F) = \\mathbb{P}(E) + \\mathbb{P}(F)\\)"
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#probability-rules",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#probability-rules",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Probability Rules",
     "text": "Probability Rules\n\nProbability of the Empty Set: \\(\\mathbb{P}(\\varnothing) = 0\\)\nComplement Rule: \\(\\mathbb{P}(E^\\complement) = 1 - \\mathbb{P}(E)\\)\nAddition Rule: \\(\\mathbb{P}(E \\cup F) = \\mathbb{P}(E) + \\mathbb{P}(F) - \\mathbb{P}(E \\cap F)\\)"
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#conditional-probabilities",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#conditional-probabilities",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Conditional Probabilities",
     "text": "Conditional Probabilities\n\n\\(\\mathbb{P}(E \\mid F)\\) denotes an “updating” of our beliefs on \\(E\\) in the presence of \\(F\\))\n\nDefinition: \\(\\displaystyle \\mathbb{P}(E \\mid F) = \\frac{\\mathbb{P}(E \\cap F)}{\\mathbb{P}(F)}\\), provided \\(\\mathbb{P}(F) \\neq 0\\)\n\nMultiplication Rule: \\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E \\mid F) \\cdot \\mathbb{P}(F) = \\mathbb{P}(F \\mid E) \\cdot \\mathbb{P}(E)\\)\nBayes’ Rule: \\(\\displaystyle \\mathbb{P}(E \\mid F) = \\frac{\\mathbb{P}(F \\mid E) \\cdot \\mathbb{P}(E)}{\\mathbb{P}(F)}\\)\nLaw of Total Probability: \\(\\mathbb{P}(F) = \\mathbb{P}(F \\mid E) \\cdot \\mathbb{P}(E) + \\mathbb{P}(F \\mid E^\\complement) \\cdot \\mathbb{P}(E^\\complement)\\)"
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#independence",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#independence",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Independence",
     "text": "Independence\n\nIndependence asserts that \\(\\mathbb{P}(E \\mid F) = \\mathbb{P}(E)\\), which in turn implies \\(\\mathbb{P}(F \\mid E) = \\mathbb{P}(F)\\) and \\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E) \\cdot \\mathbb{P}(F)\\)\n\nNote that \\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E) \\cdot \\mathbb{P}(F)\\) only when \\(E\\) and \\(F\\) are independent! Otherwise, you have to compute \\(\\mathbb{P}(E \\cap F)\\) using the multiplication rule.\nThe interpretation of independence is that the two events “do not affect each other”"
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#basics-of-programming",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#basics-of-programming",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Basics of Programming",
     "text": "Basics of Programming\n\nRecall that, in this class, we use Python as our main computing language\n\nWe run Python in Jupyter Notebooks\n\nThere are a few data types we have encountered thus far:\n\nstr, for “string”\nint, for “integer”\nfloat, aka “real number with decimals”\nbool, for “boolean”"
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#basics-of-programming-1",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#basics-of-programming-1",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Basics of Programming",
     "text": "Basics of Programming\n\nThere are also certain data classes we have encountered, which are effectively various python objects aggregated into a larger structure. These include:\n\nTables\nLists\nArrays\n\nWe can use indexing to extract certain pieces of data classes; e.g. for a list x, x[i] returns the (i + 1)th element of x.\n\nRemember that Python starts indexing at zero!"
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#comparisons-and-conditionals",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#comparisons-and-conditionals",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Comparisons and Conditionals",
     "text": "Comparisons and Conditionals\n\nTake a look at lab 2."
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#functions",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#functions",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Functions",
     "text": "Functions\n\nI’d also like to take a minute to talk about functions in Python.\nPython functions behave much like mathematical functions: they take in some number of arguments (i.e. inputs) and can output a variety of things.\n\nFor example, the type() function returns either the data type or data structure of a single input.\nThere is some language we use when dealing with functions in programming: when we pass the argument x into the function f(), we say that we have “called” the function f() on the argument/input x. The object f(x) is called a function call."
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#functions-1",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#functions-1",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Functions",
     "text": "Functions\n\nTo create a user-defined function function_name(), we use the following structure:\n\n\n\ndef function_name(&lt;arg1&gt;, ...., &lt;argn&gt;):\n  \"\"\"\n  include a docstring here\n  \"\"\"\n  &lt;body of the function here&gt;\n\n\n\nBy the way, when writing skeleton code like the above (i.e. a chunk of code that mimics the structure/format of an actual piece of code, but isn’t fully filled in), programmers often use the symbols &lt; and &gt; to denote text. These symbols should not be included in your actual code.\n\nFor example, we would not actually enclose our arguments in &lt; and &gt;’s; we would simply write out the arguments. We’ll see an example of this in a minute"
   },
   {
     "objectID": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#exercise",
     "href": "Pages/Lectures/MT1Rev/mt1_rev_slides.html#exercise",
-    "title": "PSTAT 5A: Midterm 1 Review",
+    "title": "PSTAT 5A: Review 1",
     "section": "Exercise",
     "text": "Exercise\n\n\n\n\n\n\nExercise\n\n\n\nWrite a function is_mult_of_three() that takes in a single input x and outputs True if x is a multiple of three and False if not. Additionally, the function should return \"Error: input must be numeric\" if the argument x that is provided is not numerical.\n\n\n\n\n\nTake a moment to open up our JupyterHub server instance, and try writing out the function on your own. Then we’ll work through it together (please note that solutions to this won’t be provided, so make sure you take notes!)"
   },
