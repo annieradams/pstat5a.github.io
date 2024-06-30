@@ -1,8 +1,8 @@
 ---
 title: "PSTAT 5A: Lecture 05"
 subtitle: "Conditional Probability and Independence"
-author: "Ethan P. Marzban"
-date: "07/03/23"
+author: "Mallory Wang"
+date: "07/01/24"
 format: 
     revealjs:
       html-math-method: mathjax
@@ -24,6 +24,40 @@ title-slide-attributes:
 library(tidyverse)
 library(ggthemes)
 ```
+
+## Homework 1 Review
+
+- Submission: Syllabus states that all course submissions (HW, labs, and quizzes) will be via Gradescope!
+
+- No late homework!
+
+- Please show your work!
+
+## Homework 1 - Distribution of Scores
+
+![](hw1_dist.png)
+
+## Homework 1 - Questions and number of correct answers
+
+![](hw1q.png)
+
+## Homework 1 
+
+- Q1.3 asks for calculating the standard deviation.
+
+- Q3.2: Approximately what percent of AQI readings at Location D were less than 16?
+
+![](hw1_q3.2.png)
+
+## Homework 1 
+
+- Q4: Read Tranforming Data
+
+- Q6.4: D = the irst number selected was odd, and the irst number selected was even.
+
+- Q7.3: On a particular website, passwords must be exactly 7 characters long and consist of 3 letters (A through Z), followed by 2 digits (0 through 9), followed by another letter (A through Z), followed by a special character (!, @, #, $, %).  Suppose now that the letters must still appear together, the digits must still appear together, and the special characters must still appear together, but the order in which these three categories of characters appear is now free to vary. How many passwords can be created using this new scheme?
+
+
 
 ## Leadup
 
@@ -234,7 +268,7 @@ $$ \mathbb{P}(E \cap F) = \mathbb{P}(F \cap E) = \mathbb{P}(F \mid E) \cdot \mat
 
 :::{.fragment}
 :::{.callout-important}
-## **Baeys' Rule**
+## **Bayes' Rule**
 ::: {style="font-size: 30px"}
 $$ \mathbb{P}(E \mid F) = \frac{\mathbb{P}(F \mid E) \cdot \mathbb{P}(E)}{\mathbb{P}(F)} $$
 for events $E$ and $F$ with $\mathbb{P}(E) \neq 0$ and $\mathbb{P}(F) \neq 0$.
@@ -532,4 +566,3 @@ Two events $E$ and $F$ are defined to be **independent** (notated $E \perp F$) i
 
     - In general, the only way to compute the probability of an intersection is to use the Multiplication Rule.
     
-- I'll show you one of the equivalencies on the board.

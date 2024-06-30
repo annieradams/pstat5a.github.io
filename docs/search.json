@@ -1881,6 +1881,41 @@
     "text": "Next Time\n\nNext time, we’ll discuss how to use the OLS regression line to make predictions."
   },
   {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#homework-1-review",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#homework-1-review",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Homework 1 Review",
+    "text": "Homework 1 Review\n\nSubmission: Syllabus states that all course submissions (HW, labs, and quizzes) will be via Gradescope!\nNo late homework!\nPlease show your work!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#homework-1---distribution-of-scores",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#homework-1---distribution-of-scores",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Homework 1 - Distribution of Scores",
+    "text": "Homework 1 - Distribution of Scores"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#homework-1---questions-and-number-of-correct-answers",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#homework-1---questions-and-number-of-correct-answers",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Homework 1 - Questions and number of correct answers",
+    "text": "Homework 1 - Questions and number of correct answers"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#homework-1",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#homework-1",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Homework 1",
+    "text": "Homework 1\n\nQ1.3 asks for calculating the standard deviation.\nQ3.2: Approximately what percent of AQI readings at Location D were less than 16?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture05/Lec05.html#homework-1-1",
+    "href": "Pages/Lectures/Lecture05/Lec05.html#homework-1-1",
+    "title": "PSTAT 5A: Lecture 05",
+    "section": "Homework 1",
+    "text": "Homework 1\n\nQ4: Read Tranforming Data\nQ6.4: D = the irst number selected was odd, and the irst number selected was even.\nQ7.3: On a particular website, passwords must be exactly 7 characters long and consist of 3 letters (A through Z), followed by 2 digits (0 through 9), followed by another letter (A through Z), followed by a special character (!, @, #, $, %). Suppose now that the letters must still appear together, the digits must still appear together, and the special characters must still appear together, but the order in which these three categories of characters appear is now free to vary. How many passwords can be created using this new scheme?"
+  },
+  {
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#leadup",
     "href": "Pages/Lectures/Lecture05/Lec05.html#leadup",
     "title": "PSTAT 5A: Lecture 05",
@@ -1955,7 +1990,7 @@
     "href": "Pages/Lectures/Lecture05/Lec05.html#bayes-rule",
     "title": "PSTAT 5A: Lecture 05",
     "section": "Bayes’ Rule",
-    "text": "Bayes’ Rule\n\n\n\n\n\n\n\nBaeys’ Rule\n\n\n\n\\[ \\mathbb{P}(E \\mid F) = \\frac{\\mathbb{P}(F \\mid E) \\cdot \\mathbb{P}(E)}{\\mathbb{P}(F)} \\] for events \\(E\\) and \\(F\\) with \\(\\mathbb{P}(E) \\neq 0\\) and \\(\\mathbb{P}(F) \\neq 0\\).\n\n\n\n\n\n\nIn a sense, Bayes’ Rule gives us a way to “reverse the order of a conditional”"
+    "text": "Bayes’ Rule\n\n\n\n\n\n\n\nBayes’ Rule\n\n\n\n\\[ \\mathbb{P}(E \\mid F) = \\frac{\\mathbb{P}(F \\mid E) \\cdot \\mathbb{P}(E)}{\\mathbb{P}(F)} \\] for events \\(E\\) and \\(F\\) with \\(\\mathbb{P}(E) \\neq 0\\) and \\(\\mathbb{P}(F) \\neq 0\\).\n\n\n\n\n\n\nIn a sense, Bayes’ Rule gives us a way to “reverse the order of a conditional”"
   },
   {
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#worked-out-example-1",
@@ -2067,7 +2102,7 @@
     "href": "Pages/Lectures/Lecture05/Lec05.html#independence-1",
     "title": "PSTAT 5A: Lecture 05",
     "section": "Independence",
-    "text": "Independence\n\n\n\n\n\n\n\nDefinition\n\n\n\nTwo events \\(E\\) and \\(F\\) are defined to be independent (notated \\(E \\perp F\\)) if any of the following hold:\n\n\\(\\mathbb{P}(E \\mid F) = \\mathbb{P}(E)\\)\n\\(\\mathbb{P}(F \\mid E) = \\mathbb{P}(F)\\)\n\\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E) \\cdot \\mathbb{P}(F)\\)\n\n\n\n\n\n\n\nNote- the probability of an intersection equals the product of unconditional (i.e. marginal) probabilities ONLY WHEN THE EVENTS ARE INDEPENDENT.\n\nIn general, the only way to compute the probability of an intersection is to use the Multiplication Rule.\n\nI’ll show you one of the equivalencies on the board."
+    "text": "Independence\n\n\n\n\n\n\n\nDefinition\n\n\n\nTwo events \\(E\\) and \\(F\\) are defined to be independent (notated \\(E \\perp F\\)) if any of the following hold:\n\n\\(\\mathbb{P}(E \\mid F) = \\mathbb{P}(E)\\)\n\\(\\mathbb{P}(F \\mid E) = \\mathbb{P}(F)\\)\n\\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E) \\cdot \\mathbb{P}(F)\\)\n\n\n\n\n\n\n\nNote- the probability of an intersection equals the product of unconditional (i.e. marginal) probabilities ONLY WHEN THE EVENTS ARE INDEPENDENT.\n\nIn general, the only way to compute the probability of an intersection is to use the Multiplication Rule."
   },
   {
     "objectID": "Pages/Lectures/Lecture03/Lec03.html#uncertainty",
