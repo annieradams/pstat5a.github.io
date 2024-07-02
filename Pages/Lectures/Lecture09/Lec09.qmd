@@ -1,8 +1,8 @@
 ---
 title: "PSTAT 5A: Lecture 09"
 subtitle: "Discrete Random Variables"
-author: "Ethan P. Marzban"
-date: "07/10/23"
+author: "Mallory Wang"
+date: "07/02/24"
 format: 
     revealjs:
       html-math-method: mathjax
@@ -11,7 +11,6 @@ format:
       logo: 5a_hex.png
       template-partials:
         - title-slide.html
-      
 editor: source
 title-slide-attributes:
     data-background-image: "5a_hex.png"
@@ -193,6 +192,11 @@ Given a random variable $X$, we say that:
 - Let's return to our coin tossing example.
 
 - What is the probability that we observe zero heads?
+
+---
+
+## Leadup {style="font-size:32px"}
+
 - Well, in the language of our random variable $X$ (which counts the number of heads in these three tosses of our fair coin), we can translate "zero heads" to the event "$\{X = 0\}$'', meaning we want to find $\mathbb{P}(X = 0)$.
 - Observing zero heads is equivalent to observing *all* tails, meaning the event $\{X = 0\}$ is equivalent to the event \{ (`T`, \ `T`, \ `T`) \}.
 

@@ -4806,7 +4806,14 @@
     "href": "Pages/Lectures/Lecture09/Lec09.html#leadup",
     "title": "PSTAT 5A: Lecture 09",
     "section": "Leadup",
-    "text": "Leadup\n\nLet’s return to our coin tossing example.\nWhat is the probability that we observe zero heads?\nWell, in the language of our random variable \\(X\\) (which counts the number of heads in these three tosses of our fair coin), we can translate “zero heads” to the event “\\(\\{X = 0\\}\\)’’, meaning we want to find \\(\\mathbb{P}(X = 0)\\).\nObserving zero heads is equivalent to observing all tails, meaning the event \\(\\{X = 0\\}\\) is equivalent to the event { (T,  T,  T) }.\nNow, up to this point I have been careful to avoid explicitly mentioning whether our coin is fair or not.\n\nFor the time being, let’s assume that the probability our coin lands ‘heads’ on any given toss is some fixed value \\(p\\). (If the coin were fair, then \\(p = 0.5\\) but let’s not make that assumption yet.)"
+    "text": "Leadup\n\nLet’s return to our coin tossing example.\nWhat is the probability that we observe zero heads?"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture09/Lec09.html#leadup-1",
+    "href": "Pages/Lectures/Lecture09/Lec09.html#leadup-1",
+    "title": "PSTAT 5A: Lecture 09",
+    "section": "Leadup",
+    "text": "Leadup\n\nWell, in the language of our random variable \\(X\\) (which counts the number of heads in these three tosses of our fair coin), we can translate “zero heads” to the event “\\(\\{X = 0\\}\\)’’, meaning we want to find \\(\\mathbb{P}(X = 0)\\).\nObserving zero heads is equivalent to observing all tails, meaning the event \\(\\{X = 0\\}\\) is equivalent to the event { (T,  T,  T) }.\nNow, up to this point I have been careful to avoid explicitly mentioning whether our coin is fair or not.\n\nFor the time being, let’s assume that the probability our coin lands ‘heads’ on any given toss is some fixed value \\(p\\). (If the coin were fair, then \\(p = 0.5\\) but let’s not make that assumption yet.)"
   },
   {
     "objectID": "Pages/Lectures/Lecture09/Lec09.html#probability-mass-function",

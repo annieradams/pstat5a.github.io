@@ -11,8 +11,8 @@
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.45">
 
-  <meta name="author" content="Ethan P. Marzban">
-  <meta name="dcterms.date" content="2023-07-10">
+  <meta name="author" content="Mallory Wang">
+  <meta name="dcterms.date" content="2024-07-02">
   <title>PSTAT 5A: Summer Session A, 2024 – PSTAT 5A: Lecture 09</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -397,8 +397,8 @@
 <section id="title-slide" data-background-image="5a_hex.png" data-background-opacity="0.5" data-background-position="left" data-background-size="contain" class="center">
   <h1 class="title" style="text-align: right">PSTAT 5A: Lecture 09</h1>
   <h2 class="subtitle" style="text-align: right">Discrete Random Variables</h2>
-  <p class="author" style="text-align: right">Ethan P. Marzban</p>
-  <p class="date" style="text-align: right">2023-07-10</p>
+  <p class="author" style="text-align: right">Mallory Wang</p>
+  <p class="date" style="text-align: right">2024-07-02</p>
 </section>
 <section id="recap-of-probability" class="slide level2">
 <h2>Recap of Probability</h2>
@@ -606,7 +606,7 @@
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="95" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 94;"><span id="cb1-95"><a></a>viewof toss <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Toss"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="94" data-source-offset="0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 93;"><span id="cb1-94"><a></a>viewof toss <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">button</span>(<span class="st">"Toss"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
 
@@ -614,13 +614,13 @@
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="100" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 99;"><span id="cb2-100"><a></a>dummy <span class="op">=</span> toss <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb2-101"><a></a>coin <span class="op">=</span> [<span class="st">"H"</span><span class="op">,</span> <span class="st">"T"</span>]</span>
-<span id="cb2-102"><a></a>s1 <span class="op">=</span> coin[<span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()<span class="op">*</span>coin<span class="op">.</span><span class="at">length</span><span class="op">*</span>dummy<span class="op">/</span>dummy)]<span class="op">;</span></span>
-<span id="cb2-103"><a></a>s2 <span class="op">=</span> coin[<span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()<span class="op">*</span>coin<span class="op">.</span><span class="at">length</span><span class="op">*</span>dummy<span class="op">/</span>dummy)]<span class="op">;</span></span>
-<span id="cb2-104"><a></a>s3 <span class="op">=</span> coin[<span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()<span class="op">*</span>coin<span class="op">.</span><span class="at">length</span><span class="op">*</span>dummy<span class="op">/</span>dummy)]<span class="op">;</span></span>
-<span id="cb2-105"><a></a>s4 <span class="op">=</span> coin[<span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()<span class="op">*</span>coin<span class="op">.</span><span class="at">length</span><span class="op">*</span>dummy<span class="op">/</span>dummy)]<span class="op">;</span></span>
-<span id="cb2-106"><a></a>[s1<span class="op">,</span> s2<span class="op">,</span> s3]<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="99" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 98;"><span id="cb2-99"><a></a>dummy <span class="op">=</span> toss <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb2-100"><a></a>coin <span class="op">=</span> [<span class="st">"H"</span><span class="op">,</span> <span class="st">"T"</span>]</span>
+<span id="cb2-101"><a></a>s1 <span class="op">=</span> coin[<span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()<span class="op">*</span>coin<span class="op">.</span><span class="at">length</span><span class="op">*</span>dummy<span class="op">/</span>dummy)]<span class="op">;</span></span>
+<span id="cb2-102"><a></a>s2 <span class="op">=</span> coin[<span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()<span class="op">*</span>coin<span class="op">.</span><span class="at">length</span><span class="op">*</span>dummy<span class="op">/</span>dummy)]<span class="op">;</span></span>
+<span id="cb2-103"><a></a>s3 <span class="op">=</span> coin[<span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()<span class="op">*</span>coin<span class="op">.</span><span class="at">length</span><span class="op">*</span>dummy<span class="op">/</span>dummy)]<span class="op">;</span></span>
+<span id="cb2-104"><a></a>s4 <span class="op">=</span> coin[<span class="bu">Math</span><span class="op">.</span><span class="fu">floor</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>()<span class="op">*</span>coin<span class="op">.</span><span class="at">length</span><span class="op">*</span>dummy<span class="op">/</span>dummy)]<span class="op">;</span></span>
+<span id="cb2-105"><a></a>[s1<span class="op">,</span> s2<span class="op">,</span> s3]<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-2-1" data-nodetype="declaration">
@@ -801,6 +801,11 @@
 <ul>
 <li class="fragment"><p>Let’s return to our coin tossing example.</p></li>
 <li class="fragment"><p>What is the probability that we observe zero heads?</p></li>
+</ul>
+</section>
+<section id="leadup-1" class="slide level2" style="font-size:32px">
+<h2>Leadup</h2>
+<ul>
 <li class="fragment"><p>Well, in the language of our random variable <span class="math inline">\(X\)</span> (which counts the number of heads in these three tosses of our fair coin), we can translate “zero heads” to the event “<span class="math inline">\(\{X = 0\}\)</span>’’, meaning we want to find <span class="math inline">\(\mathbb{P}(X = 0)\)</span>.</p></li>
 <li class="fragment"><p>Observing zero heads is equivalent to observing <em>all</em> tails, meaning the event <span class="math inline">\(\{X = 0\}\)</span> is equivalent to the event { (<code>T</code>, &nbsp;<code>T</code>, &nbsp;<code>T</code>) }.</p></li>
 <li class="fragment"><p>Now, up to this point I have been careful to avoid explicitly mentioning whether our coin is fair or not.</p>
