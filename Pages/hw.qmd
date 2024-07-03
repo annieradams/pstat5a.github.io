@@ -16,3 +16,5 @@ Here you will find all homework assignments and their solutions. Please remember
 -   **Homework 1:** <a href = "../Files/HW/HW01_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a> <a href = "../Files/HW/HW01_Solns.pdf" class = "button label-outline" target = "_blank">Solns</a> 
 
 - **Homework 2:** <a href = "../Files/HW/HW02_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a>
+
+- **Homework 3:** <a href = "../Files/HW/HW03_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a>
