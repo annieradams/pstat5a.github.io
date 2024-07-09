@@ -2,7 +2,7 @@
 title: "PSTAT 5A: Review 1"
 subtitle: "Overview of Weeks 1 and 2"
 author: "Mallory Wang"
-date: "07/02/23"
+date: "07/08/23"
 format: 
     revealjs:
       html-math-method: mathjax

@@ -1,8 +1,8 @@
 ---
 title: "PSTAT 5A: Lecture 11"
 subtitle: "Introduction to Inferential Statistics"
-author: "Ethan P. Marzban"
-date: "07/12/23"
+author: "Mallory Wang"
+date: "07/09/24"
 format: 
     revealjs:
       html-math-method: mathjax

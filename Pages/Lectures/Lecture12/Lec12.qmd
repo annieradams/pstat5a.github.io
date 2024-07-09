@@ -1,8 +1,8 @@
 ---
 title: "PSTAT 5A: Lecture 12"
 subtitle: "Further Inference on Proportions"
-author: "Ethan P. Marzban"
-date: "07/13/23"
+author: "Mallory Wang"
+date: "07/10/24"
 format: 
     revealjs:
       html-math-method: mathjax
@@ -122,7 +122,7 @@ $$ 0.8980 - 0.1020 = \boxed{0.796 = 79.6\%} $$
 
 ## Leadup {style="font-size:28px"}
 
-- Let's make things a bit more concrete. Since I like cats, let's go back to our veterinarian example:
+- Let's make things a bit more concrete. Let's go back to our veterinarian example:
 
 :::{.fragment}
 >A veterinarian wishes to determine the true proportion of cats that suffer from FIV (Feline Immunodeficiency Virus). To that end, she takes a representative sample of 100 cats and finds that 3.2\% of cats in this sample have FIV.
