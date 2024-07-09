@@ -1,8 +1,8 @@
 ---
 title: "PSTAT 5A: Lecture 13"
 subtitle: "Inference on the Mean"
-author: "Ethan P. Marzban"
-date: "07/17/23"
+author: "Mallory Wang"
+date: "07/15/24"
 format: 
     revealjs:
       html-math-method: mathjax
