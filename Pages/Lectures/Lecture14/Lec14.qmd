@@ -1,8 +1,8 @@
 ---
 title: "PSTAT 5A: Lecture 14"
 subtitle: "Hypothesis Testing, Part I"
-author: "Ethan P. Marzban"
-date: "07/18/23"
+author: "Mallory Wang"
+date: "07/16/23"
 format: 
     revealjs:
       html-math-method: mathjax
