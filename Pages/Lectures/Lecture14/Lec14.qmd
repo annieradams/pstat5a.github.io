@@ -25,49 +25,27 @@ library(tidyverse)
 library(ggthemes)
 ```
 
-## Cats! {style="font-size:30px"}
+## Let's return to pets {style="font-size:30px"}
 
-- As we have previously seen...
+- According to the American Pet Products Association, prior to the pandemic, 67% of all U.S. households had pets. Many people have speculated that the. rate of pet ownership changed during the pandemic. Recently, a group of veterinarians surveyed a random sample of 480 U.S. households and found that 336 had at least one pet. *Is there evidence to support the claim that the rate of pet ownership now differs from the 67% before the pandemic?*
 
-- ... I like cats.
+:::{style="text-align:center"}
+![](pets.png){width="70%"}
+:::
 
-- So, let's consider another cat example!
-
-- It is often stated that only 1 in 5 orange tabby cats is female; i.e. that only 20\% of orange tabby cats are female. 
-
-- Let's say we take a representative sample of 100 orange tabby cats and find that 19 of these cats are female. 
-
-- Since we observed a proportion of only 19\% female cats in our sample, does that mean the claim of 20\% of orange tabby cats being female is wrong?
-
-- Well, no! We know that this 19\% is actually an observed instance of $\widehat{P}$, which itself is random. 
-
-    - Furthermore, 19\% is pretty close to 20\% so there's nothing obviously letting us know that the claim is false. 
-
-
-## Cats! {style="font-size:30px"}
-
-- However, if instead our sample of 100 orange tabby cats contained only 1 female in this sample, we might start to question the claim that 20\% of orange tabby cats are female. 
-
-- Okay, what if in our sample of 100 orange tabby cats we actually only observed 15 female cats?
-
-- Things are perhaps a bit less clear now... we know that there will be some variability in our point estimator, but how much variability would we really expect? Enough to plausibly observe a sample proportion of 15%? 
-
-\
-
-- A little more abstractly: we started with a **hypothesis** (in this example, "20\% of orange tabby cats are female"). We then wish to use our *data* to *test* how plausible this hypothesis is.
 
 ## Hypothesis Testing {style="font-size:30px"}
 
-- This is exactly the framework of **hypothesis testing**.
+- This is the framework of **Hypothesis Testing**
 
 - In hypothesis testing, we start with a pair of competing claims which we call the **null hypothesis** and **alternative hypothesis**, respectively. 
 
     - We use $H_0$, read as "h-naught", to denote the null hypothesis and $H_A$ to denote the alternative hypothesis.
 
-- For instance, in our cat example above the null hypothesis would be "$H_0$: the true proportion of orange cats that are female is 20\%". 
+- For instance, in our pets example above the null hypothesis would be "$H_0$: the true proportion of US households with pets is 67\%". 
 
-- Oftentimes we will want to phrase our hypotheses in more mathematical terms. This is where the notation we've used over the past few lectures comes into play: letting $p$ denote the true proportion of orange tabby cats that are female, we can write our null hypothesis as
-$$ H_0: \ p = 0.2 $$ 
+- Oftentimes we will want to phrase our hypotheses in more mathematical terms. This is where the notation we've used over the past few lectures comes into play: letting $p$ denote the true proportion of US households with pets, we can write our null hypothesis as
+$$ H_0: \ p = 0.67 $$ 
 
 ## Hypothesis Testing {style="font-size:30px"}
 
@@ -76,10 +54,10 @@ $$ H_0: \ p = 0.2 $$
 - As the name suggests, the alternative hypothesis provides some sort of alternative to the null.
 
 - Let's look at our cat example again. Here are some potential alternatives to the null:
-    - $p \neq 0.2$ (i.e. the true proportion of orange tabby cats that are female is not 20\%)
-    - $p > 0.2$ (i.e. the true proportion of orange tabby cats that are female is larger than 20\%)
-    - $p < 0.2$ (i.e. the true proportion of orange tabby cats that are female is less than 20\%)
-    - $p = 0.10$ (i.e. the true proportion of orange tabby cats that are female is 10\%)
+    - $p \neq 0.67$ (the true proportion of US households with pets is not 67\%)
+    - $p > 0.67$ (the true proportion of US households with pets is larger than 67\%)
+    - $p < 0.67$ (the true proportion of US households with pets is less than 67\%)
+    - $p = 0.67$ (the true proportion of US households with pets is 33.5\%)
 
 
 ## Hypothesis Testing {style="font-size:28px"}
@@ -127,7 +105,7 @@ for some prespecified value $p_0$ (e.g. 20\%, like in our cat example above).
 
 - How do we set the null hypothesis? Well, typically the null hypothesis is easier to set: I like to think of it as the "status quo".
 
-    - In other words, the null hypothesis is often taken to be whatever the existing claims state; e.g. that 20\% of orange tabby cats are female.
+    - In other words, the null hypothesis is often taken to be whatever the existing claims state; e.g. that 67\% of US households have pets.
 
 
 ## Worked-Out Example
@@ -379,11 +357,11 @@ $$ \texttt{decision}(\texttt{data}) = \begin{cases} \texttt{reject } H_0 & \text
 
 ## Leadup {style="font-size:30px"}
 
-- For the moment, let's return to the cat example from the beginning of the lecture.
+- For the moment, let's return to the pet example from the beginning of the lecture.
 
-- Letting $p$ denote the true proportion of orange tabby cats that are female, our null hypothesis takes the form $H_0: \ p = 0.2$. 
+- Letting $p$ denote the true proportion of US household with pets, our null hypothesis takes the form $H_0: \ p = 0.67$. 
 
-- Suppose we take a two-sided alternative: $H_A: \ p \neq 0.2$. 
+- Suppose we take a two-sided alternative: $H_A: \ p \neq 0.67$. 
 
 - Now, we have a good summary statistic for proportions: $\widehat{P}$. 
 
@@ -616,7 +594,13 @@ Conduct a two-sided hypothesis test at a $5\%$ level of significance on *Forbes*
 - So, here is how we would phrase the final conclusion of our test:
 
 :::{.fragment}
-> At an $\alpha = 0.05$ level of significance, there is insufficient evidence to reject *Forbes*'s claim that 91.7\% of US households own a vehicle in favor of the alternative that the true proportion of US households that own a vehicle is not 91.7\%.
+> At an $\alpha = 0.05$ level of significance, we do not have enough evidence to reject the null hypothesis that 91.7\% of US households own a vehicle. Thus, our analysis suggests that the true proportion of US households with vehicle is not different from 91.7\%. 
+:::
+
+Alternatively
+
+:::{.fragment}
+> At an $\alpha = 0.05$ level of significance, there is insufficient evidence to reject Forbes’s claim that 91.7\% of US households own a vehicle in favor of the alternative that the true proportion of US households that own a vehicle is not 91.7\%.
 :::
 
 - It is very important to include the level of significance in our conclusion! This is because the final outcome of our test may change depending on which level of significance we use.
