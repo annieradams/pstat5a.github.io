@@ -11,3 +11,6 @@ format: html
 css: "../schedule.css"
 ---
 
+-   **Formula Sheet:** <a href = "../Files/ExamInfo/Final_Formula_Sheet.pdf" class = "button label-outline" target = "_blank">Sheet</a> 
+
+-  

@@ -2,7 +2,7 @@
 title: "PSTAT 5A: Lecture 17"
 subtitle: "Hypothesis Testing, Part II"
 author: "Mallory Wang"
-date: "07/17/23"
+date: "07/18/24"
 format: 
     revealjs:
       html-math-method: mathjax
@@ -29,9 +29,7 @@ library(ggthemes)
 
 ## Recap
 
-- Before the second midterm, we discussed Hypothesis Testing on population proportions. 
-
-- That is: given a population with true proportion $p$, we took samples and tried to use the data collected in these samples to assess the validity of the claim $H_0: \ p = p_0$ (for some fixed value $p_0$) against some alternative hypothesis (two-sided, lower-tailed, or upper-tailed)
+- Hypothesis test with proportions: given a population with true proportion $p$, we took samples and tried to use the data collected in these samples to assess the validity of the claim $H_0: \ p = p_0$ (for some fixed value $p_0$) against some alternative hypothesis (two-sided, lower-tailed, or upper-tailed)
 
 - Indeed, we can conduct hypothesis testing on *any* population parameter.
 

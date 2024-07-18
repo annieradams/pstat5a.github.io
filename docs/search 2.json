@@ -278,25 +278,32 @@
     "text": "Experimental Design\n\nExperimental Design loosely refers to the principles of and procedures related to setting up an experiment.\nI won’t go into this in too much detail.\nI do highly encourage you to read Section 1.4 of your textbook, as it provides a very nice summary of some of the main tenants of experimental design.\nRemember - as Data Scientists, it is very important we understand our data as much as possible before performing analyses.\n\nPart of knowing our data is knowing how it was collected, and, indeed, how we might go about collecting our own!"
   },
   {
-    "objectID": "Pages/Lectures/Lecture14/Lec14.html#lets-return-to-pets",
-    "href": "Pages/Lectures/Lecture14/Lec14.html#lets-return-to-pets",
+    "objectID": "Pages/Lectures/Lecture14/Lec14.html#cats",
+    "href": "Pages/Lectures/Lecture14/Lec14.html#cats",
     "title": "PSTAT 5A: Lecture 14",
-    "section": "Let’s return to pets",
-    "text": "Let’s return to pets\n\nAccording to the American Pet Products Association, prior to the pandemic, 67% of all U.S. households had pets. Many people have speculated that the. rate of pet ownership changed during the pandemic. Recently, a group of veterinarians surveyed a random sample of 480 U.S. households and found that 336 had at least one pet. Is there evidence to support the claim that the rate of pet ownership now differs from the 67% before the pandemic?"
+    "section": "Cats!",
+    "text": "Cats!\n\nAs we have previously seen…\n… I like cats.\nSo, let’s consider another cat example!\nIt is often stated that only 1 in 5 orange tabby cats is female; i.e. that only 20% of orange tabby cats are female.\nLet’s say we take a representative sample of 100 orange tabby cats and find that 19 of these cats are female.\nSince we observed a proportion of only 19% female cats in our sample, does that mean the claim of 20% of orange tabby cats being female is wrong?\nWell, no! We know that this 19% is actually an observed instance of \\(\\widehat{P}\\), which itself is random.\n\nFurthermore, 19% is pretty close to 20% so there’s nothing obviously letting us know that the claim is false."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture14/Lec14.html#cats-1",
+    "href": "Pages/Lectures/Lecture14/Lec14.html#cats-1",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Cats!",
+    "text": "Cats!\n\nHowever, if instead our sample of 100 orange tabby cats contained only 1 female in this sample, we might start to question the claim that 20% of orange tabby cats are female.\nOkay, what if in our sample of 100 orange tabby cats we actually only observed 15 female cats?\nThings are perhaps a bit less clear now… we know that there will be some variability in our point estimator, but how much variability would we really expect? Enough to plausibly observe a sample proportion of 15%?\n\n\n\n\nA little more abstractly: we started with a hypothesis (in this example, “20% of orange tabby cats are female”). We then wish to use our data to test how plausible this hypothesis is."
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#hypothesis-testing",
     "href": "Pages/Lectures/Lecture14/Lec14.html#hypothesis-testing",
     "title": "PSTAT 5A: Lecture 14",
     "section": "Hypothesis Testing",
-    "text": "Hypothesis Testing\n\nThis is the framework of Hypothesis Testing\nIn hypothesis testing, we start with a pair of competing claims which we call the null hypothesis and alternative hypothesis, respectively.\n\nWe use \\(H_0\\), read as “h-naught”, to denote the null hypothesis and \\(H_A\\) to denote the alternative hypothesis.\n\nFor instance, in our pets example above the null hypothesis would be “\\(H_0\\): the true proportion of US households with pets is 67%”.\nOftentimes we will want to phrase our hypotheses in more mathematical terms. This is where the notation we’ve used over the past few lectures comes into play: letting \\(p\\) denote the true proportion of US households with pets, we can write our null hypothesis as \\[ H_0: \\ p = 0.67 \\]"
+    "text": "Hypothesis Testing\n\nThis is exactly the framework of hypothesis testing.\nIn hypothesis testing, we start with a pair of competing claims which we call the null hypothesis and alternative hypothesis, respectively.\n\nWe use \\(H_0\\), read as “h-naught”, to denote the null hypothesis and \\(H_A\\) to denote the alternative hypothesis.\n\nFor instance, in our cat example above the null hypothesis would be “\\(H_0\\): the true proportion of orange cats that are female is 20%”.\nOftentimes we will want to phrase our hypotheses in more mathematical terms. This is where the notation we’ve used over the past few lectures comes into play: letting \\(p\\) denote the true proportion of orange tabby cats that are female, we can write our null hypothesis as \\[ H_0: \\ p = 0.2 \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#hypothesis-testing-1",
     "href": "Pages/Lectures/Lecture14/Lec14.html#hypothesis-testing-1",
     "title": "PSTAT 5A: Lecture 14",
     "section": "Hypothesis Testing",
-    "text": "Hypothesis Testing\n\nWhat about the alternative hypothesis?\nAs the name suggests, the alternative hypothesis provides some sort of alternative to the null.\nLet’s look at our cat example again. Here are some potential alternatives to the null:\n\n\\(p \\neq 0.67\\) (the true proportion of US households with pets is not 67%)\n\\(p &gt; 0.67\\) (the true proportion of US households with pets is larger than 67%)\n\\(p &lt; 0.67\\) (the true proportion of US households with pets is less than 67%)\n\\(p = 0.67\\) (the true proportion of US households with pets is 33.5%)"
+    "text": "Hypothesis Testing\n\nWhat about the alternative hypothesis?\nAs the name suggests, the alternative hypothesis provides some sort of alternative to the null.\nLet’s look at our cat example again. Here are some potential alternatives to the null:\n\n\\(p \\neq 0.2\\) (i.e. the true proportion of orange tabby cats that are female is not 20%)\n\\(p &gt; 0.2\\) (i.e. the true proportion of orange tabby cats that are female is larger than 20%)\n\\(p &lt; 0.2\\) (i.e. the true proportion of orange tabby cats that are female is less than 20%)\n\\(p = 0.10\\) (i.e. the true proportion of orange tabby cats that are female is 10%)"
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#hypothesis-testing-2",
@@ -317,7 +324,7 @@
     "href": "Pages/Lectures/Lecture14/Lec14.html#setting-the-hypotheses",
     "title": "PSTAT 5A: Lecture 14",
     "section": "Setting the Hypotheses",
-    "text": "Setting the Hypotheses\n\nOkay, so which test to we use when?\nIn practice, there isn’t a one-size-fits-all approach to knowing which set of hypotheses to adapt in a given situation.\nUsually, in the absence of any additional information, we adopt a two-sided test as it tends to be the most general.\nHowever, sometimes additional information may be available to us that may influence us to select a different type of test.\n\nFor example, if previous studies have resulted in numerous observed sample proportions much less than the null value \\(p_0\\), we may want to adopt a lower-tailed test.\n\nHow do we set the null hypothesis? Well, typically the null hypothesis is easier to set: I like to think of it as the “status quo”.\n\nIn other words, the null hypothesis is often taken to be whatever the existing claims state; e.g. that 67% of US households have pets."
+    "text": "Setting the Hypotheses\n\nOkay, so which test to we use when?\nIn practice, there isn’t a one-size-fits-all approach to knowing which set of hypotheses to adapt in a given situation.\nUsually, in the absence of any additional information, we adopt a two-sided test as it tends to be the most general.\nHowever, sometimes additional information may be available to us that may influence us to select a different type of test.\n\nFor example, if previous studies have resulted in numerous observed sample proportions much less than the null value \\(p_0\\), we may want to adopt a lower-tailed test.\n\nHow do we set the null hypothesis? Well, typically the null hypothesis is easier to set: I like to think of it as the “status quo”.\n\nIn other words, the null hypothesis is often taken to be whatever the existing claims state; e.g. that 20% of orange tabby cats are female."
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#worked-out-example",
@@ -408,7 +415,7 @@
     "href": "Pages/Lectures/Lecture14/Lec14.html#leadup-1",
     "title": "PSTAT 5A: Lecture 14",
     "section": "Leadup",
-    "text": "Leadup\n\nFor the moment, let’s return to the pet example from the beginning of the lecture.\nLetting \\(p\\) denote the true proportion of US household with pets, our null hypothesis takes the form \\(H_0: \\ p = 0.67\\).\nSuppose we take a two-sided alternative: \\(H_A: \\ p \\neq 0.67\\).\nNow, we have a good summary statistic for proportions: \\(\\widehat{P}\\).\nAs such, our decision process should probably be of the form \\[ \\texttt{decision}(\\widehat{p}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\texttt{...} \\\\  \\texttt{fail to reject } H_0 & \\text{if } \\texttt{...} \\\\ \\end{cases}  \\]\nSaid differently: if we observe a value of \\(\\widehat{p} = 0.82\\), or a value of \\(\\widehat{p} = 0.001\\), we would likely be inclined to reject the null."
+    "text": "Leadup\n\nFor the moment, let’s return to the cat example from the beginning of the lecture.\nLetting \\(p\\) denote the true proportion of orange tabby cats that are female, our null hypothesis takes the form \\(H_0: \\ p = 0.2\\).\nSuppose we take a two-sided alternative: \\(H_A: \\ p \\neq 0.2\\).\nNow, we have a good summary statistic for proportions: \\(\\widehat{P}\\).\nAs such, our decision process should probably be of the form \\[ \\texttt{decision}(\\widehat{p}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\texttt{...} \\\\  \\texttt{fail to reject } H_0 & \\text{if } \\texttt{...} \\\\ \\end{cases}  \\]\nSaid differently: if we observe a value of \\(\\widehat{p} = 0.82\\), or a value of \\(\\widehat{p} = 0.001\\), we would likely be inclined to reject the null."
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#test-statistic",
@@ -513,7 +520,7 @@
     "href": "Pages/Lectures/Lecture14/Lec14.html#solutions-3",
     "title": "PSTAT 5A: Lecture 14",
     "section": "Solutions",
-    "text": "Solutions\n\nConduct the test: We see that \\(|\\mathrm{TS}| = |-1.86| = 1.86\\) which is not greater than \\(1.96\\). As such, we fail to reject the null.\n\n\nNow, the problem told us to phrase our conclusions carefully and in the context of the problem.\nIt is VERY important to include the level of significance in your final conclusions.\nSo, here is how we would phrase the final conclusion of our test:\n\n\n\nAt an \\(\\alpha = 0.05\\) level of significance, we do not have enough evidence to reject the null hypothesis that 91.7% of US households own a vehicle. Thus, our analysis suggests that the true proportion of US households with vehicle is not different from 91.7%.\n\n\nAlternatively\n\n\nAt an \\(\\alpha = 0.05\\) level of significance, there is insufficient evidence to reject Forbes’s claim that 91.7% of US households own a vehicle in favor of the alternative that the true proportion of US households that own a vehicle is not 91.7%.\n\n\n\nIt is very important to include the level of significance in our conclusion! This is because the final outcome of our test may change depending on which level of significance we use."
+    "text": "Solutions\n\nConduct the test: We see that \\(|\\mathrm{TS}| = |-1.86| = 1.86\\) which is not greater than \\(1.96\\). As such, we fail to reject the null.\n\n\nNow, the problem told us to phrase our conclusions carefully and in the context of the problem.\nIt is VERY important to include the level of significance in your final conclusions.\nSo, here is how we would phrase the final conclusion of our test:\n\n\n\nAt an \\(\\alpha = 0.05\\) level of significance, there is insufficient evidence to reject Forbes’s claim that 91.7% of US households own a vehicle in favor of the alternative that the true proportion of US households that own a vehicle is not 91.7%.\n\n\n\nIt is very important to include the level of significance in our conclusion! This is because the final outcome of our test may change depending on which level of significance we use."
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#worked-out-example-4",
@@ -2473,17 +2480,6 @@
     ]
   },
   {
-    "objectID": "Pages/exam_prep.html",
-    "href": "Pages/exam_prep.html",
-    "title": "PSTAT 5A: Understanding Data",
-    "section": "",
-    "text": "Formula Sheet: Sheet",
-    "crumbs": [
-      "Exam Prep",
-      "Exam Prep"
-    ]
-  },
-  {
     "objectID": "Pages/Labs/Lab06/lab06.html",
     "href": "Pages/Labs/Lab06/lab06.html",
     "title": "Lab06",
@@ -4257,7 +4253,7 @@
     "href": "Pages/Lectures/Lecture17/Lec17.html#recap",
     "title": "PSTAT 5A: Lecture 17",
     "section": "Recap",
-    "text": "Recap\n\nHypothesis test with proportions: given a population with true proportion \\(p\\), we took samples and tried to use the data collected in these samples to assess the validity of the claim \\(H_0: \\ p = p_0\\) (for some fixed value \\(p_0\\)) against some alternative hypothesis (two-sided, lower-tailed, or upper-tailed)\nIndeed, we can conduct hypothesis testing on any population parameter.\nOne parameter of interest to statisticians is the population mean \\(\\mu\\)."
+    "text": "Recap\n\nBefore the second midterm, we discussed Hypothesis Testing on population proportions.\nThat is: given a population with true proportion \\(p\\), we took samples and tried to use the data collected in these samples to assess the validity of the claim \\(H_0: \\ p = p_0\\) (for some fixed value \\(p_0\\)) against some alternative hypothesis (two-sided, lower-tailed, or upper-tailed)\nIndeed, we can conduct hypothesis testing on any population parameter.\nOne parameter of interest to statisticians is the population mean \\(\\mu\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#hypothesis-testing-for-the-mean-1",
@@ -5531,7 +5527,7 @@
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: July 16, 2024\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/24 - 6/28)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\n\nHW1 Soln Quiz1 Soln\nWorksheet 01\nSolns\nLab 01  Introduction to Python\n\n\n2\n(7/01 - 7/05)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n09: Discrete Random Variables\n\nHW2 Soln Quiz2 Soln\nWorksheet 02\nSolns\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\n\n\n3\n(7/08 - 7/12)\n\n07: Review\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\n\nHW3 Soln Quiz3 Soln\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\n\n\n\n4\n(7/15 - 7/19)\n\n13: Confidence Intervals for Means\n\nT-Table\n\n14: Hypothesis Testing for Proportions\n15: Review\n\nWorksheet 04\nLab 04  Simulations, Sampling, and Loops\n\n\n\n5\n(7/22 - 7/26)\n\n17: Hypothesis Testing, Part II\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Intro to Statistical Modeling, and Correlation\n\nWorksheet 05\n\nLab 05  Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/29 - 8/01)\n\n21: Regression, Part II\n22: Regression Diagnostics, and Sampling Procedures\n23: Ways Statistics Can Deceive\n24: Review\nFINAL EXAM: Thursday, August 1 during lecture\n\nQ&A with TA.\nLab 06  A Trip To the Movies",
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: July 16, 2024\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/24 - 6/28)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\n\nHW1 Soln Quiz1 Soln\nWorksheet 01\nSolns\nLab 01  Introduction to Python\n\n\n2\n(7/01 - 7/05)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n09: Discrete Random Variables\n\nHW2 Soln Quiz2 Soln\nWorksheet 02\nSolns\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\n\n\n3\n(7/08 - 7/12)\n\n07: Review\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\n\nHW3 Soln\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\n\n\n\n4\n(7/15 - 7/19)\n\n13: Confidence Intervals for Means\n\nT-Table\n\n14: Hypothesis Testing for Proportions\n15: Review\n\nWorksheet 04\nLab 04  Simulations, Sampling, and Loops\n\n\n\n5\n(7/22 - 7/26)\n\n17: Hypothesis Testing, Part II\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Intro to Statistical Modeling, and Correlation\n\nWorksheet 05\n\nLab 05  Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/29 - 8/01)\n\n21: Regression, Part II\n22: Regression Diagnostics, and Sampling Procedures\n23: Ways Statistics Can Deceive\n24: Review\nFINAL EXAM: Thursday, August 1 during lecture\n\nQ&A with TA.\nLab 06  A Trip To the Movies",
     "crumbs": [
       "Course Info",
       "Schedule of Topics"
