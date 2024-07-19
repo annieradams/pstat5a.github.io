@@ -565,298 +565,158 @@
     "text": "Note\n\nI don’t recommend you try and memorize all of the different percentiles and critical values.\nInstead, I recommend you familiarize yourself with the process used to derive these tests, as that will immediately tell you what picture to draw, which will in turn tell you which quantile we are after in a given situation.\nThere are some problems on the practice problems that give you practice with these one-sided alternatives."
   },
   {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#hypothesis-testing-1",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#hypothesis-testing-1",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Hypothesis Testing",
-    "text": "Hypothesis Testing\n\nRecall that in the framework of hypothesis testing, we wish to utilize data to assess the plausibility/validity of a hypothesis, called the null hypothesis.\n\nSpecifically, we wish to determine whether or not the data provides support to reject the null in favor of the alternative hypothesis or not.\n\nIn the case of hypothesis testing for a population proportion \\(p\\), our null takes the form \\(H_0: p = p_0\\) and there are several different alternative hypotheses we could consider:\n\nTwo-tailed alternative/test: \\(H_A: \\ p \\neq p_0\\)\nLower-tailed alternative/test: \\(H_A: \\ p &lt; p_0\\)\nUpper-tailed alternative/test: \\(H_A: \\ p &gt; p_0\\)\nSimple-vs-simple alternative/test: \\(H_A: \\ p = p_1\\) for \\(p_1 \\neq p_0\\)"
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#multiple-populations",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#multiple-populations",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Multiple Populations",
+    "text": "Multiple Populations\n\nSo far, we’ve talked about constructing confidence intervals and performing hypothesis tests for both population proportions and population means.\nOne crucial thing to note is that everything we’ve done has been in the context of a single population\nSometimes, as Data Scientists, we may want to test claims about the differences between two populations\n\nE.g. Is the average monthly income in Santa Barbara different from the average monthly income in San Francisco?\nE.g. Is the proportion of people who test positive for a disease in one country different than the proportion that test positive in a second country?"
   },
   {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#hypothesis-testing-for-a-proportion",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#hypothesis-testing-for-a-proportion",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Hypothesis Testing for a Proportion",
-    "text": "Hypothesis Testing for a Proportion\n\nThe different alternative hypotheses lead to different forms of our hypothesis test.\nLast lecture, we discussed how to construct a two-sided hypothesis test.\nOn the homework, I ask you to derive the lower-tailed hypothesis test (and I also provide you with the form for an upper-tailed hypothesis test in the last lecture slide deck)\nTo help you with that homework problem, allow me to re-do the derivations we did last lecture, but this time more in the style of the homework problem."
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#two-populations-1",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#two-populations-1",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Two Populations",
+    "text": "Two Populations\n\nStatistically: we are imagining two populations, Population 1 and Population 2, governed by parameters \\(\\theta_1\\) and \\(\\theta_2\\), respectively, and trying to test claims about the relationship between \\(\\theta_1\\) and \\(\\theta_2\\).\n\nFor example, we could consider two populations with means \\(\\mu_1\\) and \\(\\mu_2\\), respectively, and try to make claims about whether or not \\(\\mu_1\\) and \\(\\mu_2\\) are equal.\n\nThe trick Statisticians use is to think in terms of the difference \\(\\mu_1 - \\mu_2.\\)\n\nFor example, if our null hypothesis is that \\(\\mu_1 = \\mu_2\\), this can be rephrased as \\(H_0: \\ \\mu_1 - \\mu_2 = 0\\)."
   },
   {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#two-sided-test-for-a-proportion",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#two-sided-test-for-a-proportion",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Two-Sided Test for a Proportion",
-    "text": "Two-Sided Test for a Proportion\n\nWe start with the test statistic \\[ \\mathrm{TS} = \\frac{\\widehat{P} - p_0}{\\sqrt{\\frac{p_0 (1 - p_0)}{n}}} \\]\nIf the null were true, i.e. if the true value of \\(p\\) were \\(p_0\\), then this test statistic would follow the Normal Distribution provided that we are able to invoke the Central Limit Theorem for proportions, which we can do only if\n\n\\(np_0 \\geq 10\\)\n\\(n(1 - p_0) \\geq 10\\)"
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#two-populations-2",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#two-populations-2",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Two Populations",
+    "text": "Two Populations\n\nThe reason we do this is because we have now effectively reduced our two-parameter problem into a one-parameter problem, involving only the parameter \\(\\delta := \\mu_1 - \\mu_2\\).\nNow, we will need a point estimator of \\(\\delta\\). Just as before, we used \\(\\bar{X}\\) to estimate \\(\\mu\\), we now use \\(\\bar{X}_2-\\bar{X}_1\\) to estimate \\(\\mu_1 - \\mu_2\\)."
   },
   {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#two-sided-test-for-a-proportion-1",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#two-sided-test-for-a-proportion-1",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Two-Sided Test for a Proportion",
-    "text": "Two-Sided Test for a Proportion\n\nIf these conditions hold, we then know that (by the Central Limit Theorem for Proportions) \\[ \\widehat{P} \\stackrel{H_0}{\\sim} \\mathcal{N}\\left( p_0, \\ \\sqrt{\\frac{p_0 (1 - p_0)}{n}} \\right) \\] which means, by our Standardization Result, that \\[\\mathrm{TS} \\stackrel{H_0}{\\sim} \\mathcal{N}(0, \\ 1)\\] where the symbol \\(\\stackrel{H_0}{\\sim}\\) just means “distributed under the null”; i.e. assuming the null hypothesis is correct."
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#two-populations-3",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#two-populations-3",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Two Populations",
+    "text": "Two Populations\n\nWe will ultimately need access to the sampling distribution of \\(\\bar{X}_1-\\bar{X}_2\\).\nJust as before, we have to check conditions to determine the sampling distribution of \\(\\bar{X}_1-\\bar{X}_2\\):\n\n\nIndependence within each sample: The observations within each sample are independent (e.g. we have a random sample from each of the two populations).\nIndependence between the samples: he two samples are independent of one another such that observations in one sample tell us nothing about the observations in the other sample (and vice versa).\nNormality: When the sample sizes are small, we require that the observations in each sample come from a normally distributed population. We can relax this condition more and more for larger and larger sample sizes. (You need to check normality for both groups.)"
   },
   {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#two-sided-test-for-a-proportion-2",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#two-sided-test-for-a-proportion-2",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Two-Sided Test for a Proportion",
-    "text": "Two-Sided Test for a Proportion\n\nNow, let’s think about when we would reject the null that \\(p = p_0\\) in favor of the alternative that \\(p \\neq p_0\\).\n\nIf we observed a value of \\(\\widehat{p}\\) that was much greater than \\(p_0\\) (i.e. if \\(\\mathrm{ts}\\) was much larger than 0), we would probably reject the null in favor of the alternative.\nBut, if we observed a value of \\(\\widehat{p}\\) that was much smaller than \\(p_0\\) (i.e. if \\(\\mathrm{ts}\\) was much smaller than 0), we would probably also reject the null in favor of the alternative.\nTherefore, we reject when the magnitude of \\(\\mathrm{ts}\\) is large; i.e. with \\(|\\mathrm{ts}| &gt; c\\) for some constant \\(c\\).\n\nThis means our test should take the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| &gt; c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]"
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#sampling-distribution-of-barx_1-barx_2",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#sampling-distribution-of-barx_1-barx_2",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Sampling Distribution of \\(\\bar{X}_1-\\bar{X}_2\\)",
+    "text": "Sampling Distribution of \\(\\bar{X}_1-\\bar{X}_2\\)\nWhen the conditions are satisfied, the sampling distribution of \\(\\bar{X}_1-\\bar{X}_2\\) will be nearly normal with mean \\[\\mu_1 -\\mu_2\\] and standard error \\[SE = \\sqrt{\\frac{\\sigma_1^2}{n_1}+\\frac{\\sigma_2^2}{n_2}}\\]"
   },
   {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#two-sided-test-for-a-proportion-3",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#two-sided-test-for-a-proportion-3",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Two-Sided Test for a Proportion",
-    "text": "Two-Sided Test for a Proportion\n\nFinally, we need to consider how large to make our cutoff (or critical value) \\(c\\).\nThis is where we need to consider the two types of errors we could commit: Type I and Type II Errors\n\nType I error: the null was rejected when it was in fact true (convicting an innocent person)\nType II error: the null was not rejected when it was in fact false (letting a guilty person go free)\n\nWe call the probability of committing a Type I error the level of significance \\(\\alpha\\), which we fix before beginning our testing procedure.\nIn terms of the critical value, this means \\(c\\) should satisfy the equation \\[ \\mathbb{P}_{H_0}(|\\mathrm{TS}| &gt; c) = \\alpha \\] where \\(\\mathbb{P}_{H_0}\\) means “probability of, assuming the null is actually true (i.e. that \\(p = p_0\\))”."
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#sampling-distribution-of-barx_1-barx_2-1",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#sampling-distribution-of-barx_1-barx_2-1",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Sampling Distribution of \\(\\bar{X}_1-\\bar{X}_2\\)",
+    "text": "Sampling Distribution of \\(\\bar{X}_1-\\bar{X}_2\\)\nThis is only if we know the population standard deviation \\(\\sigma_1\\) and \\(\\sigma_2\\), which is unlikely. Instead, we can use the sample standard deviations \\(s_1\\) and \\(s_2\\) so we have \\[SE = \\sqrt{\\frac{s_1^2}{n_1}+\\frac{s_2^2}{n_2}}\\]\nWe will use technology to calculate the degrees of freedom. When we can’t use technologies, we will use the smaller of \\(n_1-1\\) and \\(n_2-1\\) for the degrees of freedom."
   },
   {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#two-sided-test-for-a-proportion-4",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#two-sided-test-for-a-proportion-4",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Two-Sided Test for a Proportion",
-    "text": "Two-Sided Test for a Proportion\n\nSince we know that \\(\\mathrm{TS}\\) follows a standard normal distribution under the null, this means that \\(c\\) should be the \\((\\alpha / 2) \\times 100\\)th percentile of the standard normal distribution.\n\nFor example, if \\(\\alpha = 0.05\\), then the critical value is the \\((0.05) / 2 \\times 100 = 2.5\\)th percentile of the standard normal distribution, which we see to be \\(1.96\\).\n\nAs such, the final form of our test is \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| &gt; z_{1 - \\alpha/2} \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] where we use the notation \\(z_{1 - \\alpha/2}\\) to denote the following (which, recall, are equivalent):\n\n\\((\\alpha / 2) \\times 100\\)th percentile of the standard normal distribution, scaled by negative 1.\n\\([1 - (\\alpha / 2)] \\times 100\\)th percentile, not scaled by anything."
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#hypothesis-test-for-mu_1-mu_2-1",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#hypothesis-test-for-mu_1-mu_2-1",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Hypothesis Test for \\(\\mu_1-\\mu_2\\)",
+    "text": "Hypothesis Test for \\(\\mu_1-\\mu_2\\)\nWe will still follow the 5 steps to hypothesis test:\nStep 1: Write the hypothesis statements\nStep 2: Check conditions for determining the distribution of your sample statistic\nStep 3: Calculate test statistic\nStep 4: Use test statistic to determine decision of test (either using comparison to critical value or calculate p-value)\nStep 5: Write a conclusion in the context of the problem"
   },
   {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#quick-note",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#quick-note",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Quick Note",
-    "text": "Quick Note\n\nAgain, it turns out that the \\((\\alpha / 2) \\times 100\\)th percentile of the standard normal distribution scaled by negative 1 is equivalent to the \\((1 - \\alpha / 2)\\)th percentile of the standard normal distribution, not scaled by negative 1.\n\n\n\nimport scipy.stats as sps\n\n-sps.norm.ppf(0.05/2)\n\nnp.float64(1.9599639845400545)\n\n\n\n\n\nimport scipy.stats as sps\n\nsps.norm.ppf(1 - 0.05/2)\n\nnp.float64(1.959963984540054)\n\n\n\n\nBasically, when doing a two-sided test, ensure that the critical value is positive. (This is not the case for a one-sided test.)"
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#step-1-write-the-hypothesis-statements",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#step-1-write-the-hypothesis-statements",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Step 1: Write the hypothesis statements",
+    "text": "Step 1: Write the hypothesis statements\nThe null hypothesis is\n\\[H_0: \\mu_1-\\mu_2 = 0\\] The alternative is one of\n\\[H_A: \\mu_1-\\mu_2 &lt; 0\\] \\[H_A: \\mu_1-\\mu_2 \\neq 0\\] \\[H_A: \\mu_1-\\mu_2 &gt; 0\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#step-2-check-conditions-for-your-sampling-distribution",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#step-2-check-conditions-for-your-sampling-distribution",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Step 2: Check conditions for your sampling distribution",
+    "text": "Step 2: Check conditions for your sampling distribution\n\nIndependence within each sample\nIndependence between samples\nNormality"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#step-3-calculate-test-statistic",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#step-3-calculate-test-statistic",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Step 3: Calculate test statistic",
+    "text": "Step 3: Calculate test statistic\nSimilar to how we determined our test statistic before, with the generic form:\n\\[\\frac{\\text{sample statistic} - \\text{null value}}{\\text{standard error}}\\]\nIn this situation, we have:\n\\[\\text{TS} = \\frac{\\bar{x}_1-\\bar{x}_2 - 0}{\\sqrt{\\frac{s_1^2}{n_1} + \\frac{s_2^2}{n_2}}}\\]\nAnd similar to the one mean problem, this test statistic follows a \\(t\\) distribution with degrees of freedom calculated from technology."
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#step-4-make-decision-on-test-and-step-5-write-a-conclusion",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#step-4-make-decision-on-test-and-step-5-write-a-conclusion",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Step 4: Make decision on test and Step 5: Write a conclusion",
+    "text": "Step 4: Make decision on test and Step 5: Write a conclusion\n\nAs we did with one mean, the decision will be based on the kind of test (two sided, lower tail, or greater tail tests). We will calculate the p-value to measure the strength of the evidence against the null hypothesis, comparing it to the significance level, \\(\\alpha\\).\nFinally, we write a conclusion in the context of the problem which include our 5 elements:\n\nsignificance level,\ndecision of the test,\nas a function of the null hypothesis. Then we write an interpretation that is\nnot too strong, and\nin affirmation or not in affirmation of the alternative hypothesis."
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#worked-out-example",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#worked-out-example",
-    "title": "PSTAT 5A: Lecture 14",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nAdministration within a Statistics department at an unnamed university claims to admit 24% of all applicants. A disgruntled student, dubious of the administration’s claims, takes a representative sample of 120 students who applied to the Statistics major, and found that 20% of these students were actually admitted into the major.\n\nConduct a two-sided hypothesis test at a 5% level of significance on the administrator’s claims that 24% of applicants into the Statistics major are admitted. Be sure you phrase your conclusion clearly, and in the context of the problem."
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nGaucho Gourmande has two locations: one in Goleta and one in Santa Barbara. The owner would like to determine whether the average revenue generated by the two locations are equal or not. To that end, he computes the net revenue generated by the Goleta location over 30 days and also computes the net revenue generated by the Santa Barbara location over 35 days (assume all of the necessary independence conditions hold), and produced the following information:\n\\[\\begin{array}{r|cc}\n                    & \\text{Sample Average}     & \\text{Sample Standard Deviation}    \\\\\n  \\hline\n  \\textbf{Goleta}   &     \\$13                    & \\$3.45        \\\\\n  \\textbf{Santa Barbara}   &     \\$15                    & \\$4.23\n\\end{array}\\]\nTest the owner’s claims at an \\(\\alpha = 0.05\\) level of significance, using a two-sided alternative."
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#solutions",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#solutions",
-    "title": "PSTAT 5A: Lecture 14",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Solutions",
-    "text": "Solutions\n\nWe first phrase the hypotheses.\nLet \\(p\\) denote the true proportion of applicants who get admitted into the major. Since we are performing a two-sided test, our hypotheses take the form \\[ \\left[ \\begin{array}{rr}\nH_0:    p = 0.24    \\\\\nH_A:    p \\neq 0.24\n\\end{array} \\right.\\]\nNow we compute the observed value of the test statistic: \\[ \\mathrm{ts} = \\frac{\\widehat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}} = \\frac{0.2 - 0.24}{\\sqrt{\\frac{(0.24) \\cdot (1 - 0.24)}{120}}} \\approx -1.026 \\]\nNext, we compute the critical value. Since we are using an \\(\\alpha = 0.05\\) level of significance, we will use the critical value \\(1.96\\)"
+    "text": "Solutions\n\nOur first step should be to figure out what “Population 1” and “Population 2” are in the context of the problem.\nLet “Goleta Location” be Population 1 and “Santa Barbara Location” be Population 2.\n\nIt is perfectly acceptable to swap these two, but just be sure you remain consistent throughout the problem!\nAlso, I will expect you to explicitly write out your definitions of the populations (like above), even if the problem doesn’t explicitly ask you to do so.\n\nIn this way, \\[ \\overline{X} = 13; \\quad s_X = 3.45; \\quad \\overline{Y} = 15; \\quad s_Y = 4.23 \\]\nAdditionally, \\(n_1 = 30\\) and \\(n_2 = 35\\)."
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-1",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-1",
-    "title": "PSTAT 5A: Lecture 14",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Solutions",
-    "text": "Solutions\n\nFinally, we perform the test: we will reject the null in favor of the alternative if \\(|\\mathrm{ts}|\\) is larger than the critical value.\nIn this case, \\(|\\mathrm{ts}| = |-1.026| = 1.026 &lt; 1.96\\) meaning we fail to reject the null:\n\n\n\nAt an \\(\\alpha = 0.05\\) level of significance, there was insufficient evidence to reject the null hypothesis that 24% of applicants are admitted into the major in favor of the alternative that the true admittance rate was not 24%."
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#basics-of-random-variables",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#basics-of-random-variables",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Basics of Random Variables",
-    "text": "Basics of Random Variables\n\nRecall long ago we discussed the notion of an experiment: any procedure we can repeat an infinite number of times where each time we repeat the experiment the same fixed set of things (i.e. the outcomes) can occur.\nA random variable, loosely speaking, is some sort of numerical variable that keeps track of certain quantities relating to an experiment.\nFor example, if we toss 7 coins and let \\(X\\) denote the number of heads we observe in these 7 coin tosses, then \\(X\\) would be a random variable.\nThe set of all values a random variable can attain is called the state space, and is denoted \\(S_X\\).\nWe classify random variables based on their state space:\n\nIf \\(S_X\\) has jumps, we say \\(X\\) is a discrete random variable\nIf \\(S_X\\) does not have jumps, we say \\(X\\) is a continuous random variable"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#discrete-random-variables",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#discrete-random-variables",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Discrete Random Variables",
-    "text": "Discrete Random Variables\n\nDiscrete random variables are described/summarized by a probability mass function (p.m.f.), which is a specification of the values the random variable can take (i.e. the state space) along with the probabilities with which the random variable attains those values.\n\nP.M.F.’s are often displayed in tabular form: e.g. \\[ \\begin{array}{r|cccc}\n\\boldsymbol{k}              & -1    & 0   & 1   & 2   \\\\\n\\hline\n\\boldsymbol{\\mathbb{P}(X = k)}   & 0.1   & 0.2   & 0.3   & 0.4\n  \\end{array}\\]\nNote that the probability values in a P.M.F. must sum to 1.\n\nQuantities like \\(\\mathbb{P}(X \\leq k)\\) are found by summing up the values of \\(\\mathbb{P}(X = x)\\) for all values of \\(x\\) in the state space that are less than \\(k\\).\n\nFor example, in the example above, \\[\\mathbb{P}(X \\leq 0.5) = \\mathbb{P}(X = -1) + \\mathbb{P}(X = 0)  = 0.1 + 0.2 = 0.3 \\]"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#expected-value",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#expected-value",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Expected Value",
-    "text": "Expected Value\n\nThe expected value of a random variable \\(X\\), denoted \\(\\mathbb{E}[X]\\), represents a sort of “average” of \\(X\\), and is computed as \\[ \\mathbb{E}[X] = \\sum_{\\text{all $k$}} k \\cdot \\mathbb{P}(X = k) \\]\n\nAgain, don’t be scared by the sigma notation! It just represents a sum.\nSo, for example, using our P.M.F. from the previous slide, \\[\\begin{align*}\n\\mathbb{E}[X]   & = (-1) \\cdot \\mathbb{P}(X = -1) + (0) \\cdot \\mathbb{P}(X = 0)    \\\\\n& \\hspace{10mm} + (1) \\cdot \\mathbb{P}(X = 1) + (2) \\cdot \\mathbb{P}(X = 2)    \\\\[3mm]\n  & = (-1) \\cdot (0.1) + (0) \\cdot (0.2) + (1) \\cdot (0.3) + (2) \\cdot (0.4)     \\\\[3mm]\n  & = \\boxed{1}\n  \\end{align*}\\]"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#variance-and-standard-deviation",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#variance-and-standard-deviation",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Variance and Standard Deviation",
-    "text": "Variance and Standard Deviation\n\nThere are two formulas we can use for the variance of a random variable \\(X\\): \\[ \\mathrm{Var}(X) = \\sum_{\\text{all $k$}} (k - \\mathbb{E}[X])^2 \\cdot \\mathbb{P}(X = k) \\] or \\[ \\mathrm{Var}(X) = \\left(\\sum_{\\text{all $k$}} k^2 \\cdot \\mathbb{P}(X = k) \\right) - (\\mathbb{E}[X])^2 \\]\nThe standard deviation of a random variable is simply the square root of the variance: \\[ \\mathrm{SD}(X) = \\sqrt{\\mathrm{Var}(X)} \\]"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#variance-and-standard-deviation-1",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#variance-and-standard-deviation-1",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Variance and Standard Deviation",
-    "text": "Variance and Standard Deviation\n\nFor example, using the PMF from a few slides ago, the first formula for variance tells us to compute \\[\\begin{align*}\n\\mathrm{Var}(X)     & = \\sum_{\\text{all $k$}} (k - \\mathbb{E}[X])^2 \\cdot \\mathbb{P}(X = k)    \\\\\n  & = (-1 - 1)^2 \\cdot \\mathbb{P}(X = -1) + (0 - 1)^2 \\cdot \\mathbb{P}(X = 0)    \\\\\n    & \\hspace{10mm} + (1 - 1)^2 \\cdot \\mathbb{P}(X = 1) + (2 - 1)^2 \\cdot \\mathbb{P}(X = 2)    \\\\[3mm]\n      & = (-1 - 1)^2 \\cdot (0.1) + (0 - 1)^2 \\cdot (0.2)    \\\\\n      & \\hspace{10mm}+ (1 - 1)^2 \\cdot (0.3) + (2 - 1)^2 \\cdot (0.4)   \\\\[3mm]\n      & = \\boxed{1}\n\\end{align*}\\]"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#variance-and-standard-deviation-2",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#variance-and-standard-deviation-2",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Variance and Standard Deviation",
-    "text": "Variance and Standard Deviation\n\n\nUsing the second formula for variance, we first compute \\[\\begin{align*}\n\\sum_{\\text{all $k$}} k^2 \\mathbb{P}(X = k)    &  = (-1)^2 \\cdot \\mathbb{P}(X = -1) + (0)^2 \\cdot \\mathbb{P}(X = 0)    \\\\\n    & \\hspace{10mm} + (1)^2 \\cdot \\mathbb{P}(X = 1) + (2 - 1)^2 \\cdot \\mathbb{P}(X = 2)    \\\\[3mm]\n      & = (-1)^2 \\cdot (0.1) + (0)^2 \\cdot (0.2)    \\\\\n      & \\hspace{10mm}+ (1)^2 \\cdot (0.3) + (2)^2 \\cdot (0.4)   \\\\[3mm]\n      & = 2\n\\end{align*}\\] which means \\[ \\mathrm{Var}(X) = 2 - (1)^2 = \\boxed{1}\\]"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#binomial-distribution",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#binomial-distribution",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Binomial Distribution",
-    "text": "Binomial Distribution\n\nSuppose we have \\(n\\) independent trials, each resulting in “success” with probability \\(p\\) and “failure” with probability \\(1 - p\\). If \\(X\\) denotes the number of successes in these \\(n\\) trials, we say \\(X\\) follow the Binomial distribution with parameters \\(n\\) and \\(p\\), notated \\[ X \\sim \\mathrm{Bin}(n, \\ p) \\]\nIf \\(X \\sim \\mathrm{Bin}(n, \\ p)\\), then:\n\n\\(S_X = \\{0, 1, 2, \\cdots, n\\}\\)\n\\(\\mathbb{P}(X = k) = \\binom{n}{k} p^k (1 - p)^{n - k}\\)\n\\(\\mathbb{E}[X] = np\\)\n\\(\\mathrm{Var}(X) = np(1 - p)\\)"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#binomial-distribution-1",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#binomial-distribution-1",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Binomial Distribution",
-    "text": "Binomial Distribution\n\nIn order to verify that the Binomial distribution is appropriate to use, we need to check the Binomial Criteria:\n\nIndependence across trials\nFixed number \\(n\\) of trials\nWell-defined notion of “success” and “failure”\nFixed probability \\(p\\) of success across trials.\n\nIf you are going to use the Binomial distribution in a problem, you must check all four of these!"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#case-study-airline-bookings",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#case-study-airline-bookings",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Case Study: Airline Bookings",
-    "text": "Case Study: Airline Bookings"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#worked-out-example-2",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#worked-out-example-2",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\nSuppose that GauchoAir has found that each passenger that books a ticket on the GA5A flight from SBA to GCV (GauchoVille) actually shows up with probability 90%.\nIf flight GA5A has only 186 seats, but sells 195 tickets, what is the probability that GauchoAir will need to re-book certain passengers?"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#solution",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#solution",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Solution",
-    "text": "Solution\n\nAs always, we start by defining quantities.\nLet \\(X\\) denote the number of passengers, out of the 195 booked on the flight, that actually show up for the flight.\nThe video claims that \\(X\\) follows a Binomial Distribution- let’s work with that claim for a moment (and then we can revisit that assumption later).\nSpecifically, \\(X \\sim \\mathrm{Bin}(195, \\ 0.9)\\).\nNow, the airline will only need to re-book passengers when the number of passengers that arive (\\(X\\)) exceeds the capacity of the plane (186).\nSo, the quantity we seek is \\(\\mathbb{P}(X &gt; 186) = \\mathbb{P}(X \\geq 187)\\).\nThough we could do this by hand, let’s use Python.\nWe can also discuss whether we think the Binomial criteria really are satisfied in this case or not."
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#continuous-random-variables",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#continuous-random-variables",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Continuous Random Variables",
-    "text": "Continuous Random Variables\n\nNot all random variables are discrete- many are continuous!\nContinuous random variables are characterized by a probability density function (pdf) \\(f_X(x)\\), which must obey the following two properties:\n\n\\(f_X(x)\\) must be nonnegative everywhere\nThe area underneath the graph of \\(f_X(x)\\) must be 1\n\nThe graph of a pdf is called a density curve\nProbabilities are found as areas underneath the density curve."
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#areas-under-the-density-curve",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#areas-under-the-density-curve",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Areas Under the Density Curve",
-    "text": "Areas Under the Density Curve\n\n\n\n\nFor example, the area above represents \\(\\mathbb{P}(0.25 \\leq X \\leq 0.75)\\)."
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#uniform-distribution",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#uniform-distribution",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Uniform Distribution",
-    "text": "Uniform Distribution\n\nAn specific example of a continuous distribution is the Uniform distribution with parameters \\(a\\) and \\(b\\): \\(X \\sim \\mathrm{Unif}(a, \\ b)\\).\nThe p.d.f. is given by \\[ f_X(x) = \\begin{cases} \\frac{1}{b - a} & \\text{if } a \\leq x \\leq b \\\\ 0 & \\text{otherwise} \\\\ \\end{cases} \\]"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#effect-of-changing-a-and-b",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#effect-of-changing-a-and-b",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Effect of Changing \\(a\\) and \\(b\\)",
-    "text": "Effect of Changing \\(a\\) and \\(b\\)\n\nviewof a = Inputs.range(\n  [-3, 3], \n  {value: 0, step: 0.1, label: \"a=\"}\n)\n\nviewof b = Inputs.range(\n  [-3, 3], \n  {value: 1, step: 0.1, label: \"b=\"}\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmargin2 = ({top: 20, right: 30, bottom: 30, left: 40})\n\nheight2 = 400\n\nx_values2 = d32.scaleLinear()\n.domain(d32.extent(data2, d =&gt; d.x))\n.range([margin2.left, width - margin2.right])\n\ny_values2 = d32.scaleLinear()\n.domain([Math.min(d32.min(data2, d =&gt; d.y),0), Math.max(1,d32.max(data2, d =&gt; d.y))]).nice()\n.range([height2 - margin2.bottom, margin2.top])\n\nline2 = d32.line()\n.x(d =&gt; x_values2(d.x))\n.y(d =&gt; y_values2(d.y))\n\nxAxis2 = g =&gt; g\n.attr(\"transform\", `translate(0,${height2 - margin2.bottom})`)\n.call(d32.axisBottom(x_values2)\n      .ticks(width / 80)\n      .tickSizeOuter(0))\n\nyAxis2 = g =&gt; g\n.attr(\"transform\", `translate(${margin2.left},0)`)\n.call(d32.axisLeft(y_values2)\n      .tickValues(d32.scaleLinear().domain(y_values2.domain()).ticks()))\n\nfunction unif_pdf (input_value, mu, sigsq) {\nif(input_value &lt; a){\n  return 0\n} else if(input_value &gt; b){\n  return 0\n} else{\n  return 1 / (b - a)\n}\n}\n\nabs_x2=6\n\ndata2 = {\n  let values = [];\n  for (let x = -abs_x2; x &lt; abs_x2; x=x+0.01) values.push({\"x\":x,\"y\":unif_pdf(x, µ, sigsquared)});\n  return values;\n}\n\nd32 = require(\"https://d3js.org/d3.v5.min.js\")\n\nchart2 = {\n  const svg = d32.select(DOM.svg(width, height2));\n  \n  svg.append(\"g\")\n  .call(xAxis2);\n  \n  svg.append(\"g\")\n  .call(yAxis2);\n  \n  svg.append(\"path\")\n  .datum(data2)\n  .attr(\"fill\", \"none\")\n  .attr(\"stroke\", \"steelblue\")\n  .attr(\"stroke-width\", 4)\n  .attr(\"stroke-linejoin\", \"round\")\n  .attr(\"stroke-linecap\", \"round\")\n  .attr(\"d\", line);\n  \n  return svg.node();\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit to https://observablehq.com/@dswalter/normal-distribution for the base of the applet code"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#uniform-distribution-1",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#uniform-distribution-1",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Uniform Distribution",
-    "text": "Uniform Distribution\n\nThe expected value and variance are: \\[ \\mathbb{E}[X] = \\frac{a + b}{2} ; \\quad \\mathrm{Var}(X) = \\frac{(b - a)^2}{12} \\]\nAgain, probabilities are found as areas underneath the density curve:"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#tail-probabilities",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#tail-probabilities",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Tail Probabilities",
-    "text": "Tail Probabilities\n\nVisualizing probabilities as areas also enables us to write more complicated probabilistic expressions as differences of tail probabilities:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncan be decomposed as\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\[ \\huge - \\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\[ \\mathbb{P}(a \\leq X \\leq b) = \\underbrace{\\mathbb{P}(X \\leq b)}_{\\text{c.d.f. at $b$}} - \\underbrace{\\mathbb{P}(X \\leq a)}_{\\text{c.d.f. at $a$}} \\]"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#challenge-problem-try-it-on-your-own",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#challenge-problem-try-it-on-your-own",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Challenge Problem: Try It On Your Own!",
-    "text": "Challenge Problem: Try It On Your Own!\n\n\n\n\n\n\n\nTake-Home Exercise 1\n\n\n\n\nThe time (in minutes) spent waiting in line at Starbucks is found to vary uniformly between 5mins and 15mins.\nWhat is the c.d.f. of wait times? (I.e., find the probability that a randomly selected person spends less than \\(x\\) minutes waiting in line, for an arbitrary value \\(x\\). Yes, your final answer will depend on \\(x\\); that’s why the c.d.f. is a function!)"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#chalkboard-example",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#chalkboard-example",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Chalkboard Example",
-    "text": "Chalkboard Example\n\n\n\n\n\n\n\nChalkboard Example 2\n\n\n\n\nThe time (in minutes) spent waiting in line at Starbucks is found to vary uniformly between 5mins and 15mins.\nA random sample of 10 customers is taken; what is the probability that exactly 4 of these customers will spend between 10 and 13 minutes waiting in line?"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#normal-distribution",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#normal-distribution",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Normal Distribution",
-    "text": "Normal Distribution\n\nWe also learned about the Normal Distribution: \\(X \\sim \\mathcal{N}(\\mu, \\ \\sigma)\\)\nThe normal density curve is bell-shaped"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#changing-mu-and-sigma",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#changing-mu-and-sigma",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Changing \\(\\mu\\) and \\(\\sigma\\)",
-    "text": "Changing \\(\\mu\\) and \\(\\sigma\\)\n\nviewof µ = Inputs.range(\n  [-3, 3], \n  {value: 0, step: 0.1, label: \"µ:\"}\n)\n\nviewof σ = Inputs.range(\n  [0.2, 3.1], \n  {value: 1, step: 0.01, label: \"σ:\"}\n)\n\nsigsquared = σ**2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmargin = ({top: 20, right: 30, bottom: 30, left: 40})\n\nheight = 400\n\nx_values = d3.scaleLinear()\n    .domain(d3.extent(data, d =&gt; d.x))\n    .range([margin.left, width - margin.right])\n\ny_values = d3.scaleLinear()\n    .domain([Math.min(d3.min(data, d =&gt; d.y),0), Math.max(1,d3.max(data, d =&gt; d.y))]).nice()\n    .range([height - margin.bottom, margin.top])\n    \nline = d3.line()\n    .x(d =&gt; x_values(d.x))\n    .y(d =&gt; y_values(d.y))\n\nxAxis = g =&gt; g\n  .attr(\"transform\", `translate(0,${height - margin.bottom})`)\n  .call(d3.axisBottom(x_values)\n      .ticks(width / 80)\n      .tickSizeOuter(0))\n\nyAxis = g =&gt; g\n  .attr(\"transform\", `translate(${margin.left},0)`)\n  .call(d3.axisLeft(y_values)\n      .tickValues(d3.scaleLinear().domain(y_values.domain()).ticks()))\n    \nfunction normal_pdf (input_value, mu, sigsq) {\n  let left_chunk = 1/(Math.sqrt(2*Math.PI*sigsq))\n  let right_top = -((input_value-mu)**2)\n  let right_bottom = 2*sigsq\n  return left_chunk * Math.exp(right_top/right_bottom)\n}\n\nabs_x=6\n\ndata = {\n  let values = [];\n  for (let x = -abs_x; x &lt; abs_x; x=x+0.01) values.push({\"x\":x,\"y\":normal_pdf(x, µ, sigsquared)});\n  return values;\n}\n\nd3 = require(\"https://d3js.org/d3.v5.min.js\")\n\nchart = {\n  const svg = d3.select(DOM.svg(width, height));\n\n  svg.append(\"g\")\n      .call(xAxis);\n\n  svg.append(\"g\")\n      .call(yAxis);\n  \n  svg.append(\"path\")\n      .datum(data)\n      .attr(\"fill\", \"none\")\n      .attr(\"stroke\", \"steelblue\")\n      .attr(\"stroke-width\", 4)\n      .attr(\"stroke-linejoin\", \"round\")\n      .attr(\"stroke-linecap\", \"round\")\n      .attr(\"d\", line);\n  \n  return svg.node();\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit to https://observablehq.com/@dswalter/normal-distribution for the majority of the applet code"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#standardization",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#standardization",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Standardization",
-    "text": "Standardization\n\nIf \\(X \\sim \\mathcal{N}(\\mu, \\ \\sigma)\\), \\[ \\left( \\frac{X - \\mu}{\\sigma} \\right) \\sim \\mathcal{N}(0, \\ 1)\\]\n\n\n\n\nAlso, if \\(X \\sim \\mathcal{N}(\\mu, \\ \\sigma)\\):\n\n\\(\\mathbb{E}[X] = \\mu\\)\n\\(\\mathrm{Var}(X) = \\sigma^2\\)"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#inferential-statistics-1",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#inferential-statistics-1",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Inferential Statistics",
-    "text": "Inferential Statistics\n\nThe primary goal of inferential statistics is to take samples from some population, and use summary statistics to try and make inferences about population parameters\nFor example, we could take samples, compute sample proportions \\(\\widehat{P}\\), and try to make inferences about the population proportion \\(p\\).\nWe could also take samples, compute sample means \\(\\overline{X}\\), and try to make inferences about the population mean \\(\\mu\\).\nOur summary statistics will often be point estimators (i.e. quantities that have expected value equal to the corresponding population parameter), which are random variables as they depend on the sample taken.\n\nFor example, different samples of people will have different average heights.\n\nThe distribution of a point estimator is called the sampling distribution of the estimator."
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#sampling-distribution-of-widehatp",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#sampling-distribution-of-widehatp",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Sampling Distribution of \\(\\widehat{P}\\)",
-    "text": "Sampling Distribution of \\(\\widehat{P}\\)\n\nGiven a population with population proportion \\(p\\), we use \\(\\widehat{P}\\) as a point estimator of \\(p\\).\nAssume the success-failure conditions are met; i.e.\n\n\\(n p \\geq 10\\)\n\\(n (1 - p) \\geq 10\\)\n\nThen, the Central Limit Theorem for Proportions tells us that \\[ \\widehat{P} \\sim \\mathcal{N}\\left(p, \\ \\sqrt{\\frac{p(1 - p)}{n}} \\right) \\]\nIf we don’t have access to \\(p\\) directly (as is often the case), we use the substitution approximation to check whether\n\n\\(n \\widehat{p} \\geq 10\\)\n\\(n (1 - \\widehat{p}) \\geq 10\\)"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#sampling-distribution-of-overlinex",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#sampling-distribution-of-overlinex",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Sampling Distribution of \\(\\overline{X}\\)",
-    "text": "Sampling Distribution of \\(\\overline{X}\\)\n\nGiven a population with population mean \\(\\mu\\) and population standard deviation \\(\\sigma\\), we use \\(\\overline{X}\\) as a point estimator of \\(\\mu\\).\nIf the population is normally distributed, then \\[ \\overline{X} \\sim \\mathcal{N}\\left(\\mu, \\ \\frac{\\sigma}{\\sqrt{n}} \\right) \\] or, equivalently, \\[ \\frac{\\overline{X} - \\mu}{\\sigma / \\sqrt{n}} \\sim \\mathcal{N}\\left(0, \\ 1 \\right) \\]\nIf the population is not normally distributed, but the sample size \\(n\\) is at least 30, then the Central Limit Theorem for the Sample Mean (or just the Central Limit Theorem) tells us \\[ \\frac{\\overline{X} - \\mu}{\\sigma / \\sqrt{n}} \\sim \\mathcal{N}\\left(0, \\ 1 \\right) \\]"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#sampling-distribution-of-overlinex-1",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#sampling-distribution-of-overlinex-1",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Sampling Distribution of \\(\\overline{X}\\)",
-    "text": "Sampling Distribution of \\(\\overline{X}\\)\n\nIf the population is non-normal, the sample size is large, and we don’t have access to \\(\\sigma\\) (but access to \\(s\\), the sample standard deviation instead), then \\[ \\frac{\\overline{X} - \\mu}{s / \\sqrt{n}} \\sim t_{n - 1}\\]\nRecall that the \\(t-\\)distribution looks like a standard normal distribution, but has wider tails than the standard normal distribution (which accounts for the additional uncertainty injected into the problem by using \\(s\\), a random variable, in place of \\(\\sigma\\), a deterministic constant).\nAlso recall that \\(t_{\\infty}\\) (i.e. the \\(t-\\)distribution with an infinite degrees of freedom) is the same thing as the standard normal distribution."
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#confidence-intervals",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#confidence-intervals",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Confidence Intervals",
-    "text": "Confidence Intervals\n\nInstead of using point estimators (which are random) to estimate population parameters (which are deterministic), it may make more sense to provide an interval that, with some confidence level, contains the true parameter value.\nIn general, when constructing a confidence interval for a parameter \\(\\theta\\), we use \\[ \\widehat{\\theta} \\pm c \\cdot \\mathrm{SD}(\\widehat{\\theta}) \\] where \\(c\\) is some constant that depends on our confidence level.\n\nAgain, think of the fishing analogy from the textbook- if we want to be more certain we’ll catch a fish, we should cast a wider net; i.e. higher confidence levels will lead to wider intervals.\n\nThe coefficient \\(c\\) will also depend on the sampling distribution of \\(\\widehat{\\theta}\\)."
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#confidence-intervals-for-a-population-proportion",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#confidence-intervals-for-a-population-proportion",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Confidence Intervals for a Population Proportion",
-    "text": "Confidence Intervals for a Population Proportion\n\nTo construct a confidence interval for an unknown population proportion \\(p\\), we use \\[ \\widehat{p} \\pm (c) \\cdot \\sqrt{\\frac{\\widehat{p} \\cdot (1 - \\widehat{p})}{n}} \\] where \\(c\\) denotes the \\((1 - \\alpha) / 2 \\times 100\\)th percentile of the standard normal distribution, scaled by negative 1\n\nAgain, just remember that the coefficient should be positive"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#confidence-intervals-for-a-population-mean",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#confidence-intervals-for-a-population-mean",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Confidence Intervals for a Population Mean",
-    "text": "Confidence Intervals for a Population Mean\n\nTo construct a confidence interval for an unknown population mean \\(\\mu\\), we use \\[ \\overline{x} \\pm (z^{\\ast}) \\cdot \\frac{\\sigma}{\\sqrt{n}} \\] or \\[ \\overline{x} \\pm (t^{\\ast}) \\cdot \\frac{s}{\\sqrt{n}} \\] depending on the conditions listed in the previous section of these slides."
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#worked-out-example-3",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html#worked-out-example-3",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 3\n\n\n\n\nSaoirse would like to construct a 95% confidence interval for the true proportion of California Residents that speak Spanish. To that end, she took a representative sample of 120 CA residents and found that 36 of these residents speak Spanish.\n\nIdentify the population\nDefine the parameter of interest.\nDefine the random variable of interest.\nConstruct a 95% confidence interval for the true proportion of CA residents that speak Spanish."
+    "text": "Solutions\n\nNow, let’s compute the value of the test statistic. \\[ \\mathrm{TS} =   \\frac{\\overline{Y} - \\overline{X}}{\\sqrt{ \\frac{s_X^2}{n_1} + \\frac{s_Y^2}{n_2}}} = \\frac{15 - 13}{\\sqrt{\\frac{3.45^2}{30}  + \\frac{4.23^2}{35} }} = 2.10 \\]\nWe should next figure out the degrees of freedom: \\[\\begin{align*}\n\\mathrm{df}   &  = \\mathrm{round}\\left\\{ \\frac{ \\left[ \\left( \\frac{s_X^2}{n_1} \\right) + \\left( \\frac{s_Y^2}{n_2} \\right) \\right]^2 }{ \\frac{\\left( \\frac{s_X^2}{n_1} \\right)^2}{n_1 - 1} + \\frac{\\left( \\frac{s_Y^2}{n_2} \\right)^2}{n_2 - 1} } \\right\\}     \\\\\n  & =  \\mathrm{round}\\left\\{ \\frac{ \\left[ \\left( \\frac{3.45^2}{30} \\right) + \\left( \\frac{4.23^2}{35} \\right) \\right]^2 }{ \\frac{\\left( \\frac{3.45^2}{30} \\right)^2}{30 - 1} + \\frac{\\left( \\frac{4.23^2}{35} \\right)^2}{35 - 1} } \\right\\} = 63\n\\end{align*}\\]"
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-2",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-2",
-    "title": "PSTAT 5A: Lecture 14",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Solutions",
-    "text": "Solutions\n\nThe population is the set of all California residents.\nThe parameter of interest is \\(p\\), the true proportion of CA residents that speak Spanish.\nThe random variable of interest is \\(\\widehat{P}\\), the proportion of people in a representative sample of 120 CA residents that speak spanish.\nWe check the success-failure conditions, with the substitution approximation:\n\n\\(n \\widehat{p} = (120) \\cdot \\left( \\frac{36}{120} \\right) = 36 \\ \\checkmark\\)\n\\(n (1 - \\widehat{p}) = (120) \\cdot \\left( \\frac{84}{120} \\right) = 84 \\ \\checkmark\\)\n\n\n\nSince these conditions are met, we can proceed in constructing our confidence interval as \\[ 0.3 \\pm 1.96 \\cdot \\sqrt{\\frac{0.3 \\cdot 0.7}{120}} = \\boxed{[0.218 \\ , \\ 0.382]} \\]"
+    "text": "Solutions\n\nAt this point, we could either proceed using critical values or using p-values.\nLet’s use p-values, for practice.\nOur p-value is computed as\n\n\n\nimport scipy.stats as sps\n2*sps.t.cdf(-2.10, 63)\n\nnp.float64(0.03973904581390475)\n\n\n\n\nThis is below our level of significance \\(\\alpha = 0.05\\) meaning we would reject the null.\nIf we wanted to instead use critical values:\n\n\n\n-sps.t.ppf(0.05, 63)\n\nnp.float64(1.669402221706813)\n\n\n\n\nThis means our critical value is 1.67; since \\(|\\mathrm{TS}| = |2.10| = 2.10 &gt; 1.67\\), we would again reject at an \\(\\alpha = 0.05\\) level of significance."
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-3",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-3",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Solutions",
+    "text": "Solutions\n\nAt a 5% level of significance, there was sufficient evidence to reject the owner’s claims that the revenue generated by the two locations are equal, in favor of the alternative that the revenue generated by the two locations are not equal."
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#extensions",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#extensions",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Extensions",
+    "text": "Extensions\n\nUnsurprisingly, we can adapt the above procedure to account for one-sided alternatives as well.\nFor instance, suppose we wish to test \\[ \\left[ \\begin{array}{rr}\nH_0:    & \\mu_1 = \\mu_2   \\\\\nH_A:    & \\mu_1 &lt; \\mu_2\n\\end{array} \\right.\\]\nAgain, we rephrase things as: \\[ \\left[ \\begin{array}{rr}\nH_0:    & \\mu_2 - \\mu_1 = 0   \\\\\nH_A:    & \\mu_2 - \\mu_1 &gt; 0\n\\end{array} \\right.\\] which is now a familiar upper-tailed test on \\(\\delta = \\mu_2 - \\mu_1\\) and \\(\\mu_0 = 0.\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#extensions-1",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#extensions-1",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Extensions",
+    "text": "Extensions\n\nSpecifically, we would take the same test statistic (which would still follow the same distribution under the null) and use the decision rule \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\mathrm{TS} &gt; c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] where \\(c\\) is the appropriate quantile of the approximate t distribution (with degrees of freedom given by the Satterthwaite Approximation).\nA similar result holds for the lower-tailed test- I encourage you to work it out on your own."
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#confidence-interval-for-mu_1-mu_2-1",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#confidence-interval-for-mu_1-mu_2-1",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Confidence Interval for \\(\\mu_1-\\mu_2\\)",
+    "text": "Confidence Interval for \\(\\mu_1-\\mu_2\\)\nAs with the confidence interval for one mean, we had the generic form\n\\[\\hat{\\theta} \\pm c \\cdot \\text{standard error}\\]\nSo confidence interval for \\(\\mu_1-\\mu_2\\) is \\[\\bar{x}_1-\\bar{x}_2 \\pm t^* \\sqrt{\\frac{s_1^2}{n_1}+\\frac{s_2^2}{n_2}}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#worked-out-example-2",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#worked-out-example-2",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\nSince public universities are subsidized by state governments, it is usually less expensive to attend a public university in your home state than a private university. Is this still true when you must pay out-of-state tuition? A random sample of 75 private universities had an average total cost of $42,336 with standard deviation of $14,004. A similar random sample of 80 public universities had an average out-of-state total cost of $32,240 with standard deviation $7,730. Calculate the 90% confidence interval for the difference in population mean total cost for students at private schools and the population mean total cost for out-of-state students at public schools."
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-4",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-4",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Solutions",
+    "text": "Solutions\n\nThese are both random samples so the observations with each sample are independent of one another.\nThere is no reason why the two samples would not be independent between each other.\nGiven \\(n_1 = 75 \\geq 30\\) and \\(n_2 = 80 \\geq 30\\), we have large enough sample to relax normality assumption and use CLT.\nTo calculate the degrees of freedom:\n\n\\[df =\\min(n_1-1,n_2-1) = \\min(74, 79) = 74\\] - Calculate \\(t^*\\) critical value given \\(\\alpha = 0.1\\) which is 1.6657"
+  },
+  {
+    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-5",
+    "href": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-5",
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Solutions",
+    "text": "Solutions\n\\[\\bar{x}_1-\\bar{x}_2 \\pm t^* \\sqrt{\\frac{s_1^2}{n_1}+\\frac{s_2^2}{n_2}}\\]\n\\[(42336 - 32240) \\pm 1.6657 \\sqrt{\\frac{14004^2}{75}+\\frac{7730^2}{80}}\\]\n\\[10096 \\pm 3054\\]\n\\[[\\$7,042, \\$13,150]\\]\nWe are 90% confident that the true difference in population mean total cost for students at private schools and population mean total cost for out-of-state students at public schools is between $7,042 and $13,150."
   },
   {
     "objectID": "Pages/Lectures/Lecture01/Lec01.html#what-is-data",
@@ -5531,7 +5391,7 @@
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: July 16, 2024\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/24 - 6/28)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\n\nHW1 Soln Quiz1 Soln\nWorksheet 01\nSolns\nLab 01  Introduction to Python\n\n\n2\n(7/01 - 7/05)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n09: Discrete Random Variables\n\nHW2 Soln Quiz2 Soln\nWorksheet 02\nSolns\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\n\n\n3\n(7/08 - 7/12)\n\n07: Review\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\n\nHW3 Soln Quiz3 Soln\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\n\n\n\n4\n(7/15 - 7/19)\n\n13: Confidence Intervals for Means\n\nT-Table\n\n14: Hypothesis Testing for Proportions\n15: Review\n\nWorksheet 04\nLab 04  Simulations, Sampling, and Loops\n\n\n\n5\n(7/22 - 7/26)\n\n17: Hypothesis Testing, Part II\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Intro to Statistical Modeling, and Correlation\n\nWorksheet 05\n\nLab 05  Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/29 - 8/01)\n\n21: Regression, Part II\n22: Regression Diagnostics, and Sampling Procedures\n23: Ways Statistics Can Deceive\n24: Review\nFINAL EXAM: Thursday, August 1 during lecture\n\nQ&A with TA.\nLab 06  A Trip To the Movies",
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: July 18, 2024\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/24 - 6/28)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\n\nHW1 Soln Quiz1 Soln\nWorksheet 01\nSolns\nLab 01  Introduction to Python\n\n\n2\n(7/01 - 7/05)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n09: Discrete Random Variables\n\nHW2 Soln Quiz2 Soln\nWorksheet 02\nSolns\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\n\n\n3\n(7/08 - 7/12)\n\n07: Review\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\n\nHW3 Soln Quiz3 Soln\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\n\n\n\n4\n(7/15 - 7/19)\n\n13: Confidence Intervals for Means\n\nT-Table\n\n14: Hypothesis Testing for Proportions\n17: Hypothesis Testing, Part II\n\nWorksheet 04\nLab 04  Simulations, Sampling, and Loops\n\n\n\n5\n(7/22 - 7/26)\n\n18: Two-Sample t-Tests\n19: ANOVA (Analysis of Variance)\n20: Intro to Statistical Modeling, and Correlation\n\nWorksheet 05\n\nLab 05  Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/29 - 8/01)\n\n21: Regression, Part II\n22: Regression Diagnostics, and Sampling Procedures\n23: Ways Statistics Can Deceive\n24: Review\nFINAL EXAM: Thursday, August 1 during lecture\n\nQ&A with TA.\nLab 06  A Trip To the Movies",
     "crumbs": [
       "Course Info",
       "Schedule of Topics"

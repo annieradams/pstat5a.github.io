@@ -11,9 +11,9 @@
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.45">
 
-  <meta name="author" content="Ethan P. Marzban">
-  <meta name="dcterms.date" content="2023-07-19">
-  <title>PSTAT 5A: Summer Session A, 2024 – PSTAT 5A: Lecture 14</title>
+  <meta name="author" content="Mallory Wang">
+  <meta name="dcterms.date" content="2024-07-22">
+  <title>PSTAT 5A: Summer Session A, 2024 – PSTAT 5A: Lecture 18</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -387,135 +387,126 @@
       margin-right: 0; 
     }
   </style>
-  <script type="module" src="../../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
-  <link href="../../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" data-background-image="5a_hex.png" data-background-opacity="0.5" data-background-position="left" data-background-size="contain" class="center">
-  <h1 class="title" style="text-align: right">PSTAT 5A: Lecture 14</h1>
-  <h2 class="subtitle" style="text-align: right">Review for Midterm 2</h2>
-  <p class="author" style="text-align: right">Ethan P. Marzban</p>
-  <p class="date" style="text-align: right">2023-07-19</p>
+  <h1 class="title" style="text-align: right">PSTAT 5A: Lecture 18</h1>
+  <h2 class="subtitle" style="text-align: right">Two-Sample Tests</h2>
+  <p class="author" style="text-align: right">Mallory Wang</p>
+  <p class="date" style="text-align: right">2024-07-22</p>
+</section>
+<section id="multiple-populations" class="slide level2">
+<h2>Multiple Populations</h2>
+<ul>
+<li class="fragment"><p>So far, we’ve talked about constructing confidence intervals and performing hypothesis tests for both population proportions and population means.</p></li>
+<li class="fragment"><p>One crucial thing to note is that everything we’ve done has been in the context of a <em>single</em> population</p></li>
+<li class="fragment"><p>Sometimes, as Data Scientists, we may want to test claims about the <em>differences</em> between two populations</p>
+<ul>
+<li class="fragment"><p>E.g. Is the average monthly income in Santa Barbara different from the average monthly income in San Francisco?</p></li>
+<li class="fragment"><p>E.g. Is the proportion of people who test positive for a disease in one country different than the proportion that test positive in a second country?</p></li>
+</ul></li>
+</ul>
 </section>
 <section>
-<section id="hypothesis-testing" class="title-slide slide level1 center">
-<h1>Hypothesis Testing</h1>
+<section id="two-populations" class="title-slide slide level1 center">
+<h1>Two Populations</h1>
 
 </section>
-<section id="hypothesis-testing-1" class="slide level2" style="font-size:32px">
-<h2>Hypothesis Testing</h2>
+<section id="two-populations-1" class="slide level2">
+<h2>Two Populations</h2>
 <ul>
-<li class="fragment"><p>Recall that in the framework of <strong>hypothesis testing</strong>, we wish to utilize <em>data</em> to assess the plausibility/validity of a <strong>hypothesis</strong>, called the <strong>null hypothesis</strong>.</p>
+<li class="fragment"><p>Statistically: we are imagining <em>two</em> populations, Population 1 and Population 2, governed by parameters <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span>, respectively, and trying to test claims about the relationship between <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span>.</p>
 <ul>
-<li class="fragment">Specifically, we wish to determine whether or not the data provides support to reject the null in favor of the <strong>alternative hypothesis</strong> or not.</li>
+<li class="fragment">For example, we could consider two populations with means <span class="math inline">\(\mu_1\)</span> and <span class="math inline">\(\mu_2\)</span>, respectively, and try to make claims about whether or not <span class="math inline">\(\mu_1\)</span> and <span class="math inline">\(\mu_2\)</span> are equal.</li>
 </ul></li>
-<li class="fragment"><p>In the case of hypothesis testing for a population proportion <span class="math inline">\(p\)</span>, our null takes the form <span class="math inline">\(H_0: p = p_0\)</span> and there are several different alternative hypotheses we could consider:</p>
+<li class="fragment"><p>The trick Statisticians use is to think in terms of the <em>difference</em> <span class="math inline">\(\mu_1 - \mu_2.\)</span></p>
 <ul>
-<li class="fragment"><strong>Two-tailed alternative/test:</strong> <span class="math inline">\(H_A: \ p \neq p_0\)</span></li>
-<li class="fragment"><strong>Lower-tailed alternative/test:</strong> <span class="math inline">\(H_A: \ p &lt; p_0\)</span></li>
-<li class="fragment"><strong>Upper-tailed alternative/test:</strong> <span class="math inline">\(H_A: \ p &gt; p_0\)</span></li>
-<li class="fragment"><strong>Simple-vs-simple alternative/test:</strong> <span class="math inline">\(H_A: \ p = p_1\)</span> for <span class="math inline">\(p_1 \neq p_0\)</span></li>
+<li class="fragment">For example, if our null hypothesis is that <span class="math inline">\(\mu_1 = \mu_2\)</span>, this can be rephrased as <span class="math inline">\(H_0: \ \mu_1 - \mu_2 = 0\)</span>.</li>
 </ul></li>
 </ul>
 </section>
-<section id="hypothesis-testing-for-a-proportion" class="slide level2" style="font-size:32px">
-<h2>Hypothesis Testing for a Proportion</h2>
+<section id="two-populations-2" class="slide level2">
+<h2>Two Populations</h2>
 <ul>
-<li class="fragment"><p>The different alternative hypotheses lead to different forms of our <strong>hypothesis test</strong>.</p></li>
-<li class="fragment"><p>Last lecture, we discussed how to construct a two-sided hypothesis test.</p></li>
-<li class="fragment"><p>On the homework, I ask you to derive the lower-tailed hypothesis test (and I also provide you with the form for an upper-tailed hypothesis test in the last lecture slide deck)</p></li>
-<li class="fragment"><p>To help you with that homework problem, allow me to re-do the derivations we did last lecture, but this time more in the style of the homework problem.</p></li>
+<li class="fragment"><p>The reason we do this is because we have now effectively reduced our two-parameter problem into a one-parameter problem, involving only the parameter <span class="math inline">\(\delta := \mu_1 - \mu_2\)</span>.</p></li>
+<li class="fragment"><p>Now, we will need a point estimator of <span class="math inline">\(\delta\)</span>. Just as before, we used <span class="math inline">\(\bar{X}\)</span> to estimate <span class="math inline">\(\mu\)</span>, we now use <span class="math inline">\(\bar{X}_2-\bar{X}_1\)</span> to estimate <span class="math inline">\(\mu_1 - \mu_2\)</span>.</p></li>
 </ul>
 </section>
-<section id="two-sided-test-for-a-proportion" class="slide level2" style="font-size:32px">
-<h2>Two-Sided Test for a Proportion</h2>
+<section id="two-populations-3" class="slide level2">
+<h2>Two Populations</h2>
 <ul>
-<li class="fragment"><p>We start with the test statistic <span class="math display">\[ \mathrm{TS} = \frac{\widehat{P} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{n}}} \]</span></p></li>
-<li class="fragment"><p>If the null were true, i.e.&nbsp;if the true value of <span class="math inline">\(p\)</span> were <span class="math inline">\(p_0\)</span>, then this test statistic would follow the Normal Distribution provided that we are able to invoke the Central Limit Theorem for proportions, which we can do only if</p>
+<li class="fragment"><p>We will ultimately need access to the sampling distribution of <span class="math inline">\(\bar{X}_1-\bar{X}_2\)</span>.</p></li>
+<li class="fragment"><p>Just as before, we have to check conditions to determine the sampling distribution of <span class="math inline">\(\bar{X}_1-\bar{X}_2\)</span>:</p></li>
+</ul>
 <ol type="1">
-<li class="fragment"><span class="math inline">\(np_0 \geq 10\)</span></li>
-<li class="fragment"><span class="math inline">\(n(1 - p_0) \geq 10\)</span></li>
+<li class="fragment"><p><strong>Independence</strong> <em>within</em> each sample: The observations within each sample are independent (e.g.&nbsp;we have a random sample from each of the two populations).</p></li>
+<li class="fragment"><p><strong>Independence</strong> <em>between</em> the samples: he two samples are independent of one another such that observations in one sample tell us nothing about the observations in the other sample (and vice versa).</p></li>
+<li class="fragment"><p><strong>Normality</strong>: When the sample sizes are small, we require that the observations in each sample come from a normally distributed population. We can relax this condition more and more for larger and larger sample sizes. (You need to check normality for both groups.)</p></li>
+</ol>
+</section>
+<section id="sampling-distribution-of-barx_1-barx_2" class="slide level2">
+<h2>Sampling Distribution of <span class="math inline">\(\bar{X}_1-\bar{X}_2\)</span></h2>
+<p>When the conditions are satisfied, the sampling distribution of <span class="math inline">\(\bar{X}_1-\bar{X}_2\)</span> will be nearly normal with mean <span class="math display">\[\mu_1 -\mu_2\]</span> and standard error <span class="math display">\[SE = \sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}\]</span></p>
+</section>
+<section id="sampling-distribution-of-barx_1-barx_2-1" class="slide level2">
+<h2>Sampling Distribution of <span class="math inline">\(\bar{X}_1-\bar{X}_2\)</span></h2>
+<p>This is only if we know the population standard deviation <span class="math inline">\(\sigma_1\)</span> and <span class="math inline">\(\sigma_2\)</span>, which is unlikely. Instead, we can use the sample standard deviations <span class="math inline">\(s_1\)</span> and <span class="math inline">\(s_2\)</span> so we have <span class="math display">\[SE = \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}\]</span></p>
+<p>We will use technology to calculate the degrees of freedom. When we can’t use technologies, we will use the smaller of <span class="math inline">\(n_1-1\)</span> and <span class="math inline">\(n_2-1\)</span> for the degrees of freedom.</p>
+</section></section>
+<section>
+<section id="hypothesis-test-for-mu_1-mu_2" class="title-slide slide level1 center">
+<h1>Hypothesis Test for <span class="math inline">\(\mu_1-\mu_2\)</span></h1>
+
+</section>
+<section id="hypothesis-test-for-mu_1-mu_2-1" class="slide level2">
+<h2>Hypothesis Test for <span class="math inline">\(\mu_1-\mu_2\)</span></h2>
+<p>We will still follow the 5 steps to hypothesis test:</p>
+<p><strong>Step 1</strong>: Write the hypothesis statements</p>
+<p><strong>Step 2</strong>: Check conditions for determining the distribution of your sample statistic</p>
+<p><strong>Step 3</strong>: Calculate test statistic</p>
+<p><strong>Step 4</strong>: Use test statistic to determine decision of test (either using comparison to critical value or calculate p-value)</p>
+<p><strong>Step 5</strong>: Write a conclusion in the context of the problem</p>
+</section>
+<section id="step-1-write-the-hypothesis-statements" class="slide level2">
+<h2>Step 1: Write the hypothesis statements</h2>
+<p>The null hypothesis is</p>
+<p><span class="math display">\[H_0: \mu_1-\mu_2 = 0\]</span> The alternative is one of</p>
+<p><span class="math display">\[H_A: \mu_1-\mu_2 &lt; 0\]</span> <span class="math display">\[H_A: \mu_1-\mu_2 \neq 0\]</span> <span class="math display">\[H_A: \mu_1-\mu_2 &gt; 0\]</span></p>
+</section>
+<section id="step-2-check-conditions-for-your-sampling-distribution" class="slide level2">
+<h2>Step 2: Check conditions for your sampling distribution</h2>
+<ol type="1">
+<li class="fragment"><p>Independence within each sample</p></li>
+<li class="fragment"><p>Independence between samples</p></li>
+<li class="fragment"><p>Normality</p></li>
+</ol>
+</section>
+<section id="step-3-calculate-test-statistic" class="slide level2">
+<h2>Step 3: Calculate test statistic</h2>
+<p>Similar to how we determined our test statistic before, with the generic form:</p>
+<p><span class="math display">\[\frac{\text{sample statistic} - \text{null value}}{\text{standard error}}\]</span></p>
+<p>In this situation, we have:</p>
+<p><span class="math display">\[\text{TS} = \frac{\bar{x}_1-\bar{x}_2 - 0}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}\]</span></p>
+<p>And similar to the one mean problem, this test statistic follows a <span class="math inline">\(t\)</span> distribution with degrees of freedom calculated from technology.</p>
+</section>
+<section id="step-4-make-decision-on-test-and-step-5-write-a-conclusion" class="slide level2">
+<h2>Step 4: Make decision on test and Step 5: Write a conclusion</h2>
+<ul>
+<li class="fragment"><p>As we did with one mean, the decision will be based on the kind of test (two sided, lower tail, or greater tail tests). We will calculate the p-value to measure the strength of the evidence against the null hypothesis, comparing it to the significance level, <span class="math inline">\(\alpha\)</span>.</p></li>
+<li class="fragment"><p>Finally, we write a conclusion in the context of the problem which include our 5 elements:</p>
+<ol type="1">
+<li class="fragment"><p>significance level,</p></li>
+<li class="fragment"><p>decision of the test,</p></li>
+<li class="fragment"><p>as a function of the null hypothesis. Then we write an interpretation that is</p></li>
+<li class="fragment"><p>not too strong, and</p></li>
+<li class="fragment"><p>in affirmation or not in affirmation of the alternative hypothesis.</p></li>
 </ol></li>
 </ul>
 </section>
-<section id="two-sided-test-for-a-proportion-1" class="slide level2" style="font-size:32px">
-<h2>Two-Sided Test for a Proportion</h2>
-<ul>
-<li class="fragment">If these conditions hold, we then know that (by the Central Limit Theorem for Proportions) <span class="math display">\[ \widehat{P} \stackrel{H_0}{\sim} \mathcal{N}\left( p_0, \ \sqrt{\frac{p_0 (1 - p_0)}{n}} \right) \]</span> which means, by our Standardization Result, that <span class="math display">\[\mathrm{TS} \stackrel{H_0}{\sim} \mathcal{N}(0, \ 1)\]</span> where the symbol <span class="math inline">\(\stackrel{H_0}{\sim}\)</span> just means “distributed under the null”; i.e.&nbsp;assuming the null hypothesis is correct.</li>
-</ul>
-</section>
-<section id="two-sided-test-for-a-proportion-2" class="slide level2" style="font-size:30px">
-<h2>Two-Sided Test for a Proportion</h2>
-<ul>
-<li class="fragment"><p>Now, let’s think about when we would reject the null that <span class="math inline">\(p = p_0\)</span> in favor of the alternative that <span class="math inline">\(p \neq p_0\)</span>.</p>
-<ul>
-<li class="fragment"><p>If we observed a value of <span class="math inline">\(\widehat{p}\)</span> that was much greater than <span class="math inline">\(p_0\)</span> (i.e.&nbsp;if <span class="math inline">\(\mathrm{ts}\)</span> was much larger than 0), we would probably reject the null in favor of the alternative.</p></li>
-<li class="fragment"><p>But, if we observed a value of <span class="math inline">\(\widehat{p}\)</span> that was much <em>smaller</em> than <span class="math inline">\(p_0\)</span> (i.e.&nbsp;if <span class="math inline">\(\mathrm{ts}\)</span> was much <em>smaller</em> than 0), we would probably <em>also</em> reject the null in favor of the alternative.</p></li>
-<li class="fragment"><p>Therefore, we reject when the magnitude of <span class="math inline">\(\mathrm{ts}\)</span> is large; i.e.&nbsp;with <span class="math inline">\(|\mathrm{ts}| &gt; c\)</span> for some constant <span class="math inline">\(c\)</span>.</p></li>
-</ul></li>
-<li class="fragment"><p>This means our test should take the form <span class="math display">\[ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if } |\mathrm{TS}| &gt; c \\ \texttt{fail to reject } H_0 &amp; \text{otherwise}\\ \end{cases}  \]</span></p></li>
-</ul>
-</section>
-<section id="two-sided-test-for-a-proportion-3" class="slide level2" style="font-size:30px">
-<h2>Two-Sided Test for a Proportion</h2>
-<ul>
-<li class="fragment"><p>Finally, we need to consider how large to make our cutoff (or <strong>critical value</strong>) <span class="math inline">\(c\)</span>.</p></li>
-<li class="fragment"><p>This is where we need to consider the two types of errors we could commit: <strong>Type I</strong> and <strong>Type II Errors</strong></p>
-<ul>
-<li class="fragment"><p>Type I error: the null was rejected when it was in fact true (convicting an innocent person)</p></li>
-<li class="fragment"><p>Type II error: the null was not rejected when it was in fact false (letting a guilty person go free)</p></li>
-</ul></li>
-<li class="fragment"><p>We call the probability of committing a Type I error the <strong>level of significance</strong> <span class="math inline">\(\alpha\)</span>, which we fix before beginning our testing procedure.</p></li>
-<li class="fragment"><p>In terms of the critical value, this means <span class="math inline">\(c\)</span> should satisfy the equation <span class="math display">\[ \mathbb{P}_{H_0}(|\mathrm{TS}| &gt; c) = \alpha \]</span> where <span class="math inline">\(\mathbb{P}_{H_0}\)</span> means “probability of, assuming the null is actually true (i.e.&nbsp;that <span class="math inline">\(p = p_0\)</span>)”.</p></li>
-</ul>
-</section>
-<section id="two-sided-test-for-a-proportion-4" class="slide level2" style="font-size:28px">
-<h2>Two-Sided Test for a Proportion</h2>
-<ul>
-<li class="fragment"><p>Since we know that <span class="math inline">\(\mathrm{TS}\)</span> follows a standard normal distribution under the null, this means that <span class="math inline">\(c\)</span> should be the <span class="math inline">\((\alpha / 2) \times 100\)</span><sup>th</sup> percentile of the standard normal distribution.</p>
-<ul>
-<li class="fragment">For example, if <span class="math inline">\(\alpha = 0.05\)</span>, then the critical value is the <span class="math inline">\((0.05) / 2 \times 100 = 2.5\)</span><sup>th</sup> percentile of the standard normal distribution, which we see to be <span class="math inline">\(1.96\)</span>.</li>
-</ul></li>
-<li class="fragment"><p>As such, the final form of our test is <span class="math display">\[ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if } |\mathrm{TS}| &gt; z_{1 - \alpha/2} \\ \texttt{fail to reject } H_0 &amp; \text{otherwise}\\ \end{cases}  \]</span> where we use the notation <span class="math inline">\(z_{1 - \alpha/2}\)</span> to denote the following (which, recall, are equivalent):</p>
-<ul>
-<li class="fragment"><span class="math inline">\((\alpha / 2) \times 100\)</span><sup>th</sup> percentile of the standard normal distribution, <strong>scaled by negative 1</strong>.</li>
-<li class="fragment"><span class="math inline">\([1 - (\alpha / 2)] \times 100\)</span><sup>th</sup> percentile, not scaled by anything.</li>
-</ul></li>
-</ul>
-</section>
-<section id="quick-note" class="slide level2" style="font-size:30px">
-<h2>Quick Note</h2>
-<ul>
-<li class="fragment">Again, it turns out that the <span class="math inline">\((\alpha / 2) \times 100\)</span><sup>th</sup> percentile of the standard normal distribution scaled by negative 1 is equivalent to the <span class="math inline">\((1 - \alpha / 2)\)</span><sup>th</sup> percentile of the standard normal distribution, not scaled by negative 1.</li>
-</ul>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> scipy.stats <span class="im">as</span> sps</span>
-<span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a><span class="op">-</span>sps.norm.ppf(<span class="fl">0.05</span><span class="op">/</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>np.float64(1.9599639845400545)</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">import</span> scipy.stats <span class="im">as</span> sps</span>
-<span id="cb3-2"><a></a></span>
-<span id="cb3-3"><a></a>sps.norm.ppf(<span class="dv">1</span> <span class="op">-</span> <span class="fl">0.05</span><span class="op">/</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>np.float64(1.959963984540054)</code></pre>
-</div>
-</div>
-</div>
-<ul>
-<li class="fragment">Basically, when doing a <em>two-sided test</em>, ensure that the critical value is positive. (This is not the case for a one-sided test.)</li>
-</ul>
-</section>
-<section id="worked-out-example" class="slide level2" style="font-size:30px">
+<section id="worked-out-example" class="slide level2" style="font-size:32px">
 <h2>Worked-Out Example</h2>
 <div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -529,9 +520,14 @@
 <div class="callout-content">
 <div>
 <div style="font-size: 28px">
-<p>Administration within a Statistics department at an unnamed university claims to admit 24% of all applicants. A disgruntled student, dubious of the administration’s claims, takes a representative sample of 120 students who applied to the Statistics major, and found that 20% of these students were actually admitted into the major.<br>
-</p>
-<p>Conduct a two-sided hypothesis test at a 5% level of significance on the administrator’s claims that 24% of applicants into the Statistics major are admitted. Be sure you phrase your conclusion clearly, and in the context of the problem.</p>
+<p><em>Gaucho Gourmande</em> has two locations: one in Goleta and one in Santa Barbara. The owner would like to determine whether the average revenue generated by the two locations are equal or not. To that end, he computes the net revenue generated by the Goleta location over 30 days and also computes the net revenue generated by the Santa Barbara location over 35 days (assume all of the necessary independence conditions hold), and produced the following information:</p>
+<p><span class="math display">\[\begin{array}{r|cc}
+                    &amp; \text{Sample Average}     &amp; \text{Sample Standard Deviation}    \\
+  \hline
+  \textbf{Goleta}   &amp;     \$13                    &amp; \$3.45        \\
+  \textbf{Santa Barbara}   &amp;     \$15                    &amp; \$4.23
+\end{array}\]</span></p>
+<p>Test the owner’s claims at an <span class="math inline">\(\alpha = 0.05\)</span> level of significance, using a two-sided alternative.</p>
 </div>
 </div>
 </div>
@@ -542,145 +538,97 @@
 <section id="solutions" class="slide level2" style="font-size:30px">
 <h2>Solutions</h2>
 <ul>
-<li class="fragment"><p>We first phrase the hypotheses.</p></li>
-<li class="fragment"><p>Let <span class="math inline">\(p\)</span> denote the true proportion of applicants who get admitted into the major. Since we are performing a two-sided test, our hypotheses take the form <span class="math display">\[ \left[ \begin{array}{rr}
-H_0:    p = 0.24    \\
-H_A:    p \neq 0.24
-\end{array} \right.\]</span></p></li>
-<li class="fragment"><p>Now we compute the observed value of the test statistic: <span class="math display">\[ \mathrm{ts} = \frac{\widehat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}} = \frac{0.2 - 0.24}{\sqrt{\frac{(0.24) \cdot (1 - 0.24)}{120}}} \approx -1.026 \]</span></p></li>
-<li class="fragment"><p>Next, we compute the critical value. Since we are using an <span class="math inline">\(\alpha = 0.05\)</span> level of significance, we will use the critical value <span class="math inline">\(1.96\)</span></p></li>
+<li class="fragment"><p>Our first step should be to figure out what “Population 1” and “Population 2” are in the context of the problem.</p></li>
+<li class="fragment"><p>Let “Goleta Location” be Population 1 and “Santa Barbara Location” be Population 2.</p>
+<ul>
+<li class="fragment">It is perfectly acceptable to swap these two, but just be sure you remain consistent throughout the problem!</li>
+<li class="fragment">Also, I will expect you to explicitly write out your definitions of the populations (like above), even if the problem doesn’t explicitly ask you to do so.</li>
+</ul></li>
+<li class="fragment"><p>In this way, <span class="math display">\[ \overline{X} = 13; \quad s_X = 3.45; \quad \overline{Y} = 15; \quad s_Y = 4.23 \]</span></p></li>
+<li class="fragment"><p>Additionally, <span class="math inline">\(n_1 = 30\)</span> and <span class="math inline">\(n_2 = 35\)</span>.</p></li>
 </ul>
 </section>
-<section id="solutions-1" class="slide level2" style="font-size:30px">
+<section id="solutions-1" class="slide level2" style="font-size:28px">
 <h2>Solutions</h2>
 <ul>
-<li class="fragment"><p>Finally, we perform the test: we will reject the null in favor of the alternative if <span class="math inline">\(|\mathrm{ts}|\)</span> is larger than the critical value.</p></li>
-<li class="fragment"><p>In this case, <span class="math inline">\(|\mathrm{ts}| = |-1.026| = 1.026 &lt; 1.96\)</span> meaning we fail to reject the null:</p></li>
+<li class="fragment"><p>Now, let’s compute the value of the test statistic. <span class="math display">\[ \mathrm{TS} =   \frac{\overline{Y} - \overline{X}}{\sqrt{ \frac{s_X^2}{n_1} + \frac{s_Y^2}{n_2}}} = \frac{15 - 13}{\sqrt{\frac{3.45^2}{30}  + \frac{4.23^2}{35} }} = 2.10 \]</span></p></li>
+<li class="fragment"><p>We should next figure out the degrees of freedom: <span class="math display">\[\begin{align*}
+\mathrm{df}   &amp;  = \mathrm{round}\left\{ \frac{ \left[ \left( \frac{s_X^2}{n_1} \right) + \left( \frac{s_Y^2}{n_2} \right) \right]^2 }{ \frac{\left( \frac{s_X^2}{n_1} \right)^2}{n_1 - 1} + \frac{\left( \frac{s_Y^2}{n_2} \right)^2}{n_2 - 1} } \right\}     \\
+  &amp; =  \mathrm{round}\left\{ \frac{ \left[ \left( \frac{3.45^2}{30} \right) + \left( \frac{4.23^2}{35} \right) \right]^2 }{ \frac{\left( \frac{3.45^2}{30} \right)^2}{30 - 1} + \frac{\left( \frac{4.23^2}{35} \right)^2}{35 - 1} } \right\} = 63
+\end{align*}\]</span></p></li>
+</ul>
+</section>
+<section id="solutions-2" class="slide level2" style="font-size:30px">
+<h2>Solutions</h2>
+<ul>
+<li class="fragment"><p>At this point, we could either proceed using critical values or using <em>p</em>-values.</p></li>
+<li class="fragment"><p>Let’s use <em>p</em>-values, for practice.</p></li>
+<li class="fragment"><p>Our <em>p</em>-value is computed as</p></li>
 </ul>
 <div class="fragment">
-<blockquote>
-<p>At an <span class="math inline">\(\alpha = 0.05\)</span> level of significance, there was insufficient evidence to reject the null hypothesis that 24% of applicants are admitted into the major in favor of the alternative that the true admittance rate was <em>not</em> 24%.</p>
-</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> scipy.stats <span class="im">as</span> sps</span>
+<span id="cb1-2"><a></a><span class="dv">2</span><span class="op">*</span>sps.t.cdf(<span class="op">-</span><span class="fl">2.10</span>, <span class="dv">63</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>np.float64(0.03973904581390475)</code></pre>
 </div>
+</div>
+</div>
+<ul>
+<li class="fragment"><p>This is below our level of significance <span class="math inline">\(\alpha = 0.05\)</span> meaning we would reject the null.</p></li>
+<li class="fragment"><p>If we wanted to instead use critical values:</p></li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="op">-</span>sps.t.ppf(<span class="fl">0.05</span>, <span class="dv">63</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>np.float64(1.669402221706813)</code></pre>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">This means our critical value is 1.67; since <span class="math inline">\(|\mathrm{TS}| = |2.10| = 2.10 &gt; 1.67\)</span>, we would again reject at an <span class="math inline">\(\alpha = 0.05\)</span> level of significance.</li>
+</ul>
+</section>
+<section id="solutions-3" class="slide level2">
+<h2>Solutions</h2>
+<blockquote>
+<p>At a 5% level of significance, there was sufficient evidence to reject the owner’s claims that the revenue generated by the two locations are equal, in favor of the alternative that the revenue generated by the two locations are not equal.</p>
+</blockquote>
+</section>
+<section id="extensions" class="slide level2" style="font-size:32px">
+<h2>Extensions</h2>
+<ul>
+<li class="fragment"><p>Unsurprisingly, we can adapt the above procedure to account for one-sided alternatives as well.</p></li>
+<li class="fragment"><p>For instance, suppose we wish to test <span class="math display">\[ \left[ \begin{array}{rr}
+H_0:    &amp; \mu_1 = \mu_2   \\
+H_A:    &amp; \mu_1 &lt; \mu_2
+\end{array} \right.\]</span></p></li>
+<li class="fragment"><p>Again, we rephrase things as: <span class="math display">\[ \left[ \begin{array}{rr}
+H_0:    &amp; \mu_2 - \mu_1 = 0   \\
+H_A:    &amp; \mu_2 - \mu_1 &gt; 0
+\end{array} \right.\]</span> which is now a familiar upper-tailed test on <span class="math inline">\(\delta = \mu_2 - \mu_1\)</span> and <span class="math inline">\(\mu_0 = 0.\)</span></p></li>
+</ul>
+</section>
+<section id="extensions-1" class="slide level2" style="font-size:32px">
+<h2>Extensions</h2>
+<ul>
+<li class="fragment"><p>Specifically, we would take the same test statistic (which would still follow the same distribution under the null) and use the decision rule <span class="math display">\[ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if } \mathrm{TS} &gt; c \\ \texttt{fail to reject } H_0 &amp; \text{otherwise}\\ \end{cases}  \]</span> where <span class="math inline">\(c\)</span> is the appropriate quantile of the approximate <em>t</em> distribution (with degrees of freedom given by the Satterthwaite Approximation).</p></li>
+<li class="fragment"><p>A similar result holds for the lower-tailed test- I encourage you to work it out on your own.</p></li>
+</ul>
 </section></section>
 <section>
-<section id="random-variables" class="title-slide slide level1 center">
-<h1>Random Variables</h1>
+<section id="confidence-interval-for-mu_1-mu_2" class="title-slide slide level1 center">
+<h1>Confidence Interval for <span class="math inline">\(\mu_1-\mu_2\)</span></h1>
 
 </section>
-<section id="basics-of-random-variables" class="slide level2" style="font-size:32px">
-<h2>Basics of Random Variables</h2>
-<ul>
-<li class="fragment"><p>Recall long ago we discussed the notion of an experiment: any procedure we can repeat an infinite number of times where each time we repeat the experiment the same fixed set of things (i.e.&nbsp;the <em>outcomes</em>) can occur.</p></li>
-<li class="fragment"><p>A <strong>random variable</strong>, loosely speaking, is some sort of numerical variable that keeps track of certain quantities relating to an experiment.</p></li>
-<li class="fragment"><p>For example, if we toss 7 coins and let <span class="math inline">\(X\)</span> denote the number of heads we observe in these 7 coin tosses, then <span class="math inline">\(X\)</span> would be a random variable.</p></li>
-<li class="fragment"><p>The set of all values a random variable can attain is called the <strong>state space</strong>, and is denoted <span class="math inline">\(S_X\)</span>.</p></li>
-<li class="fragment"><p>We classify random variables based on their state space:</p>
-<ul>
-<li class="fragment">If <span class="math inline">\(S_X\)</span> has jumps, we say <span class="math inline">\(X\)</span> is a <strong>discrete random variable</strong></li>
-<li class="fragment">If <span class="math inline">\(S_X\)</span> does not have jumps, we say <span class="math inline">\(X\)</span> is a <strong>continuous random variable</strong></li>
-</ul></li>
-</ul>
+<section id="confidence-interval-for-mu_1-mu_2-1" class="slide level2">
+<h2>Confidence Interval for <span class="math inline">\(\mu_1-\mu_2\)</span></h2>
+<p>As with the confidence interval for one mean, we had the generic form</p>
+<p><span class="math display">\[\hat{\theta} \pm c \cdot \text{standard error}\]</span></p>
+<p>So confidence interval for <span class="math inline">\(\mu_1-\mu_2\)</span> is <span class="math display">\[\bar{x}_1-\bar{x}_2 \pm t^* \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}\]</span></p>
 </section>
-<section id="discrete-random-variables" class="slide level2" style="font-size:30px">
-<h2>Discrete Random Variables</h2>
-<ul>
-<li class="fragment"><p>Discrete random variables are described/summarized by a <strong>probability mass function</strong> (p.m.f.), which is a specification of the values the random variable can take (i.e.&nbsp;the state space) along with the probabilities with which the random variable attains those values.</p>
-<ul>
-<li class="fragment"><p>P.M.F.’s are often displayed in tabular form: e.g. <span class="math display">\[ \begin{array}{r|cccc}
-\boldsymbol{k}              &amp; -1    &amp; 0   &amp; 1   &amp; 2   \\
-\hline
-\boldsymbol{\mathbb{P}(X = k)}   &amp; 0.1   &amp; 0.2   &amp; 0.3   &amp; 0.4
-  \end{array}\]</span></p></li>
-<li class="fragment"><p>Note that the probability values in a P.M.F. must sum to 1.</p></li>
-</ul></li>
-<li class="fragment"><p>Quantities like <span class="math inline">\(\mathbb{P}(X \leq k)\)</span> are found by summing up the values of <span class="math inline">\(\mathbb{P}(X = x)\)</span> for all values of <span class="math inline">\(x\)</span> in the state space that are less than <span class="math inline">\(k\)</span>.</p>
-<ul>
-<li class="fragment">For example, in the example above, <span class="math display">\[\mathbb{P}(X \leq 0.5) = \mathbb{P}(X = -1) + \mathbb{P}(X = 0)  = 0.1 + 0.2 = 0.3 \]</span></li>
-</ul></li>
-</ul>
-</section>
-<section id="expected-value" class="slide level2" style="font-size:30px">
-<h2>Expected Value</h2>
-<ul>
-<li class="fragment"><p>The <strong>expected value</strong> of a random variable <span class="math inline">\(X\)</span>, denoted <span class="math inline">\(\mathbb{E}[X]\)</span>, represents a sort of “average” of <span class="math inline">\(X\)</span>, and is computed as <span class="math display">\[ \mathbb{E}[X] = \sum_{\text{all $k$}} k \cdot \mathbb{P}(X = k) \]</span></p>
-<ul>
-<li class="fragment"><p>Again, don’t be scared by the sigma notation! It just represents a sum.</p></li>
-<li class="fragment"><p>So, for example, using our P.M.F. from the previous slide, <span class="math display">\[\begin{align*}
-\mathbb{E}[X]   &amp; = (-1) \cdot \mathbb{P}(X = -1) + (0) \cdot \mathbb{P}(X = 0)    \\
-&amp; \hspace{10mm} + (1) \cdot \mathbb{P}(X = 1) + (2) \cdot \mathbb{P}(X = 2)    \\[3mm]
-  &amp; = (-1) \cdot (0.1) + (0) \cdot (0.2) + (1) \cdot (0.3) + (2) \cdot (0.4)     \\[3mm]
-  &amp; = \boxed{1}
-  \end{align*}\]</span></p></li>
-</ul></li>
-</ul>
-</section>
-<section id="variance-and-standard-deviation" class="slide level2" style="font-size:30px">
-<h2>Variance and Standard Deviation</h2>
-<ul>
-<li class="fragment"><p>There are two formulas we can use for the <strong>variance</strong> of a random variable <span class="math inline">\(X\)</span>: <span class="math display">\[ \mathrm{Var}(X) = \sum_{\text{all $k$}} (k - \mathbb{E}[X])^2 \cdot \mathbb{P}(X = k) \]</span> or <span class="math display">\[ \mathrm{Var}(X) = \left(\sum_{\text{all $k$}} k^2 \cdot \mathbb{P}(X = k) \right) - (\mathbb{E}[X])^2 \]</span></p></li>
-<li class="fragment"><p>The <strong>standard deviation</strong> of a random variable is simply the square root of the variance: <span class="math display">\[ \mathrm{SD}(X) = \sqrt{\mathrm{Var}(X)} \]</span></p></li>
-</ul>
-</section>
-<section id="variance-and-standard-deviation-1" class="slide level2" style="font-size:30px">
-<h2>Variance and Standard Deviation</h2>
-<ul>
-<li class="fragment">For example, using the PMF from a few slides ago, the first formula for variance tells us to compute <span class="math display">\[\begin{align*}
-\mathrm{Var}(X)     &amp; = \sum_{\text{all $k$}} (k - \mathbb{E}[X])^2 \cdot \mathbb{P}(X = k)    \\
-  &amp; = (-1 - 1)^2 \cdot \mathbb{P}(X = -1) + (0 - 1)^2 \cdot \mathbb{P}(X = 0)    \\
-    &amp; \hspace{10mm} + (1 - 1)^2 \cdot \mathbb{P}(X = 1) + (2 - 1)^2 \cdot \mathbb{P}(X = 2)    \\[3mm]
-      &amp; = (-1 - 1)^2 \cdot (0.1) + (0 - 1)^2 \cdot (0.2)    \\
-      &amp; \hspace{10mm}+ (1 - 1)^2 \cdot (0.3) + (2 - 1)^2 \cdot (0.4)   \\[3mm]
-      &amp; = \boxed{1}
-\end{align*}\]</span></li>
-</ul>
-</section>
-<section id="variance-and-standard-deviation-2" class="slide level2" style="font-size:30px">
-<h2>Variance and Standard Deviation</h2>
-<div>
-<ul>
-<li>Using the second formula for variance, we first compute <span class="math display">\[\begin{align*}
-\sum_{\text{all $k$}} k^2 \mathbb{P}(X = k)    &amp;  = (-1)^2 \cdot \mathbb{P}(X = -1) + (0)^2 \cdot \mathbb{P}(X = 0)    \\
-    &amp; \hspace{10mm} + (1)^2 \cdot \mathbb{P}(X = 1) + (2 - 1)^2 \cdot \mathbb{P}(X = 2)    \\[3mm]
-      &amp; = (-1)^2 \cdot (0.1) + (0)^2 \cdot (0.2)    \\
-      &amp; \hspace{10mm}+ (1)^2 \cdot (0.3) + (2)^2 \cdot (0.4)   \\[3mm]
-      &amp; = 2
-\end{align*}\]</span> which means <span class="math display">\[ \mathrm{Var}(X) = 2 - (1)^2 = \boxed{1}\]</span></li>
-</ul>
-</div>
-</section>
-<section id="binomial-distribution" class="slide level2" style="font-size:32px">
-<h2>Binomial Distribution</h2>
-<ul>
-<li class="fragment"><p>Suppose we have <span class="math inline">\(n\)</span> independent trials, each resulting in “success” with probability <span class="math inline">\(p\)</span> and “failure” with probability <span class="math inline">\(1 - p\)</span>. If <span class="math inline">\(X\)</span> denotes the number of successes in these <span class="math inline">\(n\)</span> trials, we say <span class="math inline">\(X\)</span> follow the <strong>Binomial distribution</strong> with parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>, notated <span class="math display">\[ X \sim \mathrm{Bin}(n, \ p) \]</span></p></li>
-<li class="fragment"><p>If <span class="math inline">\(X \sim \mathrm{Bin}(n, \ p)\)</span>, then:</p>
-<ul>
-<li class="fragment"><span class="math inline">\(S_X = \{0, 1, 2, \cdots, n\}\)</span></li>
-<li class="fragment"><span class="math inline">\(\mathbb{P}(X = k) = \binom{n}{k} p^k (1 - p)^{n - k}\)</span></li>
-<li class="fragment"><span class="math inline">\(\mathbb{E}[X] = np\)</span></li>
-<li class="fragment"><span class="math inline">\(\mathrm{Var}(X) = np(1 - p)\)</span></li>
-</ul></li>
-</ul>
-</section>
-<section id="binomial-distribution-1" class="slide level2" style="font-size:32px">
-<h2>Binomial Distribution</h2>
-<ul>
-<li class="fragment"><p>In order to verify that the Binomial distribution is appropriate to use, we need to check the Binomial Criteria:</p>
-<ol type="1">
-<li class="fragment">Independence across trials</li>
-<li class="fragment">Fixed number <span class="math inline">\(n\)</span> of trials</li>
-<li class="fragment">Well-defined notion of “success” and “failure”</li>
-<li class="fragment">Fixed probability <span class="math inline">\(p\)</span> of success across trials.</li>
-</ol></li>
-<li class="fragment"><p>If you are going to use the Binomial distribution in a problem, you <strong>must</strong> check <strong>all four</strong> of these!</p></li>
-</ul>
-</section>
-<section id="case-study-airline-bookings" class="slide level2">
-<h2>Case Study: Airline Bookings</h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZFNstNKgEDI?start=76" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
-</iframe>
-</section>
-<section id="worked-out-example-2" class="slide level2" style="font-size:30px">
+<section id="worked-out-example-2" class="slide level2" style="font-size:32px">
 <h2>Worked-Out Example</h2>
 <div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -693,9 +641,8 @@ H_A:    p \neq 0.24
 </div>
 <div class="callout-content">
 <div>
-<div style="font-size: 30px">
-<p>Suppose that <em>GauchoAir</em> has found that each passenger that books a ticket on the GA5A flight from SBA to GCV (<em>GauchoVille</em>) actually shows up with probability 90%.</p>
-<p>If flight GA5A has only 186 seats, but sells 195 tickets, what is the probability that <em>GauchoAir</em> will need to re-book certain passengers?</p>
+<div style="font-size: 28px">
+<p>Since public universities are subsidized by state governments, it is usually less expensive to attend a public university in your home state than a private university. Is this still true when you must pay out-of-state tuition? A random sample of 75 private universities had an average total cost of $42,336 with standard deviation of $14,004. A similar random sample of 80 public universities had an average out-of-state total cost of $32,240 with standard deviation $7,730. Calculate the 90% confidence interval for the difference in population mean total cost for students at private schools and the population mean total cost for out-of-state students at public schools.</p>
 </div>
 </div>
 </div>
@@ -703,695 +650,23 @@ H_A:    p \neq 0.24
 </div>
 </div>
 </section>
-<section id="solution" class="slide level2" style="font-size:30px">
-<h2>Solution</h2>
-<ul>
-<li class="fragment"><p>As always, we start by defining quantities.</p></li>
-<li class="fragment"><p>Let <span class="math inline">\(X\)</span> denote the number of passengers, out of the 195 booked on the flight, that actually show up for the flight.</p></li>
-<li class="fragment"><p>The video claims that <span class="math inline">\(X\)</span> follows a Binomial Distribution- let’s work with that claim for a moment (and then we can revisit that assumption later).</p></li>
-<li class="fragment"><p>Specifically, <span class="math inline">\(X \sim \mathrm{Bin}(195, \ 0.9)\)</span>.</p></li>
-<li class="fragment"><p>Now, the airline will only need to re-book passengers when the number of passengers that arive (<span class="math inline">\(X\)</span>) exceeds the capacity of the plane (186).</p></li>
-<li class="fragment"><p>So, the quantity we seek is <span class="math inline">\(\mathbb{P}(X &gt; 186) = \mathbb{P}(X \geq 187)\)</span>.</p></li>
-<li class="fragment"><p>Though we could do this by hand, let’s use Python.</p></li>
-<li class="fragment"><p>We can also discuss whether we think the Binomial criteria really are satisfied in this case or not.</p></li>
-</ul>
-</section>
-<section id="continuous-random-variables" class="slide level2" style="font-size:32px">
-<h2>Continuous Random Variables</h2>
-<ul>
-<li class="fragment">Not all random variables are discrete- many are continuous!</li>
-<li class="fragment">Continuous random variables are characterized by a <strong>probability density function</strong> (pdf) <span class="math inline">\(f_X(x)\)</span>, which must obey the following two properties:
-<ol type="1">
-<li class="fragment"><span class="math inline">\(f_X(x)\)</span> must be nonnegative everywhere</li>
-<li class="fragment">The area underneath the graph of <span class="math inline">\(f_X(x)\)</span> must be 1</li>
-</ol></li>
-<li class="fragment">The graph of a pdf is called a <strong>density curve</strong></li>
-<li class="fragment">Probabilities are found as areas underneath the density curve.</li>
-</ul>
-</section>
-<section id="areas-under-the-density-curve" class="slide level2" style="font-size:32px">
-<h2>Areas Under the Density Curve</h2>
-<p><br>
-</p>
-
-<img data-src="mt2rev_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="672"><ul>
-<li class="fragment">For example, the area above represents <span class="math inline">\(\mathbb{P}(0.25 \leq X \leq 0.75)\)</span>.</li>
-</ul>
-</section>
-<section id="uniform-distribution" class="slide level2" style="font-size:32px">
-<h2>Uniform Distribution</h2>
-<ul>
-<li class="fragment"><p>An specific example of a continuous distribution is the <strong>Uniform distribution</strong> with parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>: <span class="math inline">\(X \sim \mathrm{Unif}(a, \ b)\)</span>.</p></li>
-<li class="fragment"><p>The p.d.f. is given by <span class="math display">\[ f_X(x) = \begin{cases} \frac{1}{b - a} &amp; \text{if } a \leq x \leq b \\ 0 &amp; \text{otherwise} \\ \end{cases} \]</span></p></li>
-</ul>
-<div class="fragment" style="text-align:center">
-<p><img data-src="unif.svg" style="width:60.0%"></p>
-</div>
-</section>
-<section id="effect-of-changing-a-and-b" class="slide level2">
-<h2>Effect of Changing <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span></h2>
-<div class="cell">
-<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="382" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 381;"><span id="cb5-382"><a></a>viewof a <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
-<span id="cb5-383"><a></a>  [<span class="op">-</span><span class="dv">3</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">,</span> </span>
-<span id="cb5-384"><a></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"a="</span>}</span>
-<span id="cb5-385"><a></a>)</span>
-<span id="cb5-386"><a></a></span>
-<span id="cb5-387"><a></a>viewof b <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
-<span id="cb5-388"><a></a>  [<span class="op">-</span><span class="dv">3</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">,</span> </span>
-<span id="cb5-389"><a></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"b="</span>}</span>
-<span id="cb5-390"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="394" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 393;"><span id="cb6-394"><a></a>margin2 <span class="op">=</span> ({<span class="dt">top</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">right</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span> <span class="dt">bottom</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span> <span class="dt">left</span><span class="op">:</span> <span class="dv">40</span>})</span>
-<span id="cb6-395"><a></a></span>
-<span id="cb6-396"><a></a>height2 <span class="op">=</span> <span class="dv">400</span></span>
-<span id="cb6-397"><a></a></span>
-<span id="cb6-398"><a></a>x_values2 <span class="op">=</span> d32<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
-<span id="cb6-399"><a></a><span class="op">.</span><span class="fu">domain</span>(d32<span class="op">.</span><span class="fu">extent</span>(data2<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span>))</span>
-<span id="cb6-400"><a></a><span class="op">.</span><span class="fu">range</span>([margin2<span class="op">.</span><span class="at">left</span><span class="op">,</span> width <span class="op">-</span> margin2<span class="op">.</span><span class="at">right</span>])</span>
-<span id="cb6-401"><a></a></span>
-<span id="cb6-402"><a></a>y_values2 <span class="op">=</span> d32<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
-<span id="cb6-403"><a></a><span class="op">.</span><span class="fu">domain</span>([<span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(d32<span class="op">.</span><span class="fu">min</span>(data2<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>)<span class="op">,</span><span class="dv">0</span>)<span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">1</span><span class="op">,</span>d32<span class="op">.</span><span class="fu">max</span>(data2<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>))])<span class="op">.</span><span class="fu">nice</span>()</span>
-<span id="cb6-404"><a></a><span class="op">.</span><span class="fu">range</span>([height2 <span class="op">-</span> margin2<span class="op">.</span><span class="at">bottom</span><span class="op">,</span> margin2<span class="op">.</span><span class="at">top</span>])</span>
-<span id="cb6-405"><a></a></span>
-<span id="cb6-406"><a></a>line2 <span class="op">=</span> d32<span class="op">.</span><span class="fu">line</span>()</span>
-<span id="cb6-407"><a></a><span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">x_values2</span>(d<span class="op">.</span><span class="at">x</span>))</span>
-<span id="cb6-408"><a></a><span class="op">.</span><span class="fu">y</span>(d <span class="kw">=&gt;</span> <span class="fu">y_values2</span>(d<span class="op">.</span><span class="at">y</span>))</span>
-<span id="cb6-409"><a></a></span>
-<span id="cb6-410"><a></a>xAxis2 <span class="op">=</span> g <span class="kw">=&gt;</span> g</span>
-<span id="cb6-411"><a></a><span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(0,</span><span class="sc">${</span>height2 <span class="op">-</span> margin2<span class="op">.</span><span class="at">bottom</span><span class="sc">}</span><span class="vs">)`</span>)</span>
-<span id="cb6-412"><a></a><span class="op">.</span><span class="fu">call</span>(d32<span class="op">.</span><span class="fu">axisBottom</span>(x_values2)</span>
-<span id="cb6-413"><a></a>      <span class="op">.</span><span class="fu">ticks</span>(width <span class="op">/</span> <span class="dv">80</span>)</span>
-<span id="cb6-414"><a></a>      <span class="op">.</span><span class="fu">tickSizeOuter</span>(<span class="dv">0</span>))</span>
-<span id="cb6-415"><a></a></span>
-<span id="cb6-416"><a></a>yAxis2 <span class="op">=</span> g <span class="kw">=&gt;</span> g</span>
-<span id="cb6-417"><a></a><span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(</span><span class="sc">${</span>margin2<span class="op">.</span><span class="at">left</span><span class="sc">}</span><span class="vs">,0)`</span>)</span>
-<span id="cb6-418"><a></a><span class="op">.</span><span class="fu">call</span>(d32<span class="op">.</span><span class="fu">axisLeft</span>(y_values2)</span>
-<span id="cb6-419"><a></a>      <span class="op">.</span><span class="fu">tickValues</span>(d32<span class="op">.</span><span class="fu">scaleLinear</span>()<span class="op">.</span><span class="fu">domain</span>(y_values2<span class="op">.</span><span class="fu">domain</span>())<span class="op">.</span><span class="fu">ticks</span>()))</span>
-<span id="cb6-420"><a></a></span>
-<span id="cb6-421"><a></a><span class="kw">function</span> <span class="fu">unif_pdf</span> (input_value<span class="op">,</span> mu<span class="op">,</span> sigsq) {</span>
-<span id="cb6-422"><a></a><span class="cf">if</span>(input_value <span class="op">&lt;</span> a){</span>
-<span id="cb6-423"><a></a>  <span class="cf">return</span> <span class="dv">0</span></span>
-<span id="cb6-424"><a></a>} <span class="cf">else</span> <span class="cf">if</span>(input_value <span class="op">&gt;</span> b){</span>
-<span id="cb6-425"><a></a>  <span class="cf">return</span> <span class="dv">0</span></span>
-<span id="cb6-426"><a></a>} <span class="cf">else</span>{</span>
-<span id="cb6-427"><a></a>  <span class="cf">return</span> <span class="dv">1</span> <span class="op">/</span> (b <span class="op">-</span> a)</span>
-<span id="cb6-428"><a></a>}</span>
-<span id="cb6-429"><a></a>}</span>
-<span id="cb6-430"><a></a></span>
-<span id="cb6-431"><a></a>abs_x2<span class="op">=</span><span class="dv">6</span></span>
-<span id="cb6-432"><a></a></span>
-<span id="cb6-433"><a></a>data2 <span class="op">=</span> {</span>
-<span id="cb6-434"><a></a>  <span class="kw">let</span> values <span class="op">=</span> []<span class="op">;</span></span>
-<span id="cb6-435"><a></a>  <span class="cf">for</span> (<span class="kw">let</span> x <span class="op">=</span> <span class="op">-</span>abs_x2<span class="op">;</span> x <span class="op">&lt;</span> abs_x2<span class="op">;</span> x<span class="op">=</span>x<span class="op">+</span><span class="fl">0.01</span>) values<span class="op">.</span><span class="fu">push</span>({<span class="st">"x"</span><span class="op">:</span>x<span class="op">,</span><span class="st">"y"</span><span class="op">:</span><span class="fu">unif_pdf</span>(x<span class="op">,</span> µ<span class="op">,</span> sigsquared)})<span class="op">;</span></span>
-<span id="cb6-436"><a></a>  <span class="cf">return</span> values<span class="op">;</span></span>
-<span id="cb6-437"><a></a>}</span>
-<span id="cb6-438"><a></a></span>
-<span id="cb6-439"><a></a>d32 <span class="op">=</span> <span class="pp">require</span>(<span class="st">"https://d3js.org/d3.v5.min.js"</span>)</span>
-<span id="cb6-440"><a></a></span>
-<span id="cb6-441"><a></a>chart2 <span class="op">=</span> {</span>
-<span id="cb6-442"><a></a>  <span class="kw">const</span> svg <span class="op">=</span> d32<span class="op">.</span><span class="fu">select</span>(DOM<span class="op">.</span><span class="fu">svg</span>(width<span class="op">,</span> height2))<span class="op">;</span></span>
-<span id="cb6-443"><a></a>  </span>
-<span id="cb6-444"><a></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
-<span id="cb6-445"><a></a>  <span class="op">.</span><span class="fu">call</span>(xAxis2)<span class="op">;</span></span>
-<span id="cb6-446"><a></a>  </span>
-<span id="cb6-447"><a></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
-<span id="cb6-448"><a></a>  <span class="op">.</span><span class="fu">call</span>(yAxis2)<span class="op">;</span></span>
-<span id="cb6-449"><a></a>  </span>
-<span id="cb6-450"><a></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)</span>
-<span id="cb6-451"><a></a>  <span class="op">.</span><span class="fu">datum</span>(data2)</span>
-<span id="cb6-452"><a></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"none"</span>)</span>
-<span id="cb6-453"><a></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"steelblue"</span>)</span>
-<span id="cb6-454"><a></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">4</span>)</span>
-<span id="cb6-455"><a></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-linejoin"</span><span class="op">,</span> <span class="st">"round"</span>)</span>
-<span id="cb6-456"><a></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-linecap"</span><span class="op">,</span> <span class="st">"round"</span>)</span>
-<span id="cb6-457"><a></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> line)<span class="op">;</span></span>
-<span id="cb6-458"><a></a>  </span>
-<span id="cb6-459"><a></a>  <span class="cf">return</span> svg<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span>
-<span id="cb6-460"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-3" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-4" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-5" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-6" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-7" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-8" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-9" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-10" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-11" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-12" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
-<div style="font-size:18px; text-align:right">
-<p><em>Credit to https://observablehq.com/<span class="citation" data-cites="dswalter/normal-distribution">@dswalter/normal-distribution</span> for the base of the applet code</em></p>
-</div>
-</section>
-<section id="uniform-distribution-1" class="slide level2" style="font-size:32px">
-<h2>Uniform Distribution</h2>
-<ul>
-<li class="fragment"><p>The expected value and variance are: <span class="math display">\[ \mathbb{E}[X] = \frac{a + b}{2} ; \quad \mathrm{Var}(X) = \frac{(b - a)^2}{12} \]</span></p></li>
-<li class="fragment"><p>Again, probabilities are found as areas underneath the density curve:</p></li>
-</ul>
-<div class="fragment">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="mt2rev_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="tail-probabilities" class="slide level2" style="font-size:26px">
-<h2>Tail Probabilities</h2>
-<ul>
-<li class="fragment">Visualizing probabilities as areas also enables us to write more complicated probabilistic expressions as differences of tail probabilities:</li>
-</ul>
-<div class="columns">
-<div class="column" style="width:30%;">
-<p><br>
-</p>
-</div><div class="column" style="width:40%;">
-<div class="fragment">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="mt2rev_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:30%;">
-<div class="fragment">
-<p><br>
-can be decomposed as</p>
-</div>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:40%;">
-<div class="fragment">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="mt2rev_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:20%;">
-<div class="fragment">
-<p><br>
-<span class="math display">\[ \huge - \]</span></p>
-</div>
-</div><div class="column" style="width:40%;">
-<div class="fragment">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="mt2rev_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p><span class="math display">\[ \mathbb{P}(a \leq X \leq b) = \underbrace{\mathbb{P}(X \leq b)}_{\text{c.d.f. at $b$}} - \underbrace{\mathbb{P}(X \leq a)}_{\text{c.d.f. at $a$}} \]</span></p>
-</div>
-</section>
-<section id="challenge-problem-try-it-on-your-own" class="slide level2">
-<h2>Challenge Problem: Try It On Your Own!</h2>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Take-Home Exercise 1</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<div style="font-size: 30px">
-<p>The time (in minutes) spent waiting in line at <em>Starbucks</em> is found to vary uniformly between 5mins and 15mins.</p>
-<p>What is the c.d.f. of wait times? (I.e., find the probability that a randomly selected person spends less than <span class="math inline">\(x\)</span> minutes waiting in line, for an arbitrary value <span class="math inline">\(x\)</span>. Yes, your final answer will depend on <span class="math inline">\(x\)</span>; that’s why the c.d.f. is a <em>function</em>!)</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="chalkboard-example" class="slide level2">
-<h2>Chalkboard Example</h2>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Chalkboard Example 2</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<div style="font-size: 30px">
-<p>The time (in minutes) spent waiting in line at <em>Starbucks</em> is found to vary uniformly between 5mins and 15mins.</p>
-<p>A random sample of 10 customers is taken; what is the probability that exactly 4 of these customers will spend between 10 and 13 minutes waiting in line?</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="normal-distribution" class="slide level2" style="font-size:30px">
-<h2>Normal Distribution</h2>
-<ul>
-<li class="fragment"><p>We also learned about the <strong>Normal Distribution</strong>: <span class="math inline">\(X \sim \mathcal{N}(\mu, \ \sigma)\)</span></p></li>
-<li class="fragment"><p>The normal density curve is bell-shaped</p></li>
-</ul>
-</section>
-<section id="changing-mu-and-sigma" class="slide level2">
-<h2>Changing <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span></h2>
-<div class="cell">
-<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="682" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 681;"><span id="cb7-682"><a></a>viewof µ <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
-<span id="cb7-683"><a></a>  [<span class="op">-</span><span class="dv">3</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">,</span> </span>
-<span id="cb7-684"><a></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"µ:"</span>}</span>
-<span id="cb7-685"><a></a>)</span>
-<span id="cb7-686"><a></a></span>
-<span id="cb7-687"><a></a>viewof σ <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
-<span id="cb7-688"><a></a>  [<span class="fl">0.2</span><span class="op">,</span> <span class="fl">3.1</span>]<span class="op">,</span> </span>
-<span id="cb7-689"><a></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"σ:"</span>}</span>
-<span id="cb7-690"><a></a>)</span>
-<span id="cb7-691"><a></a></span>
-<span id="cb7-692"><a></a>sigsquared <span class="op">=</span> σ<span class="op">**</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-3-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-3-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-3-3" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="696" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 695;"><span id="cb8-696"><a></a>margin <span class="op">=</span> ({<span class="dt">top</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">right</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span> <span class="dt">bottom</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span> <span class="dt">left</span><span class="op">:</span> <span class="dv">40</span>})</span>
-<span id="cb8-697"><a></a></span>
-<span id="cb8-698"><a></a>height <span class="op">=</span> <span class="dv">400</span></span>
-<span id="cb8-699"><a></a></span>
-<span id="cb8-700"><a></a>x_values <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
-<span id="cb8-701"><a></a>    <span class="op">.</span><span class="fu">domain</span>(d3<span class="op">.</span><span class="fu">extent</span>(data<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span>))</span>
-<span id="cb8-702"><a></a>    <span class="op">.</span><span class="fu">range</span>([margin<span class="op">.</span><span class="at">left</span><span class="op">,</span> width <span class="op">-</span> margin<span class="op">.</span><span class="at">right</span>])</span>
-<span id="cb8-703"><a></a></span>
-<span id="cb8-704"><a></a>y_values <span class="op">=</span> d3<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
-<span id="cb8-705"><a></a>    <span class="op">.</span><span class="fu">domain</span>([<span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(d3<span class="op">.</span><span class="fu">min</span>(data<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>)<span class="op">,</span><span class="dv">0</span>)<span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">1</span><span class="op">,</span>d3<span class="op">.</span><span class="fu">max</span>(data<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>))])<span class="op">.</span><span class="fu">nice</span>()</span>
-<span id="cb8-706"><a></a>    <span class="op">.</span><span class="fu">range</span>([height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span><span class="op">,</span> margin<span class="op">.</span><span class="at">top</span>])</span>
-<span id="cb8-707"><a></a>    </span>
-<span id="cb8-708"><a></a>line <span class="op">=</span> d3<span class="op">.</span><span class="fu">line</span>()</span>
-<span id="cb8-709"><a></a>    <span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">x_values</span>(d<span class="op">.</span><span class="at">x</span>))</span>
-<span id="cb8-710"><a></a>    <span class="op">.</span><span class="fu">y</span>(d <span class="kw">=&gt;</span> <span class="fu">y_values</span>(d<span class="op">.</span><span class="at">y</span>))</span>
-<span id="cb8-711"><a></a></span>
-<span id="cb8-712"><a></a>xAxis <span class="op">=</span> g <span class="kw">=&gt;</span> g</span>
-<span id="cb8-713"><a></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(0,</span><span class="sc">${</span>height <span class="op">-</span> margin<span class="op">.</span><span class="at">bottom</span><span class="sc">}</span><span class="vs">)`</span>)</span>
-<span id="cb8-714"><a></a>  <span class="op">.</span><span class="fu">call</span>(d3<span class="op">.</span><span class="fu">axisBottom</span>(x_values)</span>
-<span id="cb8-715"><a></a>      <span class="op">.</span><span class="fu">ticks</span>(width <span class="op">/</span> <span class="dv">80</span>)</span>
-<span id="cb8-716"><a></a>      <span class="op">.</span><span class="fu">tickSizeOuter</span>(<span class="dv">0</span>))</span>
-<span id="cb8-717"><a></a></span>
-<span id="cb8-718"><a></a>yAxis <span class="op">=</span> g <span class="kw">=&gt;</span> g</span>
-<span id="cb8-719"><a></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(</span><span class="sc">${</span>margin<span class="op">.</span><span class="at">left</span><span class="sc">}</span><span class="vs">,0)`</span>)</span>
-<span id="cb8-720"><a></a>  <span class="op">.</span><span class="fu">call</span>(d3<span class="op">.</span><span class="fu">axisLeft</span>(y_values)</span>
-<span id="cb8-721"><a></a>      <span class="op">.</span><span class="fu">tickValues</span>(d3<span class="op">.</span><span class="fu">scaleLinear</span>()<span class="op">.</span><span class="fu">domain</span>(y_values<span class="op">.</span><span class="fu">domain</span>())<span class="op">.</span><span class="fu">ticks</span>()))</span>
-<span id="cb8-722"><a></a>    </span>
-<span id="cb8-723"><a></a><span class="kw">function</span> <span class="fu">normal_pdf</span> (input_value<span class="op">,</span> mu<span class="op">,</span> sigsq) {</span>
-<span id="cb8-724"><a></a>  <span class="kw">let</span> left_chunk <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(<span class="dv">2</span><span class="op">*</span><span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span><span class="op">*</span>sigsq))</span>
-<span id="cb8-725"><a></a>  <span class="kw">let</span> right_top <span class="op">=</span> <span class="op">-</span>((input_value<span class="op">-</span>mu)<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb8-726"><a></a>  <span class="kw">let</span> right_bottom <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>sigsq</span>
-<span id="cb8-727"><a></a>  <span class="cf">return</span> left_chunk <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">exp</span>(right_top<span class="op">/</span>right_bottom)</span>
-<span id="cb8-728"><a></a>}</span>
-<span id="cb8-729"><a></a></span>
-<span id="cb8-730"><a></a>abs_x<span class="op">=</span><span class="dv">6</span></span>
-<span id="cb8-731"><a></a></span>
-<span id="cb8-732"><a></a>data <span class="op">=</span> {</span>
-<span id="cb8-733"><a></a>  <span class="kw">let</span> values <span class="op">=</span> []<span class="op">;</span></span>
-<span id="cb8-734"><a></a>  <span class="cf">for</span> (<span class="kw">let</span> x <span class="op">=</span> <span class="op">-</span>abs_x<span class="op">;</span> x <span class="op">&lt;</span> abs_x<span class="op">;</span> x<span class="op">=</span>x<span class="op">+</span><span class="fl">0.01</span>) values<span class="op">.</span><span class="fu">push</span>({<span class="st">"x"</span><span class="op">:</span>x<span class="op">,</span><span class="st">"y"</span><span class="op">:</span><span class="fu">normal_pdf</span>(x<span class="op">,</span> µ<span class="op">,</span> sigsquared)})<span class="op">;</span></span>
-<span id="cb8-735"><a></a>  <span class="cf">return</span> values<span class="op">;</span></span>
-<span id="cb8-736"><a></a>}</span>
-<span id="cb8-737"><a></a></span>
-<span id="cb8-738"><a></a>d3 <span class="op">=</span> <span class="pp">require</span>(<span class="st">"https://d3js.org/d3.v5.min.js"</span>)</span>
-<span id="cb8-739"><a></a></span>
-<span id="cb8-740"><a></a>chart <span class="op">=</span> {</span>
-<span id="cb8-741"><a></a>  <span class="kw">const</span> svg <span class="op">=</span> d3<span class="op">.</span><span class="fu">select</span>(DOM<span class="op">.</span><span class="fu">svg</span>(width<span class="op">,</span> height))<span class="op">;</span></span>
-<span id="cb8-742"><a></a></span>
-<span id="cb8-743"><a></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
-<span id="cb8-744"><a></a>      <span class="op">.</span><span class="fu">call</span>(xAxis)<span class="op">;</span></span>
-<span id="cb8-745"><a></a></span>
-<span id="cb8-746"><a></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
-<span id="cb8-747"><a></a>      <span class="op">.</span><span class="fu">call</span>(yAxis)<span class="op">;</span></span>
-<span id="cb8-748"><a></a>  </span>
-<span id="cb8-749"><a></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)</span>
-<span id="cb8-750"><a></a>      <span class="op">.</span><span class="fu">datum</span>(data)</span>
-<span id="cb8-751"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"none"</span>)</span>
-<span id="cb8-752"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"steelblue"</span>)</span>
-<span id="cb8-753"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">4</span>)</span>
-<span id="cb8-754"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-linejoin"</span><span class="op">,</span> <span class="st">"round"</span>)</span>
-<span id="cb8-755"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-linecap"</span><span class="op">,</span> <span class="st">"round"</span>)</span>
-<span id="cb8-756"><a></a>      <span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> line)<span class="op">;</span></span>
-<span id="cb8-757"><a></a>  </span>
-<span id="cb8-758"><a></a>  <span class="cf">return</span> svg<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span>
-<span id="cb8-759"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-3" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-4" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-5" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-6" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-7" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-8" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-9" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-10" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-11" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-12" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
-<div style="font-size:18px; text-align:right">
-<p><em>Credit to https://observablehq.com/<span class="citation" data-cites="dswalter/normal-distribution">@dswalter/normal-distribution</span> for the majority of the applet code</em></p>
-</div>
-</section>
-<section id="standardization" class="slide level2" style="font-size:30px">
-<h2>Standardization</h2>
-<ul>
-<li class="fragment">If <span class="math inline">\(X \sim \mathcal{N}(\mu, \ \sigma)\)</span>, <span class="math display">\[ \left( \frac{X - \mu}{\sigma} \right) \sim \mathcal{N}(0, \ 1)\]</span></li>
-</ul>
-<p><br>
-</p>
-<ul>
-<li class="fragment">Also, if <span class="math inline">\(X \sim \mathcal{N}(\mu, \ \sigma)\)</span>:
-<ul>
-<li class="fragment"><span class="math inline">\(\mathbb{E}[X] = \mu\)</span></li>
-<li class="fragment"><span class="math inline">\(\mathrm{Var}(X) = \sigma^2\)</span></li>
-</ul></li>
-</ul>
-</section></section>
-<section>
-<section id="inferential-statistics" class="title-slide slide level1 center">
-<h1>Inferential Statistics</h1>
-
-</section>
-<section id="inferential-statistics-1" class="slide level2" style="font-size:30px">
-<h2>Inferential Statistics</h2>
-<ul>
-<li class="fragment"><p>The primary goal of inferential statistics is to take samples from some <strong>population</strong>, and use <strong>summary statistics</strong> to try and make <strong>inferences</strong> about <strong>population parameters</strong></p></li>
-<li class="fragment"><p>For example, we could take samples, compute <strong>sample proportions <span class="math inline">\(\widehat{P}\)</span></strong>, and try to make inferences about the <strong>population proportion</strong> <span class="math inline">\(p\)</span>.</p></li>
-<li class="fragment"><p>We could also take samples, compute <strong>sample means <span class="math inline">\(\overline{X}\)</span></strong>, and try to make inferences about the <strong>population mean</strong> <span class="math inline">\(\mu\)</span>.</p></li>
-<li class="fragment"><p>Our summary statistics will often be <strong>point estimators</strong> (i.e.&nbsp;quantities that have expected value equal to the corresponding population parameter), which are <em>random variables</em> as they depend on the sample taken.</p>
-<ul>
-<li class="fragment">For example, different samples of people will have different average heights.</li>
-</ul></li>
-<li class="fragment"><p>The distribution of a point estimator is called the <strong>sampling distribution</strong> of the estimator.</p></li>
-</ul>
-</section>
-<section id="sampling-distribution-of-widehatp" class="slide level2" style="font-size:28px">
-<h2>Sampling Distribution of <span class="math inline">\(\widehat{P}\)</span></h2>
-<ul>
-<li class="fragment"><p>Given a population with population proportion <span class="math inline">\(p\)</span>, we use <span class="math inline">\(\widehat{P}\)</span> as a point estimator of <span class="math inline">\(p\)</span>.</p></li>
-<li class="fragment"><p>Assume the <strong>success-failure conditions</strong> are met; i.e.</p>
-<ol type="1">
-<li class="fragment"><span class="math inline">\(n p \geq 10\)</span></li>
-<li class="fragment"><span class="math inline">\(n (1 - p) \geq 10\)</span></li>
-</ol></li>
-<li class="fragment"><p>Then, the <strong>Central Limit Theorem for Proportions</strong> tells us that <span class="math display">\[ \widehat{P} \sim \mathcal{N}\left(p, \ \sqrt{\frac{p(1 - p)}{n}} \right) \]</span></p></li>
-<li class="fragment"><p>If we don’t have access to <span class="math inline">\(p\)</span> directly (as is often the case), we use the <strong>substitution approximation</strong> to check whether</p>
-<ol type="1">
-<li class="fragment"><span class="math inline">\(n \widehat{p} \geq 10\)</span></li>
-<li class="fragment"><span class="math inline">\(n (1 - \widehat{p}) \geq 10\)</span></li>
-</ol></li>
-</ul>
-</section>
-<section id="sampling-distribution-of-overlinex" class="slide level2" style="font-size:24px">
-<h2>Sampling Distribution of <span class="math inline">\(\overline{X}\)</span></h2>
-<ul>
-<li class="fragment"><p>Given a population with population mean <span class="math inline">\(\mu\)</span> and population standard deviation <span class="math inline">\(\sigma\)</span>, we use <span class="math inline">\(\overline{X}\)</span> as a point estimator of <span class="math inline">\(\mu\)</span>.</p></li>
-<li class="fragment"><p>If the population is normally distributed, then <span class="math display">\[ \overline{X} \sim \mathcal{N}\left(\mu, \ \frac{\sigma}{\sqrt{n}} \right) \]</span> or, equivalently, <span class="math display">\[ \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}\left(0, \ 1 \right) \]</span></p></li>
-<li class="fragment"><p>If the population is <em>not</em> normally distributed, but the sample size <span class="math inline">\(n\)</span> is at least 30, then the <strong>Central Limit Theorem for the Sample Mean</strong> (or just the <strong>Central Limit Theorem</strong>) tells us <span class="math display">\[ \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}\left(0, \ 1 \right) \]</span></p></li>
-</ul>
-</section>
-<section id="sampling-distribution-of-overlinex-1" class="slide level2" style="font-size:24px">
-<h2>Sampling Distribution of <span class="math inline">\(\overline{X}\)</span></h2>
-<ul>
-<li class="fragment"><p>If the population is non-normal, the sample size is large, and we don’t have access to <span class="math inline">\(\sigma\)</span> (but access to <span class="math inline">\(s\)</span>, the sample standard deviation instead), then <span class="math display">\[ \frac{\overline{X} - \mu}{s / \sqrt{n}} \sim t_{n - 1}\]</span></p></li>
-<li class="fragment"><p>Recall that the <span class="math inline">\(t-\)</span>distribution <em>looks</em> like a standard normal distribution, but has wider tails than the standard normal distribution (which accounts for the additional uncertainty injected into the problem by using <span class="math inline">\(s\)</span>, a random variable, in place of <span class="math inline">\(\sigma\)</span>, a deterministic constant).</p></li>
-<li class="fragment"><p>Also recall that <span class="math inline">\(t_{\infty}\)</span> (i.e.&nbsp;the <span class="math inline">\(t-\)</span>distribution with an infinite <strong>degrees of freedom</strong>) is the same thing as the standard normal distribution.</p></li>
-</ul>
-</section>
-<section id="confidence-intervals" class="slide level2" style="font-size:30px">
-<h2>Confidence Intervals</h2>
-<ul>
-<li class="fragment"><p>Instead of using point estimators (which are random) to estimate population parameters (which are deterministic), it may make more sense to provide an <em>interval</em> that, with some <strong>confidence level</strong>, contains the true parameter value.</p></li>
-<li class="fragment"><p>In general, when constructing a confidence interval for a parameter <span class="math inline">\(\theta\)</span>, we use <span class="math display">\[ \widehat{\theta} \pm c \cdot \mathrm{SD}(\widehat{\theta}) \]</span> where <span class="math inline">\(c\)</span> is some constant that depends on our confidence level.</p>
-<ul>
-<li class="fragment">Again, think of the fishing analogy from the textbook- if we want to be <em>more certain</em> we’ll catch a fish, we should cast a <em>wider</em> net; i.e.&nbsp;higher confidence levels will lead to <em>wider</em> intervals.</li>
-</ul></li>
-<li class="fragment"><p>The coefficient <span class="math inline">\(c\)</span> will also depend on the sampling distribution of <span class="math inline">\(\widehat{\theta}\)</span>.</p></li>
-</ul>
-</section>
-<section id="confidence-intervals-for-a-population-proportion" class="slide level2" style="font-size:30px">
-<h2>Confidence Intervals for a Population Proportion</h2>
-<ul>
-<li class="fragment">To construct a confidence interval for an unknown population proportion <span class="math inline">\(p\)</span>, we use <span class="math display">\[ \widehat{p} \pm (c) \cdot \sqrt{\frac{\widehat{p} \cdot (1 - \widehat{p})}{n}} \]</span> where <span class="math inline">\(c\)</span> denotes the <span class="math inline">\((1 - \alpha) / 2 \times 100\)</span><sup>th</sup> percentile of the standard normal distribution, scaled by negative 1
-<ul>
-<li class="fragment">Again, just remember that the coefficient should be positive</li>
-</ul></li>
-</ul>
-</section>
-<section id="confidence-intervals-for-a-population-mean" class="slide level2" style="font-size:30px">
-<h2>Confidence Intervals for a Population Mean</h2>
-<ul>
-<li class="fragment">To construct a confidence interval for an unknown population mean <span class="math inline">\(\mu\)</span>, we use <span class="math display">\[ \overline{x} \pm (z^{\ast}) \cdot \frac{\sigma}{\sqrt{n}} \]</span> or <span class="math display">\[ \overline{x} \pm (t^{\ast}) \cdot \frac{s}{\sqrt{n}} \]</span> depending on the conditions listed in the previous section of these slides.</li>
-</ul>
-</section>
-<section id="worked-out-example-3" class="slide level2" style="font-size:30px">
-<h2>Worked-Out Example</h2>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Worked-Out Example 3</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<div style="font-size: 30px">
-<p>Saoirse would like to construct a 95% confidence interval for the true proportion of California Residents that speak Spanish. To that end, she took a representative sample of 120 CA residents and found that 36 of these residents speak Spanish.</p>
-<ol type="a">
-<li>Identify the population</li>
-<li>Define the parameter of interest.</li>
-<li>Define the random variable of interest.</li>
-<li>Construct a 95% confidence interval for the true proportion of CA residents that speak Spanish.</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="solutions-2" class="slide level2" style="font-size:30px">
+<section id="solutions-4" class="slide level2" style="font-size:30px">
 <h2>Solutions</h2>
-<ol type="a">
-<li class="fragment"><p>The population is the set of all California residents.</p></li>
-<li class="fragment"><p>The parameter of interest is <span class="math inline">\(p\)</span>, the true proportion of CA residents that speak Spanish.</p></li>
-<li class="fragment"><p>The random variable of interest is <span class="math inline">\(\widehat{P}\)</span>, the proportion of people in a representative sample of 120 CA residents that speak spanish.</p></li>
-<li class="fragment"><p>We check the success-failure conditions, with the substitution approximation:</p>
 <ul>
-<li class="fragment"><span class="math inline">\(n \widehat{p} = (120) \cdot \left( \frac{36}{120} \right) = 36 \ \checkmark\)</span></li>
-<li class="fragment"><span class="math inline">\(n (1 - \widehat{p}) = (120) \cdot \left( \frac{84}{120} \right) = 84 \ \checkmark\)</span></li>
-</ul></li>
-</ol>
-<ul>
-<li class="fragment">Since these conditions are met, we can proceed in constructing our confidence interval as <span class="math display">\[ 0.3 \pm 1.96 \cdot \sqrt{\frac{0.3 \cdot 0.7}{120}} = \boxed{[0.218 \ , \ 0.382]} \]</span></li>
+<li class="fragment"><p>These are both random samples so the observations with each sample are <strong>independent</strong> of one another.</p></li>
+<li class="fragment"><p>There is no reason why the two samples would not be independent between each other.</p></li>
+<li class="fragment"><p>Given <span class="math inline">\(n_1 = 75 \geq 30\)</span> and <span class="math inline">\(n_2 = 80 \geq 30\)</span>, we have large enough sample to relax normality assumption and use CLT.</p></li>
+<li class="fragment"><p>To calculate the degrees of freedom:</p></li>
 </ul>
+<p><span class="math display">\[df =\min(n_1-1,n_2-1) = \min(74, 79) = 74\]</span> - Calculate <span class="math inline">\(t^*\)</span> critical value given <span class="math inline">\(\alpha = 0.1\)</span> which is 1.6657</p>
+</section>
+<section id="solutions-5" class="slide level2" style="font-size:30px">
+<h2>Solutions</h2>
+<p><span class="math display">\[\bar{x}_1-\bar{x}_2 \pm t^* \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}\]</span></p>
+<p><span class="math display">\[(42336 - 32240) \pm 1.6657 \sqrt{\frac{14004^2}{75}+\frac{7730^2}{80}}\]</span></p>
+<p><span class="math display">\[10096 \pm 3054\]</span></p>
+<p><span class="math display">\[[\$7,042, \$13,150]\]</span></p>
+<p>We are 90% confident that the true difference in population mean total cost for students at private schools and population mean total cost for out-of-state students at public schools is between $7,042 and $13,150.</p>
 
 <div class="quarto-auto-generated-content">
 <p><img src="5a_hex.png" class="slide-logo"></p>
@@ -1609,17 +884,6 @@ can be decomposed as</p>
           RevealZoom
         ]
       });
-    </script>
-    <script type="ojs-module-contents">
-    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBhID0gSW5wdXRzLnJhbmdlKFxuICBbLTMsIDNdLCBcbiAge3ZhbHVlOiAwLCBzdGVwOiAwLjEsIGxhYmVsOiBcImE9XCJ9XG4pXG5cbnZpZXdvZiBiID0gSW5wdXRzLnJhbmdlKFxuICBbLTMsIDNdLCBcbiAge3ZhbHVlOiAxLCBzdGVwOiAwLjEsIGxhYmVsOiBcImI9XCJ9XG4pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJtYXJnaW4yID0gKHt0b3A6IDIwLCByaWdodDogMzAsIGJvdHRvbTogMzAsIGxlZnQ6IDQwfSlcblxuaGVpZ2h0MiA9IDQwMFxuXG54X3ZhbHVlczIgPSBkMzIuc2NhbGVMaW5lYXIoKVxuLmRvbWFpbihkMzIuZXh0ZW50KGRhdGEyLCBkID0+IGQueCkpXG4ucmFuZ2UoW21hcmdpbjIubGVmdCwgd2lkdGggLSBtYXJnaW4yLnJpZ2h0XSlcblxueV92YWx1ZXMyID0gZDMyLnNjYWxlTGluZWFyKClcbi5kb21haW4oW01hdGgubWluKGQzMi5taW4oZGF0YTIsIGQgPT4gZC55KSwwKSwgTWF0aC5tYXgoMSxkMzIubWF4KGRhdGEyLCBkID0+IGQueSkpXSkubmljZSgpXG4ucmFuZ2UoW2hlaWdodDIgLSBtYXJnaW4yLmJvdHRvbSwgbWFyZ2luMi50b3BdKVxuXG5saW5lMiA9IGQzMi5saW5lKClcbi54KGQgPT4geF92YWx1ZXMyKGQueCkpXG4ueShkID0+IHlfdmFsdWVzMihkLnkpKVxuXG54QXhpczIgPSBnID0+IGdcbi5hdHRyKFwidHJhbnNmb3JtXCIsIGB0cmFuc2xhdGUoMCwke2hlaWdodDIgLSBtYXJnaW4yLmJvdHRvbX0pYClcbi5jYWxsKGQzMi5heGlzQm90dG9tKHhfdmFsdWVzMilcbiAgICAgIC50aWNrcyh3aWR0aCAvIDgwKVxuICAgICAgLnRpY2tTaXplT3V0ZXIoMCkpXG5cbnlBeGlzMiA9IGcgPT4gZ1xuLmF0dHIoXCJ0cmFuc2Zvcm1cIiwgYHRyYW5zbGF0ZSgke21hcmdpbjIubGVmdH0sMClgKVxuLmNhbGwoZDMyLmF4aXNMZWZ0KHlfdmFsdWVzMilcbiAgICAgIC50aWNrVmFsdWVzKGQzMi5zY2FsZUxpbmVhcigpLmRvbWFpbih5X3ZhbHVlczIuZG9tYWluKCkpLnRpY2tzKCkpKVxuXG5mdW5jdGlvbiB1bmlmX3BkZiAoaW5wdXRfdmFsdWUsIG11LCBzaWdzcSkge1xuaWYoaW5wdXRfdmFsdWUgPCBhKXtcbiAgcmV0dXJuIDBcbn0gZWxzZSBpZihpbnB1dF92YWx1ZSA+IGIpe1xuICByZXR1cm4gMFxufSBlbHNle1xuICByZXR1cm4gMSAvIChiIC0gYSlcbn1cbn1cblxuYWJzX3gyPTZcblxuZGF0YTIgPSB7XG4gIGxldCB2YWx1ZXMgPSBbXTtcbiAgZm9yIChsZXQgeCA9IC1hYnNfeDI7IHggPCBhYnNfeDI7IHg9eCswLjAxKSB2YWx1ZXMucHVzaCh7XCJ4XCI6eCxcInlcIjp1bmlmX3BkZih4LCDCtSwgc2lnc3F1YXJlZCl9KTtcbiAgcmV0dXJuIHZhbHVlcztcbn1cblxuZDMyID0gcmVxdWlyZShcImh0dHBzOi8vZDNqcy5vcmcvZDMudjUubWluLmpzXCIpXG5cbmNoYXJ0MiA9IHtcbiAgY29uc3Qgc3ZnID0gZDMyLnNlbGVjdChET00uc3ZnKHdpZHRoLCBoZWlnaHQyKSk7XG4gIFxuICBzdmcuYXBwZW5kKFwiZ1wiKVxuICAuY2FsbCh4QXhpczIpO1xuICBcbiAgc3ZnLmFwcGVuZChcImdcIilcbiAgLmNhbGwoeUF4aXMyKTtcbiAgXG4gIHN2Zy5hcHBlbmQoXCJwYXRoXCIpXG4gIC5kYXR1bShkYXRhMilcbiAgLmF0dHIoXCJmaWxsXCIsIFwibm9uZVwiKVxuICAuYXR0cihcInN0cm9rZVwiLCBcInN0ZWVsYmx1ZVwiKVxuICAuYXR0cihcInN0cm9rZS13aWR0aFwiLCA0KVxuICAuYXR0cihcInN0cm9rZS1saW5lam9pblwiLCBcInJvdW5kXCIpXG4gIC5hdHRyKFwic3Ryb2tlLWxpbmVjYXBcIiwgXCJyb3VuZFwiKVxuICAuYXR0cihcImRcIiwgbGluZSk7XG4gIFxuICByZXR1cm4gc3ZnLm5vZGUoKTtcbn1cblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIMK1ID0gSW5wdXRzLnJhbmdlKFxuICBbLTMsIDNdLCBcbiAge3ZhbHVlOiAwLCBzdGVwOiAwLjEsIGxhYmVsOiBcIsK1OlwifVxuKVxuXG52aWV3b2Ygz4MgPSBJbnB1dHMucmFuZ2UoXG4gIFswLjIsIDMuMV0sIFxuICB7dmFsdWU6IDEsIHN0ZXA6IDAuMDEsIGxhYmVsOiBcIs+DOlwifVxuKVxuXG5zaWdzcXVhcmVkID0gz4MqKjJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Im1hcmdpbiA9ICh7dG9wOiAyMCwgcmlnaHQ6IDMwLCBib3R0b206IDMwLCBsZWZ0OiA0MH0pXG5cbmhlaWdodCA9IDQwMFxuXG54X3ZhbHVlcyA9IGQzLnNjYWxlTGluZWFyKClcbiAgICAuZG9tYWluKGQzLmV4dGVudChkYXRhLCBkID0+IGQueCkpXG4gICAgLnJhbmdlKFttYXJnaW4ubGVmdCwgd2lkdGggLSBtYXJnaW4ucmlnaHRdKVxuXG55X3ZhbHVlcyA9IGQzLnNjYWxlTGluZWFyKClcbiAgICAuZG9tYWluKFtNYXRoLm1pbihkMy5taW4oZGF0YSwgZCA9PiBkLnkpLDApLCBNYXRoLm1heCgxLGQzLm1heChkYXRhLCBkID0+IGQueSkpXSkubmljZSgpXG4gICAgLnJhbmdlKFtoZWlnaHQgLSBtYXJnaW4uYm90dG9tLCBtYXJnaW4udG9wXSlcbiAgICBcbmxpbmUgPSBkMy5saW5lKClcbiAgICAueChkID0+IHhfdmFsdWVzKGQueCkpXG4gICAgLnkoZCA9PiB5X3ZhbHVlcyhkLnkpKVxuXG54QXhpcyA9IGcgPT4gZ1xuICAuYXR0cihcInRyYW5zZm9ybVwiLCBgdHJhbnNsYXRlKDAsJHtoZWlnaHQgLSBtYXJnaW4uYm90dG9tfSlgKVxuICAuY2FsbChkMy5heGlzQm90dG9tKHhfdmFsdWVzKVxuICAgICAgLnRpY2tzKHdpZHRoIC8gODApXG4gICAgICAudGlja1NpemVPdXRlcigwKSlcblxueUF4aXMgPSBnID0+IGdcbiAgLmF0dHIoXCJ0cmFuc2Zvcm1cIiwgYHRyYW5zbGF0ZSgke21hcmdpbi5sZWZ0fSwwKWApXG4gIC5jYWxsKGQzLmF4aXNMZWZ0KHlfdmFsdWVzKVxuICAgICAgLnRpY2tWYWx1ZXMoZDMuc2NhbGVMaW5lYXIoKS5kb21haW4oeV92YWx1ZXMuZG9tYWluKCkpLnRpY2tzKCkpKVxuICAgIFxuZnVuY3Rpb24gbm9ybWFsX3BkZiAoaW5wdXRfdmFsdWUsIG11LCBzaWdzcSkge1xuICBsZXQgbGVmdF9jaHVuayA9IDEvKE1hdGguc3FydCgyKk1hdGguUEkqc2lnc3EpKVxuICBsZXQgcmlnaHRfdG9wID0gLSgoaW5wdXRfdmFsdWUtbXUpKioyKVxuICBsZXQgcmlnaHRfYm90dG9tID0gMipzaWdzcVxuICByZXR1cm4gbGVmdF9jaHVuayAqIE1hdGguZXhwKHJpZ2h0X3RvcC9yaWdodF9ib3R0b20pXG59XG5cbmFic194PTZcblxuZGF0YSA9IHtcbiAgbGV0IHZhbHVlcyA9IFtdO1xuICBmb3IgKGxldCB4ID0gLWFic194OyB4IDwgYWJzX3g7IHg9eCswLjAxKSB2YWx1ZXMucHVzaCh7XCJ4XCI6eCxcInlcIjpub3JtYWxfcGRmKHgsIMK1LCBzaWdzcXVhcmVkKX0pO1xuICByZXR1cm4gdmFsdWVzO1xufVxuXG5kMyA9IHJlcXVpcmUoXCJodHRwczovL2QzanMub3JnL2QzLnY1Lm1pbi5qc1wiKVxuXG5jaGFydCA9IHtcbiAgY29uc3Qgc3ZnID0gZDMuc2VsZWN0KERPTS5zdmcod2lkdGgsIGhlaWdodCkpO1xuXG4gIHN2Zy5hcHBlbmQoXCJnXCIpXG4gICAgICAuY2FsbCh4QXhpcyk7XG5cbiAgc3ZnLmFwcGVuZChcImdcIilcbiAgICAgIC5jYWxsKHlBeGlzKTtcbiAgXG4gIHN2Zy5hcHBlbmQoXCJwYXRoXCIpXG4gICAgICAuZGF0dW0oZGF0YSlcbiAgICAgIC5hdHRyKFwiZmlsbFwiLCBcIm5vbmVcIilcbiAgICAgIC5hdHRyKFwic3Ryb2tlXCIsIFwic3RlZWxibHVlXCIpXG4gICAgICAuYXR0cihcInN0cm9rZS13aWR0aFwiLCA0KVxuICAgICAgLmF0dHIoXCJzdHJva2UtbGluZWpvaW5cIiwgXCJyb3VuZFwiKVxuICAgICAgLmF0dHIoXCJzdHJva2UtbGluZWNhcFwiLCBcInJvdW5kXCIpXG4gICAgICAuYXR0cihcImRcIiwgbGluZSk7XG4gIFxuICByZXR1cm4gc3ZnLm5vZGUoKTtcbn1cblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdhJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ2InKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnwrUnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnz4MnKSJ9XX0=
-    </script>
-    <script type="module">
-    if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
-    window._ojs.paths.runtimeToDoc = "../../Pages/Lectures/MT2Rev";
-    window._ojs.paths.runtimeToRoot = "../..";
-    window._ojs.paths.docToRoot = "../../..";
-    window._ojs.selfContained = false;
-    window._ojs.runtime.interpretFromScriptTags();
     </script>
     
     <script>
