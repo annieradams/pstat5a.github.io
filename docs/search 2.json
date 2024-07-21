@@ -567,154 +567,154 @@
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#multiple-populations",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#multiple-populations",
-    "title": "PSTAT 5A: Lecture 19",
-    "section": "",
-    "text": "So far, we’ve talked about constructing confidence intervals and performing hypothesis tests for both population proportions and population means.\nOne crucial thing to note is that everything we’ve done has been in the context of a single population\nSometimes, as Data Scientists, we may want to test claims about the differences between two populations\n\nE.g. Is the average monthly income in Santa Barbara different from the average monthly income in San Francisco?\nE.g. Is the proportion of people who test positive for a disease in one country different than the proportion that test positive in a second country?"
+    "title": "PSTAT 5A: Lecture 18",
+    "section": "Multiple Populations",
+    "text": "Multiple Populations\n\nSo far, we’ve talked about constructing confidence intervals and performing hypothesis tests for both population proportions and population means.\nOne crucial thing to note is that everything we’ve done has been in the context of a single population\nSometimes, as Data Scientists, we may want to test claims about the differences between two populations\n\nE.g. Is the average monthly income in Santa Barbara different from the average monthly income in San Francisco?\nE.g. Is the proportion of people who test positive for a disease in one country different than the proportion that test positive in a second country?"
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#two-populations-1",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#two-populations-1",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Two Populations",
     "text": "Two Populations\n\nStatistically: we are imagining two populations, Population 1 and Population 2, governed by parameters \\(\\theta_1\\) and \\(\\theta_2\\), respectively, and trying to test claims about the relationship between \\(\\theta_1\\) and \\(\\theta_2\\).\n\nFor example, we could consider two populations with means \\(\\mu_1\\) and \\(\\mu_2\\), respectively, and try to make claims about whether or not \\(\\mu_1\\) and \\(\\mu_2\\) are equal.\n\nThe trick Statisticians use is to think in terms of the difference \\(\\mu_1 - \\mu_2.\\)\n\nFor example, if our null hypothesis is that \\(\\mu_1 = \\mu_2\\), this can be rephrased as \\(H_0: \\ \\mu_1 - \\mu_2 = 0\\)."
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#two-populations-2",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#two-populations-2",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Two Populations",
     "text": "Two Populations\n\nThe reason we do this is because we have now effectively reduced our two-parameter problem into a one-parameter problem, involving only the parameter \\(\\delta := \\mu_1 - \\mu_2\\).\nNow, we will need a point estimator of \\(\\delta\\). Just as before, we used \\(\\bar{X}\\) to estimate \\(\\mu\\), we now use \\(\\bar{X}_2-\\bar{X}_1\\) to estimate \\(\\mu_1 - \\mu_2\\)."
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#two-populations-3",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#two-populations-3",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Two Populations",
     "text": "Two Populations\n\nWe will ultimately need access to the sampling distribution of \\(\\bar{X}_1-\\bar{X}_2\\).\nJust as before, we have to check conditions to determine the sampling distribution of \\(\\bar{X}_1-\\bar{X}_2\\):\n\n\nIndependence within each sample: The observations within each sample are independent (e.g. we have a random sample from each of the two populations).\nIndependence between the samples: he two samples are independent of one another such that observations in one sample tell us nothing about the observations in the other sample (and vice versa).\nNormality: When the sample sizes are small, we require that the observations in each sample come from a normally distributed population. We can relax this condition more and more for larger and larger sample sizes. (You need to check normality for both groups.)"
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#sampling-distribution-of-barx_1-barx_2",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#sampling-distribution-of-barx_1-barx_2",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Sampling Distribution of \\(\\bar{X}_1-\\bar{X}_2\\)",
     "text": "Sampling Distribution of \\(\\bar{X}_1-\\bar{X}_2\\)\nWhen the conditions are satisfied, the sampling distribution of \\(\\bar{X}_1-\\bar{X}_2\\) will be nearly normal with mean \\[\\mu_1 -\\mu_2\\] and standard error \\[SE = \\sqrt{\\frac{\\sigma_1^2}{n_1}+\\frac{\\sigma_2^2}{n_2}}\\]"
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#sampling-distribution-of-barx_1-barx_2-1",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#sampling-distribution-of-barx_1-barx_2-1",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Sampling Distribution of \\(\\bar{X}_1-\\bar{X}_2\\)",
     "text": "Sampling Distribution of \\(\\bar{X}_1-\\bar{X}_2\\)\nThis is only if we know the population standard deviation \\(\\sigma_1\\) and \\(\\sigma_2\\), which is unlikely. Instead, we can use the sample standard deviations \\(s_1\\) and \\(s_2\\) so we have \\[SE = \\sqrt{\\frac{s_1^2}{n_1}+\\frac{s_2^2}{n_2}}\\]\nWe will use technology to calculate the degrees of freedom. When we can’t use technologies, we will use the smaller of \\(n_1-1\\) and \\(n_2-1\\) for the degrees of freedom."
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#hypothesis-test-for-mu_1-mu_2-1",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#hypothesis-test-for-mu_1-mu_2-1",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Hypothesis Test for \\(\\mu_1-\\mu_2\\)",
     "text": "Hypothesis Test for \\(\\mu_1-\\mu_2\\)\nWe will still follow the 5 steps to hypothesis test:\nStep 1: Write the hypothesis statements\nStep 2: Check conditions for determining the distribution of your sample statistic\nStep 3: Calculate test statistic\nStep 4: Use test statistic to determine decision of test (either using comparison to critical value or calculate p-value)\nStep 5: Write a conclusion in the context of the problem"
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#step-1-write-the-hypothesis-statements",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#step-1-write-the-hypothesis-statements",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Step 1: Write the hypothesis statements",
     "text": "Step 1: Write the hypothesis statements\nThe null hypothesis is\n\\[H_0: \\mu_1-\\mu_2 = 0\\] The alternative is one of\n\\[H_A: \\mu_1-\\mu_2 &lt; 0\\] \\[H_A: \\mu_1-\\mu_2 \\neq 0\\] \\[H_A: \\mu_1-\\mu_2 &gt; 0\\]"
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#step-2-check-conditions-for-your-sampling-distribution",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#step-2-check-conditions-for-your-sampling-distribution",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Step 2: Check conditions for your sampling distribution",
     "text": "Step 2: Check conditions for your sampling distribution\n\nIndependence within each sample\nIndependence between samples\nNormality"
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#step-3-calculate-test-statistic",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#step-3-calculate-test-statistic",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Step 3: Calculate test statistic",
     "text": "Step 3: Calculate test statistic\nSimilar to how we determined our test statistic before, with the generic form:\n\\[\\frac{\\text{sample statistic} - \\text{null value}}{\\text{standard error}}\\]\nIn this situation, we have:\n\\[\\text{TS} = \\frac{\\bar{x}_1-\\bar{x}_2 - 0}{\\sqrt{\\frac{s_1^2}{n_1} + \\frac{s_2^2}{n_2}}}\\]\nAnd similar to the one mean problem, this test statistic follows a \\(t\\) distribution with degrees of freedom calculated from technology."
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#step-4-make-decision-on-test-and-step-5-write-a-conclusion",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#step-4-make-decision-on-test-and-step-5-write-a-conclusion",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Step 4: Make decision on test and Step 5: Write a conclusion",
     "text": "Step 4: Make decision on test and Step 5: Write a conclusion\n\nAs we did with one mean, the decision will be based on the kind of test (two sided, lower tail, or greater tail tests). We will calculate the p-value to measure the strength of the evidence against the null hypothesis, comparing it to the significance level, \\(\\alpha\\).\nFinally, we write a conclusion in the context of the problem which include our 5 elements:\n\nsignificance level,\ndecision of the test,\nas a function of the null hypothesis. Then we write an interpretation that is\nnot too strong, and\nin affirmation or not in affirmation of the alternative hypothesis."
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#worked-out-example",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#worked-out-example",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\n\nGaucho Gourmande has two locations: one in Goleta and one in Santa Barbara. The owner would like to determine whether the average revenue generated by the two locations are equal or not. To that end, he computes the net revenue generated by the Goleta location over 30 days and also computes the net revenue generated by the Santa Barbara location over 35 days (assume all of the necessary independence conditions hold), and produced the following information:\n\\[\\begin{array}{r|cc}\n                    & \\text{Sample Average}     & \\text{Sample Standard Deviation}    \\\\\n  \\hline\n  \\textbf{Goleta}   &     \\$13                    & \\$3.45        \\\\\n  \\textbf{Santa Barbara}   &     \\$15                    & \\$4.23\n\\end{array}\\]\nTest the owner’s claims at an \\(\\alpha = 0.05\\) level of significance, using a two-sided alternative."
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nGaucho Gourmande has two locations: one in Goleta and one in Santa Barbara. The owner would like to determine whether the average revenue generated by the two locations are equal or not. To that end, he computes the net revenue generated by the Goleta location over 30 days and also computes the net revenue generated by the Santa Barbara location over 35 days (assume all of the necessary independence conditions hold), and produced the following information:\n\\[\\begin{array}{r|cc}\n                    & \\text{Sample Average}     & \\text{Sample Standard Deviation}    \\\\\n  \\hline\n  \\textbf{Goleta}   &     \\$13                    & \\$3.45        \\\\\n  \\textbf{Santa Barbara}   &     \\$15                    & \\$4.23\n\\end{array}\\]\nTest the owner’s claims at an \\(\\alpha = 0.05\\) level of significance, using a two-sided alternative."
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#solutions",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#solutions",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Solutions",
     "text": "Solutions\n\nOur first step should be to figure out what “Population 1” and “Population 2” are in the context of the problem.\nLet “Goleta Location” be Population 1 and “Santa Barbara Location” be Population 2.\n\nIt is perfectly acceptable to swap these two, but just be sure you remain consistent throughout the problem!\nAlso, I will expect you to explicitly write out your definitions of the populations (like above), even if the problem doesn’t explicitly ask you to do so.\n\nIn this way, \\[ \\overline{X} = 13; \\quad s_X = 3.45; \\quad \\overline{Y} = 15; \\quad s_Y = 4.23 \\]\nAdditionally, \\(n_1 = 30\\) and \\(n_2 = 35\\)."
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-1",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-1",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Solutions",
     "text": "Solutions\n\nNow, let’s compute the value of the test statistic. \\[ \\mathrm{TS} =   \\frac{\\overline{Y} - \\overline{X}}{\\sqrt{ \\frac{s_X^2}{n_1} + \\frac{s_Y^2}{n_2}}} = \\frac{15 - 13}{\\sqrt{\\frac{3.45^2}{30}  + \\frac{4.23^2}{35} }} = 2.10 \\]\nWe should next figure out the degrees of freedom: \\[\\begin{align*}\n\\mathrm{df}   &  = \\mathrm{round}\\left\\{ \\frac{ \\left[ \\left( \\frac{s_X^2}{n_1} \\right) + \\left( \\frac{s_Y^2}{n_2} \\right) \\right]^2 }{ \\frac{\\left( \\frac{s_X^2}{n_1} \\right)^2}{n_1 - 1} + \\frac{\\left( \\frac{s_Y^2}{n_2} \\right)^2}{n_2 - 1} } \\right\\}     \\\\\n  & =  \\mathrm{round}\\left\\{ \\frac{ \\left[ \\left( \\frac{3.45^2}{30} \\right) + \\left( \\frac{4.23^2}{35} \\right) \\right]^2 }{ \\frac{\\left( \\frac{3.45^2}{30} \\right)^2}{30 - 1} + \\frac{\\left( \\frac{4.23^2}{35} \\right)^2}{35 - 1} } \\right\\} = 63\n\\end{align*}\\]"
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-2",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-2",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Solutions",
     "text": "Solutions\n\nAt this point, we could either proceed using critical values or using p-values.\nLet’s use p-values, for practice.\nOur p-value is computed as\n\n\n\nimport scipy.stats as sps\n2*sps.t.cdf(-2.10, 63)\n\nnp.float64(0.03973904581390475)\n\n\n\n\nThis is below our level of significance \\(\\alpha = 0.05\\) meaning we would reject the null.\nIf we wanted to instead use critical values:\n\n\n\n-sps.t.ppf(0.05, 63)\n\nnp.float64(1.669402221706813)\n\n\n\n\nThis means our critical value is 1.67; since \\(|\\mathrm{TS}| = |2.10| = 2.10 &gt; 1.67\\), we would again reject at an \\(\\alpha = 0.05\\) level of significance."
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-3",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-3",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Solutions",
     "text": "Solutions\n\nAt a 5% level of significance, there was sufficient evidence to reject the owner’s claims that the revenue generated by the two locations are equal, in favor of the alternative that the revenue generated by the two locations are not equal."
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#extensions",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#extensions",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Extensions",
     "text": "Extensions\n\nUnsurprisingly, we can adapt the above procedure to account for one-sided alternatives as well.\nFor instance, suppose we wish to test \\[ \\left[ \\begin{array}{rr}\nH_0:    & \\mu_1 = \\mu_2   \\\\\nH_A:    & \\mu_1 &lt; \\mu_2\n\\end{array} \\right.\\]\nAgain, we rephrase things as: \\[ \\left[ \\begin{array}{rr}\nH_0:    & \\mu_2 - \\mu_1 = 0   \\\\\nH_A:    & \\mu_2 - \\mu_1 &gt; 0\n\\end{array} \\right.\\] which is now a familiar upper-tailed test on \\(\\delta = \\mu_2 - \\mu_1\\) and \\(\\mu_0 = 0.\\)"
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#extensions-1",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#extensions-1",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Extensions",
     "text": "Extensions\n\nSpecifically, we would take the same test statistic (which would still follow the same distribution under the null) and use the decision rule \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\mathrm{TS} &gt; c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] where \\(c\\) is the appropriate quantile of the approximate t distribution (with degrees of freedom given by the Satterthwaite Approximation).\nA similar result holds for the lower-tailed test- I encourage you to work it out on your own."
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#confidence-interval-for-mu_1-mu_2-1",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#confidence-interval-for-mu_1-mu_2-1",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Confidence Interval for \\(\\mu_1-\\mu_2\\)",
     "text": "Confidence Interval for \\(\\mu_1-\\mu_2\\)\nAs with the confidence interval for one mean, we had the generic form\n\\[\\hat{\\theta} \\pm c \\cdot \\text{standard error}\\]\nSo confidence interval for \\(\\mu_1-\\mu_2\\) is \\[\\bar{x}_1-\\bar{x}_2 \\pm t^* \\sqrt{\\frac{s_1^2}{n_1}+\\frac{s_2^2}{n_2}}\\]"
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#worked-out-example-2",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#worked-out-example-2",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\n\nSince public universities are subsidized by state governments, it is usually less expensive to attend a public university in your home state than a private university. Is this still true when you must pay out-of-state tuition? A random sample of 75 private universities had an average total cost of $42,336 with standard deviation of $14,004. A similar random sample of 80 public universities had an average out-of-state total cost of $32,240 with standard deviation $7,730. Calculate the 90% confidence interval for the difference in population mean total cost for students at private schools and the population mean total cost for out-of-state students at public schools."
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\nSince public universities are subsidized by state governments, it is usually less expensive to attend a public university in your home state than a private university. Is this still true when you must pay out-of-state tuition? A random sample of 75 private universities had an average total cost of $42,336 with standard deviation of $14,004. A similar random sample of 80 public universities had an average out-of-state total cost of $32,240 with standard deviation $7,730. Calculate the 90% confidence interval for the difference in population mean total cost for students at private schools and the population mean total cost for out-of-state students at public schools."
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-4",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-4",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Solutions",
     "text": "Solutions\n\nThese are both random samples so the observations with each sample are independent of one another.\nThere is no reason why the two samples would not be independent between each other.\nGiven \\(n_1 = 75 \\geq 30\\) and \\(n_2 = 80 \\geq 30\\), we have large enough sample to relax normality assumption and use CLT.\nTo calculate the degrees of freedom:\n\n\\[df =\\min(n_1-1,n_2-1) = \\min(74, 79) = 74\\] - Calculate \\(t^*\\) critical value given \\(\\alpha = 0.1\\) which is 1.6657"
   },
   {
     "objectID": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-5",
     "href": "Pages/Lectures/MT2Rev/mt2rev.html#solutions-5",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Solutions",
     "text": "Solutions\n\\[\\bar{x}_1-\\bar{x}_2 \\pm t^* \\sqrt{\\frac{s_1^2}{n_1}+\\frac{s_2^2}{n_2}}\\]\n\\[(42336 - 32240) \\pm 1.6657 \\sqrt{\\frac{14004^2}{75}+\\frac{7730^2}{80}}\\]\n\\[10096 \\pm 3054\\]\n\\[[\\$7,042, \\$13,150]\\]\nWe are 90% confident that the true difference in population mean total cost for students at private schools and population mean total cost for out-of-state students at public schools is between $7,042 and $13,150."
   },
@@ -1737,8 +1737,8 @@
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#homework-1-review",
     "href": "Pages/Lectures/Lecture05/Lec05.html#homework-1-review",
     "title": "PSTAT 5A: Lecture 05",
-    "section": "",
-    "text": "Submission: Syllabus states that all course submissions (HW, labs, and quizzes) will be via Gradescope!\nNo late homework!\nPlease show your work!"
+    "section": "Homework 1 Review",
+    "text": "Homework 1 Review\n\nSubmission: Syllabus states that all course submissions (HW, labs, and quizzes) will be via Gradescope!\nNo late homework!\nPlease show your work!"
   },
   {
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#homework-1---distribution-of-scores",
@@ -1801,14 +1801,14 @@
     "href": "Pages/Lectures/Lecture05/Lec05.html#why-bring-this-up-now",
     "title": "PSTAT 5A: Lecture 05",
     "section": "Why Bring This Up Now?",
-    "text": "Why Bring This Up Now?\n\nYou may be asking yourselves: “why bring this up now? Weren’t we talking about probability?”\nLet’s re-examine the third question we asked on the previous slide: What proportion of Chinstrap penguins were found on Dream island?\nWhat we really did when we answered this was to first restrict ourselves to the row of the contingency table corresponding to Chinstrap penguins, tally up the entries in that row, and then divided the number of penguins that were both Chinstrap and found on Dream Island by the row total.\n\n\n\n\n\nLet’s walk through another example. Suppose we want to know what proportion of Adelie penguins were found on Dream Island.\n\n\n\n\n           \n            Biscoe Dream Torgersen\n  Adelie        44    56        52\n  Chinstrap      0    68         0\n  Gentoo       124     0         0\n\n\n\nBy obtaining the first row total (i.e. the sum of the entries in the first row), we see there were \\(44 + 56 + 52 = 152\\) Adelie penguins in total.\n\nOf these \\(152\\) Adelie penguins, only 56 were found on Dream Island. Hence, the desired probability is \\[ \\frac{56}{152} \\approx 36.84\\% \\]"
+    "text": "Why Bring This Up Now?\n\nYou may be asking yourselves: “why bring this up now? Weren’t we talking about probability?”\nLet’s re-examine the third question we asked on the previous slide: What proportion of Chinstrap penguins were found on Dream island?\nWhat we really did when we answered this was to first restrict ourselves to the row of the contingency table corresponding to Chinstrap penguins, tally up the entries in that row, and then divided the number of penguins that were both Chinstrap and found on Dream Island by the row total."
   },
   {
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#conditional-probability",
     "href": "Pages/Lectures/Lecture05/Lec05.html#conditional-probability",
     "title": "PSTAT 5A: Lecture 05",
     "section": "Conditional Probability",
-    "text": "Conditional Probability\n\nThis leads us to the main topic of today’s lecture: conditional probabilities.\n\n\n\n\n\n\n\n\nDefinition\n\n\n\n\nIf \\(E\\) and \\(F\\) are two events with \\(\\mathbb{P}(F) \\neq 0\\), then we define the probability of \\(E\\) given \\(F\\), notated \\(\\mathbb{P}(E \\mid F)\\), to be \\[ \\mathbb{P}(E \\mid F) = \\frac{\\mathbb{P}(E \\cap F)}{\\mathbb{P}(F)} \\] If \\(\\mathbb{P}(F) = 0\\), then \\(\\mathbb{P}(E \\mid F)\\) is not defined."
+    "text": "Conditional Probability\n\nThis leads us to the main topic of today’s lecture: conditional probabilities.\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nIf \\(E\\) and \\(F\\) are two events with \\(\\mathbb{P}(F) \\neq 0\\), then we define the probability of \\(E\\) given \\(F\\), notated \\(\\mathbb{P}(E \\mid F)\\), to be \\[ \\mathbb{P}(E \\mid F) = \\frac{\\mathbb{P}(E \\cap F)}{\\mathbb{P}(F)} \\] If \\(\\mathbb{P}(F) = 0\\), then \\(\\mathbb{P}(E \\mid F)\\) is not defined."
   },
   {
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#interpretation",
@@ -1822,14 +1822,14 @@
     "href": "Pages/Lectures/Lecture05/Lec05.html#worked-out-example",
     "title": "PSTAT 5A: Lecture 05",
     "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\nWorked-Out Exercise 1\n\n\n\n\n75 UCSB students were surveyed about whether they like pineapple on pizza or not. In addition to their pineapple preference, their standing was also recorded.\n\n\n         Standing\nPineapple Freshman Junior Senior Sophomore\n      No        15      6      1        18\n      Yes       10      7      5        13\n\n\nA student is to be randomly selected. If the student is a Freshman, what is the probability that they like pineapple on pizza?\n\n\n\n\nAs always, we begin by defining events and notation. Let \\(P =\\) “the student likes pineapple on pizza” and \\(F =\\) “the student is a freshman”. We then seek \\(\\mathbb{P}(P \\mid F)\\).\n\n\n\n\n\nBecause the selection of the student is to be done at random, we can use the classical approach to probability.\n\n\n\nAs such, we need only to divide the number of students who are both Freshmen and like pineapple on pizza by the total number of Freshman.\n\nThe number of students who are both Freshmen and like pineapple on pizza is 10\nThe total number of Freshman is \\(15 + 10 = 25\\); i.e. the first column-sum\nHence, the desired probability is \\[ \\mathbb{P}(P \\mid F) = \\frac{10}{25} = \\boxed{ \\frac{2}{5} = 40\\%} \\]"
+    "text": "Worked-Out Example\n\n\n\n\n\n\nWorked-Out Exercise 1\n\n\n\n75 UCSB students were surveyed about whether they like pineapple on pizza or not. In addition to their pineapple preference, their standing was also recorded.\n\n\n         Standing\nPineapple Freshman Junior Senior Sophomore\n      No        15      6      1        18\n      Yes       10      7      5        13\n\n\nA student is to be randomly selected. If the student is a Freshman, what is the probability that they like pineapple on pizza?\n\n\n\n\n\nAs always, we begin by defining events and notation. Let \\(P =\\) “the student likes pineapple on pizza” and \\(F =\\) “the student is a freshman”. We then seek \\(\\mathbb{P}(P \\mid F)\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#multiplication-rule",
     "href": "Pages/Lectures/Lecture05/Lec05.html#multiplication-rule",
     "title": "PSTAT 5A: Lecture 05",
     "section": "Multiplication Rule",
-    "text": "Multiplication Rule\n\nRecall that. provided \\(\\mathbb{P}(F) \\neq 0\\) \\[ \\mathbb{P}(E \\mid F) = \\frac{\\mathbb{P}(E \\cap F)}{\\mathbb{P}(F)} \\]\nWe can multiply both sides of this equation by \\(\\mathbb{P}(F)\\) to obtain the so-called multiplication rule:\n\n\n\n\n\n\n\n\nThe Multiplication Rule\n\n\n\n\n\\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E \\mid F) \\cdot \\mathbb{P}(F)\\), for any events \\(E\\) and \\(F\\) with \\(\\mathbb{P}(F) \\neq 0\\)."
+    "text": "Multiplication Rule\n\nRecall that. provided \\(\\mathbb{P}(F) \\neq 0\\) \\[ \\mathbb{P}(E \\mid F) = \\frac{\\mathbb{P}(E \\cap F)}{\\mathbb{P}(F)} \\]\nWe can multiply both sides of this equation by \\(\\mathbb{P}(F)\\) to obtain the so-called multiplication rule:\n\n\n\n\n\n\n\n\nThe Multiplication Rule\n\n\n\n\\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E \\mid F) \\cdot \\mathbb{P}(F)\\), for any events \\(E\\) and \\(F\\) with \\(\\mathbb{P}(F) \\neq 0\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#leadup-1",
@@ -1843,14 +1843,14 @@
     "href": "Pages/Lectures/Lecture05/Lec05.html#bayes-rule",
     "title": "PSTAT 5A: Lecture 05",
     "section": "Bayes’ Rule",
-    "text": "Bayes’ Rule\n\n\n\n\n\n\n\nBayes’ Rule\n\n\n\n\n\\[ \\mathbb{P}(E \\mid F) = \\frac{\\mathbb{P}(F \\mid E) \\cdot \\mathbb{P}(E)}{\\mathbb{P}(F)} \\] for events \\(E\\) and \\(F\\) with \\(\\mathbb{P}(E) \\neq 0\\) and \\(\\mathbb{P}(F) \\neq 0\\).\n\n\n\n\n\nIn a sense, Bayes’ Rule gives us a way to “reverse the order of a conditional”"
+    "text": "Bayes’ Rule\n\n\n\n\n\n\n\nBayes’ Rule\n\n\n\n\\[ \\mathbb{P}(E \\mid F) = \\frac{\\mathbb{P}(F \\mid E) \\cdot \\mathbb{P}(E)}{\\mathbb{P}(F)} \\] for events \\(E\\) and \\(F\\) with \\(\\mathbb{P}(E) \\neq 0\\) and \\(\\mathbb{P}(F) \\neq 0\\).\n\n\n\n\n\n\nIn a sense, Bayes’ Rule gives us a way to “reverse the order of a conditional”"
   },
   {
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#worked-out-example-1",
     "href": "Pages/Lectures/Lecture05/Lec05.html#worked-out-example-1",
     "title": "PSTAT 5A: Lecture 05",
     "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\nAs an illustration, let’s return to our pineapple-on-pizza contingency table:\n\n\n\n\n         Standing\nPineapple Freshman Junior Senior Sophomore\n      No        15      6      1        18\n      Yes       10      7      5        13\n\n\n\n\nLetting \\(P\\) and \\(F\\) be defined as before, let’s compute \\(\\mathbb{P}(P \\mid F)\\) using Bayes’ Rule.\nWe need to first compute \\(\\mathbb{P}(F \\mid P)\\), which we see to be \\[ \\mathbb{P}(F \\mid P) = \\frac{10}{10 + 7 + 5 + 13} = \\frac{10}{35} \\]\n\n\n\n\nAdditionally, we find \\[\\begin{align*}\n\\mathbb{P}(P)     & = \\frac{10 + 7 + 5 + 13}{75} = \\frac{35}{75}    \\\\\n\\mathbb{P}(F)     & = \\frac{15 + 10}{75} = \\frac{25}{75}\n\\end{align*}\\]\n\n\n\nHence, by Bayes’ Rule, \\[\\begin{align*}\n\\mathbb{P}(P \\mid F)    & = \\frac{\\mathbb{P}(F \\mid P) \\cdot \\mathbb{P}(P)}{\\mathbb{P}(F)}   \\\\\n  & = \\frac{\\left( \\frac{10}{35} \\right) \\cdot \\left( \\frac{35}{75} \\right) }{ \\left( \\frac{25}{75} \\right) } = \\frac{10}{75} \\cdot \\frac{75}{25} = \\frac{10}{25} = \\boxed{\\frac{2}{5} = 40\\%}\n\\end{align*}\\]"
+    "text": "Worked-Out Example\n\nAs an illustration, let’s return to our pineapple-on-pizza contingency table:\n\n\n\n\n         Standing\nPineapple Freshman Junior Senior Sophomore\n      No        15      6      1        18\n      Yes       10      7      5        13\n\n\n\n\nLetting \\(P\\) and \\(F\\) be defined as before, let’s compute \\(\\mathbb{P}(P \\mid F)\\) using Bayes’ Rule.\nWe need to first compute \\(\\mathbb{P}(F \\mid P)\\), which we see to be \\[ \\mathbb{P}(F \\mid P) = \\frac{10}{10 + 7 + 5 + 13} = \\frac{10}{35} \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#hang-in-there",
@@ -1871,14 +1871,14 @@
     "href": "Pages/Lectures/Lecture05/Lec05.html#law-of-total-probability",
     "title": "PSTAT 5A: Lecture 05",
     "section": "Law of Total Probability",
-    "text": "Law of Total Probability\n\n\n\n\n\n\n\nThe Law of Total Probability\n\n\n\n\nGiven two events \\(E\\) and \\(F\\) with \\(\\mathbb{P}(E) \\neq 0\\) and \\(\\mathbb{P}(F) \\neq 0\\), we have \\[ \\mathbb{P}(F) = \\mathbb{P}(F \\mid E) \\cdot \\mathbb{P}(E) + \\mathbb{P}(F \\mid E^\\complement) \\cdot \\mathbb{P}(E^\\complement) \\]\n\n\n\n\n\nThis is often useful in the context of a Bayes’ Rule problem."
+    "text": "Law of Total Probability\n\n\n\n\n\n\n\nThe Law of Total Probability\n\n\n\nGiven two events \\(E\\) and \\(F\\) with \\(\\mathbb{P}(E) \\neq 0\\) and \\(\\mathbb{P}(F) \\neq 0\\), we have \\[ \\mathbb{P}(F) = \\mathbb{P}(F \\mid E) \\cdot \\mathbb{P}(E) + \\mathbb{P}(F \\mid E^\\complement) \\cdot \\mathbb{P}(E^\\complement) \\]\n\n\n\n\n\n\nThis is often useful in the context of a Bayes’ Rule problem."
   },
   {
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#worked-out-example-2",
     "href": "Pages/Lectures/Lecture05/Lec05.html#worked-out-example-2",
     "title": "PSTAT 5A: Lecture 05",
     "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\nAlright, let’s get down to business and tackle a slightly more real-world problem.\n\n\n\n\n\n\n\n\nWorked-Out Exercise 1\n\n\n\n\nIt is known that a particular disease affects 5% of the population. There exists a test for this disease, but it is not perfect: there is a 10% chance it will return a “negative” result for a person who is actually infected, and there is a 8% chance it will return a “positive” result for a person who is actually healthy.\n\nArasha has taken a test for the disease, and it has indicated a “positive” result. What is the probability that Arasha actually has the disease?"
+    "text": "Worked-Out Example\n\nAlright, let’s get down to business and tackle a slightly more real-world problem.\n\n\n\n\n\n\n\n\nWorked-Out Exercise 1\n\n\n\nIt is known that a particular disease affects 5% of the population. There exists a test for this disease, but it is not perfect: there is a 10% chance it will return a “negative” result for a person who is actually infected, and there is a 8% chance it will return a “positive” result for a person who is actually healthy.\n\nArasha has taken a test for the disease, and it has indicated a “positive” result. What is the probability that Arasha actually has the disease?"
   },
   {
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#step-1-define-events",
@@ -1941,7 +1941,7 @@
     "href": "Pages/Lectures/Lecture05/Lec05.html#some-problems-to-think-on",
     "title": "PSTAT 5A: Lecture 05",
     "section": "Some Problems To Think On:",
-    "text": "Some Problems To Think On:\n\n\n\n\n\n\nExercise 1\n\n\n\n\n\nA recent survey interviewed several UCSB students about their pets. The following data was collected:\n\n\n             Animal\nAdopted       Bunny Cat Dog Hamster\n  Adopted         3   5   8       4\n  Not Adopted     1   5   7       7\n\n\n\nIf a pet is to be selected at random, what is the probability that it is either a cat or adopted?\nA pet is selected at random: what is the probability that it is an adopted dog?\nA pet is selected at random: if it is a dog, what is the probability that it was adopted?\n\n\n\n\n\n\n\n\n\n\n\n\nExercise 2\n\n\n\n\n\nTwo events \\(A\\) and \\(B\\) are such that \\(\\mathbb{P}(A) = 5/10\\),  \\(\\mathbb{P}(B) = 6/10\\),  and \\(\\mathbb{P}(B \\mid A) = 2/5\\).\n\nFind \\(\\mathbb{P}(A \\cup B)\\)\nFind \\(\\mathbb{P}(A \\mid B)\\)."
+    "text": "Some Problems To Think On:\n\n\n\n\n\n\nExercise 1\n\n\n\n\nA recent survey interviewed several UCSB students about their pets. The following data was collected:\n\n\n             Animal\nAdopted       Bunny Cat Dog Hamster\n  Adopted         3   5   8       4\n  Not Adopted     1   5   7       7\n\n\n\nIf a pet is to be selected at random, what is the probability that it is either a cat or adopted?\nA pet is selected at random: what is the probability that it is an adopted dog?\nA pet is selected at random: if it is a dog, what is the probability that it was adopted?"
   },
   {
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#leadup-3",
@@ -1955,7 +1955,7 @@
     "href": "Pages/Lectures/Lecture05/Lec05.html#independence-1",
     "title": "PSTAT 5A: Lecture 05",
     "section": "Independence",
-    "text": "Independence\n\n\n\n\n\n\n\nDefinition\n\n\n\n\nTwo events \\(E\\) and \\(F\\) are defined to be independent (notated \\(E \\perp F\\)) if any of the following hold:\n\n\\(\\mathbb{P}(E \\mid F) = \\mathbb{P}(E)\\)\n\\(\\mathbb{P}(F \\mid E) = \\mathbb{P}(F)\\)\n\\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E) \\cdot \\mathbb{P}(F)\\)\n\n\n\n\n\n\nNote- the probability of an intersection equals the product of unconditional (i.e. marginal) probabilities ONLY WHEN THE EVENTS ARE INDEPENDENT.\n\nIn general, the only way to compute the probability of an intersection is to use the Multiplication Rule."
+    "text": "Independence\n\n\n\n\n\n\n\nDefinition\n\n\n\nTwo events \\(E\\) and \\(F\\) are defined to be independent (notated \\(E \\perp F\\)) if any of the following hold:\n\n\\(\\mathbb{P}(E \\mid F) = \\mathbb{P}(E)\\)\n\\(\\mathbb{P}(F \\mid E) = \\mathbb{P}(F)\\)\n\\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E) \\cdot \\mathbb{P}(F)\\)\n\n\n\n\n\n\n\nNote- the probability of an intersection equals the product of unconditional (i.e. marginal) probabilities ONLY WHEN THE EVENTS ARE INDEPENDENT.\n\nIn general, the only way to compute the probability of an intersection is to use the Multiplication Rule."
   },
   {
     "objectID": "Pages/Lectures/Lecture03/Lec03.html#uncertainty",
@@ -2199,29 +2199,29 @@
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#last-time",
     "href": "Pages/Lectures/Lecture04/Lec04.html#last-time",
     "title": "PSTAT 5A: Lecture 04",
-    "section": "",
-    "text": "Last time we discussed the basics of probability.\n\nThese included things like: experiments, outcome spaces, events, and probability.\n\nWe briefly talked about the different approaches to defining the probability of an even.\nFinally, we also saw how Venn Diagrams can help visualize set relationships and operations."
+    "section": "Last Time",
+    "text": "Last Time\n\nLast time we discussed the basics of probability.\n\nThese included things like: experiments, outcome spaces, events, and probability.\n\nWe briefly talked about the different approaches to defining the probability of an even.\nFinally, we also saw how Venn Diagrams can help visualize set relationships and operations."
   },
   {
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#leadup",
     "href": "Pages/Lectures/Lecture04/Lec04.html#leadup",
     "title": "PSTAT 5A: Lecture 04",
-    "section": "",
-    "text": "Now, let’s return to the classical approach to probability.\nAssuming the outcomes in our outcome space \\(\\Omega\\) are equally likely, the classical approach tells us to compute the probability of any event \\(E\\) as \\[ \\mathbb{P}(E) = \\frac{\\text{number of ways $E$ can occur}}{\\text{total number of elements in $\\Omega$}} \\]\nUp until now, we’ve computed both the numerator and the denominator by explicitly listing out the elements contained in the respective sets, and then counting the number of elements.\nThis works decently for small sets, but is highly inefficient for large sets.\n\n\n\n\nWouldn’t it be nice if there was a way to systematically count the elements in a set, without having to explicitly enumerate all elements?\n\n\n\nThankfully- there do exist some tools for that exact purpose:"
+    "section": "Leadup",
+    "text": "Leadup\n\nNow, let’s return to the classical approach to probability.\nAssuming the outcomes in our outcome space \\(\\Omega\\) are equally likely, the classical approach tells us to compute the probability of any event \\(E\\) as \\[ \\mathbb{P}(E) = \\frac{\\text{number of ways $E$ can occur}}{\\text{total number of elements in $\\Omega$}} \\]\nUp until now, we’ve computed both the numerator and the denominator by explicitly listing out the elements contained in the respective sets, and then counting the number of elements.\nThis works decently for small sets, but is highly inefficient for large sets."
   },
   {
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#ice-cream",
     "href": "Pages/Lectures/Lecture04/Lec04.html#ice-cream",
     "title": "PSTAT 5A: Lecture 04",
     "section": "Ice Cream",
-    "text": "Ice Cream\n\nBefore diving fully into the principles of counting, let’s examine a simple situation.\nSuppose we are at a small boutique ice cream parlor that offers only 3 flavors (Vanilla, Chocolate, and Matcha), and 2 toppings (sprinkles or coconut).\n\nFurther suppose that an order of ice cream must contain only 1 flavor and 1 topping.\n\nWe can list out the different orders that are possible (i.e. the outcome space of the experiment of ordering an ice cream from this shop) using a tree diagram:\n\n\n\n\n\n\n\n\n\ntree_diagram\n\n\n\nbase\no\n\n\n\nV\nVanilla\n\n\n\nbase-&gt;V\n\n\n\n\n\nC\nChocolate\n\n\n\nbase-&gt;C\n\n\n\n\n\nM\nMatcha\n\n\n\nbase-&gt;M\n\n\n\n\n\nVS\nSprinkles\n\n\n\nV-&gt;VS\n\n\n\n\n\nVC\nCoconut\n\n\n\nV-&gt;VC\n\n\n\n\n\nCS\nSprinkles\n\n\n\nC-&gt;CS\n\n\n\n\n\nCC\nCoconut\n\n\n\nC-&gt;CC\n\n\n\n\n\nMS\nSprinkles\n\n\n\nM-&gt;MS\n\n\n\n\n\nMC\nCoconut\n\n\n\nM-&gt;MC\n\n\n\n\n\n\n\n\n\n\n\nWe can see that there are 6 outcomes in \\(\\Omega\\).\nBut, let’s see if we can systematically figure out where this 6 came from.\n\nFor each of the 3 flavors, there are 2 toppings available. Hence, the total number of flavor-topping combinations is 3\\(\\times\\)2, or 6"
+    "text": "Ice Cream\n\nBefore diving fully into the principles of counting, let’s examine a simple situation.\nSuppose we are at a small boutique ice cream parlor that offers only 3 flavors (Vanilla, Chocolate, and Matcha), and 2 toppings (sprinkles or coconut).\n\nFurther suppose that an order of ice cream must contain only 1 flavor and 1 topping.\n\nWe can list out the different orders that are possible (i.e. the outcome space of the experiment of ordering an ice cream from this shop) using a tree diagram:"
   },
   {
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#fundamental-principle-of-counting",
     "href": "Pages/Lectures/Lecture04/Lec04.html#fundamental-principle-of-counting",
     "title": "PSTAT 5A: Lecture 04",
     "section": "Fundamental Principle of Counting",
-    "text": "Fundamental Principle of Counting\n\n\nThis is no accident!\n\n\n\n\n\n\n\n\n\n\nFundamental Principle of Counting\n\n\n\n\nIf an experiment consists of \\(k\\) stages, where the \\(i\\)th stage has \\(n_i\\) possible configurations, then the total number of elements in the outcome space is \\[ n_1 \\times n_2 \\times \\cdots \\times n_k \\]\n\n\n\n\n\n\nSo, when we obtained our answer of \\(6\\) on the previous slide, we were implicitly using the Fundamental Principle of Counting with 2 stages (picking a flavor, and picking a topping) where the first stage (picking a flavor) had 3 possible configurations (Vanilla, Chocolate, or Matcha) and the second stage (picking a topping) had two possible configurations (sprinkles or coconut)."
+    "text": "Fundamental Principle of Counting\n\n\nThis is no accident!\n\n\n\n\n\n\n\n\n\n\nFundamental Principle of Counting\n\n\n\nIf an experiment consists of \\(k\\) stages, where the \\(i\\)th stage has \\(n_i\\) possible configurations, then the total number of elements in the outcome space is \\[ n_1 \\times n_2 \\times \\cdots \\times n_k \\]\n\n\n\n\n\n\n\nSo, when we obtained our answer of \\(6\\) on the previous slide, we were implicitly using the Fundamental Principle of Counting with 2 stages (picking a flavor, and picking a topping) where the first stage (picking a flavor) had 3 possible configurations (Vanilla, Chocolate, or Matcha) and the second stage (picking a topping) had two possible configurations (sprinkles or coconut)."
   },
   {
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#slot-diagrams",
@@ -2235,28 +2235,28 @@
     "href": "Pages/Lectures/Lecture04/Lec04.html#worked-out-example",
     "title": "PSTAT 5A: Lecture 04",
     "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\n\nSuppose a (different) ice cream parlor has 32 flavors, 5 toppings, and 3 drizzles. If a “scoop” consists of a flavor, topping, and drizzle, how many scoops can be created?\n\n\n\n\n\nThere are 3 stages: picking a flavor, picking a topping, and picking a drizzle. Hence, we draw three slots: \\[ \\underline{\\ \\ \\ \\ \\ } \\ \\ \\ \\underline{\\ \\ \\ \\ \\ } \\ \\ \\ \\underline{\\ \\ \\ \\ \\ } \\]\nThe first stage has 32 configurations, the second has 5, and the third has 3: \\[ \\underline{\\ 32 \\ } \\ \\ \\ \\underline{\\ 5 \\ } \\ \\ \\ \\underline{\\ 3 \\ } \\]\nFinally, we multiply through: \\[ \\underline{\\ 32 \\ } \\ \\times \\ \\underline{\\ 5 \\ } \\ \\times \\ \\underline{\\ 3 \\ } = \\boxed{480} \\]"
+    "text": "Worked-Out Example\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nSuppose a (different) ice cream parlor has 32 flavors, 5 toppings, and 3 drizzles. If a “scoop” consists of a flavor, topping, and drizzle, how many scoops can be created?\n\n\n\n\n\n\nThere are 3 stages: picking a flavor, picking a topping, and picking a drizzle. Hence, we draw three slots: \\[ \\underline{\\ \\ \\ \\ \\ } \\ \\ \\ \\underline{\\ \\ \\ \\ \\ } \\ \\ \\ \\underline{\\ \\ \\ \\ \\ } \\]\nThe first stage has 32 configurations, the second has 5, and the third has 3: \\[ \\underline{\\ 32 \\ } \\ \\ \\ \\underline{\\ 5 \\ } \\ \\ \\ \\underline{\\ 3 \\ } \\]\nFinally, we multiply through: \\[ \\underline{\\ 32 \\ } \\ \\times \\ \\underline{\\ 5 \\ } \\ \\times \\ \\underline{\\ 3 \\ } = \\boxed{480} \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#ordering",
     "href": "Pages/Lectures/Lecture04/Lec04.html#ordering",
     "title": "PSTAT 5A: Lecture 04",
     "section": "Ordering",
-    "text": "Ordering\n\nHere’s a question: given \\(n\\) tickets (labeled \\(1\\) through \\(n\\)), how many different ways are there to arrange them in a line?\nLet’s answer this using a slot diagram!\nWe can think of \\(n\\) stages, where the first stage corresponds to placing the first ticket down, the second stage corresponds to placing the second ticket down, and so on and so forth. \\[ \\underbrace{ \\underline{\\ \\ \\ \\ \\ } \\ \\ \\  \\underline{\\ \\ \\ \\ \\ } \\ \\ \\ \\cdots \\ \\ \\   \\underline{\\ \\ \\ \\ \\ } \\ \\ \\   \\underline{\\ \\ \\ \\ \\ } }_{\\text{$n$ slots}} \\]\n\n\n\n\nFor the first stage, we have \\(n\\) possible configurations as we have \\(n\\) tickets available to us: \\[ \\underbrace{ \\underline{\\ n \\ } \\ \\ \\  \\underline{\\ \\ \\ \\ \\ } \\ \\ \\ \\cdots \\ \\ \\   \\underline{\\ \\ \\ \\ \\ } \\ \\ \\   \\underline{\\ \\ \\ \\ \\ } }_{\\text{$n$ slots}} \\]\n\n\n\nFor the second stage, however, we no longer have \\(n\\) tickets available to us as we’ve already placed one down! As such, we have \\(n - 1\\) configurations for the second stage: \\[ \\underbrace{ \\underline{\\ n \\ } \\ \\ \\  \\underline{\\ n - 1 \\ } \\ \\ \\ \\cdots \\ \\ \\   \\underline{\\ \\ \\ \\ \\ } \\ \\ \\   \\underline{\\ \\ \\ \\ \\ } }_{\\text{$n$ slots}} \\]\n\n\n\n\nThis continue until finally we will be left with only one ticket, which we place in the final position: \\[ \\underbrace{ \\underline{\\ n \\ } \\ \\ \\  \\underline{\\ n - 1 \\ } \\ \\ \\ \\cdots \\ \\ \\   \\underline{\\ 2 \\ } \\ \\ \\   \\underline{\\ 1 \\ } }_{\\text{$n$ slots}} \\]\n\n\n\nHence, multiplying through (by the Fundamental Principle of Counting), we find that the total number of ways to arrange \\(n\\) tickets in a line is \\[ n \\times (n - 1) \\times \\cdots \\times 2 \\times 1 \\]\nThis quatntity arises so often, we give it a name: \\(n\\) factorial."
+    "text": "Ordering\n\nHere’s a question: given \\(n\\) tickets (labeled \\(1\\) through \\(n\\)), how many different ways are there to arrange them in a line?\nLet’s answer this using a slot diagram!\nWe can think of \\(n\\) stages, where the first stage corresponds to placing the first ticket down, the second stage corresponds to placing the second ticket down, and so on and so forth. \\[ \\underbrace{ \\underline{\\ \\ \\ \\ \\ } \\ \\ \\  \\underline{\\ \\ \\ \\ \\ } \\ \\ \\ \\cdots \\ \\ \\   \\underline{\\ \\ \\ \\ \\ } \\ \\ \\   \\underline{\\ \\ \\ \\ \\ } }_{\\text{$n$ slots}} \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#factorials",
     "href": "Pages/Lectures/Lecture04/Lec04.html#factorials",
     "title": "PSTAT 5A: Lecture 04",
     "section": "Factorials",
-    "text": "Factorials\n\n\n\n\n\n\n\nDefinition\n\n\n\n\nFor a positive integer \\(n\\), we define \\(n\\) factorial (denoted \\(n!\\)), to be \\[ n! = n \\times (n - 1) \\times (n - 2) \\times \\cdots \\times 2 \\times 1 \\]\n\n\n\n\n\nFor example:\n\n\\(3! = 3 \\times 2 \\times 1 = 6\\)\n\\(4! = 4 \\times 3 \\times 2 \\times 1 = 24\\)\n\\(5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120\\)"
+    "text": "Factorials\n\n\n\n\n\n\n\nDefinition\n\n\n\nFor a positive integer \\(n\\), we define \\(n\\) factorial (denoted \\(n!\\)), to be \\[ n! = n \\times (n - 1) \\times (n - 2) \\times \\cdots \\times 2 \\times 1 \\]\n\n\n\n\n\n\nFor example:\n\n\\(3! = 3 \\times 2 \\times 1 = 6\\)\n\\(4! = 4 \\times 3 \\times 2 \\times 1 = 24\\)\n\\(5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120\\)"
   },
   {
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#worked-out-example-2",
     "href": "Pages/Lectures/Lecture04/Lec04.html#worked-out-example-2",
     "title": "PSTAT 5A: Lecture 04",
     "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\n\nSiobhan has 4 shirts in her closet: 2 purple shirts and 2 red shirts. When organizing these shirts in her closet she wants to keep the purple shirts together and the red shirts together, but doesn’t care if the purple group is to the left or the right of the red group. How many ways are there for Siobhan to arrange these shirts in her closet?\n\n\n\n\n\nLet’s answer this question two ways: using direct enumeration, and then using counting techniques.\nLabel the two purple shirts \\(P_1\\) and \\(P_2\\) respectively, and label the two red shirts \\(R_1\\) and \\(R_2\\) respectively. Then here are all of the possible reorderings of the shirts:\n\n\n\\[\\begin{align*}\n  \\Omega = \\{ & P_1 P_2 R_1 R_2, \\ P_1 P_2 R_2 R_1, \\ P_2 P_1 R_1 R_2, \\ P_2 P_1 R_2 R_1 , \\\\\n  & R_1 R_2 P_1 P_2, \\ R_2 R_1P_1 P_2, \\ R_1 R_2 P_2 P_1, \\  R_2 R_1P_2 P_1 \\}\n\\end{align*}\\]\n\n\n\n\nSo, there are 8 possible reorderings of the shirts.\nLet’s try and get to that 8 in a more systematic way.\nFirst, let’s fix the order of the color groups: suppose we fix the red shirts to be left of the purple shirts.\n\nWe can then appeal to slot diagrams with 4 slots (one for each of the shirts): \\[ \\underbrace{ \\underline{\\ 2 \\ } \\ \\times \\ \\underline{\\ 1 \\ } }_{\\text{picking the red shirts}} \\ \\times \\ \\underbrace{ \\underline{\\ 2 \\ } \\ \\times \\  \\underline{\\ 1 \\ } }_{\\text{picking the purple shirts}} = 4 \\]\n\nBut, we are not done- the red shirts could have been to the right of the purple shirts! As such, we need to multiply our \\(4\\) from above by \\(2\\), which is the number of ways to rearrange the color groups amongst themselves. This gives us \\[ 4 \\times 2 = \\boxed{8 \\text{ possible reorderings}} \\]"
+    "text": "Worked-Out Example\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nSiobhan has 4 shirts in her closet: 2 purple shirts and 2 red shirts. When organizing these shirts in her closet she wants to keep the purple shirts together and the red shirts together, but doesn’t care if the purple group is to the left or the right of the red group. How many ways are there for Siobhan to arrange these shirts in her closet?\n\n\n\n\n\n\nLet’s answer this question two ways: using direct enumeration, and then using counting techniques.\nLabel the two purple shirts \\(P_1\\) and \\(P_2\\) respectively, and label the two red shirts \\(R_1\\) and \\(R_2\\) respectively. Then here are all of the possible reorderings of the shirts:\n\n\n\\[\\begin{align*}\n  \\Omega = \\{ & P_1 P_2 R_1 R_2, \\ P_1 P_2 R_2 R_1, \\ P_2 P_1 R_1 R_2, \\ P_2 P_1 R_2 R_1 , \\\\\n  & R_1 R_2 P_1 P_2, \\ R_2 R_1P_1 P_2, \\ R_1 R_2 P_2 P_1, \\  R_2 R_1P_2 P_1 \\}\n\\end{align*}\\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#does-order-matter",
@@ -2270,7 +2270,7 @@
     "href": "Pages/Lectures/Lecture04/Lec04.html#if-order-does-matter",
     "title": "PSTAT 5A: Lecture 04",
     "section": "If Order Does Matter",
-    "text": "If Order Does Matter\n\nLet’s examine what happens when we assume order does matter.\nIn the context of our drawing tickets example, this means that getting \\(A\\) followed by \\(C\\) is different than getting \\(C\\) followed by \\(A\\).\nThen, letting \\((X, Y)\\) denote the outcome “I drew the ticket labelled \\(X\\) first, then the ticket labelled \\(Y\\) second” (for \\(X \\in \\{A, B, C\\}\\) and \\(Y \\in \\{A, B, C\\}\\)), we have \\[\\begin{align*}\n  \\Omega   = \\{ & (A, B), \\ (A, C) \\\\\n      & (B, A), \\ (B, C)  \\\\\n      & (C, A), \\ (C, B) \\}\n\\end{align*}\\]\n\nBy the way, can anyone tell me why I didn’t include outcomes like \\((A, A)\\)?\n\n\n\n\n\nSo, the answer is 6.\n\n\n\nBut we cheated a little- the whole point of introducing counting was so that we didn’t have to list out all the elements int he outcome space anymore!\nHere’s how we can get to the answer using slot diagrams.\nWe have two stages (since we are drawing two tickets).\n\nFor the first stage we have 3 possibilities\nFor the second stage we have 2 possibilities\nHence, our slot diagram looks like: \\[ \\underline{\\ 3 \\ } \\ \\times \\ \\underline{ \\ 2 \\ } = \\boxed{6} \\]"
+    "text": "If Order Does Matter\n\nLet’s examine what happens when we assume order does matter.\nIn the context of our drawing tickets example, this means that getting \\(A\\) followed by \\(C\\) is different than getting \\(C\\) followed by \\(A\\).\nThen, letting \\((X, Y)\\) denote the outcome “I drew the ticket labelled \\(X\\) first, then the ticket labelled \\(Y\\) second” (for \\(X \\in \\{A, B, C\\}\\) and \\(Y \\in \\{A, B, C\\}\\)), we have \\[\\begin{align*}\n  \\Omega   = \\{ & (A, B), \\ (A, C) \\\\\n      & (B, A), \\ (B, C)  \\\\\n      & (C, A), \\ (C, B) \\}\n\\end{align*}\\]\n\nBy the way, can anyone tell me why I didn’t include outcomes like \\((A, A)\\)?"
   },
   {
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#generalizing",
@@ -2284,21 +2284,21 @@
     "href": "Pages/Lectures/Lecture04/Lec04.html#n-order-k",
     "title": "PSTAT 5A: Lecture 04",
     "section": "\\(n\\) order \\(k\\)",
-    "text": "\\(n\\) order \\(k\\)\n\n\n\n\n\n\n\nDefinition\n\n\n\n\nFor a positive integer \\(n\\) and another positive integer \\(k\\) that is less than \\(n\\), \\[ (n)_k = \\frac{n!}{(n - k)!}  = n \\times (n - 1) \\times \\cdots \\times (n - k + 1)  \\]\n\n\n\n\n\nFor example:\n\n\\((5)_3 = 5 \\times 4 \\times 3 = 60\\)\n\\((6)_2 = 6 \\times 5 = 30\\)\n\\((4)_4 = 4 \\times 3 \\times 2 \\times 1 = 24\\)"
+    "text": "\\(n\\) order \\(k\\)\n\n\n\n\n\n\n\nDefinition\n\n\n\nFor a positive integer \\(n\\) and another positive integer \\(k\\) that is less than \\(n\\), \\[ (n)_k = \\frac{n!}{(n - k)!}  = n \\times (n - 1) \\times \\cdots \\times (n - k + 1)  \\]\n\n\n\n\n\n\nFor example:\n\n\\((5)_3 = 5 \\times 4 \\times 3 = 60\\)\n\\((6)_2 = 6 \\times 5 = 30\\)\n\\((4)_4 = 4 \\times 3 \\times 2 \\times 1 = 24\\)"
   },
   {
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#worked-out-example-3",
     "href": "Pages/Lectures/Lecture04/Lec04.html#worked-out-example-3",
     "title": "PSTAT 5A: Lecture 04",
     "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\n\nSuppose now that I have 5 tickets, labeled \\(A\\) through \\(E\\), and I now want to draw 3. How many ways are there to do this, assuming order matters?\n\n\n\n\n\nBy our work above, the answer is \\((5)_3 = 5 \\times 4 \\times 3 = \\boxed{60}\\).\nDon’t believe me?\n\n\n\\[{\\tiny \\begin{aligned}[t]\n\\Omega  & = \\{ (A, B, C), \\ (A, B, D), \\ (A, B, E), \\ (A, C, B), \\ (A, C, D), \\ (A, C, E), \\ (A, D, B), \\ (A, D, C), \\ (A, D, E), \\ (A, E, B), \\ (A, E, C), \\ (A, E, D), \\\\\n    %\n    & \\hspace{5mm} (B, A, C), \\ (B, A, D), \\ (B, A, E), \\ (B, C, A), \\ (B, C, D), \\ (B, C, E), \\ (B, D, A), \\ (B, D, C), \\ (B, D, E), \\ (B, E, A), \\ (B, E, C), \\ (B, E, D), \\\\\n    %\n    & \\hspace{5mm} (C, A, B), \\ (C, A, D), \\ (C, A, E), \\ (C, B, A), \\ (C, B, D), \\ (C, B, E), \\ (C, D, A), \\ (C, D, B), \\ (C, D, E), \\ (C, E, A), \\ (C, E, B), \\ (C, E, D), \\\\\n    %\n    & \\hspace{5mm} (D, A, B), \\ (D, A, C), \\ (D, A, E), \\ (D, B, A), \\ (D, B, C), \\ (D, B, E), \\ (D, C, A), \\ (D, C, B), \\ (D, C, E), \\ (D, E, A), \\ (D, E, B), \\ (D, E, C), \\\\\n    %\n    & \\hspace{5mm} (E, A, B), \\ (E, A, C), \\ (E, A, D), \\ (E, B, A), \\ (E, B, C), \\ (E, B, D), \\ (E, C, A), \\ (E, C, B), \\ (E, C, D), \\ (E, D, A), \\ (E, D, B), \\ (E, D, C) \\}\n    \\end{aligned}}\\]"
+    "text": "Worked-Out Example\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\nSuppose now that I have 5 tickets, labeled \\(A\\) through \\(E\\), and I now want to draw 3. How many ways are there to do this, assuming order matters?\n\n\n\n\n\n\nBy our work above, the answer is \\((5)_3 = 5 \\times 4 \\times 3 = \\boxed{60}\\).\nDon’t believe me?\n\n\n\\[{\\tiny \\begin{aligned}[t]\n\\Omega  & = \\{ (A, B, C), \\ (A, B, D), \\ (A, B, E), \\ (A, C, B), \\ (A, C, D), \\ (A, C, E), \\ (A, D, B), \\ (A, D, C), \\ (A, D, E), \\ (A, E, B), \\ (A, E, C), \\ (A, E, D), \\\\\n    %\n    & \\hspace{5mm} (B, A, C), \\ (B, A, D), \\ (B, A, E), \\ (B, C, A), \\ (B, C, D), \\ (B, C, E), \\ (B, D, A), \\ (B, D, C), \\ (B, D, E), \\ (B, E, A), \\ (B, E, C), \\ (B, E, D), \\\\\n    %\n    & \\hspace{5mm} (C, A, B), \\ (C, A, D), \\ (C, A, E), \\ (C, B, A), \\ (C, B, D), \\ (C, B, E), \\ (C, D, A), \\ (C, D, B), \\ (C, D, E), \\ (C, E, A), \\ (C, E, B), \\ (C, E, D), \\\\\n    %\n    & \\hspace{5mm} (D, A, B), \\ (D, A, C), \\ (D, A, E), \\ (D, B, A), \\ (D, B, C), \\ (D, B, E), \\ (D, C, A), \\ (D, C, B), \\ (D, C, E), \\ (D, E, A), \\ (D, E, B), \\ (D, E, C), \\\\\n    %\n    & \\hspace{5mm} (E, A, B), \\ (E, A, C), \\ (E, A, D), \\ (E, B, A), \\ (E, B, C), \\ (E, B, D), \\ (E, C, A), \\ (E, C, B), \\ (E, C, D), \\ (E, D, A), \\ (E, D, B), \\ (E, D, C) \\}\n    \\end{aligned}}\\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#order-doesnt-matter",
     "href": "Pages/Lectures/Lecture04/Lec04.html#order-doesnt-matter",
     "title": "PSTAT 5A: Lecture 04",
     "section": "Order Doesn’t Matter",
-    "text": "Order Doesn’t Matter\n\nLet’s return to our example of drawing \\(2\\) tickets from a set of tickets labeled \\(A\\) through \\(C\\).\nWe previously saw that if order does matter, there are 6 possible outcomes: \\[\\begin{align*}\n  \\Omega   = \\{ & (A, B), \\ (A, C) \\\\\n      & (B, A), \\ (B, C)  \\\\\n      & (C, A), \\ (C, B) \\}\n\\end{align*}\\]\nIf order doesn’t matter, we actually have fewer outcomes! Specifically:\n\n\\((A, C)\\) and \\((C, A)\\) become equivalent\n\\((A, B)\\) and \\((B, A)\\) become equivalent\n\\((B, C)\\) and \\((C, B)\\) become equivalent\n\nSo, \\(\\Omega\\) becomes \\(\\{(A, B), \\ (A, C), \\ (B, C)\\}\\), so we have only 3 elements in \\(\\Omega\\).\n\n\n\n\nBut we cheated again!\n\n\n\nHere’s the systematic way to arrive at the right answer:\n\nStart by supposing order did matter; then there are 6 possibilities.\nNow, divide through by the number of ways to reorder 2 elements among themselves. Why is this? Well, once we’ve picked the letters in our sample, all outcomes that contain those same letters but just shuffled around will be considered indistinguishable!\nSo, our \\(3\\) was really \\[ \\frac{(3)_2}{2!} = \\frac{6}{2} = 3 \\]\n\n\n\n\nIn the general case (i.e. drawing \\(k\\) elements from a total of \\(n\\), assuming order doesn’t matter) we have\n\n\n\n\n\n\n\n\n\n\n\nDefinition\n\n\n\n\nWe define \\(n\\) choose \\(k\\) to be \\[ \\binom{n}{k} = \\frac{(n)_k}{k!} = \\frac{n!}{k!(n - k)!} \\]"
+    "text": "Order Doesn’t Matter\n\nLet’s return to our example of drawing \\(2\\) tickets from a set of tickets labeled \\(A\\) through \\(C\\).\nWe previously saw that if order does matter, there are 6 possible outcomes: \\[\\begin{align*}\n  \\Omega   = \\{ & (A, B), \\ (A, C) \\\\\n      & (B, A), \\ (B, C)  \\\\\n      & (C, A), \\ (C, B) \\}\n\\end{align*}\\]\nIf order doesn’t matter, we actually have fewer outcomes! Specifically:\n\n\\((A, C)\\) and \\((C, A)\\) become equivalent\n\\((A, B)\\) and \\((B, A)\\) become equivalent\n\\((B, C)\\) and \\((C, B)\\) become equivalent\n\nSo, \\(\\Omega\\) becomes \\(\\{(A, B), \\ (A, C), \\ (B, C)\\}\\), so we have only 3 elements in \\(\\Omega\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#dont-worry",
@@ -2312,7 +2312,7 @@
     "href": "Pages/Lectures/Lecture04/Lec04.html#an-exercise",
     "title": "PSTAT 5A: Lecture 04",
     "section": "An Exercise",
-    "text": "An Exercise\n\n\n\n\n\n\nExercise 1\n\n\n\n\n\nCalifornia state license plates consist of 7 characters: a digit, followed by 3 letters, followed by 3 digits.\n\nSuppose we do not allow repeated letters or digits in a license plate: i.e. A123BCD456 is a valid plate whereas A122BCC345 is not. How many license plates can be created using this scheme?\nRealistically, license plates are allowed to contain repeated letters or digits. Re-answer the question of how many license plates can be created using this scheme.\nUsing the scheme outlined in part (b), what is the probability of picking a random license plate and having it be B131GHA?"
+    "text": "An Exercise\n\n\n\n\n\n\nExercise 1\n\n\n\n\nCalifornia state license plates consist of 7 characters: a digit, followed by 3 letters, followed by 3 digits.\n\nSuppose we do not allow repeated letters or digits in a license plate: i.e. A123BCD456 is a valid plate whereas A122BCC345 is not. How many license plates can be created using this scheme?\nRealistically, license plates are allowed to contain repeated letters or digits. Re-answer the question of how many license plates can be created using this scheme.\nUsing the scheme outlined in part (b), what is the probability of picking a random license plate and having it be B131GHA?"
   },
   {
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#lecture-summary-1",
@@ -2326,7 +2326,7 @@
     "href": "Pages/hw.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Here you will find all homework assignments and their solutions. Please remember that solutions to homework will only be released during Exam Weeks; we encourage you to come to Office Hours to ask any questions you may have about the assignments!\n\nHomework 1: Blank Solns\nHomework 2: Blank Solns\nHomework 3: Blank Solns\nHomework 4: Blank Solns\nHomework 5: Blank",
+    "text": "Here you will find all homework assignments and their solutions. Please remember that solutions to homework will only be released during Exam Weeks; we encourage you to come to Office Hours to ask any questions you may have about the assignments!\n\nHomework 1: Blank Solns\nHomework 2: Blank Solns\nHomework 3: Blank Solns\nHomework 4: Blank Solns",
     "crumbs": [
       "Homework",
       "HW and Solns"
@@ -5300,430 +5300,10 @@
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: July 20, 2024\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/24 - 6/28)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\n\nHW1 Soln Quiz1 Soln\nWorksheet 01\nSolns\nLab 01  Introduction to Python\n\n\n2\n(7/01 - 7/05)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n09: Discrete Random Variables\n\nHW2 Soln Quiz2 Soln\nWorksheet 02\nSolns\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\n\n\n3\n(7/08 - 7/12)\n\n07: Review\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\n\nHW3 Soln Quiz3 Soln\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\n\n\n\n4\n(7/15 - 7/19)\n\n13: Confidence Intervals for Means\n\nT-Table\n\n14: Hypothesis Testing for Proportions\n17: Hypothesis Testing, Part II\n\nHW4 Soln\nWorksheet 04\nSolns\nLab 04  Simulations, Sampling, and Loops\n\n\n\n5\n(7/22 - 7/26)\n\n18: Review\n19: Two-Sample t-Tests\n20: Inference for Paired Data\n21: Intro to Statistical Modeling, and Correlation\n\nWorksheet 05\n\nLab 05  Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/29 - 8/01)\n\n21: Regression, Part II\n22: Regression Diagnostics, and Sampling Procedures\n23: Ways Statistics Can Deceive\n24: Review\nFINAL EXAM: Thursday, August 1 during lecture\n\nQ&A with TA.\nLab 06  A Trip To the Movies",
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: July 20, 2024\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/24 - 6/28)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\n\nHW1 Soln Quiz1 Soln\nWorksheet 01\nSolns\nLab 01  Introduction to Python\n\n\n2\n(7/01 - 7/05)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n09: Discrete Random Variables\n\nHW2 Soln Quiz2 Soln\nWorksheet 02\nSolns\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\n\n\n3\n(7/08 - 7/12)\n\n07: Review\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\n\nHW3 Soln Quiz3 Soln\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\n\n\n\n4\n(7/15 - 7/19)\n\n13: Confidence Intervals for Means\n\nT-Table\n\n14: Hypothesis Testing for Proportions\n17: Hypothesis Testing, Part II\n\nHW4 Soln\nWorksheet 04\nSolns\nLab 04  Simulations, Sampling, and Loops\n\n\n\n5\n(7/22 - 7/26)\n\n18: Two-Sample t-Tests\n19: Inference for Paired Data\n20: Intro to Statistical Modeling, and Correlation\n\nWorksheet 05\n\nLab 05  Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/29 - 8/01)\n\n21: Regression, Part II\n22: Regression Diagnostics, and Sampling Procedures\n23: Ways Statistics Can Deceive\n24: Review\nFINAL EXAM: Thursday, August 1 during lecture\n\nQ&A with TA.\nLab 06  A Trip To the Movies",
     "crumbs": [
       "Course Info",
       "Schedule of Topics"
     ]
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#hypothesis-testing-1",
-    "href": "Pages/Lectures/Review2/rev2.html#hypothesis-testing-1",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Hypothesis Testing",
-    "text": "Hypothesis Testing\n\nRecall that in the framework of hypothesis testing, we wish to utilize data to assess the plausibility/validity of a hypothesis, called the null hypothesis.\n\nSpecifically, we wish to determine whether or not the data provides support to reject the null in favor of the alternative hypothesis or not.\n\nIn the case of hypothesis testing for a population proportion \\(p\\), our null takes the form \\(H_0: p = p_0\\) and there are several different alternative hypotheses we could consider:\n\nTwo-tailed alternative/test: \\(H_A: \\ p \\neq p_0\\)\nLower-tailed alternative/test: \\(H_A: \\ p &lt; p_0\\)\nUpper-tailed alternative/test: \\(H_A: \\ p &gt; p_0\\)"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#hypothesis-testing-for-a-proportion",
-    "href": "Pages/Lectures/Review2/rev2.html#hypothesis-testing-for-a-proportion",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Hypothesis Testing for a Proportion",
-    "text": "Hypothesis Testing for a Proportion\n\nThe different alternative hypotheses lead to different forms of our hypothesis test.\nLast lecture, we discussed how to construct a two-sided hypothesis test.\nOn the homework, I ask you to derive the lower-tailed hypothesis test (and I also provide you with the form for an upper-tailed hypothesis test in the last lecture slide deck)\nTo help you with that homework problem, allow me to re-do the derivations we did last lecture, but this time more in the style of the homework problem."
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#two-sided-test-for-a-proportion",
-    "href": "Pages/Lectures/Review2/rev2.html#two-sided-test-for-a-proportion",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Two-Sided Test for a Proportion",
-    "text": "Two-Sided Test for a Proportion\n\nWe start with the test statistic \\[ \\mathrm{TS} = \\frac{\\widehat{P} - p_0}{\\sqrt{\\frac{p_0 (1 - p_0)}{n}}} \\]\nIf the null were true, i.e. if the true value of \\(p\\) were \\(p_0\\), then this test statistic would follow the Normal Distribution provided that we are able to invoke the Central Limit Theorem for proportions, which we can do only if\n\n\\(np_0 \\geq 10\\)\n\\(n(1 - p_0) \\geq 10\\)"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#two-sided-test-for-a-proportion-1",
-    "href": "Pages/Lectures/Review2/rev2.html#two-sided-test-for-a-proportion-1",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Two-Sided Test for a Proportion",
-    "text": "Two-Sided Test for a Proportion\n\nIf these conditions hold, we then know that (by the Central Limit Theorem for Proportions) \\[ \\widehat{P} \\stackrel{H_0}{\\sim} \\mathcal{N}\\left( p_0, \\ \\sqrt{\\frac{p_0 (1 - p_0)}{n}} \\right) \\] which means, by our Standardization Result, that \\[\\mathrm{TS} \\stackrel{H_0}{\\sim} \\mathcal{N}(0, \\ 1)\\] where the symbol \\(\\stackrel{H_0}{\\sim}\\) just means “distributed under the null”; i.e. assuming the null hypothesis is correct."
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#two-sided-test-for-a-proportion-2",
-    "href": "Pages/Lectures/Review2/rev2.html#two-sided-test-for-a-proportion-2",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Two-Sided Test for a Proportion",
-    "text": "Two-Sided Test for a Proportion\n\nNow, let’s think about when we would reject the null that \\(p = p_0\\) in favor of the alternative that \\(p \\neq p_0\\).\n\nIf we observed a value of \\(\\widehat{p}\\) that was much greater than \\(p_0\\) (i.e. if \\(\\mathrm{ts}\\) was much larger than 0), we would probably reject the null in favor of the alternative.\nBut, if we observed a value of \\(\\widehat{p}\\) that was much smaller than \\(p_0\\) (i.e. if \\(\\mathrm{ts}\\) was much smaller than 0), we would probably also reject the null in favor of the alternative.\nTherefore, we reject when the magnitude of \\(\\mathrm{ts}\\) is large; i.e. with \\(|\\mathrm{ts}| &gt; c\\) for some constant \\(c\\).\n\nThis means our test should take the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| &gt; c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#two-sided-test-for-a-proportion-3",
-    "href": "Pages/Lectures/Review2/rev2.html#two-sided-test-for-a-proportion-3",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Two-Sided Test for a Proportion",
-    "text": "Two-Sided Test for a Proportion\n\nFinally, we need to consider how large to make our cutoff (or critical value) \\(c\\).\nThis is where we need to consider the two types of errors we could commit: Type I and Type II Errors\n\nType I error: the null was rejected when it was in fact true (convicting an innocent person)\nType II error: the null was not rejected when it was in fact false (letting a guilty person go free)\n\nWe call the probability of committing a Type I error the level of significance \\(\\alpha\\), which we fix before beginning our testing procedure.\nIn terms of the critical value, this means \\(c\\) should satisfy the equation \\[ \\mathbb{P}_{H_0}(|\\mathrm{TS}| &gt; c) = \\alpha \\] where \\(\\mathbb{P}_{H_0}\\) means “probability of, assuming the null is actually true (i.e. that \\(p = p_0\\))”."
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#two-sided-test-for-a-proportion-4",
-    "href": "Pages/Lectures/Review2/rev2.html#two-sided-test-for-a-proportion-4",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Two-Sided Test for a Proportion",
-    "text": "Two-Sided Test for a Proportion\n\nSince we know that \\(\\mathrm{TS}\\) follows a standard normal distribution under the null, this means that \\(c\\) should be the \\((\\alpha / 2) \\times 100\\)th percentile of the standard normal distribution.\n\nFor example, if \\(\\alpha = 0.05\\), then the critical value is the \\((0.05) / 2 \\times 100 = 2.5\\)th percentile of the standard normal distribution, which we see to be \\(1.96\\).\n\nAs such, the final form of our test is \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| &gt; z_{1 - \\alpha/2} \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] where we use the notation \\(z_{1 - \\alpha/2}\\) to denote the following (which, recall, are equivalent):\n\n\\((\\alpha / 2) \\times 100\\)th percentile of the standard normal distribution, scaled by negative 1.\n\\([1 - (\\alpha / 2)] \\times 100\\)th percentile, not scaled by anything."
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#quick-note",
-    "href": "Pages/Lectures/Review2/rev2.html#quick-note",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Quick Note",
-    "text": "Quick Note\n\nAgain, it turns out that the \\((\\alpha / 2) \\times 100\\)th percentile of the standard normal distribution scaled by negative 1 is equivalent to the \\((1 - \\alpha / 2)\\)th percentile of the standard normal distribution, not scaled by negative 1.\n\n\n\nimport scipy.stats as sps\n\n-sps.norm.ppf(0.05/2)\n\nnp.float64(1.9599639845400545)\n\n\n\n\n\nimport scipy.stats as sps\n\nsps.norm.ppf(1 - 0.05/2)\n\nnp.float64(1.959963984540054)\n\n\n\n\nBasically, when doing a two-sided test, ensure that the critical value is positive. (This is not the case for a one-sided test.)"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#worked-out-example",
-    "href": "Pages/Lectures/Review2/rev2.html#worked-out-example",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "Worked-Out Example 2\n\n\n\n\n\nSuppose that GauchoAir has found that each passenger that books a ticket on the GA5A flight from SBA to GCV (GauchoVille) actually shows up with probability 90%.\nIf flight GA5A has only 186 seats, but sells 195 tickets, what is the probability that GauchoAir will need to re-book certain passengers?"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#solutions",
-    "href": "Pages/Lectures/Review2/rev2.html#solutions",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Solutions",
-    "text": "Solutions\n\nThe population is the set of all California residents.\nThe parameter of interest is \\(p\\), the true proportion of CA residents that speak Spanish.\nThe random variable of interest is \\(\\widehat{P}\\), the proportion of people in a representative sample of 120 CA residents that speak spanish.\nWe check the success-failure conditions, with the substitution approximation:\n\n\\(n \\widehat{p} = (120) \\cdot \\left( \\frac{36}{120} \\right) = 36 \\ \\checkmark\\)\n\\(n (1 - \\widehat{p}) = (120) \\cdot \\left( \\frac{84}{120} \\right) = 84 \\ \\checkmark\\)\n\n\n\nSince these conditions are met, we can proceed in constructing our confidence interval as \\[ 0.3 \\pm 1.96 \\cdot \\sqrt{\\frac{0.3 \\cdot 0.7}{120}} = \\boxed{[0.218 \\ , \\ 0.382]} \\]"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#solutions-1",
-    "href": "Pages/Lectures/Review2/rev2.html#solutions-1",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Solutions",
-    "text": "Solutions\n\nWe first phrase the hypotheses.\nLet \\(p\\) denote the true proportion of applicants who get admitted into the major. Since we are performing a two-sided test, our hypotheses take the form \\[ \\left[ \\begin{array}{rr}\nH_0:    p = 0.24    \\\\\nH_A:    p \\neq 0.24\n\\end{array} \\right.\\]\nNow we compute the observed value of the test statistic: \\[ \\mathrm{ts} = \\frac{\\widehat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}} = \\frac{0.2 - 0.24}{\\sqrt{\\frac{(0.24) \\cdot (1 - 0.24)}{120}}} \\approx -1.026 \\]\nNext, we compute the critical value. Since we are using an \\(\\alpha = 0.05\\) level of significance, we will use the critical value \\(1.96\\)"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#basics-of-random-variables",
-    "href": "Pages/Lectures/Review2/rev2.html#basics-of-random-variables",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "Recall long ago we discussed the notion of an experiment: any procedure we can repeat an infinite number of times where each time we repeat the experiment the same fixed set of things (i.e. the outcomes) can occur.\nA random variable, loosely speaking, is some sort of numerical variable that keeps track of certain quantities relating to an experiment.\nFor example, if we toss 7 coins and let \\(X\\) denote the number of heads we observe in these 7 coin tosses, then \\(X\\) would be a random variable.\nThe set of all values a random variable can attain is called the state space, and is denoted \\(S_X\\).\nWe classify random variables based on their state space:\n\nIf \\(S_X\\) has jumps, we say \\(X\\) is a discrete random variable\nIf \\(S_X\\) does not have jumps, we say \\(X\\) is a continuous random variable"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#discrete-random-variables",
-    "href": "Pages/Lectures/Review2/rev2.html#discrete-random-variables",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "Discrete random variables are described/summarized by a probability mass function (p.m.f.), which is a specification of the values the random variable can take (i.e. the state space) along with the probabilities with which the random variable attains those values.\n\nP.M.F.’s are often displayed in tabular form: e.g. \\[ \\begin{array}{r|cccc}\n\\boldsymbol{k}              & -1    & 0   & 1   & 2   \\\\\n\\hline\n\\boldsymbol{\\mathbb{P}(X = k)}   & 0.1   & 0.2   & 0.3   & 0.4\n  \\end{array}\\]\nNote that the probability values in a P.M.F. must sum to 1.\n\nQuantities like \\(\\mathbb{P}(X \\leq k)\\) are found by summing up the values of \\(\\mathbb{P}(X = x)\\) for all values of \\(x\\) in the state space that are less than \\(k\\).\n\nFor example, in the example above, \\[\\mathbb{P}(X \\leq 0.5) = \\mathbb{P}(X = -1) + \\mathbb{P}(X = 0)  = 0.1 + 0.2 = 0.3 \\]"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#expected-value",
-    "href": "Pages/Lectures/Review2/rev2.html#expected-value",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "The expected value of a random variable \\(X\\), denoted \\(\\mathbb{E}[X]\\), represents a sort of “average” of \\(X\\), and is computed as \\[ \\mathbb{E}[X] = \\sum_{\\text{all $k$}} k \\cdot \\mathbb{P}(X = k) \\]\n\nAgain, don’t be scared by the sigma notation! It just represents a sum.\nSo, for example, using our P.M.F. from the previous slide, \\[\\begin{align*}\n\\mathbb{E}[X]   & = (-1) \\cdot \\mathbb{P}(X = -1) + (0) \\cdot \\mathbb{P}(X = 0)    \\\\\n& \\hspace{10mm} + (1) \\cdot \\mathbb{P}(X = 1) + (2) \\cdot \\mathbb{P}(X = 2)    \\\\[3mm]\n  & = (-1) \\cdot (0.1) + (0) \\cdot (0.2) + (1) \\cdot (0.3) + (2) \\cdot (0.4)     \\\\[3mm]\n  & = \\boxed{1}\n  \\end{align*}\\]"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#variance-and-standard-deviation",
-    "href": "Pages/Lectures/Review2/rev2.html#variance-and-standard-deviation",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "There are two formulas we can use for the variance of a random variable \\(X\\): \\[ \\mathrm{Var}(X) = \\sum_{\\text{all $k$}} (k - \\mathbb{E}[X])^2 \\cdot \\mathbb{P}(X = k) \\] or \\[ \\mathrm{Var}(X) = \\left(\\sum_{\\text{all $k$}} k^2 \\cdot \\mathbb{P}(X = k) \\right) - (\\mathbb{E}[X])^2 \\]\nThe standard deviation of a random variable is simply the square root of the variance: \\[ \\mathrm{SD}(X) = \\sqrt{\\mathrm{Var}(X)} \\]"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#variance-and-standard-deviation-1",
-    "href": "Pages/Lectures/Review2/rev2.html#variance-and-standard-deviation-1",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "For example, using the PMF from a few slides ago, the first formula for variance tells us to compute \\[\\begin{align*}\n\\mathrm{Var}(X)     & = \\sum_{\\text{all $k$}} (k - \\mathbb{E}[X])^2 \\cdot \\mathbb{P}(X = k)    \\\\\n  & = (-1 - 1)^2 \\cdot \\mathbb{P}(X = -1) + (0 - 1)^2 \\cdot \\mathbb{P}(X = 0)    \\\\\n    & \\hspace{10mm} + (1 - 1)^2 \\cdot \\mathbb{P}(X = 1) + (2 - 1)^2 \\cdot \\mathbb{P}(X = 2)    \\\\[3mm]\n      & = (-1 - 1)^2 \\cdot (0.1) + (0 - 1)^2 \\cdot (0.2)    \\\\\n      & \\hspace{10mm}+ (1 - 1)^2 \\cdot (0.3) + (2 - 1)^2 \\cdot (0.4)   \\\\[3mm]\n      & = \\boxed{1}\n\\end{align*}\\]"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#variance-and-standard-deviation-2",
-    "href": "Pages/Lectures/Review2/rev2.html#variance-and-standard-deviation-2",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "Using the second formula for variance, we first compute \\[\\begin{align*}\n\\sum_{\\text{all $k$}} k^2 \\mathbb{P}(X = k)    &  = (-1)^2 \\cdot \\mathbb{P}(X = -1) + (0)^2 \\cdot \\mathbb{P}(X = 0)    \\\\\n    & \\hspace{10mm} + (1)^2 \\cdot \\mathbb{P}(X = 1) + (2 - 1)^2 \\cdot \\mathbb{P}(X = 2)    \\\\[3mm]\n      & = (-1)^2 \\cdot (0.1) + (0)^2 \\cdot (0.2)    \\\\\n      & \\hspace{10mm}+ (1)^2 \\cdot (0.3) + (2)^2 \\cdot (0.4)   \\\\[3mm]\n      & = 2\n\\end{align*}\\] which means \\[ \\mathrm{Var}(X) = 2 - (1)^2 = \\boxed{1}\\]"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#binomial-distribution",
-    "href": "Pages/Lectures/Review2/rev2.html#binomial-distribution",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "Suppose we have \\(n\\) independent trials, each resulting in “success” with probability \\(p\\) and “failure” with probability \\(1 - p\\). If \\(X\\) denotes the number of successes in these \\(n\\) trials, we say \\(X\\) follow the Binomial distribution with parameters \\(n\\) and \\(p\\), notated \\[ X \\sim \\mathrm{Bin}(n, \\ p) \\]\nIf \\(X \\sim \\mathrm{Bin}(n, \\ p)\\), then:\n\n\\(S_X = \\{0, 1, 2, \\cdots, n\\}\\)\n\\(\\mathbb{P}(X = k) = \\binom{n}{k} p^k (1 - p)^{n - k}\\)\n\\(\\mathbb{E}[X] = np\\)\n\\(\\mathrm{Var}(X) = np(1 - p)\\)"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#binomial-distribution-1",
-    "href": "Pages/Lectures/Review2/rev2.html#binomial-distribution-1",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "In order to verify that the Binomial distribution is appropriate to use, we need to check the Binomial Criteria:\n\nIndependence across trials\nFixed number \\(n\\) of trials\nWell-defined notion of “success” and “failure”\nFixed probability \\(p\\) of success across trials.\n\nIf you are going to use the Binomial distribution in a problem, you must check all four of these!"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#case-study-airline-bookings",
-    "href": "Pages/Lectures/Review2/rev2.html#case-study-airline-bookings",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Case Study: Airline Bookings",
-    "text": "Case Study: Airline Bookings"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#worked-out-example-2",
-    "href": "Pages/Lectures/Review2/rev2.html#worked-out-example-2",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\nSuppose that GauchoAir has found that each passenger that books a ticket on the GA5A flight from SBA to GCV (GauchoVille) actually shows up with probability 90%.\nIf flight GA5A has only 186 seats, but sells 195 tickets, what is the probability that GauchoAir will need to re-book certain passengers?"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#solution",
-    "href": "Pages/Lectures/Review2/rev2.html#solution",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "As always, we start by defining quantities.\nLet \\(X\\) denote the number of passengers, out of the 195 booked on the flight, that actually show up for the flight.\nThe video claims that \\(X\\) follows a Binomial Distribution- let’s work with that claim for a moment (and then we can revisit that assumption later).\nSpecifically, \\(X \\sim \\mathrm{Bin}(195, \\ 0.9)\\).\nNow, the airline will only need to re-book passengers when the number of passengers that arive (\\(X\\)) exceeds the capacity of the plane (186).\nSo, the quantity we seek is \\(\\mathbb{P}(X &gt; 186) = \\mathbb{P}(X \\geq 187)\\).\nThough we could do this by hand, let’s use Python.\nWe can also discuss whether we think the Binomial criteria really are satisfied in this case or not."
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#continuous-random-variables",
-    "href": "Pages/Lectures/Review2/rev2.html#continuous-random-variables",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "Not all random variables are discrete- many are continuous!\nContinuous random variables are characterized by a probability density function (pdf) \\(f_X(x)\\), which must obey the following two properties:\n\n\\(f_X(x)\\) must be nonnegative everywhere\nThe area underneath the graph of \\(f_X(x)\\) must be 1\n\nThe graph of a pdf is called a density curve\nProbabilities are found as areas underneath the density curve."
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#areas-under-the-density-curve",
-    "href": "Pages/Lectures/Review2/rev2.html#areas-under-the-density-curve",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n\n\n\n\n\n\n\n\nFor example, the area above represents \\(\\mathbb{P}(0.25 \\leq X \\leq 0.75)\\)."
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#uniform-distribution",
-    "href": "Pages/Lectures/Review2/rev2.html#uniform-distribution",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "An specific example of a continuous distribution is the Uniform distribution with parameters \\(a\\) and \\(b\\): \\(X \\sim \\mathrm{Unif}(a, \\ b)\\).\nThe p.d.f. is given by \\[ f_X(x) = \\begin{cases} \\frac{1}{b - a} & \\text{if } a \\leq x \\leq b \\\\ 0 & \\text{otherwise} \\\\ \\end{cases} \\]"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#effect-of-changing-a-and-b",
-    "href": "Pages/Lectures/Review2/rev2.html#effect-of-changing-a-and-b",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "viewof a = Inputs.range(\n  [-3, 3], \n  {value: 0, step: 0.1, label: \"a=\"}\n)\n\nviewof b = Inputs.range(\n  [-3, 3], \n  {value: 1, step: 0.1, label: \"b=\"}\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmargin2 = ({top: 20, right: 30, bottom: 30, left: 40})\n\nheight2 = 400\n\nx_values2 = d32.scaleLinear()\n.domain(d32.extent(data2, d =&gt; d.x))\n.range([margin2.left, width - margin2.right])\n\ny_values2 = d32.scaleLinear()\n.domain([Math.min(d32.min(data2, d =&gt; d.y),0), Math.max(1,d32.max(data2, d =&gt; d.y))]).nice()\n.range([height2 - margin2.bottom, margin2.top])\n\nline2 = d32.line()\n.x(d =&gt; x_values2(d.x))\n.y(d =&gt; y_values2(d.y))\n\nxAxis2 = g =&gt; g\n.attr(\"transform\", `translate(0,${height2 - margin2.bottom})`)\n.call(d32.axisBottom(x_values2)\n      .ticks(width / 80)\n      .tickSizeOuter(0))\n\nyAxis2 = g =&gt; g\n.attr(\"transform\", `translate(${margin2.left},0)`)\n.call(d32.axisLeft(y_values2)\n      .tickValues(d32.scaleLinear().domain(y_values2.domain()).ticks()))\n\nfunction unif_pdf (input_value, mu, sigsq) {\nif(input_value &lt; a){\n  return 0\n} else if(input_value &gt; b){\n  return 0\n} else{\n  return 1 / (b - a)\n}\n}\n\nabs_x2=6\n\ndata2 = {\n  let values = [];\n  for (let x = -abs_x2; x &lt; abs_x2; x=x+0.01) values.push({\"x\":x,\"y\":unif_pdf(x, µ, sigsquared)});\n  return values;\n}\n\nd32 = require(\"https://d3js.org/d3.v5.min.js\")\n\nchart2 = {\n  const svg = d32.select(DOM.svg(width, height2));\n  \n  svg.append(\"g\")\n  .call(xAxis2);\n  \n  svg.append(\"g\")\n  .call(yAxis2);\n  \n  svg.append(\"path\")\n  .datum(data2)\n  .attr(\"fill\", \"none\")\n  .attr(\"stroke\", \"steelblue\")\n  .attr(\"stroke-width\", 4)\n  .attr(\"stroke-linejoin\", \"round\")\n  .attr(\"stroke-linecap\", \"round\")\n  .attr(\"d\", line);\n  \n  return svg.node();\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit to https://observablehq.com/@dswalter/normal-distribution for the base of the applet code"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#uniform-distribution-1",
-    "href": "Pages/Lectures/Review2/rev2.html#uniform-distribution-1",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "The expected value and variance are: \\[ \\mathbb{E}[X] = \\frac{a + b}{2} ; \\quad \\mathrm{Var}(X) = \\frac{(b - a)^2}{12} \\]\nAgain, probabilities are found as areas underneath the density curve:\n\n\n\nggplot(data.frame(x = c(-0.5, 1.5)), aes(x)) +\n  stat_function(fun = dunif,\n                args = list(0, 1),\n                xlim = c(0.25, 0.75),\n                geom = \"area\",\n                fill = \"#a4caeb\",\n                n = 250) +\n  stat_function(fun = dunif,\n                args = list(0, 1),\n                size = 1.5,\n                n = 250) +\n  theme_economist_white() +\n  theme(\n    panel.background = element_rect(\"#f0ebd8\"),\n    plot.background = element_rect(fill = \"#f0ebd8\")\n  ) +\n  xlab(\"\") +\n  ylab(\"\") +\n  ylim(c(0, 1.25)) +\n  scale_x_continuous(breaks = round(\n    seq(-0.5, 1.5, by = 0.5), \n    1)\n  ) +\n  theme(plot.margin = margin(-1, 0, 0, 0, \"cm\"))"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#tail-probabilities",
-    "href": "Pages/Lectures/Review2/rev2.html#tail-probabilities",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "Visualizing probabilities as areas also enables us to write more complicated probabilistic expressions as differences of tail probabilities:\n\n\n\n\n\n\n\n\nf &lt;- function(x){\n  0.3 * dbeta(x, 2, 6) + 0.7 * dbeta(x, 6, 2)\n}\n\nx &lt;- seq(0, 1, by = 0.1)\ndata.frame(x) %&gt;% ggplot(aes(x = x)) +\n  stat_function(fun = f,\n                xlim = c(0.12, 0.85),\n                geom = \"area\",\n                fill = \"#a4caeb\") +\n  stat_function(fun = f,\n                size = 1) +\n  theme_economist_white() +\n  theme(\n    panel.background = element_rect(\"#f0ebd8\"),\n    plot.background = element_rect(fill = \"#f0ebd8\")\n  ) +\n  xlab(\"\") +\n  ylab(\"\")  \n\n\n\n\n\n\n\n\n\n\n\n\ncan be decomposed as\n\n\n\n\n\n\n\nf &lt;- function(x){\n  0.3 * dbeta(x, 2, 6) + 0.7 * dbeta(x, 6, 2)\n}\n\nx &lt;- seq(0, 1, by = 0.1)\ndata.frame(x) %&gt;% ggplot(aes(x = x)) +\n  stat_function(fun = f,\n                xlim = c(0, 0.85),\n                geom = \"area\",\n                fill = \"#a4caeb\") +\n  stat_function(fun = f,\n                size = 1) +\n  theme_economist_white() +\n  theme(\n    panel.background = element_rect(\"#f0ebd8\"),\n    plot.background = element_rect(fill = \"#f0ebd8\")\n  ) +\n  xlab(\"\") +\n  ylab(\"\")  \n\n\n\n\n\n\n\n\n\n\n\n\n\\[ \\huge - \\]\n\n\n\n\nf &lt;- function(x){\n  0.3 * dbeta(x, 2, 6) + 0.7 * dbeta(x, 6, 2)\n}\n\nx &lt;- seq(0, 1, by = 0.1)\ndata.frame(x) %&gt;% ggplot(aes(x = x)) +\n  stat_function(fun = f,\n                xlim = c(0, 0.12),\n                geom = \"area\",\n                fill = \"#a4caeb\") +\n  stat_function(fun = f,\n                size = 1) +\n  theme_economist_white() +\n  theme(\n    panel.background = element_rect(\"#f0ebd8\"),\n    plot.background = element_rect(fill = \"#f0ebd8\")\n  ) +\n  xlab(\"\") +\n  ylab(\"\")  \n\n\n\n\n\n\n\n\n\n\n\n\n\\[ \\mathbb{P}(a \\leq X \\leq b) = \\underbrace{\\mathbb{P}(X \\leq b)}_{\\text{c.d.f. at $b$}} - \\underbrace{\\mathbb{P}(X \\leq a)}_{\\text{c.d.f. at $a$}} \\]"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#challenge-problem-try-it-on-your-own",
-    "href": "Pages/Lectures/Review2/rev2.html#challenge-problem-try-it-on-your-own",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "Take-Home Exercise 1\n\n\n\n\n\nThe time (in minutes) spent waiting in line at Starbucks is found to vary uniformly between 5mins and 15mins.\nWhat is the c.d.f. of wait times? (I.e., find the probability that a randomly selected person spends less than \\(x\\) minutes waiting in line, for an arbitrary value \\(x\\). Yes, your final answer will depend on \\(x\\); that’s why the c.d.f. is a function!)"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#chalkboard-example",
-    "href": "Pages/Lectures/Review2/rev2.html#chalkboard-example",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "Chalkboard Example 2\n\n\n\n\n\nThe time (in minutes) spent waiting in line at Starbucks is found to vary uniformly between 5mins and 15mins.\nA random sample of 10 customers is taken; what is the probability that exactly 4 of these customers will spend between 10 and 13 minutes waiting in line?"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#normal-distribution",
-    "href": "Pages/Lectures/Review2/rev2.html#normal-distribution",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "We also learned about the Normal Distribution: \\(X \\sim \\mathcal{N}(\\mu, \\ \\sigma)\\)\nThe normal density curve is bell-shaped"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#changing-mu-and-sigma",
-    "href": "Pages/Lectures/Review2/rev2.html#changing-mu-and-sigma",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "viewof µ = Inputs.range(\n  [-3, 3], \n  {value: 0, step: 0.1, label: \"µ:\"}\n)\n\nviewof σ = Inputs.range(\n  [0.2, 3.1], \n  {value: 1, step: 0.01, label: \"σ:\"}\n)\n\nsigsquared = σ**2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmargin = ({top: 20, right: 30, bottom: 30, left: 40})\n\nheight = 400\n\nx_values = d3.scaleLinear()\n    .domain(d3.extent(data, d =&gt; d.x))\n    .range([margin.left, width - margin.right])\n\ny_values = d3.scaleLinear()\n    .domain([Math.min(d3.min(data, d =&gt; d.y),0), Math.max(1,d3.max(data, d =&gt; d.y))]).nice()\n    .range([height - margin.bottom, margin.top])\n    \nline = d3.line()\n    .x(d =&gt; x_values(d.x))\n    .y(d =&gt; y_values(d.y))\n\nxAxis = g =&gt; g\n  .attr(\"transform\", `translate(0,${height - margin.bottom})`)\n  .call(d3.axisBottom(x_values)\n      .ticks(width / 80)\n      .tickSizeOuter(0))\n\nyAxis = g =&gt; g\n  .attr(\"transform\", `translate(${margin.left},0)`)\n  .call(d3.axisLeft(y_values)\n      .tickValues(d3.scaleLinear().domain(y_values.domain()).ticks()))\n    \nfunction normal_pdf (input_value, mu, sigsq) {\n  let left_chunk = 1/(Math.sqrt(2*Math.PI*sigsq))\n  let right_top = -((input_value-mu)**2)\n  let right_bottom = 2*sigsq\n  return left_chunk * Math.exp(right_top/right_bottom)\n}\n\nabs_x=6\n\ndata = {\n  let values = [];\n  for (let x = -abs_x; x &lt; abs_x; x=x+0.01) values.push({\"x\":x,\"y\":normal_pdf(x, µ, sigsquared)});\n  return values;\n}\n\nd3 = require(\"https://d3js.org/d3.v5.min.js\")\n\nchart = {\n  const svg = d3.select(DOM.svg(width, height));\n\n  svg.append(\"g\")\n      .call(xAxis);\n\n  svg.append(\"g\")\n      .call(yAxis);\n  \n  svg.append(\"path\")\n      .datum(data)\n      .attr(\"fill\", \"none\")\n      .attr(\"stroke\", \"steelblue\")\n      .attr(\"stroke-width\", 4)\n      .attr(\"stroke-linejoin\", \"round\")\n      .attr(\"stroke-linecap\", \"round\")\n      .attr(\"d\", line);\n  \n  return svg.node();\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit to https://observablehq.com/@dswalter/normal-distribution for the majority of the applet code"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#standardization",
-    "href": "Pages/Lectures/Review2/rev2.html#standardization",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "If \\(X \\sim \\mathcal{N}(\\mu, \\ \\sigma)\\), \\[ \\left( \\frac{X - \\mu}{\\sigma} \\right) \\sim \\mathcal{N}(0, \\ 1)\\]\n\n\n\n\nAlso, if \\(X \\sim \\mathcal{N}(\\mu, \\ \\sigma)\\):\n\n\\(\\mathbb{E}[X] = \\mu\\)\n\\(\\mathrm{Var}(X) = \\sigma^2\\)"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#inferential-statistics-1",
-    "href": "Pages/Lectures/Review2/rev2.html#inferential-statistics-1",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Inferential Statistics",
-    "text": "Inferential Statistics\n\nThe primary goal of inferential statistics is to take samples from some population, and use summary statistics to try and make inferences about population parameters\nFor example, we could take samples, compute sample proportions \\(\\widehat{P}\\), and try to make inferences about the population proportion \\(p\\).\nWe could also take samples, compute sample means \\(\\overline{X}\\), and try to make inferences about the population mean \\(\\mu\\).\nOur summary statistics will often be point estimators (i.e. quantities that have expected value equal to the corresponding population parameter), which are random variables as they depend on the sample taken.\n\nFor example, different samples of people will have different average heights.\n\nThe distribution of a point estimator is called the sampling distribution of the estimator."
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#sampling-distribution-of-widehatp",
-    "href": "Pages/Lectures/Review2/rev2.html#sampling-distribution-of-widehatp",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Sampling Distribution of \\(\\widehat{P}\\)",
-    "text": "Sampling Distribution of \\(\\widehat{P}\\)\n\nGiven a population with population proportion \\(p\\), we use \\(\\widehat{P}\\) as a point estimator of \\(p\\).\nAssume the success-failure conditions are met; i.e.\n\n\\(n p \\geq 10\\)\n\\(n (1 - p) \\geq 10\\)\n\nThen, the Central Limit Theorem for Proportions tells us that \\[ \\widehat{P} \\sim \\mathcal{N}\\left(p, \\ \\sqrt{\\frac{p(1 - p)}{n}} \\right) \\]\nIf we don’t have access to \\(p\\) directly (as is often the case), we use the substitution approximation to check whether\n\n\\(n \\widehat{p} \\geq 10\\)\n\\(n (1 - \\widehat{p}) \\geq 10\\)"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#sampling-distribution-of-overlinex",
-    "href": "Pages/Lectures/Review2/rev2.html#sampling-distribution-of-overlinex",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Sampling Distribution of \\(\\overline{X}\\)",
-    "text": "Sampling Distribution of \\(\\overline{X}\\)\n\nGiven a population with population mean \\(\\mu\\) and population standard deviation \\(\\sigma\\), we use \\(\\overline{X}\\) as a point estimator of \\(\\mu\\).\nIf the population is normally distributed, then \\[ \\overline{X} \\sim \\mathcal{N}\\left(\\mu, \\ \\frac{\\sigma}{\\sqrt{n}} \\right) \\] or, equivalently, \\[ \\frac{\\overline{X} - \\mu}{\\sigma / \\sqrt{n}} \\sim \\mathcal{N}\\left(0, \\ 1 \\right) \\]\nIf the population is not normally distributed, but the sample size \\(n\\) is at least 30, then the Central Limit Theorem for the Sample Mean (or just the Central Limit Theorem) tells us \\[ \\frac{\\overline{X} - \\mu}{\\sigma / \\sqrt{n}} \\sim \\mathcal{N}\\left(0, \\ 1 \\right) \\]"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#sampling-distribution-of-overlinex-1",
-    "href": "Pages/Lectures/Review2/rev2.html#sampling-distribution-of-overlinex-1",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Sampling Distribution of \\(\\overline{X}\\)",
-    "text": "Sampling Distribution of \\(\\overline{X}\\)\n\nIf the population is non-normal, the sample size is large, and we don’t have access to \\(\\sigma\\) (but access to \\(s\\), the sample standard deviation instead), then \\[ \\frac{\\overline{X} - \\mu}{s / \\sqrt{n}} \\sim t_{n - 1}\\]\nRecall that the \\(t-\\)distribution looks like a standard normal distribution, but has wider tails than the standard normal distribution (which accounts for the additional uncertainty injected into the problem by using \\(s\\), a random variable, in place of \\(\\sigma\\), a deterministic constant).\nAlso recall that \\(t_{\\infty}\\) (i.e. the \\(t-\\)distribution with an infinite degrees of freedom) is the same thing as the standard normal distribution."
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#confidence-intervals",
-    "href": "Pages/Lectures/Review2/rev2.html#confidence-intervals",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Confidence Intervals",
-    "text": "Confidence Intervals\n\nInstead of using point estimators (which are random) to estimate population parameters (which are deterministic), it may make more sense to provide an interval that, with some confidence level, contains the true parameter value.\nIn general, when constructing a confidence interval for a parameter \\(\\theta\\), we use \\[ \\widehat{\\theta} \\pm c \\cdot \\mathrm{SD}(\\widehat{\\theta}) \\] where \\(c\\) is some constant that depends on our confidence level.\n\nAgain, think of the fishing analogy from the textbook- if we want to be more certain we’ll catch a fish, we should cast a wider net; i.e. higher confidence levels will lead to wider intervals.\n\nThe coefficient \\(c\\) will also depend on the sampling distribution of \\(\\widehat{\\theta}\\)."
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#confidence-intervals-for-a-population-proportion",
-    "href": "Pages/Lectures/Review2/rev2.html#confidence-intervals-for-a-population-proportion",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Confidence Intervals for a Population Proportion",
-    "text": "Confidence Intervals for a Population Proportion\n\nTo construct a confidence interval for an unknown population proportion \\(p\\), we use \\[ \\widehat{p} \\pm (c) \\cdot \\sqrt{\\frac{\\widehat{p} \\cdot (1 - \\widehat{p})}{n}} \\] where \\(c\\) denotes the \\((1 - \\alpha) / 2 \\times 100\\)th percentile of the standard normal distribution, scaled by negative 1\n\nAgain, just remember that the coefficient should be positive"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#confidence-intervals-for-a-population-mean",
-    "href": "Pages/Lectures/Review2/rev2.html#confidence-intervals-for-a-population-mean",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Confidence Intervals for a Population Mean",
-    "text": "Confidence Intervals for a Population Mean\n\nTo construct a confidence interval for an unknown population mean \\(\\mu\\), we use \\[ \\overline{x} \\pm (z^{\\ast}) \\cdot \\frac{\\sigma}{\\sqrt{n}} \\] or \\[ \\overline{x} \\pm (t^{\\ast}) \\cdot \\frac{s}{\\sqrt{n}} \\] depending on the conditions listed in the previous section of these slides."
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#worked-out-example-3",
-    "href": "Pages/Lectures/Review2/rev2.html#worked-out-example-3",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 3\n\n\n\n\nSaoirse would like to construct a 95% confidence interval for the true proportion of California Residents that speak Spanish. To that end, she took a representative sample of 120 CA residents and found that 36 of these residents speak Spanish.\n\nIdentify the population\nDefine the parameter of interest.\nDefine the random variable of interest.\nConstruct a 95% confidence interval for the true proportion of CA residents that speak Spanish."
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#solutions-2",
-    "href": "Pages/Lectures/Review2/rev2.html#solutions-2",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Solutions",
-    "text": "Solutions\n\nFinally, we perform the test: we will reject the null in favor of the alternative if \\(|\\mathrm{ts}|\\) is larger than the critical value.\nIn this case, \\(|\\mathrm{ts}| = |-1.026| = 1.026 &lt; 1.96\\) meaning we fail to reject the null:\n\n\n\nAt an \\(\\alpha = 0.05\\) level of significance, there was insufficient evidence to reject the null hypothesis that 24% of applicants are admitted into the major in favor of the alternative that the true admittance rate was not 24%."
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#worked-out-example-1",
-    "href": "Pages/Lectures/Review2/rev2.html#worked-out-example-1",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 3\n\n\n\n\n\nSaoirse would like to construct a 95% confidence interval for the true proportion of California Residents that speak Spanish. To that end, she took a representative sample of 120 CA residents and found that 36 of these residents speak Spanish.\n\nIdentify the population\nDefine the parameter of interest.\nDefine the random variable of interest.\nConstruct a 95% confidence interval for the true proportion of CA residents that speak Spanish."
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#worked-out-example-4",
-    "href": "Pages/Lectures/Review2/rev2.html#worked-out-example-4",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\n\nAdministration within a Statistics department at an unnamed university claims to admit 24% of all applicants. A disgruntled student, dubious of the administration’s claims, takes a representative sample of 120 students who applied to the Statistics major, and found that 20% of these students were actually admitted into the major.\n\nConduct a two-sided hypothesis test at a 5% level of significance on the administrator’s claims that 24% of applicants into the Statistics major are admitted. Be sure you phrase your conclusion clearly, and in the context of the problem."
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#lower-tailed-test",
-    "href": "Pages/Lectures/Review2/rev2.html#lower-tailed-test",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Lower-Tailed Test",
-    "text": "Lower-Tailed Test\n\n\n\n\n\n\n\nLower-Tailed Test for a Proportion:\n\n\n\n\n\nWhen testing \\(H_0: \\ p = p_0\\) vs \\(H_A: \\ p &lt; p_0\\) at an \\(\\alpha\\) level of significance, where \\(p\\) denotes a population proportion, the test takes the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\mathrm{TS} &lt; z_{\\alpha} \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] where:\n\n\\(\\displaystyle \\mathrm{TS} = \\frac{\\widehat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}}\\)\n\\(z_{\\alpha}\\) denotes the \\((\\alpha) \\times 100\\)th percentile of the standard normal distribution, not scaled by anything\n\nprovided that: \\(n p_0 \\geq 10\\) and \\(n (1 - p_0) \\geq 10\\)."
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#upper-tailed-test",
-    "href": "Pages/Lectures/Review2/rev2.html#upper-tailed-test",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Upper-Tailed Test",
-    "text": "Upper-Tailed Test\n\n\n\n\n\n\n\nUpper-Tailed Test for a Proportion:\n\n\n\n\n\nWhen testing \\(H_0: \\ p = p_0\\) vs \\(H_A: \\ p &gt; p_0\\) at an \\(\\alpha\\) level of significance, where \\(p\\) denotes a population proportion, the test takes the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\mathrm{TS} &gt; z_{1 - \\alpha} \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] where:\n\n\\(\\displaystyle \\mathrm{TS} = \\frac{\\widehat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}}\\)\n\\(z_{1 - \\alpha}\\) denotes the \\((1 - \\alpha) \\times 100\\)th percentile of the standard normal distribution, not scaled by anything\n\nprovided that: \\(n p_0 \\geq 10\\) and \\(n (1 - p_0) \\geq 10\\)."
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#lower-tailed-test-1",
-    "href": "Pages/Lectures/Review2/rev2.html#lower-tailed-test-1",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Lower-Tailed Test",
-    "text": "Lower-Tailed Test\n\n\n\n\n\n\n\nLower-Tailed Test for a Proportion:\n\n\n\n\nWhen testing \\(H_0: \\ p = p_0\\) vs \\(H_A: \\ p &lt; p_0\\) at an \\(\\alpha\\) level of significance, where \\(p\\) denotes a population proportion, the test takes the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\mathrm{TS} &lt; z_{\\alpha} \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] where:\n\n\\(\\displaystyle \\mathrm{TS} = \\frac{\\widehat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}}\\)\n\\(z_{\\alpha}\\) denotes the \\((\\alpha) \\times 100\\)th percentile of the standard normal distribution, not scaled by anything\n\nprovided that: \\(n p_0 \\geq 10\\) and \\(n (1 - p_0) \\geq 10\\)."
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#upper-tailed-test-1",
-    "href": "Pages/Lectures/Review2/rev2.html#upper-tailed-test-1",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Upper-Tailed Test",
-    "text": "Upper-Tailed Test\n\n\n\n\n\n\n\nUpper-Tailed Test for a Proportion:\n\n\n\n\nWhen testing \\(H_0: \\ p = p_0\\) vs \\(H_A: \\ p &gt; p_0\\) at an \\(\\alpha\\) level of significance, where \\(p\\) denotes a population proportion, the test takes the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\mathrm{TS} &gt; z_{1 - \\alpha} \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] where:\n\n\\(\\displaystyle \\mathrm{TS} = \\frac{\\widehat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}}\\)\n\\(z_{1 - \\alpha}\\) denotes the \\((1 - \\alpha) \\times 100\\)th percentile of the standard normal distribution, not scaled by anything\n\nprovided that: \\(n p_0 \\geq 10\\) and \\(n (1 - p_0) \\geq 10\\)."
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#hypothesis-testing-for-mean",
-    "href": "Pages/Lectures/Review2/rev2.html#hypothesis-testing-for-mean",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Hypothesis Testing for Mean",
-    "text": "Hypothesis Testing for Mean\nSimilar to test for proportions, we also have the following alternatives:\n\nA two-sided alternative is \\(H_A: \\ \\mu \\neq \\mu_0\\)\nA lower-tailed alternative is \\(H_A: \\ \\mu &lt; \\mu_0\\)\nAn upper-tailed alternative is \\(H_A: \\ \\mu &gt; \\mu_0\\)"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#two-sided-test-for-a-proportion-5",
-    "href": "Pages/Lectures/Review2/rev2.html#two-sided-test-for-a-proportion-5",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Two-Sided Test for a Proportion",
-    "text": "Two-Sided Test for a Proportion\n\n\n\n\n\n\n\nTwo-Sided Test for a Proportion:\n\n\n\n\n\nWhen testing \\(H_0: \\ p = p_0\\) vs \\(H_A: \\ p \\neq p_0\\) at an \\(\\alpha\\) level of significance, where \\(p\\) denotes a population proportion, the test takes the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| &gt; z_{1 - \\alpha/2} \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] where:\n\n\\(\\displaystyle \\mathrm{TS} = \\frac{\\widehat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}}\\)\n\\(z_{1 - \\alpha/2}\\) denotes the \\((\\alpha/2) \\times 100\\)th percentile of the standard normal distribution, scaled by negative 1 (which is equivalent to the \\((1 - \\alpha/2) \\times 100\\)th percentile)\n\nprovided that: \\(n p_0 \\geq 10\\) and \\(n (1 - p_0) \\geq 10\\)."
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#conditions-to-check-for-hypothesis-testing-for-mean",
-    "href": "Pages/Lectures/Review2/rev2.html#conditions-to-check-for-hypothesis-testing-for-mean",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Conditions to Check for Hypothesis Testing for Mean",
-    "text": "Conditions to Check for Hypothesis Testing for Mean\nWe want to check the following conditions:\n\n\n\n\n\n\ngraph TB\n  A[Is the population Normal?  . ] --&gt; |Yes| B{{Use Normal .}}\n  A --&gt; |No| C[Is n &gt;= 30?  .]\n  C --&gt; |Yes| D[sigma or s?  .]\n  C --&gt; |No| E{{cannot proceed   .}}\n  D --&gt; |sigma| F{{Use Normal .}}\n  D --&gt; |s| G{{Use t }}"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#test-statistics-for-hypothesis-testing-for-mean",
-    "href": "Pages/Lectures/Review2/rev2.html#test-statistics-for-hypothesis-testing-for-mean",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Test Statistics for Hypothesis Testing for Mean",
-    "text": "Test Statistics for Hypothesis Testing for Mean\n\\[ \\mathrm{TS} = \\begin{cases}\n  \\displaystyle \\frac{\\overline{X} - \\mu_0}{\\sigma / \\sqrt{n}}    & \\text{if } \\quad  \\begin{array}{rl} \\bullet & \\text{pop. is normal, OR} \\\\ \\bullet & \\text{$n \\geq 30$ AND $\\sigma$ is known} \\end{array} \\quad \\stackrel{H_0}{\\sim} \\mathcal{N}(0, \\ 1) \\\\[5mm]\n  \\displaystyle \\frac{\\overline{X} - \\mu_0}{s / \\sqrt{n}}         & \\text{if } \\quad  \\begin{array}{rl} \\bullet & \\text{$n \\geq 30$ AND $\\sigma$ is not known} \\end{array} \\quad \\stackrel{H_0}{\\sim} t_{n - 1}\n\\end{cases} \\]"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#test-statistic-for-two-sided-hypothesis-testing-for-mean",
-    "href": "Pages/Lectures/Review2/rev2.html#test-statistic-for-two-sided-hypothesis-testing-for-mean",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Test Statistic for Two-Sided Hypothesis Testing for Mean",
-    "text": "Test Statistic for Two-Sided Hypothesis Testing for Mean\n\nIn the two-sided case, our critical value will still be the value \\(c\\) that ensures \\[ \\mathbb{P}(|\\mathrm{TS}| &gt; c) = \\alpha \\] (i.e. we reject \\(H_0\\) whenever \\(\\overline{X}\\) is far away from \\(\\mu_0\\)) meaning \\(c\\) will the \\((\\alpha /2) \\times 100\\%\\) percentile, scaled by negative 1, of either the standard normal distribution or the \\(t_{n - 1}\\) distribution.\n\nAgain, don’t forget about how the symmetry of the normal and t-distributions translates to relationships between percentiles!\n\nOur test in the two-sided case will then take the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| &gt; c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#test-statistic-for-one-sided-hypothesis-testing-for-mean",
-    "href": "Pages/Lectures/Review2/rev2.html#test-statistic-for-one-sided-hypothesis-testing-for-mean",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Test Statistic for One-Sided Hypothesis Testing for Mean",
-    "text": "Test Statistic for One-Sided Hypothesis Testing for Mean\n\nAnalogously as with the hypothesis testing for proportions, the lower-tailed test of a population mean takes the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\mathrm{TS} &lt; c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] and the upper-tailed test of a population mean takes the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\mathrm{TS} &gt; c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#p-value",
-    "href": "Pages/Lectures/Review2/rev2.html#p-value",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "P-Value",
-    "text": "P-Value\n\nWe also talked about p-value: the probability of obtaining a value of the statistic as extreme or more extreme as the observed statistic when the null hypothesis is true.\nWhen the p-value is small, we have evidence that our observed results are unlikely to have occurred by chance alone when the null hypothesis is true. The smaller the p-value, the stronger the evidence is against the null hypothesis.\n\nSmall p-value suggest that we have results that are inconsistent with the null hypothesis and that the null should be rejected.\nLarge p-value suggest that we have results that are not inconsistent with the null hypothesis and that null should not be rejected."
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html#p-value-1",
-    "href": "Pages/Lectures/Review2/rev2.html#p-value-1",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "P-Value",
-    "text": "P-Value\nWe say that the data provide statistically significant evidence against the null hypothesis when the p-value is less than some reference valiue (the significance level \\(\\alpha\\)). Three common significance levels are $= 0.01, = 0.05, $ and \\(\\alpha = 0.1\\).\n\n\n\n\n\n\n\n\n\nDecision\nStatistically significant?\n\n\n\n\np-value \\(\\leq \\alpha\\)\nReject \\(H_0\\)\nYes\n\n\np-value \\(&gt; \\alpha\\)\nFail to reject \\(H_0\\)\nNo"
-  },
-  {
-    "objectID": "Pages/Lectures/Review2/rev2.html",
-    "href": "Pages/Lectures/Review2/rev2.html",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "",
-    "text": "Recall long ago we discussed the notion of an experiment: any procedure we can repeat an infinite number of times where each time we repeat the experiment the same fixed set of things (i.e. the outcomes) can occur.\nA random variable, loosely speaking, is some sort of numerical variable that keeps track of certain quantities relating to an experiment.\nFor example, if we toss 7 coins and let \\(X\\) denote the number of heads we observe in these 7 coin tosses, then \\(X\\) would be a random variable.\nThe set of all values a random variable can attain is called the state space, and is denoted \\(S_X\\).\nWe classify random variables based on their state space:\n\nIf \\(S_X\\) has jumps, we say \\(X\\) is a discrete random variable\nIf \\(S_X\\) does not have jumps, we say \\(X\\) is a continuous random variable\n\n\n\n\n\n\nDiscrete random variables are described/summarized by a probability mass function (p.m.f.), which is a specification of the values the random variable can take (i.e. the state space) along with the probabilities with which the random variable attains those values.\n\nP.M.F.’s are often displayed in tabular form: e.g. \\[ \\begin{array}{r|cccc}\n\\boldsymbol{k}              & -1    & 0   & 1   & 2   \\\\\n\\hline\n\\boldsymbol{\\mathbb{P}(X = k)}   & 0.1   & 0.2   & 0.3   & 0.4\n  \\end{array}\\]\nNote that the probability values in a P.M.F. must sum to 1.\n\nQuantities like \\(\\mathbb{P}(X \\leq k)\\) are found by summing up the values of \\(\\mathbb{P}(X = x)\\) for all values of \\(x\\) in the state space that are less than \\(k\\).\n\nFor example, in the example above, \\[\\mathbb{P}(X \\leq 0.5) = \\mathbb{P}(X = -1) + \\mathbb{P}(X = 0)  = 0.1 + 0.2 = 0.3 \\]\n\n\n\n\n\n\nThe expected value of a random variable \\(X\\), denoted \\(\\mathbb{E}[X]\\), represents a sort of “average” of \\(X\\), and is computed as \\[ \\mathbb{E}[X] = \\sum_{\\text{all $k$}} k \\cdot \\mathbb{P}(X = k) \\]\n\nAgain, don’t be scared by the sigma notation! It just represents a sum.\nSo, for example, using our P.M.F. from the previous slide, \\[\\begin{align*}\n\\mathbb{E}[X]   & = (-1) \\cdot \\mathbb{P}(X = -1) + (0) \\cdot \\mathbb{P}(X = 0)    \\\\\n& \\hspace{10mm} + (1) \\cdot \\mathbb{P}(X = 1) + (2) \\cdot \\mathbb{P}(X = 2)    \\\\[3mm]\n  & = (-1) \\cdot (0.1) + (0) \\cdot (0.2) + (1) \\cdot (0.3) + (2) \\cdot (0.4)     \\\\[3mm]\n  & = \\boxed{1}\n  \\end{align*}\\]\n\n\n\n\n\n\nThere are two formulas we can use for the variance of a random variable \\(X\\): \\[ \\mathrm{Var}(X) = \\sum_{\\text{all $k$}} (k - \\mathbb{E}[X])^2 \\cdot \\mathbb{P}(X = k) \\] or \\[ \\mathrm{Var}(X) = \\left(\\sum_{\\text{all $k$}} k^2 \\cdot \\mathbb{P}(X = k) \\right) - (\\mathbb{E}[X])^2 \\]\nThe standard deviation of a random variable is simply the square root of the variance: \\[ \\mathrm{SD}(X) = \\sqrt{\\mathrm{Var}(X)} \\]\n\n\n\n\n\nFor example, using the PMF from a few slides ago, the first formula for variance tells us to compute \\[\\begin{align*}\n\\mathrm{Var}(X)     & = \\sum_{\\text{all $k$}} (k - \\mathbb{E}[X])^2 \\cdot \\mathbb{P}(X = k)    \\\\\n  & = (-1 - 1)^2 \\cdot \\mathbb{P}(X = -1) + (0 - 1)^2 \\cdot \\mathbb{P}(X = 0)    \\\\\n    & \\hspace{10mm} + (1 - 1)^2 \\cdot \\mathbb{P}(X = 1) + (2 - 1)^2 \\cdot \\mathbb{P}(X = 2)    \\\\[3mm]\n      & = (-1 - 1)^2 \\cdot (0.1) + (0 - 1)^2 \\cdot (0.2)    \\\\\n      & \\hspace{10mm}+ (1 - 1)^2 \\cdot (0.3) + (2 - 1)^2 \\cdot (0.4)   \\\\[3mm]\n      & = \\boxed{1}\n\\end{align*}\\]\n\n\n\n\n\n\nUsing the second formula for variance, we first compute \\[\\begin{align*}\n\\sum_{\\text{all $k$}} k^2 \\mathbb{P}(X = k)    &  = (-1)^2 \\cdot \\mathbb{P}(X = -1) + (0)^2 \\cdot \\mathbb{P}(X = 0)    \\\\\n    & \\hspace{10mm} + (1)^2 \\cdot \\mathbb{P}(X = 1) + (2 - 1)^2 \\cdot \\mathbb{P}(X = 2)    \\\\[3mm]\n      & = (-1)^2 \\cdot (0.1) + (0)^2 \\cdot (0.2)    \\\\\n      & \\hspace{10mm}+ (1)^2 \\cdot (0.3) + (2)^2 \\cdot (0.4)   \\\\[3mm]\n      & = 2\n\\end{align*}\\] which means \\[ \\mathrm{Var}(X) = 2 - (1)^2 = \\boxed{1}\\]\n\n\n\n\n\n\nSuppose we have \\(n\\) independent trials, each resulting in “success” with probability \\(p\\) and “failure” with probability \\(1 - p\\). If \\(X\\) denotes the number of successes in these \\(n\\) trials, we say \\(X\\) follow the Binomial distribution with parameters \\(n\\) and \\(p\\), notated \\[ X \\sim \\mathrm{Bin}(n, \\ p) \\]\nIf \\(X \\sim \\mathrm{Bin}(n, \\ p)\\), then:\n\n\\(S_X = \\{0, 1, 2, \\cdots, n\\}\\)\n\\(\\mathbb{P}(X = k) = \\binom{n}{k} p^k (1 - p)^{n - k}\\)\n\\(\\mathbb{E}[X] = np\\)\n\\(\\mathrm{Var}(X) = np(1 - p)\\)\n\n\n\n\n\n\nIn order to verify that the Binomial distribution is appropriate to use, we need to check the Binomial Criteria:\n\nIndependence across trials\nFixed number \\(n\\) of trials\nWell-defined notion of “success” and “failure”\nFixed probability \\(p\\) of success across trials.\n\nIf you are going to use the Binomial distribution in a problem, you must check all four of these!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\n\nSuppose that GauchoAir has found that each passenger that books a ticket on the GA5A flight from SBA to GCV (GauchoVille) actually shows up with probability 90%.\nIf flight GA5A has only 186 seats, but sells 195 tickets, what is the probability that GauchoAir will need to re-book certain passengers?\n\n\n\n\n\n\n\n\n\nAs always, we start by defining quantities.\nLet \\(X\\) denote the number of passengers, out of the 195 booked on the flight, that actually show up for the flight.\nThe video claims that \\(X\\) follows a Binomial Distribution- let’s work with that claim for a moment (and then we can revisit that assumption later).\nSpecifically, \\(X \\sim \\mathrm{Bin}(195, \\ 0.9)\\).\nNow, the airline will only need to re-book passengers when the number of passengers that arive (\\(X\\)) exceeds the capacity of the plane (186).\nSo, the quantity we seek is \\(\\mathbb{P}(X &gt; 186) = \\mathbb{P}(X \\geq 187)\\).\nThough we could do this by hand, let’s use Python.\nWe can also discuss whether we think the Binomial criteria really are satisfied in this case or not.\n\n\n\n\n\nNot all random variables are discrete- many are continuous!\nContinuous random variables are characterized by a probability density function (pdf) \\(f_X(x)\\), which must obey the following two properties:\n\n\\(f_X(x)\\) must be nonnegative everywhere\nThe area underneath the graph of \\(f_X(x)\\) must be 1\n\nThe graph of a pdf is called a density curve\nProbabilities are found as areas underneath the density curve.\n\n\n\n\n\n\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n\n\n\n\n\n\n\n\nFor example, the area above represents \\(\\mathbb{P}(0.25 \\leq X \\leq 0.75)\\).\n\n\n\n\n\nAn specific example of a continuous distribution is the Uniform distribution with parameters \\(a\\) and \\(b\\): \\(X \\sim \\mathrm{Unif}(a, \\ b)\\).\nThe p.d.f. is given by \\[ f_X(x) = \\begin{cases} \\frac{1}{b - a} & \\text{if } a \\leq x \\leq b \\\\ 0 & \\text{otherwise} \\\\ \\end{cases} \\]\n\n\n\n\n\n\n\n\nviewof a = Inputs.range(\n  [-3, 3], \n  {value: 0, step: 0.1, label: \"a=\"}\n)\n\nviewof b = Inputs.range(\n  [-3, 3], \n  {value: 1, step: 0.1, label: \"b=\"}\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmargin2 = ({top: 20, right: 30, bottom: 30, left: 40})\n\nheight2 = 400\n\nx_values2 = d32.scaleLinear()\n.domain(d32.extent(data2, d =&gt; d.x))\n.range([margin2.left, width - margin2.right])\n\ny_values2 = d32.scaleLinear()\n.domain([Math.min(d32.min(data2, d =&gt; d.y),0), Math.max(1,d32.max(data2, d =&gt; d.y))]).nice()\n.range([height2 - margin2.bottom, margin2.top])\n\nline2 = d32.line()\n.x(d =&gt; x_values2(d.x))\n.y(d =&gt; y_values2(d.y))\n\nxAxis2 = g =&gt; g\n.attr(\"transform\", `translate(0,${height2 - margin2.bottom})`)\n.call(d32.axisBottom(x_values2)\n      .ticks(width / 80)\n      .tickSizeOuter(0))\n\nyAxis2 = g =&gt; g\n.attr(\"transform\", `translate(${margin2.left},0)`)\n.call(d32.axisLeft(y_values2)\n      .tickValues(d32.scaleLinear().domain(y_values2.domain()).ticks()))\n\nfunction unif_pdf (input_value, mu, sigsq) {\nif(input_value &lt; a){\n  return 0\n} else if(input_value &gt; b){\n  return 0\n} else{\n  return 1 / (b - a)\n}\n}\n\nabs_x2=6\n\ndata2 = {\n  let values = [];\n  for (let x = -abs_x2; x &lt; abs_x2; x=x+0.01) values.push({\"x\":x,\"y\":unif_pdf(x, µ, sigsquared)});\n  return values;\n}\n\nd32 = require(\"https://d3js.org/d3.v5.min.js\")\n\nchart2 = {\n  const svg = d32.select(DOM.svg(width, height2));\n  \n  svg.append(\"g\")\n  .call(xAxis2);\n  \n  svg.append(\"g\")\n  .call(yAxis2);\n  \n  svg.append(\"path\")\n  .datum(data2)\n  .attr(\"fill\", \"none\")\n  .attr(\"stroke\", \"steelblue\")\n  .attr(\"stroke-width\", 4)\n  .attr(\"stroke-linejoin\", \"round\")\n  .attr(\"stroke-linecap\", \"round\")\n  .attr(\"d\", line);\n  \n  return svg.node();\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit to https://observablehq.com/@dswalter/normal-distribution for the base of the applet code\n\n\n\n\n\nThe expected value and variance are: \\[ \\mathbb{E}[X] = \\frac{a + b}{2} ; \\quad \\mathrm{Var}(X) = \\frac{(b - a)^2}{12} \\]\nAgain, probabilities are found as areas underneath the density curve:\n\n\n\nggplot(data.frame(x = c(-0.5, 1.5)), aes(x)) +\n  stat_function(fun = dunif,\n                args = list(0, 1),\n                xlim = c(0.25, 0.75),\n                geom = \"area\",\n                fill = \"#a4caeb\",\n                n = 250) +\n  stat_function(fun = dunif,\n                args = list(0, 1),\n                size = 1.5,\n                n = 250) +\n  theme_economist_white() +\n  theme(\n    panel.background = element_rect(\"#f0ebd8\"),\n    plot.background = element_rect(fill = \"#f0ebd8\")\n  ) +\n  xlab(\"\") +\n  ylab(\"\") +\n  ylim(c(0, 1.25)) +\n  scale_x_continuous(breaks = round(\n    seq(-0.5, 1.5, by = 0.5), \n    1)\n  ) +\n  theme(plot.margin = margin(-1, 0, 0, 0, \"cm\"))\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing probabilities as areas also enables us to write more complicated probabilistic expressions as differences of tail probabilities:\n\n\n\n\n\n\n\n\nf &lt;- function(x){\n  0.3 * dbeta(x, 2, 6) + 0.7 * dbeta(x, 6, 2)\n}\n\nx &lt;- seq(0, 1, by = 0.1)\ndata.frame(x) %&gt;% ggplot(aes(x = x)) +\n  stat_function(fun = f,\n                xlim = c(0.12, 0.85),\n                geom = \"area\",\n                fill = \"#a4caeb\") +\n  stat_function(fun = f,\n                size = 1) +\n  theme_economist_white() +\n  theme(\n    panel.background = element_rect(\"#f0ebd8\"),\n    plot.background = element_rect(fill = \"#f0ebd8\")\n  ) +\n  xlab(\"\") +\n  ylab(\"\")  \n\n\n\n\n\n\n\n\n\n\n\n\ncan be decomposed as\n\n\n\n\n\n\n\nf &lt;- function(x){\n  0.3 * dbeta(x, 2, 6) + 0.7 * dbeta(x, 6, 2)\n}\n\nx &lt;- seq(0, 1, by = 0.1)\ndata.frame(x) %&gt;% ggplot(aes(x = x)) +\n  stat_function(fun = f,\n                xlim = c(0, 0.85),\n                geom = \"area\",\n                fill = \"#a4caeb\") +\n  stat_function(fun = f,\n                size = 1) +\n  theme_economist_white() +\n  theme(\n    panel.background = element_rect(\"#f0ebd8\"),\n    plot.background = element_rect(fill = \"#f0ebd8\")\n  ) +\n  xlab(\"\") +\n  ylab(\"\")  \n\n\n\n\n\n\n\n\n\n\n\n\n\\[ \\huge - \\]\n\n\n\n\nf &lt;- function(x){\n  0.3 * dbeta(x, 2, 6) + 0.7 * dbeta(x, 6, 2)\n}\n\nx &lt;- seq(0, 1, by = 0.1)\ndata.frame(x) %&gt;% ggplot(aes(x = x)) +\n  stat_function(fun = f,\n                xlim = c(0, 0.12),\n                geom = \"area\",\n                fill = \"#a4caeb\") +\n  stat_function(fun = f,\n                size = 1) +\n  theme_economist_white() +\n  theme(\n    panel.background = element_rect(\"#f0ebd8\"),\n    plot.background = element_rect(fill = \"#f0ebd8\")\n  ) +\n  xlab(\"\") +\n  ylab(\"\")  \n\n\n\n\n\n\n\n\n\n\n\n\n\\[ \\mathbb{P}(a \\leq X \\leq b) = \\underbrace{\\mathbb{P}(X \\leq b)}_{\\text{c.d.f. at $b$}} - \\underbrace{\\mathbb{P}(X \\leq a)}_{\\text{c.d.f. at $a$}} \\]\n\n\n\n\n\n\n\n\n\n\n\nTake-Home Exercise 1\n\n\n\n\n\nThe time (in minutes) spent waiting in line at Starbucks is found to vary uniformly between 5mins and 15mins.\nWhat is the c.d.f. of wait times? (I.e., find the probability that a randomly selected person spends less than \\(x\\) minutes waiting in line, for an arbitrary value \\(x\\). Yes, your final answer will depend on \\(x\\); that’s why the c.d.f. is a function!)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChalkboard Example 2\n\n\n\n\n\nThe time (in minutes) spent waiting in line at Starbucks is found to vary uniformly between 5mins and 15mins.\nA random sample of 10 customers is taken; what is the probability that exactly 4 of these customers will spend between 10 and 13 minutes waiting in line?\n\n\n\n\n\n\n\n\n\nWe also learned about the Normal Distribution: \\(X \\sim \\mathcal{N}(\\mu, \\ \\sigma)\\)\nThe normal density curve is bell-shaped\n\n\n\n\n\nviewof µ = Inputs.range(\n  [-3, 3], \n  {value: 0, step: 0.1, label: \"µ:\"}\n)\n\nviewof σ = Inputs.range(\n  [0.2, 3.1], \n  {value: 1, step: 0.01, label: \"σ:\"}\n)\n\nsigsquared = σ**2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmargin = ({top: 20, right: 30, bottom: 30, left: 40})\n\nheight = 400\n\nx_values = d3.scaleLinear()\n    .domain(d3.extent(data, d =&gt; d.x))\n    .range([margin.left, width - margin.right])\n\ny_values = d3.scaleLinear()\n    .domain([Math.min(d3.min(data, d =&gt; d.y),0), Math.max(1,d3.max(data, d =&gt; d.y))]).nice()\n    .range([height - margin.bottom, margin.top])\n    \nline = d3.line()\n    .x(d =&gt; x_values(d.x))\n    .y(d =&gt; y_values(d.y))\n\nxAxis = g =&gt; g\n  .attr(\"transform\", `translate(0,${height - margin.bottom})`)\n  .call(d3.axisBottom(x_values)\n      .ticks(width / 80)\n      .tickSizeOuter(0))\n\nyAxis = g =&gt; g\n  .attr(\"transform\", `translate(${margin.left},0)`)\n  .call(d3.axisLeft(y_values)\n      .tickValues(d3.scaleLinear().domain(y_values.domain()).ticks()))\n    \nfunction normal_pdf (input_value, mu, sigsq) {\n  let left_chunk = 1/(Math.sqrt(2*Math.PI*sigsq))\n  let right_top = -((input_value-mu)**2)\n  let right_bottom = 2*sigsq\n  return left_chunk * Math.exp(right_top/right_bottom)\n}\n\nabs_x=6\n\ndata = {\n  let values = [];\n  for (let x = -abs_x; x &lt; abs_x; x=x+0.01) values.push({\"x\":x,\"y\":normal_pdf(x, µ, sigsquared)});\n  return values;\n}\n\nd3 = require(\"https://d3js.org/d3.v5.min.js\")\n\nchart = {\n  const svg = d3.select(DOM.svg(width, height));\n\n  svg.append(\"g\")\n      .call(xAxis);\n\n  svg.append(\"g\")\n      .call(yAxis);\n  \n  svg.append(\"path\")\n      .datum(data)\n      .attr(\"fill\", \"none\")\n      .attr(\"stroke\", \"steelblue\")\n      .attr(\"stroke-width\", 4)\n      .attr(\"stroke-linejoin\", \"round\")\n      .attr(\"stroke-linecap\", \"round\")\n      .attr(\"d\", line);\n  \n  return svg.node();\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCredit to https://observablehq.com/@dswalter/normal-distribution for the majority of the applet code\n\n\n\n\n\nIf \\(X \\sim \\mathcal{N}(\\mu, \\ \\sigma)\\), \\[ \\left( \\frac{X - \\mu}{\\sigma} \\right) \\sim \\mathcal{N}(0, \\ 1)\\]\n\n\n\n\nAlso, if \\(X \\sim \\mathcal{N}(\\mu, \\ \\sigma)\\):\n\n\\(\\mathbb{E}[X] = \\mu\\)\n\\(\\mathrm{Var}(X) = \\sigma^2\\)"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture04/Lec04.html",
-    "href": "Pages/Lectures/Lecture04/Lec04.html",
-    "title": "PSTAT 5A: Lecture 04",
-    "section": "",
-    "text": "Last time we discussed the basics of probability.\n\nThese included things like: experiments, outcome spaces, events, and probability.\n\nWe briefly talked about the different approaches to defining the probability of an even.\nFinally, we also saw how Venn Diagrams can help visualize set relationships and operations.\n\n\n\n\n\nNow, let’s return to the classical approach to probability.\nAssuming the outcomes in our outcome space \\(\\Omega\\) are equally likely, the classical approach tells us to compute the probability of any event \\(E\\) as \\[ \\mathbb{P}(E) = \\frac{\\text{number of ways $E$ can occur}}{\\text{total number of elements in $\\Omega$}} \\]\nUp until now, we’ve computed both the numerator and the denominator by explicitly listing out the elements contained in the respective sets, and then counting the number of elements.\nThis works decently for small sets, but is highly inefficient for large sets.\n\n\n\n\nWouldn’t it be nice if there was a way to systematically count the elements in a set, without having to explicitly enumerate all elements?\n\n\n\nThankfully- there do exist some tools for that exact purpose:"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture05/Lec05.html",
-    "href": "Pages/Lectures/Lecture05/Lec05.html",
-    "title": "PSTAT 5A: Lecture 05",
-    "section": "",
-    "text": "Submission: Syllabus states that all course submissions (HW, labs, and quizzes) will be via Gradescope!\nNo late homework!\nPlease show your work!"
-  },
-  {
-    "objectID": "Pages/Lectures/MT2Rev/mt2rev.html",
-    "href": "Pages/Lectures/MT2Rev/mt2rev.html",
-    "title": "PSTAT 5A: Lecture 19",
-    "section": "",
-    "text": "So far, we’ve talked about constructing confidence intervals and performing hypothesis tests for both population proportions and population means.\nOne crucial thing to note is that everything we’ve done has been in the context of a single population\nSometimes, as Data Scientists, we may want to test claims about the differences between two populations\n\nE.g. Is the average monthly income in Santa Barbara different from the average monthly income in San Francisco?\nE.g. Is the proportion of people who test positive for a disease in one country different than the proportion that test positive in a second country?"
   }
 ]

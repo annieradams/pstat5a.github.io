@@ -1,8 +1,8 @@
 ---
-title: "PSTAT 5A: Lecture 18"
+title: "PSTAT 5A: Lecture 19"
 subtitle: "Two-Sample Tests"
 author: "Mallory Wang"
-date: "07/22/24"
+date: "07/23/24"
 format: 
     revealjs:
       html-math-method: mathjax
