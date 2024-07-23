@@ -1,5 +1,5 @@
 ---
-title: "PSTAT 5A: Lecture 19"
+title: "PSTAT 5A: Lecture 20"
 subtitle: "Inference for Paired Data"
 author: "Mallory Wang"
 date: "07/24/24"

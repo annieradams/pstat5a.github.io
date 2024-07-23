@@ -1,8 +1,8 @@
 ---
-title: "PSTAT 5A: Lecture 20"
+title: "PSTAT 5A: Lecture 21"
 subtitle: "Intro to Statistical Modeling, and Correlation"
-author: "Ethan P. Marzban"
-date: "07/27/23"
+author: "Mallory Wang"
+date: "07/25/24"
 format: 
     revealjs:
       html-math-method: mathjax
@@ -25,30 +25,11 @@ library(tidyverse)
 library(ggthemes)
 ```
 
-# Where We Have Been
-
-## Taking Stock
-
-- Let's start off today's lecture by taking stock of what we've done in this class so far.
-
-- We started off by talking about descriptive statistics, which seems to *describe* data.
-
-    - These descriptions can be visual (e.g. boxplots, scatterplots, etc.) or numerical (e.g. measures of central tendency, measures of spread, etc.)
-    
-- Next, we talked about probability, which sought to give us a framework with which to discuss randomness.
-
-    - Key notions include: random variables, and distributions (e.g. uniform, normal, etc.)
-    
-
-## Taking Stock
-
-- After that, we spent a few weeks talking about **inference**.
-
-    - This refers to the situation in which we have a population governed by a parameter, and we wish to take samples from this population and use these samples to make inferences about the population parameter.
-    
-    - We also discussed how to compare population means across multiple populations, using two-sample _t_-tests and ANOVA.
+# Movitating Statistical Modeling
 
 ## Scatterplots and Trends
+
+- This week, we talked about two sample problems.
 
 - Let's take a moment to revisit some material from Lecture 2.
 
@@ -295,19 +276,19 @@ $$ \texttt{y} = f(\texttt{x}) + \texttt{noise} $$
 - One question we may want to ask is: how did various factors (e.g. class, gender, etc.) affect whether or not a given passenger survived?
 
     - For instance, since women and children boarded lifeboats first, it may be plausible surmise that women and children had a higher likelihood of surviving.
-    
 
 ## Classification Problem
 
-- Notice how here, the response variable (i.e. whether or not someone survived) is a **binary** variable; that is, it takes only one of two values (`survived` or `did not survive`). As such, this is a classification problem.
+Another example is returning to our Penguins dataset. Here is a scatterplot of flipper length by bill length:
 
-    - I should note: perhaps confusingly, a problem in which the response is binary is sometimes called **logistic regression**.
-    
-    - But, that is a bit of a misnomer- it is technically a *classification* problem, since the response variable is categorical.
+![](penguins.png)
 
-- By the way, there is an actual dataset on the *Titanic* at [https://www.kaggle.com/competitions/titanic](https://www.kaggle.com/competitions/titanic)
-    
-- Again, we won't have a chance to talk about logistic regression in this class- for that, I refer you to a Machine Learning class like PSTAT 131/231!
+This is clearly very linear but it's missing an additional element.
+
+## Classification Problem
+
+![](penguins_group.png)
+
 
 ## Multivariate Models
 
@@ -331,6 +312,26 @@ $$ \texttt{y} = f(\texttt{x}) + \texttt{noise} $$
 
 - Recall that a line is described by two parameters: an intercept and a slope. As such, to say we are assuming a "linear form" for $f()$ is to say we are assuming $f(x) = \beta_0 + \beta_1 \cdot x$, so our model becomes
 $$ \texttt{y} = \beta_0 + \beta_1 \cdot \texttt{x} + \texttt{noise} $$ 
+
+## Scatterplots
+
+- The first step in examining the elationship between two quantitative variables is to use a graphical display—a scatterplot—to display the association between the two variables.
+
+- Each point in the scatterplot represents an individual in the dataset.
+
+- A scatterplot allows us to see if there is an *overall pattern* in the data and whether there are any striking *deviations* from that pattern. In particular, we are interested in whether there is a linear relationship between the two variables.
+
+## Scatterplots
+
+How do we describe a scatterplot?
+
+1. **direction**: positive or negative
+
+2. **linearity**: linear or not linear
+
+3. **strength**: weak, moderate, strong
+
+4. **outliers**: points that clearly fall outside of the overall pattern of the relationship
 
 ## Strength of a Relationship
 
