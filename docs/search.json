@@ -3735,20 +3735,6 @@
     "text": "Independence\n\n\n\n\n\n\n\nDefinition\n\n\n\nTwo events \\(E\\) and \\(F\\) are defined to be independent (notated \\(E \\perp F\\)) if any of the following hold:\n\n\\(\\mathbb{P}(E \\mid F) = \\mathbb{P}(E)\\)\n\\(\\mathbb{P}(F \\mid E) = \\mathbb{P}(F)\\)\n\\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E) \\cdot \\mathbb{P}(F)\\)\n\n\n\n\n\n\n\nNote- the probability of an intersection equals the product of unconditional (i.e. marginal) probabilities ONLY WHEN THE EVENTS ARE INDEPENDENT.\n\nIn general, the only way to compute the probability of an intersection is to use the Multiplication Rule."
   },
   {
-    "objectID": "Pages/Lectures/Lecture20/Lec20.html#taking-stock",
-    "href": "Pages/Lectures/Lecture20/Lec20.html#taking-stock",
-    "title": "PSTAT 5A: Lecture 21",
-    "section": "Taking Stock",
-    "text": "Taking Stock\n\nLet’s start off today’s lecture by taking stock of what we’ve done in this class so far.\nWe started off by talking about descriptive statistics, which seems to describe data.\n\nThese descriptions can be visual (e.g. boxplots, scatterplots, etc.) or numerical (e.g. measures of central tendency, measures of spread, etc.)\n\nNext, we talked about probability, which sought to give us a framework with which to discuss randomness.\n\nKey notions include: random variables, and distributions (e.g. uniform, normal, etc.)"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture20/Lec20.html#taking-stock-1",
-    "href": "Pages/Lectures/Lecture20/Lec20.html#taking-stock-1",
-    "title": "PSTAT 5A: Lecture 21",
-    "section": "Taking Stock",
-    "text": "Taking Stock\n\nAfter that, we spent a few weeks talking about inference.\n\nThis refers to the situation in which we have a population governed by a parameter, and we wish to take samples from this population and use these samples to make inferences about the population parameter.\nWe also discussed how to compare population means across multiple populations, using two-sample t-tests and ANOVA."
-  },
-  {
     "objectID": "Pages/Lectures/Lecture20/Lec20.html#scatterplots-and-trends",
     "href": "Pages/Lectures/Lecture20/Lec20.html#scatterplots-and-trends",
     "title": "PSTAT 5A: Lecture 21",
@@ -3805,6 +3791,13 @@
     "text": "Classification Problem\nAnother example is returning to our Penguins dataset. Here is a scatterplot of flipper length by bill length:\n\nThis is clearly very linear but it’s missing an additional element."
   },
   {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#classification-problem-2",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#classification-problem-2",
+    "title": "PSTAT 5A: Lecture 21",
+    "section": "Classification Problem",
+    "text": "Classification Problem"
+  },
+  {
     "objectID": "Pages/Lectures/Lecture20/Lec20.html#multivariate-models",
     "href": "Pages/Lectures/Lecture20/Lec20.html#multivariate-models",
     "title": "PSTAT 5A: Lecture 21",
@@ -3817,6 +3810,20 @@
     "title": "PSTAT 5A: Lecture 21",
     "section": "Linear Models",
     "text": "Linear Models\n\nFor now, let’s focus on modeling the relationship between a numerical response variable and a single numerical explanatory variable: \\[ \\texttt{y} = f(\\texttt{x}) + \\texttt{noise} \\]\nOf particular interest to statisticians are the class of linear models, which assume a linear form for the signal function.\nRecall that a line is described by two parameters: an intercept and a slope. As such, to say we are assuming a “linear form” for \\(f()\\) is to say we are assuming \\(f(x) = \\beta_0 + \\beta_1 \\cdot x\\), so our model becomes \\[ \\texttt{y} = \\beta_0 + \\beta_1 \\cdot \\texttt{x} + \\texttt{noise} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#scatterplots",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#scatterplots",
+    "title": "PSTAT 5A: Lecture 21",
+    "section": "Scatterplots",
+    "text": "Scatterplots\n\nThe first step in examining the elationship between two quantitative variables is to use a graphical display—a scatterplot—to display the association between the two variables.\nEach point in the scatterplot represents an individual in the dataset.\nA scatterplot allows us to see if there is an overall pattern in the data and whether there are any striking deviations from that pattern. In particular, we are interested in whether there is a linear relationship between the two variables."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#scatterplots-1",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#scatterplots-1",
+    "title": "PSTAT 5A: Lecture 21",
+    "section": "Scatterplots",
+    "text": "Scatterplots\nHow do we describe a scatterplot?\n\ndirection: positive or negative\nlinearity: linear or not linear\nstrength: weak, moderate, strong\noutliers: points that clearly fall outside of the overall pattern of the relationship"
   },
   {
     "objectID": "Pages/Lectures/Lecture20/Lec20.html#strength-of-a-relationship",
@@ -5669,33 +5676,5 @@
       "Course Info",
       "Schedule of Topics"
     ]
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture20/Lec20.html#classification-problem-2",
-    "href": "Pages/Lectures/Lecture20/Lec20.html#classification-problem-2",
-    "title": "PSTAT 5A: Lecture 21",
-    "section": "Classification Problem",
-    "text": "Classification Problem"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture20/Lec20.html#classification-problem-3",
-    "href": "Pages/Lectures/Lecture20/Lec20.html#classification-problem-3",
-    "title": "PSTAT 5A: Lecture 21",
-    "section": "Classification Problem",
-    "text": "Classification Problem\n\nNotice how here, the response variable (i.e. whether or not someone survived) is a binary variable; that is, it takes only one of two values (survived or did not survive). As such, this is a classification problem.\n\nI should note: perhaps confusingly, a problem in which the response is binary is sometimes called logistic regression.\nBut, that is a bit of a misnomer- it is technically a classification problem, since the response variable is categorical.\n\nBy the way, there is an actual dataset on the Titanic at https://www.kaggle.com/competitions/titanic\nAgain, we won’t have a chance to talk about logistic regression in this class- for that, I refer you to a Machine Learning class like PSTAT 131/231!"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture20/Lec20.html#scatterplots",
-    "href": "Pages/Lectures/Lecture20/Lec20.html#scatterplots",
-    "title": "PSTAT 5A: Lecture 21",
-    "section": "Scatterplots",
-    "text": "Scatterplots\n\nThe first step in examining the elationship between two quantitative variables is to use a graphical display—a scatterplot—to display the association between the two variables.\nEach point in the scatterplot represents an individual in the dataset.\nA scatterplot allows us to see if there is an overall pattern in the data and whether there are any striking deviations from that pattern. In particular, we are interested in whether there is a linear relationship between the two variables."
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture20/Lec20.html#scatterplots-1",
-    "href": "Pages/Lectures/Lecture20/Lec20.html#scatterplots-1",
-    "title": "PSTAT 5A: Lecture 21",
-    "section": "Scatterplots",
-    "text": "Scatterplots\nHow do we describe a scatterplot?\n\ndirection: positive or negative\nlinearity: linear or not linear\nstrength: weak, moderate, strong\noutliers: points that clearly fall outside of the overall pattern of the relationship"
   }
 ]
