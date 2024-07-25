@@ -4337,6 +4337,13 @@
     "text": "Correlation?\n\nBy the way: remember that we also talked about Pearson’s correlation coefficient last lecture.\nIt is defined as \\[ r = \\frac{1}{n - 1} \\sum_{i=1}^{n} \\left( \\frac{x_i - \\overline{x}}{s_X} \\right)  \\left( \\frac{y_i - \\overline{y}}{s_Y} \\right) \\] and gives a way of quantifying the strength of the linear association between two lists of numbers \\(\\{x_i\\}_{i=1}^{n}\\) and \\(\\{y_i\\}_{i=1}^{n}\\).\nI mentioned last time that \\(r\\) does NOT give the slope of the line that best fits the data- that role is given to \\(\\widehat{\\beta}_1\\)!\nHowever, there is in fact a connection between \\(\\widehat{\\beta}_1\\) and \\(r\\): it turns out (after a bit of math), we can equivalently compute \\(\\widehat{\\beta}_1\\) as \\[ \\widehat{\\beta} = \\frac{s_Y}{s_X} \\cdot r \\]"
   },
   {
+    "objectID": "Pages/Lectures/Lecture21/Lec21.html#properties-of-correlation",
+    "href": "Pages/Lectures/Lecture21/Lec21.html#properties-of-correlation",
+    "title": "PSTAT 5A: Lecture 21",
+    "section": "Properties of Correlation",
+    "text": "Properties of Correlation\n\nCorrelation makes no distinction between explanatory and response variables.\nCorrelation has no units and doesn’t change when we change the units of measurement of x , y , or both.\nThe sign of the correlation matches the direction of the association.\nThe value of \\(r\\) is always between -1 and 1."
+  },
+  {
     "objectID": "Pages/Lectures/Lecture21/Lec21.html#fitted-values",
     "href": "Pages/Lectures/Lecture21/Lec21.html#fitted-values",
     "title": "PSTAT 5A: Lecture 21",
@@ -4344,53 +4351,39 @@
     "text": "Fitted Values\n\nWe also introduced the notion of fitted values:\n\n\n\n\n\nThis is why we write the OLS regression line as \\[ \\widehat{y} = \\widehat{\\beta}_0 + \\widehat{\\beta}_1 \\cdot x \\] the fitted values are simply the points along the OLS regression line!"
   },
   {
-    "objectID": "Pages/Lectures/Lecture21/Lec21.html#prediction",
-    "href": "Pages/Lectures/Lecture21/Lec21.html#prediction",
+    "objectID": "Pages/Lectures/Lecture21/Lec21.html#returning-to-height-and-weight-example",
+    "href": "Pages/Lectures/Lecture21/Lec21.html#returning-to-height-and-weight-example",
     "title": "PSTAT 5A: Lecture 21",
-    "section": "Prediction",
-    "text": "Prediction\n\nIn this way, we can perhaps see how the OLS regression line can be used to perform prediction.\nTo see how this works, let’s return to a toy example from last lecture: \\[\\begin{align*}\n\\boldsymbol{x}    & = \\{3, \\ 7, \\ 8\\}   \\\\\n\\boldsymbol{y}    & = \\{20, \\ 14, \\ 17\\}\n\\end{align*}\\]"
+    "section": "Returning to Height and Weight Example",
+    "text": "Returning to Height and Weight Example\n\n\\[weight = 3.367 + 0.979 \\times height\\]"
   },
   {
-    "objectID": "Pages/Lectures/Lecture21/Lec21.html#prediction-1",
-    "href": "Pages/Lectures/Lecture21/Lec21.html#prediction-1",
+    "objectID": "Pages/Lectures/Lecture21/Lec21.html#example",
+    "href": "Pages/Lectures/Lecture21/Lec21.html#example",
     "title": "PSTAT 5A: Lecture 21",
-    "section": "Prediction",
-    "text": "Prediction\n\nNotice that we do not have an x-observation of 5. As such, we don’t know what the y-value corresponding to an x-value of 5 is.\nHowever, we do have a decent guess as to what the y-value corresponding to an x-value of 5 is- the corresponding fitted value!"
+    "section": "Example",
+    "text": "Example\nSuppose someone has height = 180cm, what is their expected weight under our model?\n\\[weight_{new} = 3.367 + 0.979 \\times 180\\]\n\\[weight_{new} = 179.6\\]\nHow do we evaluate the fit of the line?\n\nSince we are using the regression line to predict y from x, the prediction “errors” are the difference between the observed values of y and the estimated values of y:\n\n\\[residual = y-\\hat{y}\\] \\[residual = \\text{observed} - \\text{estimated}\\] Suppose the new person actually has an observed weight of 182 then\n\\[residual_{new} = 182 - 179.6 = 2.4\\]"
   },
   {
-    "objectID": "Pages/Lectures/Lecture21/Lec21.html#prediction-2",
-    "href": "Pages/Lectures/Lecture21/Lec21.html#prediction-2",
+    "objectID": "Pages/Lectures/Lecture21/Lec21.html#least-squares-regression-line",
+    "href": "Pages/Lectures/Lecture21/Lec21.html#least-squares-regression-line",
     "title": "PSTAT 5A: Lecture 21",
-    "section": "Prediction",
-    "text": "Prediction\n\nIn other words, our best guess at (i.e. our best prediction of) the \\(y-\\)value corresponding to an \\(x-\\)value of \\(5\\) is the point \\(\\widehat{y}^{(5)}\\) obtained by plugging \\(x = 5\\) into the OLS regression line:\n\n\n\\[ \\widehat{y}^{(5)} = \\frac{1}{7} (155 - 6 \\cdot 5) \\approx 17.857 \\]"
+    "section": "Least-Squares Regression Line",
+    "text": "Least-Squares Regression Line\nThe least-squares regression line will produce the smallest sum of squared residuals \\(\\sum e^2\\), provided certain conditions are met.\nProperties:\n\nAn estimate of the slope of the line is \\[\\beta_1 = r \\frac{s_y}{s_x}\\]\nThe line must pass through the point (\\(\\bar{x},\\bar{y}\\)); consequently, an estimate of the y-intercept of the least-squares regression line is \\[\\beta_0 = \\bar{y} - \\beta_1 \\bar{x}\\]"
   },
   {
-    "objectID": "Pages/Lectures/Lecture21/Lec21.html#leadup",
-    "href": "Pages/Lectures/Lecture21/Lec21.html#leadup",
+    "objectID": "Pages/Lectures/Lecture21/Lec21.html#interpretation-of-slope-and-intercept",
+    "href": "Pages/Lectures/Lecture21/Lec21.html#interpretation-of-slope-and-intercept",
     "title": "PSTAT 5A: Lecture 21",
-    "section": "Leadup",
-    "text": "Leadup\n\nLet’s look at another toy dataset:"
+    "section": "Interpretation of Slope and Intercept",
+    "text": "Interpretation of Slope and Intercept\n\nSimilar to the interpretation of a slope: change in y for a unit change in x, we take into account the variability inherent to data:\n\nThe slope is the expected change in the estimated average outcome of y when the predictor variable x happens to be one unit larger\nFrom our example: \\[weight = 3.367 + 0.979 \\times height\\]\n\nWe estimate that, on average, the estimated weight will be about 0.979 lbs more for each additional 1 cm increase in height.\n\nThe y-intercept describes the average outcome of y when \\(x=0\\) AND the linear model is valid all the way to \\(x=0\\). This is often not the case in application cases."
   },
   {
-    "objectID": "Pages/Lectures/Lecture21/Lec21.html#leadup-1",
-    "href": "Pages/Lectures/Lecture21/Lec21.html#leadup-1",
+    "objectID": "Pages/Lectures/Lecture21/Lec21.html#friends-dont-let-friends-extrapolate",
+    "href": "Pages/Lectures/Lecture21/Lec21.html#friends-dont-let-friends-extrapolate",
     "title": "PSTAT 5A: Lecture 21",
-    "section": "Leadup",
-    "text": "Leadup\n\nSay we want to predict the corresponding y value of an x value of, 40.\nFollowing our steps from before, we would just find the fitted value corresponding to x = 40:"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture21/Lec21.html#leadup-2",
-    "href": "Pages/Lectures/Lecture21/Lec21.html#leadup-2",
-    "title": "PSTAT 5A: Lecture 21",
-    "section": "Leadup",
-    "text": "Leadup\n\nHere’s the kicker: the true fit was actually NOT linear!"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture21/Lec21.html#extrapolation-and-the-dangers-thereof",
-    "href": "Pages/Lectures/Lecture21/Lec21.html#extrapolation-and-the-dangers-thereof",
-    "title": "PSTAT 5A: Lecture 21",
-    "section": "Extrapolation, and the Dangers Thereof",
-    "text": "Extrapolation, and the Dangers Thereof\n\nSpecifically, the true signal function was quadratic. (When you zoom in close enough, parabolas look linear!)\nThis is why it is a bad idea to try to extrapolate too far.\n\nExtrapolation is the name we give to trying to apply a model estimate to values that are very far outside the realm of the original data.\nHow far is “very far”? Statisticians disagree on this front. For the purposes of this class, just use your best judgment."
+    "section": "Friends Don’t Let Friends Extrapolate",
+    "text": "Friends Don’t Let Friends Extrapolate\n\nPredicting outside of the range of the x-variable is called extrapolation. Extrapolation assumes that the linear relationship continues outside of the data range.\n\nIn our example, should we use our model to predict the weight of someone who is 120lbs?"
   },
   {
     "objectID": "Pages/Lectures/Lecture21/Lec21.html#your-turn",
@@ -4400,15 +4393,22 @@
     "text": "Your Turn!\n\n\n\n\n\n\nExercise 1\n\n\n\n\nAn airline is interested in determining the relationship between flight duration (in minutes) and the net amount of soda consumed (in oz.). Letting x denote flight duration (the explanatory variable) and y denote amount of soda consumed (the response variable), a sample yielded the following results: \\[ \\begin{array}{cc}\n  \\displaystyle \\sum_{i=1}^{102} x_i  = 20,\\!190.55;   & \\displaystyle \\sum_{i=1}^{102} (x_i - \\overline{x})^2 =  101,\\!865    \\\\\n  \\displaystyle \\sum_{i=1}^{102} y_i  = 166,\\!907.8   & \\displaystyle \\sum_{i=1}^{102} (y_i - \\overline{y})^2 =  120,\\!794.2   \\\\\n\\displaystyle \\sum_{i=1}^{100} (x_i - \\overline{x})(y_i - \\overline{y}) = 80,\\!184.62 \\\\\n\\end{array} \\]\n\nFind the equation of the OLS Regression line.\nIf a particular flight has a duration of 130 minutes, how many ounces of soda would we expect to be consumed on the flight? (Suppose the \\(x-\\)observations ranged from around \\(114\\) to around \\(271\\))"
   },
   {
-    "objectID": "Pages/Lectures/Lecture21/Lec21.html#back-to-widehatbeta_1",
-    "href": "Pages/Lectures/Lecture21/Lec21.html#back-to-widehatbeta_1",
+    "objectID": "Pages/Lectures/Lecture21/Lec21.html#coefficient-of-determination-r2",
+    "href": "Pages/Lectures/Lecture21/Lec21.html#coefficient-of-determination-r2",
     "title": "PSTAT 5A: Lecture 21",
-    "section": "Back to \\(\\widehat{\\beta}_1\\)",
-    "text": "Back to \\(\\widehat{\\beta}_1\\)\n\nRecall that, by virtue of being the slope of the OLS regression line, \\(\\widehat{\\beta}_1\\) has the following interpretation:\n\n\n\nA one-unit change in x corresponds to a predicted \\(\\widehat{\\beta}_1\\)-unit change in y.\n\n\n\nNotice the word “predicted” there- remember that \\(\\widehat{\\beta}_1\\) is an estimator, not the true slope!\n\nThat is to say: different datasets generated from the same model may produce different values of \\(\\widehat{\\beta}_1\\).\n\nThat’s right: \\(\\widehat{\\beta}_1\\) can be thought of as a random variable."
+    "section": "Coefficient of Determination \\(R^2\\)",
+    "text": "Coefficient of Determination \\(R^2\\)\nWe evaluate the strength of the linear relationship between two variables earlier using the correlation, \\(r\\). It is more common to explain the strength of a linear regression using \\(R^2\\), also called the coefficient of determination.\nThe \\(R^2\\) of a linear model describes the fraction of variation in the response variable that is explained by the least-squares regression line.\n\\[r = \\sqrt{R^2}\\]\n\nThe \\(R^2\\) is a measure of how good the linear model is. The closer \\(R^2\\) is to 100%, the better!"
   },
   {
-    "objectID": "Pages/Lectures/Lecture21/Lec21.html#back-to-widehatbeta_1-1",
-    "href": "Pages/Lectures/Lecture21/Lec21.html#back-to-widehatbeta_1-1",
+    "objectID": "Pages/Lectures/Lecture21/Lec21.html#task",
+    "href": "Pages/Lectures/Lecture21/Lec21.html#task",
+    "title": "PSTAT 5A: Lecture 21",
+    "section": "Task",
+    "text": "Task\n\nHere’s a task for you: write a function called regtab() that takes in two inputs, x and y, and returns a regression table resulting from regressing y on x.\n\nYou can use the scipy.stats.linregress() function"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture21/Lec21.html#back-to-widehatbeta_1",
+    "href": "Pages/Lectures/Lecture21/Lec21.html#back-to-widehatbeta_1",
     "title": "PSTAT 5A: Lecture 21",
     "section": "Back to \\(\\widehat{\\beta}_1\\)",
     "text": "Back to \\(\\widehat{\\beta}_1\\)\n\nWe know that \\(\\widehat{\\beta}_1\\) seeks to estimate \\(\\beta_1\\).\nIt seems plausible, then, that we might be able to perform inference on \\(\\beta_1\\) (the true slope) using \\(\\widehat{\\beta}_1\\) (the OLS estimator).\nIndeed, we can!\nLet’s start off by considering confidence intervals for the true slope \\(\\beta_1\\)."
@@ -4442,29 +4442,29 @@
     "text": "Solutions\n\nWe previously saw that \\(\\widehat{\\beta}_1 \\approx 0.7871656\\).\nWe know to use the \\(t_{100}\\) distribution; since we are using a 95% confidence level, we take \\(1.98\\) as our confidence coefficient (make sure you know where this came from!)\nHence, our confidence interval is \\[(0.7871656) \\pm 1.98 \\cdot \\sqrt{0.006135} = \\boxed{[0.6321 \\ , \\ 0.9423]}\\]\nThe interpretation of this interval is similar to the interpretation of our confidence intervals thus far:\n\n\n\nWe are 95% confident that the interval \\([0.6321 \\ , \\ 0.9423]\\) covers the true value of \\(\\beta_1\\)."
   },
   {
-    "objectID": "Pages/Lectures/Lecture21/Lec21.html#example",
-    "href": "Pages/Lectures/Lecture21/Lec21.html#example",
-    "title": "PSTAT 5A: Lecture 21",
-    "section": "Example",
-    "text": "Example\n\n\n\\(\\widehat{\\beta_0} =\\) -2.5884231; \\(\\widehat{\\beta_1} =\\) -1.733778"
-  },
-  {
     "objectID": "Pages/Lectures/Lecture21/Lec21.html#example-1",
     "href": "Pages/Lectures/Lecture21/Lec21.html#example-1",
     "title": "PSTAT 5A: Lecture 21",
     "section": "Example",
-    "text": "Example\n\n\n\\(\\widehat{\\beta_0} =\\) -2.5884231; \\(\\widehat{\\beta_1} =\\) -0.483778"
+    "text": "Example\n\n\n\\(\\widehat{\\beta_0} =\\) -2.5884231; \\(\\widehat{\\beta_1} =\\) -1.733778"
   },
   {
     "objectID": "Pages/Lectures/Lecture21/Lec21.html#example-2",
     "href": "Pages/Lectures/Lecture21/Lec21.html#example-2",
     "title": "PSTAT 5A: Lecture 21",
     "section": "Example",
+    "text": "Example\n\n\n\\(\\widehat{\\beta_0} =\\) -2.5884231; \\(\\widehat{\\beta_1} =\\) -0.483778"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture21/Lec21.html#example-3",
+    "href": "Pages/Lectures/Lecture21/Lec21.html#example-3",
+    "title": "PSTAT 5A: Lecture 21",
+    "section": "Example",
     "text": "Example\n\n\n\\(\\widehat{\\beta_0} =\\) -2.5884231; \\(\\widehat{\\beta_1} =\\) 0.266222\nDo we really believe the slope, though?"
   },
   {
-    "objectID": "Pages/Lectures/Lecture21/Lec21.html#leadup-3",
-    "href": "Pages/Lectures/Lecture21/Lec21.html#leadup-3",
+    "objectID": "Pages/Lectures/Lecture21/Lec21.html#leadup",
+    "href": "Pages/Lectures/Lecture21/Lec21.html#leadup",
     "title": "PSTAT 5A: Lecture 21",
     "section": "Leadup",
     "text": "Leadup\n\nWithout the OLS regression line, the scatterplot on the previous page would likely be one we classify as exhibiting “no relationship” between x and y.\nHowever, the OLS regression line has picked up a positive slope.\nWhat’s going on?\nIn other words, does our data (i.e. the data that gave rise to the value of \\(\\widehat{\\beta}_1\\) computed) support our claim that there is no relationship?"
@@ -4496,13 +4496,6 @@
     "title": "PSTAT 5A: Lecture 21",
     "section": "Hypothesis Testing on \\(\\beta_1\\)",
     "text": "Hypothesis Testing on \\(\\beta_1\\)\n\nIndeed, many computer softwares (and statistical papers!) report a table resembling the following after running a regression:\n\n\n\n\n\n\nEstimate\nStd. Error\nt-value\nPr(&gt;|t|)\n\n\n\n\nIntercept\n-2.588\n2.327\n-1.112\n0.269\n\n\nSlope\n-1.734\n0.222\n-7.811\n6.41e-12\n\n\n\n\n\nThe first column is the raw estimated value (i.e. \\(\\widehat{\\beta_0}\\) and \\(\\widehat{\\beta_1}\\), respectively)\nThe second column is the standard error (i.e. standard deviation) of the estimator\nThe third column is the test statistic (i.e. the first column divided by the second)\nThe fourth column is the p-value in a two-sided test, testing whether or not the given parameter is actually zero or not."
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture21/Lec21.html#task",
-    "href": "Pages/Lectures/Lecture21/Lec21.html#task",
-    "title": "PSTAT 5A: Lecture 21",
-    "section": "Task",
-    "text": "Task\n\nHere’s a task for you: write a function called regtab() that takes in two inputs, x and y, and returns a regression table resulting from regressing y on x.\n\nYou can use the scipy.stats.linregress() function"
   },
   {
     "objectID": "Pages/Lectures/Lecture21/Lec21.html#some-exercises",
@@ -5671,7 +5664,7 @@
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: July 20, 2024\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/24 - 6/28)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\n\nHW1 Soln Quiz1 Soln\nWorksheet 01\nSolns\nLab 01  Introduction to Python\n\n\n2\n(7/01 - 7/05)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n09: Discrete Random Variables\n\nHW2 Soln Quiz2 Soln\nWorksheet 02\nSolns\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\n\n\n3\n(7/08 - 7/12)\n\n07: Review\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\n\nHW3 Soln Quiz3 Soln\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\n\n\n\n4\n(7/15 - 7/19)\n\n13: Confidence Intervals for Means\n\nT-Table\n\n14: Hypothesis Testing for Proportions\n17: Hypothesis Testing, Part II\n\nHW4 Soln\nWorksheet 04\nSolns\nLab 04  Simulations, Sampling, and Loops\n\n\n\n5\n(7/22 - 7/26)\n\n18: Review\n19: Two-Sample t-Tests\n20: Inference for Paired Data\n21: Intro to Statistical Modeling, and Correlation\n\nWorksheet 05\n\nLab 05  Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/29 - 8/01)\n\n22: Regression, Part II\n23: Regression Diagnostics, and Sampling Procedures\n24: Ways Statistics Can Deceive\n25: Review\nFINAL EXAM: Thursday, August 1 during lecture\n\nQ&A with TA.\nLab 06  A Trip To the Movies",
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\n\n\nLast Updated: July 22, 2024\n\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections.\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDiscussion Worksheet\nLab\n\n\n\n\n1\n(6/24 - 6/28)\n\n00: Introduction\n01: Descriptive Statistics I\n02: Descriptive Statistics II\n\nRemember to read the section titled “Transforming Data” on your own\n\n03: Intro to Probability\n04: Counting\n\nHW1 Soln Quiz1 Soln\nWorksheet 01\nSolns\nLab 01  Introduction to Python\n\n\n2\n(7/01 - 7/05)\n\n05: Conditional Probabilities\n06: NO LECTURE (Fourth of July)\n09: Discrete Random Variables\n\nHW2 Soln Quiz2 Soln\nWorksheet 02\nSolns\nLab 02  Data Classes, Comparisons, Conditionals, and Functions\n\n\n3\n(7/08 - 7/12)\n\n07: Review\n10: Continuous Random Variables\n\nZ-Table\n\n11: Introduction to Inference\n12: Confidence Intervals for Proportions\n\nExercise 3\n\n\nHW3 Soln Quiz3 Soln\nWorksheet 03\nSolns\nLab 03  Descriptive Statistics and Plotting\n\n\n\n4\n(7/15 - 7/19)\n\n13: Confidence Intervals for Means\n\nT-Table\n\n14: Hypothesis Testing for Proportions\n17: Hypothesis Testing, Part II\n\nHW4 Soln\nWorksheet 04\nSolns\nLab 04  Simulations, Sampling, and Loops\n\n\n\n5\n(7/22 - 7/26)\n\n18: Review\n19: Two-Sample t-Tests\n20: Inference for Paired Data\n21: Intro to Statistical Modeling, and Correlation\n\nWorksheet 05\n\nLab 05  Markdown Syntax, Importing Data, and Manipulating Tables\n\n\n6\n(7/29 - 8/01)\n\n22: Regression, Part II\n23: Regression Diagnostics, and Sampling Procedures\n24: Ways Statistics Can Deceive\n25: Review\nFINAL EXAM: Thursday, August 1 during lecture\n\nQ&A with TA.\nLab 06  A Trip To the Movies",
     "crumbs": [
       "Course Info",
       "Schedule of Topics"
