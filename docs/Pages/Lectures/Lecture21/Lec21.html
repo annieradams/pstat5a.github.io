@@ -11,8 +11,8 @@
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.45">
 
-  <meta name="author" content="Mallory Wang">
-  <meta name="dcterms.date" content="2024-07-25">
+  <meta name="author" content="Ethan P. Marzban">
+  <meta name="dcterms.date" content="2023-07-31">
   <title>PSTAT 5A: Summer Session A, 2024 – PSTAT 5A: Lecture 21</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -330,8 +330,8 @@
 <section id="title-slide" data-background-image="5a_hex.png" data-background-opacity="0.5" data-background-position="left" data-background-size="contain" class="center">
   <h1 class="title" style="text-align: right">PSTAT 5A: Lecture 21</h1>
   <h2 class="subtitle" style="text-align: right">Regression, Part II</h2>
-  <p class="author" style="text-align: right">Mallory Wang</p>
-  <p class="date" style="text-align: right">2024-07-25</p>
+  <p class="author" style="text-align: right">Ethan P. Marzban</p>
+  <p class="date" style="text-align: right">2023-07-31</p>
 </section>
 <section id="last-time" class="slide level2">
 <h2>Last Time</h2>
@@ -396,15 +396,6 @@
 <li class="fragment"><p>However, there is in fact a connection between <span class="math inline">\(\widehat{\beta}_1\)</span> and <span class="math inline">\(r\)</span>: it turns out (after a bit of math), we can equivalently compute <span class="math inline">\(\widehat{\beta}_1\)</span> as <span class="math display">\[ \widehat{\beta} = \frac{s_Y}{s_X} \cdot r \]</span></p></li>
 </ul>
 </section>
-<section id="properties-of-correlation" class="slide level2">
-<h2>Properties of Correlation</h2>
-<ol type="1">
-<li class="fragment"><p>Correlation makes no distinction between explanatory and response variables.</p></li>
-<li class="fragment"><p>Correlation has no units and doesn’t change when we change the units of measurement of x , y , or both.</p></li>
-<li class="fragment"><p>The sign of the correlation matches the direction of the association.</p></li>
-<li class="fragment"><p>The value of <span class="math inline">\(r\)</span> is always between -1 and 1.</p></li>
-</ol>
-</section>
 <section id="fitted-values" class="slide level2" style="font-size:30px">
 <h2>Fitted Values</h2>
 <ul>
@@ -417,52 +408,117 @@
 <li class="fragment">This is why we write the OLS regression line as <span class="math display">\[ \widehat{y} = \widehat{\beta}_0 + \widehat{\beta}_1 \cdot x \]</span> the fitted values are simply the points along the OLS regression line!</li>
 </ul>
 </section>
-<section id="returning-to-height-and-weight-example" class="slide level2">
-<h2>Returning to Height and Weight Example</h2>
-
-<img data-src="hw.png" style="width:75.0%" class="r-stretch"><p><span class="math display">\[weight = 3.367 + 0.979 \times height\]</span></p>
-</section>
-<section id="example" class="slide level2">
-<h2>Example</h2>
-<p>Suppose someone has height = 180cm, what is their expected weight under our model?</p>
-<p><span class="math display">\[weight_{new} = 3.367 + 0.979 \times 180\]</span></p>
-<p><span class="math display">\[weight_{new} = 179.6\]</span></p>
-<p>How do we evaluate the fit of the line?</p>
+<section id="prediction" class="slide level2" style="font-size:30px">
+<h2>Prediction</h2>
 <ul>
-<li class="fragment">Since we are using the regression line to predict y from x, the prediction “errors” are the difference between the observed values of y and the estimated values of y:</li>
+<li class="fragment"><p>In this way, we can perhaps see how the OLS regression line can be used to perform <strong>prediction</strong>.</p></li>
+<li class="fragment"><p>To see how this works, let’s return to a toy example from last lecture: <span class="math display">\[\begin{align*}
+\boldsymbol{x}    &amp; = \{3, \ 7, \ 8\}   \\
+\boldsymbol{y}    &amp; = \{20, \ 14, \ 17\}
+\end{align*}\]</span></p></li>
 </ul>
-<p><span class="math display">\[residual = y-\hat{y}\]</span> <span class="math display">\[residual = \text{observed} - \text{estimated}\]</span> Suppose the new person actually has an observed weight of 182 then</p>
-<p><span class="math display">\[residual_{new} = 182 - 179.6 = 2.4\]</span></p>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Lec21_files/figure-revealjs/unnamed-chunk-1-1.png" class="quarto-figure quarto-figure-center" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="least-squares-regression-line" class="slide level2">
-<h2>Least-Squares Regression Line</h2>
-<p>The <strong>least-squares regression line</strong> will produce the smallest sum of squared residuals <span class="math inline">\(\sum e^2\)</span>, provided certain conditions are met.</p>
-<p>Properties:</p>
-<ol type="1">
-<li class="fragment"><p>An estimate of the slope of the line is <span class="math display">\[\beta_1 = r \frac{s_y}{s_x}\]</span></p></li>
-<li class="fragment"><p>The line must pass through the point (<span class="math inline">\(\bar{x},\bar{y}\)</span>); consequently, an estimate of the y-intercept of the least-squares regression line is <span class="math display">\[\beta_0 = \bar{y} - \beta_1 \bar{x}\]</span></p></li>
-</ol>
+<section id="prediction-1" class="slide level2" style="font-size:30px">
+<h2>Prediction</h2>
+<ul>
+<li class="fragment"><p>Notice that we do not have an <code>x</code>-observation of 5. As such, we don’t know what the <code>y</code>-value corresponding to an <code>x</code>-value of 5 is.</p></li>
+<li class="fragment"><p>However, we do have a decent <em>guess</em> as to what the <code>y</code>-value corresponding to an <code>x-</code>value of 5 is- the corresponding fitted value!</p></li>
+</ul>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Lec21_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="interpretation-of-slope-and-intercept" class="slide level2" style="font-size:30px">
-<h2>Interpretation of Slope and Intercept</h2>
+<section id="prediction-2" class="slide level2" style="font-size:30px">
+<h2>Prediction</h2>
 <ul>
-<li class="fragment">Similar to the interpretation of a slope: <em>change in y for a unit change in x</em>, we take into account the variability inherent to data:</li>
+<li class="fragment">In other words, our best guess at (i.e.&nbsp;our best <em>prediction</em> of) the <span class="math inline">\(y-\)</span>value corresponding to an <span class="math inline">\(x-\)</span>value of <span class="math inline">\(5\)</span> is the point <span class="math inline">\(\widehat{y}^{(5)}\)</span> obtained by plugging <span class="math inline">\(x = 5\)</span> into the OLS regression line:</li>
 </ul>
-<p><em>The <strong>slope</strong> is the <em>expected</em> change in the estimated average outcome of y when the predictor variable x happens to be one unit larger</em></p>
-<p>From our example: <span class="math display">\[weight = 3.367 + 0.979 \times height\]</span></p>
-<ul>
-<li class="fragment">We estimate that, on average, the estimated weight will be about 0.979 lbs more for each additional 1 cm increase in height.</li>
-</ul>
-<p><em>The y-intercept describes the average outcome of y when <span class="math inline">\(x=0\)</span> AND the linear model is valid all the way to <span class="math inline">\(x=0\)</span>.</em> This is often not the case in application cases.</p>
+<div class="fragment">
+<p><span class="math display">\[ \widehat{y}^{(5)} = \frac{1}{7} (155 - 6 \cdot 5) \approx 17.857 \]</span></p>
+</div>
 </section>
-<section id="friends-dont-let-friends-extrapolate" class="slide level2">
-<h2>Friends Don’t Let Friends Extrapolate</h2>
+<section id="leadup" class="slide level2" style="font-size:30px">
+<h2>Leadup</h2>
 <ul>
-<li class="fragment">Predicting outside of the range of the x-variable is called <strong>extrapolation</strong>. Extrapolation assumes that the linear relationship continues outside of the data range.</li>
+<li class="fragment">Let’s look at another toy dataset:</li>
 </ul>
-<p>In our example, should we use our model to predict the weight of someone who is 120lbs?</p>
-
-<img data-src="hw.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Lec21_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="leadup-1" class="slide level2" style="font-size:30px">
+<h2>Leadup</h2>
+<ul>
+<li class="fragment"><p>Say we want to predict the corresponding <code>y</code> value of an <code>x</code> value of, 40.</p></li>
+<li class="fragment"><p>Following our steps from before, we would just find the fitted value corresponding to <code>x</code> = 40:</p></li>
+</ul>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Lec21_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="leadup-2" class="slide level2" style="font-size:30px">
+<h2>Leadup</h2>
+<ul>
+<li class="fragment">Here’s the kicker: <strong>the true fit was actually NOT linear!</strong></li>
+</ul>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Lec21_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="extrapolation-and-the-dangers-thereof" class="slide level2">
+<h2>Extrapolation, and the Dangers Thereof</h2>
+<ul>
+<li class="fragment"><p>Specifically, the true signal function was quadratic. (When you zoom in close enough, parabolas look linear!)</p></li>
+<li class="fragment"><p>This is why it is a bad idea to try to <strong>extrapolate</strong> too far.</p>
+<ul>
+<li class="fragment"><p>Extrapolation is the name we give to trying to apply a model estimate to values that are very far outside the realm of the original data.</p></li>
+<li class="fragment"><p>How far is “very far”? Statisticians disagree on this front. For the purposes of this class, just use your best judgment.</p></li>
+</ul></li>
+</ul>
+</section>
 <section id="your-turn" class="slide level2">
 <h2>Your Turn!</h2>
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -491,30 +547,25 @@
 </div>
 </div>
 </section>
-<section id="coefficient-of-determination-r2" class="slide level2">
-<h2>Coefficient of Determination <span class="math inline">\(R^2\)</span></h2>
-<p>We evaluate the strength of the linear relationship between two variables earlier using the correlation, <span class="math inline">\(r\)</span>. It is more common to explain the strength of a linear regression using <span class="math inline">\(R^2\)</span>, also called the coefficient of determination.</p>
-<p>The <span class="math inline">\(R^2\)</span> of a linear model describes <em>the fraction of variation in the response variable that is explained by the least-squares regression line</em>.</p>
-<p><span class="math display">\[r = \sqrt{R^2}\]</span></p>
-<ul>
-<li class="fragment">The <span class="math inline">\(R^2\)</span> is a measure of how good the linear model is. The closer <span class="math inline">\(R^2\)</span> is to 100%, the better!</li>
-</ul>
-</section>
-<section>
-<section id="lets-play-around-with-regression-in-python" class="title-slide slide level1 center">
-<h1>Let’s Play Around with Regression in Python</h1>
-
-</section>
-<section id="task" class="slide level2">
-<h2>Task</h2>
-<ul>
-<li class="fragment"><p>Here’s a task for you: write a function called <code>regtab()</code> that takes in two inputs, <code>x</code> and <code>y</code>, and returns a regression table resulting from regressing <code>y</code> on <code>x</code>.</p>
-<ul>
-<li class="fragment">You can use the <code>scipy.stats.linregress()</code> function</li>
-</ul></li>
-</ul>
-</section>
 <section id="back-to-widehatbeta_1" class="slide level2">
+<h2>Back to <span class="math inline">\(\widehat{\beta}_1\)</span></h2>
+<ul>
+<li class="fragment">Recall that, by virtue of being the slope of the OLS regression line, <span class="math inline">\(\widehat{\beta}_1\)</span> has the following interpretation:</li>
+</ul>
+<div class="fragment">
+<blockquote>
+<p>A one-unit change in <code>x</code> corresponds to a predicted <span class="math inline">\(\widehat{\beta}_1\)</span>-unit change in <code>y</code>.</p>
+</blockquote>
+</div>
+<ul>
+<li class="fragment"><p>Notice the word “predicted” there- remember that <span class="math inline">\(\widehat{\beta}_1\)</span> is an <em>estimator</em>, not the true slope!</p>
+<ul>
+<li class="fragment">That is to say: different datasets generated from the same model may produce different values of <span class="math inline">\(\widehat{\beta}_1\)</span>.</li>
+</ul></li>
+<li class="fragment"><p>That’s right: <span class="math inline">\(\widehat{\beta}_1\)</span> can be thought of as a random variable.</p></li>
+</ul>
+</section>
+<section id="back-to-widehatbeta_1-1" class="slide level2">
 <h2>Back to <span class="math inline">\(\widehat{\beta}_1\)</span></h2>
 <ul>
 <li class="fragment"><p>We know that <span class="math inline">\(\widehat{\beta}_1\)</span> seeks to estimate <span class="math inline">\(\beta_1\)</span>.</p></li>
@@ -573,29 +624,29 @@
 </blockquote>
 </div>
 </section>
+<section id="example" class="slide level2" style="font-size:30px">
+<h2>Example</h2>
+
+<img data-src="Lec21_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"><ul>
+<li class="fragment"><span class="math inline">\(\widehat{\beta_0} =\)</span> -2.5884231; <span class="math inline">\(\widehat{\beta_1} =\)</span> -1.733778</li>
+</ul>
+</section>
 <section id="example-1" class="slide level2" style="font-size:30px">
 <h2>Example</h2>
 
-<img data-src="Lec21_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"><ul>
-<li class="fragment"><span class="math inline">\(\widehat{\beta_0} =\)</span> -2.5884231; <span class="math inline">\(\widehat{\beta_1} =\)</span> -1.733778</li>
+<img data-src="Lec21_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"><ul>
+<li class="fragment"><span class="math inline">\(\widehat{\beta_0} =\)</span> -2.5884231; <span class="math inline">\(\widehat{\beta_1} =\)</span> -0.483778</li>
 </ul>
 </section>
 <section id="example-2" class="slide level2" style="font-size:30px">
 <h2>Example</h2>
 
-<img data-src="Lec21_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"><ul>
-<li class="fragment"><span class="math inline">\(\widehat{\beta_0} =\)</span> -2.5884231; <span class="math inline">\(\widehat{\beta_1} =\)</span> -0.483778</li>
-</ul>
-</section>
-<section id="example-3" class="slide level2" style="font-size:30px">
-<h2>Example</h2>
-
-<img data-src="Lec21_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"><ul>
+<img data-src="Lec21_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"><ul>
 <li class="fragment"><p><span class="math inline">\(\widehat{\beta_0} =\)</span> -2.5884231; <span class="math inline">\(\widehat{\beta_1} =\)</span> 0.266222</p></li>
 <li class="fragment"><p>Do we really believe the slope, though?</p></li>
 </ul>
 </section>
-<section id="leadup" class="slide level2">
+<section id="leadup-3" class="slide level2">
 <h2>Leadup</h2>
 <ul>
 <li class="fragment"><p>Without the OLS regression line, the scatterplot on the previous page would likely be one we classify as exhibiting “no relationship” between <code>x</code> and <code>y</code>.</p></li>
@@ -672,6 +723,20 @@ H_A:    &amp; \beta_1 \neq 0
 <li class="fragment"><p>The second column is the standard error (i.e.&nbsp;standard deviation) of the estimator</p></li>
 <li class="fragment"><p>The third column is the test statistic (i.e.&nbsp;the first column divided by the second)</p></li>
 <li class="fragment"><p>The fourth column is the <em>p</em>-value in a two-sided test, testing whether or not the given parameter is actually zero or not.</p></li>
+</ul>
+</section>
+<section>
+<section id="lets-play-around-with-regression-in-python" class="title-slide slide level1 center">
+<h1>Let’s Play Around with Regression in Python</h1>
+
+</section>
+<section id="task" class="slide level2">
+<h2>Task</h2>
+<ul>
+<li class="fragment"><p>Here’s a task for you: write a function called <code>regtab()</code> that takes in two inputs, <code>x</code> and <code>y</code>, and returns a regression table resulting from regressing <code>y</code> on <code>x</code>.</p>
+<ul>
+<li class="fragment">You can use the <code>scipy.stats.linregress()</code> function</li>
+</ul></li>
 </ul>
 </section>
 <section id="some-exercises" class="slide level2">
