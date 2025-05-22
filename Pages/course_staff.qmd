@@ -23,7 +23,7 @@ linkcolor: "#ffa07a"
     <td>
       <p style = "font-size:24px"><b>Annie Adams</b></p>
       <p>
-        Hello! I got both by BS in Statistics and Data Science and MS in Environmental Science from UCSB! I am a lecturer at the Bren School of Environmental Science & Management, and so excited to be back in the stats department! 
+        Hello! I got both by BS in Statistics and Data Science and MS in Environmental Data Science from UCSB! I am a lecturer at the Bren School of Environmental Science & Management, and so excited to be back in the stats department! 
       </p>
       <table>
         <tr>
