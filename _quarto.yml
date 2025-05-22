@@ -3,10 +3,10 @@ project:
   output-dir: docs
 
 website:
-  title: "PSTAT 5A: Summer Session A, 2024"
+  title: "PSTAT 5A: Summer Session B, 2025"
 
   sidebar:
-    title: "PSTAT 5A: Summer Session A, 2024"
+    title: "PSTAT 5A: Summer Session B, 2025"
     style: "docked"
     search: true
     contents:
@@ -35,6 +35,10 @@ website:
 
 format:
   html:
-    theme: sandstone
-    css: styles.css
+    theme: website-styles.scss
     toc: true
+    title-block-banner: true
+    page-layout: full
+    callout-icon: false
+
+editor: source

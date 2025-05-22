@@ -1,12 +1,22 @@
 ---
 title: "PSTAT 5A: Understanding Data"
-subtitle: "Summer Session A, 2024 <br /> Instructor: Mallory Wang"
+subtitle: "Summer Session B, 2025 <br /> Instructor: Annie Adams"
+title-block-banner: false
+toc: false
 ---
 
-Welcome to the official course site for PSTAT 5A (titled Understanding Data) at the University of California, Santa Barbara! Please note that this is the site for **Summer Session A, 2024** iteration of the course, with Mallory Wang. \
 
-All relevant information for the course can be found on this site, with the (perhaps crucial) exception of quizzes, which will take place on the course Gradescope site. \
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "75%" 
+#| fig-alt: ""
+knitr::include_graphics("Images/datascience1.jpg")
+```
 
-If you are looking for a past iteration of this course, please navigate to <a href="https://pstat5a-archives.github.io" target = "_blank">https://pstat5a-archives.github.io</a>. \
+[](Images/datascience1.jpg)
+Welcome to the official course site for PSTAT 5A (titled Understanding Data) at the University of California, Santa Barbara! Please note that this is the site for **Summer Session B, 2025** iteration of the course, with Annie Adams. \
 
-This site will be archived soon.
+All relevant information for the course can be found on this site, with the exception of quizzes, which will take place on the course Gradescope site. \
+

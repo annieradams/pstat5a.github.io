@@ -2,9 +2,9 @@
 title: "PSTAT 5A: Understanding Data"
 subtitle: "Course Staff"
 author:
-  - name: "Mallory Wang"
+  - name: "Annie Adams"
     affiliations:
-      - name: "Summer Session A, 2024"
+      - name: "Summer Session B, 2025"
 author-title: "Instructor"
 affiliation-title: "Quarter"
 format: html
@@ -14,25 +14,25 @@ linkcolor: "#ffa07a"
 ## Instructor
 
 :::{.callout-note collapse="false"}
-## Instructor: Mallory Wang
+## Instructor: Annie Adams
 <table>
   <tr>
     <td style = "padding-right: 10pt">
-      <img src = "../Images/Profiles/placeholder.png" width = 175>
+      <img src = "../Images/annie.png" width = 175>
     </td>
     <td>
-      <p style = "font-size:24px"><b>Mallory Wang</b></p>
+      <p style = "font-size:24px"><b>Annie Adams</b></p>
       <p>
-        Hello! I just finished the first year of my PhD program here in the PSTAT department. Prior to UCSB, I was at the University of Michigan for a masters in Statistic. And before that, I was working as a Data Scientist at Meta.
+        Hello! I got both by BS in Statistics and Data Science and MS in Environmental Science from UCSB! I am a lecturer at the Bren School of Environmental Science & Management, and so excited to be back in the stats department! 
       </p>
       <table>
         <tr>
           <td><b>Email:</b></td>
-          <td><a href = "mailto:mallorywang@ucsb.edu">mallorywang@ucsb.edu</a> </td>
+          <td><a href = "mailto:aradams@ucsb.edu">aradams@ucsb.edu</a> </td>
         </tr>
         <tr>
           <td><b>OH:</b></td>
-          <td>Tuesdays 4:30 - 5:30pm, over [Zoom](https://ucsb.zoom.us/j/83301329982) <br /> Thursdays 9:30 - 10:30am [Zoom](https://ucsb.zoom.us/j/83294791272)</td>
+          <td>Mondays 10 am - 11 am <br /> Wednesdays 10 am - 11am </td>
         </tr>
       </table>
     </td>
