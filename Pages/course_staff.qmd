@@ -32,7 +32,7 @@ linkcolor: "#ffa07a"
         </tr>
         <tr>
           <td><b>OH:</b></td>
-          <td>Mondays 10 am - 11 am <br /> Wednesdays 10 am - 11am </td>
+          <td>Mondays 11 am - 12 pm <br /> Wednesdays 11 am - 12 pm </td>
         </tr>
       </table>
     </td>
