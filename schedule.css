@@ -1,24 +1,123 @@
-/* css styles for Schedule*/
+/* CSS styles for Schedule Buttons */
 
 .label-outline {
-    display: inline;
-    padding: 0.2em 0.6em 0.3em;
-    font-size: 100%;
-    font-weight: 700;
-    line-height: 1;
+    display: inline-block;
+    padding: 0.4em 1em;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
     color: #003660;
     text-align: center;
+    text-decoration: none;
     white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: 0.45em;
-    border: 1.5px solid #003660;
+    vertical-align: middle;
+    border: 2px solid #003660;
+    border-radius: 0.5em;
+    background-color: transparent;
+    margin-bottom: 0.75em;
+    transition: all 0.25s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .button {
-  transition-duration: 0.17s;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
 }
 
-.button:hover {
-  background-color: #003660; /* dark blue */
+.button:hover,
+.button:focus {
+    background-color: #003660;  /* Dark blue background */
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+
+/* Colored button themes */
+
+.lecture {
+  color: #003660; /* Navy blue */
+  border-color: #003660;
+}
+
+.lab {
+  color: #2e7d32; /* Forest green */
+  border-color: #2e7d32;
+}
+
+.quiz {
+  color: #c62828; /* Red */
+  border-color: #c62828;
+}
+
+.hw {
+  color: #f9a825; /* Gold */
+  border-color: #f9a825;
+}
+
+.worksheet {
+  color: #6a1b9a; /* Purple */
+  border-color: #6a1b9a;
+}
+
+//* Hover effects per button type */
+
+.button.lecture:hover,
+.button.lecture:focus {
+  background-color: #003660;
   color: white;
 }
+
+.button.lab:hover,
+.button.lab:focus {
+  background-color: #2e7d32;
+  color: white;
+}
+
+.button.quiz:hover,
+.button.quiz:focus {
+  background-color: #c62828;
+  color: white;
+}
+
+.button.hw:hover,
+.button.hw:focus {
+  background-color: #f9a825;
+  color: black; /* best contrast on yellow */
+}
+
+.button.worksheet:hover,
+.button.worksheet:focus {
+  background-color: #6a1b9a;
+  color: white;
+}
+
+
+.lecture-entry {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 0.75em;
+}
+.lecture-date {
+  font-size: 0.9em;
+  color: #555;
+}
+
+
+
+.flex-week {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin-bottom: 1.5em;
+}
+
+.flex-week > div {
+  flex: 1 1 250px;
+  min-height: 240px; /* adjust as needed to prevent wrapping */
+}
+
+
+

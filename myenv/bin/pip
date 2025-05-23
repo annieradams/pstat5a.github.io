@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/Users/mallorywang/Documents/UCSB/Year 1/5A/5a/myenv/bin/python3.12" "$0" "$@"
-' '''
+#!/Users/annalieseadams/Git/pstat5a-2025.github.io/myenv/bin/python3.13
 # -*- coding: utf-8 -*-
 import re
 import sys

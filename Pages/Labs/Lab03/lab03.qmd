@@ -8,6 +8,8 @@ author:
 author-title: "Course"
 affiliation-title: "Quarter"
 format: html
+execute:
+    kernel: myenv
 title-block-banner: "#4144a6"
 css: styles.css
 ---
