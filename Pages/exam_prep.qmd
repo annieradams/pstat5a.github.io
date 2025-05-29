@@ -2,9 +2,9 @@
 title: "PSTAT 5A: Understanding Data"
 subtitle: "Exam Prep"
 author:
-  - name: "Mallory Wang"
+  - name: "Annie Adams"
     affiliations:
-      - name: "Summer Session A, 2024"
+      - name: "Summer Session B, 2025"
 author-title: "Instructor"
 affiliation-title: "Quarter"
 format: html

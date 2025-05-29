@@ -1,8 +1,8 @@
 ---
 title: "PSTAT 5A: Lecture 00"
 subtitle: "Introduction to Data Science"
-author: "Mallory Wang"
-date: "06/24/24"
+author: "Annie Adams"
+date: "08/04/25"
 format: 
     revealjs:
       theme: [default, ../CSS/custom.scss]
@@ -29,9 +29,9 @@ title-slide-attributes:
 
 :::{.nonincremental}
 - **Instructor:**
-    - Mallory (she/her)
-    - mallorywang@ucsb.edu
-    - T 9:30 - 10:30a (zoom) and 4 - 5p (zoom)
+    - Annie (she/her)
+    - aradams@ucsb.edu
+    - Office Hours: Monday 11 am - 12 pm, Wednesday 11 am - 12 pm
 
 :::
 :::
@@ -75,7 +75,7 @@ title-slide-attributes:
 
 - **Canvas**: for grades
 - **Gradescope:** for homework, quizzes, and labs
-- **Course Website:** <a href = "https://pstat5a.github.io/Pages/syllabus.html" target = "_blank">https://pstat5a.github.io/Pages/syllabus.html</a>
+- **Course Website:** <a href = "https://annieradams.github.io/pstat5a.github.io/" target = "_blank">https://annieradams.github.io/pstat5a.github.io/</a>
     - All relevant course material will be posted to the website!
     - One exception: quizzes, which will be administered through Gradescope
 
@@ -154,5 +154,14 @@ title-slide-attributes:
     - So, even if you are working in (what you might think is) a field that is far removed from Statsitics, the minute you start dealing with Data is the minute you start needing to know Data Science!
 
 - Here's a perhaps more pragmatic answer: even if you think you want to go straight into industry right after this course, no company wants to hire someone to just mindlessly crunch numbers - though computing experience is absolutely crucial in making yourself a good candidate, employers would much rather have someone who is *both* skilled at running code *but also understands <u>why</u> they are running the code they are running!*
+
+
+
+## 
+
+![](hate_this_class.png){width=80% fig-align="center"}
+
+*Artwork by Allison Horst*
+
 
 # So, without further ado.... Let's Get Started!

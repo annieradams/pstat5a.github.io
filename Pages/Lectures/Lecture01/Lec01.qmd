@@ -1,8 +1,8 @@
 ---
 title: "PSTAT 5A: Lecture 01"
 subtitle: "Descriptive Statistics, Part I"
-author: "Mallory Wang"
-date: "06/24/24"
+author: "Annie Adams"
+date: "08/04/25"
 format: 
     revealjs:
       html-math-method: mathjax
@@ -27,9 +27,7 @@ library(ggthemes)
 
 # Data
 
-## What is Data?
 
-![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWUyYWRhN2M2ZmI3OGFlZTNhMWI2NDY4NDNjNTc4NjM0MzU5NTRlMyZjdD1n/j6TdvPXdAssootjCKZ/giphy.gif)
 
 ## What is Data?
 -   According to Merriam-Webster ([source](https://www.merriam-webster.com/dictionary/data)), there are three definitions for **data**:
@@ -101,7 +99,7 @@ kable(head(penguins))
 
     - As Data Scientists, it is absolutely crucial that we understand our data as best as possible before embarking on any analyses, explorations, etc.
     
-- As such, most datasets come equipped with a so-called **data dictionary**, which lists the variables included in the dataset as well as a brief description of each variable.
+- As such, most datasets come equipped with a so-called **data dictionary**, or **metadata**, which lists the variables included in the dataset as well as a brief description of each variable.
 
 ---
 
@@ -189,33 +187,36 @@ If the possible values a numerical variable can take has "jumps", then it is a d
 
     -   This is because a height measurement could be any positive number, whereas the number of accidents cannot be, say, 2.5; i.e. the possible values of the "number of accidents" has jumps at every positive integer value.
 
-## Ordinal vs. Nominal Variables
+##
+![](continuous_discrete.png){width=80% fig-align="center"}
+
+*Artwork by Allison Horst*
+
+
+## Ordinal vs. Nominal vs. Binary Variables
 
 -   Just as there was a way to subdivide numerical variables, there is a way to further subdivide categorical variables as well.
 
--   As an example, consider the following two categorical variables: color, and letter grades (i.e. A, B^+^, etc.)
+-   As an example, consider the following two categorical variables: color, and letter grades (i.e. A, B^+^, etc.), and  pass/fail status
 
-    -   Firstly, I hope you can see that both of these variables are indeed categorical: there are only a fixed set of values that "color" and "letter grade" can take, with nothing in between.
+    -   Firstly, I hope you can see that all of these variables are indeed categorical: there are only a fixed set of values that "color" and "letter grade" and "pass/fail" can take, with nothing in between.
 
-    -   Now, clearly letter grades can be ordered: that is, an A is better than a B, which is *better* than a C, and so on and so forth.
+    -   Now, clearly letter grades can be ordered: that is, an A is better than a B, which is *better* than a C, and so on and so forth. This makes letter grades an ordinal variable.
 
-    -   In contrast, "green" isnt inherently *better* than "red", which isn't inherently *better* than "grey", and so on and so forth.
+    -   In contrast, "green" isnt inherently *better* than "red", which isn't inherently *better* than "grey", and so on and so forth. This makes color a nominal variable.
+    
+    - Pass/fail status, while categorical, has only two possible values (pass or fail). This makes it a binary variable - a special case of nominal variables with exactly two categories.
+    
 
-------------------------------------------------------------------------
+    
+## 
+![](nominal_ordinal_binary.png){width=80% fig-align="center"}
 
-::: callout-note
-## Terminology
+*Artwork by Allison Horst*
 
-<h2>Ordinal vs. Nominal Variables</h2>
 
-::: {style="font-size: 30px"}
-If the possible values a categorical variable can take has a natural ordering, we call the variable **ordinal**. Otherwise, we say it is **nominal**.
-:::
-:::
 
--   So, for example, "letter grades" are ordinal whereas "color" is nominal.
 
-------------------------------------------------------------------------
 
 ## Full Classification Scheme
 
@@ -223,65 +224,10 @@ If the possible values a categorical variable can take has a natural ordering, w
 -   Here is a diagram of the full classification scheme:
 :::
 
-```{dot}
-//| fig-width: 10
-//| fig-height: 4
-digraph data_classification {
-    layout = dot
-    rankdir = UD
-    splines = false
-    bgcolor = "#f0ebd8"
-    edge [arrowsize = 0.5, color = coral4]
-  
-subgraph cluster_main {
-  color = transparent
-  node [color=transparent, style = filled, fillcolor = cornsilk, shape = egg];
-  
-  Data [label = "Variable"]
-  
-  subgraph cluster_0 {
-   color = transparent
-    node [color=transparent, style = filled, fillcolor = aquamarine3, shape = egg];
-    
-    numerical [label = "Numerical"]
-    
-    subgraph cluster_1 {
-      color = transparent
-      node [color = transparent, style = filled, fillcolor = bisque1, shape = egg];
-      
-        continuous [label = "Continuous"]
-        discrete [label = "Discrete"]
-    }
-    
-    {numerical} -> continuous
-    {numerical} -> discrete
-  }
-  
-  subgraph cluster_2 {
-   color = transparent
-    node [color=transparent, style = filled, fillcolor = aquamarine3, shape = egg];
-    
-    categorical [label = "Categorical"]
-    
-    subgraph cluster_3 {
-      color = transparent
-      node [color = transparent, style = filled, fillcolor = bisque1, shape = egg];
-      
-        nominal [label = "Nominal"]
-        ordinal [label = "Ordinal"]
-    }
-    
-    {categorical} -> nominal
-    {categorical} -> ordinal
-  }
-  
-  
-  }
-  
-  {Data} -> numerical
-  {Data} -> categorical
-}
-```
+
+
+
+![](data_chart.png){width=80% fig-align="center"}
 
 ------------------------------------------------------------------------
 
@@ -298,21 +244,14 @@ Classify each of the following variables as either discrete, continuous, ordinal
 -   The time it takes an experienced swimmer to complete 4 laps of a pool
 -   The favorite flavor of donut of a randomly selected person
 -   The months of the year, as written in MM format (e.g. "01" for "January", "02" for "February", etc.)
+-   The presence or absence of a species observation
 :::
 
 Discuss with your neighbors!
 :::
 :::
 
-## Important Note
 
-- It is important to note that categorical data can be *encoded* using numbers (as we saw in the previous slide).
-
-    - Indeed, this is a fairly common practice as computers are more adept at dealing with numbers than things like words or symbols. 
-    
-    - As such, when classifying data, it is not always enough to just check whether the data consists of numbers or not- it is important to think critically about what the data itself represents. 
-    
-    - As a quick rule-of-thumb: check whether adding two numbers in your dataset makes interpretive sense. 12in $+$ 13in is 15in, whereas `blue` + `gold` does not equal anything, regardless of whether `blue` is being encoded as `0` and `gold` is being encoded as `1`.
 
 # Summarizing Data
 
