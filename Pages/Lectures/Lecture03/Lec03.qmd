@@ -1,8 +1,8 @@
 ---
 title: "PSTAT 5A: Lecture 03"
 subtitle: "Introduction to Probability"
-author: "Mallory Wang"
-date: "06/26/24"
+author: "Annie Adams"
+date: "08/06/25"
 format: 
     revealjs:
       html-math-method: mathjax

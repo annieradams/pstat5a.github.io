@@ -1,8 +1,8 @@
 ---
 title: "PSTAT 5A: Lecture 02"
 subtitle: "Descriptive Statistics, Part II"
-author: "Mallory Wang"
-date: "06/25/24"
+author: "Annie Adams"
+date: "08/05/25"
 format: 
     revealjs:
       html-math-method: mathjax
@@ -864,6 +864,13 @@ Provide the five number summary, along with the IQR. Discuss with your Neighbors
 :::
 :::
 
+
+
+
+#
+![](summary_stat.png){width=80% fig-align="center"}
+
+*Artwork by Allison Horst*
 
 # Transforming Data
 
