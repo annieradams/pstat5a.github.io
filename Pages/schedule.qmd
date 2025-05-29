@@ -33,7 +33,6 @@ Last Updated: *August 4, 2024*
 <a href="Lectures/Lecture01/Lec01.qmd" class="button label-outline lecture" target="_blank">01: Descriptive Statistics I</a><br/>
 <a href="Lectures/Lecture02/Lec02.qmd" class="button label-outline lecture" target="_blank">02: Descriptive Statistics II</a><br/>
 <a href="Lectures/Lecture03/Lec03.qmd" class="button label-outline lecture" target="_blank">03: Intro to Probability</a><br/>
-<a href="Lectures/Lecture04/Lec04.qmd" class="button label-outline lecture" target="_blank">04: Counting</a><br/>
 <!-- <a href="../Files/HW/HW01_Solns.pdf" class="button label-outline hw">HW1 Soln</a><br/> -->
 <!-- <a href="../Files/QzSolns/Qz01_solns.pdf" class="button label-outline quiz">Quiz1 Soln</a><br/> -->
 </div>
@@ -60,9 +59,11 @@ Last Updated: *August 4, 2024*
 
 <div>
 **Lectures**  
+<a href="Lectures/Lecture04/Lec04.qmd" class="button label-outline lecture" target="_blank">04: Counting</a><br/>
 <a href="Lectures/Lecture05/Lec05.qmd" class="button label-outline lecture">05: Conditional Probabilities</a><br/>
-06: **NO LECTURE** (Fourth of July)<br/>
-<a href="Lectures/Lecture09/Lec09.qmd" class="button label-outline lecture">09: Discrete Random Variables</a><br/>
+<a href="Lectures/Lecture09/Lec09.qmd" class="button label-outline lecture">06: Discrete Random Variables</a><br/>
+<a href="Lectures/MT1Rev/mt1_rev_slides.qmd" class="button label-outline lecture">07: Review</a><br/>
+
 <!-- <a href="../Files/HW/HW02_Solns.pdf" class="button label-outline hw">HW2 Soln</a><br/> -->
 <!-- <a href="../Files/QzSolns/Qz02_solns.pdf" class="button label-outline quiz">Quiz2 Soln</a><br/> -->
 </div>
@@ -89,10 +90,12 @@ Last Updated: *August 4, 2024*
 
 <div>
 **Lectures**  
-<a href="Lectures/MT1Rev/mt1_rev_slides.qmd" class="button label-outline lecture">07: Review</a><br/>
-<a href="Lectures/Lecture10/Lec10.qmd" class="button label-outline lecture">10: Continuous Random Variables</a><br/>
-<a href="Lectures/Lecture11/Lec11.qmd" class="button label-outline lecture">11: Introduction to Inference</a><br/>
-<a href="Lectures/Lecture12/Lec12.qmd" class="button label-outline lecture">12: Confidence Intervals for <br>Proportions</a><br/>
+<a href="Lectures/Lecture10/Lec10.qmd" class="button label-outline lecture">08: Continuous Random Variables</a><br/>
+<a href="Lectures/Lecture11/Lec11.qmd" class="button label-outline lecture">09: Introduction to Inference</a><br/>
+<a href="Lectures/Lecture12/Lec12.qmd" class="button label-outline lecture">10: Confidence Intervals for <br>Proportions</a><br/>
+<a href="Lectures/Lecture13/Lec13.qmd" class="button label-outline lecture">11: Confidence Intervals for Means</a><br/>
+
+<a href="../Files/Tables/T_Table.pdf" class="button label-outline worksheet">T-Table</a><br/>
 <a href="../Files/Lec_Ex/Lec12_Ex3.pdf" class="button label-outline worksheet">Exercise 3</a><br/>
 <a href="../Files/Tables/Z_Table.pdf" class="button label-outline worksheet">Z-Table</a><br/>
 <!-- <a href="../Files/HW/HW03_Solns.pdf" class="button label-outline hw">HW3 Soln</a><br/> -->
@@ -120,10 +123,12 @@ Last Updated: *August 4, 2024*
 
 <div>
 **Lectures**  
-<a href="Lectures/Lecture13/Lec13.qmd" class="button label-outline lecture">13: Confidence Intervals for Means</a><br/>
-<a href="../Files/Tables/T_Table.pdf" class="button label-outline worksheet">T-Table</a><br/>
-<a href="Lectures/Lecture14/Lec14.qmd" class="button label-outline lecture">14: Hypothesis Testing <br> for Proportions</a><br/>
-<a href="Lectures/Lecture17/Lec17.qmd" class="button label-outline lecture">17: Hypothesis Testing, Part II</a><br/>
+<a href="Lectures/Lecture14/Lec14.qmd" class="button label-outline lecture">12: Hypothesis Testing <br> for Proportions</a><br/>
+<a href="Lectures/Lecture17/Lec17.qmd" class="button label-outline lecture">13: Hypothesis Testing, Part II</a><br/>
+<a href="Lectures/MT2Rev/mt2rev.qmd" class="button label-outline lecture">14: Two-Sample *t*-Tests</a><br/>
+
+<a href="Lectures/Review2/rev2.qmd" class="button label-outline lecture">15: Review</a><br/>
+
 <!-- <a href="../Files/HW/HW04_Solns.pdf" class="button label-outline hw">HW4 Soln</a><br/> -->
 </div>
 
@@ -150,10 +155,11 @@ Last Updated: *August 4, 2024*
 
 <div>
 **Lectures**  
-<a href="Lectures/Review2/rev2.qmd" class="button label-outline lecture">18: Review</a><br/>
-<a href="Lectures/MT2Rev/mt2rev.qmd" class="button label-outline lecture">19: Two-Sample *t*-Tests</a><br/>
-<a href="Lectures/Lecture19/Lec19.qmd" class="button label-outline lecture">20: Inference for Paired Data</a><br/>
-<a href="Lectures/Lecture20/Lec20.qmd" class="button label-outline lecture">21: Intro to Statistical Modeling, <br> and Correlation</a><br/>
+<a class="button label-outline lecture">Labor Day - No Lecture!</a><br/>
+<a href="Lectures/Lecture19/Lec19.qmd" class="button label-outline lecture">16: Inference for Paired Data</a><br/>
+<a href="Lectures/Lecture20/Lec20.qmd" class="button label-outline lecture">17: Intro to Statistical Modeling, <br> and Correlation</a><br/>
+<a href="Lectures/Lecture21/Lec21.qmd" class="button label-outline lecture">18: Regression, Part II</a><br/>
+
 </div>
 
 <div>
@@ -177,11 +183,10 @@ Last Updated: *August 4, 2024*
 
 <div>
 **Lectures**  
-<a href="Lectures/Lecture21/Lec21.qmd" class="button label-outline lecture">22: Regression, Part II</a><br/>
-<a href="Lectures/Lecture22/Lec22.qmd" class="button label-outline lecture">23: Regression Diagnostics, and <br> Sampling Procedures</a><br/>
-<a href="Lectures/Lecture23/Lec23.qmd" class="button label-outline lecture">24: Ways Statistics Can Deceive</a><br/>
-<a href="Lectures/FinRev/FinRev.qmd" class="button label-outline lecture">25: Review</a><br/>
-<strong>FINAL EXAM: Thursday, Sept 4 during lecture</strong><br/>
+<a href="Lectures/Lecture22/Lec22.qmd" class="button label-outline lecture">19: Regression Diagnostics, and <br> Sampling Procedures</a><br/>
+<a href="Lectures/Lecture23/Lec23.qmd" class="button label-outline lecture">20: Ways Statistics Can Deceive</a><br/>
+<a href="Lectures/FinRev/FinRev.qmd" class="button label-outline lecture">21: Review</a><br/>
+<strong>FINAL EXAM: Thursday, Sept 11 during lecture</strong><br/>
 </div>
 
 <div>
