@@ -23,7 +23,7 @@ linkcolor: "#ffa07a"
     <td>
       <p style = "font-size:24px"><b>Annie Adams</b></p>
       <p>
-        Hello! I got both by BS in Statistics and Data Science and MS in Environmental Data Science from UCSB! I am a lecturer at the Bren School of Environmental Science & Management, and so excited to be back in the stats department! 
+        Hello! I got both my BS in Statistics and Data Science and MS in Environmental Data Science from UCSB! I am a lecturer at the Bren School of Environmental Science & Management, and so excited to be back in the stats department! 
       </p>
       <table>
         <tr>
@@ -44,7 +44,7 @@ linkcolor: "#ffa07a"
 
 <!-- TA 1 -->
 :::{.callout-note collapse="false"}
-## TA: Daniel Silva
+## TA: Summer Le
 <table>
   <tr>
     <td style = "padding-right: 10pt">
@@ -53,16 +53,16 @@ linkcolor: "#ffa07a"
     <td>
       <p style = "font-size:24px"><b>Daniel Silva</b></p>
       <p>
-        Daniel is a PhD Student in the PSTAT Department.
+        Summer is a PhD Student in the PSTAT Department.
       </p>
       <table>
         <tr>
           <td><b>Email:</b></td>
-          <td><a href="mailto:dcsilva@ucsb.edu">dcsilva@ucsb.edu</a></td>
+          <td><a href="mailto:sle@ucsb.edu>">sle@ucsb.edu></a></td>
         </tr>
         <tr>
           <td><b>OH:</b></td>
-          <td>Tuesdays 2:00pm - 3:00pm in Building 434, Room 113</td>
+          <td>TBD</td>
         </tr>
       </table>
     </td>
@@ -71,7 +71,7 @@ linkcolor: "#ffa07a"
 :::
 <!-- TA 2 -->
 :::{.callout-note collapse="false"}
-## TA: Hezhong Zhang
+## TA: Mallory Wang
 <table>
   <tr>
     <td style = "padding-right: 10pt">
@@ -80,16 +80,16 @@ linkcolor: "#ffa07a"
     <td>
       <p style = "font-size:24px"><b>Hezhong Zhang</b></p>
       <p>
-        Hezhong is a PhD Student in the PSTAT Department.
+        Mallory is a PhD Student in the PSTAT Department.
       </p>
       <table>
         <tr>
           <td><b>Email:</b></td>
-          <td><a href="mailto:hzhang586@umail.ucsb.edu">hzhang586@umail.ucsb.edu</a></td>
+          <td><a href="mailto:mallorywang@ucsb.edu">mallorywang@ucsb.edu</a></td>
         </tr>
         <tr>
           <td><b>OH:</b></td>
-          <td>Tuesdays 3:00pm - 5:00pm in Building 434, Room 113</td>
+          <td>TBD</td>
         </tr>
       </table>
     </td>

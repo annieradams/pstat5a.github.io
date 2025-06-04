@@ -42,11 +42,11 @@ M, T, W, Th: 9:30 am - 10:50 am in **HSSB 1173**
 +------------------------------------------------+
 | **TAs**                                        |
 +------------------------------------------------+
-| **Daniel Silva**\                             
-| ([dcsilva\@ucsb.edu](mailto:dcsilva@ucsb.edu)) 
+| **Summer Le**\                             
+| ([sle@ucsb.eduu](mailto:sle@ucsb.edu)) 
 +------------------------------------------------+
-| **Hezhong Zhang**\                            
-| ([hzhang586\@umail.ucsb.edu](mailto:hzhang586@umail.ucsb.edu)) |
+| **Mallory Wang**\                            
+| ([mallorywang@ucsb.edu](mailto:mallorywang@ucsb.edu) |
 +------------------------------------------------+
 
 : {tbl-colwidths="\[50\]"}
@@ -57,9 +57,9 @@ M, T, W, Th: 9:30 am - 10:50 am in **HSSB 1173**
 
 |       Times       |       TA       |  Location   |
 |:-----------------:|:--------------:|:-----------:|
-| TR 11:00 - 11:50pm |  | PHELPS 1513 |
-| TR 12:00 - 12:50pm |  | PHELPS 1525 |
-| TR 1:00 - 1:50pm |  | PHELPS 1525 |
+| TR 11:00 - 11:50pm | Summer Le  | PHELPS 1513 |
+| TR 12:00 - 12:50pm | Mallory Wang | PHELPS 1525 |
+| TR 1:00 - 1:50pm | Mallory Wang | PHELPS 1525 |
 
 ## Course Description
 
