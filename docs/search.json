@@ -714,13 +714,6 @@
     "text": "What is Data?\n\nAccording to Merriam-Webster (source), there are three definitions for data:\n\n\nfactual information (such as measurements or statistics) used as a basis for reasoning, discussion, or calculation\ninformation in digital form that can be transmitted or processed\ninformation output by a sensing device or organ that includes both useful and irrelevant or redundant information and must be processed to be meaningful"
   },
   {
-    "objectID": "Pages/Lectures/Lecture01/Lec01.html#what-is-data-1",
-    "href": "Pages/Lectures/Lecture01/Lec01.html#what-is-data-1",
-    "title": "PSTAT 5A: Lecture 01",
-    "section": "What is Data?",
-    "text": "What is Data?\n\nAccording to Merriam-Webster (source), there are three definitions for data:\n\n\nfactual information (such as measurements or statistics) used as a basis for reasoning, discussion, or calculation\ninformation in digital form that can be transmitted or processed\ninformation output by a sensing device or organ that includes both useful and irrelevant or redundant information and must be processed to be meaningful"
-  },
-  {
     "objectID": "Pages/Lectures/Lecture01/Lec01.html#example-of-data",
     "href": "Pages/Lectures/Lecture01/Lec01.html#example-of-data",
     "title": "PSTAT 5A: Lecture 01",
@@ -756,11 +749,25 @@
     "text": "Continuous vs. Discrete Variables\n\nThere is a way we can further subdivide numerical variables.\nAs an example, let us consider two different variables, both of which are numerical: heights, and number of accidents on a stretch of highway.\n\nIt is perfectly conceivable to observe a height of 5.15 feet, or 5.1302 feet, or 5.02391829 feet. In other words, there are an infinite number of possible heights between, say, 5 feet and 6 feet.\nOn the other hand, it doesn’t make sense to talk about “1.5 accidents” occurring on a stretch of highway; the number of accidents needs to be an integer."
   },
   {
-    "objectID": "Pages/Lectures/Lecture01/Lec01.html#ordinal-vs.-nominal-variables",
-    "href": "Pages/Lectures/Lecture01/Lec01.html#ordinal-vs.-nominal-variables",
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#section",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#section",
     "title": "PSTAT 5A: Lecture 01",
-    "section": "Ordinal vs. Nominal Variables",
-    "text": "Ordinal vs. Nominal Variables\n\nJust as there was a way to subdivide numerical variables, there is a way to further subdivide categorical variables as well.\nAs an example, consider the following two categorical variables: color, and letter grades (i.e. A, B+, etc.)\n\nFirstly, I hope you can see that both of these variables are indeed categorical: there are only a fixed set of values that “color” and “letter grade” can take, with nothing in between.\nNow, clearly letter grades can be ordered: that is, an A is better than a B, which is better than a C, and so on and so forth.\nIn contrast, “green” isnt inherently better than “red”, which isn’t inherently better than “grey”, and so on and so forth."
+    "section": "",
+    "text": "Artwork by Allison Horst"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#ordinal-vs.-nominal-vs.-binary-variables",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#ordinal-vs.-nominal-vs.-binary-variables",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Ordinal vs. Nominal vs. Binary Variables",
+    "text": "Ordinal vs. Nominal vs. Binary Variables\n\nJust as there was a way to subdivide numerical variables, there is a way to further subdivide categorical variables as well.\nAs an example, consider the following two categorical variables: color, and letter grades (i.e. A, B+, etc.), and pass/fail status\n\nFirstly, I hope you can see that all of these variables are indeed categorical: there are only a fixed set of values that “color” and “letter grade” and “pass/fail” can take, with nothing in between.\nNow, clearly letter grades can be ordered: that is, an A is better than a B, which is better than a C, and so on and so forth. This makes letter grades an ordinal variable.\nIn contrast, “green” isnt inherently better than “red”, which isn’t inherently better than “grey”, and so on and so forth. This makes color a nominal variable.\nPass/fail status, while categorical, has only two possible values (pass or fail). This makes it a binary variable - a special case of nominal variables with exactly two categories."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#section-1",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#section-1",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "",
+    "text": "Artwork by Allison Horst"
   },
   {
     "objectID": "Pages/Lectures/Lecture01/Lec01.html#full-classification-scheme",
@@ -775,13 +782,6 @@
     "title": "PSTAT 5A: Lecture 01",
     "section": "Time for an Exercise!",
     "text": "Time for an Exercise!\n\n\n\n\n\n\nExercise 1\n\n\n\nClassify each of the following variables as either discrete, continuous, ordinal, or nominal.\n\n\nThe number of times a computer program returns an error\nThe time it takes an experienced swimmer to complete 4 laps of a pool\nThe favorite flavor of donut of a randomly selected person\nThe months of the year, as written in MM format (e.g. “01” for “January”, “02” for “February”, etc.)\nThe presence or absence of a species observation\n\n\nDiscuss with your neighbors!"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture01/Lec01.html#important-note",
-    "href": "Pages/Lectures/Lecture01/Lec01.html#important-note",
-    "title": "PSTAT 5A: Lecture 01",
-    "section": "Important Note",
-    "text": "Important Note\n\nIt is important to note that categorical data can be encoded using numbers (as we saw in the previous slide).\n\nIndeed, this is a fairly common practice as computers are more adept at dealing with numbers than things like words or symbols.\nAs such, when classifying data, it is not always enough to just check whether the data consists of numbers or not- it is important to think critically about what the data itself represents.\nAs a quick rule-of-thumb: check whether adding two numbers in your dataset makes interpretive sense. 12in \\(+\\) 13in is 15in, whereas blue + gold does not equal anything, regardless of whether blue is being encoded as 0 and gold is being encoded as 1."
   },
   {
     "objectID": "Pages/Lectures/Lecture01/Lec01.html#real-world-data-set",
@@ -943,6 +943,13 @@
     "title": "PSTAT 5A: Lecture 00",
     "section": "Why Should I Care?",
     "text": "Why Should I Care?\n\n\nI suspect not all of you are necessarily pursuing a degree in Statistics or Data Science. However, this day in age, data is truly everywhere, and having strong mathematical thinking will give you a leg up in any role you want.\n\n\n\nHowever, wherever there is data, there is the need for a Data Scientist (or, at least, some of the principles from Data Science).\n\nSo, even if you are working in (what you might think is) a field that is far removed from Statsitics, the minute you start dealing with Data is the minute you start needing to know Data Science!\n\nHere’s a perhaps more pragmatic answer: even if you think you want to go straight into industry right after this course, no company wants to hire someone to just mindlessly crunch numbers - though computing experience is absolutely crucial in making yourself a good candidate, employers would much rather have someone who is both skilled at running code but also understands why they are running the code they are running!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture00/Lec00.html#section",
+    "href": "Pages/Lectures/Lecture00/Lec00.html#section",
+    "title": "PSTAT 5A: Lecture 00",
+    "section": "",
+    "text": "Artwork by Allison Horst"
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#paired-data",
@@ -2475,7 +2482,7 @@
     "href": "Pages/course_staff.html#teaching-assistants-tas",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Teaching Assistants (TAs)",
-    "text": "Teaching Assistants (TAs)\n\n\n\n\n\n\n\nTA: Daniel Silva\n\n\n\n\n\n\n\n\n\n\n\n\n\nDaniel Silva\n\n\nDaniel is a PhD Student in the PSTAT Department.\n\n\n\n\n\nEmail:\n\n\ndcsilva@ucsb.edu\n\n\n\n\nOH:\n\n\nTuesdays 2:00pm - 3:00pm in Building 434, Room 113\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTA: Hezhong Zhang\n\n\n\n\n\n\n\n\n\n\n\n\n\nHezhong Zhang\n\n\nHezhong is a PhD Student in the PSTAT Department.\n\n\n\n\n\nEmail:\n\n\nhzhang586@umail.ucsb.edu\n\n\n\n\nOH:\n\n\nTuesdays 3:00pm - 5:00pm in Building 434, Room 113"
+    "text": "Teaching Assistants (TAs)\n\n\n\n\n\n\n\nTA: Summer Le\n\n\n\n\n\n\n\n\n\n\n\n\n\nDaniel Silva\n\n\nSummer is a PhD Student in the PSTAT Department.\n\n\n\n\n\nEmail:\n\n\nsle@ucsb.edu&gt;\n\n\n\n\nOH:\n\n\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTA: Mallory Wang\n\n\n\n\n\n\n\n\n\n\n\n\n\nHezhong Zhang\n\n\nMallory is a PhD Student in the PSTAT Department.\n\n\n\n\n\nEmail:\n\n\nmallorywang@ucsb.edu\n\n\n\n\nOH:\n\n\nTBD"
   },
   {
     "objectID": "Pages/syllabus.html",
@@ -2496,14 +2503,14 @@
     "href": "Pages/syllabus.html#course-staff",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Course Staff",
-    "text": "Course Staff\n\n\n\n\n\n\n\n\n\n\nInstructor:\nAnnie Adams\n\n\n\n\nEmail:\naradams@ucsb.edu\n\n\nHelp Hours:\n\nMondays: 11:00 am - 12:00 pm\nWednesdays: 11:00 am - 12:00 pm\n\n\n\n\n\n\n\n\n\n\n\n\n\nTAs\n\n\n\nDaniel Silva\n(dcsilva@ucsb.edu)\n\n\n\nHezhong Zhang\n(hzhang586@umail.ucsb.edu)"
+    "text": "Course Staff\n\n\n\n\n\n\n\n\n\n\nInstructor:\nAnnie Adams\n\n\n\n\nEmail:\naradams@ucsb.edu\n\n\nHelp Hours:\n\nMondays: 11:00 am - 12:00 pm\nWednesdays: 11:00 am - 12:00 pm\n\n\n\n\n\n\n\n\n\n\n\n\n\nTAs\n\n\n\nSummer Le\n(sle@ucsb.eduu)\n\n\n\nMallory Wang\n(mallorywang@ucsb.edu"
   },
   {
     "objectID": "Pages/syllabus.html#schedule-of-sections",
     "href": "Pages/syllabus.html#schedule-of-sections",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Schedule of Sections",
-    "text": "Schedule of Sections\n\n\n\nTimes\nTA\nLocation\n\n\n\n\nTR 11:00 - 11:50pm\n\nPHELPS 1513\n\n\nTR 12:00 - 12:50pm\n\nPHELPS 1525\n\n\nTR 1:00 - 1:50pm\n\nPHELPS 1525"
+    "text": "Schedule of Sections\n\n\n\nTimes\nTA\nLocation\n\n\n\n\nTR 11:00 - 11:50pm\nSummer Le\nPHELPS 1513\n\n\nTR 12:00 - 12:50pm\nMallory Wang\nPHELPS 1525\n\n\nTR 1:00 - 1:50pm\nMallory Wang\nPHELPS 1525"
   },
   {
     "objectID": "Pages/syllabus.html#course-description",
@@ -5362,18 +5369,18 @@
     "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\nLast Updated: August 4, 2024\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections."
   },
   {
-    "objectID": "Pages/schedule.html#week-1-804---808",
-    "href": "Pages/schedule.html#week-1-804---808",
+    "objectID": "Pages/schedule.html#week-1-804---807",
+    "href": "Pages/schedule.html#week-1-804---807",
     "title": "PSTAT 5A: Understanding Data",
-    "section": "Week 1 (8/04 - 8/08)",
-    "text": "Week 1 (8/04 - 8/08)\n\n\nLectures\n00: Introduction 01: Descriptive Statistics I 02: Descriptive Statistics II 03: Intro to Probability 04: Counting  \n\n\nWorksheet\nWorksheet 01 \n\n\nLab\nLab 01"
+    "section": "Week 1 (8/04 - 8/07)",
+    "text": "Week 1 (8/04 - 8/07)\n\n\nLectures\n00: Introduction 01: Descriptive Statistics I 02: Descriptive Statistics II 03: Intro to Probability  \n\n\nWorksheet\nWorksheet 01 \n\n\nLab\nLab 01"
   },
   {
-    "objectID": "Pages/schedule.html#week-2-811---815",
-    "href": "Pages/schedule.html#week-2-811---815",
+    "objectID": "Pages/schedule.html#week-2-811---814",
+    "href": "Pages/schedule.html#week-2-811---814",
     "title": "PSTAT 5A: Understanding Data",
-    "section": "Week 2 (8/11 - 8/15)",
-    "text": "Week 2 (8/11 - 8/15)\n\n\nLectures\n05: Conditional Probabilities 06: NO LECTURE (Fourth of July) 09: Discrete Random Variables  \n\n\nWorksheet\nWorksheet 02 \n\n\nLab\nLab 02"
+    "section": "Week 2 (8/11 - 8/14)",
+    "text": "Week 2 (8/11 - 8/14)\n\n\nLectures\n04: Counting 05: Conditional Probabilities 06: Discrete Random Variables 07: Review\n\n\n\n\nWorksheet\nWorksheet 02 \n\n\nLab\nLab 02"
   },
   {
     "objectID": "Pages/schedule.html#week-3-818---821",
@@ -5402,54 +5409,5 @@
     "title": "PSTAT 5A: Understanding Data",
     "section": "Week 6 (9/08 - 9/11)",
     "text": "Week 6 (9/08 - 9/11)\n\n\nLectures\n19: Regression Diagnostics, and  Sampling Procedures 20: Ways Statistics Can Deceive 21: Review FINAL EXAM: Thursday, Sept 11 during lecture\n\n\nDiscussion\nQ&A with TA\n\n\nLab\nLab 06"
-  },
-  {
-    "objectID": "Pages/schedule.html#week-1-804---807",
-    "href": "Pages/schedule.html#week-1-804---807",
-    "title": "PSTAT 5A: Understanding Data",
-    "section": "Week 1 (8/04 - 8/07)",
-    "text": "Week 1 (8/04 - 8/07)\n\n\nLectures\n00: Introduction 01: Descriptive Statistics I 02: Descriptive Statistics II 03: Intro to Probability  \n\n\nWorksheet\nWorksheet 01 \n\n\nLab\nLab 01"
-  },
-  {
-    "objectID": "Pages/schedule.html#week-2-811---814",
-    "href": "Pages/schedule.html#week-2-811---814",
-    "title": "PSTAT 5A: Understanding Data",
-    "section": "Week 2 (8/11 - 8/14)",
-    "text": "Week 2 (8/11 - 8/14)\n\n\nLectures\n04: Counting 05: Conditional Probabilities 06: Discrete Random Variables 07: Review\n\n\n\n\nWorksheet\nWorksheet 02 \n\n\nLab\nLab 02"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture00/Lec00.html#why-should-i-care-1",
-    "href": "Pages/Lectures/Lecture00/Lec00.html#why-should-i-care-1",
-    "title": "PSTAT 5A: Lecture 00",
-    "section": "Why Should I Care?",
-    "text": "Why Should I Care?\n\nArtwork by Allison Horst"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture00/Lec00.html#section",
-    "href": "Pages/Lectures/Lecture00/Lec00.html#section",
-    "title": "PSTAT 5A: Lecture 00",
-    "section": "",
-    "text": "Artwork by Allison Horst"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture01/Lec01.html#section",
-    "href": "Pages/Lectures/Lecture01/Lec01.html#section",
-    "title": "PSTAT 5A: Lecture 01",
-    "section": "",
-    "text": "Artwork by Allison Horst"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture01/Lec01.html#section-1",
-    "href": "Pages/Lectures/Lecture01/Lec01.html#section-1",
-    "title": "PSTAT 5A: Lecture 01",
-    "section": "",
-    "text": "Artwork by Allison Horst"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture01/Lec01.html#ordinal-vs.-nominal-vs.-binary-variables",
-    "href": "Pages/Lectures/Lecture01/Lec01.html#ordinal-vs.-nominal-vs.-binary-variables",
-    "title": "PSTAT 5A: Lecture 01",
-    "section": "Ordinal vs. Nominal vs. Binary Variables",
-    "text": "Ordinal vs. Nominal vs. Binary Variables\n\nJust as there was a way to subdivide numerical variables, there is a way to further subdivide categorical variables as well.\nAs an example, consider the following two categorical variables: color, and letter grades (i.e. A, B+, etc.), and pass/fail status\n\nFirstly, I hope you can see that all of these variables are indeed categorical: there are only a fixed set of values that “color” and “letter grade” and “pass/fail” can take, with nothing in between.\nNow, clearly letter grades can be ordered: that is, an A is better than a B, which is better than a C, and so on and so forth. This makes letter grades an ordinal variable.\nIn contrast, “green” isnt inherently better than “red”, which isn’t inherently better than “grey”, and so on and so forth. This makes color a nominal variable.\nPass/fail status, while categorical, has only two possible values (pass or fail). This makes it a binary variable - a special case of nominal variables with exactly two categories."
   }
 ]
