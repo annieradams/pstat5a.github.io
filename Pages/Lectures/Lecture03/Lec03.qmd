@@ -489,7 +489,7 @@ Given two events $E$ and $F$, we have the following:
 :::
 :::
 
-- We will not prove these in this class. However, please familiarize yourself with them as they will be incredibly useful!
+
 
 ---
 
@@ -551,9 +551,9 @@ and
 
     - "the chance of rain is 50%"
     - "odds of winning big at a Casino is 1%"
-    - "probability of scoring a 100% on the PSTAT 5A Midterm 1 is 95%"
+    - "probability of scoring a 100% on the PSTAT 5A Final Exam  is 95%"
 
-- Notice that "rain", "winning big at a Casino", and "scoring 100% on the PSTAT 5A Midterm 1" are all events.
+- Notice that "rain", "winning big at a Casino", and "scoring 100% on the PSTAT 5A Final Exam " are all events.
 
 - As such, "probability" seems to take in an event and spit out a number.
 
