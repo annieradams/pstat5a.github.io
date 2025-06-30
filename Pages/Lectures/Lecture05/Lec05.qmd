@@ -1,8 +1,8 @@
 ---
 title: "PSTAT 5A: Lecture 05"
 subtitle: "Conditional Probability and Independence"
-author: "Mallory Wang"
-date: "07/01/24"
+author: "Annie Adams"
+date: "08/12/2025"
 format: 
     revealjs:
       html-math-method: mathjax

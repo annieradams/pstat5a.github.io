@@ -4,3 +4,10 @@
 .Ruserdata
 
 /.quarto/
+
+
+.DS_Store
+Files/.DS_Store
+Files/HW/.DS_Store
+Pages/.DS_Store
+Pages/Lectures/.DS_Store

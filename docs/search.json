@@ -1831,7 +1831,7 @@
     "href": "Pages/Lectures/Lecture03/Lec03.html#axioms-of-probability",
     "title": "PSTAT 5A: Lecture 03",
     "section": "Axioms of Probability",
-    "text": "Axioms of Probability\n\nIt turns out that there are three axioms that a probability measure must satisfy, collectively called the axioms of probability:\n\n\\(\\mathbb{P}(E) \\geq 0\\) for any event \\(E\\)\n\\(\\mathbb{P}(\\Omega) = 1\\)\nFor disjoint events \\(E\\) and \\(F\\), \\(\\mathbb{P}(E \\cup F) = \\mathbb{P}(E) + \\mathbb{P}(F)\\).\n\nIf you are not familiar with the notion of axioms: an axiom is a fundamental “truth” of math, that does not need to be proven.\n\nAxioms are like the building blocks, or base assumptions on which a system of math is predicated."
+    "text": "Axioms of Probability\n\nIt turns out that there are three axioms that a probability measure must satisfy, collectively called the axioms of probability\nIf you are not familiar with the notion of axioms: an axiom is a fundamental “truth” of math, that does not need to be proven.\n\nAxioms are like the building blocks, or base assumptions on which a system of math is predicated.\n\naxioms of probability:\n\n\\(\\mathbb{P}(E) \\geq 0\\) for any event \\(E\\)\n\\(\\mathbb{P}(\\Omega) = 1\\)\nFor disjoint events \\(E\\) and \\(F\\), \\(\\mathbb{P}(E \\cup F) = \\mathbb{P}(E) + \\mathbb{P}(F)\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture03/Lec03.html#summary",
