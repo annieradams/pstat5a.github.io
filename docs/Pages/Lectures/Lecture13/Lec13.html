@@ -12,8 +12,8 @@
   <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Mallory Wang">
-  <meta name="dcterms.date" content="2024-07-15">
-  <title>PSTAT 5A: Summer Session B, 2025 - PSTAT 5A: Lecture 13</title>
+  <meta name="dcterms.date" content="2024-07-18">
+  <title>PSTAT 5A: Summer Session B, 2025 - PSTAT 5A: Lecture 17</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -395,419 +395,52 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="5a_hex.png" data-background-opacity="0.5" data-background-position="left" data-background-size="contain" class="center">
-  <h1 class="title" style="text-align: right">PSTAT 5A: Lecture 13</h1>
-  <h2 class="subtitle" style="text-align: right">Inference on the Mean</h2>
+  <h1 class="title" style="text-align: right">PSTAT 5A: Lecture 17</h1>
+  <h2 class="subtitle" style="text-align: right">Hypothesis Testing, Part II</h2>
   <p class="author" style="text-align: right">Mallory Wang</p>
-  <p class="date" style="text-align: right">2024-07-15</p>
+  <p class="date" style="text-align: right">2024-07-18</p>
 </section>
-<section id="previously" class="slide level2" style="font-size:30px">
-<h2>Previously</h2>
+<section>
+<section id="hypothesis-testing-for-the-mean" class="title-slide slide level1 center">
+<h1>Hypothesis Testing for the Mean</h1>
+
+</section>
+<section id="recap" class="slide level2">
+<h2>Recap</h2>
 <ul>
-<li class="fragment"><p>Over the course of the past few lectures, we’ve been dealing primarily with population proportions.</p></li>
-<li class="fragment"><p>A natural point estimate of <span class="math inline">\(p\)</span> is <span class="math inline">\(\widehat{P}\)</span>, the sample proportion.</p>
-<ul>
-<li class="fragment">The Central Limit Theorem for Proportions helped us even further by providing the sampling distribution of <span class="math inline">\(\widehat{P}\)</span>, under certain conditions (the success-failure conditions).</li>
-</ul></li>
-<li class="fragment"><p>We then used the sampling distribution of <span class="math inline">\(\widehat{P}\)</span> to construct confidence intervals for the true proportion <span class="math inline">\(p\)</span>.</p></li>
-<li class="fragment"><p>Now we will turn our attention to a different population parameter.</p></li>
+<li class="fragment"><p>Hypothesis test with proportions: given a population with true proportion <span class="math inline">\(p\)</span>, we took samples and tried to use the data collected in these samples to assess the validity of the claim <span class="math inline">\(H_0: \ p = p_0\)</span> (for some fixed value <span class="math inline">\(p_0\)</span>) against some alternative hypothesis (two-sided, lower-tailed, or upper-tailed)</p></li>
+<li class="fragment"><p>Indeed, we can conduct hypothesis testing on <em>any</em> population parameter.</p></li>
+<li class="fragment"><p>One parameter of interest to statisticians is the <strong>population mean</strong> <span class="math inline">\(\mu\)</span>.</p></li>
 </ul>
 </section>
-<section id="leadup" class="slide level2" style="font-size:30px">
-<h2>Leadup</h2>
+<section id="hypothesis-testing-for-the-mean-1" class="slide level2">
+<h2>Hypothesis Testing for the Mean</h2>
 <ul>
-<li class="fragment">Recall from last lecture that any of the descriptive statistics we discussed in Week 1 can be viewed as population parameters, when they apply to the population.
+<li class="fragment"><p>The classification of tests doesn’t change much: we still have <strong>two-sided</strong>, <strong>lower-tailed</strong> and <strong>upper-tailed</strong> tests for the mean.</p></li>
+<li class="fragment"><p>More specifically, if our null is <span class="math inline">\(H_0: \ \mu = \mu_0\)</span> then:</p>
 <ul>
-<li class="fragment">E.g. population proportion (<span class="math inline">\(p\)</span>), population variance (<span class="math inline">\(\sigma^2\)</span>), etc.</li>
-</ul></li>
-<li class="fragment">Of particular interest to statisticians is often the <strong>population mean</strong>, <span class="math inline">\(\mu\)</span>.</li>
-<li class="fragment">Let’s try and draw some analogies from our work with population proportions.</li>
-<li class="fragment">When trying to make inferences on a population proportion <span class="math inline">\(p\)</span>, we used the sample proportion <span class="math inline">\(\widehat{P}\)</span> as a proxy (specifically, a <strong>point estimator</strong>).
-<ul>
-<li class="fragment">Any guesses on what we might use as a point estimator of <span class="math inline">\(\mu\)</span>?</li>
-<li class="fragment">That’s right- the <strong>sample mean</strong> <span class="math inline">\(\overline{X}\)</span>!</li>
-</ul></li>
-</ul>
-</section>
-<section id="notation" class="slide level2" style="font-size:30px">
-<h2>Notation</h2>
-<ul>
-<li class="fragment"><p>Again, it will be useful to establish some notation:</p>
-<ul>
-<li class="fragment"><span class="math inline">\(\mu\)</span> represents the population mean, and is deterministic (i.e.&nbsp;fixed) but unknown.</li>
-<li class="fragment"><span class="math inline">\(\overline{X}\)</span> represents the mean <em>of some hypothetical sample</em>, and is therefore random (as different samples result in different sample means)</li>
-<li class="fragment"><span class="math inline">\(\overline{x}\)</span> represents the mean <em>of a specific sample</em>, and is therefore deterministic (i.e.&nbsp;“we’ve taken <em>this particular sample right here</em> and computed its mean”).</li>
-</ul></li>
-<li class="fragment"><p>Just as <span class="math inline">\(\widehat{P}\)</span> has a <strong>sampling distribution</strong>, so too does <span class="math inline">\(\overline{X}\)</span>.</p></li>
-<li class="fragment"><p>The sampling distribution of <span class="math inline">\(\overline{X}\)</span>, however, will end up requiring a few more considerations than the sampling distribution of <span class="math inline">\(\widehat{P}\)</span>.</p>
-<ul>
-<li class="fragment">We will need it, however, in order to construct confidence intervals for <span class="math inline">\(\mu\)</span>.</li>
+<li class="fragment">A <strong>two-sided alternative</strong> is <span class="math inline">\(H_A: \ \mu \neq \mu_0\)</span></li>
+<li class="fragment">A <strong>lower-tailed alternative</strong> is <span class="math inline">\(H_A: \ \mu &lt; \mu_0\)</span></li>
+<li class="fragment">An <strong>upper-tailed alternative</strong> is <span class="math inline">\(H_A: \ \mu &gt; \mu_0\)</span></li>
+<li class="fragment">A <strong>simple-vs-simple alternative</strong> is <span class="math inline">\(H_A: \ \mu = \mu_1\)</span> for some <span class="math inline">\(\mu_1 \neq \mu_0\)</span></li>
 </ul></li>
 </ul>
 </section>
-<section id="general-confidence-intervals" class="slide level2">
-<h2>General Confidence Intervals</h2>
+<section id="hypothesis-testing-for-the-mean-2" class="slide level2">
+<h2>Hypothesis Testing for the Mean</h2>
 <ul>
-<li class="fragment"><p>We will follow the general idea we used before of constructing confidence intervals as <span class="math inline">\(\widehat{\theta} \pm \mathrm{m.e.}\)</span>.</p></li>
-<li class="fragment"><p>In this case, we use <span class="math inline">\(\overline{X}\)</span> as our point estimator.</p></li>
-<li class="fragment"><p>Here is a useful result from Probability Theory:</p></li>
+<li class="fragment"><p>Our testing procedure will be similar to that of hypothesis tests for a proportion: we compute a test statistic, and then compare this value of the test statistic to a critical value that is determined by both the distribution of the test statistic under the null as well as the significance level <span class="math inline">\(\alpha\)</span>.</p></li>
+<li class="fragment"><p>Let’s focus on a two-sided test for now.</p></li>
+<li class="fragment"><p>Our test statistic will certainly involve <span class="math inline">\(\overline{X}\)</span>, the sample mean.</p>
+<ul>
+<li class="fragment">Specifically, it will be some standardized version of <span class="math inline">\(\overline{X}\)</span>.</li>
+<li class="fragment">However, exactly <em>how</em> we standardize will be dependent upon the sampling distribution of <span class="math inline">\(\overline{X}\)</span>.</li>
+</ul></li>
 </ul>
+</section>
+<section id="sampling-distribution-of-overlinex" class="slide level2">
+<h2>Sampling Distribution of <span class="math inline">\(\overline{X}\)</span></h2>
 <div class="fragment">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Result</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<div style="font-size: 30px">
-<p>Consider a population with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>. If <span class="math inline">\(\overline{X}\)</span> denotes the mean of a sample of size <span class="math inline">\(n\)</span> taken from this population, then <span class="math display">\[ \mathrm{SD}(\overline{X}) = \frac{\sigma}{\sqrt{n}} \]</span></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="general-confidence-intervals-1" class="slide level2">
-<h2>General Confidence Intervals</h2>
-<ul>
-<li class="fragment">Therefore, our confidence intervals will take the form <span class="math display">\[ \overline{X} \pm c \cdot \frac{\sigma}{\sqrt{n}} \]</span> where the constant <span class="math inline">\(c\)</span> depends on both the sampling distribution of <span class="math inline">\(\overline{X}\)</span> as well as the confidence level.</li>
-</ul>
-</section>
-<section id="normal-population" class="slide level2" style="font-size:30px">
-<h2>Normal Population</h2>
-<ul>
-<li class="fragment"><p>Let’s work on finding the sampling distribution of <span class="math inline">\(\overline{X}\)</span>.</p></li>
-<li class="fragment"><p>It turns out that the first thing we need to ask is whether the underlying population is normally distributed or not.</p></li>
-<li class="fragment"><p>If the underlying population <em>is</em> normally distributed [again with population mean <span class="math inline">\(\mu\)</span> and population standard deviation <span class="math inline">\(\sigma\)</span>], we have that <span class="math display">\[ \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0, \ 1) \]</span> meaning the constant <span class="math inline">\(c\)</span> should be selected as the appropriate percentile of the <em>standard normal</em> distribution: <span class="math display">\[ \overline{x} \pm z^{\ast} \cdot \frac{\sigma}{\sqrt{n}} \]</span></p></li>
-</ul>
-</section>
-<section id="worked-out-example" class="slide level2" style="font-size:30px">
-<h2>Worked-Out Example</h2>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Worked-Out Example 1</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<div style="font-size: 30px">
-<p>The heights of adult males are assumed to follow a normal distribution with mean 70 in and standard deviation 15 in. A representative sample of 120 adult males is taken, and the average height of males in this sample is recorded.</p>
-<ol type="a">
-<li>What is the random variable of interest?</li>
-<li>Is the value of 70 in a population parameter or a sample statistic?</li>
-<li>What is the probability that the average height of males in the sample is between 69.5 in and 71.5 in?</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="solutions" class="slide level2" style="font-size:30px">
-<h2>Solutions</h2>
-<ol type="a">
-<li class="fragment"><p><span class="math inline">\(\overline{X} =\)</span> the average height of a sample of 120 adult males.</p></li>
-<li class="fragment"><p>The value of 70 in is a population parameter, as it is the true average height of all adult males.</p></li>
-<li class="fragment"><p>The quantity we seek is <span class="math inline">\(\mathbb{P}(69.5 \leq \overline{X} \leq 71.5)\)</span>. Because the population is normally distributed, we can use our result above to conclude <span class="math display">\[ \overline{X} \sim \mathcal{N}\left( 70, \ \frac{15}{\sqrt{120}} \right) \sim \mathcal{N}\left( 70, \ 1.369 \right) \]</span></p></li>
-</ol>
-<ul>
-<li class="fragment">To find <span class="math inline">\(\mathbb{P}(69.5 \leq \overline{X} \leq 71.5)\)</span>, we therefore utilize the same techniques we used previously, when dealing with normal distribution problems: <span class="math display">\[\mathbb{P}(69.5 \leq \overline{X} \leq 71.5) = \mathbb{P}(\overline{X} \leq 71.5) - \mathbb{P}(\overline{X} \leq 69.5) \]</span></li>
-</ul>
-</section>
-<section id="solutions-1" class="slide level2" style="font-size:30px">
-<h2>Solutions</h2>
-<div>
-<ul>
-<li>The associated <span class="math inline">\(z-\)</span>scores are <span class="math display">\[\begin{align*}
-z_1     &amp; = \frac{71.5 - 70}{\left( \frac{15}{\sqrt{120}} \right)} \approx 1.10    \\
-z_2     &amp; = \frac{69.5 - 70}{\left( \frac{15}{\sqrt{120}} \right)} \approx -0.37
-\end{align*}\]</span></li>
-</ul>
-</div>
-<ul>
-<li class="fragment">The associated probabilities (from a <span class="math inline">\(z-\)</span>table) are <span class="math inline">\(0.8643\)</span> and <span class="math inline">\(0.3557\)</span>, respectively, meaning the desired probability is <span class="math display">\[ 0.8643 - 0.3557 = \boxed{ 0.5086 = 50.86\% } \]</span></li>
-</ul>
-</section>
-<section id="non-normal-population" class="slide level2" style="font-size:30px">
-<h2>Non-Normal Population</h2>
-<ul>
-<li class="fragment"><p>Alright, so that explains what to do if the population values follow a normal distribution.</p></li>
-<li class="fragment"><p>But what if they don’t? In real-world settings, we don’t typically get to know exactly what the population distribution is.</p></li>
-<li class="fragment"><p>If our population is <em>not</em> normally distributed, we need to ask ourselves whether we have a “large enough sample”.</p></li>
-<li class="fragment"><p>Admittedly, there isn’t a single agreed-upon cutoff for “large enough”- for the purposes of this class, we will use <span class="math inline">\(n \geq 30\)</span> to mean “large enough” and <span class="math inline">\(n &lt; 30\)</span> to therefore be “not large enough.”</p></li>
-</ul>
-</section>
-<section id="non-normal-population-n-30" class="slide level2" style="font-size:30px">
-<h2>Non-Normal Population, <span class="math inline">\(n &lt; 30\)</span></h2>
-<ul>
-<li class="fragment"><p>If the population is non-normal, and the sample size is not large enough…</p></li>
-<li class="fragment"><p>… we can’t do anything.</p></li>
-<li class="fragment"><p>More specifically, there aren’t any results we can use to confidently make inferences about the population mean- there is just too much uncertainty, between the uncertainty regarding the population’s distribution <em>and</em> the small sample size.</p></li>
-</ul>
-</section>
-<section id="non-normal-population-n-geq-30" class="slide level2" style="font-size:30px">
-<h2>Non-Normal Population, <span class="math inline">\(n \geq 30\)</span></h2>
-<ul>
-<li class="fragment"><p>If the population is non-normal, and the sample size <em>is</em> large enough…</p></li>
-<li class="fragment"><p>… we’re still (perhaps surprisingly) in business!</p></li>
-<li class="fragment"><p>It turns out that if <span class="math inline">\(n\)</span> is large enough, <span class="math display">\[ \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0, \ 1) \]</span> that is, the sample mean once again has a normal sampling distribution!</p></li>
-<li class="fragment"><p>In fact, this is such an important result, we give it a name:</p></li>
-</ul>
-</section>
-<section id="central-limit-theorem-for-the-sample-mean" class="slide level2" style="font-size:30px">
-<h2>Central Limit Theorem for the Sample Mean</h2>
-<div class="fragment">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong><strong>Central Limit Theorem for the Sample Mean</strong></strong></p>
-</div>
-<div class="callout-content">
-<div style="font-size: 28px">
-<p>If we have reasonably representative samples of large enough size <span class="math inline">\(n\)</span>, taken from a population with true mean <span class="math inline">\(\mu\)</span> and true standard deviation <span class="math inline">\(\sigma\)</span>, then <span class="math display">\[ \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}\left(0, \ 1 \right) \]</span> or, equivalently, <span class="math display">\[ \overline{X} \sim \mathcal{N}\left( \mu, \ \frac{\sigma}{\sqrt{n}} \right) \]</span> where <span class="math inline">\(\overline{X}\)</span> denotes the sample mean.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="worked-out-example-2" class="slide level2" style="font-size:30px">
-<h2>Worked-Out Example</h2>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Worked-Out Example 2</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<div style="font-size: 30px">
-<p>The temperatures collected at all weather stations in Antarctica follow some unknown distribution with unknown mean and known standard deviation 8<sup>o</sup>F. A researcher records the temperature measurements from a representative sample of 81 different weather stations, and finds the average temperature to be 26<sup>o</sup>F.</p>
-<ol type="a">
-<li>What is the population?</li>
-<li>What is the sample?</li>
-<li>Define the random variable of interest.</li>
-<li>What is the probability that this observed average of 26<sup>o</sup>F lies within 1<sup>o</sup>F of the true average temperature across all weather stations in Antarctica?</li>
-<li>Construct a 90% confidence interval for the true average temperature across all weather stations in Antarctica.</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="solutions-2" class="slide level2" style="font-size:30px">
-<h2>Solutions</h2>
-<ol type="a">
-<li class="fragment"><p>The population is the set of all weather stations in Antarctica.</p></li>
-<li class="fragment"><p>The sample is the 81 weather stations selected by the researcher.</p></li>
-<li class="fragment"><p>The random variable of interest is <span class="math inline">\(\overline{X}\)</span>, the average temperature across 81 randomly-selected weather stations in Antarctica.</p></li>
-</ol>
-<div class="fragment">
-<p><strong>Part (d):</strong> This is where things get interesting!</p>
-</div>
-<ul>
-<li class="fragment">Is the population normally distributed?
-<ul>
-<li class="fragment">No.&nbsp;Or, at least, we don’t know for certain, so it’s safer <em>not</em> to assume it is.</li>
-</ul></li>
-<li class="fragment">Is our sample size large enough to invoke the CLT?
-<ul>
-<li class="fragment">Yes, since <span class="math inline">\(n = 81 \geq 30\)</span>.</li>
-</ul></li>
-<li class="fragment">Therefore, the CLT applies and tells us that <span class="math display">\[ \overline{X} \sim \mathcal{N}\left(\mu, \ \frac{8}{\sqrt{81}} \right) \sim \mathcal{N}\left(\mu, \ \frac{8}{9} \right) \]</span></li>
-</ul>
-</section>
-<section id="solutions-3" class="slide level2" style="font-size:30px">
-<h2>Solutions</h2>
-<ul>
-<li class="fragment"><p>Again, what we have found is <span class="math display">\[ \overline{X} \sim \mathcal{N}\left(\mu, \ \frac{8}{\sqrt{81}} \right) \sim \mathcal{N}\left(\mu, \ \frac{8}{9} \right) \]</span></p></li>
-<li class="fragment"><p>We seek <span class="math inline">\(\mathbb{P}(\mu - 1 \leq \overline{X} \leq \mu + 1)\)</span>, which we first write as <span class="math display">\[ \mathbb{P}(\overline{X} \leq \mu + 1) - \mathbb{P}(\overline{X} \leq \mu - 1) \]</span></p></li>
-<li class="fragment"><p>Computing the necessary <span class="math inline">\(z-\)</span>scores yields <span class="math display">\[\begin{align*}
-z_1   &amp;  = \frac{(\mu + 1) - \mu}{8/9} = \frac{9}{8} \approx 1.13    \\
-z_2   &amp;  = \frac{(\mu - 1) - \mu}{8/9} = -\frac{9}{8} \approx -1.13
-\end{align*}\]</span></p></li>
-</ul>
-</section>
-<section id="solutions-4" class="slide level2" style="font-size:30px">
-<h2>Solutions</h2>
-<ul>
-<li class="fragment">The corresponding values from the normal table are <span class="math inline">\(0.8708\)</span> and <span class="math inline">\(0.1292\)</span>, respectively, meaning the desired probability is <span class="math display">\[ 0.8708 - 0.1292 = \boxed{74.16\%} \]</span></li>
-</ul>
-</section>
-<section id="unknown-sigma" class="slide level2" style="font-size:28px">
-<h2>Unknown <span class="math inline">\(\sigma\)</span>?</h2>
-<ul>
-<li class="fragment"><p>Notice that in the previous worked-out example (and, indeed, in the CLT for sample means), we need information on the true population standard deviation <span class="math inline">\(\sigma\)</span>.</p></li>
-<li class="fragment"><p>What happens if we don’t have access to <span class="math inline">\(\sigma\)</span>?</p></li>
-<li class="fragment"><p>Well, we encountered a somewhat similar situation in our discussion on proportions; the standard error of <span class="math inline">\(\widehat{P}\)</span> depended on <span class="math inline">\(p\)</span>, which proves to be a problem in practice (as, again, the true value of <span class="math inline">\(p\)</span> is often unknown).</p></li>
-<li class="fragment"><p>Does anyone remember how we solved this issue in the context of population proportions?</p>
-<ul>
-<li class="fragment">That’s right- we used the substitution approximation!</li>
-<li class="fragment">Specifically, we replaced the unknown parameter (<span class="math inline">\(p\)</span>) with a natural point estimator of it.</li>
-</ul></li>
-</ul>
-</section>
-<section id="unknown-sigma-1" class="slide level2" style="font-size:28px">
-<h2>Unknown <span class="math inline">\(\sigma\)</span>?</h2>
-<ul>
-<li class="fragment"><p>Can anyone propose a point estimator for <span class="math inline">\(\sigma\)</span>?</p></li>
-<li class="fragment"><p>That’s right; <span class="math inline">\(s\)</span>, the sample standard deviation! <span class="math display">\[ s = \sqrt{ \frac{1}{n - 1} \sum_{i=1}^{n} (X_i - \overline{X})^2} \]</span></p></li>
-<li class="fragment"><p>In other words, our proposition is to use confidence intervals of the form <span class="math display">\[ \overline{x} \pm c \cdot \frac{s}{\sqrt{n}} \]</span></p></li>
-<li class="fragment"><p>Notice, however, that this introduces additional uncertainty into the problem as <span class="math inline">\(s\)</span> itself is a random variable (different samples result in different sample standard deviations).</p></li>
-<li class="fragment"><p>It turns out that the additional uncertainty introduced is so large that we become <strong>no longer able to use the normal distribution.</strong></p></li>
-</ul>
-</section>
-<section id="using-s-in-place-of-sigma" class="slide level2" style="font-size:28px">
-<h2>Using <span class="math inline">\(s\)</span> in place of <span class="math inline">\(\sigma\)</span></h2>
-<ul>
-<li class="fragment"><p>Firstly, recall that we used percentiles of the standard normal distribution because <span class="math display">\[ \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0, \ 1) \]</span></p></li>
-<li class="fragment"><p>Mathematically, what the above discussion is saying is that the distribution of <span class="math display">\[ \frac{\overline{X} - \mu}{s / \sqrt{n}} \]</span> is no longer normal.</p></li>
-<li class="fragment"><p>It turns out that, still assuming a large enough sample size, the quantity above follows what is known as a <strong><em>t</em>-distribution</strong>.</p></li>
-</ul>
-</section>
-<section id="the-t-distribution" class="slide level2" style="font-size:28px">
-<h2>The <em>t-</em>distribution</h2>
-<ul>
-<li class="fragment"><p>The <span class="math inline">\(t-\)</span>distribution looks very similar to the standard normal distribution in that it is centered at 1, and has a bell-like density curve.</p></li>
-<li class="fragment"><p>However, one key difference is that the <span class="math inline">\(t-\)</span>distribution is parameterized by a <em>single</em> parameter, called the <strong>degrees of freedom</strong>, which we abbreviate <span class="math inline">\(\mathrm{df}\)</span>.</p></li>
-</ul>
-<div class="fragment">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-1-1.png" width="768"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="the-t-distribution-1" class="slide level2" style="font-size:28px">
-<h2>The <em>t-</em>distribution</h2>
-<ul>
-<li class="fragment"><p>Another key property is that, for all finite degrees of freedom, the tails of the <em>t-</em>distribution density curve are “wider” (i.e.&nbsp;higher) than the tails of the standard normal density curve.</p>
-<ul>
-<li class="fragment">What this means is that the <em>t-</em>distribution allows for higher probabilities of tail events, thereby incorporating the additional uncertainty injected into our confidence intervals by using <span class="math inline">\(s\)</span> in place of <span class="math inline">\(\sigma\)</span></li>
-</ul></li>
-<li class="fragment"><p>An interesting fact is that the <em>t-</em>distribution with <span class="math inline">\(\infty\)</span> degrees of freedom is equivalent to the standard normal distribution.</p>
-<ul>
-<li class="fragment">As such, with greater degrees of freedom, the <em>t-</em>distribution - and its percentiles - more and more closely resembles the standard normal distribution.</li>
-</ul></li>
-</ul>
-</section>
-<section id="back-to-confidence-intervals" class="slide level2" style="font-size:28px">
-<h2>Back to Confidence Intervals</h2>
-<ul>
-<li class="fragment"><p>Here is the result we’ve been working toward: with samples of reasonably large size <span class="math inline">\(n\)</span> from a distribution with mean <span class="math inline">\(mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>, <span class="math display">\[ \frac{\overline{X} - \mu}{s / \sqrt{n}} \sim t_{n - 1} \]</span> where <span class="math inline">\(t_{n - 1}\)</span> denotes the <span class="math inline">\(t-\)</span>distribution with <span class="math inline">\(n - 1\)</span> degrees of freedom.</p></li>
-<li class="fragment"><p>As such, our confidence intervals become <span class="math display">\[ \overline{x} \pm t_{n - 1, \ \alpha} \cdot \frac{s}{\sqrt{n}} \]</span> where <span class="math inline">\(t_{n - 1, \ \alpha}\)</span> denotes the appropriate quantile (corresponding to our desired confidence level) of the <span class="math inline">\(t_{n - 1}\)</span> distribution.</p></li>
-</ul>
-</section>
-<section id="worked-out-example-3" class="slide level2" style="font-size:30px">
-<h2>Worked-Out Example</h2>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Worked-Out Example 3</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<div style="font-size: 30px">
-<p>A sociologist is interested in performing inference on the true average monthly income (in thousands of dollars) of all citizens of the nation of <em>Gauchonia</em>. As such, she takes a representative sample of 49 people, and finds that these 49 people have an average monthly income of 2.25 and a standard deviation of 1.66.</p>
-<ol type="a">
-<li>What is the population?</li>
-<li>What is the sample?</li>
-<li>Define the random variable of interest.</li>
-<li>Construct a 95% confidence interval for the true average monthly income (in thousands of dollars) of <em>Gauchonian</em> citizens.</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="solutions-5" class="slide level2" style="font-size:32px">
-<h2>Solutions</h2>
-<ol type="a">
-<li class="fragment"><p>The population is the set of all <em>Gauchonian</em> residents.</p></li>
-<li class="fragment"><p>The sample is the set of 49 <em>Gauchonian</em> residents included in the sociologist’s sample.</p></li>
-<li class="fragment"><p>The random variable of interest is <span class="math inline">\(\overline{X}\)</span>, the sample average monthly income (in thousands of dollars) of a representative sample of 49 Gauchonian* residents.</p></li>
-</ol>
-</section>
-<section id="solutions-contd" class="slide level2" style="font-size:28px">
-<h2>Solutions (cont’d)</h2>
-<p><strong>Part (d)</strong></p>
-<ul>
-<li class="fragment"><p>Is the population normally distributed?</p>
-<ul>
-<li class="fragment">No.</li>
-</ul></li>
-<li class="fragment"><p>Is the sample size large enough?</p>
-<ul>
-<li class="fragment">Yes; <span class="math inline">\(n = 49 \geq 30\)</span>.</li>
-</ul></li>
-<li class="fragment"><p>Do we know the population standard deviation?</p>
-<ul>
-<li class="fragment">No, we only know <span class="math inline">\(s\)</span>.</li>
-</ul></li>
-<li class="fragment"><p>Therefore, we need to use the <em>t-</em>distribution with <span class="math inline">\(n - 1 = 49 - 1 = 48\)</span> degrees of freedom.</p></li>
-<li class="fragment"><p>Specifically, we need to find the 2.5<sup>th</sup> percentile of the <span class="math inline">\(t_{48}\)</span> distribution.</p></li>
-<li class="fragment"><p>Let’s go over how to read a <em>t</em>-table.</p></li>
-</ul>
-</section>
-<section id="reading-a-t-table" class="slide level2">
-<h2>Reading a <em>t</em>-table</h2>
-<p>(In-Class Exercise)</p>
-</section>
-<section id="solutions-contd-1" class="slide level2" style="font-size:24px">
-<h2>Solutions (cont’d)</h2>
-<ul>
-<li class="fragment">I’d also like to mention that we can use Python to help us:</li>
-</ul>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> sps</span>
-<span id="cb1-2"><a href="#cb1-2"></a>sps.t.ppf(<span class="fl">0.025</span>, <span class="dv">48</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>np.float64(-2.0106347576242323)</code></pre>
-</div>
-</div>
-</div>
-<ul>
-<li class="fragment"><p>You’ll learn more about this code during Lab today!</p></li>
-<li class="fragment"><p>Therefore, our 95% confidence interval takes the form <span class="math display">\[ \overline{x} \pm 2.01 \cdot \frac{s}{\sqrt{49}} \]</span> or, equivalently, <span class="math display">\[ (2.25) \pm (2.01) \cdot \frac{1.66}{7} = 2.25 \pm 0.477 = \boxed{[1.773 \ , \ 2.727]}\]</span></p></li>
-<li class="fragment"><p>The interpretation of this interval is much the same as our intervals for proportions:</p></li>
-</ul>
-<div class="fragment">
-<blockquote>
-<p>We are 95% confident that the true average monthly income (in thousands of dollars) of <em>Gauchonian</em> residents is between 1.773 and 2.727.</p>
-</blockquote>
-</div>
-</section>
-<section id="general-flowchart" class="slide level2">
-<h2>General Flowchart</h2>
 <div class="cell" data-reveal="true">
 <div class="cell-output-display">
 <div>
@@ -824,102 +457,618 @@ z_2   &amp;  = \frac{(\mu - 1) - \mu}{8/9} = -\frac{9}{8} \approx -1.13
 </div>
 </div>
 </div>
+</div>
 </section>
-<section>
-<section id="aside-testing-distributional-fits" class="title-slide slide level1 center">
-<h1>Aside: Testing Distributional Fits</h1>
-
-</section>
-<section id="testing-distributional-fits" class="slide level2">
-<h2>Testing Distributional Fits</h2>
+<section id="test-statistic" class="slide level2">
+<h2>Test Statistic</h2>
 <ul>
-<li class="fragment"><p>Notice that the first question we need to ask ourselves when trying to perform inference on a sample mean is whether or not we believe our population to be normally distributed.</p></li>
-<li class="fragment"><p>This begs the question: given a set of numbers, how can we tell if these numbers were drawn from a normal distribution or not?</p></li>
-<li class="fragment"><p>For example, consider the following set of numbers (which have been assigned to a variable called <code>x</code>):</p></li>
+<li class="fragment"><p>What this means is that our test statistic itself will take different forms depending on the information that is provided.</p></li>
+<li class="fragment"><p>Specifically, we have <span class="math display">\[ \mathrm{TS} = \begin{cases}
+\displaystyle \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}}    &amp; \text{if } \quad  \begin{array}{rl} \bullet &amp; \text{pop. is normal, OR} \\ \bullet &amp; \text{$n \geq 30$ AND $\sigma$ is known} \end{array} \quad \stackrel{H_0}{\sim} \mathcal{N}(0, \ 1) \\[5mm]
+\displaystyle \frac{\overline{X} - \mu_0}{s / \sqrt{n}}         &amp; \text{if } \quad  \begin{array}{rl} \bullet &amp; \text{$n \geq 30$ AND $\sigma$ is not known} \end{array} \quad \stackrel{H_0}{\sim} t_{n - 1}
+\end{cases} \]</span></p></li>
 </ul>
-<div class="fragment">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[ 1.3315865   0.71527897 -1.54540029 -0.00838385  0.62133597 -0.72008556
-  0.26551159  0.10854853  0.00429143 -0.17460021  0.43302619  1.20303737
- -0.96506567  1.02827408  0.22863013  0.44513761 -1.13660221  0.13513688
-  1.484537   -1.07980489 -1.97772828 -1.7433723   0.26607016  2.38496733
-  1.12369125  1.67262221  0.09914922  1.39799638 -0.27124799  0.61320418
- -0.26731719 -0.54930901  0.1327083  -0.47614201  1.30847308  0.19501328
-  0.40020999 -0.33763234  1.25647226 -0.7319695   0.66023155 -0.35087189
- -0.93943336 -0.48933722 -0.80459114 -0.21269764 -0.33914025  0.31216994
-  0.56515267 -0.14742026 -0.02590534  0.2890942  -0.53987907  0.70816002
-  0.84222474  0.2035808   2.39470366  0.91745894 -0.11227247 -0.36218045
- -0.23218226 -0.5017289   1.12878515 -0.69781003 -0.08112218 -0.52929608
-  1.04618286 -1.41855603 -0.36249918 -0.12190569  0.31935642  0.4609029
- -0.21578989  0.98907246  0.31475378  2.46765106 -1.50832149  0.62060066
- -1.04513254 -0.79800882  1.98508459  1.74481415 -1.85618548 -0.2227737
- -0.06584785 -2.13171211 -0.04883051  0.39334122  0.21726515 -1.99439377
-  1.10770823  0.24454398 -0.06191203 -0.75389296  0.71195902  0.91826915
- -0.48209314  0.08958761  0.82699862 -1.95451212]</code></pre>
-</div>
-</div>
-</div>
 </section>
-<section id="idea-1-histogram" class="slide level2">
-<h2>Idea 1: Histogram</h2>
+<section id="test-statistic-1" class="slide level2">
+<h2>Test Statistic</h2>
 <ul>
-<li class="fragment">One idea would be to generate the histogram of <code>x</code>:</li>
-</ul>
-<div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-5-1.png" width="614"></p>
-</div>
-</div>
-</div>
-</section>
-<section id="downsides" class="slide level2">
-<h2>Downsides</h2>
+<li class="fragment"><p>In the two-sided case, our critical value will still be the value <span class="math inline">\(c\)</span> that ensures <span class="math display">\[ \mathbb{P}(|\mathrm{TS}| &gt; c) = \alpha \]</span> (i.e.&nbsp;we reject <span class="math inline">\(H_0\)</span> whenever <span class="math inline">\(\overline{X}\)</span> is far away from <span class="math inline">\(\mu_0\)</span>) meaning <span class="math inline">\(c\)</span> will the <span class="math inline">\((\alpha /2) \times 100\%\)</span> percentile, scaled by negative 1, of either the standard normal distribution or the <span class="math inline">\(t_{n - 1}\)</span> distribution.</p>
 <ul>
-<li class="fragment"><p>However, we know that histograms are visually very dependent on the binwidth that was selected!</p>
-<ul>
-<li class="fragment">Furthermore, there are some distributions that <em>look</em> bell-shaped, but are <em>not</em> normal; e.g.&nbsp;the <em>t</em>-distribution!</li>
+<li class="fragment">Again, don’t forget about how the symmetry of the normal and <em>t</em>-distributions translates to relationships between percentiles!</li>
 </ul></li>
-<li class="fragment"><p>As such, we would like a slightly more rigorous way to check for normality.</p></li>
-<li class="fragment"><p>The tool statisticians most often use is called a <strong>quantile-quantile plot</strong>, or <strong>QQ-Plot</strong> for short.</p></li>
-<li class="fragment"><p>You don’t have to worry too much (for now) about the details of how they are constructed; for now, we’ll just use Python to generate them and then interpret them ourselves.</p></li>
+<li class="fragment"><p>Our test in the two-sided case will then take the form <span class="math display">\[ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if } |\mathrm{TS}| &gt; c \\ \texttt{fail to reject } H_0 &amp; \text{otherwise}\\ \end{cases}  \]</span></p></li>
+<li class="fragment"><p>Let’s do an example.</p></li>
 </ul>
 </section>
-<section id="qq-plot" class="slide level2">
-<h2>QQ-Plot</h2>
+<section id="worked-out-example" class="slide level2">
+<h2>Worked-Out Example</h2>
 <div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>scipy.stats.probplot(x, plot <span class="op">=</span> plt)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Worked-Out Example 1</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<div style="font-size: 30px">
+<p>An <a href="https://www.census.gov/newsroom/press-releases/2021/one-way-travel-time-to-work-rises.html">article</a> published by the US Census claims that in 2019 the average American took around 27.6 minutes to commute to work. To test this claim, Jenny took a representative sample of 101 Americans in 2019 and observed that these individuals had a combined average commute time of around 20.1 minutes and a standard deviation of around 12.4 minutes.</p>
+<p>Use the information from Jenny’s sample, along with an <span class="math inline">\(\alpha = 0.05\)</span> level of significance, to test the claim that the average commute time is 27.6 minutes against a two-sided alternative.</p>
 </div>
 </div>
-<div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-7-3.png" width="960"></p>
+</div>
 </div>
 </div>
 </div>
 </section>
-<section id="interpreting-qq-plots" class="slide level2">
-<h2>Interpreting QQ-Plots</h2>
+<section id="solutions" class="slide level2">
+<h2>Solutions</h2>
 <ul>
-<li class="fragment"><p>The more linear the QQ-plot, the more likely it is that the data came from a normal distribution.</p></li>
-<li class="fragment"><p>When checking for deviations from linearity, however, make sure to check the tails as that is most often where non-normality manifests itself the clearest.</p></li>
+<li class="fragment"><p>It’s a good idea to first determine which distribution we need to use.</p></li>
+<li class="fragment"><p>Is the population normally distributed?</p>
+<ul>
+<li class="fragment"><p>In other words, are the commute times of <em>all</em> Americans normally distributed?</p></li>
+<li class="fragment"><p>No; or, at least, there is not enough inforamtion to conclude that they are.</p></li>
+</ul></li>
+<li class="fragment"><p>Is our sample large enough?</p>
+<ul>
+<li class="fragment">Yes; <span class="math inline">\(n = 101 \geq 30\)</span></li>
+</ul></li>
+<li class="fragment"><p>Do we have <span class="math inline">\(\sigma\)</span> or <span class="math inline">\(s\)</span>?</p>
+<ul>
+<li class="fragment">We only have <span class="math inline">\(s\)</span>, the standard devaition of commute times of Jenny’s <em>sample</em>.</li>
+</ul></li>
 </ul>
 </section>
-<section id="normal-or-not" class="slide level2">
-<h2>Normal or Not?</h2>
+<section id="solutions-1" class="slide level2">
+<h2>Solutions</h2>
+<ul>
+<li class="fragment"><p>Therefore, what distribution are we going to use?</p>
+<ul>
+<li class="fragment">The <span class="math inline">\(t_{100}\)</span> distribution.</li>
+</ul></li>
+<li class="fragment"><p>In other words, <span class="math display">\[ \mathrm{TS} = \frac{\overline{X} - 27.6}{12.4 / \sqrt{101}} \stackrel{H_0}{\sim} t_{100} \]</span></p></li>
+<li class="fragment"><p>From the <span class="math inline">\(t-\)</span>table, we see that the critical value will be <span class="math inline">\(1.98\)</span>.</p></li>
+<li class="fragment"><p>Additionally, the observed value of our test statistic (based on Jenny’s sample) is <span class="math display">\[ \frac{20.1 - 27.6}{12.4 / \sqrt{101}} \approx -6.08 \]</span></p></li>
+</ul>
+</section>
+<section id="solutions-2" class="slide level2">
+<h2>Solutions</h2>
+<ul>
+<li class="fragment"><p>Our test rejects <span class="math inline">\(H_0\)</span> when <span class="math inline">\(|\mathrm{TS}| &gt; c\)</span>.</p></li>
+<li class="fragment"><p>In this case, <span class="math inline">\(|\mathrm{TS}| = |-6.07| = 6.07 &gt; 1.98\)</span></p></li>
+<li class="fragment"><p>Therefore, we reject the null:</p></li>
+</ul>
 <div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-8-5.png" width="960"></p>
+<blockquote>
+<p>At an <span class="math inline">\(\alpha = 0.05\)</span> level of significance, there was sufficient evidence to reject the Census’ claim that the average commute time of Americans was 27.6 minutes in favor of the alternative that the true average commute time was <em>not</em> 27.6 minutes.</p>
+</blockquote>
+</div>
+</section>
+<section id="one-sided-tests" class="slide level2">
+<h2>One-Sided Tests</h2>
+<ul>
+<li class="fragment"><p>Analogously as with the hypothesis testing for proportions, the lower-tailed test of a population mean takes the form <span class="math display">\[ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if } \mathrm{TS} &lt; c \\ \texttt{fail to reject } H_0 &amp; \text{otherwise}\\ \end{cases}  \]</span> and the upper-tailed test of a population mean takes the form <span class="math display">\[ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if } \mathrm{TS} &gt; c \\ \texttt{fail to reject } H_0 &amp; \text{otherwise}\\ \end{cases}  \]</span></p></li>
+<li class="fragment"><p>I’ll keep stressing this: there is no need to memorize these forms if you understand what the null and alternative are saying and how that translates to comparing <span class="math inline">\(\overline{X}\)</span> to <span class="math inline">\(\mu_0\)</span>!</p></li>
+</ul>
+</section>
+<section id="worked-out-example-2" class="slide level2">
+<h2>Worked-Out Example</h2>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Worked-Out Example 2</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<div style="font-size: 30px">
+<p><em>McGaucho’s</em> claims that, on average, customers will only need to wait 10 minutes before getting their food. Dubious of these claims, Markus takes a representative sample of 40 customers and finds that these customers waited an combined average of 15 minutes before receiving their food, with a standard deviation of 10 minutes. Based on this, he decides to perform an upper-tailed test on <em>McGaucho’s</em> claims at an <span class="math inline">\(\alpha = 0.01\)</span> level of significance. Conduct the test, and state your conclusions.</p>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="solutions-3" class="slide level2" style="font-size:32px">
+<h2>Solutions</h2>
+<ul>
+<li class="fragment"><p>Again, we should ask ourselves what distribution we are going to use.</p></li>
+<li class="fragment"><p>Is the population normally distributed?</p>
+<ul>
+<li class="fragment"><p>In other words, are the wait times of <em>all</em> customers normally distributed?</p></li>
+<li class="fragment"><p>No; or, at least, there is not enough inforamtion to conclude that they are.</p></li>
+</ul></li>
+<li class="fragment"><p>Is our sample large enough?</p>
+<ul>
+<li class="fragment">Yes; <span class="math inline">\(n = 40 \geq 30\)</span></li>
+</ul></li>
+<li class="fragment"><p>Do we have <span class="math inline">\(\sigma\)</span> or <span class="math inline">\(s\)</span>?</p>
+<ul>
+<li class="fragment">We only have <span class="math inline">\(s\)</span>, the standard devaition of commute times of Markus’ <em>sample</em>.</li>
+</ul></li>
+<li class="fragment"><p>Hence, we will use the <span class="math inline">\(t_{39}\)</span> distribution.</p></li>
+</ul>
+</section>
+<section id="solutions-4" class="slide level2">
+<h2>Solutions</h2>
+<ul>
+<li class="fragment"><p>Now, we are using an upper-tailed alternative, meaning our critical value is the point such that <span class="math inline">\((1 - 0.01) = 0.99\)</span> area lies to the left (or, equivalently, <span class="math inline">\(0.01\)</span> lies to the right).</p></li>
+<li class="fragment"><p>This means our critical value is 2.43, and we reject the null whenever <span class="math inline">\(\mathrm{TS} &gt; 2.43\)</span>.</p></li>
+<li class="fragment"><p>The observed value of our test statistic is <span class="math display">\[ \frac{15 - 10}{10 / \sqrt{40}} = 3.162 \]</span></p></li>
+</ul>
+</section>
+<section id="solutions-5" class="slide level2">
+<h2>Solutions</h2>
+<ul>
+<li class="fragment">Since <span class="math inline">\(\mathrm{TS} = 3.162 &gt; 2.43\)</span>, we reject the null:</li>
+</ul>
+<div class="fragment">
+<blockquote>
+<p>At an <span class="math inline">\(\alpha = 0.01\)</span> level of significance, there was sufficient evidence to reject <em>McGaucho’s’</em> claim that the average wait time of customers is 10 minutes in favor of the alternative that the true wait time is <em>longer</em> than 10 minutes.</p>
+</blockquote>
+</div>
+</section>
+<section id="your-turn" class="slide level2">
+<h2>Your Turn!</h2>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Exercise 1</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<div style="font-size: 30px">
+<p>A university administrator at <em>Gaucho University</em> (GU) claims that GU students get, on average, 8 hours of sleep per night. A sample of 35 students had a combined average of 7.72 hours of sleep and a standard deviation of 3.8 hours. Using an <span class="math inline">\(\alpha = 0.05\)</span> level of significance, test the administrator’s claims against a…</p>
+<ol type="a">
+<li>…two-sided alternative</li>
+<li>…lower-tailed alternative</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="another-view-of-hypothesis-testing" class="title-slide slide level1 center">
+<h1>Another View of Hypothesis Testing</h1>
+
+</section>
+<section id="recap-1" class="slide level2">
+<h2>Recap</h2>
+<ul>
+<li class="fragment"><p>Last time, we discussed Hypothesis Testing on population proportions.</p></li>
+<li class="fragment"><p>That is: given a population with true proportion <span class="math inline">\(p\)</span>, we took samples and tried to use the data collected in these samples to assess the validity of the claim <span class="math inline">\(H_0: \ p = p_0\)</span> (for some fixed value <span class="math inline">\(p_0\)</span>) against some alternative hypothesis (two-sided, lower-tailed, or upper-tailed)</p></li>
+<li class="fragment"><p>The test we constructed last time compared the value of the <strong>test statistic</strong> to some <strong>critical value</strong>, and made a decision about rejection based on the comparison between these two values.</p></li>
+</ul>
+</section>
+<section id="lower-tailed-example" class="slide level2">
+<h2>Lower-Tailed Example</h2>
+<ul>
+<li class="fragment"><p>For illustrative purposes, let’s consider a lower-tailed test: <span class="math display">\[ \left[ \begin{array}{rr}
+H_0:    &amp; p = p_0   \\
+H_A:    &amp; p &lt; p_0
+\end{array} \right.\]</span></p></li>
+<li class="fragment"><p>Under appropriate conditions, our test statistic <span class="math display">\[ \mathrm{TS} = \frac{\widehat{P} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}} \]</span> follows the standard normal distribution under the null.</p></li>
+</ul>
+</section>
+<section id="lower-tailed-example-1" class="slide level2">
+<h2>Lower-Tailed Example</h2>
+<div>
+<ul>
+<li>Recall that <span class="math inline">\(\alpha\)</span>, the <strong>level of significance</strong>, is constructed to be the <span class="math inline">\(\alpha \times 100\)</span><sup>th</sup> percentile of the standard normal distribution:</li>
+</ul>
 </div>
 
-<p><img src="5a_hex.png" class="slide-logo"></p>
-<div class="footer footer-default">
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<section id="reject-or-not" class="slide level2">
+<h2>Reject or Not?</h2>
+
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<section id="reject-or-not-1" class="slide level2">
+<h2>Reject or Not?</h2>
+
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<section id="leadup" class="slide level2">
+<h2>Leadup</h2>
+<ul>
+<li class="fragment"><p>So, up until now, our decision has been based on comparing the raw value of the test statistic to the critical value.</p>
+<ul>
+<li class="fragment">If the test statistic is smaller than the critical value, we reject.</li>
+<li class="fragment">Otherwise, we fail to reject.</li>
+</ul></li>
+<li class="fragment"><p>Again, remember the intuition behind <em>why</em> this is: if we observe a value of <span class="math inline">\(\widehat{P}\)</span> that is much smaller than <span class="math inline">\(p_0\)</span>, this leads credence to the claim that <span class="math inline">\(p &lt; p_0\)</span> (i.e.&nbsp;this leads credence to our <em>alternative</em> and <em>away</em> from our null).</p>
+<ul>
+<li class="fragment">Values of <span class="math inline">\(\widehat{P}\)</span> less than <span class="math inline">\(p_0\)</span> lead to very negative values of <span class="math inline">\(\mathrm{TS}\)</span>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="leadup-1" class="slide level2">
+<h2>Leadup</h2>
+<ul>
+<li class="fragment"><p>Now, we like to think in terms of areas.</p></li>
+<li class="fragment"><p>So, here’s an idea: let’s translate our reject/fail to reject scheme to be in terms of <em>areas</em>.</p></li>
+<li class="fragment"><p>Specifically, here is what I mean.</p></li>
+<li class="fragment"><p>Consider again a situation in which we reject the null:</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<section class="slide level2">
+
+
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"><ul>
+<li class="fragment"><p>How does the area to the left of the test statistic compare to <span class="math inline">\(\alpha\)</span>?</p>
+<ul>
+<li class="fragment">It is smaller.</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
+<section class="slide level2">
+
+
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"><ul>
+<li class="fragment"><p>How does the area to the left of the test statistic compare to <span class="math inline">\(\alpha\)</span>?</p>
+<ul>
+<li class="fragment">It is larger</li>
+</ul></li>
+</ul>
+</section>
+<section id="leadup-2" class="slide level2">
+<h2>Leadup</h2>
+<ul>
+<li class="fragment"><p>So, we can rephrase our decision as follows:</p>
+<ul>
+<li class="fragment">Reject <span class="math inline">\(H_0\)</span> if the area to the left of the test statistic is smaller than <span class="math inline">\(\alpha\)</span>.</li>
+<li class="fragment">Otherwise, fail to reject <span class="math inline">\(H_0\)</span>.</li>
+</ul></li>
+<li class="fragment"><p>Notice that the area to the left of the test statistic, since we are dealing with a lower-tailed test, is equivalent to “the probability of observing something as or more extreme, under the null, as the value we currently observe”.</p>
+<ul>
+<li class="fragment">Here, “extreme” can be thought of as in the direction of the alternative; in other words, we consider the area in the direction of the sign in the alternative hypothesis.</li>
+</ul></li>
+<li class="fragment"><p>This is an example of what we call a <strong><em>p</em>-value</strong>.</p></li>
+</ul>
+</section>
+<section id="p-values" class="slide level2">
+<h2><em>p</em>-Values</h2>
+<ul>
+<li class="fragment">The textbook defines <span class="math inline">\(p-\)</span>values as:</li>
+</ul>
+<div class="fragment">
+<blockquote>
+<p>[…] the probability of observing data at least as favorable to the alternative hypothesis as our current data set, if the null hypothesis were true.</p>
+</blockquote>
+</div>
+<ul>
+<li class="fragment"><p>Another way to think about it is this: if the null were true, what is the probability that we would observe something even more extreme (i.e.&nbsp;even “farther away”, in the direction of the alternative) as our current observations?</p></li>
+<li class="fragment"><p>Note that exactly <em>how</em> we compute <span class="math inline">\(p-\)</span>values depends heavily on our alternative.</p></li>
+</ul>
+</section>
+<section id="the-test-statistic" class="slide level2">
+<h2>The Test Statistic</h2>
+
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
+<section id="p-value-lower-tailed-test" class="slide level2">
+<h2><em>p</em>-value; Lower-Tailed Test</h2>
+
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
+<section id="p-value-upper-tailed-test" class="slide level2">
+<h2><em>p</em>-value; Upper-Tailed Test</h2>
+
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<section id="p-value-two-sided-test" class="slide level2">
+<h2><em>p</em>-value; Two-Sided Test</h2>
+
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<section id="worked-out-example-3" class="slide level2">
+<h2>Worked-Out Example</h2>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Worked-Out Example 3</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<div style="font-size: 28px">
+<p><em>Forbes</em> magazine has claimed that, as of May 2023, 91.7% of US households own a vehicle. To test that claim, we take a representative sample of 500 US households and observe that 89.4% of these households own a vehicle.</p>
+<ul>
+<li><p>Compute the <span class="math inline">\(p-\)</span>value of our observed value of the statistic, assuming we are using a lower-tailed alternative.</p></li>
+<li><p>Compute the <span class="math inline">\(p-\)</span>value of our observed value of the statistic, assuming we are using a two-sided alternative.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="solutions-6" class="slide level2">
+<h2>Solutions</h2>
+<ul>
+<li class="fragment">Let’s first compute the observed value of our test statistic: <span class="math display">\[ \mathrm{TS} = \frac{0.894 - 0.917}{\sqrt{\frac{(0.917) \cdot (1 - 0.917)}{500}}} = -1.86 \]</span></li>
+</ul>
+<div class="fragment">
+<div class="cell" data-fig="true">
+<div class="cell-output-display">
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="solutions-7" class="slide level2">
+<h2>Solutions</h2>
+<ul>
+<li class="fragment">In the lower-tailed case, our <em>p</em>-value is</li>
+</ul>
+<div class="fragment">
+<div class="cell" data-fig="true">
+<div class="cell-output-display">
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">We can compute this in one of two ways.</li>
+</ul>
+</section>
+<section id="solutions-8" class="slide level2">
+<h2>Solutions</h2>
+<ul>
+<li class="fragment">We could simply use Python:</li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> sps</span>
+<span id="cb1-2"><a href="#cb1-2"></a>sps.norm.cdf(<span class="op">-</span><span class="fl">1.86</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>np.float64(0.03144276298075271)</code></pre>
+</div>
+</div>
+</div>
+<p><br>
+</p>
+<ul>
+<li class="fragment">Or, we could use our <em>z</em>-table: <span class="math inline">\(0.0314\)</span></li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li class="fragment">Either way, looks like our <em>p</em>-value in the lower-tailed case is <span class="math inline">\(0.0314\)</span>.</li>
+</ul>
+</section>
+<section id="solutions-9" class="slide level2">
+<h2>Solutions</h2>
+<ul>
+<li class="fragment">In the two-sided case, our <em>p</em>-value is</li>
+</ul>
+<div class="fragment">
+<div class="cell" data-fig="true">
+<div class="cell-output-display">
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">Same deal as before: we can compute this using either Python or our table.</li>
+</ul>
+</section>
+<section id="solutions-10" class="slide level2">
+<h2>Solutions</h2>
+<ul>
+<li class="fragment"><p>Alternatively, note that we can utilize the symmetry of the normal distribution in our favor- the area we’re interested in is simply twice the area we found in the lower-tailed case!</p></li>
+<li class="fragment"><p>So, our <span class="math inline">\(p-\)</span>value in the two-sided case is simply <span class="math inline">\(2 \times (0.0314) = 0.0628\)</span>.</p></li>
+<li class="fragment"><p>If you don’t believe me:</p></li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>sps.norm.cdf(<span class="op">-</span><span class="fl">1.86</span>) <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> sps.norm.cdf(<span class="fl">1.86</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>np.float64(0.06288552596150537)</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="p-values-1" class="slide level2">
+<h2><em>p</em>-Values</h2>
+<ul>
+<li class="fragment">Of course, <em>p</em>-values are not restricted to the case of hypothesis testing a proportion; we can absolutely compute <span class="math inline">\(p-\)</span>values in a setting where we are testing a population mean!</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Worked-Out Example 4</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<div style="font-size: 30px">
+<p>Consider again the setup of Worked-Out Example 2: <em>McGaucho’s</em> claims that, on average, they are able to serve customers their food in 10 minutes. Dubious of these claims, Markus takes a representative sample of 40 customers and finds that these customers waited an combined average of 15 minutes before receiving their food, with a standard deviation of 10 minutes.</p>
+<ol type="a">
+<li>Compute the <em>p</em>-value if we were to use a lower-tailed alternative.</li>
+<li>Compute the <em>p</em>-value if we were to use a two-sided alternative.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="solutions-11" class="slide level2">
+<h2>Solutions</h2>
+<ul>
+<li class="fragment"><p>Recall that we ended up needing to use the <span class="math inline">\(t_{39}\)</span> distribution as opposed to the standard normal distribution.</p></li>
+<li class="fragment"><p>This doesn’t affect our computations of the <em>p</em>-value much, except for the fact that now we will <em>need</em> to use Python (as our <span class="math inline">\(t-\)</span>table doesn’t really give us <em>probabilities</em>).</p></li>
+<li class="fragment"><p>The observed value of the test statistic is <span class="math display">\[ \frac{15 - 10}{10 / \sqrt{40}} = 3.162 \]</span></p></li>
+</ul>
+</section>
+<section id="solutions-12" class="slide level2" style="font-size:25px">
+<h2>Solutions</h2>
+<ul>
+<li class="fragment">On a graph, this looks like:</li>
+</ul>
+<div class="fragment">
+<div class="cell" data-fig="true">
+<div class="cell-output-display">
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="solutions-13" class="slide level2" style="font-size:25px">
+<h2>Solutions</h2>
+<ul>
+<li class="fragment">Using a lower-tailed alternative:</li>
+</ul>
+<div class="fragment">
+<div class="cell" data-fig="true">
+<div class="cell-output-display">
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>sps.t.cdf(<span class="fl">3.162</span>, <span class="dv">39</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>np.float64(0.998485142798897)</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="solutions-14" class="slide level2" style="font-size:25px">
+<h2>Solutions</h2>
+<ul>
+<li class="fragment">Using a two-sided alternative:</li>
+</ul>
+<div class="fragment">
+<div class="cell" data-fig="true">
+<div class="cell-output-display">
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="dv">2</span> <span class="op">*</span> sps.t.cdf(<span class="op">-</span><span class="fl">3.162</span>, <span class="dv">39</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>np.float64(0.0030297144022061392)</code></pre>
+</div>
+</div>
+<p>or</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>sps.t.cdf(<span class="op">-</span><span class="fl">3.162</span>, <span class="dv">39</span>) <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> sps.t.cdf(<span class="fl">3.162</span>, <span class="dv">39</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>np.float64(0.0030297144022060733)</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="what-do-we-do-with-a-p-value" class="slide level2">
+<h2>What Do We Do with a <em>p</em>-Value?</h2>
+<ul>
+<li class="fragment"><p>Okay, so after we’ve computed our <em>p</em>-value… what do we do?</p></li>
+<li class="fragment"><p>We reject when <em>p</em> is small; specifically, we reject when <em>p</em> is less than the level of significance.</p></li>
+<li class="fragment"><p>So, in other words, we now have two ways to conduct hypothesis tests under our belt: using critical values, and using <em>p</em>-values.</p></li>
+<li class="fragment"><p>I’d like to stress- these two frameworks are completely equivalent!</p>
+<ul>
+<li class="fragment">Your decision using critical values will always be the same as your decision using <em>p</em>-values, by construction.</li>
+</ul></li>
+</ul>
+</section>
+<section id="your-turn-1" class="slide level2">
+<h2>Your Turn!</h2>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Exercise 2</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<div style="font-size: 30px">
+<p>UCSB <a href="https://firstgen.ucsb.edu/">claims</a> that 40% of its undergraduate student body are first-generation students (as in, the first in their families to earn a Bachelor’s degree). To test this claim, a representative sample of 120 undergraduates is taken and it is found that 43% of these students are first-generation. Suppose we use an <span class="math inline">\(\alpha = 0.05\)</span> level of significance, and we test the University’s claims against a two-sided alternative.</p>
+<ul>
+<li>Conduct the test using critical values.</li>
+<li>Conduct the test using <em>p</em>-values.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="your-turn-2" class="slide level2">
+<h2>Your Turn!</h2>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Exercise 3</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<div style="font-size: 30px">
+<p>A botanist claims that the average weight of a chestnut is around 5 grams. To test this claim, a representative sample of 35 chestnuts is taken; these chestnuts have a combined average weight of 4.87 grams and a standard deviation of 1.82 grams. Suppose we use an <span class="math inline">\(\alpha = 0.05\)</span> level of significance, and a lower-tailed alternative.</p>
+<ul>
+<li>Conduct the test using critical values.</li>
+<li>Conduct the test using <em>p</em>-values.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="criticisms-of-p-values" class="slide level2">
+<h2>Criticisms of <em>p</em>-Values</h2>
+<ul>
+<li class="fragment"><p>I should note that there are some growing criticism within the statistical and data scientific communities regarding <em>p</em>-values.</p></li>
+<li class="fragment"><p>For one thing, they can be easily misinterpreted.</p>
+<ul>
+<li class="fragment">Take a look at <a href="https://en.wikipedia.org/wiki/Misuse_of_p-values">this</a> Wikipedia page for a list of common misinterpretations of <em>p</em>-values to make sure you don’t make any of these (and yes, I might test you on some of these on a quiz/exam!)</li>
+</ul></li>
+<li class="fragment"><p>To fully understand and appreciate the more nuanced criticisms, however, we would need a bit of extra background/theory pertaining to the framework of Hypothesis Testing - material that we don’t cover in this class.</p>
+<ul>
+<li class="fragment">I encourage you to take PSTAT 120B and PSTAT 120C if you’d like to learn more about this!</li>
+</ul></li>
+</ul>
+
+
+<img src="5a_hex.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
 </section></section>

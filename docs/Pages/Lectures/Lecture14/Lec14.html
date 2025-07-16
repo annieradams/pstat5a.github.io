@@ -12,8 +12,8 @@
   <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Mallory Wang">
-  <meta name="dcterms.date" content="2023-07-16">
-  <title>PSTAT 5A: Summer Session B, 2025 - PSTAT 5A: Lecture 14</title>
+  <meta name="dcterms.date" content="2024-07-23">
+  <title>PSTAT 5A: Summer Session B, 2025 - PSTAT 5A: Lecture 19</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -392,93 +392,120 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="5a_hex.png" data-background-opacity="0.5" data-background-position="left" data-background-size="contain" class="center">
-  <h1 class="title" style="text-align: right">PSTAT 5A: Lecture 14</h1>
-  <h2 class="subtitle" style="text-align: right">Hypothesis Testing, Part I</h2>
+  <h1 class="title" style="text-align: right">PSTAT 5A: Lecture 19</h1>
+  <h2 class="subtitle" style="text-align: right">Two-Sample Tests</h2>
   <p class="author" style="text-align: right">Mallory Wang</p>
-  <p class="date" style="text-align: right">2023-07-16</p>
+  <p class="date" style="text-align: right">2024-07-23</p>
 </section>
-<section id="lets-return-to-pets" class="slide level2" style="font-size:30px">
-<h2>Let’s return to pets</h2>
+<section id="multiple-populations" class="slide level2">
+<h2>Multiple Populations</h2>
 <ul>
-<li class="fragment">According to the American Pet Products Association, prior to the pandemic, 67% of all U.S. households had pets. Many people have speculated that the. rate of pet ownership changed during the pandemic. Recently, a group of veterinarians surveyed a random sample of 480 U.S. households and found that 336 had at least one pet. <em>Is there evidence to support the claim that the rate of pet ownership now differs from the 67% before the pandemic?</em></li>
-</ul>
-<div style="text-align:center">
-<p><img data-src="pets.png" style="width:70.0%"></p>
-</div>
-</section>
-<section id="hypothesis-testing" class="slide level2" style="font-size:30px">
-<h2>Hypothesis Testing</h2>
+<li class="fragment"><p>So far, we’ve talked about constructing confidence intervals and performing hypothesis tests for both population proportions and population means.</p></li>
+<li class="fragment"><p>One crucial thing to note is that everything we’ve done has been in the context of a <em>single</em> population</p></li>
+<li class="fragment"><p>Sometimes, as Data Scientists, we may want to test claims about the <em>differences</em> between two populations</p>
 <ul>
-<li class="fragment"><p>This is the framework of <strong>Hypothesis Testing</strong></p></li>
-<li class="fragment"><p>In hypothesis testing, we start with a pair of competing claims which we call the <strong>null hypothesis</strong> and <strong>alternative hypothesis</strong>, respectively.</p>
-<ul>
-<li class="fragment">We use <span class="math inline">\(H_0\)</span>, read as “h-naught”, to denote the null hypothesis and <span class="math inline">\(H_A\)</span> to denote the alternative hypothesis.</li>
-</ul></li>
-<li class="fragment"><p>For instance, in our pets example above the null hypothesis would be “<span class="math inline">\(H_0\)</span>: the true proportion of US households with pets is 67%”.</p></li>
-<li class="fragment"><p>Oftentimes we will want to phrase our hypotheses in more mathematical terms. This is where the notation we’ve used over the past few lectures comes into play: letting <span class="math inline">\(p\)</span> denote the true proportion of US households with pets, we can write our null hypothesis as <span class="math display">\[ H_0: \ p = 0.67 \]</span></p></li>
-</ul>
-</section>
-<section id="hypothesis-testing-1" class="slide level2" style="font-size:30px">
-<h2>Hypothesis Testing</h2>
-<ul>
-<li class="fragment"><p>What about the alternative hypothesis?</p></li>
-<li class="fragment"><p>As the name suggests, the alternative hypothesis provides some sort of alternative to the null.</p></li>
-<li class="fragment"><p>Let’s look at our cat example again. Here are some potential alternatives to the null:</p>
-<ul>
-<li class="fragment"><span class="math inline">\(p \neq 0.67\)</span> (the true proportion of US households with pets is not 67%)</li>
-<li class="fragment"><span class="math inline">\(p &gt; 0.67\)</span> (the true proportion of US households with pets is larger than 67%)</li>
-<li class="fragment"><span class="math inline">\(p &lt; 0.67\)</span> (the true proportion of US households with pets is less than 67%)</li>
-<li class="fragment"><span class="math inline">\(p = 0.67\)</span> (the true proportion of US households with pets is 33.5%)</li>
+<li class="fragment"><p>E.g. Is the average monthly income in Santa Barbara different from the average monthly income in San Francisco?</p></li>
+<li class="fragment"><p>E.g. Is the proportion of people who test positive for a disease in one country different than the proportion that test positive in a second country?</p></li>
 </ul></li>
 </ul>
 </section>
-<section id="hypothesis-testing-2" class="slide level2" style="font-size:28px">
-<h2>Hypothesis Testing</h2>
-<ul>
-<li class="fragment"><p>Each of these alternative hypotheses has a name.</p></li>
-<li class="fragment"><p>Before we talk about these names, let’s establish a slightly more general framework for conducting hypothesis testing on a proportion.</p></li>
-<li class="fragment"><p>Our null hypothesis will often take the form <span class="math display">\[ H_0 : \ p = p_0 \]</span> for some prespecified value <span class="math inline">\(p_0\)</span> (e.g.&nbsp;20%, like in our cat example above).</p></li>
-<li class="fragment"><p>This leads to four possible alternative hypotheses:</p>
-<ul>
-<li class="fragment"><span class="math inline">\(H_A: \ p \neq p_0\)</span></li>
-<li class="fragment"><span class="math inline">\(H_A: \ p &gt; p_0\)</span></li>
-<li class="fragment"><span class="math inline">\(H_A: \ p &lt; p_0\)</span></li>
-<li class="fragment"><span class="math inline">\(H_A: \ p = p_1\)</span> (where <span class="math inline">\(p_1 \neq p_0\)</span>)</li>
-</ul></li>
-<li class="fragment"><p>I’d like to stress: in a specific hypothesis testing problem, <u>we need to pick <em>one</em> of these alternative hypotheses</u></p></li>
-</ul>
+<section>
+<section id="two-populations" class="title-slide slide level1 center">
+<h1>Two Populations</h1>
+
 </section>
-<section id="terminology" class="slide level2" style="font-size:28px">
-<h2>Terminology</h2>
+<section id="two-populations-1" class="slide level2">
+<h2>Two Populations</h2>
 <ul>
-<li class="fragment"><p>When our alternative hypothesis is of the form <span class="math inline">\(H_A: \ p \neq p_0\)</span>, we refer to the situation as a <strong>two-sided</strong> hypothesis test.</p></li>
-<li class="fragment"><p>When our alternative hypothesis is of the form <span class="math inline">\(H_A: \ p &gt; p_0\)</span> or <span class="math inline">\(H_A: \ p &lt; p_0\)</span>, we refer to the situation as a <strong>one-sided</strong> hypothesis test. Specifically:</p>
+<li class="fragment"><p>Statistically: we are imagining <em>two</em> populations, Population 1 and Population 2, governed by parameters <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span>, respectively, and trying to test claims about the relationship between <span class="math inline">\(\theta_1\)</span> and <span class="math inline">\(\theta_2\)</span>.</p>
 <ul>
-<li class="fragment"><span class="math inline">\(H_A: \ p &lt; p_0\)</span> leads to a <strong>lower-tailed test</strong></li>
-<li class="fragment"><span class="math inline">\(H_A: \ p &gt; p_0\)</span> leads to an <strong>upper-tailed test</strong></li>
+<li class="fragment">For example, we could consider two populations with means <span class="math inline">\(\mu_1\)</span> and <span class="math inline">\(\mu_2\)</span>, respectively, and try to make claims about whether or not <span class="math inline">\(\mu_1\)</span> and <span class="math inline">\(\mu_2\)</span> are equal.</li>
 </ul></li>
-<li class="fragment"><p>When our alternative hypothesis is of the form <span class="math inline">\(H_A: \ p = p_1\)</span> (for some value <span class="math inline">\(p_1\)</span> different than our <strong>null value</strong> <span class="math inline">\(p_0\)</span>), we refer to the situation as a <strong>simple-vs-simple</strong> hypothesis test.</p></li>
-<li class="fragment"><p>Again, our test will be only <em>one</em> of the above!</p></li>
-<li class="fragment"><p>Additionally, it is usually up to the tester (i.e.&nbsp;the statistician or datascientist in charge of conducting the hypothesis test) to pick which set of hypotheses to use.</p></li>
-</ul>
-</section>
-<section id="setting-the-hypotheses" class="slide level2" style="font-size:28px">
-<h2>Setting the Hypotheses</h2>
+<li class="fragment"><p>The trick Statisticians use is to think in terms of the <em>difference</em> <span class="math inline">\(\mu_1 - \mu_2.\)</span></p>
 <ul>
-<li class="fragment"><p>Okay, so which test to we use when?</p></li>
-<li class="fragment"><p>In practice, there isn’t a one-size-fits-all approach to knowing which set of hypotheses to adapt in a given situation.</p></li>
-<li class="fragment"><p>Usually, in the absence of any additional information, we adopt a two-sided test as it tends to be the most general.</p></li>
-<li class="fragment"><p>However, sometimes additional information may be available to us that may influence us to select a different type of test.</p>
-<ul>
-<li class="fragment">For example, if previous studies have resulted in numerous observed sample proportions much less than the null value <span class="math inline">\(p_0\)</span>, we may want to adopt a lower-tailed test.</li>
-</ul></li>
-<li class="fragment"><p>How do we set the null hypothesis? Well, typically the null hypothesis is easier to set: I like to think of it as the “status quo”.</p>
-<ul>
-<li class="fragment">In other words, the null hypothesis is often taken to be whatever the existing claims state; e.g.&nbsp;that 67% of US households have pets.</li>
+<li class="fragment">For example, if our null hypothesis is that <span class="math inline">\(\mu_1 = \mu_2\)</span>, this can be rephrased as <span class="math inline">\(H_0: \ \mu_1 - \mu_2 = 0\)</span>.</li>
 </ul></li>
 </ul>
 </section>
-<section id="worked-out-example" class="slide level2">
+<section id="two-populations-2" class="slide level2">
+<h2>Two Populations</h2>
+<ul>
+<li class="fragment"><p>The reason we do this is because we have now effectively reduced our two-parameter problem into a one-parameter problem, involving only the parameter <span class="math inline">\(\delta := \mu_1 - \mu_2\)</span>.</p></li>
+<li class="fragment"><p>Now, we will need a point estimator of <span class="math inline">\(\delta\)</span>. Just as before, we used <span class="math inline">\(\bar{X}\)</span> to estimate <span class="math inline">\(\mu\)</span>, we now use <span class="math inline">\(\bar{X}_2-\bar{X}_1\)</span> to estimate <span class="math inline">\(\mu_1 - \mu_2\)</span>.</p></li>
+</ul>
+</section>
+<section id="two-populations-3" class="slide level2">
+<h2>Two Populations</h2>
+<ul>
+<li class="fragment"><p>We will ultimately need access to the sampling distribution of <span class="math inline">\(\bar{X}_1-\bar{X}_2\)</span>.</p></li>
+<li class="fragment"><p>Just as before, we have to check conditions to determine the sampling distribution of <span class="math inline">\(\bar{X}_1-\bar{X}_2\)</span>:</p></li>
+</ul>
+<ol type="1">
+<li class="fragment"><p><strong>Independence</strong> <em>within</em> each sample: The observations within each sample are independent (e.g.&nbsp;we have a random sample from each of the two populations).</p></li>
+<li class="fragment"><p><strong>Independence</strong> <em>between</em> the samples: he two samples are independent of one another such that observations in one sample tell us nothing about the observations in the other sample (and vice versa).</p></li>
+<li class="fragment"><p><strong>Normality</strong>: When the sample sizes are small, we require that the observations in each sample come from a normally distributed population. We can relax this condition more and more for larger and larger sample sizes. (You need to check normality for both groups.)</p></li>
+</ol>
+</section>
+<section id="sampling-distribution-of-barx_1-barx_2" class="slide level2">
+<h2>Sampling Distribution of <span class="math inline">\(\bar{X}_1-\bar{X}_2\)</span></h2>
+<p>When the conditions are satisfied, the sampling distribution of <span class="math inline">\(\bar{X}_1-\bar{X}_2\)</span> will be nearly normal with mean <span class="math display">\[\mu_1 -\mu_2\]</span> and standard error <span class="math display">\[SE = \sqrt{\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}}\]</span></p>
+</section>
+<section id="sampling-distribution-of-barx_1-barx_2-1" class="slide level2">
+<h2>Sampling Distribution of <span class="math inline">\(\bar{X}_1-\bar{X}_2\)</span></h2>
+<p>This is only if we know the population standard deviation <span class="math inline">\(\sigma_1\)</span> and <span class="math inline">\(\sigma_2\)</span>, which is unlikely. Instead, we can use the sample standard deviations <span class="math inline">\(s_1\)</span> and <span class="math inline">\(s_2\)</span> so we have <span class="math display">\[SE = \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}\]</span></p>
+<p>We will use technology to calculate the degrees of freedom. When we can’t use technologies, we will use the smaller of <span class="math inline">\(n_1-1\)</span> and <span class="math inline">\(n_2-1\)</span> for the degrees of freedom.</p>
+</section></section>
+<section>
+<section id="hypothesis-test-for-mu_1-mu_2" class="title-slide slide level1 center">
+<h1>Hypothesis Test for <span class="math inline">\(\mu_1-\mu_2\)</span></h1>
+
+</section>
+<section id="hypothesis-test-for-mu_1-mu_2-1" class="slide level2">
+<h2>Hypothesis Test for <span class="math inline">\(\mu_1-\mu_2\)</span></h2>
+<p>We will still follow the 5 steps to hypothesis test:</p>
+<p><strong>Step 1</strong>: Write the hypothesis statements</p>
+<p><strong>Step 2</strong>: Check conditions for determining the distribution of your sample statistic</p>
+<p><strong>Step 3</strong>: Calculate test statistic</p>
+<p><strong>Step 4</strong>: Use test statistic to determine decision of test (either using comparison to critical value or calculate p-value)</p>
+<p><strong>Step 5</strong>: Write a conclusion in the context of the problem</p>
+</section>
+<section id="step-1-write-the-hypothesis-statements" class="slide level2">
+<h2>Step 1: Write the hypothesis statements</h2>
+<p>The null hypothesis is</p>
+<p><span class="math display">\[H_0: \mu_1-\mu_2 = 0\]</span> The alternative is one of</p>
+<p><span class="math display">\[H_A: \mu_1-\mu_2 &lt; 0\]</span> <span class="math display">\[H_A: \mu_1-\mu_2 \neq 0\]</span> <span class="math display">\[H_A: \mu_1-\mu_2 &gt; 0\]</span></p>
+</section>
+<section id="step-2-check-conditions-for-your-sampling-distribution" class="slide level2">
+<h2>Step 2: Check conditions for your sampling distribution</h2>
+<ol type="1">
+<li class="fragment"><p>Independence within each sample</p></li>
+<li class="fragment"><p>Independence between samples</p></li>
+<li class="fragment"><p>Normality</p></li>
+</ol>
+</section>
+<section id="step-3-calculate-test-statistic" class="slide level2">
+<h2>Step 3: Calculate test statistic</h2>
+<p>Similar to how we determined our test statistic before, with the generic form:</p>
+<p><span class="math display">\[\frac{\text{sample statistic} - \text{null value}}{\text{standard error}}\]</span></p>
+<p>In this situation, we have:</p>
+<p><span class="math display">\[\text{TS} = \frac{\bar{x}_1-\bar{x}_2 - 0}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}\]</span></p>
+<p>And similar to the one mean problem, this test statistic follows a <span class="math inline">\(t\)</span> distribution with degrees of freedom calculated from technology.</p>
+</section>
+<section id="step-4-make-decision-on-test-and-step-5-write-a-conclusion" class="slide level2">
+<h2>Step 4: Make decision on test and Step 5: Write a conclusion</h2>
+<ul>
+<li class="fragment"><p>As we did with one mean, the decision will be based on the kind of test (two sided, lower tail, or greater tail tests). We will calculate the p-value to measure the strength of the evidence against the null hypothesis, comparing it to the significance level, <span class="math inline">\(\alpha\)</span>.</p></li>
+<li class="fragment"><p>Finally, we write a conclusion in the context of the problem which include our 5 elements:</p>
+<ol type="1">
+<li class="fragment"><p>significance level,</p></li>
+<li class="fragment"><p>decision of the test,</p></li>
+<li class="fragment"><p>as a function of the null hypothesis. Then we write an interpretation that is</p></li>
+<li class="fragment"><p>not too strong, and</p></li>
+<li class="fragment"><p>in affirmation or not in affirmation of the alternative hypothesis.</p></li>
+</ol></li>
+</ul>
+</section>
+<section id="worked-out-example" class="slide level2" style="font-size:32px">
 <h2>Worked-Out Example</h2>
 <div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -492,17 +519,14 @@
 <div class="callout-content">
 <div>
 <div style="font-size: 28px">
-<p><em>Forbes</em> magazine has claimed that, as of May 2023, 91.7% of US households own a vehicle.</p>
-<ol type="a">
-<li>What is the population?</li>
-<li>What is the sample?</li>
-<li>Define the parameter of interest.</li>
-<li>Define the random variable of interest.</li>
-<li>Write down the null hypothesis for this test.</li>
-<li>Write down the two-sided alternative hypothesis for this test.</li>
-<li>Write down the lower-tailed alternative hypothesis for this test.</li>
-<li>Write down the upper-tailed alternative hypothesis for this test.</li>
-</ol>
+<p><em>Gaucho Gourmande</em> has two locations: one in Goleta and one in Santa Barbara. The owner would like to determine whether the average revenue generated by the two locations are equal or not. To that end, he computes the net revenue generated by the Goleta location over 30 days and also computes the net revenue generated by the Santa Barbara location over 35 days (assume all of the necessary independence conditions hold), and produced the following information:</p>
+<p><span class="math display">\[\begin{array}{r|cc}
+                    &amp; \text{Sample Average}     &amp; \text{Sample Standard Deviation}    \\
+  \hline
+  \textbf{Goleta}   &amp;     \$13                    &amp; \$3.45        \\
+  \textbf{Santa Barbara}   &amp;     \$15                    &amp; \$4.23
+\end{array}\]</span></p>
+<p>Test the owner’s claims at an <span class="math inline">\(\alpha = 0.05\)</span> level of significance, using a two-sided alternative.</p>
 </div>
 </div>
 </div>
@@ -510,262 +534,100 @@
 </div>
 </div>
 </section>
-<section id="solutions" class="slide level2" style="font-size:32px">
+<section id="solutions" class="slide level2" style="font-size:30px">
 <h2>Solutions</h2>
-<ol type="a">
-<li class="fragment">The population is the set of all US households.</li>
-<li class="fragment">The sample is the representative sample of 500 US households we took.</li>
-<li class="fragment">The parameter of interest is <span class="math inline">\(p =\)</span> the true proportion of US households that own a vehicle.</li>
-<li class="fragment">The random variable of interest is <span class="math inline">\(\widehat{P} =\)</span> the proportion of households in a sample of 500 that own a vehicle.</li>
-<li class="fragment">Recall that the null hypothesis can be thought of as the “status quo”.
 <ul>
-<li class="fragment">In other words, we take the null to be whatever claim we want to test: <span class="math display">\[ H_0 : \ p = 0.917 \]</span></li>
+<li class="fragment"><p>Our first step should be to figure out what “Population 1” and “Population 2” are in the context of the problem.</p></li>
+<li class="fragment"><p>Let “Goleta Location” be Population 1 and “Santa Barbara Location” be Population 2.</p>
+<ul>
+<li class="fragment">It is perfectly acceptable to swap these two, but just be sure you remain consistent throughout the problem!</li>
+<li class="fragment">Also, I will expect you to explicitly write out your definitions of the populations (like above), even if the problem doesn’t explicitly ask you to do so.</li>
 </ul></li>
-</ol>
-</section>
-<section id="solutions-contd" class="slide level2" style="font-size:32px">
-<h2>Solutions (cont’d)</h2>
-<ol start="6" type="a">
-<li class="fragment"><p>The two-sided alternative hypothesis would be that the proportion of households that own a vehicle is <em>not equal to</em> 91.7%: <span class="math display">\[ H_A: \ p \neq 0.917 \]</span></p></li>
-<li class="fragment"><p>The lower-tailed alternative hypothesis would be that the proportion of households that own a vehicle is <em>less than</em> 91.7%: <span class="math display">\[ H_A: \ p &lt; 0.917 \]</span></p></li>
-<li class="fragment"><p>The lower-tailed alternative hypothesis would be that the proportion of households that own a vehicle is <em>greater than</em> 91.7%: <span class="math display">\[ H_A: \ p &gt; 0.917 \]</span></p></li>
-</ol>
-</section>
-<section id="hypothesis-testing-3" class="slide level2" style="font-size:30px">
-<h2>Hypothesis Testing</h2>
-<ul>
-<li class="fragment"><p>Alright, here is what we have so far in terms of hypotheses:</p>
-<ul>
-<li class="fragment">The <strong>null hypothesis</strong> represents a sort of “status quo” statement.</li>
-<li class="fragment">The <strong>alternative hypothesis</strong> represents an alternative to the status quo.</li>
-</ul></li>
-<li class="fragment"><p>So, what is a hypothesis <em>test</em>?</p></li>
-<li class="fragment"><p>A <strong>hypothesis test</strong> is a framework/procedure that allows us to determine whether or not the null should be rejected in favor of the alternative.</p></li>
-<li class="fragment"><p>Naturally, a hypothesis test will depend on <em>data</em>! As such, we can think of a hypothesis test as a <em>function</em> that takes in data and outputs either <code>reject H0</code> or <code>fail to reject H0</code>. <span class="math display">\[ \texttt{decision}(\texttt{data}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if } \texttt{...} \\  \texttt{fail to reject } H_0 &amp; \text{if } \texttt{...} \\ \end{cases}  \]</span></p></li>
+<li class="fragment"><p>In this way, <span class="math display">\[ \overline{X} = 13; \quad s_X = 3.45; \quad \overline{Y} = 15; \quad s_Y = 4.23 \]</span></p></li>
+<li class="fragment"><p>Additionally, <span class="math inline">\(n_1 = 30\)</span> and <span class="math inline">\(n_2 = 35\)</span>.</p></li>
 </ul>
 </section>
-<section id="fail-to-reject" class="slide level2" style="font-size:28px">
-<h2>Fail To Reject?</h2>
+<section id="solutions-1" class="slide level2" style="font-size:28px">
+<h2>Solutions</h2>
 <ul>
-<li class="fragment"><p>By the way, the results of a hypothesis test are always framed in terms of the null hypothesis; e.g.&nbsp;“reject <span class="math inline">\(H_0\)</span>” or “fail to reject <span class="math inline">\(H_0\)</span>”.</p></li>
-<li class="fragment"><p>Wait, why are we saying “fail to reject <span class="math inline">\(H_0\)</span>”? Isn’t that just equivalent to “accept <span class="math inline">\(H_0\)</span>”?</p></li>
-<li class="fragment"><p>Well, not quite…</p></li>
-<li class="fragment"><p>Think of it this way: just because we are saying the particular alternative hypothesis we picked is less plausible than the null, doesn’t mean there isn’t a <em>different</em> alternative hypothesis that is more plausible than the null.</p></li>
-<li class="fragment"><p>All we are saying when we fail to reject the null is exactly that- we didn’t have enough information to reject <span class="math inline">\(H_0\)</span> outright. We are <em>not</em> saying that <span class="math inline">\(H_0\)</span> must be true.</p></li>
-<li class="fragment"><p>Admittedly, some statisticians have gotten a little lax with this distinction and you may encounter textbooks and/or professors that use terms like “accept the null”.</p>
-<ul>
-<li class="fragment">For better or for worse, I am a bit of a traditionalist in this respect and will adhere to the terminology “fail to reject” in favor of “accept”.</li>
-</ul></li>
+<li class="fragment"><p>Now, let’s compute the value of the test statistic. <span class="math display">\[ \mathrm{TS} =   \frac{\overline{Y} - \overline{X}}{\sqrt{ \frac{s_X^2}{n_1} + \frac{s_Y^2}{n_2}}} = \frac{15 - 13}{\sqrt{\frac{3.45^2}{30}  + \frac{4.23^2}{35} }} = 2.10 \]</span></p></li>
+<li class="fragment"><p>We should next figure out the degrees of freedom: <span class="math display">\[\begin{align*}
+\mathrm{df}   &amp;  = \mathrm{round}\left\{ \frac{ \left[ \left( \frac{s_X^2}{n_1} \right) + \left( \frac{s_Y^2}{n_2} \right) \right]^2 }{ \frac{\left( \frac{s_X^2}{n_1} \right)^2}{n_1 - 1} + \frac{\left( \frac{s_Y^2}{n_2} \right)^2}{n_2 - 1} } \right\}     \\
+  &amp; =  \mathrm{round}\left\{ \frac{ \left[ \left( \frac{3.45^2}{30} \right) + \left( \frac{4.23^2}{35} \right) \right]^2 }{ \frac{\left( \frac{3.45^2}{30} \right)^2}{30 - 1} + \frac{\left( \frac{4.23^2}{35} \right)^2}{35 - 1} } \right\} = 63
+\end{align*}\]</span></p></li>
 </ul>
 </section>
-<section id="four-states-of-the-world" class="slide level2" style="font-size:30px">
-<h2>Four States of the World</h2>
+<section id="solutions-2" class="slide level2" style="font-size:30px">
+<h2>Solutions</h2>
 <ul>
-<li class="fragment"><p>Okay, so we’ve talked a bit more about what a hypothesis test actually is: it is a procedure that takes in data and outputs a <em>decision</em> on whether or not to reject the null.</p></li>
-<li class="fragment"><p>Behind the scenes, however, the null will either be true or not.</p></li>
-<li class="fragment"><p>This leads to the following four situations:</p></li>
+<li class="fragment"><p>At this point, we could either proceed using critical values or using <em>p</em>-values.</p></li>
+<li class="fragment"><p>Let’s use <em>p</em>-values, for practice.</p></li>
+<li class="fragment"><p>Our <em>p</em>-value is computed as</p></li>
 </ul>
 <div class="fragment">
-
-<table>
-<tbody><tr>
-<td style="border: 0px solid black;">
-</td>
-<td style="border: 0px solid black;">
-</td>
-<td colspan="2" padding-left:10px;="" background-color:="" #c4eef2;="" style="text-align: center"><b>Result of Test</b></td>
-</tr>
-<tr>
-<td style="border: 0px solid black;">
-</td>
-<td style="border: 0px solid black;">
-</td>
-<td style="border: 1px solid black; padding-right:10px;  padding-left:10px; width:5cm; text-align: center">
-<b>Reject</b>
-</td>
-<td style="border: 1px solid black; padding-right:10px;  padding-left:10px; width:5cm; text-align: center">
-<b>Fail to Reject</b>
-</td>
-</tr>
-<tr>
-<td style="border: 0px solid black; text-align: center; vertical-align: middle;" rowspan="2">
-<b><i>H</i><sub>0</sub></b>
-</td>
-<td style="border: 0px solid black;">
-<b>True</b>
-</td>
-<td style="border: 1px solid black; padding-right:10px;  padding-left:10px; text-align:center; color:red">
-</td>
-<td style="border: 1px solid black; padding-right:10px;  padding-left:10px; text-align:center">
-</td>
-</tr>
-<tr>
-<td style="border: 0px solid black;">
-<b>False</b>
-</td>
-<td style="border: 1px solid black; padding-right:10px;  padding-left:10px; text-align:center">
-</td>
-<td style="border: 1px solid black; padding-right:10px;  padding-left:10px; text-align:center">
-</td>
-</tr>
-
-</tbody></table>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> sps</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="dv">2</span><span class="op">*</span>sps.t.cdf(<span class="op">-</span><span class="fl">2.10</span>, <span class="dv">63</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>np.float64(0.03973904581390475)</code></pre>
 </div>
-<p><br>
-</p>
+</div>
+</div>
 <ul>
-<li class="fragment">Some of these situations are good, and some of these are bad! Which are which?</li>
-</ul>
-</section>
-<section id="four-states-of-the-world-1" class="slide level2" style="font-size:30px">
-<h2>Four States of the World</h2>
-<p><br>
-</p>
-
-<table>
-<tbody><tr>
-<td style="border: 0px solid black;">
-</td>
-<td style="border: 0px solid black;">
-</td>
-<td colspan="2" padding-left:10px;="" background-color:="" #c4eef2;="" style="text-align: center"><b>Result of Test</b></td>
-</tr>
-<tr>
-<td style="border: 0px solid black;">
-</td>
-<td style="border: 0px solid black;">
-</td>
-<td style="border: 1px solid black; padding-right:10px;  padding-left:10px; width:5cm; text-align: center">
-<b>Reject</b>
-</td>
-<td style="border: 1px solid black; padding-right:10px;  padding-left:10px; width:5cm; text-align: center">
-<b>Fail to Reject</b>
-</td>
-</tr>
-<tr>
-<td style="border: 0px solid black; text-align: center; vertical-align: middle;" rowspan="2">
-<b><i>H</i><sub>0</sub></b>
-</td>
-<td style="border: 0px solid black;">
-<b>True</b>
-</td>
-<td style="border: 1px solid black; padding-right:10px;  padding-left:10px; text-align:center; color:red">
-<b>BAD</b>
-</td>
-<td style="border: 1px solid black; padding-right:10px;  padding-left:10px; text-align:center; color:green">
-<b>GOOD</b>
-</td>
-</tr>
-<tr>
-<td style="border: 0px solid black;">
-<b>False</b>
-</td>
-<td style="border: 1px solid black; padding-right:10px;  padding-left:10px; text-align:center; color:green">
-<b>GOOD</b>
-</td>
-<td style="border: 1px solid black; padding-right:10px;  padding-left:10px; text-align:center; color:red">
-<b>BAD</b>
-</td>
-</tr>
-
-</tbody></table>
-<p><br>
-</p>
-<ul>
-<li class="fragment">We give names to the two “bad” situations: <strong>Type I</strong> and <strong>Type II</strong> errors.</li>
+<li class="fragment"><p>This is below our level of significance <span class="math inline">\(\alpha = 0.05\)</span> meaning we would reject the null.</p></li>
+<li class="fragment"><p>If we wanted to instead use critical values:</p></li>
 </ul>
 <div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="op">-</span>sps.t.ppf(<span class="fl">0.05</span>, <span class="dv">63</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>np.float64(1.669402221706813)</code></pre>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">This means our critical value is 1.67; since <span class="math inline">\(|\mathrm{TS}| = |2.10| = 2.10 &gt; 1.67\)</span>, we would again reject at an <span class="math inline">\(\alpha = 0.05\)</span> level of significance.</li>
+</ul>
+</section>
+<section id="solutions-3" class="slide level2">
+<h2>Solutions</h2>
+<blockquote>
+<p>At a 5% level of significance, there was sufficient evidence to reject the owner’s claims that the revenue generated by the two locations are equal, in favor of the alternative that the revenue generated by the two locations are not equal.</p>
+</blockquote>
+</section>
+<section id="extensions" class="slide level2" style="font-size:32px">
+<h2>Extensions</h2>
+<ul>
+<li class="fragment"><p>Unsurprisingly, we can adapt the above procedure to account for one-sided alternatives as well.</p></li>
+<li class="fragment"><p>For instance, suppose we wish to test <span class="math display">\[ \left[ \begin{array}{rr}
+H_0:    &amp; \mu_1 = \mu_2   \\
+H_A:    &amp; \mu_1 &lt; \mu_2
+\end{array} \right.\]</span></p></li>
+<li class="fragment"><p>Again, we rephrase things as: <span class="math display">\[ \left[ \begin{array}{rr}
+H_0:    &amp; \mu_2 - \mu_1 = 0   \\
+H_A:    &amp; \mu_2 - \mu_1 &gt; 0
+\end{array} \right.\]</span> which is now a familiar upper-tailed test on <span class="math inline">\(\delta = \mu_2 - \mu_1\)</span> and <span class="math inline">\(\mu_0 = 0.\)</span></p></li>
+</ul>
+</section>
+<section id="extensions-1" class="slide level2" style="font-size:32px">
+<h2>Extensions</h2>
+<ul>
+<li class="fragment"><p>Specifically, we would take the same test statistic (which would still follow the same distribution under the null) and use the decision rule <span class="math display">\[ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if } \mathrm{TS} &gt; c \\ \texttt{fail to reject } H_0 &amp; \text{otherwise}\\ \end{cases}  \]</span> where <span class="math inline">\(c\)</span> is the appropriate quantile of the approximate <em>t</em> distribution (with degrees of freedom given by the Satterthwaite Approximation).</p></li>
+<li class="fragment"><p>A similar result holds for the lower-tailed test- I encourage you to work it out on your own.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="confidence-interval-for-mu_1-mu_2" class="title-slide slide level1 center">
+<h1>Confidence Interval for <span class="math inline">\(\mu_1-\mu_2\)</span></h1>
 
-<table>
-<tbody><tr>
-<td style="border: 0px solid black;">
-</td>
-<td style="border: 0px solid black;">
-</td>
-<td colspan="2" padding-left:10px;="" background-color:="" #c4eef2;="" style="text-align: center"><b>Result of Test</b></td>
-</tr>
-<tr>
-<td style="border: 0px solid black;">
-</td>
-<td style="border: 0px solid black;">
-</td>
-<td style="border: 1px solid black; padding-right:10px;  padding-left:10px; width:5cm; text-align: center">
-<b>Reject</b>
-</td>
-<td style="border: 1px solid black; padding-right:10px;  padding-left:10px; width:5cm; text-align: center">
-<b>Fail to Reject</b>
-</td>
-</tr>
-<tr>
-<td style="border: 0px solid black; text-align: center; vertical-align: middle;" rowspan="2">
-<b><i>H</i><sub>0</sub></b>
-</td>
-<td style="border: 0px solid black;">
-<b>True</b>
-</td>
-<td style="border: 1px solid black; padding-right:10px;  padding-left:10px; text-align:center; color:red">
-<b>Type I Error</b>
-</td>
-<td style="border: 1px solid black; padding-right:10px;  padding-left:10px; text-align:center; color:green">
-<b>GOOD</b>
-</td>
-</tr>
-<tr>
-<td style="border: 0px solid black;">
-<b>False</b>
-</td>
-<td style="border: 1px solid black; padding-right:10px;  padding-left:10px; text-align:center; color:green">
-<b>GOOD</b>
-</td>
-<td style="border: 1px solid black; padding-right:10px;  padding-left:10px; text-align:center; color:red">
-<b>Type II Error</b>
-</td>
-</tr>
-
-</tbody></table>
-</div>
 </section>
-<section id="type-i-and-type-ii-errors" class="slide level2" style="font-size:30px">
-<h2>Type I and Type II Errors</h2>
-<div class="fragment">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong><strong>Definition:</strong> Type I and Type II errors</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<div style="font-size: 25px">
-<ul>
-<li>A <strong>Type I Error</strong> occurs when we reject <span class="math inline">\(H_0\)</span>, when <span class="math inline">\(H_0\)</span> was actually true.</li>
-<li>A <strong>Type II Error</strong> occurs when we fail to reject <span class="math inline">\(H_0\)</span>, when <span class="math inline">\(H_0\)</span> was actually false.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<ul>
-<li class="fragment"><p>A common way of interpreting Type I and Type II errors are in the context of the judicial system.</p></li>
-<li class="fragment"><p>The US judicial system is built upon a motto of “innocent until proven guilty.” As such, the null hypothesis is that a given person is innocent.</p></li>
-<li class="fragment"><p>A Type I error represents convicting an innocent person.</p></li>
-<li class="fragment"><p>A Type II error represents letting a guilty person go free.</p></li>
-</ul>
+<section id="confidence-interval-for-mu_1-mu_2-1" class="slide level2">
+<h2>Confidence Interval for <span class="math inline">\(\mu_1-\mu_2\)</span></h2>
+<p>As with the confidence interval for one mean, we had the generic form</p>
+<p><span class="math display">\[\hat{\theta} \pm c \cdot \text{standard error}\]</span></p>
+<p>So confidence interval for <span class="math inline">\(\mu_1-\mu_2\)</span> is <span class="math display">\[\bar{x}_1-\bar{x}_2 \pm t^* \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}\]</span></p>
 </section>
-<section id="type-i-and-type-ii-errors-1" class="slide level2" style="font-size:30px">
-<h2>Type I and Type II Errors</h2>
-<ul>
-<li class="fragment"><p>Viewing the two errors in the context of the judicial system also highlights a tradeoff.</p></li>
-<li class="fragment"><p>If we want to reduce the number of times we wrongfully convict an innocent person, we may want to make the conditions for convicting someone even stronger.</p></li>
-<li class="fragment"><p>But, this would have the consequence of having fewer people overall convicted, thereby (and inadvertently) <em>increasing</em> the chance we let a guilty person go free.</p></li>
-<li class="fragment"><p>As such, <u>controlling for one type of error increses the likelihood of committing the other type.</u></p></li>
-</ul>
-</section>
-<section id="worked-out-example-2" class="slide level2">
+<section id="worked-out-example-2" class="slide level2" style="font-size:32px">
 <h2>Worked-Out Example</h2>
 <div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -779,303 +641,7 @@
 <div class="callout-content">
 <div>
 <div style="font-size: 28px">
-<p><em>Forbes</em> magazine has claimed that, as of May 2023, 91.7% of US households own a vehicle.</p>
-<p>Assuming we are conducting a two-sided test, what would a Type I error be in the context of this experiment? What about a Type II error?</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="solutions-1" class="slide level2" style="font-size:32px">
-<h2>Solutions</h2>
-<ul>
-<li class="fragment"><p>A Type I error would be concluding that the true proportion of US households that own a vehicle is not 91.7%, when in fact 91.7% of US households own a vehicle.</p></li>
-<li class="fragment"><p>A Type II error would be concluding that the true proportion of US households that own a vehicle is 91.7%, when in fact the true proportion is <em>not</em> 91.8%.</p></li>
-</ul>
-</section>
-<section>
-<section id="constructing-tests-for-a-proportion" class="title-slide slide level1 center">
-<h1>Constructing Tests for a Proportion</h1>
-
-</section>
-<section id="leadup" class="slide level2" style="font-size:30px">
-<h2>Leadup</h2>
-<ul>
-<li class="fragment"><p>Alright, now we know about the basics and background surrounding hypothesis tests.</p></li>
-<li class="fragment"><p>How do we actually <em>construct</em> one?</p></li>
-<li class="fragment"><p>Let’s focus on hypothesis testing for population proportions for now; we’ll deal with sample means later.</p></li>
-<li class="fragment"><p>Recall our setup: our hypothesis test should be some sort of decision-making process of the form <span class="math display">\[ \texttt{decision}(\texttt{data}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if } \texttt{...} \\  \texttt{fail to reject } H_0 &amp; \text{if } \texttt{...} \\ \end{cases}  \]</span></p></li>
-</ul>
-</section>
-<section id="leadup-1" class="slide level2" style="font-size:30px">
-<h2>Leadup</h2>
-<ul>
-<li class="fragment"><p>For the moment, let’s return to the pet example from the beginning of the lecture.</p></li>
-<li class="fragment"><p>Letting <span class="math inline">\(p\)</span> denote the true proportion of US household with pets, our null hypothesis takes the form <span class="math inline">\(H_0: \ p = 0.67\)</span>.</p></li>
-<li class="fragment"><p>Suppose we take a two-sided alternative: <span class="math inline">\(H_A: \ p \neq 0.67\)</span>.</p></li>
-<li class="fragment"><p>Now, we have a good summary statistic for proportions: <span class="math inline">\(\widehat{P}\)</span>.</p></li>
-<li class="fragment"><p>As such, our decision process should probably be of the form <span class="math display">\[ \texttt{decision}(\widehat{p}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if } \texttt{...} \\  \texttt{fail to reject } H_0 &amp; \text{if } \texttt{...} \\ \end{cases}  \]</span></p></li>
-<li class="fragment"><p>Said differently: if we observe a value of <span class="math inline">\(\widehat{p} = 0.82\)</span>, or a value of <span class="math inline">\(\widehat{p} = 0.001\)</span>, we would likely be inclined to reject the null.</p></li>
-</ul>
-</section>
-<section id="test-statistic" class="slide level2" style="font-size:30px">
-<h2>Test Statistic</h2>
-<ul>
-<li class="fragment"><p>So, it makes sense to reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(\widehat{p}\)</span> is very far away from <span class="math inline">\(p_0\)</span> (which, in the cat example, is <span class="math inline">\(0.2\)</span>). <span class="math display">\[ \texttt{decision}(\widehat{p}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if $\widehat{p}$ is far from $p_0$} \\  \texttt{fail to reject } H_0 &amp; \text{otherwise}\\ \end{cases}  \]</span></p></li>
-<li class="fragment"><p>For reasons that will become clear in a few slides, we typically avoid using <span class="math inline">\(\widehat{p}\)</span> and instead use a <em>standardized</em> version of <span class="math inline">\(\widehat{p}\)</span>: <span class="math display">\[ \mathrm{TS} = \frac{\widehat{P} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{n}}} \]</span> where <span class="math inline">\(\mathrm{TS}\)</span> stands for <strong>test statistic</strong>.</p></li>
-</ul>
-</section>
-<section id="test-statistic-1" class="slide level2">
-<h2>Test Statistic</h2>
-<ul>
-<li class="fragment"><p>Note that, by definition, the test statistic <span class="math inline">\(\mathrm{TS}\)</span> is a random variable!</p>
-<ul>
-<li class="fragment">This is because it is simply a centered and scaled version of <span class="math inline">\(\widehat{P}\)</span>, which we know is a random variable.</li>
-</ul></li>
-<li class="fragment"><p>For a given sample, however, we will have a given observed value of <span class="math inline">\(\widehat{P}\)</span>, namely <span class="math inline">\(\widehat{p}\)</span>, which will lead to an <em>observed instance</em> of our test statistic <span class="math display">\[ \mathrm{ts} = \frac{\widehat{p} - p_0}{\sqrt{ \frac{p_0 (1 - p_0)}{n}}} \]</span></p></li>
-</ul>
-</section>
-<section id="test-statistic-2" class="slide level2" style="font-size:30px">
-<h2>Test Statistic</h2>
-<ul>
-<li class="fragment"><p>Let’s try and convert our decision-making process to be in terms of the test statistic.</p></li>
-<li class="fragment"><p>First, note that saying <span class="math inline">\(\widehat{p}\)</span> is “far away” from <span class="math inline">\(p_0\)</span> could mean one of two things:</p>
-<ul>
-<li class="fragment"><span class="math inline">\(\widehat{p}\)</span> was <em>much larger</em> than <span class="math inline">\(p_0\)</span></li>
-<li class="fragment"><span class="math inline">\(\widehat{p}\)</span> was <em>much smaller</em> than <span class="math inline">\(p_0\)</span></li>
-</ul></li>
-<li class="fragment"><p>These two cases can be combined into a single case if we think in terms of the magnitude of the distance bewteen <span class="math inline">\(\widehat{p}\)</span> and <span class="math inline">\(p_0\)</span>, which is equivalent to considering <span class="math inline">\(|\mathrm{ts}|\)</span>.</p></li>
-<li class="fragment"><p>What I’m getting at is this: if <span class="math inline">\(\widehat{p}\)</span> was far away from <span class="math inline">\(p_0\)</span>, then <span class="math inline">\(|\mathrm{ts}|\)</span> must be large.</p></li>
-<li class="fragment"><p>Hence, we can rephrase our decision process as <span class="math display">\[ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if $|\mathrm{TS}|$ is large} \\  \texttt{fail to reject } H_0 &amp; \text{otherwise}\\ \end{cases}  \]</span></p></li>
-</ul>
-</section>
-<section id="constructing-the-test" class="slide level2" style="font-size:30px">
-<h2>Constructing the Test</h2>
-<ul>
-<li class="fragment"><p>Okay, but how large is “large”?</p></li>
-<li class="fragment"><p>That is, for what values of <span class="math inline">\(|\mathrm{TS}|\)</span> will we reject the null?</p>
-<ul>
-<li class="fragment">By the way, the set of values that correspond to a decision of <code>reject</code> is called the <strong>rejection region</strong> of a test.</li>
-</ul></li>
-<li class="fragment"><p>In other words, if our test takes the form <span class="math display">\[ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if } |\mathrm{TS}| &gt; c \\ \texttt{fail to reject } H_0 &amp; \text{otherwise}\\ \end{cases}  \]</span> what value should we take <span class="math inline">\(c\)</span> to be?</p></li>
-</ul>
-</section>
-<section id="the-errors" class="slide level2" style="font-size:30px">
-<h2>The Errors</h2>
-<ul>
-<li class="fragment"><p>Well, to answer this question, we need to return to our considerations of Type II and Type II errors.</p></li>
-<li class="fragment"><p>Recall that a Type I error occurs when we reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(H_0\)</span> was actually true, and a Type II error occurs when we fail to reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(H_0\)</span> was false.</p></li>
-<li class="fragment"><p>Changing the value of <span class="math inline">\(c\)</span> changes the probability of committing the two types of errors!</p></li>
-<li class="fragment"><p>Specifically, setting a larger value of <span class="math inline">\(c\)</span> corresponds to rejecting <span class="math inline">\(H_0\)</span> for <em>fewer</em> values, thereby <em>decreasing</em> the probability of committing a Type I errror but <em>increasing</em> the probability of committing a Type II error.</p></li>
-<li class="fragment"><p>Conversely, setting a smaller value of <span class="math inline">\(c\)</span> corresponds to rejecting <span class="math inline">\(H_0\)</span> for <em>more</em> values, thereby <em>increasing</em> the probability of committing a Type I error but <em>decreasing</em> the probability of committing a Type II error.</p></li>
-</ul>
-</section></section>
-<section>
-<section id="section" class="title-slide slide level1 center" data-background-color="black" data-background-image="https://media1.giphy.com/media/ZgURe4CWXu8gBEpwYy/giphy.gif?cid=ecf05e478scdoyx294uhpvadt2fcoifjt1mwm8y8lmhvud3b&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g" data-background-size="contain">
-<h1></h1>
-
-</section>
-<section id="the-compromise" class="slide level2" style="font-size:30px">
-<h2>The Compromise</h2>
-<ul>
-<li class="fragment"><p>We need to compromise!</p></li>
-<li class="fragment"><p>In practice, we go into the test knowing how much leeway we are going to allow ourselves to commit a Type I error. That is, we <em>prespecify</em> our tolerance for committing a Type I error.</p></li>
-<li class="fragment"><p>The probability of committing a Type I error is called the <strong>level of significance</strong> (or just <strong>significance level</strong>), and is often denoted <span class="math inline">\(\alpha\)</span>.</p></li>
-<li class="fragment"><p>Statisticians therefore construct a hypothesis test around a specific value of <span class="math inline">\(\alpha\)</span>.</p></li>
-<li class="fragment"><p>A common level of significance is <span class="math inline">\(\alpha = 0.05\)</span>, though <span class="math inline">\(\alpha = 0.01\)</span> and <span class="math inline">\(\alpha = 0.1\)</span> are sometimes used as well.</p></li>
-<li class="fragment"><p>Okay, so what does this mean for our test?</p></li>
-<li class="fragment"><p>We now know that <span class="math inline">\(\alpha\)</span> denotes the probability of rejecting the null when the null is true; i.e. <span class="math display">\[ \mathbb{P}_{H_0}(|\mathrm{TS}| &gt; c) = \alpha \]</span> where the symbol <span class="math inline">\(\mathbb{P}_{H_0}\)</span> just means “assuming the null, the probability of….”</p></li>
-</ul>
-</section>
-<section id="the-compromise-1" class="slide level2" style="font-size:28px">
-<h2>The Compromise</h2>
-<ul>
-<li class="fragment"><p>Again, remember that <span class="math inline">\(\alpha\)</span> is fixed (e.g.&nbsp;<span class="math inline">\(0.05\)</span>); it is the value of <span class="math inline">\(c\)</span> we are after!</p></li>
-<li class="fragment"><p>So, a natural question arises: what is the distribution of <span class="math inline">\(\mathrm{TS}\)</span> under the null?</p></li>
-<li class="fragment"><p>Recall that <span class="math display">\[ \mathrm{TS} = \frac{\widehat{P} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{n}}} \]</span></p></li>
-<li class="fragment"><p>Now, assuming the null is true (i.e.&nbsp;that <span class="math inline">\(p = p_0\)</span>), the Central Limit Theorem for Proportions tells us <span class="math display">\[ \widehat{P} \stackrel{H_0}{\sim} \mathcal{N}\left(p_0, \ \sqrt{\frac{p_0(1 - p_0)}{n}} \right) \]</span> where the symbol <span class="math inline">\(\stackrel{H_0}{\sim}\)</span> is just a shorthand for “distributed as, under the null”</p></li>
-</ul>
-</section>
-<section id="the-distribution-of-the-test-statistic" class="slide level2" style="font-size:30px">
-<h2>The Distribution of the Test Statistic</h2>
-<ul>
-<li class="fragment"><p>Therefore, assuming the null is correct, we have <span class="math display">\[ \mathrm{TS} \sim \mathcal{N}(0, \ 1)\]</span></p></li>
-<li class="fragment"><p>So, our condition <span class="math display">\[ \mathbb{P}_{H_0}(|\mathrm{TS}| &gt; c) = \alpha \]</span> which, by the symmetry of the standard normal distribution, is equivalent to <span class="math display">\[ \mathbb{P}_{H_0}(\mathrm{TS} &lt; -c) = \frac{\alpha}{2} \]</span></p></li>
-<li class="fragment"><p>Hence, <span class="math inline">\(-c\)</span> is just the <span class="math inline">\((\alpha / 2) \times 100\)</span> percentile of the standard normal distribution!!!</p></li>
-</ul>
-</section>
-<section id="the-test" class="slide level2" style="font-size:30px">
-<h2>The Test</h2>
-<div class="fragment">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong><strong>Two-Sided Test for a Proportion:</strong></strong></p>
-</div>
-<div class="callout-content">
-<div>
-<div style="font-size: 25px">
-<p>When testing <span class="math inline">\(H_0: \ p = p_0\)</span> vs <span class="math inline">\(H_A: \ p \neq p_0\)</span> at an <span class="math inline">\(\alpha\)</span> level of significance, where <span class="math inline">\(p\)</span> denotes a population proportion, the test takes the form <span class="math display">\[ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if } |\mathrm{TS}| &gt; z_{1 - \alpha/2} \\ \texttt{fail to reject } H_0 &amp; \text{otherwise}\\ \end{cases}  \]</span> where:</p>
-<ul>
-<li><p><span class="math inline">\(\displaystyle \mathrm{TS} = \frac{\widehat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}}\)</span></p></li>
-<li><p><span class="math inline">\(z_{1 - \alpha/2}\)</span> denotes the <span class="math inline">\((\alpha/2) \times 100\)</span><sup>th</sup> percentile of the standard normal distribution, scaled by negative 1 (which is equivalent to the <span class="math inline">\((1 - \alpha/2) \times 100\)</span><sup>th</sup> percentile)</p></li>
-</ul>
-<p>provided that: <span class="math inline">\(n p_0 \geq 10\)</span> and <span class="math inline">\(n (1 - p_0) \geq 10\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="the-test-1" class="slide level2" style="font-size:30px">
-<h2>The Test</h2>
-<ul>
-<li class="fragment">For example, if <span class="math inline">\(\alpha = 0.05\)</span> then <span class="math inline">\(c\)</span> is negative 1 times the 2.5<sup>th</sup> percentile of the standard normal distribution; i.e.&nbsp;1.96 and our test becomes <span class="math display">\[ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if } |\mathrm{TS}| &gt; 1.96 \\ \texttt{fail to reject } H_0 &amp; \text{otherwise}\\ \end{cases}  \]</span></li>
-</ul>
-<div class="fragment" style="color:red; font-size:40px">
-<p><strong>CAUTION!!!</strong></p>
-</div>
-<ul>
-<li class="fragment"><p>All of this is predicated on our invocation of the Central Limit Theorem for Proportions!</p></li>
-<li class="fragment"><p>In other words, the test above was derived assuming <span class="math display">\[ \widehat{P} \stackrel{H_0}{\sim} \mathcal{N}\left(p_0, \ \sqrt{\frac{p_0(1 - p)}{n}} \right) \]</span></p></li>
-</ul>
-</section>
-<section id="the-assumptions" class="slide level2" style="font-size:30px">
-<h2>The Assumptions</h2>
-<div>
-<ul>
-<li>This is not always true!</li>
-</ul>
-</div>
-<ul>
-<li class="fragment">When is this true? In other words, what conditions do we need in order for the above distributional statement to be true?
-<ul>
-<li class="fragment">That’s right, the success-failure conditions.</li>
-</ul></li>
-<li class="fragment">But now, since we only need the above to be true for <span class="math inline">\(p = p_0\)</span>, we only need to verify that:
-<ol type="1">
-<li class="fragment"><span class="math inline">\(n p_0 \geq 10\)</span></li>
-<li class="fragment"><span class="math inline">\(n (1 - p_0) \geq 10\)</span></li>
-</ol></li>
-<li class="fragment">It is very important we check these conditions before conducting our test!</li>
-</ul>
-</section>
-<section id="the-test-2" class="slide level2" style="font-size:30px">
-<h2>The Test</h2>
-<div class="fragment">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong><strong>Two-Sided Test for a Proportion:</strong></strong></p>
-</div>
-<div class="callout-content">
-<div style="font-size: 25px">
-<p>When testing <span class="math inline">\(H_0: \ p = p_0\)</span> vs <span class="math inline">\(H_A: \ p \neq p_0\)</span> at an <span class="math inline">\(\alpha\)</span> level of significance, where <span class="math inline">\(p\)</span> denotes a population proportion:</p>
-<ol type="1">
-<li class="fragment"><p>Check that the success-failure conditions hold. Namely, check that:</p>
-<ul>
-<li class="fragment"><span class="math inline">\(n p_0 \geq 10\)</span></li>
-<li class="fragment"><span class="math inline">\(n (1 - p_0) \geq 10\)</span></li>
-</ul></li>
-<li class="fragment"><p>Compute the observed value of the test statistic <span class="math display">\[\displaystyle \mathrm{ts} = \frac{\widehat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}}\]</span></p></li>
-<li class="fragment"><p>Compute the <strong>critical value</strong> <span class="math inline">\(z_{1 - \alpha/2}\)</span>, which is the the <span class="math inline">\((\alpha/2) \times 100\)</span><sup>th</sup> percentile of the standard normal distribution, scaled by negative 1 (or simply the <span class="math inline">\((1 - \alpha/2) \times 100\)</span><sup>th</sup> percentile)</p></li>
-<li class="fragment"><p><code>Reject</code> <span class="math inline">\(H_0\)</span> if <span class="math inline">\(|\mathrm{TS}| &gt; z_{1 - \alpha/2}\)</span>, and <code>fail to reject</code> <span class="math inline">\(H_0\)</span> otherwise.</p></li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="worked-out-example-3" class="slide level2">
-<h2>Worked-Out Example</h2>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Worked-Out Example 3</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<div style="font-size: 28px">
-<p><em>Forbes</em> magazine has claimed that, as of May 2023, 91.7% of US households own a vehicle. To test that claim, we take a representative sample of 500 US households and observe that 89.4% of these households own a vehicle.</p>
-<p>Conduct a two-sided hypothesis test at a <span class="math inline">\(5\%\)</span> level of significance on <em>Forbes</em>’s claim that 91.7% of US households own a vehicle. Be sure you phrase your conclusion clearly, and in the context of the problem.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="solutions-2" class="slide level2" style="font-size:28px">
-<h2>Solutions</h2>
-<ul>
-<li class="fragment">All we really need to do is follow the steps outlined in the previous slide.</li>
-</ul>
-<ol type="1">
-<li class="fragment"><p><strong>Check Conditions</strong></p>
-<ul>
-<li class="fragment"><p><span class="math inline">\(n p_0 = 500 \cdot (0.917) = 458.5 \geq 10 \ \checkmark\)</span></p></li>
-<li class="fragment"><p><span class="math inline">\(n (1 - p_0) = 500 \cdot (1 - 0.917) = 41.5 \geq 10 \ \checkmark\)</span></p></li>
-<li class="fragment"><p>Since both conditions are met, we can proceed.</p></li>
-</ul></li>
-<li class="fragment"><p><strong>Compute the Observed Value of the Test Statistic</strong> <span class="math display">\[ \mathrm{ts} = \frac{\widehat{p} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{n}}} = \frac{0.894 - 0.917}{\sqrt{\frac{0.917 (1 - 0.917)}{500}}} = -1.86 \]</span></p></li>
-<li class="fragment"><p><strong>Compute the critical value</strong> Because <span class="math inline">\(\alpha = 0.05\)</span>, the critical value is <span class="math inline">\(1.96\)</span>.</p></li>
-</ol>
-</section>
-<section id="solutions-3" class="slide level2" style="font-size:30px">
-<h2>Solutions</h2>
-<ol start="4" type="1">
-<li class="fragment"><strong>Conduct the test:</strong> We see that <span class="math inline">\(|\mathrm{TS}| = |-1.86| = 1.86\)</span> which is <em>not</em> greater than <span class="math inline">\(1.96\)</span>. As such, we <strong>fail to reject the null</strong>.</li>
-</ol>
-<ul>
-<li class="fragment"><p>Now, the problem told us to phrase our conclusions carefully and in the context of the problem.</p></li>
-<li class="fragment"><p>It is <strong>VERY</strong> important to include the level of significance in your final conclusions.</p></li>
-<li class="fragment"><p>So, here is how we would phrase the final conclusion of our test:</p></li>
-</ul>
-<div class="fragment">
-<blockquote>
-<p>At an <span class="math inline">\(\alpha = 0.05\)</span> level of significance, we do not have enough evidence to reject the null hypothesis that 91.7% of US households own a vehicle. Thus, our analysis suggests that the true proportion of US households with vehicle is not different from 91.7%.</p>
-</blockquote>
-</div>
-<p>Alternatively</p>
-<div class="fragment">
-<blockquote>
-<p>At an <span class="math inline">\(\alpha = 0.05\)</span> level of significance, there is insufficient evidence to reject Forbes’s claim that 91.7% of US households own a vehicle in favor of the alternative that the true proportion of US households that own a vehicle is not 91.7%.</p>
-</blockquote>
-</div>
-<ul>
-<li class="fragment">It is very important to include the level of significance in our conclusion! This is because the final outcome of our test may change depending on which level of significance we use.</li>
-</ul>
-</section>
-<section id="worked-out-example-4" class="slide level2">
-<h2>Worked-Out Example</h2>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Worked-Out Example 4</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<div style="font-size: 28px">
-<p><em>Forbes</em> magazine has claimed that, as of May 2023, 91.7% of US households own a vehicle. To test that claim, we take a representative sample of 500 US households and observe that 89.4% of these households own a vehicle.</p>
-<p>Conduct a two-sided hypothesis test at a <span class="math inline">\(10\%\)</span> level of significance on <em>Forbes</em>’s claim that 91.7% of US households own a vehicle. Be sure you phrase your conclusion clearly, and in the context of the problem.</p>
+<p>Since public universities are subsidized by state governments, it is usually less expensive to attend a public university in your home state than a private university. Is this still true when you must pay out-of-state tuition? A random sample of 75 private universities had an average total cost of $42,336 with standard deviation of $14,004. A similar random sample of 80 public universities had an average out-of-state total cost of $32,240 with standard deviation $7,730. Calculate the 90% confidence interval for the difference in population mean total cost for students at private schools and the population mean total cost for out-of-state students at public schools.</p>
 </div>
 </div>
 </div>
@@ -1086,109 +652,20 @@
 <section id="solutions-4" class="slide level2" style="font-size:30px">
 <h2>Solutions</h2>
 <ul>
-<li class="fragment"><p>The only thing that will change from before is our critical value.</p></li>
-<li class="fragment"><p>Since we are using an <span class="math inline">\(\alpha = 0.1\)</span> level of significance, we find the <span class="math inline">\([1 - (0.1 / 2)] \times 100\)</span><sup>th</sup> percentile (which is equivalent to the <span class="math inline">\((0.1 / 2) \times 100\)</span><sup>th</sup> percentile, scaled by negative 1).</p></li>
-<li class="fragment"><p>There are several ways we could find this critical value.</p></li>
-<li class="fragment"><p>The first is to use our normal table: <span class="math inline">\(1.645\)</span>.</p></li>
-<li class="fragment"><p>The second is to use our <span class="math inline">\(t-\)</span>table: <span class="math inline">\(1.645\)</span></p></li>
-<li class="fragment"><p>The third is to use Python:</p></li>
+<li class="fragment"><p>These are both random samples so the observations with each sample are <strong>independent</strong> of one another.</p></li>
+<li class="fragment"><p>There is no reason why the two samples would not be independent between each other.</p></li>
+<li class="fragment"><p>Given <span class="math inline">\(n_1 = 75 \geq 30\)</span> and <span class="math inline">\(n_2 = 80 \geq 30\)</span>, we have large enough sample to relax normality assumption and use CLT.</p></li>
+<li class="fragment"><p>To calculate the degrees of freedom:</p></li>
 </ul>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> sps</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="op">-</span>sps.norm.ppf(<span class="fl">0.1</span> <span class="op">/</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>np.float64(1.6448536269514729)</code></pre>
-</div>
-</div>
-</div>
+<p><span class="math display">\[df =\min(n_1-1,n_2-1) = \min(74, 79) = 74\]</span> - Calculate <span class="math inline">\(t^*\)</span> critical value given <span class="math inline">\(\alpha = 0.1\)</span> which is 1.6657</p>
 </section>
-<section id="solutions-contd-1" class="slide level2" style="font-size:30px">
-<h2>Solutions (cont’d)</h2>
-<ul>
-<li class="fragment"><p>Hence, we adopt a critical value of <span class="math inline">\(1.645\)</span>.</p></li>
-<li class="fragment"><p>Since the observed value of our test statistic <span class="math inline">\(|\mathrm{ts}| = 1.86\)</span> is now larger than the critical value, we <strong>reject</strong> the null.</p></li>
-</ul>
-<div class="fragment">
-<blockquote>
-<p>At an <span class="math inline">\(\alpha = 0.1\)</span> level of significance, there is evidence to reject <em>Forbes</em>’s claim that 91.7% of US households own a vehicle in favor of the alternative that the true proportion of households that own a vehicle is not 91.7%.</p>
-</blockquote>
-</div>
-<ul>
-<li class="fragment"><p>Intuitively, it makes sense why we might reject for this new level of significance.</p></li>
-<li class="fragment"><p>We know that the level of significance represents the probability of committing a Type I Error.</p></li>
-<li class="fragment"><p>If we increase this value (which we did, in adopting <span class="math inline">\(\alpha = 0.1\)</span> as opposed to <span class="math inline">\(\alpha = 0.05\)</span> in the previous example), we are allowing a greater chance of falsely rejecting the null, which comes part-in-parcel with rejecting for more values of the test statistic.</p></li>
-</ul>
-</section>
-<section id="one-sided-tests" class="slide level2">
-<h2>One-Sided Tests</h2>
-<ul>
-<li class="fragment"><p>On the homework, I ask you to walk through the details of deriving a lower-tailed test.</p></li>
-<li class="fragment"><p>You can use a similar set of arguments to derive the upper-tailed test as well.</p></li>
-<li class="fragment"><p>For posterity’s sake, here are the final results of each:</p></li>
-</ul>
-</section>
-<section id="lower-tailed-test" class="slide level2">
-<h2>Lower-Tailed Test</h2>
-<div class="fragment">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong><strong>Lower-Tailed Test for a Proportion:</strong></strong></p>
-</div>
-<div class="callout-content">
-<div>
-<div style="font-size: 25px">
-<p>When testing <span class="math inline">\(H_0: \ p = p_0\)</span> vs <span class="math inline">\(H_A: \ p &lt; p_0\)</span> at an <span class="math inline">\(\alpha\)</span> level of significance, where <span class="math inline">\(p\)</span> denotes a population proportion, the test takes the form <span class="math display">\[ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if } \mathrm{TS} &lt; z_{\alpha} \\ \texttt{fail to reject } H_0 &amp; \text{otherwise}\\ \end{cases}  \]</span> where:</p>
-<ul>
-<li><p><span class="math inline">\(\displaystyle \mathrm{TS} = \frac{\widehat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}}\)</span></p></li>
-<li><p><span class="math inline">\(z_{\alpha}\)</span> denotes the <span class="math inline">\((\alpha) \times 100\)</span><sup>th</sup> percentile of the standard normal distribution, <strong>not scaled by anything</strong></p></li>
-</ul>
-<p>provided that: <span class="math inline">\(n p_0 \geq 10\)</span> and <span class="math inline">\(n (1 - p_0) \geq 10\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="upper-tailed-test" class="slide level2">
-<h2>Upper-Tailed Test</h2>
-<div class="fragment">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong><strong>Upper-Tailed Test for a Proportion:</strong></strong></p>
-</div>
-<div class="callout-content">
-<div>
-<div style="font-size: 25px">
-<p>When testing <span class="math inline">\(H_0: \ p = p_0\)</span> vs <span class="math inline">\(H_A: \ p &gt; p_0\)</span> at an <span class="math inline">\(\alpha\)</span> level of significance, where <span class="math inline">\(p\)</span> denotes a population proportion, the test takes the form <span class="math display">\[ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if } \mathrm{TS} &gt; z_{1 - \alpha} \\ \texttt{fail to reject } H_0 &amp; \text{otherwise}\\ \end{cases}  \]</span> where:</p>
-<ul>
-<li><p><span class="math inline">\(\displaystyle \mathrm{TS} = \frac{\widehat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}}\)</span></p></li>
-<li><p><span class="math inline">\(z_{1 - \alpha}\)</span> denotes the <span class="math inline">\((1 - \alpha) \times 100\)</span><sup>th</sup> percentile of the standard normal distribution, <strong>not scaled by anything</strong></p></li>
-</ul>
-<p>provided that: <span class="math inline">\(n p_0 \geq 10\)</span> and <span class="math inline">\(n (1 - p_0) \geq 10\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="note" class="slide level2">
-<h2>Note</h2>
-<ul>
-<li class="fragment"><p>I don’t recommend you try and memorize all of the different percentiles and critical values.</p></li>
-<li class="fragment"><p>Instead, I recommend you familiarize yourself with the process used to derive these tests, as that will immediately tell you what picture to draw, which will in turn tell you which quantile we are after in a given situation.</p></li>
-<li class="fragment"><p>There are some problems on the practice problems that give you practice with these one-sided alternatives.</p></li>
-</ul>
+<section id="solutions-5" class="slide level2" style="font-size:30px">
+<h2>Solutions</h2>
+<p><span class="math display">\[\bar{x}_1-\bar{x}_2 \pm t^* \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}\]</span></p>
+<p><span class="math display">\[(42336 - 32240) \pm 1.6657 \sqrt{\frac{14004^2}{75}+\frac{7730^2}{80}}\]</span></p>
+<p><span class="math display">\[10096 \pm 3054\]</span></p>
+<p><span class="math display">\[[\$7,042, \$13,150]\]</span></p>
+<p>We are 90% confident that the true difference in population mean total cost for students at private schools and population mean total cost for out-of-state students at public schools is between $7,042 and $13,150.</p>
 
 
 <img src="5a_hex.png" class="slide-logo r-stretch"><div class="footer footer-default">

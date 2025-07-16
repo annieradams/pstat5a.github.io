@@ -11,9 +11,9 @@
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
-  <meta name="author" content="Mallory Wang">
-  <meta name="dcterms.date" content="2024-07-24">
-  <title>PSTAT 5A: Summer Session B, 2025 - PSTAT 5A: Lecture 20</title>
+  <meta name="author" content="Ethan P. Marzban">
+  <meta name="dcterms.date" content="2023-08-01">
+  <title>PSTAT 5A: Summer Session B, 2025 - PSTAT 5A: Lecture 22</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -327,119 +327,480 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="5a_hex.png" data-background-opacity="0.5" data-background-position="left" data-background-size="contain" class="center">
-  <h1 class="title" style="text-align: right">PSTAT 5A: Lecture 20</h1>
-  <h2 class="subtitle" style="text-align: right">Inference for Paired Data</h2>
-  <p class="author" style="text-align: right">Mallory Wang</p>
-  <p class="date" style="text-align: right">2024-07-24</p>
+  <h1 class="title" style="text-align: right">PSTAT 5A: Lecture 22</h1>
+  <h2 class="subtitle" style="text-align: right">Regression Diagnostics, and Sampling Procedures</h2>
+  <p class="author" style="text-align: right">Ethan P. Marzban</p>
+  <p class="date" style="text-align: right">2023-08-01</p>
 </section>
-<section id="paired-data" class="slide level2">
-<h2>Paired Data</h2>
+<section>
+<section id="regression-diagnostics" class="title-slide slide level1 center">
+<h1>Regression Diagnostics</h1>
+
+</section>
+<section id="recap" class="slide level2">
+<h2>Recap</h2>
 <ul>
-<li class="fragment"><p>Data are <strong>paired</strong> when each observation in one data set corresponds to exactly one observation in the other data set. This can happen when there are two measurements on each individual in the sample or when there is a natural pairing between the samples (e.g., siblings, spouses, days of the week).</p></li>
-<li class="fragment"><p>“Studies leading to paired data are often more efficient—better able to detect differences between conditions—because you have controlled for a source of variation (individual variability among the observational units).”</p></li>
-<li class="fragment"><p>With paired data, we have two measurements on each pair. Instead of being interested in the two measurements separately, we are interested in the differences within each pair. What may originally look like two data sets is actually just one data set of differences.</p></li>
+<li class="fragment"><p>Given observations <span class="math inline">\(\{(x_i, \ y_i)\}_{i=1}^{n}\)</span> on a response variable <code>y</code> and an explanatory variable <code>x</code>, we adopt the model <span class="math display">\[ \texttt{y} = f(\texttt{x}) + \texttt{noise} \]</span></p></li>
+<li class="fragment"><p>Assuming a linear signal function, we obtain a model <span class="math display">\[ \texttt{y} = \beta_0 + \beta_1 \cdot \texttt{x} + \texttt{noise} \]</span> and we have previously seen how to use our data to obtain good estimates <span class="math inline">\(\widehat{\beta}_0\)</span> and <span class="math inline">\(\widehat{\beta}_1\)</span> of <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>, respectively.</p></li>
+<li class="fragment"><p>A natural question arises- how can we assess how good our fit is?</p></li>
+<li class="fragment"><p>To answer this question, it turns out we need to be a little more specific in our model.</p></li>
 </ul>
 </section>
-<section id="example" class="slide level2" style="font-size:32px">
-<h2>Example</h2>
+<section id="modelling-noise" class="slide level2">
+<h2>Modelling Noise</h2>
 <ul>
-<li class="fragment"><p>The Comprehensive Assessment of Outcomes in Statistics (CAOS) test was developed by statistics education researchers to be “a reliable assessment consisting of a set of items that students completing any introductory statistics course would be expected to understand.” When doing research about a particular teaching method, Professor Miller had students take the CAOS test at the beginning of the term (pretest) and at the end of the term (posttest). Why does it make sense to treat these measurements as paired data?</p>
+<li class="fragment"><p>Let’s start off by rewriting our model as <span class="math display">\[ \texttt{y} = f(\texttt{x}) + \varepsilon \]</span> where we use <span class="math inline">\(\varepsilon\)</span> to now denote our noise.</p></li>
+<li class="fragment"><p>The reason we do this is we can now rewrite the model to be in terms of the individual observations <span class="math inline">\(x_i\)</span> and <span class="math inline">\(y_i\)</span> (as opposed to the <em>variables</em> <code>x</code> and <code>y</code>): <span class="math display">\[ y_i = f(x_i) + \varepsilon_i \]</span> where <span class="math inline">\(\varepsilon_i\)</span> represents the noise associated with a single observation.</p></li>
+<li class="fragment"><p>In a wide array of situations, it turns out to be a good idea to assume normally-distributed noise; that is, we often assume <span class="math inline">\(\varepsilon_i \sim \mathcal{N}(0, \ \sigma^2)\)</span> for all indices <code>i</code>.</p></li>
+</ul>
+</section>
+<section id="modelling-noise-1" class="slide level2">
+<h2>Modelling Noise</h2>
 <ul>
-<li class="fragment">By examining the differences between the pretest and posttest measurements, we eliminate the variability across different students and focus in on that improvement measure (the difference between the posttest and pretest scores) itself: we have controlled for one source of variation (variability within each student).</li>
+<li class="fragment"><p>Again, crucially, we never get to see exactly <em>what</em> the observed value of <span class="math inline">\(\varepsilon_i\)</span> is for any particular <code>i</code>.</p></li>
+<li class="fragment"><p>However, if we rewrite our model as <span class="math display">\[ \varepsilon_i = y_i - f(x_i) \]</span> then we see that we actually already have a pretty good estimator for <span class="math inline">\(\varepsilon_i\)</span>- the <code>i</code><sup>th</sup> <strong>residual!</strong></p>
+<ul>
+<li class="fragment">That is, <span class="math display">\[ e_i = y_i - \widehat{y}_i \]</span></li>
 </ul></li>
 </ul>
 </section>
-<section id="paired-data-procedures" class="slide level2" style="font-size:32px">
-<h2>Paired Data Procedures</h2>
-<p>Once we compute the set of differences, we use our one-sample methods for inference. Our notation changes to indicate that we are working with differences.</p>
+<section id="residual-plots" class="slide level2">
+<h2>Residual Plots</h2>
 <ul>
-<li class="fragment"><p>Our parameter of interest is <span class="math inline">\(\mu_d\)</span>, the populatioon mean of the differences.</p></li>
-<li class="fragment"><p>The point estimate for <span class="math inline">\(\mu_d\)</span> is <span class="math inline">\(\bar{x}_d\)</span>, the sample mean of the differences.</p></li>
+<li class="fragment"><p>This leads us to one of the most important regression diagnostic tools: <strong>residual plots</strong>.</p></li>
+<li class="fragment"><p>Points in a residual plot have <code>x</code>-coordinate given by the value of the residual and <code>y</code>-coordinate given by the corresponding fitted value.</p></li>
+<li class="fragment"><p>Let’s do an example quickly to illustrate how to construct one by hand, using our toy example from last lecture: <span class="math display">\[\begin{align*}
+\boldsymbol{x}    &amp; = \{3, \ 7, \ 8\}   \\
+\boldsymbol{y}    &amp; = \{20, \ 14, \ 17\}
+\end{align*}\]</span></p></li>
 </ul>
 </section>
-<section id="sampling-distribution-of-the-sample-mean-of-the-differences-barx_d" class="slide level2" style="font-size:32px">
-<h2>Sampling Distribution of the Sample Mean of the Differences <span class="math inline">\(\bar{x}_d\)</span></h2>
-<p>The sampling distribution of <span class="math inline">\(\bar{x}_d\)</span> will be approximately normal when the following two conditions are met:</p>
-<ol type="1">
-<li class="fragment"><p><strong>Independence</strong>: The observations within the sample of differences are independent (e.g., the differences are a random sample from the population of differences).</p></li>
-<li class="fragment"><p><strong>Normality</strong>: When the sample is small, we require that the sample of differences comes from a population with a nearly normal distribution. Thanks to the Central Limit Theorem, we can relax this condition more and more for larger and larger sample sizes.</p></li>
-</ol>
-</section>
-<section id="sampling-distribution-of-the-sample-mean-of-the-differences-barx_d-1" class="slide level2" style="font-size:32px">
-<h2>Sampling Distribution of the Sample Mean of the Differences <span class="math inline">\(\bar{x}_d\)</span></h2>
-<p>The mean for sampling distribution of <span class="math inline">\(\bar{x}_d\)</span> is <span class="math inline">\(\mu_d\)</span>. The standard error for this sampling distribution is</p>
-<p><span class="math display">\[\frac{\sigma_d}{\sqrt{n}}\]</span> where <span class="math inline">\(\sigma_d\)</span> is the standard deviation of the population of differences and <span class="math inline">\(n\)</span> is the number of pairs.</p>
-</section>
-<section id="sampling-distribution-of-the-sample-mean-of-the-differences-barx_d-2" class="slide level2" style="font-size:32px">
-<h2>Sampling Distribution of the Sample Mean of the Differences <span class="math inline">\(\bar{x}_d\)</span></h2>
-<ul>
-<li class="fragment"><p>Since we do not usually know the population standard deviation of the differences <span class="math inline">\(\sigma_d\)</span>, we estimate it with the sample standard deviation of the differences <span class="math inline">\(s_d\)</span>.</p></li>
-<li class="fragment"><p>As soon as we estimate the population standard deviation <span class="math inline">\(\sigma_d\)</span> with the sample standard deviation <span class="math inline">\(s_d\)</span>, we need to switch from the standard normal N(0, 1) distribution to a <span class="math inline">\(t\)</span> distribution.</p></li>
-<li class="fragment"><p>The sample mean of the differences <span class="math inline">\(\bar{x}_d\)</span> can be modeled using a <span class="math inline">\(t\)</span> distribution and the estimated standard error <span class="math inline">\(\frac{s_d}{\sqrt{n}}\)</span> when each sample mean can itself be modeled using a <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(n − 1\)</span> degrees of freedom.</p></li>
-</ul>
-</section>
-<section id="hypothesis-test-for-mu_d" class="slide level2">
-<h2>Hypothesis Test for <span class="math inline">\(\mu_d\)</span></h2>
-<p>Based on a sample of <span class="math inline">\(n\)</span> independent differences from a nearly normal distribution, the test statistic is</p>
-<p><span class="math display">\[t = \frac{\bar{x}_d -\mu_0}{\frac{s_d}{\sqrt{n}}}\]</span> where <span class="math inline">\(\bar{x}_d\)</span> is the sample mean of the differences, <span class="math inline">\(s_d\)</span> is the sample standard deviation of the differences, <span class="math inline">\(n\)</span> is the sample size (number of pairs), and <span class="math inline">\(\mu_0\)</span> corresponds to the null value of the population mean of the differences, <span class="math inline">\(\mu_d\)</span>.</p>
-<p>We use the <span class="math inline">\(t\)</span> distribution with <span class="math inline">\(n-1\)</span> degrees of freedom to calculate our p-values.</p>
-</section>
-<section id="confidence-interval-for-mu_d" class="slide level2">
-<h2>Confidence Interval for <span class="math inline">\(\mu_d\)</span></h2>
-<p>Based on a sample of <span class="math inline">\(n\)</span> independent differences from a nearly normal distributioon, a confidence interval for the population mean of the differences <span class="math inline">\(\mu_d\)</span> is</p>
-<p><span class="math display">\[\bar{x}_d \pm t^* \frac{s_d}{\sqrt{n}}\]</span></p>
-<p>where <span class="math inline">\(\bar{x}_d\)</span> is the sample mean of the differences, <span class="math inline">\(s_d\)</span> is the sample standard deviation of the differences, n is the sample size, and <span class="math inline">\(t^*\)</span> corresponds to the confidence level and n-1 degrees of freedom.</p>
-</section>
-<section id="example-1" class="slide level2">
-<h2>Example</h2>
-<p>A company institutes an exercise break for its workers to see if this will <em>improve</em> job satisfaction, as measured by a questionnaire that assesses workers’ satisfaction. A random sample of 50 workers was taken. Each worker was given the questionnaire twice: once prior to the implementation of the exercise break; a second time after the implementation of the exercise break. The differences in job satisfaction (satisfaction after implementation of the exercise program minus satisfaction before implementation of the exercise program) were calculated, and the mean of the difference is calculated to be 11.727 and standard deviation of 17.3869.</p>
-</section>
-<section id="solution" class="slide level2" style="font-size:30px">
-<h2>Solution</h2>
-<ol type="1">
-<li class="fragment">Step 1: Write hypotheses</li>
-</ol>
-<ul>
-<li class="fragment">Since the company is interested in if exercise break will <em>improve</em> job satisfaction, we can formulate the hypotheses as</li>
-</ul>
-<p><span class="math display">\[H_0: \mu_d = 0\]</span> <span class="math display">\[H_A: \mu_d &gt; 0\]</span></p>
-</section>
-<section id="solution-1" class="slide level2" style="font-size:30px">
-<h2>Solution</h2>
-<ol start="2" type="1">
-<li class="fragment">Step 2: Check conditions</li>
-</ol>
-<p>This is paired data so we want to check</p>
-<ol type="a">
-<li class="fragment"><p>Since the data comes from a random sample of workers, we can assume the independence condition is met.</p></li>
-<li class="fragment"><p>The population of differences is normally distributed. Suppose this is the histogram of job satisfaction differences:</p></li>
-</ol>
+<section id="residual-plots-1" class="slide level2">
+<h2>Residual Plots</h2>
 
-<img data-src="lec19ex.png" class="r-stretch"></section>
-<section id="solution-2" class="slide level2" style="font-size:30px">
-<h2>Solution</h2>
-<ol start="3" type="1">
-<li class="fragment">Step 3: Calculate test statistic and critical value</li>
-</ol>
-<p><span class="math display">\[TS = \frac{\bar{x}_d -\mu_0}{\frac{s_d}{\sqrt{n}}} = \frac{11.727 - 0}{\frac{17.3869}{\sqrt{50}}} = 4.77\]</span></p>
-<p>For one-tail test with <span class="math inline">\(\alpha = 0.05\)</span> and <span class="math inline">\(df = 50-1 = 49\)</span>, the critical value <span class="math inline">\(t_{0.05, 49} = 1.68\)</span>.</p>
+<img data-src="Lec19_files/figure-revealjs/unnamed-chunk-1-1.png" width="576" class="r-stretch quarto-figure-center"><ul>
+<li class="fragment">The fitted value of the blue point above is <span class="math inline">\((155 - 6 \cdot 3) / 7 = 19.57143\)</span> and its corresponding residual is <span class="math inline">\(20 - 19.57143 = 0.42857\)</span>, meaning one of the points on our residual plot will be <span class="math display">\[ (0.42857, \ 19.57143) \]</span></li>
+</ul>
 </section>
-<section id="solution-3" class="slide level2" style="font-size:30px">
-<h2>Solution</h2>
-<ol start="4" type="1">
-<li class="fragment">Step 4: Decision</li>
+<section id="residual-plots-2" class="slide level2">
+<h2>Residual Plots</h2>
+
+<img data-src="Lec19_files/figure-revealjs/unnamed-chunk-2-1.png" width="576" class="r-stretch quarto-figure-center"><ul>
+<li class="fragment">The fitted value of the blue point above is <span class="math inline">\((155 - 6 \cdot 7) / 7 = 16.14286\)</span> and its corresponding residual is <span class="math inline">\(14 - 16.14286 = -2.14286\)</span>, meaning one of the points on our residual plot will be <span class="math display">\[ (-2.14286, \ 16.14286) \]</span></li>
+</ul>
+</section>
+<section id="residual-plots-3" class="slide level2">
+<h2>Residual Plots</h2>
+
+<img data-src="Lec19_files/figure-revealjs/unnamed-chunk-3-1.png" width="576" class="r-stretch quarto-figure-center"><ul>
+<li class="fragment">The fitted value of the blue point above is <span class="math inline">\((155 - 6 \cdot 7) / 7 = 15.28571\)</span> and its corresponding residual is <span class="math inline">\(17 - 15.28571 = 1.71429\)</span>, meaning one of the points on our residual plot will be <span class="math display">\[ (1.71429, \ 15.28571) \]</span></li>
+</ul>
+</section>
+<section id="residual-plots-4" class="slide level2">
+<h2>Residual Plots</h2>
+<ul>
+<li class="fragment">Hence, the residual plot for the above regression would be</li>
+</ul>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Lec19_files/figure-revealjs/unnamed-chunk-4-1.png" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="residual-plots-5" class="slide level2">
+<h2>Residual Plots</h2>
+<ul>
+<li class="fragment"><p>One of the main purposes of examining residual plots is to see whether or not there are any remaining patterns in the data after fitting a model.</p></li>
+<li class="fragment"><p>Remember- residuals are meant to mimic the noise apparent in our observations.</p></li>
+<li class="fragment"><p>Hence, if our model fit truly capture <em>all</em> of the relationship present in the data, we would expect the residuals to <em>not</em> display any noticeable pattern.</p></li>
+<li class="fragment"><p>This leads us to how we use residual plots:</p></li>
+</ul>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>If the residual plot displays a pattern, then the fitted model is <em>not</em> capturing all of the relationship present in the data.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="residual-plots-6" class="slide level2">
+<h2>Residual Plots</h2>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Lec19_files/figure-revealjs/unnamed-chunk-5-1.png" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="residual-plots-7" class="slide level2">
+<h2>Residual Plots</h2>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Lec19_files/figure-revealjs/unnamed-chunk-6-1.png" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="residual-plots-8" class="slide level2">
+<h2>Residual Plots</h2>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Lec19_files/figure-revealjs/unnamed-chunk-7-1.png" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="other-diagnostics" class="slide level2">
+<h2>Other Diagnostics</h2>
+<ul>
+<li class="fragment"><p>There are, of course, many other diagnostics one can perform after performing regression.</p>
+<ul>
+<li class="fragment"><p>Even within the residual plot, there are other things to look for (things like <strong>homoskedasticity</strong> and <strong>heterodskedasticity</strong>)</p></li>
+<li class="fragment"><p>There are also numerical tools we can use to diagnose our model performance.</p></li>
+</ul></li>
+<li class="fragment"><p>I save these for your future courses to cover.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="where-does-data-come-from" class="title-slide slide level1 center">
+<h1>Where Does Data Come From?</h1>
+
+</section>
+<section id="where-does-data-come-from-1" class="slide level2">
+<h2>Where Does Data Come From?</h2>
+<ul>
+<li class="fragment"><p>Throughout this course, we have been using various pieces of data.</p></li>
+<li class="fragment"><p>One thing we should discuss, as good Data Scientists, is where this data actually came from?</p>
+<ul>
+<li class="fragment">Who collected it? How was the data collected? Who were the subjects included in the data?</li>
+</ul></li>
+<li class="fragment"><p>We will now begin to discuss some possible answers to these questions, as well as some practical strategies for collecting data of our own!</p></li>
+</ul>
+</section>
+<section id="the-research-process" class="slide level2" style="font-size:32px">
+<h2>The Research Process</h2>
+<ul>
+<li class="fragment"><p>Indeed, most experiments and studies begin with some sort of <strong>question</strong>.</p>
+<ul>
+<li class="fragment">For example: “does this new drug truly reduce blood pressure?”</li>
+<li class="fragment">Or: “is smoking really linked with higher rates of lung cancer?”</li>
+<li class="fragment">Or: “what is the average mercury content in swordfish in the Atlantic Ocean?”</li>
+<li class="fragment">Or: “over the past 3 years, what is the average number of people that have been admitted into the PSTAT major?”</li>
+</ul></li>
+<li class="fragment"><p>The next step is something we’ve actually done several times in this class already: identify the <strong>population</strong> of interest!</p>
+<ul>
+<li class="fragment">Can anyone tell me what the populations associated with the above research questions are?</li>
+</ul></li>
+</ul>
+</section>
+<section id="sampling-procedures" class="slide level2" style="font-size:30px">
+<h2>Sampling Procedures</h2>
+<ul>
+<li class="fragment"><p>Now, we need the most crucial piece of all: <strong>data</strong>!</p>
+<ul>
+<li class="fragment">Specifically, we need to <em>collect</em> our data.</li>
+</ul></li>
+<li class="fragment"><p>This will entail taking a <strong>sample</strong> (or possibly many samples) from our population.</p>
+<ul>
+<li class="fragment">This is why it’s important to know what our population is- so we know <em>where</em> to start taking samples from.</li>
+</ul></li>
+<li class="fragment"><p>There are many ways to take a sample!</p></li>
+<li class="fragment"><p>One way is to take what is known as a <strong>simple random sample</strong> (or SRS, for short).</p></li>
+<li class="fragment"><p>A simple random sample is akin to assigning a unique number to each person in the population, and then picking some subset of these numbers uniformly at random.</p>
+<ul>
+<li class="fragment">Crucially, in this way, each member of the population has an equal chance of being included in the sample.</li>
+</ul></li>
+</ul>
+</section>
+<section id="sampling-procedures-1" class="slide level2">
+<h2>Sampling Procedures</h2>
+<ul>
+<li class="fragment"><p>Now, Simple Random Samples do have some potential downsides.</p></li>
+<li class="fragment"><p>As an example, let’s consider the following situation: suppose our population is the workplace at some company (which we will call Company X).</p></li>
+<li class="fragment"><p>Say we are interested in determining whether or not there is systemic racism present in Company X.</p></li>
+<li class="fragment"><p>To determine whether or not this is the case, we might take a sample and administer a survey (we’ll talk more about surveys in a bit).</p></li>
+<li class="fragment"><p>Can anyone tell me a potential problem with this setup if we were to take a Simple Random Sample?</p>
+<ul>
+<li class="fragment">What if I tell you, for example, that 80% of people in this company are Caucasian and only 20% are not?</li>
+</ul></li>
+</ul>
+</section>
+<section id="sampling-procedures-2" class="slide level2" style="font-size:32px">
+<h2>Sampling Procedures</h2>
+<ul>
+<li class="fragment"><p>That’s right- we run the risk of obtaining a <strong>biased</strong> sample.</p></li>
+<li class="fragment"><p>Said differently: if we take an SRS of employees at this company, there is a high probability that this sample will contain a disproportionately larger number of Caucasians than non-Caucasians.</p>
+<ul>
+<li class="fragment">This would almost certainly affect the results of our survey!</li>
+</ul></li>
+<li class="fragment"><p>One way to remedy this would be to perform what is known as in which we first divide the population into several <em>strata</em> (i.e.&nbsp;groups), and then take an SRS from each stratum.</p>
+<ul>
+<li class="fragment"><p>This has the benefit of ensuring a roughly equal number of participants from each stratum, but has the downsides of being very dependent on the strata that are created.</p></li>
+<li class="fragment"><p>That is, sometimes it won’t necessarily be obvious <em>how</em> to divide the population!</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="sampling-procedures-3" class="slide level2" style="font-size:30px">
+<h2>Sampling Procedures</h2>
+<ul>
+<li class="fragment"><p>Another type of sampling is called <strong>cluster sampling</strong>. Similar to stratified sampling, the population is first divided into several groups (now called clusters). But, instead of taking an SRS from <em>every</em> cluster we instead take an SRS of <em>clusters</em> and <em>then</em> take an SRS from each included cluster</p>
+<ul>
+<li class="fragment"><p>Note, then, that we are not including every cluster in our sample in this way of sampling.</p></li>
+<li class="fragment"><p>This has the benefit of being (potentially) cheaper, but has the (obvious) downside of potentially skewing results due to the lack of certain clusters.</p></li>
+</ul></li>
+<li class="fragment"><p>By the way, this is slightly different than the notion of Cluster Sampling outlined in the textbook; the textbook calls the above scheme “multistage sampling”. However, this term is not widely used, and as such we will simply refer to the above as “Cluster Sampling”, as most statisticians do.</p></li>
+</ul>
+</section>
+<section id="example" class="slide level2" style="font-size:30px">
+<h2>Example</h2>
+<ul>
+<li class="fragment">Let’s consider an example from the textbook:</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Example (credit to <em>OpenIntro Statistics</em>)</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<div style="font-size: 24px">
+<p>Suppose we are interested in estimating the malaria rate in a densely tropical portion of rural Indonesia. We learn that there are 30 villages in that part of the Indonesian jungle, each more or less similar to the next. Our goal is to test 150 individuals for malaria. What sampling method should be employed?</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment"><p>At surface level, an SRS may seem tempting.</p>
+<ul>
+<li class="fragment">After all, the villages are “more or less similar to the next”.</li>
+</ul></li>
+<li class="fragment"><p>However, an SRS will likely contain individuals from <em>all</em> (or certainly <em>most</em>) of the villages.</p></li>
+<li class="fragment"><p>This would require someone to actually <em>visit</em> these villages to collect data, which will be incredibly costly.</p></li>
+<li class="fragment"><p>As such, an SRS is probably <strong>not</strong> a good idea.</p></li>
+</ul>
+</section>
+<section id="example-1" class="slide level2" style="font-size:30px">
+<h2>Example</h2>
+<ul>
+<li class="fragment"><p>Indeed, cluster sampling seems to be the way to go.</p></li>
+<li class="fragment"><p>Specifically, we could assign each village to its own cluster, then select some number of villages (say, maybe 15 or so) randomly, and then select some number of people (say, 10 or so) from each of the selected villages.</p></li>
+<li class="fragment"><p>Because the villages are “more or less similar”, the people included in our sample would likely not have many obvious differences (in the context of the experiment) and we would believe our sample to be relatively representative.</p></li>
+<li class="fragment"><p>Additionally, the experimenter (or a volunteer) would only need to visit 15 villages instead of all 30.</p></li>
+<li class="fragment"><p>Of course, we would need to modify our statistical tools slightly to reflect the fact that our sample was actually collected via a clustering scheme- such modifications (though not too challenging) are outside the scope of this course.</p>
+<ul>
+<li class="fragment">Right now, I’m merely trying to get us to think about the practicalities of data collection!</li>
+</ul></li>
+</ul>
+</section>
+<section id="bias" class="slide level2">
+<h2>Bias</h2>
+<ul>
+<li class="fragment"><p>Even if we end up with a fairly representative sample, there are ways bias can creep in.</p></li>
+<li class="fragment"><p>Suppose we administer a survey to a representative sample of people.</p></li>
+<li class="fragment"><p>It is not guaranteed that everyone in our sample will actually fill out the survey; even if a particular individual <em>does</em> attempt the survey, there is no guarantee they will finish the entirety of the survey.</p></li>
+<li class="fragment"><p>This can lead to gaps in our data with respect to certain demographics, which is itself a form of bias.</p></li>
+<li class="fragment"><p>We call this <strong>non-response bias</strong>.</p></li>
+</ul>
+</section>
+<section id="bias-1" class="slide level2">
+<h2>Bias</h2>
+<ul>
+<li class="fragment"><p>Another sampling strategy that is prone to bias is known as <strong>convenience sampling</strong>.</p></li>
+<li class="fragment"><p>We can think of convenience sampling as any sort of sampling scheme where individuals who are easily accessed have a higher chance of being included in the sample.</p></li>
+<li class="fragment"><p>For example, suppose we poll students about their views on the housing crisis in Santa Barbara.</p>
+<ul>
+<li class="fragment"><p>If we conduct this poll at UCSB, we are more likely to get UCSB students and much less likely to get, say, UCLA students.</p></li>
+<li class="fragment"><p>Similarly, if we conducted our study at UCLA, we would be more likely to include UCLA students than, say, NYU students.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="bias-2" class="slide level2">
+<h2>Bias</h2>
+<ul>
+<li class="fragment"><p>So, why would we ever use a convenience sample?</p></li>
+<li class="fragment"><p>Well, as the name suggests- it is <em>convenient</em>!</p></li>
+<li class="fragment"><p>Convenience samples are often both the easiest to obtain, as well as the cheapest.</p></li>
+<li class="fragment"><p>Having said that, most statisticans agree thate convenience samples are bad. This is due to what is known as the <strong>garbage in garbage out</strong> philosophy.</p></li>
+<li class="fragment"><p>Loosely speaking, the “garbage in garbage out” philosophy states that our results are only as good as our data- even the most sophisticated statistical models will output nonsensical or skewed results if we are feeding them nonsensical or skewed data!</p></li>
+</ul>
+</section>
+<section id="another-distinction" class="slide level2" style="font-size:32px">
+<h2>Another Distinction</h2>
+<ul>
+<li class="fragment"><p>There is another distinction we should be aware of: the difference between an <strong>observational study</strong> and an <strong>experiment.</strong></p></li>
+<li class="fragment"><p>In an observational study, no treatment is ever explicitly applied (or withheld).</p></li>
+<li class="fragment"><p>This is in contrast to an <strong>experiment</strong>, in which researchers assign treatments to cases.</p></li>
+<li class="fragment"><p>For example, suppose a researcher is interested in determining the relationship between cancer rates and tanning beds.</p></li>
+<li class="fragment"><p>In an experiment, the researcher would take some sample of volunteers, split them into groups, and assign one group to tan regularly and another to not use tanning beds at all for the duration of the study.</p>
+<ul>
+<li class="fragment">At the end of the study, the researcher would collect data and analyze.</li>
+</ul></li>
+</ul>
+</section>
+<section id="another-distinction-1" class="slide level2" style="font-size:32px">
+<h2>Another Distinction</h2>
+<ul>
+<li class="fragment"><p>If instead the researcher were to conduct an observational study, they might take some sample of people who already use tanning beds, analyze cancer rates, and repeat for a sample of people who do not use tanning beds.</p>
+<ul>
+<li class="fragment">Note that in this case, the experimenter has not <em>explicitly</em> assigned a treatment (i.e.&nbsp;using a tanning bed) to either group. In a sense, the groups were formed <em>around</em> the treatment.</li>
+</ul></li>
+<li class="fragment"><p>Naturally, experiments come with all sorts of <strong>ethical</strong> considerations.</p>
+<ul>
+<li class="fragment"><p>For instance, in trying to determine the relationship between cancer rates and smoking, nobody would actually <em>force</em> a group of participants to smoke, just for the purposes of an experiment.</p></li>
+<li class="fragment"><p>This is one “pro” in favor of observational studies- the experimenter is not responsible for forcing a group of people to do (or <em>not</em> do something) they wouldn’t want to.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="another-distinction-2" class="slide level2">
+<h2>Another Distinction</h2>
+<ul>
+<li class="fragment"><p>Of course, observational studies are not perfect either.</p></li>
+<li class="fragment"><p>Specifically, observational studies <em>cannot</em> be used to identify <strong>causal relationships</strong>; they can only ever identify associations (or a lack thereof).</p></li>
+<li class="fragment"><p>Remember that assocations are not the same things as causation!</p>
+<ul>
+<li class="fragment">So, just because an observational study indicates a link between smoking and increased lung cancer rates, that is not sufficient justification to say that smoking <em>causes</em> increased lung cancer rates. To make that <em>causal</em> claim, an experiment would need to be conducted.</li>
+</ul></li>
+</ul>
+</section>
+<section id="example-2" class="slide level2">
+<h2>Example</h2>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Example (<em>OpenIntro Statistics</em>, 1.19)</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<div style="font-size: 24px">
+<p>A large college class has 160 students. All 160 students attend the lectures together, but the students are divided into 4 groups, each of 40 students, for lab sections administered by different teaching assistants. The professor wants to conduct a survey about how satisfied the students are with the course, and he believes that the lab section a student is in might affect the student’s overall satisfaction with the course.</p>
+<ol type="a">
+<li>What type of study is this?</li>
+<li>Suggest a sampling strategy for carrying out this study.</li>
 </ol>
-<p>Since this is an upper tail test, we want <span class="math display">\[TS &gt; t\]</span> <span class="math display">\[4.77 &gt; 1.68\]</span> Therefore, we have enough evidence to reject the null hypothesis.</p>
-<ol start="5" type="1">
-<li class="fragment">Step 5: Write a conclusion</li>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="solutions" class="slide level2">
+<h2>Solutions</h2>
+<ol type="a">
+<li class="fragment"><p>Because treatment has neither been administered nor withheld by the researcher, this is an example of an <strong>observational study</strong>.</p></li>
+<li class="fragment"><p>In this case, <strong>stratified sampling</strong> would likely be a good idea, with each lab section assigned to a stratum. This ensures each stratum (lab section) is represented in the sample.</p></li>
 </ol>
-<p>At the <span class="math inline">\(\alpha = 0.05\)</span> significance level, we have enough evidence to reject the claim that mean difference in job satisfaction before and after implementing exercise break is the same. This data suggests that the mean difference in job satisfaction after implementing exercise break is greater than that before.</p>
+</section>
+<section id="longitudinal-vs.-cross-sectional-studies" class="slide level2">
+<h2>Longitudinal vs.&nbsp;Cross-Sectional Studies</h2>
+<ul>
+<li class="fragment"><p>Suppose a particular drug claims to significantly reduce blood sugar levels. Consider the following two scenarios:</p>
+<ol type="1">
+<li class="fragment"><p>An SRS of 100 people is taken from a certain demographic, and divided randomly into two groups: group A and group B. Group A is administered the drug and Group B is not administered the drug. After a week, the researcher collects data on the blood sugar levels of the two groups.</p></li>
+<li class="fragment"><p>An SRS of 50 people is taken from a certain demographic. These 50 people have their blood sugar levels recorded, and are then all administered the drug. A week later, the participants have their blood sugar levels recorded.</p></li>
+</ol></li>
+</ul>
+</section>
+<section id="longitudinal-vs.-cross-sectional-studies-1" class="slide level2">
+<h2>Longitudinal vs.&nbsp;Cross-Sectional Studies</h2>
+<ul>
+<li class="fragment"><p>Note that both of these situations seemingly end up with the same data: 50 measurements of pre-treatment blood sugar levels, and 50 measurements of post-treatment blood sugar levels.</p></li>
+<li class="fragment"><p>However, we can see that these two studies are fundamentally different.</p></li>
+<li class="fragment"><p>In the first study, people were divided into two groups (called the <strong>treatment</strong> and <strong>control</strong> groups, respectively).</p></li>
+<li class="fragment"><p>In the second, the same 50 individuals were tracked over time.</p></li>
+<li class="fragment"><p>This is an example of the distinction between a <strong>cross-sectional study</strong> and a <strong>longitudinal study</strong>.</p></li>
+</ul>
+</section>
+<section id="longitudinal-vs.-cross-sectional-studies-2" class="slide level2">
+<h2>Longitudinal vs.&nbsp;Cross-Sectional Studies</h2>
+<ul>
+<li class="fragment"><p>In a longitudinal study, the same set of individuals is tracked over time.</p></li>
+<li class="fragment"><p>In a cross-sectional study, individuals are divided into several groups.</p></li>
+<li class="fragment"><p>Notice that data in longitudinal studies necessarily possess <strong>serial correlation</strong>: that is, measurements are correlated!</p>
+<ul>
+<li class="fragment">Pre-treatment measurements for, say, John, are very likely correlated with John’s post-treatment measurements since these measurements were still collected from John!</li>
+</ul></li>
+</ul>
+</section>
+<section id="principles-of-experimental-design" class="slide level2">
+<h2>Principles of Experimental Design</h2>
+<ul>
+<li class="fragment"><p>Let’s quickly return to our distinction between observational studies and experiments.</p></li>
+<li class="fragment"><p>Suppose it is decided that we want to conduct an experiment.</p></li>
+<li class="fragment"><p>We then need to think very carefully about how we want to <em>design</em> our experiment.</p></li>
+<li class="fragment"><p>This leads us into our final discussion for this course: <strong>Experimental Design</strong>.</p></li>
+</ul>
+</section>
+<section id="treatment-vs.-control-groups" class="slide level2">
+<h2>Treatment vs.&nbsp;Control Groups</h2>
+<ul>
+<li class="fragment"><p>First, let me make clear the distinction between treatment and control groups.</p></li>
+<li class="fragment"><p>Treatment groups are groups to which one or more treatments is/are administered.</p>
+<ul>
+<li class="fragment">There can potentially be multiple treatment groups; for example, we could have 4 groups each testing a different medicine</li>
+</ul></li>
+<li class="fragment"><p>Typically, we always leave at least one group “alone”; i.e.&nbsp;one group to which <em>no</em> treatment is administered. This group is called the <strong>control group</strong>.</p>
+<ul>
+<li class="fragment">It is also possible to have multiple control groups!</li>
+</ul></li>
+</ul>
+</section>
+<section id="experimental-design" class="slide level2">
+<h2>Experimental Design</h2>
+<ul>
+<li class="fragment"><p><strong>Experimental Design</strong> loosely refers to the principles of and procedures related to setting up an experiment.</p></li>
+<li class="fragment"><p>I won’t go into this in too much detail.</p></li>
+<li class="fragment"><p>I do highly encourage you to read Section 1.4 of your textbook, as it provides a very nice summary of some of the main tenants of experimental design.</p></li>
+<li class="fragment"><p>Remember - as Data Scientists, it is very important we understand our data as much as possible <em>before</em> performing analyses.</p>
+<ul>
+<li class="fragment">Part of knowing our data is knowing <em>how</em> it was collected, and, indeed, how <em>we</em> might go about collecting our own!</li>
+</ul></li>
+</ul>
 
 
 <img src="5a_hex.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

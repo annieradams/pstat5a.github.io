@@ -11,9 +11,9 @@
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
-  <meta name="author" content="Mallory Wang">
-  <meta name="dcterms.date" content="2024-07-25">
-  <title>PSTAT 5A: Summer Session B, 2025 - PSTAT 5A: Lecture 21</title>
+  <meta name="author" content="Ethan P. Marzban">
+  <meta name="dcterms.date" content="2023-08-02">
+  <title>PSTAT 5A: Summer Session B, 2025 - PSTAT 5A: Lecture 23</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -327,680 +327,353 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="5a_hex.png" data-background-opacity="0.5" data-background-position="left" data-background-size="contain" class="center">
-  <h1 class="title" style="text-align: right">PSTAT 5A: Lecture 21</h1>
-  <h2 class="subtitle" style="text-align: right">Intro to Statistical Modeling, and Correlation</h2>
-  <p class="author" style="text-align: right">Mallory Wang</p>
-  <p class="date" style="text-align: right">2024-07-25</p>
+  <h1 class="title" style="text-align: right">PSTAT 5A: Lecture 23</h1>
+  <h2 class="subtitle" style="text-align: right">Tying Up Loose Ends</h2>
+  <p class="author" style="text-align: right">Ethan P. Marzban</p>
+  <p class="date" style="text-align: right">2023-08-02</p>
 </section>
-<section>
-<section id="movitating-statistical-modeling" class="title-slide slide level1 center">
-<h1>Movitating Statistical Modeling</h1>
-
-</section>
-<section id="scatterplots-and-trends" class="slide level2">
-<h2>Scatterplots and Trends</h2>
+<section id="smoking" class="slide level2">
+<h2>Smoking</h2>
 <ul>
-<li class="fragment"><p>This week, we talked about two sample problems.</p></li>
-<li class="fragment"><p>Let’s take a moment to revisit some material from Lecture 2.</p></li>
-<li class="fragment"><p>Specifically, suppose we have data of the form <span class="math inline">\(\{(y_i, \ x_i)\}_{i=1}^{n}\)</span>.</p>
-<ul>
-<li class="fragment">For simplicity’s sake, let’s assume both <code>x</code> and <code>y</code> are numerical.</li>
-</ul></li>
-<li class="fragment"><p>We have previously seen that the best way to visualize the relationship between <code>y</code> and <code>x</code> is with a <strong>scatterplot</strong></p></li>
-</ul>
-</section>
-<section class="slide level2">
-
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li class="fragment">Linear <strong>Negative</strong> Association:</li>
+<li class="fragment"><p>I previously emphasized that observational studies cannot be used to draw causal conclusions, even if they reveal associations.</p></li>
+<li class="fragment"><p>I mentioned this is because of the potential presence of so-called <strong>confounding variables</strong>.</p></li>
+<li class="fragment"><p>Let’s think through a concrete example together.</p></li>
 </ul>
 <div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="Lec20_files/figure-revealjs/unnamed-chunk-1-1.png" width="960"></p>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<ul>
-<li class="fragment">Nonlinear <strong>Negative</strong> Association:</li>
-</ul>
-<div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="Lec20_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li class="fragment">Linear <strong>Positive</strong> Association:</li>
-</ul>
-<div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="Lec20_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<ul>
-<li class="fragment">Nonlinear <strong>Positive</strong> Association:</li>
-</ul>
-<div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="Lec20_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="no-relationship" class="slide level2">
-<h2>No Relationship</h2>
-<ul>
-<li class="fragment">Sometimes, two variables will have no relationship at all:</li>
-</ul>
-<div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="Lec20_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
-</div>
-</div>
-</div>
-</section>
-<section id="statistical-modeling" class="slide level2">
-<h2>Statistical Modeling</h2>
-<ul>
-<li class="fragment"><p>The goal of <strong>statistical modeling</strong>, loosely speaking, is to try and <em>model</em> the relationship between <code>x</code> and <code>y</code>.</p></li>
-<li class="fragment"><p>Specifically, we assume the relationship takes the form <span class="math display">\[ \texttt{y} = f(\texttt{x}) + \texttt{noise} \]</span> where <span class="math inline">\(f()\)</span> is some function (e.g.&nbsp;linear, nonlinear, etc.)</p></li>
-<li class="fragment"><p>Hang on, what’s the <code>noise</code> term doing?</p></li>
-<li class="fragment"><p>Well, take a look at the previous scatterplots. Even though many of these display (what we visually would describe as) relationships between <code>x</code> and <code>y</code>, the datapoints do not fall perfectly along a single curve.</p></li>
-</ul>
-</section>
-<section id="statistical-modeling-1" class="slide level2">
-<h2>Statistical Modeling</h2>
-<ul>
-<li class="fragment"><p>As a concrete example, suppose <code>y</code> represents <code>weight</code> and <code>x</code> represents <code>height</code>.</p></li>
-<li class="fragment"><p>We do believe there would be some sort of a positive association between <code>weight</code> and <code>height</code> (taller people tend to, in general, weigh more) and we may even assume the relationship is linear.</p></li>
-<li class="fragment"><p>However, just because we know someone’s height, we don’t exactly know what their weight will be.</p>
-<ul>
-<li class="fragment">Again, this is because there is uncertainty and randomness inherent in pretty much everything!</li>
-</ul></li>
-</ul>
-</section>
-<section id="terminology" class="slide level2">
-<h2>Terminology</h2>
-<ul>
-<li class="fragment"><p>Alright, so: given variables <code>y</code> and <code>x</code>, we assume the relationship between them can be modeled as <span class="math display">\[ \texttt{y} = f(\texttt{x}) + \texttt{noise} \]</span></p></li>
-<li class="fragment"><p>Here is some terminology we use:</p>
-<ul>
-<li class="fragment"><code>y</code> is referred to as the <strong>response variable</strong>, or sometimes the <strong>dependent variable</strong>.</li>
-<li class="fragment"><code>x</code> is referred to as the <strong>explanatory variable</strong>, or sometimes the <strong>independent variable</strong>.</li>
-<li class="fragment">The function <span class="math inline">\(f()\)</span> is sometimes referred to as the <strong>signal function</strong>.</li>
-</ul></li>
-</ul>
-</section>
-<section id="terminology-1" class="slide level2">
-<h2>Terminology</h2>
-<ul>
-<li class="fragment"><p>We also have some additional terminology about the entire model, based on the type of the response variable.</p>
-<ul>
-<li class="fragment"><p>If <code>y</code> is numerical, we call the resulting model a <strong>regression model</strong> (or we just say we are in a <strong>regression setting</strong>)</p></li>
-<li class="fragment"><p>If <code>y</code> is categorical, we call the resulting model a <strong>classification model</strong> (or we just say we are in a <strong>classification setting</strong>)</p></li>
-</ul></li>
-<li class="fragment"><p>So, for example, trying to model the relationship between <code>weight</code> and <code>height</code> (assuming <code>weight</code> is our response variable) is a regression problem, since <code>weight</code> is a numerical variable.</p></li>
-</ul>
-</section>
-<section id="classification-problem" class="slide level2">
-<h2>Classification Problem</h2>
-<ul>
-<li class="fragment"><p>As an illustration of a classic classification problem, suppose we have access to a roster of passengers on the <em>Titanic</em>.</p>
-<ul>
-<li class="fragment">For those who don’t know, the RMS <em>Titanic</em> was a British passenger line that crahsed into an iceberg on April 15, 1912.</li>
-</ul></li>
-<li class="fragment"><p>Tragically, not all passengers survived.</p></li>
-<li class="fragment"><p>One question we may want to ask is: how did various factors (e.g.&nbsp;class, gender, etc.) affect whether or not a given passenger survived?</p>
-<ul>
-<li class="fragment">For instance, since women and children boarded lifeboats first, it may be plausible surmise that women and children had a higher likelihood of surviving.</li>
-</ul></li>
-</ul>
-</section>
-<section id="classification-problem-1" class="slide level2">
-<h2>Classification Problem</h2>
-<p>Another example is returning to our Penguins dataset. Here is a scatterplot of flipper length by bill length:</p>
-
-<img data-src="penguins.png" class="r-stretch"><p>This is clearly very linear but it’s missing an additional element.</p>
-</section>
-<section id="classification-problem-2" class="slide level2">
-<h2>Classification Problem</h2>
-
-<img data-src="penguins_group.png" class="r-stretch"></section>
-<section id="multivariate-models" class="slide level2">
-<h2>Multivariate Models</h2>
-<ul>
-<li class="fragment"><p>We don’t have to restrict ourselves to modeling the relationship between a response variable and a single explanatory variable.</p>
-<ul>
-<li class="fragment"><p>For example, suppose <code>y</code> measures income.</p></li>
-<li class="fragment"><p>There are several factors that might contribute to someone’s monthly income: things like <code>education_level</code>, <code>gender</code>, <code>industry</code>, etc.</p></li>
-</ul></li>
-<li class="fragment"><p>We can easily adapt a linear regression model to allow for multiple explanatory variables, which leads to what is known as a <strong>multivariate regression/classification model</strong>: <span class="math display">\[ \texttt{y} = f(\texttt{x}_1, \ \cdots , \ \texttt{x}_k) + \texttt{noise} \]</span></p>
-<ul>
-<li class="fragment">A full treatment of multivariate models requires linear alebra, so I refer you to a course like PSTAT 126 or PSTAT 131/231 for further details.</li>
-</ul></li>
-</ul>
-</section>
-<section id="linear-models" class="slide level2">
-<h2>Linear Models</h2>
-<ul>
-<li class="fragment"><p>For now, let’s focus on modeling the relationship between a numerical response variable and a single numerical explanatory variable: <span class="math display">\[ \texttt{y} = f(\texttt{x}) + \texttt{noise} \]</span></p></li>
-<li class="fragment"><p>Of particular interest to statisticians are the class of <strong>linear models</strong>, which assume a linear form for the signal function.</p></li>
-<li class="fragment"><p>Recall that a line is described by two parameters: an intercept and a slope. As such, to say we are assuming a “linear form” for <span class="math inline">\(f()\)</span> is to say we are assuming <span class="math inline">\(f(x) = \beta_0 + \beta_1 \cdot x\)</span>, so our model becomes <span class="math display">\[ \texttt{y} = \beta_0 + \beta_1 \cdot \texttt{x} + \texttt{noise} \]</span></p></li>
-</ul>
-</section>
-<section id="scatterplots" class="slide level2">
-<h2>Scatterplots</h2>
-<ul>
-<li class="fragment"><p>The first step in examining the elationship between two quantitative variables is to use a graphical display—a scatterplot—to display the association between the two variables.</p></li>
-<li class="fragment"><p>Each point in the scatterplot represents an individual in the dataset.</p></li>
-<li class="fragment"><p>A scatterplot allows us to see if there is an <em>overall pattern</em> in the data and whether there are any striking <em>deviations</em> from that pattern. In particular, we are interested in whether there is a linear relationship between the two variables.</p></li>
-</ul>
-</section>
-<section id="scatterplots-1" class="slide level2">
-<h2>Scatterplots</h2>
-<p>How do we describe a scatterplot?</p>
-<ol type="1">
-<li class="fragment"><p><strong>direction</strong>: positive or negative</p></li>
-<li class="fragment"><p><strong>linearity</strong>: linear or not linear</p></li>
-<li class="fragment"><p><strong>strength</strong>: weak, moderate, strong</p></li>
-<li class="fragment"><p><strong>outliers</strong>: points that clearly fall outside of the overall pattern of the relationship</p></li>
-</ol>
-</section>
-<section id="strength-of-a-relationship" class="slide level2">
-<h2>Strength of a Relationship</h2>
-<ul>
-<li class="fragment"><p>Now, before we delve into the mathematics and mechanics of model fitting, there is another thing we should be aware of.</p></li>
-<li class="fragment"><p>As an example, consider the following two scatterplots:</p></li>
-</ul>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="Lec20_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="Lec20_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<ul>
-<li class="fragment">Both scatterplots display a positive linear trend. However, the relationship between <code>Y2</code> and <code>X2</code> seems to be “stronger” than the relationship between <code>Y1</code> and <code>X1</code>, does it not?</li>
-</ul>
-</section>
-<section id="correlation-coefficient" class="slide level2">
-<h2>Correlation Coefficient</h2>
-<ul>
-<li class="fragment"><p>Ultimately, we would like to develop a mathematical metric to quantify not only the relationship between two variables, but also the <em>strength</em> of the relationship between these two variables.</p></li>
-<li class="fragment"><p>This quantity is referred to as the <strong>correlation coefficient</strong>.</p></li>
-<li class="fragment"><p>Now, it turns out there are actually a few <em>different</em> correlation coefficients out there. The one we will use in this class (and one of the metrics that is very widely used by statisticians) is called <strong>Pearson’s Correlation Coefficient</strong>, or often just <strong>Pearson’s <em>r</em></strong> (as we use the letter <em>r</em> to denote it.)</p></li>
-</ul>
-</section>
-<section id="pearsons-r" class="slide level2">
-<h2>Pearson’s <em>r</em></h2>
-<ul>
-<li class="fragment"><p>Given two sets <span class="math inline">\(X = \{y_i\}_{i=1}^{n}\)</span> and <span class="math inline">\(Y = \{y_i\}_{i=1}^{n}\)</span> (note that we require the two sets to have the same number of elements!), we compute <em>r</em> using the formula <span class="math display">\[ r = \frac{1}{n - 1} \sum_{i=1}^{n} \left( \frac{x_i - \overline{x}}{s_X} \right) \left( \frac{y_i - \overline{y}}{s_Y} \right)  \]</span> where:</p>
-<ul>
-<li class="fragment"><span class="math inline">\(\overline{x}\)</span> and <span class="math inline">\(\overline{y}\)</span> denote the sample means of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, respectively</li>
-<li class="fragment"><span class="math inline">\(s_X\)</span> and <span class="math inline">\(s_Y\)</span> denote the sample standard deviations of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, respectively.</li>
-</ul></li>
-</ul>
-</section>
-<section id="example" class="slide level2">
-<h2>Example</h2>
-<ul>
-<li class="fragment"><p>I find it useful to sometimes consider extreme cases, and ensure that the math matches up with our intuition.</p></li>
-<li class="fragment"><p>For example, consider the sets <span class="math inline">\(X = \{1, 2, 3\}\)</span> and <span class="math inline">\(Y = \{1, 2, 3\}\)</span>.</p></li>
-<li class="fragment"><p>From a scatterplot, I think we would all agree that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have a positive linear relationship, and that the relationship is very strong!</p></li>
-</ul>
-</section>
-<section id="example-1" class="slide level2">
-<h2>Example</h2>
-<ul>
-<li class="fragment"><p>Indeed, <span class="math inline">\(\overline{x} = 2 = \overline{y}\)</span> and <span class="math inline">\(s_X = 1 = s_Y\)</span>, meaning <span class="math display">\[\begin{align*}
-r   &amp; = \frac{1}{3 - 1} \left[ \left( \frac{1 - 2}{1} \right) \left( \frac{1 - 2}{1} \right)  + \left( \frac{2 - 2}{1} \right) \left( \frac{2 - 2}{1} \right)  \right.   \\
-  &amp; \hspace{45mm} \left. +  \left( \frac{3 - 2}{1} \right) \left( \frac{3 - 2}{1} \right)  \right] \\
-  &amp; = \frac{1}{2} \left[ 1 + 0 + 1 \right] = \boxed{1}
-\end{align*}\]</span></p></li>
-<li class="fragment"><p>It turns out, <em>r</em> will always be between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>, inclusive, regardless of what two sets we are comparing!</p></li>
-</ul>
-</section>
-<section id="interpretation" class="slide level2">
-<h2>Interpretation</h2>
-<ul>
-<li class="fragment"><p>So, here is how we interpret the value of <em>r</em>.</p>
-<ul>
-<li class="fragment"><p>The sign of <em>r</em> (i.e.&nbsp;whether it is positive or negative) indicates whether or not the linear association between the two variables is positive or negative.</p></li>
-<li class="fragment"><p>The magnitude of <em>r</em> indicates how strong the linear relationship between the two variables is, with magnitudes close to <span class="math inline">\(1\)</span> or <span class="math inline">\(-1\)</span> indicating very strong linear relationships.</p></li>
-<li class="fragment"><p>An <em>r</em> value of 0 indicates no linear relationship between the variables.</p></li>
-</ul></li>
-</ul>
-</section>
-<section id="important-distinction" class="slide level2">
-<h2>Important Distinction</h2>
-<ul>
-<li class="fragment"><p>Now, something that is <strong>very</strong> important to mention is that <em>r</em> only quantifies <em>linear</em> relationships- it is very bad at quantifying nonlinear relationships.</p></li>
-<li class="fragment"><p>For example, consider the following scatterplot:</p></li>
-</ul>
-<div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="Lec20_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
-</div>
-</div>
-</div>
-</section>
-<section id="important-distinction-1" class="slide level2">
-<h2>Important Distinction</h2>
-<ul>
-<li class="fragment"><p>I think we would all agree that <code>Y</code> and <code>X</code> have a fairly strong relationship.</p></li>
-<li class="fragment"><p>However, the correlation between <code>Y</code> and <code>X</code> is actually only 0.1953333!</p></li>
-<li class="fragment"><p>So, again- <em>r</em> should only be used as a determination of the strength of <em>linear</em> trends, not <em>nonlinear</em> trends.</p></li>
-</ul>
-</section>
-<section id="your-turn" class="slide level2">
-<h2>Your Turn!</h2>
-</section>
-<section id="your-turn-1" class="slide level2">
-<h2>Your Turn!</h2>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Exercise 1</strong></p>
+<p><strong>Setup</strong></p>
 </div>
 <div class="callout-content">
-<div>
-<div style="font-size: 30px">
-<p>Compute the correlation between the following two sets of numbers: <span class="math display">\[\begin{align*}
-  \boldsymbol{x}    &amp; = \{-1, \ 0, \ 1\}    \\
-  \boldsymbol{y}    &amp; = \{1, \ 2, \ 0\}
-\end{align*}\]</span></p>
-</div>
-</div>
+<p>A researcher would like to determine whether or not there is an association between smoking and increased rates of lung cancer. To that end, they perform an observational study in which 50 people who regularly smoke were observed along with 50 people who do not smoke. Lung cancer rates within each group were recorded at the end of the study, and the data clearly (and statistically) displays that the average lung cancer rates among smokers is higher than that among non-smokers.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="leadup" class="slide level2">
-<h2>Leadup</h2>
+<section id="smoking-1" class="slide level2">
+<h2>Smoking</h2>
 <ul>
-<li class="fragment"><p>There is another thing to note about correlation.</p></li>
-<li class="fragment"><p>Let’s see this by way of an example: consider the following two scatterplots:</p></li>
-</ul>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="Lec20_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="Lec20_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<ul>
-<li class="fragment">Both cor(<code>X</code>, <code>Y1</code>) and cor(<code>X</code>, <code>Y2</code>) are equal to 1, despite the fact that a one unit increase in <code>x</code> corresponds to a different unit increase in <code>y1</code> as opposed to <code>y2</code>.</li>
+<li class="fragment"><p>Again, we cannot then simply conclude that smoking <em>causes</em> lung cancer.</p></li>
+<li class="fragment"><p>All we can conclude is precisely what was stated above: there is statistical evidence to suggest that smoking is <em>associated</em> with higher lung cancer rates.</p></li>
+<li class="fragment"><p>Why? It really boils down to asking: was the control (i.e.&nbsp;non-smoking) group truly similar to the treatment (i.e.&nbsp;smoking) group?</p></li>
+<li class="fragment"><p>For example, what if it turns out that the group of smokers that were selected were also heavy drinkers? In that case, whether or not someone regularly <em>drinks</em> could be a confounding variable as it is one the researcher did not explicitly control for, but that could potentially skew results.</p></li>
+<li class="fragment"><p>Additionally, some studies have shown that smokers tend to be predominantly male. As such, gender could also be a confounding variable.</p></li>
 </ul>
 </section>
-<section id="leadup-1" class="slide level2">
-<h2>Leadup</h2>
+<section id="confounding-variables" class="slide level2">
+<h2>Confounding Variables</h2>
 <ul>
-<li class="fragment"><p>So, don’t be fooled- the magnitude of <em>r</em> says nothing about how a one-unit increase in <code>x</code> translates to a change in <code>y</code>!</p>
+<li class="fragment"><p>The main point is: there are lots of variables that were not controlled for in this study, but that could be <em>also</em> contributing to the increased rates of lung cancer that was observed.</p></li>
+<li class="fragment"><p>Hence, the study (as it was conducted above) cannot be used to say that smoking definitively causes lung cancer.</p></li>
+<li class="fragment"><p>Now, I’d also like to stress- even if the researcher were to re-do the study as an experiment, we <em>still</em> wouldn’t be able to simply declare that smoking causes lung cancer.</p></li>
+<li class="fragment"><p>To truly establish causal relationships, one must use results from <strong>causal inference</strong> (which is outside the scope of this course).</p></li>
+</ul>
+</section>
+<section id="case-study-admissions-at-uc-berkeley" class="slide level2">
+<h2>Case Study: Admissions at UC Berkeley</h2>
 <ul>
-<li class="fragment">Again, the magnitude of <em>r</em> only tells us how <em>strongly</em> the two variables are related.</li>
+<li class="fragment"><p>In the 1970’s, UC Berkeley conducted an observational study to determine whether or not there was gender bias in the graduate student admittance practices at the university.</p>
+<ul>
+<li class="fragment">A disclaimer: at the time, “gender” was treated as a binary variable with values <code>male</code> and <code>female</code>. I would like to also acknowledge that we now recognize that there are a great deal many more genders than simply “male” and “female”.</li>
 </ul></li>
-<li class="fragment"><p>To figure out exactly <em>how</em> a change in <code>x</code> translates to a change in <code>y</code>, we need to return to our model.</p></li>
-</ul>
-</section></section>
-<section>
-<section id="regression-part-i" class="title-slide slide level1 center">
-<h1>Regression, Part I</h1>
-
-</section>
-<section id="regression-problem" class="slide level2" style="font-size:30px">
-<h2>Regression Problem</h2>
+<li class="fragment"><p>Overall, the survey included 8,422 men and 4,321 women.</p></li>
+<li class="fragment"><p>Of the men 44% were admitted; of the women only 35% were admitted.</p>
 <ul>
-<li class="fragment">As a concrete example, let’s examine a dataset that contains several measurements on heights and weights:</li>
-</ul>
-<div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="Lec20_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
-</div>
-</div>
-</div>
-</section>
-<section id="regression-model" class="slide level2">
-<h2>Regression Model</h2>
-<ul>
-<li class="fragment"><p>Letting <code>y</code> denote our response variable (weight) and <code>x</code> denote our explanatory variable (height), our model is <span class="math display">\[ \texttt{y} = \beta_0 + \beta_1 \cdot \texttt{x} + \texttt{noise} \]</span></p>
-<ul>
-<li class="fragment">If you wanted to be a little more explicit, you could also write <span class="math display">\[ \texttt{weight} = \beta_0 + \beta_1 \cdot (\texttt{height}) + \texttt{noise} \]</span></li>
+<li class="fragment">This difference was also deemed statistically significant.</li>
 </ul></li>
-<li class="fragment"><p>Ultimately, we would like to know the values of <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>.</p></li>
-<li class="fragment"><p>However, we will never be able to determine their values exactly!</p></li>
-<li class="fragment"><p>Why? Well, take a look at the model again- though we are assuming a linear relationship between <code>height</code> and <code>weight</code>, our <code>weight</code> observations contain some noise, the magnitude of which we never get to see!</p>
+<li class="fragment"><p>So, on the surface, it does appear as though women are being disproportionately denied entry.</p></li>
+</ul>
+</section>
+<section id="case-study-admissions-at-uc-berkeley-1" class="slide level2">
+<h2>Case Study: Admissions at UC Berkeley</h2>
 <ul>
-<li class="fragment">In this way, we can think of <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> as population parameters.</li>
+<li class="fragment">Something puzzling happens, however, when we take a look at the data after grouping by major:</li>
+</ul>
+<div class="fragment">
+
+<table>
+<thead>
+<tr>
+<td>
+</td>
+<td colspan="2" style="text-align:center">
+<strong>Men</strong>
+</td>
+<td colspan="2" style="text-align:center">
+<strong>Women</strong>
+</td>
+</tr>
+<tr>
+<td style="padding-right:3cm">
+<strong>Major</strong>
+</td>
+<td>
+<strong>Num. Applicants</strong>
+</td>
+<td>
+<strong>% Admitted</strong>
+</td>
+<td>
+<strong>Num. Applicants</strong>
+</td>
+<td>
+<strong>% Admitted</strong>
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+A
+</td>
+<td>
+825
+</td>
+<td>
+62
+</td>
+<td>
+108
+</td>
+<td>
+82
+</td>
+</tr>
+<tr>
+<td>
+B
+</td>
+<td>
+560
+</td>
+<td>
+63
+</td>
+<td>
+25
+</td>
+<td>
+68
+</td>
+</tr>
+<tr>
+<td>
+C
+</td>
+<td>
+325
+</td>
+<td>
+37
+</td>
+<td>
+593
+</td>
+<td>
+34
+</td>
+</tr>
+<tr>
+<td>
+D
+</td>
+<td>
+417
+</td>
+<td>
+33
+</td>
+<td>
+375
+</td>
+<td>
+35
+</td>
+</tr>
+<tr>
+<td>
+E
+</td>
+<td>
+191
+</td>
+<td>
+28
+</td>
+<td>
+393
+</td>
+<td>
+24
+</td>
+</tr>
+<tr>
+<td>
+F
+</td>
+<td>
+373
+</td>
+<td>
+6
+</td>
+<td>
+341
+</td>
+<td>
+7
+</td>
+</tr>
+</tbody>
+
+</table>
+</div>
+</section>
+<section id="case-study-admissions-at-uc-berkeley-2" class="slide level2">
+<h2>Case Study: Admissions at UC Berkeley</h2>
+<ul>
+<li class="fragment"><p>Nearly none of the majors on their own display this bias against women.</p>
+<ul>
+<li class="fragment">Indeed, in Major A there almost appears to be a bias against <em>men</em></li>
+</ul></li>
+<li class="fragment"><p>So, what’s going on? How can it be that none of the majors individually display a discrimination against women, but <em>overall</em> they display discrimination against women?</p></li>
+<li class="fragment"><p>The answer actually lies in how difficult each major was to get into.</p></li>
+<li class="fragment"><p>For instance, Major A appears to have an overall 64% acceptance rate, whereas Major E appears to have an overall 53.62% acceptance rate.</p>
+<ul>
+<li class="fragment"><p>Major A seems to be harder to get into than, say, Major E.</p></li>
+<li class="fragment"><p>Indeed, Majors A and B are easier to get into than majors C through F.</p></li>
 </ul></li>
 </ul>
 </section>
-<section id="fitting-the-model" class="slide level2">
-<h2>Fitting the Model</h2>
+<section id="case-study-admissions-at-uc-berkeley-3" class="slide level2">
+<h2>Case Study: Admissions at UC Berkeley</h2>
 <ul>
-<li class="fragment"><p>Our goal, therefore, is to try and determine good estimators <span class="math inline">\(\widehat{\beta}_0\)</span> and <span class="math inline">\(\widehat{\beta}_1\)</span> of <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>, respectively.</p></li>
-<li class="fragment"><p>In the more general setting, given a model <span class="math display">\[ \texttt{y} = f(\texttt{x}) + \texttt{noise} \]</span> the goal of <strong>model fitting</strong> is to take data <span class="math inline">\(\{(y_i, \ x_i)\}_{i=1}^{n}\)</span> and use it to construct a function <span class="math inline">\(\widehat{f}()\)</span> that we believe best approximates the function <span class="math inline">\(f():\)</span> <span class="math display">\[ \widehat{\texttt{y}} = \widehat{f}(\texttt{x}) + \texttt{noise} \]</span></p></li>
+<li class="fragment"><p>Indeed, if we look at the <code>Num. Applicants</code> column within each gender, we see that, on the aggregate, <em>men were applying to easier majors!</em></p>
+<ul>
+<li class="fragment">Over half (i.e.&nbsp;<span class="math inline">\((825 + 560) / (825 + 560 + 325 + 417 + 191 + 373) \approx 51.5\%\)</span>) of men applied to Majors A and B, whereas nearly 90% (i.e.&nbsp;$(593 + 375 + 393 + 341) / (108 + 25 + 593 + 375 + 393 + 341) $) of women applied to Majors C through F.</li>
+</ul></li>
+<li class="fragment"><p>In other words, <code>difficulty of major</code> was a confounding variable that influenced the acceptance rates.</p>
+<ul>
+<li class="fragment">After controlling for this variable, it was actually found that there was <em>no</em> significant difference in addmittance rates between men and women.</li>
+</ul></li>
 </ul>
 </section>
-<section id="height-and-weight" class="slide level2">
-<h2>Height and Weight</h2>
+<section id="simpsons-paradox" class="slide level2">
+<h2>Simpson’s Paradox</h2>
 <ul>
-<li class="fragment">Okay, back to our height and weight example:</li>
+<li class="fragment"><p>What this shows us is that relationships between percentages in subgroups can sometimes be reversed after the subgroups are aggregated.</p></li>
+<li class="fragment"><p>This is what we call <strong>Simpson’s Paradox</strong>.</p></li>
 </ul>
 <div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="Lec20_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
-</div>
-</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sxYrzzy3cq8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
+</iframe>
 </div>
 </section>
-<section id="height-and-weight-1" class="slide level2">
-<h2>Height and Weight</h2>
-<ul>
-<li class="fragment"><p>The regression problem basically boils down to finding the line that best fits the data.</p></li>
-<li class="fragment"><p>The specific line we will discuss in a bit is called the <strong>ordinary least squares line</strong> (or just OLS line):</p></li>
-</ul>
-<div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="Lec20_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
-</div>
-</div>
-</div>
-</section>
-<section id="simple-linear-regression" class="slide level2">
-<h2>Simple Linear Regression</h2>
-<ul>
-<li class="fragment"><p>Here is how <strong>simple linear regression</strong> works.</p></li>
-<li class="fragment"><p>We are given observations <span class="math inline">\(\{(y_i, \ x_i)\}_{i=1}^{n}\)</span> on a response variable <code>y</code> and an explanatory variable <code>x</code>.</p></li>
-<li class="fragment"><p>In simple linear regression, we adopt the following model: <span class="math display">\[ \texttt{y} = \beta_0 + \beta_1 \cdot \texttt{x} + \texttt{noise} \]</span></p></li>
-<li class="fragment"><p>Our goal is to use the data <span class="math inline">\(\{(y_i, \ x_i)\}_{i=1}^{n}\)</span> to determine suitable estimators for <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>.</p></li>
-</ul>
-</section>
-<section id="simple-linear-regression-1" class="slide level2">
-<h2>Simple Linear Regression</h2>
-<ul>
-<li class="fragment">Here’s a visual way of thinking about this. Consider the following scatterplot:</li>
-</ul>
-<div class="fragment">
-<p><img data-src="scatterblank.svg" style="width:50.0%"></p>
-</div>
-</section>
-<section id="goals" class="slide level2">
-<h2>Goals</h2>
-<div>
-<ul>
-<li>We are assuming that there exists some true linear relationship (i.e.&nbsp;some “fit”) between <code>y</code> and <code>x</code>. But, because of natural variability due to randomness, we cannot figure out exactly <em>what</em> the true relationship is.</li>
-</ul>
-</div>
-<div class="fragment">
-<p><img data-src="scatter2.svg" style="width:50.0%"></p>
-</div>
-</section>
-<section id="goals-1" class="slide level2">
-<h2>Goals</h2>
-<div>
-<ul>
-<li>Finding the “best” estimate of the signal function is, therefore, akin to finding the line that “best” fits the data.</li>
-</ul>
-</div>
-<div class="fragment">
-<p><img data-src="scatter5.svg" style="width:50.0%"></p>
-</div>
-</section>
-<section id="line-of-best-fit" class="slide level2">
-<h2>Line of Best Fit</h2>
-<ul>
-<li class="fragment"><p>Now, if we are to find the line that best fits the data, we first need to quantify what we mean by “best”.</p></li>
-<li class="fragment"><p>Here is one idea: consider minimizing the average distance from the datapoints to the line.</p></li>
-<li class="fragment"><p>As a measure of “average distance from the points to the line”, we will use the so-called <strong>residual sum of squares</strong> (often abbreviated as RSS).</p></li>
-</ul>
-</section>
-<section id="residuals" class="slide level2" style="font-size:32px">
-<h2>Residuals</h2>
-<ul>
-<li class="fragment">The <strong><em>i</em><sup>th</sup> residual</strong> is defined to be the quantity <span class="math inline">\(e_i\)</span> below:</li>
-</ul>
-<div class="fragment" style="text-align:center">
-<p><img data-src="rss.svg" style="width:50.0%"></p>
-</div>
-<ul>
-<li class="fragment">RSS is then just <span class="math inline">\(\displaystyle \mathrm{RSS} = \sum_{i=1}^{n} e_i^2\)</span></li>
-</ul>
-</section>
-<section id="results" class="slide level2">
-<h2>Results</h2>
-<ul>
-<li class="fragment"><p>It turns out, using a bit of Calculus, the estimators we seek (i.e.&nbsp;the ones that minimize the RSS) are <span class="math display">\[\begin{align*}
-\widehat{\beta_1}   &amp; = \frac{\sum\limits_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}{\sum\limits_{i=1}^{n} (x_i - \overline{x})^2}    \\
-\widehat{\beta_0}   &amp; = \overline{y} - \widehat{\beta_1} \overline{x}
-\end{align*}\]</span></p></li>
-<li class="fragment"><p>These are what are known as the <strong>ordinary least squares</strong> estimators of <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>, and the line <span class="math inline">\(\widehat{\beta_0} + \widehat{\beta_1} x\)</span> is called the <strong>ordinary least-squares regression line</strong> (or just OLS regression line, for short).</p></li>
-<li class="fragment"><p>Perhaps an example may illustrate what I am talking about.</p></li>
-</ul>
-</section>
-<section id="example-2" class="slide level2">
-<h2>Example</h2>
-
-<img data-src="Lec20_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
-<section id="example-3" class="slide level2">
-<h2>Example</h2>
-
-<img data-src="Lec20_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"><ul>
-<li class="fragment"><p><span class="math inline">\(\widehat{\beta_0} =\)</span> -0.2056061; <span class="math inline">\(\widehat{\beta_1} =\)</span> -2.1049432.</p></li>
-<li class="fragment"><p>I.e. the equation of the line in blue is -0.2056061 + -2.1049432 * <code>x</code>.</p></li>
-</ul>
-</section>
-<section id="fitted-values" class="slide level2" style="font-size:30px">
-<h2>Fitted Values</h2>
-<ul>
-<li class="fragment">Let’s return to our cartoon picture of OLS regression:</li>
-</ul>
-<div class="fragment" style="text-align:center">
-<p><img data-src="rss.svg" style="width:50.0%"></p>
-</div>
-</section>
-<section id="fitted-values-1" class="slide level2" style="font-size:30px">
-<h2>Fitted Values</h2>
-<ul>
-<li class="fragment">Notice that each point in our dataset (i.e.&nbsp;the blue points) have a corresponding point on the OLS regression line:</li>
-</ul>
-<div class="fragment" style="text-align:center">
-<p><img data-src="fitted.svg" style="width:50.0%"></p>
-</div>
-</section>
-<section id="fitted-values-2" class="slide level2" style="font-size:30px">
-<h2>Fitted Values</h2>
-<ul>
-<li class="fragment"><p>These points are referred to as <strong>fitted values</strong>; the <em>y</em>-values of the fitted values are denoted as <span class="math inline">\(\widehat{y}_i\)</span>.</p></li>
-<li class="fragment"><p>In this way, the OLS regression line is commonly written as a relationship between the fitted values and the <em>x</em>-values: <span class="math display">\[ \widehat{y} = \widehat{\beta_0} + \widehat{\beta_1} x \]</span></p></li>
-</ul>
-</section>
-<section id="back-to-height-and-weight" class="slide level2" style="font-size:30px">
-<h2>Back to <code>height</code> and <code>weight</code></h2>
-<ul>
-<li class="fragment">Before we work through the math once, let’s apply this technique to the height and weight data from before.</li>
-</ul>
-<div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="Lec20_files/figure-revealjs/unnamed-chunk-16-1.png" width="672"></p>
-</div>
-</div>
-</div>
-</section>
-<section id="back-to-height-and-weight-1" class="slide level2" style="font-size:30px">
-<h2>Back to <code>height</code> and <code>weight</code></h2>
-<ul>
-<li class="fragment">Using a computer software, the OLS regression line can be found to be:</li>
-</ul>
-<div class="columns">
-<div class="column" style="width:75%;">
-<div class="fragment">
-<div class="cell">
-<div class="cell-output-display">
-<p><img data-src="Lec20_files/figure-revealjs/unnamed-chunk-17-1.png" width="672"></p>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:25%;">
-<ul>
-<li class="fragment">Specifically, <span class="math inline">\(\widehat{\beta_0} =\)</span> 3.366744 and <span class="math inline">\(\widehat{\beta_1} =\)</span> 0.9790114</li>
-</ul>
+<section id="on-the-subject-of-misleading" class="slide level2">
+<h2>On the Subject of Misleading</h2>
 <p><br>
 </p>
-<ul>
-<li class="fragment">We will return to the notion of fitted values in a bit.</li>
-</ul>
-</div>
-</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i60wwZDA1CI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
+</iframe>
 </section>
-<section id="back-to-height-and-weight-2" class="slide level2">
-<h2>Back to <code>height</code> and <code>weight</code></h2>
-<ul>
-<li class="fragment"><p>A quick note:</p></li>
-<li class="fragment"><p>Though there was no way to know this, the true <span class="math inline">\(\beta_1\)</span> was actually <span class="math inline">\(1.0\)</span>. Again, this is just to demonstrate that the OLS estimate <span class="math inline">\(\widehat{\beta_1}\)</span> is just that- an estimate!</p></li>
-</ul>
-</section>
-<section class="slide level2">
+<section>
+<section id="what-now" class="title-slide slide level1 center">
+<h1>What Now?</h1>
 
-<div class="fragment">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Lec20_files/figure-revealjs/unnamed-chunk-18-1.png" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p><span class="math display">\[ \widehat{\texttt{weight}} = 3.367 + 0.979 \cdot \texttt{height} \]</span></p>
-</div>
 </section>
-<section id="worked-out-example" class="slide level2">
-<h2>Worked-Out Example</h2>
+<section id="what-now-1" class="slide level2">
+<h2>What Now?</h2>
 <ul>
-<li class="fragment"><p>Alright, let’s work through a computation by hand once.</p></li>
-<li class="fragment"><p>Suppose we have the variables <span class="math display">\[\begin{align*}
-\boldsymbol{x}    &amp; = \{3, \ 7, \ 8\}   \\
-\boldsymbol{y}    &amp; = \{20, \ 14, \ 17\}
-\end{align*}\]</span> and suppose we wish to construct the least-squares regression line when regressing <span class="math inline">\(\boldsymbol{y}\)</span> onto <span class="math inline">\(\boldsymbol{x}\)</span>.</p></li>
-<li class="fragment"><p>First, we compute <span class="math display">\[\begin{align*}
-\overline{x}    &amp; = 6   \\
-\overline{y}    &amp; = 17
-\end{align*}\]</span></p></li>
-</ul>
-</section>
-<section id="worked-out-example-1" class="slide level2" style="font-size:30px">
-<h2>Worked-Out Example</h2>
+<li class="fragment"><p>Alright, so that was the last bit of new material I wanted to cover in this class.</p></li>
+<li class="fragment"><p>But…. why did we do all of this?</p></li>
+<li class="fragment"><p>What was the point of this course?</p>
 <ul>
-<li class="fragment"><p>Next, we compute <span class="math display">\[\begin{align*}
-\sum_{i=1}^{n} (x_i - \overline{x})^2   &amp; = (3 - 6)^2 + (7 - 6)^2 + (8 - 6)^2 = 14   \\
-\sum_{i=1}^{n} (y_i - \overline{y})^2   &amp; = (20 - 17)^2 + (14 - 17)^2 + (17 - 17)^2 = 18
-\end{align*}\]</span></p></li>
-<li class="fragment"><p>Additionally, <span class="math display">\[\begin{align*}
-\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})   &amp; = (3 - 6)(20 - 17) + (7 - 6)(14 - 17)    \\[-7mm]
-  &amp; \hspace{10mm} + (8 - 6)(17 - 17)    \\[5mm]
-  &amp; = -12
-\end{align*}\]</span></p></li>
-</ul>
-</section>
-<section id="worked-out-example-2" class="slide level2">
-<h2>Worked-Out Example</h2>
-<ul>
-<li class="fragment"><p>Therefore, <span class="math display">\[ \widehat{\beta_1} = \frac{\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}{\sum_{i=1}^{n} (x_i - \overline{x})^2}   = \frac{-12}{14} = - \frac{6}{7} \]</span></p></li>
-<li class="fragment"><p>Additionally, <span class="math display">\[ \widehat{\beta_0} = \overline{y} - \widehat{\beta_1} \overline{x} = 17 - \left( - \frac{6}{7} \right) (6) = \frac{155}{7} \]</span></p></li>
-<li class="fragment"><p>This means that the ordinary least-squares regression line is <span class="math display">\[ \boxed{\widehat{y} = \frac{1}{7} ( 155 - 6 x )} \]</span></p></li>
-</ul>
-</section>
-<section class="slide level2">
-
-<div class="fragment">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Lec20_files/figure-revealjs/unnamed-chunk-19-1.png" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p><span class="math display">\[ \widehat{y} = \frac{1}{7} ( 155 - 6 x ) \]</span></p>
-</div>
-</section>
-<section id="interpreting-the-coefficients" class="slide level2">
-<h2>Interpreting the Coefficients</h2>
-<ul>
-<li class="fragment"><p>Alright, so how do we interpret the OLS regression line? <span class="math display">\[\widehat{y} = \widehat{\beta_0} + \widehat{\beta_1} x\]</span></p></li>
-<li class="fragment"><p>We can see that a one-unit increase in <code>x</code> corresponds to a <span class="math inline">\(\widehat{\beta_1}\)</span>-unit increase in <code>y</code>.</p>
-<ul>
-<li class="fragment"><p>For example, in our <code>height</code> and <code>weight</code> example we found <span class="math display">\[ \widehat{\texttt{weight}} = 3.367 + 0.979 \cdot \texttt{height} \]</span></p></li>
-<li class="fragment"><p>This means that a one-cm change in height is associated with a (predicted/estimated) 0.979 lbs change in weight.</p></li>
+<li class="fragment">If you say “the point was for me to finish my major”, well, then, fair enough!</li>
 </ul></li>
+<li class="fragment"><p>But, more fundamentally, this course is designed to try and provide an introduction to Data Science.</p></li>
 </ul>
 </section>
-<section id="next-time" class="slide level2">
-<h2>Next Time</h2>
+<section id="what-now-2" class="slide level2">
+<h2>What Now?</h2>
 <ul>
-<li class="fragment">Next time, we’ll discuss how to use the OLS regression line to make predictions.</li>
+<li class="fragment">The key operating word in this is “introduction-” we only just scratched the surface of the topics we discussed!
+<ul>
+<li class="fragment">I sometimes (affectionately) refer to PSTAT 5A as a “table of contents” of statistics and data science.</li>
+</ul></li>
+<li class="fragment">Even within our own PSTAT department, there are lots of different courses that dive deeper into the subjects we discussed.</li>
 </ul>
+</section>
+<section id="what-now-3" class="slide level2">
+<h2>What Now?</h2>
+<ul>
+<li class="fragment"><p>If you’d like to learn some more programming (and get a recap of some probability), take PSTAT 10 (where you will learn a very popular programming language among statisticians, called <code>R</code>).</p></li>
+<li class="fragment"><p>PSTAT 120A provides a deeper look at Probability, and some more sophisticated probability tools.</p></li>
+<li class="fragment"><p>PSTAT 120B and 120C provide a deeper look at inferential statistics, and how to answer much more interesting and complex problems than those we looked at in this course.</p>
+<ul>
+<li class="fragment">You’ll even learn a third, strange yet useful appraoach to probability called the Bayesian approach.</li>
+</ul></li>
+<li class="fragment"><p>Interested in Experimental Design? PSTAT 122 is devoted entirely to that!</p></li>
+<li class="fragment"><p>Want to learn more about regression (including logistic regression)? Take PSTAT 126 and 131!</p></li>
+</ul>
+</section>
+<section id="story" class="slide level2" style="font-size:30px">
+<h2>Story</h2>
+<ul>
+<li class="fragment"><p>Now, I know many of you are graduating this quarter (or have recently graduated).</p>
+<ul>
+<li class="fragment">Congratulations, by the way!!!</li>
+</ul></li>
+<li class="fragment"><p>For those of you who are not, and especially for those of you who aren’t quite sure what you want to do, I’d like to leave you with a story.</p></li>
+<li class="fragment"><p>I encountered a student who had come into undergrad not knowing what they wanted to do <em>at all</em>.</p></li>
+<li class="fragment"><p>They had a vague inkling that they might want to do math, but after a quarter switched to Econ, then Physics, and finally wound their way into the equivalent of PSTAT 5A at their undergraduate institution.</p></li>
+<li class="fragment"><p>By the end of the quarter, they were so intrigued to learn more the decided to take the analog of 120A, and then 120B, and then, before they knew it, they had completed a degree in statistics!</p></li>
+</ul>
+</section>
+<section id="story-1" class="slide level2" style="font-size:30px">
+<h2>Story</h2>
+<ul>
+<li class="fragment"><p>That student…. was me!</p></li>
+<li class="fragment"><p>Years ago, I stumbled into the analog of PSTAT 5A and was so enamored by the field that here I am now, pursuing a PhD in it!</p></li>
+<li class="fragment"><p>I truly believe statistics and data science are some of the most useful and applicable fields around.</p></li>
+<li class="fragment"><p>Wherever there is data, there is the need for a data scientist.</p></li>
+<li class="fragment"><p>Whenever there is uncertainty, there is the need for a statistician.</p></li>
+<li class="fragment"><p>Statistics and Data Science have far reaching applications in so many fields!</p></li>
+</ul>
+</section>
+<section id="story-2" class="slide level2" style="font-size:30px">
+<h2>Story</h2>
+<ul>
+<li class="fragment">There is a famous quote from an extremely influential statistician named John Tukey:</li>
+</ul>
+<div class="fragment">
+<blockquote>
+<p>The best thing about being a statistician is that you get to play in everyone’s backyard.</p>
+</blockquote>
+</div>
+<ul>
+<li class="fragment"><p>I couldn’t agree more!</p>
+<ul>
+<li class="fragment">Though, I would perhaps update this quote to say “statistician and/or data scientist”</li>
+</ul></li>
+<li class="fragment"><p>So, now that you’ve learned the basics…</p></li>
+</ul>
+<div class="fragment" style="font-size:50px">
+<p>…<strong><em>go out and play!</em></strong></p>
+</div>
+</section></section>
+<section id="thank-you-for-a-great-quarter" class="title-slide slide level1 center">
+<h1><strong><em>Thank you for a great quarter!</em></strong></h1>
 
 
 <img src="5a_hex.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
-</section></section>
+</section>
     </div>
   </div>
 

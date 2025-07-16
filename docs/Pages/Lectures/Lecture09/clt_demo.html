@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Limit Theorem Demo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .stat-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .chart-container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .chart-title {
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .axis {
+            font-size: 12px;
+        }
+
+        .bar {
+            fill: #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .bar:hover {
+            fill: #764ba2;
+        }
+
+        .population-line {
+            stroke: #e74c3c;
+            stroke-width: 3;
+            stroke-dasharray: 5,5;
+        }
+
+        .mean-line {
+            stroke: #27ae60;
+            stroke-width: 2;
+        }
+
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            button {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Central Limit Theorem Demo</h1>
+        
+        <div class="controls">
+            <button onclick="drawSample()">Draw Sample</button>
+            <button onclick="drawMultiple()">Draw 10 Samples</button>
+            <button onclick="reset()">Reset</button>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-label">Population Proportion (FIV+)</div>
+                <div class="stat-value">0.32</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Sample Size (Cats)</div>
+                <div class="stat-value">500</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Samples Drawn</div>
+                <div class="stat-value" id="sampleCount">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Current Sample Proportion</div>
+                <div class="stat-value" id="currentProportion">-</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Mean of Sample Proportions</div>
+                <div class="stat-value" id="overallMean">-</div>
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <div class="chart-title">Sampling Distribution of Sample Proportions</div>
+            <svg id="histogram"></svg>
+        </div>
+    </div>
+
+    <script>
+        const POPULATION_PROPORTION = 0.32;
+        const SAMPLE_SIZE = 500;
+        
+        let sampleProportions = [];
+        let sampleCount = 0;
+        
+        // Set up the histogram
+        const margin = {top: 20, right: 30, bottom: 40, left: 40};
+        const width = 800 - margin.left - margin.right;
+        const height = 400 - margin.top - margin.bottom;
+        
+        const svg = d3.select("#histogram")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom);
+            
+        const g = svg.append("g")
+            .attr("transform", `translate(${margin.left},${margin.top})`);
+            
+        const xScale = d3.scaleLinear()
+            .domain([0.2, 0.45])
+            .range([0, width]);
+            
+        const yScale = d3.scaleLinear()
+            .range([height, 0]);
+            
+        // Add axes
+        g.append("g")
+            .attr("class", "axis")
+            .attr("transform", `translate(0,${height})`)
+            .call(d3.axisBottom(xScale));
+            
+        g.append("g")
+            .attr("class", "axis")
+            .call(d3.axisLeft(yScale));
+            
+        // Add axis labels
+        g.append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 0 - margin.left)
+            .attr("x", 0 - (height / 2))
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .style("font-size", "14px")
+            .text("Frequency");
+            
+        g.append("text")
+            .attr("transform", `translate(${width / 2}, ${height + margin.bottom})`)
+            .style("text-anchor", "middle")
+            .style("font-size", "14px")
+            .text("Sample Proportion (FIV+)");
+        
+        // Add population proportion line
+        g.append("line")
+            .attr("class", "population-line")
+            .attr("x1", xScale(POPULATION_PROPORTION))
+            .attr("x2", xScale(POPULATION_PROPORTION))
+            .attr("y1", 0)
+            .attr("y2", height);
+            
+        // Add sample proportions line (initially hidden)
+        const meanLine = g.append("line")
+            .attr("class", "mean-line")
+            .attr("x1", 0)
+            .attr("x2", 0)
+            .attr("y1", 0)
+            .attr("y2", height)
+            .style("opacity", 0);
+        
+        function generateRandomSample() {
+            // Generate a sample of 500 cats, each with probability 0.32 of being FIV+
+            let fivPositive = 0;
+            for (let i = 0; i < SAMPLE_SIZE; i++) {
+                if (Math.random() < POPULATION_PROPORTION) {
+                    fivPositive++;
+                }
+            }
+            return fivPositive / SAMPLE_SIZE; // Return proportion
+        }
+        
+        function calculateMean(arr) {
+            return arr.reduce((sum, val) => sum + val, 0) / arr.length;
+        }
+        
+        function drawSample() {
+            const sampleProportion = generateRandomSample();
+            
+            sampleProportions.push(sampleProportion);
+            sampleCount++;
+            
+            updateStats(sampleProportion);
+            updateHistogram();
+        }
+        
+        function drawMultiple() {
+            for (let i = 0; i < 10; i++) {
+                drawSample();
+            }
+        }
+        
+        function updateStats(currentSampleProportion) {
+            document.getElementById('sampleCount').textContent = sampleCount;
+            document.getElementById('currentProportion').textContent = currentSampleProportion.toFixed(3);
+            
+            if (sampleProportions.length > 0) {
+                const overallMean = calculateMean(sampleProportions);
+                document.getElementById('overallMean').textContent = overallMean.toFixed(3);
+            }
+        }
+        
+        function updateHistogram() {
+            if (sampleProportions.length === 0) return;
+            
+            // Create histogram bins
+            const bins = d3.histogram()
+                .domain(xScale.domain())
+                .thresholds(20)(sampleProportions);
+            
+            // Update y scale
+            yScale.domain([0, d3.max(bins, d => d.length)]);
+            
+            // Update y axis
+            g.select(".axis")
+                .filter(function() { return this.getAttribute("transform") === null; })
+                .transition()
+                .duration(300)
+                .call(d3.axisLeft(yScale));
+            
+            // Update bars
+            const bars = g.selectAll(".bar")
+                .data(bins);
+                
+            bars.enter()
+                .append("rect")
+                .attr("class", "bar")
+                .merge(bars)
+                .transition()
+                .duration(300)
+                .attr("x", d => xScale(d.x0))
+                .attr("y", d => yScale(d.length))
+                .attr("width", d => Math.max(0, xScale(d.x1) - xScale(d.x0) - 1))
+                .attr("height", d => height - yScale(d.length));
+                
+            bars.exit().remove();
+            
+            // Update mean line
+            if (sampleProportions.length > 0) {
+                const overallMean = calculateMean(sampleProportions);
+                meanLine
+                    .style("opacity", 1)
+                    .transition()
+                    .duration(300)
+                    .attr("x1", xScale(overallMean))
+                    .attr("x2", xScale(overallMean));
+            }
+        }
+        
+        function reset() {
+            sampleProportions = [];
+            sampleCount = 0;
+            
+            document.getElementById('sampleCount').textContent = '0';
+            document.getElementById('currentProportion').textContent = '-';
+            document.getElementById('overallMean').textContent = '-';
+            
+            g.selectAll(".bar").remove();
+            meanLine.style("opacity", 0);
+            
+            yScale.domain([0, 1]);
+            g.select(".axis")
+                .filter(function() { return this.getAttribute("transform") === null; })
+                .call(d3.axisLeft(yScale));
+        }
+        
+        // Initialize
+        reset();
+    </script>
+</body>
+</html>

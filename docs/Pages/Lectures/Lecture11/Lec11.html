@@ -11,8 +11,8 @@
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
-  <meta name="author" content="Mallory Wang">
-  <meta name="dcterms.date" content="2024-07-09">
+  <meta name="author" content="Annie Adams">
+  <meta name="dcterms.date" content="2025-08-21">
   <title>PSTAT 5A: Summer Session B, 2025 - PSTAT 5A: Lecture 11</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -31,6 +31,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -321,6 +386,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -328,269 +396,96 @@
 
 <section id="title-slide" data-background-image="5a_hex.png" data-background-opacity="0.5" data-background-position="left" data-background-size="contain" class="center">
   <h1 class="title" style="text-align: right">PSTAT 5A: Lecture 11</h1>
-  <h2 class="subtitle" style="text-align: right">Introduction to Inferential Statistics</h2>
-  <p class="author" style="text-align: right">Mallory Wang</p>
-  <p class="date" style="text-align: right">2024-07-09</p>
+  <h2 class="subtitle" style="text-align: right">Inference on the Mean</h2>
+  <p class="author" style="text-align: right">Annie Adams</p>
+  <p class="date" style="text-align: right">2025-08-21</p>
 </section>
-<section id="leadup" class="slide level2" style="font-size:32px">
+<section id="previously" class="slide level2" style="font-size:30px">
+<h2>Previously</h2>
+<ul>
+<li class="fragment"><p>Over the course of the past few lectures, we’ve been dealing primarily with population proportions.</p></li>
+<li class="fragment"><p>A natural point estimate of <span class="math inline">\(p\)</span> is <span class="math inline">\(\widehat{P}\)</span>, the sample proportion.</p>
+<ul>
+<li class="fragment">The Central Limit Theorem for Proportions helped us even further by providing the sampling distribution of <span class="math inline">\(\widehat{P}\)</span>, under certain conditions (the success-failure conditions).</li>
+</ul></li>
+<li class="fragment"><p>We then used the sampling distribution of <span class="math inline">\(\widehat{P}\)</span> to construct confidence intervals for the true proportion <span class="math inline">\(p\)</span>.</p></li>
+<li class="fragment"><p>Now we will turn our attention to a different population parameter.</p></li>
+</ul>
+</section>
+<section id="leadup" class="slide level2" style="font-size:30px">
 <h2>Leadup</h2>
 <ul>
-<li class="fragment">Let’s, for the moment, don our Sociology hats and say we’re interested in estimating the average monthly income of US Citizens.</li>
-<li class="fragment">Surveying <em>every</em> <em>single</em> US Citizen and recording their income is not feasible- doing so would be far too expensive (both in terms of monetary cost as well as temporal cost)</li>
-<li class="fragment">Instead, a natural idea is to take a <strong>sample</strong> of some subset of US Citizens, and record the average monthly income of these sampled individuals.</li>
-<li class="fragment">Now, here’s a question: given two separate samples of, say, 125 US Citizens- do we expect the average income of these two samples to be exactly the same, or slightly different?
+<li class="fragment">Recall from last lecture that any of the descriptive statistics we discussed in Week 1 can be viewed as population parameters, when they apply to the population.
 <ul>
-<li class="fragment">Probably slightly different!</li>
+<li class="fragment">E.g. population proportion (<span class="math inline">\(p\)</span>), population variance (<span class="math inline">\(\sigma^2\)</span>), etc.</li>
+</ul></li>
+<li class="fragment">Of particular interest to statisticians is often the <strong>population mean</strong>, <span class="math inline">\(\mu\)</span>.</li>
+<li class="fragment">Let’s try and draw some analogies from our work with population proportions.</li>
+<li class="fragment">When trying to make inferences on a population proportion <span class="math inline">\(p\)</span>, we used the sample proportion <span class="math inline">\(\widehat{P}\)</span> as a proxy (specifically, a <strong>point estimator</strong>).
+<ul>
+<li class="fragment">Any guesses on what we might use as a point estimator of <span class="math inline">\(\mu\)</span>?</li>
+<li class="fragment">That’s right- the <strong>sample mean</strong> <span class="math inline">\(\overline{X}\)</span>!</li>
 </ul></li>
 </ul>
 </section>
-<section id="leadup-1" class="slide level2" style="font-size:32px">
-<h2>Leadup</h2>
+<section id="notation" class="slide level2" style="font-size:30px">
+<h2>Notation</h2>
 <ul>
-<li class="fragment">So, it seems we have two things to keep track of:
+<li class="fragment"><p>Again, it will be useful to establish some notation:</p>
 <ul>
-<li class="fragment">The true average monthly income of US Citizens</li>
-<li class="fragment">The average monthly income of a <em>sample</em> of US Citizens.</li>
+<li class="fragment"><span class="math inline">\(\mu\)</span> represents the population mean, and is deterministic (i.e.&nbsp;fixed) but unknown.</li>
+<li class="fragment"><span class="math inline">\(\overline{X}\)</span> represents the mean <em>of some hypothetical sample</em>, and is therefore random (as different samples result in different sample means)</li>
+<li class="fragment"><span class="math inline">\(\overline{x}\)</span> represents the mean <em>of a specific sample</em>, and is therefore deterministic (i.e.&nbsp;“we’ve taken <em>this particular sample right here</em> and computed its mean”).</li>
 </ul></li>
-<li class="fragment">By the last point on the previous slide, we can see that the second quantity above <u>is a random variable</u>.
+<li class="fragment"><p>Just as <span class="math inline">\(\widehat{P}\)</span> has a <strong>sampling distribution</strong>, so too does <span class="math inline">\(\overline{X}\)</span>.</p></li>
+<li class="fragment"><p>The sampling distribution of <span class="math inline">\(\overline{X}\)</span>, however, will end up requiring a few more considerations than the sampling distribution of <span class="math inline">\(\widehat{P}\)</span>.</p>
 <ul>
-<li class="fragment">This is an example of a <strong>sample statistic</strong>, which is basically any quantity that is computed from our data.</li>
-</ul></li>
-<li class="fragment">The true average monthly income of US Citizens is a fixed number, which we call a <strong>population parameter</strong>.
-<ul>
-<li class="fragment">In general, a population parameter is just a parameter that relates to the population (e.g.&nbsp;mean, median, variance, etc.)</li>
+<li class="fragment">We will need it, however, in order to construct confidence intervals for <span class="math inline">\(\mu\)</span>.</li>
 </ul></li>
 </ul>
 </section>
-<section id="inferential-statistics" class="slide level2" style="font-size:32px">
-<h2>Inferential Statistics</h2>
+<section id="general-confidence-intervals" class="slide level2">
+<h2>General Confidence Intervals</h2>
 <ul>
-<li class="fragment">We consider the <strong>population</strong> to be some large group we are interested in studying.
-<ul>
-<li class="fragment">The population is governed by some set of <strong>parameters</strong> (e.g.&nbsp;mean, median, variance, etc.)</li>
-</ul></li>
-<li class="fragment">From the population we draw a <strong>sample</strong> (which is random!), and compute <strong>sample statistics</strong> to try and make inference about the population parameters.</li>
-<li class="fragment">This is the structure of <strong>inferential statistics</strong>.</li>
+<li class="fragment"><p>We will follow the general idea we used before of constructing confidence intervals as <span class="math inline">\(\widehat{\theta} \pm \mathrm{m.e.}\)</span>.</p></li>
+<li class="fragment"><p>In this case, we use <span class="math inline">\(\overline{X}\)</span> as our point estimator.</p></li>
+<li class="fragment"><p>Here is a useful result from Probability Theory:</p></li>
 </ul>
-</section>
-<section class="slide level2">
-
-<div style="text-align:center">
-<p><img data-src="sampling_2.svg" style="width:70.0%"></p>
-</div>
-</section>
-<section id="parameter-vs.-statistic" class="slide level2" style="font-size:30px">
-<h2>Parameter vs.&nbsp;Statistic</h2>
-<ul>
-<li class="fragment">It is <em>extremely</em> important to be able to distinguish a <em>population parameter</em> from a <em>sample statistic</em>.</li>
-<li class="fragment">There are a couple of ways to do this.</li>
-<li class="fragment">The first is to consider the general structure of the situation: if a given quatntity is describing the <em>population</em>, then it must be a <em>population parameter</em>.
-<ul>
-<li class="fragment">If, instead, it is describing a <em>sample</em>, then it must be a <em>sample statistic</em>.</li>
-</ul></li>
-<li class="fragment">The other way to think about this is through randomness: remember that different samples correspond to different observed values of our sample statistic.
-<ul>
-<li class="fragment">So, imagine asking yourself: “if I took a different sample, would this quantity change?” If so, then it is a sample statistic (or, more carefully, an observed instance of a sample statistic).</li>
-</ul></li>
-</ul>
-</section>
-<section id="worked-out-example" class="slide level2">
-<h2>Worked-Out Example</h2>
 <div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Worked-Out Example 1</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<div style="font-size: 30px">
-<p>A veterinarian wishes to determine the true proportion of all cats that suffer from FIV (Feline Immunodeficiency Virus). To that end, she takes a representative sample of 100 cats and finds that 3.2% of cats in this sample have FIV.</p>
-<ol type="a">
-<li>Identify the population.</li>
-<li>Identify the sample.</li>
-<li>Identify the population parameter of interest.</li>
-<li>Is the value of <span class="math inline">\(3.2\%\)</span> a population parameter, or an observed instance of a sample statistic?</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="solution" class="slide level2" style="font-size:30px">
-<h2>Solution</h2>
-<ol type="a">
-<li class="fragment"><p>the population is the set of all cats in the world, since we the veterinarian seeks to describe the prevalence of FIV among <em>all cats</em>.</p></li>
-<li class="fragment"><p>In this context, the sample is the set of 100 cats the veterinarian examined.</p></li>
-<li class="fragment"><p>The population parameter of interest is <span class="math inline">\(p =\)</span> “the true proportion of cats that suffer from FIV”.</p></li>
-<li class="fragment"><p>The value of 3.2% is an observed instance of a <strong>sample statistic</strong>, because if the veterinarian had taken a <em>different</em> sample of 100 cats she likely would have observed a different proportion of FIV-positive cats.</p>
-<ul>
-<li class="fragment">If, instead, the problem stated that 3.2% of <em>all cats</em> have FIV, then this would be describing a <em>population parameter</em> as it is a statement about the <em>population</em>.</li>
-</ul></li>
-</ol>
-</section>
-<section id="your-turn" class="slide level2">
-<h2>Your Turn!</h2>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Exercise 1</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<div style="font-size: 30px">
-<p>A group of (slightly bored) college students would like to determine the true average amount of soda (in liters) in 1-liter soda bottles. To that effect, they purchase 12 different 1-liter soda bottles and find the average amount of soda in these 12 bottles is 0.98L.</p>
-<ol type="a">
-<li>Identify the population.</li>
-<li>Identify the sample.</li>
-<li>Identify the population parameter of interest.</li>
-<li>Is the value of 0.98 a population parameter, or an observed instance of a sample statistic?</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="different-population-parameters" class="slide level2" style="font-size:30px">
-<h2>Different Population Parameters</h2>
-<ul>
-<li class="fragment"><p>So far we’ve seen examples of two different population parameters:</p>
-<ul>
-<li class="fragment">A <strong>population proportion</strong></li>
-<li class="fragment">A <strong>population mean</strong></li>
-</ul></li>
-<li class="fragment"><p>Other population parameters exist! For instance, we could talk about the population <em>median</em>, the population <em>variance</em>, or even the population <em>IQR</em>.</p></li>
-<li class="fragment"><p>Up until now, I’ve been pretty vague about what “inferences” mean. This is because “making inferences” is a broad term!</p></li>
-<li class="fragment"><p>One part of making inferences is trying to <strong>estimate</strong> the value of a population parameter.</p>
-<ul>
-<li class="fragment">This process is called <strong>parameter estimation</strong>.</li>
-</ul></li>
-</ul>
-</section>
-<section id="parameter-estimation" class="slide level2" style="font-size:30px">
-<h2>Parameter Estimation</h2>
-<ul>
-<li class="fragment">Both Worked-Out Example 1 and Exercise 1 were (implicitly) problems about parameter estimation.
-<ul>
-<li class="fragment">In Worked-Out Example 1, the veterinarian wanted to <em>estimate</em> the true proportion of FIV-positive cats</li>
-<li class="fragment">In Exercise 1, the college students wanted to <em>estimate</em> the true average amount of soda in 1L soda bottles.</li>
-</ul></li>
-<li class="fragment">In general, we use a sample statistic to estimate a population parameter. Some common estimators of some population parameters are:</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<div style="font-size:30px">
-<table>
-<colgroup>
-<col style="width: 36%">
-<col style="width: 26%">
-<col style="width: 36%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Parameter</th>
-<th style="text-align: center;">Symbol</th>
-<th style="text-align: center;">Estimator</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Mean</td>
-<td style="text-align: center;"><span class="math inline">\(\mu\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle \overline{X} = \frac{1}{n} \sum_{i=1}^{n} X_i\)</span> <br> (the sample mean)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Proportion</td>
-<td style="text-align: center;"><span class="math inline">\(p\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\widehat{P}\)</span> <br> (the sample proportion)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Variance</td>
-<td style="text-align: center;"><span class="math inline">\(\sigma^2\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle s_x^2 = \frac{1}{n - 1} \sum_{i=1}^{n} (X_i - \overline{X})^2\)</span> <br> (the sample variance)</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Std. Dev</td>
-<td style="text-align: center;"><span class="math inline">\(\sigma\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\displaystyle s_x = \sqrt{\frac{1}{n - 1} \sum_{i=1}^{n} (X_i - \overline{X})^2}\)</span> <br> (the sample std. dev.)</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="a-wrench-in-the-spanner" class="slide level2" style="font-size:30px">
-<h2>A Wrench in the Spanner</h2>
-<ul>
-<li class="fragment">Now, can anyone see a potential problem in using a sample statistic to estimate a population parameter?
-<ul>
-<li class="fragment">That’s right- the sample statistics are <em>random</em>!</li>
-<li class="fragment">For example, every time the veterinarian in Worked-Out Example 1 took a new sample of 100 cats she would obtain a different estimate for the true proportion of cats that have FIV.</li>
-<li class="fragment">So, we need some way to express the uncertainty that comes from the randomness of these sample statistics.</li>
-</ul></li>
-<li class="fragment">To explore this, let’s do a live demo using Python.
-<ul>
-<li class="fragment">In the demo, I will <em>simulate</em> drawing several samples of 500 cats, recording the proportion of FIV-positive cats, and drawing the distribution of these sample proportions.</li>
-</ul></li>
-<li class="fragment">By the way, the distribution of a sample statistic is called the <strong>sampling distribution</strong> of that statistic.</li>
-</ul>
-</section>
-<section id="result" class="slide level2" style="font-size:30px">
-<h2>Result</h2>
-<ul>
-<li class="fragment">Before we summarize these results, we should introduce a bit of notation.
-<ul>
-<li class="fragment">We let <span class="math inline">\(\widehat{P}\)</span>, read “p-hat” denote the <em>random variable</em> that is the proportion of a hypothetical sample.</li>
-<li class="fragment">We let <span class="math inline">\(\widehat{p}\)</span> denote an <em>observed instance</em> of <span class="math inline">\(\widehat{P}\)</span>; i.e.&nbsp;the sample proportion of a <em>particular</em> sample.</li>
-</ul></li>
-<li class="fragment">With this notation in mind, we can see that the demo illustrated the following fact: <span class="math inline">\(\widehat{P}\)</span> is normally distributed!
-<ul>
-<li class="fragment">It turns out that the expected value of <span class="math inline">\(\widehat{P}\)</span> is <span class="math inline">\(p\)</span>, the true population proportion, and the standard deviation (which, in the context of estimation, is sometimes called the <strong>standard error</strong>) is <span class="math display">\[ \sqrt{\frac{p(1 - p)}{n} } \]</span></li>
-</ul></li>
-</ul>
-</section>
-<section id="central-limit-theorem-for-proportions" class="slide level2" style="font-size:30px">
-<h2>Central Limit Theorem for Proportions</h2>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Important</strong></p>
+<p><strong>Result</strong></p>
 </div>
 <div class="callout-content">
-<div style="font-size: 24px">
-<p>If we have reasonably representative samples taken from a population with true proportion <span class="math inline">\(p\)</span> and let <span class="math inline">\(\widehat{P}\)</span> denote the sample proportion, then <span class="math display">\[ \widehat{P} \sim \mathcal{N}\left( p, \ \sqrt{ \frac{p(1 - p)}{n} } \right) \]</span> <strong>provided that</strong></p>
 <div>
-<ol type="1">
-<li><span class="math inline">\(np \geq 10\)</span></li>
-<li><span class="math inline">\(n(1 - p) \geq 10\)</span></li>
-</ol>
+<div style="font-size: 30px">
+<p>Consider a population with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>. If <span class="math inline">\(\overline{X}\)</span> denotes the mean of a sample of size <span class="math inline">\(n\)</span> taken from this population, then <span class="math display">\[ \mathrm{SD}(\overline{X}) = \frac{\sigma}{\sqrt{n}} \]</span></p>
 </div>
 </div>
 </div>
 </div>
 </div>
+</div>
+</section>
+<section id="general-confidence-intervals-1" class="slide level2">
+<h2>General Confidence Intervals</h2>
 <ul>
-<li class="fragment">The two conditions above are sometimes referred to as the <strong>success-failure conditions</strong>, and must be satisfied in order to invoke the Central Limit Theorem for Proportions (CLTP).
-<ul>
-<li class="fragment">We’ll talk a bit more about “reasonably representative” samples later in the course (time-permitting).</li>
-</ul></li>
+<li class="fragment">Therefore, our confidence intervals will take the form <span class="math display">\[ \overline{X} \pm c \cdot \frac{\sigma}{\sqrt{n}} \]</span> where the constant <span class="math inline">\(c\)</span> depends on both the sampling distribution of <span class="math inline">\(\overline{X}\)</span> as well as the confidence level.</li>
 </ul>
 </section>
-<section id="worked-out-example-2" class="slide level2" style="font-size:32px">
+<section id="normal-population" class="slide level2" style="font-size:30px">
+<h2>Normal Population</h2>
+<ul>
+<li class="fragment"><p>Let’s work on finding the sampling distribution of <span class="math inline">\(\overline{X}\)</span>.</p></li>
+<li class="fragment"><p>It turns out that the first thing we need to ask is whether the underlying population is normally distributed or not.</p></li>
+<li class="fragment"><p>If the underlying population <em>is</em> normally distributed [again with population mean <span class="math inline">\(\mu\)</span> and population standard deviation <span class="math inline">\(\sigma\)</span>], we have that <span class="math display">\[ \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0, \ 1) \]</span> meaning the constant <span class="math inline">\(c\)</span> should be selected as the appropriate percentile of the <em>standard normal</em> distribution: <span class="math display">\[ \overline{x} \pm z^{\ast} \cdot \frac{\sigma}{\sqrt{n}} \]</span></p></li>
+</ul>
+</section>
+<section id="worked-out-example" class="slide level2" style="font-size:30px">
 <h2>Worked-Out Example</h2>
 <div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -604,11 +499,11 @@
 <div class="callout-content">
 <div>
 <div style="font-size: 30px">
-<p>Suppose a recent study has revealed that 87% of Americans are in favor of offering more healthy options at fast-food restaurants. A surveyor takes a representative sample of size 120 Americans, and records the proportion of these Americans that support offering more healthy options at fast-food restaurants.</p>
+<p>The heights of adult males are assumed to follow a normal distribution with mean 70 in and standard deviation 15 in. A representative sample of 120 adult males is taken, and the average height of males in this sample is recorded.</p>
 <ol type="a">
-<li>Define the random variable of interest.</li>
-<li>What is the probability that fewer than 90% of people in the sample support offering more healthy options at fast-food restaurants?</li>
-<li>What is the probability that the proportion of people in the sample who support offering more healthy options at fast-food restaurants lies within 2% of the true proportion of 87%?</li>
+<li>What is the random variable of interest?</li>
+<li>Is the value of 70 in a population parameter or a sample statistic?</li>
+<li>What is the probability that the average height of males in the sample is between 69.5 in and 71.5 in?</li>
 </ol>
 </div>
 </div>
@@ -620,38 +515,76 @@
 <section id="solutions" class="slide level2" style="font-size:30px">
 <h2>Solutions</h2>
 <ol type="a">
-<li class="fragment">Let <span class="math inline">\(\widehat{P} =\)</span> the proportion of Americans in the sample of size <span class="math inline">\(n = 120\)</span> that support offering more healthy options at fast-food restaurants.</li>
-</ol>
-</section>
-<section id="solutions-1" class="slide level2" style="font-size:28px">
-<h2>Solutions</h2>
-<ol start="2" type="a">
-<li class="fragment">We would like to utilize the Central Limit Theorem for Proportions. First, we check:
-<ol type="1">
-<li class="fragment"><span class="math inline">\(np = (120) \cdot (0.87) = 104.4 \geq 10 \ \checkmark\)</span></li>
-<li class="fragment"><span class="math inline">\(n(1 - p) = (120) \cdot (1 - 0.87) \approx 15.6 \geq 10 \ \checkmark\)</span></li>
+<li class="fragment"><p><span class="math inline">\(\overline{X} =\)</span> the average height of a sample of 120 adult males.</p></li>
+<li class="fragment"><p>The value of 70 in is a population parameter, as it is the true average height of all adult males.</p></li>
+<li class="fragment"><p>The quantity we seek is <span class="math inline">\(\mathbb{P}(69.5 \leq \overline{X} \leq 71.5)\)</span>. Because the population is normally distributed, we can use our result above to conclude <span class="math display">\[ \overline{X} \sim \mathcal{N}\left( 70, \ \frac{15}{\sqrt{120}} \right) \sim \mathcal{N}\left( 70, \ 1.369 \right) \]</span></p></li>
 </ol>
 <ul>
-<li class="fragment">Since both of the success-failure conditions are satisfied, we know that <span class="math display">\[ \widehat{P} \sim \mathcal{N}\left(0.87, \ \sqrt{\frac{0.87 \cdot (1 - 0.87)}{120}} \right) \sim \mathcal{N}\left(0.87, \ 0.031 \right) \]</span> and so <span class="math display">\[ \mathbb{P}(\widehat{P} \leq 0.9) = \mathbb{P}\left( \frac{\widehat{P} - 0.87}{0.031} \leq \frac{0.9 - 0.87}{0.031} \right) = \mathbb{P}\left( \frac{\widehat{P} - 0.87}{0.031} \leq 0.97 \right) \]</span> which equates to around <span class="math inline">\(\boxed{0.8340 = 83.40\%}\)</span></li>
-</ul></li>
-</ol>
+<li class="fragment">To find <span class="math inline">\(\mathbb{P}(69.5 \leq \overline{X} \leq 71.5)\)</span>, we therefore utilize the same techniques we used previously, when dealing with normal distribution problems: <span class="math display">\[\mathbb{P}(69.5 \leq \overline{X} \leq 71.5) = \mathbb{P}(\overline{X} \leq 71.5) - \mathbb{P}(\overline{X} \leq 69.5) \]</span></li>
+</ul>
 </section>
-<section id="solutions-2" class="slide level2" style="font-size:30px">
+<section id="solutions-1" class="slide level2" style="font-size:30px">
 <h2>Solutions</h2>
-<ol start="3" type="a">
-<li class="fragment">We seek <span class="math inline">\(\mathbb{P}(0.85 \leq \widehat{P} \leq 0.89)\)</span>.
+<div>
 <ul>
-<li class="fragment">First, we write this as <span class="math inline">\(\mathbb{P}(\widehat{P} \leq 0.89) - \mathbb{P}(\widehat{P} \leq 0.85)\)</span></li>
-<li class="fragment">Next, we standardize: <span class="math display">\[\begin{align*}
-z_1 &amp; = \frac{0.89 - 0.87}{0.031} \approx 0.65   \\
-z_2 &amp; = \frac{0.85 - 0.87}{0.031} \approx -0.65
+<li>The associated <span class="math inline">\(z-\)</span>scores are <span class="math display">\[\begin{align*}
+z_1     &amp; = \frac{71.5 - 70}{\left( \frac{15}{\sqrt{120}} \right)} \approx 1.10    \\
+z_2     &amp; = \frac{69.5 - 70}{\left( \frac{15}{\sqrt{120}} \right)} \approx -0.37
 \end{align*}\]</span></li>
-<li class="fragment">Finally, we consult a table to see that the desired probability is <span class="math display">\[ 0.7422 - 0.2578 = \boxed{0.4844 = 48.44\%} \]</span></li>
-</ul></li>
-</ol>
+</ul>
+</div>
+<ul>
+<li class="fragment">The associated probabilities (from a <span class="math inline">\(z-\)</span>table) are <span class="math inline">\(0.8643\)</span> and <span class="math inline">\(0.3557\)</span>, respectively, meaning the desired probability is <span class="math display">\[ 0.8643 - 0.3557 = \boxed{ 0.5086 = 50.86\% } \]</span></li>
+</ul>
 </section>
-<section id="your-turn-1" class="slide level2">
-<h2>Your Turn!</h2>
+<section id="non-normal-population" class="slide level2" style="font-size:30px">
+<h2>Non-Normal Population</h2>
+<ul>
+<li class="fragment"><p>Alright, so that explains what to do if the population values follow a normal distribution.</p></li>
+<li class="fragment"><p>But what if they don’t? In real-world settings, we don’t typically get to know exactly what the population distribution is.</p></li>
+<li class="fragment"><p>If our population is <em>not</em> normally distributed, we need to ask ourselves whether we have a “large enough sample”.</p></li>
+<li class="fragment"><p>Admittedly, there isn’t a single agreed-upon cutoff for “large enough”- for the purposes of this class, we will use <span class="math inline">\(n \geq 30\)</span> to mean “large enough” and <span class="math inline">\(n &lt; 30\)</span> to therefore be “not large enough.”</p></li>
+</ul>
+</section>
+<section id="non-normal-population-n-30" class="slide level2" style="font-size:30px">
+<h2>Non-Normal Population, <span class="math inline">\(n &lt; 30\)</span></h2>
+<ul>
+<li class="fragment"><p>If the population is non-normal, and the sample size is not large enough…</p></li>
+<li class="fragment"><p>… we can’t do anything.</p></li>
+<li class="fragment"><p>More specifically, there aren’t any results we can use to confidently make inferences about the population mean- there is just too much uncertainty, between the uncertainty regarding the population’s distribution <em>and</em> the small sample size.</p></li>
+</ul>
+</section>
+<section id="non-normal-population-n-geq-30" class="slide level2" style="font-size:30px">
+<h2>Non-Normal Population, <span class="math inline">\(n \geq 30\)</span></h2>
+<ul>
+<li class="fragment"><p>If the population is non-normal, and the sample size <em>is</em> large enough…</p></li>
+<li class="fragment"><p>… we’re still (perhaps surprisingly) in business!</p></li>
+<li class="fragment"><p>It turns out that if <span class="math inline">\(n\)</span> is large enough, <span class="math display">\[ \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0, \ 1) \]</span> that is, the sample mean once again has a normal sampling distribution!</p></li>
+<li class="fragment"><p>In fact, this is such an important result, we give it a name:</p></li>
+</ul>
+</section>
+<section id="central-limit-theorem-for-the-sample-mean" class="slide level2" style="font-size:30px">
+<h2>Central Limit Theorem for the Sample Mean</h2>
+<div class="fragment">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><strong>Central Limit Theorem for the Sample Mean</strong></strong></p>
+</div>
+<div class="callout-content">
+<div style="font-size: 28px">
+<p>If we have reasonably representative samples of large enough size <span class="math inline">\(n\)</span>, taken from a population with true mean <span class="math inline">\(\mu\)</span> and true standard deviation <span class="math inline">\(\sigma\)</span>, then <span class="math display">\[ \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}\left(0, \ 1 \right) \]</span> or, equivalently, <span class="math display">\[ \overline{X} \sim \mathcal{N}\left( \mu, \ \frac{\sigma}{\sqrt{n}} \right) \]</span> where <span class="math inline">\(\overline{X}\)</span> denotes the sample mean.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="worked-out-example-2" class="slide level2" style="font-size:30px">
+<h2>Worked-Out Example</h2>
 <div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -659,16 +592,18 @@ z_2 &amp; = \frac{0.85 - 0.87}{0.031} \approx -0.65
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Exercise 2</strong></p>
+<p><strong>Worked-Out Example 2</strong></p>
 </div>
 <div class="callout-content">
 <div>
 <div style="font-size: 30px">
-<p>At a certain company, it is known that 65% of employees are from underrepresented minorities (UMs). A representative sample of 80 employees is taken, and the proportion of people from UMs is recorded.</p>
+<p>The temperatures collected at all weather stations in Antarctica follow some unknown distribution with unknown mean and known standard deviation 8<sup>o</sup>F. A researcher records the temperature measurements from a representative sample of 81 different weather stations, and finds the average temperature to be 26<sup>o</sup>F.</p>
 <ol type="a">
-<li>Define the random variable of interest, and use the notational convention introduced above.</li>
-<li>What is the probability that greater than than 50% of people in the sample are from UMs?</li>
-<li>What is the probability that the proportion of people in the sample who are from UMs lies within 5% of the true proportion of 65%?</li>
+<li>What is the population?</li>
+<li>What is the sample?</li>
+<li>Define the random variable of interest.</li>
+<li>What is the probability that this observed average of 26<sup>o</sup>F lies within 1<sup>o</sup>F of the true average temperature across all weather stations in Antarctica?</li>
+<li>Construct a 90% confidence interval for the true average temperature across all weather stations in Antarctica.</li>
 </ol>
 </div>
 </div>
@@ -676,12 +611,318 @@ z_2 &amp; = \frac{0.85 - 0.87}{0.031} \approx -0.65
 </div>
 </div>
 </div>
-
-
-<img src="5a_hex.png" class="slide-logo r-stretch"><div class="footer footer-default">
-
+</section>
+<section id="solutions-2" class="slide level2" style="font-size:30px">
+<h2>Solutions</h2>
+<ol type="a">
+<li class="fragment"><p>The population is the set of all weather stations in Antarctica.</p></li>
+<li class="fragment"><p>The sample is the 81 weather stations selected by the researcher.</p></li>
+<li class="fragment"><p>The random variable of interest is <span class="math inline">\(\overline{X}\)</span>, the average temperature across 81 randomly-selected weather stations in Antarctica.</p></li>
+</ol>
+<div class="fragment">
+<p><strong>Part (d):</strong> This is where things get interesting!</p>
+</div>
+<ul>
+<li class="fragment">Is the population normally distributed?
+<ul>
+<li class="fragment">No.&nbsp;Or, at least, we don’t know for certain, so it’s safer <em>not</em> to assume it is.</li>
+</ul></li>
+<li class="fragment">Is our sample size large enough to invoke the CLT?
+<ul>
+<li class="fragment">Yes, since <span class="math inline">\(n = 81 \geq 30\)</span>.</li>
+</ul></li>
+<li class="fragment">Therefore, the CLT applies and tells us that <span class="math display">\[ \overline{X} \sim \mathcal{N}\left(\mu, \ \frac{8}{\sqrt{81}} \right) \sim \mathcal{N}\left(\mu, \ \frac{8}{9} \right) \]</span></li>
+</ul>
+</section>
+<section id="solutions-3" class="slide level2" style="font-size:30px">
+<h2>Solutions</h2>
+<ul>
+<li class="fragment"><p>Again, what we have found is <span class="math display">\[ \overline{X} \sim \mathcal{N}\left(\mu, \ \frac{8}{\sqrt{81}} \right) \sim \mathcal{N}\left(\mu, \ \frac{8}{9} \right) \]</span></p></li>
+<li class="fragment"><p>We seek <span class="math inline">\(\mathbb{P}(\mu - 1 \leq \overline{X} \leq \mu + 1)\)</span>, which we first write as <span class="math display">\[ \mathbb{P}(\overline{X} \leq \mu + 1) - \mathbb{P}(\overline{X} \leq \mu - 1) \]</span></p></li>
+<li class="fragment"><p>Computing the necessary <span class="math inline">\(z-\)</span>scores yields <span class="math display">\[\begin{align*}
+z_1   &amp;  = \frac{(\mu + 1) - \mu}{8/9} = \frac{9}{8} \approx 1.13    \\
+z_2   &amp;  = \frac{(\mu - 1) - \mu}{8/9} = -\frac{9}{8} \approx -1.13
+\end{align*}\]</span></p></li>
+</ul>
+</section>
+<section id="solutions-4" class="slide level2" style="font-size:30px">
+<h2>Solutions</h2>
+<ul>
+<li class="fragment">The corresponding values from the normal table are <span class="math inline">\(0.8708\)</span> and <span class="math inline">\(0.1292\)</span>, respectively, meaning the desired probability is <span class="math display">\[ 0.8708 - 0.1292 = \boxed{74.16\%} \]</span></li>
+</ul>
+</section>
+<section id="unknown-sigma" class="slide level2" style="font-size:28px">
+<h2>Unknown <span class="math inline">\(\sigma\)</span>?</h2>
+<ul>
+<li class="fragment"><p>Notice that in the previous worked-out example (and, indeed, in the CLT for sample means), we need information on the true population standard deviation <span class="math inline">\(\sigma\)</span>.</p></li>
+<li class="fragment"><p>What happens if we don’t have access to <span class="math inline">\(\sigma\)</span>?</p></li>
+<li class="fragment"><p>Well, we encountered a somewhat similar situation in our discussion on proportions; the standard error of <span class="math inline">\(\widehat{P}\)</span> depended on <span class="math inline">\(p\)</span>, which proves to be a problem in practice (as, again, the true value of <span class="math inline">\(p\)</span> is often unknown).</p></li>
+<li class="fragment"><p>Does anyone remember how we solved this issue in the context of population proportions?</p>
+<ul>
+<li class="fragment">That’s right- we used the substitution approximation!</li>
+<li class="fragment">Specifically, we replaced the unknown parameter (<span class="math inline">\(p\)</span>) with a natural point estimator of it.</li>
+</ul></li>
+</ul>
+</section>
+<section id="unknown-sigma-1" class="slide level2" style="font-size:28px">
+<h2>Unknown <span class="math inline">\(\sigma\)</span>?</h2>
+<ul>
+<li class="fragment"><p>Can anyone propose a point estimator for <span class="math inline">\(\sigma\)</span>?</p></li>
+<li class="fragment"><p>That’s right; <span class="math inline">\(s\)</span>, the sample standard deviation! <span class="math display">\[ s = \sqrt{ \frac{1}{n - 1} \sum_{i=1}^{n} (X_i - \overline{X})^2} \]</span></p></li>
+<li class="fragment"><p>In other words, our proposition is to use confidence intervals of the form <span class="math display">\[ \overline{x} \pm c \cdot \frac{s}{\sqrt{n}} \]</span></p></li>
+<li class="fragment"><p>Notice, however, that this introduces additional uncertainty into the problem as <span class="math inline">\(s\)</span> itself is a random variable (different samples result in different sample standard deviations).</p></li>
+<li class="fragment"><p>It turns out that the additional uncertainty introduced is so large that we become <strong>no longer able to use the normal distribution.</strong></p></li>
+</ul>
+</section>
+<section id="using-s-in-place-of-sigma" class="slide level2" style="font-size:28px">
+<h2>Using <span class="math inline">\(s\)</span> in place of <span class="math inline">\(\sigma\)</span></h2>
+<ul>
+<li class="fragment"><p>Firstly, recall that we used percentiles of the standard normal distribution because <span class="math display">\[ \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0, \ 1) \]</span></p></li>
+<li class="fragment"><p>Mathematically, what the above discussion is saying is that the distribution of <span class="math display">\[ \frac{\overline{X} - \mu}{s / \sqrt{n}} \]</span> is no longer normal.</p></li>
+<li class="fragment"><p>It turns out that, still assuming a large enough sample size, the quantity above follows what is known as a <strong><em>t</em>-distribution</strong>.</p></li>
+</ul>
+</section>
+<section id="the-t-distribution" class="slide level2" style="font-size:28px">
+<h2>The <em>t-</em>distribution</h2>
+<ul>
+<li class="fragment"><p>The <span class="math inline">\(t-\)</span>distribution looks very similar to the standard normal distribution in that it is centered at 1, and has a bell-like density curve.</p></li>
+<li class="fragment"><p>However, one key difference is that the <span class="math inline">\(t-\)</span>distribution is parameterized by a <em>single</em> parameter, called the <strong>degrees of freedom</strong>, which we abbreviate <span class="math inline">\(\mathrm{df}\)</span>.</p></li>
+</ul>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Lec11_files/figure-revealjs/unnamed-chunk-1-1.png" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </section>
+<section id="the-t-distribution-1" class="slide level2" style="font-size:28px">
+<h2>The <em>t-</em>distribution</h2>
+<ul>
+<li class="fragment"><p>Another key property is that, for all finite degrees of freedom, the tails of the <em>t-</em>distribution density curve are “wider” (i.e.&nbsp;higher) than the tails of the standard normal density curve.</p>
+<ul>
+<li class="fragment">What this means is that the <em>t-</em>distribution allows for higher probabilities of tail events, thereby incorporating the additional uncertainty injected into our confidence intervals by using <span class="math inline">\(s\)</span> in place of <span class="math inline">\(\sigma\)</span></li>
+</ul></li>
+<li class="fragment"><p>An interesting fact is that the <em>t-</em>distribution with <span class="math inline">\(\infty\)</span> degrees of freedom is equivalent to the standard normal distribution.</p>
+<ul>
+<li class="fragment">As such, with greater degrees of freedom, the <em>t-</em>distribution - and its percentiles - more and more closely resembles the standard normal distribution.</li>
+</ul></li>
+</ul>
+</section>
+<section id="back-to-confidence-intervals" class="slide level2" style="font-size:28px">
+<h2>Back to Confidence Intervals</h2>
+<ul>
+<li class="fragment"><p>Here is the result we’ve been working toward: with samples of reasonably large size <span class="math inline">\(n\)</span> from a distribution with mean <span class="math inline">\(mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>, <span class="math display">\[ \frac{\overline{X} - \mu}{s / \sqrt{n}} \sim t_{n - 1} \]</span> where <span class="math inline">\(t_{n - 1}\)</span> denotes the <span class="math inline">\(t-\)</span>distribution with <span class="math inline">\(n - 1\)</span> degrees of freedom.</p></li>
+<li class="fragment"><p>As such, our confidence intervals become <span class="math display">\[ \overline{x} \pm t_{n - 1, \ \alpha} \cdot \frac{s}{\sqrt{n}} \]</span> where <span class="math inline">\(t_{n - 1, \ \alpha}\)</span> denotes the appropriate quantile (corresponding to our desired confidence level) of the <span class="math inline">\(t_{n - 1}\)</span> distribution.</p></li>
+</ul>
+</section>
+<section id="worked-out-example-3" class="slide level2" style="font-size:30px">
+<h2>Worked-Out Example</h2>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Worked-Out Example 3</strong></p>
+</div>
+<div class="callout-content">
+<div>
+<div style="font-size: 30px">
+<p>A sociologist is interested in performing inference on the true average monthly income (in thousands of dollars) of all citizens of the nation of <em>Gauchonia</em>. As such, she takes a representative sample of 49 people, and finds that these 49 people have an average monthly income of 2.25 and a standard deviation of 1.66.</p>
+<ol type="a">
+<li>What is the population?</li>
+<li>What is the sample?</li>
+<li>Define the random variable of interest.</li>
+<li>Construct a 95% confidence interval for the true average monthly income (in thousands of dollars) of <em>Gauchonian</em> citizens.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="solutions-5" class="slide level2" style="font-size:32px">
+<h2>Solutions</h2>
+<ol type="a">
+<li class="fragment"><p>The population is the set of all <em>Gauchonian</em> residents.</p></li>
+<li class="fragment"><p>The sample is the set of 49 <em>Gauchonian</em> residents included in the sociologist’s sample.</p></li>
+<li class="fragment"><p>The random variable of interest is <span class="math inline">\(\overline{X}\)</span>, the sample average monthly income (in thousands of dollars) of a representative sample of 49 Gauchonian* residents.</p></li>
+</ol>
+</section>
+<section id="solutions-contd" class="slide level2" style="font-size:28px">
+<h2>Solutions (cont’d)</h2>
+<p><strong>Part (d)</strong></p>
+<ul>
+<li class="fragment"><p>Is the population normally distributed?</p>
+<ul>
+<li class="fragment">No.</li>
+</ul></li>
+<li class="fragment"><p>Is the sample size large enough?</p>
+<ul>
+<li class="fragment">Yes; <span class="math inline">\(n = 49 \geq 30\)</span>.</li>
+</ul></li>
+<li class="fragment"><p>Do we know the population standard deviation?</p>
+<ul>
+<li class="fragment">No, we only know <span class="math inline">\(s\)</span>.</li>
+</ul></li>
+<li class="fragment"><p>Therefore, we need to use the <em>t-</em>distribution with <span class="math inline">\(n - 1 = 49 - 1 = 48\)</span> degrees of freedom.</p></li>
+<li class="fragment"><p>Specifically, we need to find the 2.5<sup>th</sup> percentile of the <span class="math inline">\(t_{48}\)</span> distribution.</p></li>
+<li class="fragment"><p>Let’s go over how to read a <em>t</em>-table.</p></li>
+</ul>
+</section>
+<section id="reading-a-t-table" class="slide level2">
+<h2>Reading a <em>t</em>-table</h2>
+<p>(In-Class Exercise)</p>
+</section>
+<section id="solutions-contd-1" class="slide level2" style="font-size:24px">
+<h2>Solutions (cont’d)</h2>
+<ul>
+<li class="fragment">I’d also like to mention that we can use Python to help us:</li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> sps</span>
+<span id="cb1-2"><a href="#cb1-2"></a>sps.t.ppf(<span class="fl">0.025</span>, <span class="dv">48</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>np.float64(-2.0106347576242323)</code></pre>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment"><p>You’ll learn more about this code during Lab today!</p></li>
+<li class="fragment"><p>Therefore, our 95% confidence interval takes the form <span class="math display">\[ \overline{x} \pm 2.01 \cdot \frac{s}{\sqrt{49}} \]</span> or, equivalently, <span class="math display">\[ (2.25) \pm (2.01) \cdot \frac{1.66}{7} = 2.25 \pm 0.477 = \boxed{[1.773 \ , \ 2.727]}\]</span></p></li>
+<li class="fragment"><p>The interpretation of this interval is much the same as our intervals for proportions:</p></li>
+</ul>
+<div class="fragment">
+<blockquote>
+<p>We are 95% confident that the true average monthly income (in thousands of dollars) of <em>Gauchonian</em> residents is between 1.773 and 2.727.</p>
+</blockquote>
+</div>
+</section>
+<section id="general-flowchart" class="slide level2">
+<h2>General Flowchart</h2>
+<div class="cell" data-reveal="true">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">graph TB
+  A[Is the population Normal?  . ] --&gt; |Yes| B{{Use Normal .}}
+  A --&gt; |No| C[Is n &gt;= 30?  .]
+  C --&gt; |Yes| D[sigma or s?  .]
+  C --&gt; |No| E{{cannot proceed   .}}
+  D --&gt; |sigma| F{{Use Normal .}}
+  D --&gt; |s| G{{Use t }}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section>
+<section id="aside-testing-distributional-fits" class="title-slide slide level1 center">
+<h1>Aside: Testing Distributional Fits</h1>
+
+</section>
+<section id="testing-distributional-fits" class="slide level2">
+<h2>Testing Distributional Fits</h2>
+<ul>
+<li class="fragment"><p>Notice that the first question we need to ask ourselves when trying to perform inference on a sample mean is whether or not we believe our population to be normally distributed.</p></li>
+<li class="fragment"><p>This begs the question: given a set of numbers, how can we tell if these numbers were drawn from a normal distribution or not?</p></li>
+<li class="fragment"><p>For example, consider the following set of numbers (which have been assigned to a variable called <code>x</code>):</p></li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[ 1.3315865   0.71527897 -1.54540029 -0.00838385  0.62133597 -0.72008556
+  0.26551159  0.10854853  0.00429143 -0.17460021  0.43302619  1.20303737
+ -0.96506567  1.02827408  0.22863013  0.44513761 -1.13660221  0.13513688
+  1.484537   -1.07980489 -1.97772828 -1.7433723   0.26607016  2.38496733
+  1.12369125  1.67262221  0.09914922  1.39799638 -0.27124799  0.61320418
+ -0.26731719 -0.54930901  0.1327083  -0.47614201  1.30847308  0.19501328
+  0.40020999 -0.33763234  1.25647226 -0.7319695   0.66023155 -0.35087189
+ -0.93943336 -0.48933722 -0.80459114 -0.21269764 -0.33914025  0.31216994
+  0.56515267 -0.14742026 -0.02590534  0.2890942  -0.53987907  0.70816002
+  0.84222474  0.2035808   2.39470366  0.91745894 -0.11227247 -0.36218045
+ -0.23218226 -0.5017289   1.12878515 -0.69781003 -0.08112218 -0.52929608
+  1.04618286 -1.41855603 -0.36249918 -0.12190569  0.31935642  0.4609029
+ -0.21578989  0.98907246  0.31475378  2.46765106 -1.50832149  0.62060066
+ -1.04513254 -0.79800882  1.98508459  1.74481415 -1.85618548 -0.2227737
+ -0.06584785 -2.13171211 -0.04883051  0.39334122  0.21726515 -1.99439377
+  1.10770823  0.24454398 -0.06191203 -0.75389296  0.71195902  0.91826915
+ -0.48209314  0.08958761  0.82699862 -1.95451212]</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="idea-1-histogram" class="slide level2">
+<h2>Idea 1: Histogram</h2>
+<ul>
+<li class="fragment">One idea would be to generate the histogram of <code>x</code>:</li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="Lec11_files/figure-revealjs/unnamed-chunk-5-1.png" width="614"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="downsides" class="slide level2">
+<h2>Downsides</h2>
+<ul>
+<li class="fragment"><p>However, we know that histograms are visually very dependent on the binwidth that was selected!</p>
+<ul>
+<li class="fragment">Furthermore, there are some distributions that <em>look</em> bell-shaped, but are <em>not</em> normal; e.g.&nbsp;the <em>t</em>-distribution!</li>
+</ul></li>
+<li class="fragment"><p>As such, we would like a slightly more rigorous way to check for normality.</p></li>
+<li class="fragment"><p>The tool statisticians most often use is called a <strong>quantile-quantile plot</strong>, or <strong>QQ-Plot</strong> for short.</p></li>
+<li class="fragment"><p>You don’t have to worry too much (for now) about the details of how they are constructed; for now, we’ll just use Python to generate them and then interpret them ourselves.</p></li>
+</ul>
+</section>
+<section id="qq-plot" class="slide level2">
+<h2>QQ-Plot</h2>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>scipy.stats.probplot(x, plot <span class="op">=</span> plt)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="Lec11_files/figure-revealjs/unnamed-chunk-7-3.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="interpreting-qq-plots" class="slide level2">
+<h2>Interpreting QQ-Plots</h2>
+<ul>
+<li class="fragment"><p>The more linear the QQ-plot, the more likely it is that the data came from a normal distribution.</p></li>
+<li class="fragment"><p>When checking for deviations from linearity, however, make sure to check the tails as that is most often where non-normality manifests itself the clearest.</p></li>
+</ul>
+</section>
+<section id="normal-or-not" class="slide level2">
+<h2>Normal or Not?</h2>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="Lec11_files/figure-revealjs/unnamed-chunk-8-5.png" width="960"></p>
+</div>
+</div>
+</div>
+
+<p><img src="5a_hex.png" class="slide-logo"></p>
+<div class="footer footer-default">
+
+</div>
+</section></section>
     </div>
   </div>
 

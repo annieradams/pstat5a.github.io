@@ -12,8 +12,8 @@
   <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Mallory Wang">
-  <meta name="dcterms.date" content="2024-07-18">
-  <title>PSTAT 5A: Summer Session B, 2025 - PSTAT 5A: Lecture 17</title>
+  <meta name="dcterms.date" content="2024-07-25">
+  <title>PSTAT 5A: Summer Session B, 2025 - PSTAT 5A: Lecture 21</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -31,71 +31,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -386,236 +321,310 @@
       margin-right: 0; 
     }
   </style>
-  <script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" data-background-image="5a_hex.png" data-background-opacity="0.5" data-background-position="left" data-background-size="contain" class="center">
-  <h1 class="title" style="text-align: right">PSTAT 5A: Lecture 17</h1>
-  <h2 class="subtitle" style="text-align: right">Hypothesis Testing, Part II</h2>
+  <h1 class="title" style="text-align: right">PSTAT 5A: Lecture 21</h1>
+  <h2 class="subtitle" style="text-align: right">Intro to Statistical Modeling, and Correlation</h2>
   <p class="author" style="text-align: right">Mallory Wang</p>
-  <p class="date" style="text-align: right">2024-07-18</p>
+  <p class="date" style="text-align: right">2024-07-25</p>
 </section>
 <section>
-<section id="hypothesis-testing-for-the-mean" class="title-slide slide level1 center">
-<h1>Hypothesis Testing for the Mean</h1>
+<section id="movitating-statistical-modeling" class="title-slide slide level1 center">
+<h1>Movitating Statistical Modeling</h1>
 
 </section>
-<section id="recap" class="slide level2">
-<h2>Recap</h2>
+<section id="scatterplots-and-trends" class="slide level2">
+<h2>Scatterplots and Trends</h2>
 <ul>
-<li class="fragment"><p>Hypothesis test with proportions: given a population with true proportion <span class="math inline">\(p\)</span>, we took samples and tried to use the data collected in these samples to assess the validity of the claim <span class="math inline">\(H_0: \ p = p_0\)</span> (for some fixed value <span class="math inline">\(p_0\)</span>) against some alternative hypothesis (two-sided, lower-tailed, or upper-tailed)</p></li>
-<li class="fragment"><p>Indeed, we can conduct hypothesis testing on <em>any</em> population parameter.</p></li>
-<li class="fragment"><p>One parameter of interest to statisticians is the <strong>population mean</strong> <span class="math inline">\(\mu\)</span>.</p></li>
-</ul>
-</section>
-<section id="hypothesis-testing-for-the-mean-1" class="slide level2">
-<h2>Hypothesis Testing for the Mean</h2>
+<li class="fragment"><p>This week, we talked about two sample problems.</p></li>
+<li class="fragment"><p>Let’s take a moment to revisit some material from Lecture 2.</p></li>
+<li class="fragment"><p>Specifically, suppose we have data of the form <span class="math inline">\(\{(y_i, \ x_i)\}_{i=1}^{n}\)</span>.</p>
 <ul>
-<li class="fragment"><p>The classification of tests doesn’t change much: we still have <strong>two-sided</strong>, <strong>lower-tailed</strong> and <strong>upper-tailed</strong> tests for the mean.</p></li>
-<li class="fragment"><p>More specifically, if our null is <span class="math inline">\(H_0: \ \mu = \mu_0\)</span> then:</p>
-<ul>
-<li class="fragment">A <strong>two-sided alternative</strong> is <span class="math inline">\(H_A: \ \mu \neq \mu_0\)</span></li>
-<li class="fragment">A <strong>lower-tailed alternative</strong> is <span class="math inline">\(H_A: \ \mu &lt; \mu_0\)</span></li>
-<li class="fragment">An <strong>upper-tailed alternative</strong> is <span class="math inline">\(H_A: \ \mu &gt; \mu_0\)</span></li>
-<li class="fragment">A <strong>simple-vs-simple alternative</strong> is <span class="math inline">\(H_A: \ \mu = \mu_1\)</span> for some <span class="math inline">\(\mu_1 \neq \mu_0\)</span></li>
+<li class="fragment">For simplicity’s sake, let’s assume both <code>x</code> and <code>y</code> are numerical.</li>
 </ul></li>
+<li class="fragment"><p>We have previously seen that the best way to visualize the relationship between <code>y</code> and <code>x</code> is with a <strong>scatterplot</strong></p></li>
 </ul>
 </section>
-<section id="hypothesis-testing-for-the-mean-2" class="slide level2">
-<h2>Hypothesis Testing for the Mean</h2>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
-<li class="fragment"><p>Our testing procedure will be similar to that of hypothesis tests for a proportion: we compute a test statistic, and then compare this value of the test statistic to a critical value that is determined by both the distribution of the test statistic under the null as well as the significance level <span class="math inline">\(\alpha\)</span>.</p></li>
-<li class="fragment"><p>Let’s focus on a two-sided test for now.</p></li>
-<li class="fragment"><p>Our test statistic will certainly involve <span class="math inline">\(\overline{X}\)</span>, the sample mean.</p>
-<ul>
-<li class="fragment">Specifically, it will be some standardized version of <span class="math inline">\(\overline{X}\)</span>.</li>
-<li class="fragment">However, exactly <em>how</em> we standardize will be dependent upon the sampling distribution of <span class="math inline">\(\overline{X}\)</span>.</li>
-</ul></li>
+<li class="fragment">Linear <strong>Negative</strong> Association:</li>
 </ul>
-</section>
-<section id="sampling-distribution-of-overlinex" class="slide level2">
-<h2>Sampling Distribution of <span class="math inline">\(\overline{X}\)</span></h2>
 <div class="fragment">
-<div class="cell" data-reveal="true">
+<div class="cell">
 <div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">graph TB
-  A[Is the population Normal?  . ] --&gt; |Yes| B{{Use Normal .}}
-  A --&gt; |No| C[Is n &gt;= 30?  .]
-  C --&gt; |Yes| D[sigma or s?  .]
-  C --&gt; |No| E{{cannot proceed   .}}
-  D --&gt; |sigma| F{{Use Normal .}}
-  D --&gt; |s| G{{Use t }}
-</pre>
+<p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-1-1.png" width="960"></p>
 </div>
 </div>
 </div>
-</div>
-</div>
-</section>
-<section id="test-statistic" class="slide level2">
-<h2>Test Statistic</h2>
+</div><div class="column" style="width:50%;">
 <ul>
-<li class="fragment"><p>What this means is that our test statistic itself will take different forms depending on the information that is provided.</p></li>
-<li class="fragment"><p>Specifically, we have <span class="math display">\[ \mathrm{TS} = \begin{cases}
-\displaystyle \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}}    &amp; \text{if } \quad  \begin{array}{rl} \bullet &amp; \text{pop. is normal, OR} \\ \bullet &amp; \text{$n \geq 30$ AND $\sigma$ is known} \end{array} \quad \stackrel{H_0}{\sim} \mathcal{N}(0, \ 1) \\[5mm]
-\displaystyle \frac{\overline{X} - \mu_0}{s / \sqrt{n}}         &amp; \text{if } \quad  \begin{array}{rl} \bullet &amp; \text{$n \geq 30$ AND $\sigma$ is not known} \end{array} \quad \stackrel{H_0}{\sim} t_{n - 1}
-\end{cases} \]</span></p></li>
-</ul>
-</section>
-<section id="test-statistic-1" class="slide level2">
-<h2>Test Statistic</h2>
-<ul>
-<li class="fragment"><p>In the two-sided case, our critical value will still be the value <span class="math inline">\(c\)</span> that ensures <span class="math display">\[ \mathbb{P}(|\mathrm{TS}| &gt; c) = \alpha \]</span> (i.e.&nbsp;we reject <span class="math inline">\(H_0\)</span> whenever <span class="math inline">\(\overline{X}\)</span> is far away from <span class="math inline">\(\mu_0\)</span>) meaning <span class="math inline">\(c\)</span> will the <span class="math inline">\((\alpha /2) \times 100\%\)</span> percentile, scaled by negative 1, of either the standard normal distribution or the <span class="math inline">\(t_{n - 1}\)</span> distribution.</p>
-<ul>
-<li class="fragment">Again, don’t forget about how the symmetry of the normal and <em>t</em>-distributions translates to relationships between percentiles!</li>
-</ul></li>
-<li class="fragment"><p>Our test in the two-sided case will then take the form <span class="math display">\[ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if } |\mathrm{TS}| &gt; c \\ \texttt{fail to reject } H_0 &amp; \text{otherwise}\\ \end{cases}  \]</span></p></li>
-<li class="fragment"><p>Let’s do an example.</p></li>
-</ul>
-</section>
-<section id="worked-out-example" class="slide level2">
-<h2>Worked-Out Example</h2>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Worked-Out Example 1</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<div style="font-size: 30px">
-<p>An <a href="https://www.census.gov/newsroom/press-releases/2021/one-way-travel-time-to-work-rises.html">article</a> published by the US Census claims that in 2019 the average American took around 27.6 minutes to commute to work. To test this claim, Jenny took a representative sample of 101 Americans in 2019 and observed that these individuals had a combined average commute time of around 20.1 minutes and a standard deviation of around 12.4 minutes.</p>
-<p>Use the information from Jenny’s sample, along with an <span class="math inline">\(\alpha = 0.05\)</span> level of significance, to test the claim that the average commute time is 27.6 minutes against a two-sided alternative.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="solutions" class="slide level2">
-<h2>Solutions</h2>
-<ul>
-<li class="fragment"><p>It’s a good idea to first determine which distribution we need to use.</p></li>
-<li class="fragment"><p>Is the population normally distributed?</p>
-<ul>
-<li class="fragment"><p>In other words, are the commute times of <em>all</em> Americans normally distributed?</p></li>
-<li class="fragment"><p>No; or, at least, there is not enough inforamtion to conclude that they are.</p></li>
-</ul></li>
-<li class="fragment"><p>Is our sample large enough?</p>
-<ul>
-<li class="fragment">Yes; <span class="math inline">\(n = 101 \geq 30\)</span></li>
-</ul></li>
-<li class="fragment"><p>Do we have <span class="math inline">\(\sigma\)</span> or <span class="math inline">\(s\)</span>?</p>
-<ul>
-<li class="fragment">We only have <span class="math inline">\(s\)</span>, the standard devaition of commute times of Jenny’s <em>sample</em>.</li>
-</ul></li>
-</ul>
-</section>
-<section id="solutions-1" class="slide level2">
-<h2>Solutions</h2>
-<ul>
-<li class="fragment"><p>Therefore, what distribution are we going to use?</p>
-<ul>
-<li class="fragment">The <span class="math inline">\(t_{100}\)</span> distribution.</li>
-</ul></li>
-<li class="fragment"><p>In other words, <span class="math display">\[ \mathrm{TS} = \frac{\overline{X} - 27.6}{12.4 / \sqrt{101}} \stackrel{H_0}{\sim} t_{100} \]</span></p></li>
-<li class="fragment"><p>From the <span class="math inline">\(t-\)</span>table, we see that the critical value will be <span class="math inline">\(1.98\)</span>.</p></li>
-<li class="fragment"><p>Additionally, the observed value of our test statistic (based on Jenny’s sample) is <span class="math display">\[ \frac{20.1 - 27.6}{12.4 / \sqrt{101}} \approx -6.08 \]</span></p></li>
-</ul>
-</section>
-<section id="solutions-2" class="slide level2">
-<h2>Solutions</h2>
-<ul>
-<li class="fragment"><p>Our test rejects <span class="math inline">\(H_0\)</span> when <span class="math inline">\(|\mathrm{TS}| &gt; c\)</span>.</p></li>
-<li class="fragment"><p>In this case, <span class="math inline">\(|\mathrm{TS}| = |-6.07| = 6.07 &gt; 1.98\)</span></p></li>
-<li class="fragment"><p>Therefore, we reject the null:</p></li>
+<li class="fragment">Nonlinear <strong>Negative</strong> Association:</li>
 </ul>
 <div class="fragment">
-<blockquote>
-<p>At an <span class="math inline">\(\alpha = 0.05\)</span> level of significance, there was sufficient evidence to reject the Census’ claim that the average commute time of Americans was 27.6 minutes in favor of the alternative that the true average commute time was <em>not</em> 27.6 minutes.</p>
-</blockquote>
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
 </div>
-</section>
-<section id="one-sided-tests" class="slide level2">
-<h2>One-Sided Tests</h2>
+</div>
+</div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
-<li class="fragment"><p>Analogously as with the hypothesis testing for proportions, the lower-tailed test of a population mean takes the form <span class="math display">\[ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if } \mathrm{TS} &lt; c \\ \texttt{fail to reject } H_0 &amp; \text{otherwise}\\ \end{cases}  \]</span> and the upper-tailed test of a population mean takes the form <span class="math display">\[ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if } \mathrm{TS} &gt; c \\ \texttt{fail to reject } H_0 &amp; \text{otherwise}\\ \end{cases}  \]</span></p></li>
-<li class="fragment"><p>I’ll keep stressing this: there is no need to memorize these forms if you understand what the null and alternative are saying and how that translates to comparing <span class="math inline">\(\overline{X}\)</span> to <span class="math inline">\(\mu_0\)</span>!</p></li>
-</ul>
-</section>
-<section id="worked-out-example-2" class="slide level2">
-<h2>Worked-Out Example</h2>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Worked-Out Example 2</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<div style="font-size: 30px">
-<p><em>McGaucho’s</em> claims that, on average, customers will only need to wait 10 minutes before getting their food. Dubious of these claims, Markus takes a representative sample of 40 customers and finds that these customers waited an combined average of 15 minutes before receiving their food, with a standard deviation of 10 minutes. Based on this, he decides to perform an upper-tailed test on <em>McGaucho’s</em> claims at an <span class="math inline">\(\alpha = 0.01\)</span> level of significance. Conduct the test, and state your conclusions.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="solutions-3" class="slide level2" style="font-size:32px">
-<h2>Solutions</h2>
-<ul>
-<li class="fragment"><p>Again, we should ask ourselves what distribution we are going to use.</p></li>
-<li class="fragment"><p>Is the population normally distributed?</p>
-<ul>
-<li class="fragment"><p>In other words, are the wait times of <em>all</em> customers normally distributed?</p></li>
-<li class="fragment"><p>No; or, at least, there is not enough inforamtion to conclude that they are.</p></li>
-</ul></li>
-<li class="fragment"><p>Is our sample large enough?</p>
-<ul>
-<li class="fragment">Yes; <span class="math inline">\(n = 40 \geq 30\)</span></li>
-</ul></li>
-<li class="fragment"><p>Do we have <span class="math inline">\(\sigma\)</span> or <span class="math inline">\(s\)</span>?</p>
-<ul>
-<li class="fragment">We only have <span class="math inline">\(s\)</span>, the standard devaition of commute times of Markus’ <em>sample</em>.</li>
-</ul></li>
-<li class="fragment"><p>Hence, we will use the <span class="math inline">\(t_{39}\)</span> distribution.</p></li>
-</ul>
-</section>
-<section id="solutions-4" class="slide level2">
-<h2>Solutions</h2>
-<ul>
-<li class="fragment"><p>Now, we are using an upper-tailed alternative, meaning our critical value is the point such that <span class="math inline">\((1 - 0.01) = 0.99\)</span> area lies to the left (or, equivalently, <span class="math inline">\(0.01\)</span> lies to the right).</p></li>
-<li class="fragment"><p>This means our critical value is 2.43, and we reject the null whenever <span class="math inline">\(\mathrm{TS} &gt; 2.43\)</span>.</p></li>
-<li class="fragment"><p>The observed value of our test statistic is <span class="math display">\[ \frac{15 - 10}{10 / \sqrt{40}} = 3.162 \]</span></p></li>
-</ul>
-</section>
-<section id="solutions-5" class="slide level2">
-<h2>Solutions</h2>
-<ul>
-<li class="fragment">Since <span class="math inline">\(\mathrm{TS} = 3.162 &gt; 2.43\)</span>, we reject the null:</li>
+<li class="fragment">Linear <strong>Positive</strong> Association:</li>
 </ul>
 <div class="fragment">
-<blockquote>
-<p>At an <span class="math inline">\(\alpha = 0.01\)</span> level of significance, there was sufficient evidence to reject <em>McGaucho’s’</em> claim that the average wait time of customers is 10 minutes in favor of the alternative that the true wait time is <em>longer</em> than 10 minutes.</p>
-</blockquote>
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
 </div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment">Nonlinear <strong>Positive</strong> Association:</li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="no-relationship" class="slide level2">
+<h2>No Relationship</h2>
+<ul>
+<li class="fragment">Sometimes, two variables will have no relationship at all:</li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="statistical-modeling" class="slide level2">
+<h2>Statistical Modeling</h2>
+<ul>
+<li class="fragment"><p>The goal of <strong>statistical modeling</strong>, loosely speaking, is to try and <em>model</em> the relationship between <code>x</code> and <code>y</code>.</p></li>
+<li class="fragment"><p>Specifically, we assume the relationship takes the form <span class="math display">\[ \texttt{y} = f(\texttt{x}) + \texttt{noise} \]</span> where <span class="math inline">\(f()\)</span> is some function (e.g.&nbsp;linear, nonlinear, etc.)</p></li>
+<li class="fragment"><p>Hang on, what’s the <code>noise</code> term doing?</p></li>
+<li class="fragment"><p>Well, take a look at the previous scatterplots. Even though many of these display (what we visually would describe as) relationships between <code>x</code> and <code>y</code>, the datapoints do not fall perfectly along a single curve.</p></li>
+</ul>
+</section>
+<section id="statistical-modeling-1" class="slide level2">
+<h2>Statistical Modeling</h2>
+<ul>
+<li class="fragment"><p>As a concrete example, suppose <code>y</code> represents <code>weight</code> and <code>x</code> represents <code>height</code>.</p></li>
+<li class="fragment"><p>We do believe there would be some sort of a positive association between <code>weight</code> and <code>height</code> (taller people tend to, in general, weigh more) and we may even assume the relationship is linear.</p></li>
+<li class="fragment"><p>However, just because we know someone’s height, we don’t exactly know what their weight will be.</p>
+<ul>
+<li class="fragment">Again, this is because there is uncertainty and randomness inherent in pretty much everything!</li>
+</ul></li>
+</ul>
+</section>
+<section id="terminology" class="slide level2">
+<h2>Terminology</h2>
+<ul>
+<li class="fragment"><p>Alright, so: given variables <code>y</code> and <code>x</code>, we assume the relationship between them can be modeled as <span class="math display">\[ \texttt{y} = f(\texttt{x}) + \texttt{noise} \]</span></p></li>
+<li class="fragment"><p>Here is some terminology we use:</p>
+<ul>
+<li class="fragment"><code>y</code> is referred to as the <strong>response variable</strong>, or sometimes the <strong>dependent variable</strong>.</li>
+<li class="fragment"><code>x</code> is referred to as the <strong>explanatory variable</strong>, or sometimes the <strong>independent variable</strong>.</li>
+<li class="fragment">The function <span class="math inline">\(f()\)</span> is sometimes referred to as the <strong>signal function</strong>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="terminology-1" class="slide level2">
+<h2>Terminology</h2>
+<ul>
+<li class="fragment"><p>We also have some additional terminology about the entire model, based on the type of the response variable.</p>
+<ul>
+<li class="fragment"><p>If <code>y</code> is numerical, we call the resulting model a <strong>regression model</strong> (or we just say we are in a <strong>regression setting</strong>)</p></li>
+<li class="fragment"><p>If <code>y</code> is categorical, we call the resulting model a <strong>classification model</strong> (or we just say we are in a <strong>classification setting</strong>)</p></li>
+</ul></li>
+<li class="fragment"><p>So, for example, trying to model the relationship between <code>weight</code> and <code>height</code> (assuming <code>weight</code> is our response variable) is a regression problem, since <code>weight</code> is a numerical variable.</p></li>
+</ul>
+</section>
+<section id="classification-problem" class="slide level2">
+<h2>Classification Problem</h2>
+<ul>
+<li class="fragment"><p>As an illustration of a classic classification problem, suppose we have access to a roster of passengers on the <em>Titanic</em>.</p>
+<ul>
+<li class="fragment">For those who don’t know, the RMS <em>Titanic</em> was a British passenger line that crahsed into an iceberg on April 15, 1912.</li>
+</ul></li>
+<li class="fragment"><p>Tragically, not all passengers survived.</p></li>
+<li class="fragment"><p>One question we may want to ask is: how did various factors (e.g.&nbsp;class, gender, etc.) affect whether or not a given passenger survived?</p>
+<ul>
+<li class="fragment">For instance, since women and children boarded lifeboats first, it may be plausible surmise that women and children had a higher likelihood of surviving.</li>
+</ul></li>
+</ul>
+</section>
+<section id="classification-problem-1" class="slide level2">
+<h2>Classification Problem</h2>
+<p>Another example is returning to our Penguins dataset. Here is a scatterplot of flipper length by bill length:</p>
+
+<img data-src="penguins.png" class="r-stretch"><p>This is clearly very linear but it’s missing an additional element.</p>
+</section>
+<section id="classification-problem-2" class="slide level2">
+<h2>Classification Problem</h2>
+
+<img data-src="penguins_group.png" class="r-stretch"></section>
+<section id="multivariate-models" class="slide level2">
+<h2>Multivariate Models</h2>
+<ul>
+<li class="fragment"><p>We don’t have to restrict ourselves to modeling the relationship between a response variable and a single explanatory variable.</p>
+<ul>
+<li class="fragment"><p>For example, suppose <code>y</code> measures income.</p></li>
+<li class="fragment"><p>There are several factors that might contribute to someone’s monthly income: things like <code>education_level</code>, <code>gender</code>, <code>industry</code>, etc.</p></li>
+</ul></li>
+<li class="fragment"><p>We can easily adapt a linear regression model to allow for multiple explanatory variables, which leads to what is known as a <strong>multivariate regression/classification model</strong>: <span class="math display">\[ \texttt{y} = f(\texttt{x}_1, \ \cdots , \ \texttt{x}_k) + \texttt{noise} \]</span></p>
+<ul>
+<li class="fragment">A full treatment of multivariate models requires linear alebra, so I refer you to a course like PSTAT 126 or PSTAT 131/231 for further details.</li>
+</ul></li>
+</ul>
+</section>
+<section id="linear-models" class="slide level2">
+<h2>Linear Models</h2>
+<ul>
+<li class="fragment"><p>For now, let’s focus on modeling the relationship between a numerical response variable and a single numerical explanatory variable: <span class="math display">\[ \texttt{y} = f(\texttt{x}) + \texttt{noise} \]</span></p></li>
+<li class="fragment"><p>Of particular interest to statisticians are the class of <strong>linear models</strong>, which assume a linear form for the signal function.</p></li>
+<li class="fragment"><p>Recall that a line is described by two parameters: an intercept and a slope. As such, to say we are assuming a “linear form” for <span class="math inline">\(f()\)</span> is to say we are assuming <span class="math inline">\(f(x) = \beta_0 + \beta_1 \cdot x\)</span>, so our model becomes <span class="math display">\[ \texttt{y} = \beta_0 + \beta_1 \cdot \texttt{x} + \texttt{noise} \]</span></p></li>
+</ul>
+</section>
+<section id="scatterplots" class="slide level2">
+<h2>Scatterplots</h2>
+<ul>
+<li class="fragment"><p>The first step in examining the elationship between two quantitative variables is to use a graphical display—a scatterplot—to display the association between the two variables.</p></li>
+<li class="fragment"><p>Each point in the scatterplot represents an individual in the dataset.</p></li>
+<li class="fragment"><p>A scatterplot allows us to see if there is an <em>overall pattern</em> in the data and whether there are any striking <em>deviations</em> from that pattern. In particular, we are interested in whether there is a linear relationship between the two variables.</p></li>
+</ul>
+</section>
+<section id="scatterplots-1" class="slide level2">
+<h2>Scatterplots</h2>
+<p>How do we describe a scatterplot?</p>
+<ol type="1">
+<li class="fragment"><p><strong>direction</strong>: positive or negative</p></li>
+<li class="fragment"><p><strong>linearity</strong>: linear or not linear</p></li>
+<li class="fragment"><p><strong>strength</strong>: weak, moderate, strong</p></li>
+<li class="fragment"><p><strong>outliers</strong>: points that clearly fall outside of the overall pattern of the relationship</p></li>
+</ol>
+</section>
+<section id="strength-of-a-relationship" class="slide level2">
+<h2>Strength of a Relationship</h2>
+<ul>
+<li class="fragment"><p>Now, before we delve into the mathematics and mechanics of model fitting, there is another thing we should be aware of.</p></li>
+<li class="fragment"><p>As an example, consider the following two scatterplots:</p></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">Both scatterplots display a positive linear trend. However, the relationship between <code>Y2</code> and <code>X2</code> seems to be “stronger” than the relationship between <code>Y1</code> and <code>X1</code>, does it not?</li>
+</ul>
+</section>
+<section id="correlation-coefficient" class="slide level2">
+<h2>Correlation Coefficient</h2>
+<ul>
+<li class="fragment"><p>Ultimately, we would like to develop a mathematical metric to quantify not only the relationship between two variables, but also the <em>strength</em> of the relationship between these two variables.</p></li>
+<li class="fragment"><p>This quantity is referred to as the <strong>correlation coefficient</strong>.</p></li>
+<li class="fragment"><p>Now, it turns out there are actually a few <em>different</em> correlation coefficients out there. The one we will use in this class (and one of the metrics that is very widely used by statisticians) is called <strong>Pearson’s Correlation Coefficient</strong>, or often just <strong>Pearson’s <em>r</em></strong> (as we use the letter <em>r</em> to denote it.)</p></li>
+</ul>
+</section>
+<section id="pearsons-r" class="slide level2">
+<h2>Pearson’s <em>r</em></h2>
+<ul>
+<li class="fragment"><p>Given two sets <span class="math inline">\(X = \{y_i\}_{i=1}^{n}\)</span> and <span class="math inline">\(Y = \{y_i\}_{i=1}^{n}\)</span> (note that we require the two sets to have the same number of elements!), we compute <em>r</em> using the formula <span class="math display">\[ r = \frac{1}{n - 1} \sum_{i=1}^{n} \left( \frac{x_i - \overline{x}}{s_X} \right) \left( \frac{y_i - \overline{y}}{s_Y} \right)  \]</span> where:</p>
+<ul>
+<li class="fragment"><span class="math inline">\(\overline{x}\)</span> and <span class="math inline">\(\overline{y}\)</span> denote the sample means of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, respectively</li>
+<li class="fragment"><span class="math inline">\(s_X\)</span> and <span class="math inline">\(s_Y\)</span> denote the sample standard deviations of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, respectively.</li>
+</ul></li>
+</ul>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<ul>
+<li class="fragment"><p>I find it useful to sometimes consider extreme cases, and ensure that the math matches up with our intuition.</p></li>
+<li class="fragment"><p>For example, consider the sets <span class="math inline">\(X = \{1, 2, 3\}\)</span> and <span class="math inline">\(Y = \{1, 2, 3\}\)</span>.</p></li>
+<li class="fragment"><p>From a scatterplot, I think we would all agree that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have a positive linear relationship, and that the relationship is very strong!</p></li>
+</ul>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example</h2>
+<ul>
+<li class="fragment"><p>Indeed, <span class="math inline">\(\overline{x} = 2 = \overline{y}\)</span> and <span class="math inline">\(s_X = 1 = s_Y\)</span>, meaning <span class="math display">\[\begin{align*}
+r   &amp; = \frac{1}{3 - 1} \left[ \left( \frac{1 - 2}{1} \right) \left( \frac{1 - 2}{1} \right)  + \left( \frac{2 - 2}{1} \right) \left( \frac{2 - 2}{1} \right)  \right.   \\
+  &amp; \hspace{45mm} \left. +  \left( \frac{3 - 2}{1} \right) \left( \frac{3 - 2}{1} \right)  \right] \\
+  &amp; = \frac{1}{2} \left[ 1 + 0 + 1 \right] = \boxed{1}
+\end{align*}\]</span></p></li>
+<li class="fragment"><p>It turns out, <em>r</em> will always be between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>, inclusive, regardless of what two sets we are comparing!</p></li>
+</ul>
+</section>
+<section id="interpretation" class="slide level2">
+<h2>Interpretation</h2>
+<ul>
+<li class="fragment"><p>So, here is how we interpret the value of <em>r</em>.</p>
+<ul>
+<li class="fragment"><p>The sign of <em>r</em> (i.e.&nbsp;whether it is positive or negative) indicates whether or not the linear association between the two variables is positive or negative.</p></li>
+<li class="fragment"><p>The magnitude of <em>r</em> indicates how strong the linear relationship between the two variables is, with magnitudes close to <span class="math inline">\(1\)</span> or <span class="math inline">\(-1\)</span> indicating very strong linear relationships.</p></li>
+<li class="fragment"><p>An <em>r</em> value of 0 indicates no linear relationship between the variables.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="important-distinction" class="slide level2">
+<h2>Important Distinction</h2>
+<ul>
+<li class="fragment"><p>Now, something that is <strong>very</strong> important to mention is that <em>r</em> only quantifies <em>linear</em> relationships- it is very bad at quantifying nonlinear relationships.</p></li>
+<li class="fragment"><p>For example, consider the following scatterplot:</p></li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="important-distinction-1" class="slide level2">
+<h2>Important Distinction</h2>
+<ul>
+<li class="fragment"><p>I think we would all agree that <code>Y</code> and <code>X</code> have a fairly strong relationship.</p></li>
+<li class="fragment"><p>However, the correlation between <code>Y</code> and <code>X</code> is actually only 0.1953333!</p></li>
+<li class="fragment"><p>So, again- <em>r</em> should only be used as a determination of the strength of <em>linear</em> trends, not <em>nonlinear</em> trends.</p></li>
+</ul>
 </section>
 <section id="your-turn" class="slide level2">
+<h2>Your Turn!</h2>
+</section>
+<section id="your-turn-1" class="slide level2">
 <h2>Your Turn!</h2>
 <div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -629,442 +638,362 @@
 <div class="callout-content">
 <div>
 <div style="font-size: 30px">
-<p>A university administrator at <em>Gaucho University</em> (GU) claims that GU students get, on average, 8 hours of sleep per night. A sample of 35 students had a combined average of 7.72 hours of sleep and a standard deviation of 3.8 hours. Using an <span class="math inline">\(\alpha = 0.05\)</span> level of significance, test the administrator’s claims against a…</p>
-<ol type="a">
-<li>…two-sided alternative</li>
-<li>…lower-tailed alternative</li>
-</ol>
+<p>Compute the correlation between the following two sets of numbers: <span class="math display">\[\begin{align*}
+  \boldsymbol{x}    &amp; = \{-1, \ 0, \ 1\}    \\
+  \boldsymbol{y}    &amp; = \{1, \ 2, \ 0\}
+\end{align*}\]</span></p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</section></section>
-<section>
-<section id="another-view-of-hypothesis-testing" class="title-slide slide level1 center">
-<h1>Another View of Hypothesis Testing</h1>
-
 </section>
-<section id="recap-1" class="slide level2">
-<h2>Recap</h2>
-<ul>
-<li class="fragment"><p>Last time, we discussed Hypothesis Testing on population proportions.</p></li>
-<li class="fragment"><p>That is: given a population with true proportion <span class="math inline">\(p\)</span>, we took samples and tried to use the data collected in these samples to assess the validity of the claim <span class="math inline">\(H_0: \ p = p_0\)</span> (for some fixed value <span class="math inline">\(p_0\)</span>) against some alternative hypothesis (two-sided, lower-tailed, or upper-tailed)</p></li>
-<li class="fragment"><p>The test we constructed last time compared the value of the <strong>test statistic</strong> to some <strong>critical value</strong>, and made a decision about rejection based on the comparison between these two values.</p></li>
-</ul>
-</section>
-<section id="lower-tailed-example" class="slide level2">
-<h2>Lower-Tailed Example</h2>
-<ul>
-<li class="fragment"><p>For illustrative purposes, let’s consider a lower-tailed test: <span class="math display">\[ \left[ \begin{array}{rr}
-H_0:    &amp; p = p_0   \\
-H_A:    &amp; p &lt; p_0
-\end{array} \right.\]</span></p></li>
-<li class="fragment"><p>Under appropriate conditions, our test statistic <span class="math display">\[ \mathrm{TS} = \frac{\widehat{P} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}} \]</span> follows the standard normal distribution under the null.</p></li>
-</ul>
-</section>
-<section id="lower-tailed-example-1" class="slide level2">
-<h2>Lower-Tailed Example</h2>
-<div>
-<ul>
-<li>Recall that <span class="math inline">\(\alpha\)</span>, the <strong>level of significance</strong>, is constructed to be the <span class="math inline">\(\alpha \times 100\)</span><sup>th</sup> percentile of the standard normal distribution:</li>
-</ul>
-</div>
-
-<img data-src="Lec17_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
-<section id="reject-or-not" class="slide level2">
-<h2>Reject or Not?</h2>
-
-<img data-src="Lec17_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
-<section id="reject-or-not-1" class="slide level2">
-<h2>Reject or Not?</h2>
-
-<img data-src="Lec17_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
 <section id="leadup" class="slide level2">
 <h2>Leadup</h2>
 <ul>
-<li class="fragment"><p>So, up until now, our decision has been based on comparing the raw value of the test statistic to the critical value.</p>
+<li class="fragment"><p>There is another thing to note about correlation.</p></li>
+<li class="fragment"><p>Let’s see this by way of an example: consider the following two scatterplots:</p></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 <ul>
-<li class="fragment">If the test statistic is smaller than the critical value, we reject.</li>
-<li class="fragment">Otherwise, we fail to reject.</li>
-</ul></li>
-<li class="fragment"><p>Again, remember the intuition behind <em>why</em> this is: if we observe a value of <span class="math inline">\(\widehat{P}\)</span> that is much smaller than <span class="math inline">\(p_0\)</span>, this leads credence to the claim that <span class="math inline">\(p &lt; p_0\)</span> (i.e.&nbsp;this leads credence to our <em>alternative</em> and <em>away</em> from our null).</p>
-<ul>
-<li class="fragment">Values of <span class="math inline">\(\widehat{P}\)</span> less than <span class="math inline">\(p_0\)</span> lead to very negative values of <span class="math inline">\(\mathrm{TS}\)</span>.</li>
-</ul></li>
+<li class="fragment">Both cor(<code>X</code>, <code>Y1</code>) and cor(<code>X</code>, <code>Y2</code>) are equal to 1, despite the fact that a one unit increase in <code>x</code> corresponds to a different unit increase in <code>y1</code> as opposed to <code>y2</code>.</li>
 </ul>
 </section>
 <section id="leadup-1" class="slide level2">
 <h2>Leadup</h2>
 <ul>
-<li class="fragment"><p>Now, we like to think in terms of areas.</p></li>
-<li class="fragment"><p>So, here’s an idea: let’s translate our reject/fail to reject scheme to be in terms of <em>areas</em>.</p></li>
-<li class="fragment"><p>Specifically, here is what I mean.</p></li>
-<li class="fragment"><p>Consider again a situation in which we reject the null:</p></li>
-</ul>
-</section>
-<section class="slide level2">
-
-
-<img data-src="Lec17_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
-<section class="slide level2">
-
-
-<img data-src="Lec17_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"><ul>
-<li class="fragment"><p>How does the area to the left of the test statistic compare to <span class="math inline">\(\alpha\)</span>?</p>
+<li class="fragment"><p>So, don’t be fooled- the magnitude of <em>r</em> says nothing about how a one-unit increase in <code>x</code> translates to a change in <code>y</code>!</p>
 <ul>
-<li class="fragment">It is smaller.</li>
+<li class="fragment">Again, the magnitude of <em>r</em> only tells us how <em>strongly</em> the two variables are related.</li>
 </ul></li>
+<li class="fragment"><p>To figure out exactly <em>how</em> a change in <code>x</code> translates to a change in <code>y</code>, we need to return to our model.</p></li>
 </ul>
+</section></section>
+<section>
+<section id="regression-part-i" class="title-slide slide level1 center">
+<h1>Regression, Part I</h1>
+
 </section>
-<section class="slide level2">
-
-
-<img data-src="Lec17_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
-<section class="slide level2">
-
-
-<img data-src="Lec17_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"><ul>
-<li class="fragment"><p>How does the area to the left of the test statistic compare to <span class="math inline">\(\alpha\)</span>?</p>
+<section id="regression-problem" class="slide level2" style="font-size:30px">
+<h2>Regression Problem</h2>
 <ul>
-<li class="fragment">It is larger</li>
-</ul></li>
-</ul>
-</section>
-<section id="leadup-2" class="slide level2">
-<h2>Leadup</h2>
-<ul>
-<li class="fragment"><p>So, we can rephrase our decision as follows:</p>
-<ul>
-<li class="fragment">Reject <span class="math inline">\(H_0\)</span> if the area to the left of the test statistic is smaller than <span class="math inline">\(\alpha\)</span>.</li>
-<li class="fragment">Otherwise, fail to reject <span class="math inline">\(H_0\)</span>.</li>
-</ul></li>
-<li class="fragment"><p>Notice that the area to the left of the test statistic, since we are dealing with a lower-tailed test, is equivalent to “the probability of observing something as or more extreme, under the null, as the value we currently observe”.</p>
-<ul>
-<li class="fragment">Here, “extreme” can be thought of as in the direction of the alternative; in other words, we consider the area in the direction of the sign in the alternative hypothesis.</li>
-</ul></li>
-<li class="fragment"><p>This is an example of what we call a <strong><em>p</em>-value</strong>.</p></li>
-</ul>
-</section>
-<section id="p-values" class="slide level2">
-<h2><em>p</em>-Values</h2>
-<ul>
-<li class="fragment">The textbook defines <span class="math inline">\(p-\)</span>values as:</li>
+<li class="fragment">As a concrete example, let’s examine a dataset that contains several measurements on heights and weights:</li>
 </ul>
 <div class="fragment">
-<blockquote>
-<p>[…] the probability of observing data at least as favorable to the alternative hypothesis as our current data set, if the null hypothesis were true.</p>
-</blockquote>
-</div>
-<ul>
-<li class="fragment"><p>Another way to think about it is this: if the null were true, what is the probability that we would observe something even more extreme (i.e.&nbsp;even “farther away”, in the direction of the alternative) as our current observations?</p></li>
-<li class="fragment"><p>Note that exactly <em>how</em> we compute <span class="math inline">\(p-\)</span>values depends heavily on our alternative.</p></li>
-</ul>
-</section>
-<section id="the-test-statistic" class="slide level2">
-<h2>The Test Statistic</h2>
-
-<img data-src="Lec17_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
-<section id="p-value-lower-tailed-test" class="slide level2">
-<h2><em>p</em>-value; Lower-Tailed Test</h2>
-
-<img data-src="Lec17_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
-<section id="p-value-upper-tailed-test" class="slide level2">
-<h2><em>p</em>-value; Upper-Tailed Test</h2>
-
-<img data-src="Lec17_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
-<section id="p-value-two-sided-test" class="slide level2">
-<h2><em>p</em>-value; Two-Sided Test</h2>
-
-<img data-src="Lec17_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
-<section id="worked-out-example-3" class="slide level2">
-<h2>Worked-Out Example</h2>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Worked-Out Example 3</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<div style="font-size: 28px">
-<p><em>Forbes</em> magazine has claimed that, as of May 2023, 91.7% of US households own a vehicle. To test that claim, we take a representative sample of 500 US households and observe that 89.4% of these households own a vehicle.</p>
-<ul>
-<li><p>Compute the <span class="math inline">\(p-\)</span>value of our observed value of the statistic, assuming we are using a lower-tailed alternative.</p></li>
-<li><p>Compute the <span class="math inline">\(p-\)</span>value of our observed value of the statistic, assuming we are using a two-sided alternative.</p></li>
-</ul>
-</div>
-</div>
-</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
 </div>
 </div>
 </div>
 </section>
-<section id="solutions-6" class="slide level2">
-<h2>Solutions</h2>
+<section id="regression-model" class="slide level2">
+<h2>Regression Model</h2>
 <ul>
-<li class="fragment">Let’s first compute the observed value of our test statistic: <span class="math display">\[ \mathrm{TS} = \frac{0.894 - 0.917}{\sqrt{\frac{(0.917) \cdot (1 - 0.917)}{500}}} = -1.86 \]</span></li>
+<li class="fragment"><p>Letting <code>y</code> denote our response variable (weight) and <code>x</code> denote our explanatory variable (height), our model is <span class="math display">\[ \texttt{y} = \beta_0 + \beta_1 \cdot \texttt{x} + \texttt{noise} \]</span></p>
+<ul>
+<li class="fragment">If you wanted to be a little more explicit, you could also write <span class="math display">\[ \texttt{weight} = \beta_0 + \beta_1 \cdot (\texttt{height}) + \texttt{noise} \]</span></li>
+</ul></li>
+<li class="fragment"><p>Ultimately, we would like to know the values of <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>.</p></li>
+<li class="fragment"><p>However, we will never be able to determine their values exactly!</p></li>
+<li class="fragment"><p>Why? Well, take a look at the model again- though we are assuming a linear relationship between <code>height</code> and <code>weight</code>, our <code>weight</code> observations contain some noise, the magnitude of which we never get to see!</p>
+<ul>
+<li class="fragment">In this way, we can think of <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> as population parameters.</li>
+</ul></li>
+</ul>
+</section>
+<section id="fitting-the-model" class="slide level2">
+<h2>Fitting the Model</h2>
+<ul>
+<li class="fragment"><p>Our goal, therefore, is to try and determine good estimators <span class="math inline">\(\widehat{\beta}_0\)</span> and <span class="math inline">\(\widehat{\beta}_1\)</span> of <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>, respectively.</p></li>
+<li class="fragment"><p>In the more general setting, given a model <span class="math display">\[ \texttt{y} = f(\texttt{x}) + \texttt{noise} \]</span> the goal of <strong>model fitting</strong> is to take data <span class="math inline">\(\{(y_i, \ x_i)\}_{i=1}^{n}\)</span> and use it to construct a function <span class="math inline">\(\widehat{f}()\)</span> that we believe best approximates the function <span class="math inline">\(f():\)</span> <span class="math display">\[ \widehat{\texttt{y}} = \widehat{f}(\texttt{x}) + \texttt{noise} \]</span></p></li>
+</ul>
+</section>
+<section id="height-and-weight" class="slide level2">
+<h2>Height and Weight</h2>
+<ul>
+<li class="fragment">Okay, back to our height and weight example:</li>
 </ul>
 <div class="fragment">
-<div class="cell" data-fig="true">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="height-and-weight-1" class="slide level2">
+<h2>Height and Weight</h2>
+<ul>
+<li class="fragment"><p>The regression problem basically boils down to finding the line that best fits the data.</p></li>
+<li class="fragment"><p>The specific line we will discuss in a bit is called the <strong>ordinary least squares line</strong> (or just OLS line):</p></li>
+</ul>
+<div class="fragment">
+<div class="cell">
 <div class="cell-output-display">
 <p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
 </div>
 </div>
 </div>
 </section>
-<section id="solutions-7" class="slide level2">
-<h2>Solutions</h2>
+<section id="simple-linear-regression" class="slide level2">
+<h2>Simple Linear Regression</h2>
 <ul>
-<li class="fragment">In the lower-tailed case, our <em>p</em>-value is</li>
-</ul>
-<div class="fragment">
-<div class="cell" data-fig="true">
-<div class="cell-output-display">
-<p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
-</div>
-</div>
-</div>
-<ul>
-<li class="fragment">We can compute this in one of two ways.</li>
+<li class="fragment"><p>Here is how <strong>simple linear regression</strong> works.</p></li>
+<li class="fragment"><p>We are given observations <span class="math inline">\(\{(y_i, \ x_i)\}_{i=1}^{n}\)</span> on a response variable <code>y</code> and an explanatory variable <code>x</code>.</p></li>
+<li class="fragment"><p>In simple linear regression, we adopt the following model: <span class="math display">\[ \texttt{y} = \beta_0 + \beta_1 \cdot \texttt{x} + \texttt{noise} \]</span></p></li>
+<li class="fragment"><p>Our goal is to use the data <span class="math inline">\(\{(y_i, \ x_i)\}_{i=1}^{n}\)</span> to determine suitable estimators for <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>.</p></li>
 </ul>
 </section>
-<section id="solutions-8" class="slide level2">
-<h2>Solutions</h2>
+<section id="simple-linear-regression-1" class="slide level2">
+<h2>Simple Linear Regression</h2>
 <ul>
-<li class="fragment">We could simply use Python:</li>
+<li class="fragment">Here’s a visual way of thinking about this. Consider the following scatterplot:</li>
+</ul>
+<div class="fragment">
+<p><img data-src="scatterblank.svg" style="width:50.0%"></p>
+</div>
+</section>
+<section id="goals" class="slide level2">
+<h2>Goals</h2>
+<div>
+<ul>
+<li>We are assuming that there exists some true linear relationship (i.e.&nbsp;some “fit”) between <code>y</code> and <code>x</code>. But, because of natural variability due to randomness, we cannot figure out exactly <em>what</em> the true relationship is.</li>
+</ul>
+</div>
+<div class="fragment">
+<p><img data-src="scatter2.svg" style="width:50.0%"></p>
+</div>
+</section>
+<section id="goals-1" class="slide level2">
+<h2>Goals</h2>
+<div>
+<ul>
+<li>Finding the “best” estimate of the signal function is, therefore, akin to finding the line that “best” fits the data.</li>
+</ul>
+</div>
+<div class="fragment">
+<p><img data-src="scatter5.svg" style="width:50.0%"></p>
+</div>
+</section>
+<section id="line-of-best-fit" class="slide level2">
+<h2>Line of Best Fit</h2>
+<ul>
+<li class="fragment"><p>Now, if we are to find the line that best fits the data, we first need to quantify what we mean by “best”.</p></li>
+<li class="fragment"><p>Here is one idea: consider minimizing the average distance from the datapoints to the line.</p></li>
+<li class="fragment"><p>As a measure of “average distance from the points to the line”, we will use the so-called <strong>residual sum of squares</strong> (often abbreviated as RSS).</p></li>
+</ul>
+</section>
+<section id="residuals" class="slide level2" style="font-size:32px">
+<h2>Residuals</h2>
+<ul>
+<li class="fragment">The <strong><em>i</em><sup>th</sup> residual</strong> is defined to be the quantity <span class="math inline">\(e_i\)</span> below:</li>
+</ul>
+<div class="fragment" style="text-align:center">
+<p><img data-src="rss.svg" style="width:50.0%"></p>
+</div>
+<ul>
+<li class="fragment">RSS is then just <span class="math inline">\(\displaystyle \mathrm{RSS} = \sum_{i=1}^{n} e_i^2\)</span></li>
+</ul>
+</section>
+<section id="results" class="slide level2">
+<h2>Results</h2>
+<ul>
+<li class="fragment"><p>It turns out, using a bit of Calculus, the estimators we seek (i.e.&nbsp;the ones that minimize the RSS) are <span class="math display">\[\begin{align*}
+\widehat{\beta_1}   &amp; = \frac{\sum\limits_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}{\sum\limits_{i=1}^{n} (x_i - \overline{x})^2}    \\
+\widehat{\beta_0}   &amp; = \overline{y} - \widehat{\beta_1} \overline{x}
+\end{align*}\]</span></p></li>
+<li class="fragment"><p>These are what are known as the <strong>ordinary least squares</strong> estimators of <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>, and the line <span class="math inline">\(\widehat{\beta_0} + \widehat{\beta_1} x\)</span> is called the <strong>ordinary least-squares regression line</strong> (or just OLS regression line, for short).</p></li>
+<li class="fragment"><p>Perhaps an example may illustrate what I am talking about.</p></li>
+</ul>
+</section>
+<section id="example-2" class="slide level2">
+<h2>Example</h2>
+
+<img data-src="Lec17_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
+<section id="example-3" class="slide level2">
+<h2>Example</h2>
+
+<img data-src="Lec17_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"><ul>
+<li class="fragment"><p><span class="math inline">\(\widehat{\beta_0} =\)</span> -0.2056061; <span class="math inline">\(\widehat{\beta_1} =\)</span> -2.1049432.</p></li>
+<li class="fragment"><p>I.e. the equation of the line in blue is -0.2056061 + -2.1049432 * <code>x</code>.</p></li>
+</ul>
+</section>
+<section id="fitted-values" class="slide level2" style="font-size:30px">
+<h2>Fitted Values</h2>
+<ul>
+<li class="fragment">Let’s return to our cartoon picture of OLS regression:</li>
+</ul>
+<div class="fragment" style="text-align:center">
+<p><img data-src="rss.svg" style="width:50.0%"></p>
+</div>
+</section>
+<section id="fitted-values-1" class="slide level2" style="font-size:30px">
+<h2>Fitted Values</h2>
+<ul>
+<li class="fragment">Notice that each point in our dataset (i.e.&nbsp;the blue points) have a corresponding point on the OLS regression line:</li>
+</ul>
+<div class="fragment" style="text-align:center">
+<p><img data-src="fitted.svg" style="width:50.0%"></p>
+</div>
+</section>
+<section id="fitted-values-2" class="slide level2" style="font-size:30px">
+<h2>Fitted Values</h2>
+<ul>
+<li class="fragment"><p>These points are referred to as <strong>fitted values</strong>; the <em>y</em>-values of the fitted values are denoted as <span class="math inline">\(\widehat{y}_i\)</span>.</p></li>
+<li class="fragment"><p>In this way, the OLS regression line is commonly written as a relationship between the fitted values and the <em>x</em>-values: <span class="math display">\[ \widehat{y} = \widehat{\beta_0} + \widehat{\beta_1} x \]</span></p></li>
+</ul>
+</section>
+<section id="back-to-height-and-weight" class="slide level2" style="font-size:30px">
+<h2>Back to <code>height</code> and <code>weight</code></h2>
+<ul>
+<li class="fragment">Before we work through the math once, let’s apply this technique to the height and weight data from before.</li>
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> sps</span>
-<span id="cb1-2"><a href="#cb1-2"></a>sps.norm.cdf(<span class="op">-</span><span class="fl">1.86</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>np.float64(0.03144276298075271)</code></pre>
+<div class="cell-output-display">
+<p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-16-1.png" width="672"></p>
 </div>
 </div>
 </div>
+</section>
+<section id="back-to-height-and-weight-1" class="slide level2" style="font-size:30px">
+<h2>Back to <code>height</code> and <code>weight</code></h2>
+<ul>
+<li class="fragment">Using a computer software, the OLS regression line can be found to be:</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:75%;">
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-17-1.png" width="672"></p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:25%;">
+<ul>
+<li class="fragment">Specifically, <span class="math inline">\(\widehat{\beta_0} =\)</span> 3.366744 and <span class="math inline">\(\widehat{\beta_1} =\)</span> 0.9790114</li>
+</ul>
 <p><br>
 </p>
 <ul>
-<li class="fragment">Or, we could use our <em>z</em>-table: <span class="math inline">\(0.0314\)</span></li>
+<li class="fragment">We will return to the notion of fitted values in a bit.</li>
 </ul>
-<p><br>
-</p>
+</div>
+</div>
+</section>
+<section id="back-to-height-and-weight-2" class="slide level2">
+<h2>Back to <code>height</code> and <code>weight</code></h2>
 <ul>
-<li class="fragment">Either way, looks like our <em>p</em>-value in the lower-tailed case is <span class="math inline">\(0.0314\)</span>.</li>
+<li class="fragment"><p>A quick note:</p></li>
+<li class="fragment"><p>Though there was no way to know this, the true <span class="math inline">\(\beta_1\)</span> was actually <span class="math inline">\(1.0\)</span>. Again, this is just to demonstrate that the OLS estimate <span class="math inline">\(\widehat{\beta_1}\)</span> is just that- an estimate!</p></li>
 </ul>
 </section>
-<section id="solutions-9" class="slide level2">
-<h2>Solutions</h2>
-<ul>
-<li class="fragment">In the two-sided case, our <em>p</em>-value is</li>
-</ul>
+<section class="slide level2">
+
 <div class="fragment">
-<div class="cell" data-fig="true">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-18-1.png" width="672"></p>
+</figure>
 </div>
 </div>
 </div>
-<ul>
-<li class="fragment">Same deal as before: we can compute this using either Python or our table.</li>
-</ul>
-</section>
-<section id="solutions-10" class="slide level2">
-<h2>Solutions</h2>
-<ul>
-<li class="fragment"><p>Alternatively, note that we can utilize the symmetry of the normal distribution in our favor- the area we’re interested in is simply twice the area we found in the lower-tailed case!</p></li>
-<li class="fragment"><p>So, our <span class="math inline">\(p-\)</span>value in the two-sided case is simply <span class="math inline">\(2 \times (0.0314) = 0.0628\)</span>.</p></li>
-<li class="fragment"><p>If you don’t believe me:</p></li>
-</ul>
+</div>
 <div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>sps.norm.cdf(<span class="op">-</span><span class="fl">1.86</span>) <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> sps.norm.cdf(<span class="fl">1.86</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>np.float64(0.06288552596150537)</code></pre>
-</div>
-</div>
+<p><span class="math display">\[ \widehat{\texttt{weight}} = 3.367 + 0.979 \cdot \texttt{height} \]</span></p>
 </div>
 </section>
-<section id="p-values-1" class="slide level2">
-<h2><em>p</em>-Values</h2>
+<section id="worked-out-example" class="slide level2">
+<h2>Worked-Out Example</h2>
 <ul>
-<li class="fragment">Of course, <em>p</em>-values are not restricted to the case of hypothesis testing a proportion; we can absolutely compute <span class="math inline">\(p-\)</span>values in a setting where we are testing a population mean!</li>
+<li class="fragment"><p>Alright, let’s work through a computation by hand once.</p></li>
+<li class="fragment"><p>Suppose we have the variables <span class="math display">\[\begin{align*}
+\boldsymbol{x}    &amp; = \{3, \ 7, \ 8\}   \\
+\boldsymbol{y}    &amp; = \{20, \ 14, \ 17\}
+\end{align*}\]</span> and suppose we wish to construct the least-squares regression line when regressing <span class="math inline">\(\boldsymbol{y}\)</span> onto <span class="math inline">\(\boldsymbol{x}\)</span>.</p></li>
+<li class="fragment"><p>First, we compute <span class="math display">\[\begin{align*}
+\overline{x}    &amp; = 6   \\
+\overline{y}    &amp; = 17
+\end{align*}\]</span></p></li>
 </ul>
+</section>
+<section id="worked-out-example-1" class="slide level2" style="font-size:30px">
+<h2>Worked-Out Example</h2>
+<ul>
+<li class="fragment"><p>Next, we compute <span class="math display">\[\begin{align*}
+\sum_{i=1}^{n} (x_i - \overline{x})^2   &amp; = (3 - 6)^2 + (7 - 6)^2 + (8 - 6)^2 = 14   \\
+\sum_{i=1}^{n} (y_i - \overline{y})^2   &amp; = (20 - 17)^2 + (14 - 17)^2 + (17 - 17)^2 = 18
+\end{align*}\]</span></p></li>
+<li class="fragment"><p>Additionally, <span class="math display">\[\begin{align*}
+\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})   &amp; = (3 - 6)(20 - 17) + (7 - 6)(14 - 17)    \\[-7mm]
+  &amp; \hspace{10mm} + (8 - 6)(17 - 17)    \\[5mm]
+  &amp; = -12
+\end{align*}\]</span></p></li>
+</ul>
+</section>
+<section id="worked-out-example-2" class="slide level2">
+<h2>Worked-Out Example</h2>
+<ul>
+<li class="fragment"><p>Therefore, <span class="math display">\[ \widehat{\beta_1} = \frac{\sum_{i=1}^{n} (x_i - \overline{x})(y_i - \overline{y})}{\sum_{i=1}^{n} (x_i - \overline{x})^2}   = \frac{-12}{14} = - \frac{6}{7} \]</span></p></li>
+<li class="fragment"><p>Additionally, <span class="math display">\[ \widehat{\beta_0} = \overline{y} - \widehat{\beta_1} \overline{x} = 17 - \left( - \frac{6}{7} \right) (6) = \frac{155}{7} \]</span></p></li>
+<li class="fragment"><p>This means that the ordinary least-squares regression line is <span class="math display">\[ \boxed{\widehat{y} = \frac{1}{7} ( 155 - 6 x )} \]</span></p></li>
+</ul>
+</section>
+<section class="slide level2">
+
 <div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Worked-Out Example 4</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<div style="font-size: 30px">
-<p>Consider again the setup of Worked-Out Example 2: <em>McGaucho’s</em> claims that, on average, they are able to serve customers their food in 10 minutes. Dubious of these claims, Markus takes a representative sample of 40 customers and finds that these customers waited an combined average of 15 minutes before receiving their food, with a standard deviation of 10 minutes.</p>
-<ol type="a">
-<li>Compute the <em>p</em>-value if we were to use a lower-tailed alternative.</li>
-<li>Compute the <em>p</em>-value if we were to use a two-sided alternative.</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="solutions-11" class="slide level2">
-<h2>Solutions</h2>
-<ul>
-<li class="fragment"><p>Recall that we ended up needing to use the <span class="math inline">\(t_{39}\)</span> distribution as opposed to the standard normal distribution.</p></li>
-<li class="fragment"><p>This doesn’t affect our computations of the <em>p</em>-value much, except for the fact that now we will <em>need</em> to use Python (as our <span class="math inline">\(t-\)</span>table doesn’t really give us <em>probabilities</em>).</p></li>
-<li class="fragment"><p>The observed value of the test statistic is <span class="math display">\[ \frac{15 - 10}{10 / \sqrt{40}} = 3.162 \]</span></p></li>
-</ul>
-</section>
-<section id="solutions-12" class="slide level2" style="font-size:25px">
-<h2>Solutions</h2>
-<ul>
-<li class="fragment">On a graph, this looks like:</li>
-</ul>
-<div class="fragment">
-<div class="cell" data-fig="true">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-19-1.png" width="672"></p>
+</figure>
 </div>
 </div>
+</div>
+</div>
+<div class="fragment">
+<p><span class="math display">\[ \widehat{y} = \frac{1}{7} ( 155 - 6 x ) \]</span></p>
 </div>
 </section>
-<section id="solutions-13" class="slide level2" style="font-size:25px">
-<h2>Solutions</h2>
+<section id="interpreting-the-coefficients" class="slide level2">
+<h2>Interpreting the Coefficients</h2>
 <ul>
-<li class="fragment">Using a lower-tailed alternative:</li>
-</ul>
-<div class="fragment">
-<div class="cell" data-fig="true">
-<div class="cell-output-display">
-<p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>sps.t.cdf(<span class="fl">3.162</span>, <span class="dv">39</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>np.float64(0.998485142798897)</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="solutions-14" class="slide level2" style="font-size:25px">
-<h2>Solutions</h2>
+<li class="fragment"><p>Alright, so how do we interpret the OLS regression line? <span class="math display">\[\widehat{y} = \widehat{\beta_0} + \widehat{\beta_1} x\]</span></p></li>
+<li class="fragment"><p>We can see that a one-unit increase in <code>x</code> corresponds to a <span class="math inline">\(\widehat{\beta_1}\)</span>-unit increase in <code>y</code>.</p>
 <ul>
-<li class="fragment">Using a two-sided alternative:</li>
-</ul>
-<div class="fragment">
-<div class="cell" data-fig="true">
-<div class="cell-output-display">
-<p><img data-src="Lec17_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="dv">2</span> <span class="op">*</span> sps.t.cdf(<span class="op">-</span><span class="fl">3.162</span>, <span class="dv">39</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>np.float64(0.0030297144022061392)</code></pre>
-</div>
-</div>
-<p>or</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>sps.t.cdf(<span class="op">-</span><span class="fl">3.162</span>, <span class="dv">39</span>) <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> sps.t.cdf(<span class="fl">3.162</span>, <span class="dv">39</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>np.float64(0.0030297144022060733)</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="what-do-we-do-with-a-p-value" class="slide level2">
-<h2>What Do We Do with a <em>p</em>-Value?</h2>
-<ul>
-<li class="fragment"><p>Okay, so after we’ve computed our <em>p</em>-value… what do we do?</p></li>
-<li class="fragment"><p>We reject when <em>p</em> is small; specifically, we reject when <em>p</em> is less than the level of significance.</p></li>
-<li class="fragment"><p>So, in other words, we now have two ways to conduct hypothesis tests under our belt: using critical values, and using <em>p</em>-values.</p></li>
-<li class="fragment"><p>I’d like to stress- these two frameworks are completely equivalent!</p>
-<ul>
-<li class="fragment">Your decision using critical values will always be the same as your decision using <em>p</em>-values, by construction.</li>
+<li class="fragment"><p>For example, in our <code>height</code> and <code>weight</code> example we found <span class="math display">\[ \widehat{\texttt{weight}} = 3.367 + 0.979 \cdot \texttt{height} \]</span></p></li>
+<li class="fragment"><p>This means that a one-cm change in height is associated with a (predicted/estimated) 0.979 lbs change in weight.</p></li>
 </ul></li>
 </ul>
 </section>
-<section id="your-turn-1" class="slide level2">
-<h2>Your Turn!</h2>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Exercise 2</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<div style="font-size: 30px">
-<p>UCSB <a href="https://firstgen.ucsb.edu/">claims</a> that 40% of its undergraduate student body are first-generation students (as in, the first in their families to earn a Bachelor’s degree). To test this claim, a representative sample of 120 undergraduates is taken and it is found that 43% of these students are first-generation. Suppose we use an <span class="math inline">\(\alpha = 0.05\)</span> level of significance, and we test the University’s claims against a two-sided alternative.</p>
+<section id="next-time" class="slide level2">
+<h2>Next Time</h2>
 <ul>
-<li>Conduct the test using critical values.</li>
-<li>Conduct the test using <em>p</em>-values.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="your-turn-2" class="slide level2">
-<h2>Your Turn!</h2>
-<div class="fragment">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Exercise 3</strong></p>
-</div>
-<div class="callout-content">
-<div>
-<div style="font-size: 30px">
-<p>A botanist claims that the average weight of a chestnut is around 5 grams. To test this claim, a representative sample of 35 chestnuts is taken; these chestnuts have a combined average weight of 4.87 grams and a standard deviation of 1.82 grams. Suppose we use an <span class="math inline">\(\alpha = 0.05\)</span> level of significance, and a lower-tailed alternative.</p>
-<ul>
-<li>Conduct the test using critical values.</li>
-<li>Conduct the test using <em>p</em>-values.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="criticisms-of-p-values" class="slide level2">
-<h2>Criticisms of <em>p</em>-Values</h2>
-<ul>
-<li class="fragment"><p>I should note that there are some growing criticism within the statistical and data scientific communities regarding <em>p</em>-values.</p></li>
-<li class="fragment"><p>For one thing, they can be easily misinterpreted.</p>
-<ul>
-<li class="fragment">Take a look at <a href="https://en.wikipedia.org/wiki/Misuse_of_p-values">this</a> Wikipedia page for a list of common misinterpretations of <em>p</em>-values to make sure you don’t make any of these (and yes, I might test you on some of these on a quiz/exam!)</li>
-</ul></li>
-<li class="fragment"><p>To fully understand and appreciate the more nuanced criticisms, however, we would need a bit of extra background/theory pertaining to the framework of Hypothesis Testing - material that we don’t cover in this class.</p>
-<ul>
-<li class="fragment">I encourage you to take PSTAT 120B and PSTAT 120C if you’d like to learn more about this!</li>
-</ul></li>
+<li class="fragment">Next time, we’ll discuss how to use the OLS regression line to make predictions.</li>
 </ul>
 
 
