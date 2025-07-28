@@ -1,8 +1,8 @@
 ---
-title: "PSTAT 5A: Lecture 19"
+title: "PSTAT 5A: Lecture 14"
 subtitle: "Two-Sample Tests"
-author: "Mallory Wang"
-date: "07/23/24"
+author: "Annie Adams"
+date: "08/27/25"
 format: 
     revealjs:
       html-math-method: mathjax
@@ -64,7 +64,7 @@ library(ggthemes)
 
 1. **Independence** *within* each sample: The observations within each sample are independent (e.g. we have a random sample from each of the two populations).
 
-2. **Independence** *between* the samples: he two samples are independent of one another such that observations in one sample tell us nothing about the observations in the other sample (and vice versa).
+2. **Independence** *between* the samples: the two samples are independent of one another such that observations in one sample tell us nothing about the observations in the other sample (and vice versa).
 
 3. **Normality**: When the sample sizes are small, we require that the observations in each sample come from a normally distributed population. We can relax this condition more and more for larger and larger sample sizes. (You need to check normality for both groups.)
 

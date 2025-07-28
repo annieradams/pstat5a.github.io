@@ -23,308 +23,308 @@
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#recap",
     "href": "Pages/Lectures/Lecture13/Lec13.html#recap",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Recap",
     "text": "Recap\n\nHypothesis test with proportions: given a population with true proportion \\(p\\), we took samples and tried to use the data collected in these samples to assess the validity of the claim \\(H_0: \\ p = p_0\\) (for some fixed value \\(p_0\\)) against some alternative hypothesis (two-sided, lower-tailed, or upper-tailed)\nIndeed, we can conduct hypothesis testing on any population parameter.\nOne parameter of interest to statisticians is the population mean \\(\\mu\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#hypothesis-testing-for-the-mean-1",
     "href": "Pages/Lectures/Lecture13/Lec13.html#hypothesis-testing-for-the-mean-1",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Hypothesis Testing for the Mean",
     "text": "Hypothesis Testing for the Mean\n\nThe classification of tests doesn’t change much: we still have two-sided, lower-tailed and upper-tailed tests for the mean.\nMore specifically, if our null is \\(H_0: \\ \\mu = \\mu_0\\) then:\n\nA two-sided alternative is \\(H_A: \\ \\mu \\neq \\mu_0\\)\nA lower-tailed alternative is \\(H_A: \\ \\mu &lt; \\mu_0\\)\nAn upper-tailed alternative is \\(H_A: \\ \\mu &gt; \\mu_0\\)\nA simple-vs-simple alternative is \\(H_A: \\ \\mu = \\mu_1\\) for some \\(\\mu_1 \\neq \\mu_0\\)"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#hypothesis-testing-for-the-mean-2",
     "href": "Pages/Lectures/Lecture13/Lec13.html#hypothesis-testing-for-the-mean-2",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Hypothesis Testing for the Mean",
     "text": "Hypothesis Testing for the Mean\n\nOur testing procedure will be similar to that of hypothesis tests for a proportion: we compute a test statistic, and then compare this value of the test statistic to a critical value that is determined by both the distribution of the test statistic under the null as well as the significance level \\(\\alpha\\).\nLet’s focus on a two-sided test for now.\nOur test statistic will certainly involve \\(\\overline{X}\\), the sample mean.\n\nSpecifically, it will be some standardized version of \\(\\overline{X}\\).\nHowever, exactly how we standardize will be dependent upon the sampling distribution of \\(\\overline{X}\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#sampling-distribution-of-overlinex",
     "href": "Pages/Lectures/Lecture13/Lec13.html#sampling-distribution-of-overlinex",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Sampling Distribution of \\(\\overline{X}\\)",
     "text": "Sampling Distribution of \\(\\overline{X}\\)\n\n\n\n\n\ngraph TB\n  A[Is the population Normal?  . ] --&gt; |Yes| B{{Use Normal .}}\n  A --&gt; |No| C[Is n &gt;= 30?  .]\n  C --&gt; |Yes| D[sigma or s?  .]\n  C --&gt; |No| E{{cannot proceed   .}}\n  D --&gt; |sigma| F{{Use Normal .}}\n  D --&gt; |s| G{{Use t }}"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#test-statistic",
     "href": "Pages/Lectures/Lecture13/Lec13.html#test-statistic",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Test Statistic",
     "text": "Test Statistic\n\nWhat this means is that our test statistic itself will take different forms depending on the information that is provided.\nSpecifically, we have \\[ \\mathrm{TS} = \\begin{cases}\n\\displaystyle \\frac{\\overline{X} - \\mu_0}{\\sigma / \\sqrt{n}}    & \\text{if } \\quad  \\begin{array}{rl} \\bullet & \\text{pop. is normal, OR} \\\\ \\bullet & \\text{$n \\geq 30$ AND $\\sigma$ is known} \\end{array} \\quad \\stackrel{H_0}{\\sim} \\mathcal{N}(0, \\ 1) \\\\[5mm]\n\\displaystyle \\frac{\\overline{X} - \\mu_0}{s / \\sqrt{n}}         & \\text{if } \\quad  \\begin{array}{rl} \\bullet & \\text{$n \\geq 30$ AND $\\sigma$ is not known} \\end{array} \\quad \\stackrel{H_0}{\\sim} t_{n - 1}\n\\end{cases} \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#test-statistic-1",
     "href": "Pages/Lectures/Lecture13/Lec13.html#test-statistic-1",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Test Statistic",
     "text": "Test Statistic\n\nIn the two-sided case, our critical value will still be the value \\(c\\) that ensures \\[ \\mathbb{P}(|\\mathrm{TS}| &gt; c) = \\alpha \\] (i.e. we reject \\(H_0\\) whenever \\(\\overline{X}\\) is far away from \\(\\mu_0\\)) meaning \\(c\\) will the \\((\\alpha /2) \\times 100\\%\\) percentile, scaled by negative 1, of either the standard normal distribution or the \\(t_{n - 1}\\) distribution.\n\nAgain, don’t forget about how the symmetry of the normal and t-distributions translates to relationships between percentiles!\n\nOur test in the two-sided case will then take the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| &gt; c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]\nLet’s do an example."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example",
     "href": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Worked-Out Example",
     "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nAn article published by the US Census claims that in 2019 the average American took around 27.6 minutes to commute to work. To test this claim, Jenny took a representative sample of 101 Americans in 2019 and observed that these individuals had a combined average commute time of around 20.1 minutes and a standard deviation of around 12.4 minutes.\nUse the information from Jenny’s sample, along with an \\(\\alpha = 0.05\\) level of significance, to test the claim that the average commute time is 27.6 minutes against a two-sided alternative."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions",
     "href": "Pages/Lectures/Lecture13/Lec13.html#solutions",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Solutions",
     "text": "Solutions\n\nIt’s a good idea to first determine which distribution we need to use.\nIs the population normally distributed?\n\nIn other words, are the commute times of all Americans normally distributed?\nNo; or, at least, there is not enough inforamtion to conclude that they are.\n\nIs our sample large enough?\n\nYes; \\(n = 101 \\geq 30\\)\n\nDo we have \\(\\sigma\\) or \\(s\\)?\n\nWe only have \\(s\\), the standard devaition of commute times of Jenny’s sample."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-1",
     "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-1",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Solutions",
     "text": "Solutions\n\nTherefore, what distribution are we going to use?\n\nThe \\(t_{100}\\) distribution.\n\nIn other words, \\[ \\mathrm{TS} = \\frac{\\overline{X} - 27.6}{12.4 / \\sqrt{101}} \\stackrel{H_0}{\\sim} t_{100} \\]\nFrom the \\(t-\\)table, we see that the critical value will be \\(1.98\\).\nAdditionally, the observed value of our test statistic (based on Jenny’s sample) is \\[ \\frac{20.1 - 27.6}{12.4 / \\sqrt{101}} \\approx -6.08 \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-2",
     "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-2",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Solutions",
     "text": "Solutions\n\nOur test rejects \\(H_0\\) when \\(|\\mathrm{TS}| &gt; c\\).\nIn this case, \\(|\\mathrm{TS}| = |-6.07| = 6.07 &gt; 1.98\\)\nTherefore, we reject the null:\n\n\n\nAt an \\(\\alpha = 0.05\\) level of significance, there was sufficient evidence to reject the Census’ claim that the average commute time of Americans was 27.6 minutes in favor of the alternative that the true average commute time was not 27.6 minutes."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#one-sided-tests",
     "href": "Pages/Lectures/Lecture13/Lec13.html#one-sided-tests",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "One-Sided Tests",
     "text": "One-Sided Tests\n\nAnalogously as with the hypothesis testing for proportions, the lower-tailed test of a population mean takes the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\mathrm{TS} &lt; c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] and the upper-tailed test of a population mean takes the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\mathrm{TS} &gt; c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]\nI’ll keep stressing this: there is no need to memorize these forms if you understand what the null and alternative are saying and how that translates to comparing \\(\\overline{X}\\) to \\(\\mu_0\\)!"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example-2",
     "href": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example-2",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Worked-Out Example",
     "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\nMcGaucho’s claims that, on average, customers will only need to wait 10 minutes before getting their food. Dubious of these claims, Markus takes a representative sample of 40 customers and finds that these customers waited an combined average of 15 minutes before receiving their food, with a standard deviation of 10 minutes. Based on this, he decides to perform an upper-tailed test on McGaucho’s claims at an \\(\\alpha = 0.01\\) level of significance. Conduct the test, and state your conclusions."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-3",
     "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-3",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Solutions",
     "text": "Solutions\n\nAgain, we should ask ourselves what distribution we are going to use.\nIs the population normally distributed?\n\nIn other words, are the wait times of all customers normally distributed?\nNo; or, at least, there is not enough inforamtion to conclude that they are.\n\nIs our sample large enough?\n\nYes; \\(n = 40 \\geq 30\\)\n\nDo we have \\(\\sigma\\) or \\(s\\)?\n\nWe only have \\(s\\), the standard devaition of commute times of Markus’ sample.\n\nHence, we will use the \\(t_{39}\\) distribution."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-4",
     "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-4",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Solutions",
     "text": "Solutions\n\nNow, we are using an upper-tailed alternative, meaning our critical value is the point such that \\((1 - 0.01) = 0.99\\) area lies to the left (or, equivalently, \\(0.01\\) lies to the right).\nThis means our critical value is 2.43, and we reject the null whenever \\(\\mathrm{TS} &gt; 2.43\\).\nThe observed value of our test statistic is \\[ \\frac{15 - 10}{10 / \\sqrt{40}} = 3.162 \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-5",
     "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-5",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Solutions",
     "text": "Solutions\n\nSince \\(\\mathrm{TS} = 3.162 &gt; 2.43\\), we reject the null:\n\n\n\nAt an \\(\\alpha = 0.01\\) level of significance, there was sufficient evidence to reject McGaucho’s’ claim that the average wait time of customers is 10 minutes in favor of the alternative that the true wait time is longer than 10 minutes."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#your-turn",
     "href": "Pages/Lectures/Lecture13/Lec13.html#your-turn",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Your Turn!",
     "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 1\n\n\n\n\nA university administrator at Gaucho University (GU) claims that GU students get, on average, 8 hours of sleep per night. A sample of 35 students had a combined average of 7.72 hours of sleep and a standard deviation of 3.8 hours. Using an \\(\\alpha = 0.05\\) level of significance, test the administrator’s claims against a…\n\n…two-sided alternative\n…lower-tailed alternative"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#recap-1",
     "href": "Pages/Lectures/Lecture13/Lec13.html#recap-1",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Recap",
     "text": "Recap\n\nLast time, we discussed Hypothesis Testing on population proportions.\nThat is: given a population with true proportion \\(p\\), we took samples and tried to use the data collected in these samples to assess the validity of the claim \\(H_0: \\ p = p_0\\) (for some fixed value \\(p_0\\)) against some alternative hypothesis (two-sided, lower-tailed, or upper-tailed)\nThe test we constructed last time compared the value of the test statistic to some critical value, and made a decision about rejection based on the comparison between these two values."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#lower-tailed-example",
     "href": "Pages/Lectures/Lecture13/Lec13.html#lower-tailed-example",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Lower-Tailed Example",
     "text": "Lower-Tailed Example\n\nFor illustrative purposes, let’s consider a lower-tailed test: \\[ \\left[ \\begin{array}{rr}\nH_0:    & p = p_0   \\\\\nH_A:    & p &lt; p_0\n\\end{array} \\right.\\]\nUnder appropriate conditions, our test statistic \\[ \\mathrm{TS} = \\frac{\\widehat{P} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}} \\] follows the standard normal distribution under the null."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#lower-tailed-example-1",
     "href": "Pages/Lectures/Lecture13/Lec13.html#lower-tailed-example-1",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Lower-Tailed Example",
     "text": "Lower-Tailed Example\n\n\nRecall that \\(\\alpha\\), the level of significance, is constructed to be the \\(\\alpha \\times 100\\)th percentile of the standard normal distribution:"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#reject-or-not",
     "href": "Pages/Lectures/Lecture13/Lec13.html#reject-or-not",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Reject or Not?",
     "text": "Reject or Not?"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#reject-or-not-1",
     "href": "Pages/Lectures/Lecture13/Lec13.html#reject-or-not-1",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Reject or Not?",
     "text": "Reject or Not?"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#leadup",
     "href": "Pages/Lectures/Lecture13/Lec13.html#leadup",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Leadup",
     "text": "Leadup\n\nSo, up until now, our decision has been based on comparing the raw value of the test statistic to the critical value.\n\nIf the test statistic is smaller than the critical value, we reject.\nOtherwise, we fail to reject.\n\nAgain, remember the intuition behind why this is: if we observe a value of \\(\\widehat{P}\\) that is much smaller than \\(p_0\\), this leads credence to the claim that \\(p &lt; p_0\\) (i.e. this leads credence to our alternative and away from our null).\n\nValues of \\(\\widehat{P}\\) less than \\(p_0\\) lead to very negative values of \\(\\mathrm{TS}\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#leadup-1",
     "href": "Pages/Lectures/Lecture13/Lec13.html#leadup-1",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Leadup",
     "text": "Leadup\n\nNow, we like to think in terms of areas.\nSo, here’s an idea: let’s translate our reject/fail to reject scheme to be in terms of areas.\nSpecifically, here is what I mean.\nConsider again a situation in which we reject the null:"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#leadup-2",
     "href": "Pages/Lectures/Lecture13/Lec13.html#leadup-2",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Leadup",
     "text": "Leadup\n\nSo, we can rephrase our decision as follows:\n\nReject \\(H_0\\) if the area to the left of the test statistic is smaller than \\(\\alpha\\).\nOtherwise, fail to reject \\(H_0\\).\n\nNotice that the area to the left of the test statistic, since we are dealing with a lower-tailed test, is equivalent to “the probability of observing something as or more extreme, under the null, as the value we currently observe”.\n\nHere, “extreme” can be thought of as in the direction of the alternative; in other words, we consider the area in the direction of the sign in the alternative hypothesis.\n\nThis is an example of what we call a p-value."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#p-values",
     "href": "Pages/Lectures/Lecture13/Lec13.html#p-values",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "p-Values",
     "text": "p-Values\n\nThe textbook defines \\(p-\\)values as:\n\n\n\n[…] the probability of observing data at least as favorable to the alternative hypothesis as our current data set, if the null hypothesis were true.\n\n\n\nAnother way to think about it is this: if the null were true, what is the probability that we would observe something even more extreme (i.e. even “farther away”, in the direction of the alternative) as our current observations?\nNote that exactly how we compute \\(p-\\)values depends heavily on our alternative."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#the-test-statistic",
     "href": "Pages/Lectures/Lecture13/Lec13.html#the-test-statistic",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "The Test Statistic",
     "text": "The Test Statistic"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#p-value-lower-tailed-test",
     "href": "Pages/Lectures/Lecture13/Lec13.html#p-value-lower-tailed-test",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "p-value; Lower-Tailed Test",
     "text": "p-value; Lower-Tailed Test"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#p-value-upper-tailed-test",
     "href": "Pages/Lectures/Lecture13/Lec13.html#p-value-upper-tailed-test",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "p-value; Upper-Tailed Test",
     "text": "p-value; Upper-Tailed Test"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#p-value-two-sided-test",
     "href": "Pages/Lectures/Lecture13/Lec13.html#p-value-two-sided-test",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "p-value; Two-Sided Test",
     "text": "p-value; Two-Sided Test"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example-3",
     "href": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example-3",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Worked-Out Example",
     "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 3\n\n\n\n\nForbes magazine has claimed that, as of May 2023, 91.7% of US households own a vehicle. To test that claim, we take a representative sample of 500 US households and observe that 89.4% of these households own a vehicle.\n\nCompute the \\(p-\\)value of our observed value of the statistic, assuming we are using a lower-tailed alternative.\nCompute the \\(p-\\)value of our observed value of the statistic, assuming we are using a two-sided alternative."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-6",
     "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-6",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Solutions",
     "text": "Solutions\n\nLet’s first compute the observed value of our test statistic: \\[ \\mathrm{TS} = \\frac{0.894 - 0.917}{\\sqrt{\\frac{(0.917) \\cdot (1 - 0.917)}{500}}} = -1.86 \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-7",
     "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-7",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Solutions",
     "text": "Solutions\n\nIn the lower-tailed case, our p-value is\n\n\n\n\n\n\n\n\n\nWe can compute this in one of two ways."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-8",
     "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-8",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Solutions",
     "text": "Solutions\n\nWe could simply use Python:\n\n\n\nimport scipy.stats as sps\nsps.norm.cdf(-1.86)\n\nnp.float64(0.03144276298075271)\n\n\n\n\n\n\nOr, we could use our z-table: \\(0.0314\\)\n\n\n\n\nEither way, looks like our p-value in the lower-tailed case is \\(0.0314\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-9",
     "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-9",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Solutions",
     "text": "Solutions\n\nIn the two-sided case, our p-value is\n\n\n\n\n\n\n\n\n\nSame deal as before: we can compute this using either Python or our table."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-10",
     "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-10",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Solutions",
     "text": "Solutions\n\nAlternatively, note that we can utilize the symmetry of the normal distribution in our favor- the area we’re interested in is simply twice the area we found in the lower-tailed case!\nSo, our \\(p-\\)value in the two-sided case is simply \\(2 \\times (0.0314) = 0.0628\\).\nIf you don’t believe me:\n\n\n\nsps.norm.cdf(-1.86) + (1 - sps.norm.cdf(1.86))\n\nnp.float64(0.06288552596150537)"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#p-values-1",
     "href": "Pages/Lectures/Lecture13/Lec13.html#p-values-1",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "p-Values",
     "text": "p-Values\n\nOf course, p-values are not restricted to the case of hypothesis testing a proportion; we can absolutely compute \\(p-\\)values in a setting where we are testing a population mean!\n\n\n\n\n\n\n\n\nWorked-Out Example 4\n\n\n\n\nConsider again the setup of Worked-Out Example 2: McGaucho’s claims that, on average, they are able to serve customers their food in 10 minutes. Dubious of these claims, Markus takes a representative sample of 40 customers and finds that these customers waited an combined average of 15 minutes before receiving their food, with a standard deviation of 10 minutes.\n\nCompute the p-value if we were to use a lower-tailed alternative.\nCompute the p-value if we were to use a two-sided alternative."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-11",
     "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-11",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Solutions",
     "text": "Solutions\n\nRecall that we ended up needing to use the \\(t_{39}\\) distribution as opposed to the standard normal distribution.\nThis doesn’t affect our computations of the p-value much, except for the fact that now we will need to use Python (as our \\(t-\\)table doesn’t really give us probabilities).\nThe observed value of the test statistic is \\[ \\frac{15 - 10}{10 / \\sqrt{40}} = 3.162 \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-12",
     "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-12",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Solutions",
     "text": "Solutions\n\nOn a graph, this looks like:"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-13",
     "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-13",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Solutions",
     "text": "Solutions\n\nUsing a lower-tailed alternative:\n\n\n\n\n\n\n\n\n\n\nsps.t.cdf(3.162, 39)\n\nnp.float64(0.998485142798897)"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-14",
     "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-14",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Solutions",
     "text": "Solutions\n\nUsing a two-sided alternative:\n\n\n\n\n\n\n\n\n\n\n2 * sps.t.cdf(-3.162, 39)\n\nnp.float64(0.0030297144022061392)\n\n\nor\n\nsps.t.cdf(-3.162, 39) + (1 - sps.t.cdf(3.162, 39))\n\nnp.float64(0.0030297144022060733)"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#what-do-we-do-with-a-p-value",
     "href": "Pages/Lectures/Lecture13/Lec13.html#what-do-we-do-with-a-p-value",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "What Do We Do with a p-Value?",
     "text": "What Do We Do with a p-Value?\n\nOkay, so after we’ve computed our p-value… what do we do?\nWe reject when p is small; specifically, we reject when p is less than the level of significance.\nSo, in other words, we now have two ways to conduct hypothesis tests under our belt: using critical values, and using p-values.\nI’d like to stress- these two frameworks are completely equivalent!\n\nYour decision using critical values will always be the same as your decision using p-values, by construction."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#your-turn-1",
     "href": "Pages/Lectures/Lecture13/Lec13.html#your-turn-1",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Your Turn!",
     "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 2\n\n\n\n\nUCSB claims that 40% of its undergraduate student body are first-generation students (as in, the first in their families to earn a Bachelor’s degree). To test this claim, a representative sample of 120 undergraduates is taken and it is found that 43% of these students are first-generation. Suppose we use an \\(\\alpha = 0.05\\) level of significance, and we test the University’s claims against a two-sided alternative.\n\nConduct the test using critical values.\nConduct the test using p-values."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#your-turn-2",
     "href": "Pages/Lectures/Lecture13/Lec13.html#your-turn-2",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Your Turn!",
     "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 3\n\n\n\n\nA botanist claims that the average weight of a chestnut is around 5 grams. To test this claim, a representative sample of 35 chestnuts is taken; these chestnuts have a combined average weight of 4.87 grams and a standard deviation of 1.82 grams. Suppose we use an \\(\\alpha = 0.05\\) level of significance, and a lower-tailed alternative.\n\nConduct the test using critical values.\nConduct the test using p-values."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#criticisms-of-p-values",
     "href": "Pages/Lectures/Lecture13/Lec13.html#criticisms-of-p-values",
-    "title": "PSTAT 5A: Lecture 17",
+    "title": "PSTAT 5A: Lecture 13",
     "section": "Criticisms of p-Values",
     "text": "Criticisms of p-Values\n\nI should note that there are some growing criticism within the statistical and data scientific communities regarding p-values.\nFor one thing, they can be easily misinterpreted.\n\nTake a look at this Wikipedia page for a list of common misinterpretations of p-values to make sure you don’t make any of these (and yes, I might test you on some of these on a quiz/exam!)\n\nTo fully understand and appreciate the more nuanced criticisms, however, we would need a bit of extra background/theory pertaining to the framework of Hypothesis Testing - material that we don’t cover in this class.\n\nI encourage you to take PSTAT 120B and PSTAT 120C if you’d like to learn more about this!"
   },
@@ -4932,7 +4932,7 @@
     "href": "Pages/Lectures/Lecture12/Lec12.html#lets-return-to-pets",
     "title": "PSTAT 5A: Lecture 12",
     "section": "Let’s return to pets",
-    "text": "Let’s return to pets\n\nAccording to the American Pet Products Association, prior to the pandemic, 67% of all U.S. households had pets. Many people have speculated that the. rate of pet ownership changed during the pandemic. Recently, a group of veterinarians surveyed a random sample of 480 U.S. households and found that 336 had at least one pet. Is there evidence to support the claim that the rate of pet ownership now differs from the 67% before the pandemic?"
+    "text": "Let’s return to pets\n\nAccording to the American Pet Products Association, prior to the pandemic, 67% of all U.S. households had pets. Many people have speculated that the rate of pet ownership changed during the pandemic. Recently, a group of veterinarians surveyed a random sample of 480 U.S. households and found that 336 had at least one pet. Is there evidence to support the claim that the rate of pet ownership now differs from the 67% before the pandemic?"
   },
   {
     "objectID": "Pages/Lectures/Lecture12/Lec12.html#hypothesis-testing",
@@ -4946,14 +4946,14 @@
     "href": "Pages/Lectures/Lecture12/Lec12.html#hypothesis-testing-1",
     "title": "PSTAT 5A: Lecture 12",
     "section": "Hypothesis Testing",
-    "text": "Hypothesis Testing\n\nWhat about the alternative hypothesis?\nAs the name suggests, the alternative hypothesis provides some sort of alternative to the null.\nLet’s look at our cat example again. Here are some potential alternatives to the null:\n\n\\(p \\neq 0.67\\) (the true proportion of US households with pets is not 67%)\n\\(p &gt; 0.67\\) (the true proportion of US households with pets is larger than 67%)\n\\(p &lt; 0.67\\) (the true proportion of US households with pets is less than 67%)\n\\(p = 0.67\\) (the true proportion of US households with pets is 33.5%)"
+    "text": "Hypothesis Testing\n\nWhat about the alternative hypothesis?\nAs the name suggests, the alternative hypothesis provides some sort of alternative to the null.\nLet’s look at our pet example again. Here are some potential alternatives to the null:\n\n\\(p \\neq 0.67\\) (the true proportion of US households with pets is not 67%)\n\\(p &gt; 0.67\\) (the true proportion of US households with pets is larger than 67%)\n\\(p &lt; 0.67\\) (the true proportion of US households with pets is less than 67%)\n\\(p = 0.33.5\\) (the true proportion of US households with pets is 33.5%)"
   },
   {
     "objectID": "Pages/Lectures/Lecture12/Lec12.html#hypothesis-testing-2",
     "href": "Pages/Lectures/Lecture12/Lec12.html#hypothesis-testing-2",
     "title": "PSTAT 5A: Lecture 12",
     "section": "Hypothesis Testing",
-    "text": "Hypothesis Testing\n\nEach of these alternative hypotheses has a name.\nBefore we talk about these names, let’s establish a slightly more general framework for conducting hypothesis testing on a proportion.\nOur null hypothesis will often take the form \\[ H_0 : \\ p = p_0 \\] for some prespecified value \\(p_0\\) (e.g. 20%, like in our cat example above).\nThis leads to four possible alternative hypotheses:\n\n\\(H_A: \\ p \\neq p_0\\)\n\\(H_A: \\ p &gt; p_0\\)\n\\(H_A: \\ p &lt; p_0\\)\n\\(H_A: \\ p = p_1\\) (where \\(p_1 \\neq p_0\\))\n\nI’d like to stress: in a specific hypothesis testing problem, we need to pick one of these alternative hypotheses"
+    "text": "Hypothesis Testing\n\nEach of these alternative hypotheses has a name.\nBefore we talk about these names, let’s establish a slightly more general framework for conducting hypothesis testing on a proportion.\nOur null hypothesis will often take the form \\[ H_0 : \\ p = p_0 \\] for some prespecified value \\(p_0\\) (e.g. 67%, like in our pet example above).\nThis leads to four possible alternative hypotheses:\n\n\\(H_A: \\ p \\neq p_0\\)\n\\(H_A: \\ p &gt; p_0\\)\n\\(H_A: \\ p &lt; p_0\\)\n\\(H_A: \\ p = p_1\\) (where \\(p_1 \\neq p_0\\))\n\nI’d like to stress: in a specific hypothesis testing problem, we need to pick one of these alternative hypotheses"
   },
   {
     "objectID": "Pages/Lectures/Lecture12/Lec12.html#terminology",
@@ -4974,7 +4974,7 @@
     "href": "Pages/Lectures/Lecture12/Lec12.html#worked-out-example",
     "title": "PSTAT 5A: Lecture 12",
     "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nForbes magazine has claimed that, as of May 2023, 91.7% of US households own a vehicle.\n\nWhat is the population?\nWhat is the sample?\nDefine the parameter of interest.\nDefine the random variable of interest.\nWrite down the null hypothesis for this test.\nWrite down the two-sided alternative hypothesis for this test.\nWrite down the lower-tailed alternative hypothesis for this test.\nWrite down the upper-tailed alternative hypothesis for this test."
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nForbes magazine has claimed that, as of May 2023, 91.7% of US households own a vehicle. To test this, we took a representative sample of 500 US households.\n\nWhat is the population?\nWhat is the sample?\nDefine the parameter of interest.\nDefine the random variable of interest.\nWrite down the null hypothesis for this test.\nWrite down the two-sided alternative hypothesis for this test.\nWrite down the lower-tailed alternative hypothesis for this test.\nWrite down the upper-tailed alternative hypothesis for this test."
   },
   {
     "objectID": "Pages/Lectures/Lecture12/Lec12.html#solutions",
@@ -5002,7 +5002,7 @@
     "href": "Pages/Lectures/Lecture12/Lec12.html#fail-to-reject",
     "title": "PSTAT 5A: Lecture 12",
     "section": "Fail To Reject?",
-    "text": "Fail To Reject?\n\nBy the way, the results of a hypothesis test are always framed in terms of the null hypothesis; e.g. “reject \\(H_0\\)” or “fail to reject \\(H_0\\)”.\nWait, why are we saying “fail to reject \\(H_0\\)”? Isn’t that just equivalent to “accept \\(H_0\\)”?\nWell, not quite…\nThink of it this way: just because we are saying the particular alternative hypothesis we picked is less plausible than the null, doesn’t mean there isn’t a different alternative hypothesis that is more plausible than the null.\nAll we are saying when we fail to reject the null is exactly that- we didn’t have enough information to reject \\(H_0\\) outright. We are not saying that \\(H_0\\) must be true.\nAdmittedly, some statisticians have gotten a little lax with this distinction and you may encounter textbooks and/or professors that use terms like “accept the null”.\n\nFor better or for worse, I am a bit of a traditionalist in this respect and will adhere to the terminology “fail to reject” in favor of “accept”."
+    "text": "Fail To Reject?\n\nBy the way, the results of a hypothesis test are always framed in terms of the null hypothesis; e.g. “reject \\(H_0\\)” or “fail to reject \\(H_0\\)”.\nWait, why are we saying “fail to reject \\(H_0\\)”? Isn’t that just equivalent to “accept \\(H_0\\)”?\nWell, not quite…\nThink of it this way: just because we are saying the particular alternative hypothesis we picked is less plausible than the null, doesn’t mean there isn’t a different alternative hypothesis that is more plausible than the null.\nAll we are saying when we fail to reject the null is exactly that- we didn’t have enough information to reject \\(H_0\\) outright. We are not saying that \\(H_0\\) must be true.\nAdmittedly, some statisticians have gotten a little lax with this distinction and you may encounter textbooks and/or professors that use terms like “accept the null”.\n\nWe will stick with the terminology “fail to reject” in favor of “accept”."
   },
   {
     "objectID": "Pages/Lectures/Lecture12/Lec12.html#four-states-of-the-world",
@@ -5044,7 +5044,7 @@
     "href": "Pages/Lectures/Lecture12/Lec12.html#solutions-1",
     "title": "PSTAT 5A: Lecture 12",
     "section": "Solutions",
-    "text": "Solutions\n\nA Type I error would be concluding that the true proportion of US households that own a vehicle is not 91.7%, when in fact 91.7% of US households own a vehicle.\nA Type II error would be concluding that the true proportion of US households that own a vehicle is 91.7%, when in fact the true proportion is not 91.8%."
+    "text": "Solutions\n\nA Type I error would be concluding that the true proportion of US households that own a vehicle is not 91.7%, when in fact 91.7% of US households own a vehicle.\nA Type II error would be concluding that the true proportion of US households that own a vehicle is 91.7%, when in fact the true proportion is not 91.7%."
   },
   {
     "objectID": "Pages/Lectures/Lecture12/Lec12.html#leadup",
@@ -5065,7 +5065,7 @@
     "href": "Pages/Lectures/Lecture12/Lec12.html#test-statistic",
     "title": "PSTAT 5A: Lecture 12",
     "section": "Test Statistic",
-    "text": "Test Statistic\n\nSo, it makes sense to reject \\(H_0\\) when \\(\\widehat{p}\\) is very far away from \\(p_0\\) (which, in the cat example, is \\(0.2\\)). \\[ \\texttt{decision}(\\widehat{p}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if $\\widehat{p}$ is far from $p_0$} \\\\  \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]\nFor reasons that will become clear in a few slides, we typically avoid using \\(\\widehat{p}\\) and instead use a standardized version of \\(\\widehat{p}\\): \\[ \\mathrm{TS} = \\frac{\\widehat{P} - p_0}{\\sqrt{\\frac{p_0 (1 - p_0)}{n}}} \\] where \\(\\mathrm{TS}\\) stands for test statistic."
+    "text": "Test Statistic\n\nSo, it makes sense to reject \\(H_0\\) when \\(\\widehat{p}\\) is very far away from \\(p_0\\) (which, in the pet example, is \\(0.67\\)). \\[ \\texttt{decision}(\\widehat{p}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if $\\widehat{p}$ is far from $p_0$} \\\\  \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]\nFor reasons that will become clear in a few slides, we typically avoid using \\(\\widehat{p}\\) and instead use a standardized version of \\(\\widehat{p}\\): \\[ \\mathrm{TS} = \\frac{\\widehat{P} - p_0}{\\sqrt{\\frac{p_0 (1 - p_0)}{n}}} \\] where \\(\\mathrm{TS}\\) stands for test statistic."
   },
   {
     "objectID": "Pages/Lectures/Lecture12/Lec12.html#test-statistic-1",
@@ -5163,7 +5163,7 @@
     "href": "Pages/Lectures/Lecture12/Lec12.html#solutions-3",
     "title": "PSTAT 5A: Lecture 12",
     "section": "Solutions",
-    "text": "Solutions\n\nConduct the test: We see that \\(|\\mathrm{TS}| = |-1.86| = 1.86\\) which is not greater than \\(1.96\\). As such, we fail to reject the null.\n\n\nNow, the problem told us to phrase our conclusions carefully and in the context of the problem.\nIt is VERY important to include the level of significance in your final conclusions.\nSo, here is how we would phrase the final conclusion of our test:\n\n\n\nAt an \\(\\alpha = 0.05\\) level of significance, we do not have enough evidence to reject the null hypothesis that 91.7% of US households own a vehicle. Thus, our analysis suggests that the true proportion of US households with vehicle is not different from 91.7%.\n\n\nAlternatively\n\n\nAt an \\(\\alpha = 0.05\\) level of significance, there is insufficient evidence to reject Forbes’s claim that 91.7% of US households own a vehicle in favor of the alternative that the true proportion of US households that own a vehicle is not 91.7%.\n\n\n\nIt is very important to include the level of significance in our conclusion! This is because the final outcome of our test may change depending on which level of significance we use."
+    "text": "Solutions\n\nConduct the test: We see that \\(|\\mathrm{TS}| = |-1.86| = 1.86\\) which is not greater than \\(1.96\\). As such, we fail to reject the null.\n\n\nNow, the problem told us to phrase our conclusions carefully and in the context of the problem.\nIt is VERY important to include the level of significance in your final conclusions.\nSo, here is how we would phrase the final conclusion of our test:\n\n\n\nAt an \\(\\alpha = 0.05\\) level of significance, we do not have enough evidence to reject the null hypothesis that 91.7% of US households own a vehicle. Thus, our analysis suggests that the true proportion of US households with vehicle is not different from 91.7%."
   },
   {
     "objectID": "Pages/Lectures/Lecture12/Lec12.html#worked-out-example-4",
@@ -5212,159 +5212,159 @@
     "href": "Pages/Lectures/Lecture12/Lec12.html#note",
     "title": "PSTAT 5A: Lecture 12",
     "section": "Note",
-    "text": "Note\n\nI don’t recommend you try and memorize all of the different percentiles and critical values.\nInstead, I recommend you familiarize yourself with the process used to derive these tests, as that will immediately tell you what picture to draw, which will in turn tell you which quantile we are after in a given situation.\nThere are some problems on the practice problems that give you practice with these one-sided alternatives."
+    "text": "Note\n\nI don’t recommend you try and memorize all of the different percentiles and critical values.\nInstead, I recommend you familiarize yourself with the process used to derive these tests, as that will immediately tell you what picture to draw, which will in turn tell you which quantile we are after in a given situation."
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#multiple-populations",
     "href": "Pages/Lectures/Lecture14/Lec14.html#multiple-populations",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Multiple Populations",
     "text": "Multiple Populations\n\nSo far, we’ve talked about constructing confidence intervals and performing hypothesis tests for both population proportions and population means.\nOne crucial thing to note is that everything we’ve done has been in the context of a single population\nSometimes, as Data Scientists, we may want to test claims about the differences between two populations\n\nE.g. Is the average monthly income in Santa Barbara different from the average monthly income in San Francisco?\nE.g. Is the proportion of people who test positive for a disease in one country different than the proportion that test positive in a second country?"
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#two-populations-1",
     "href": "Pages/Lectures/Lecture14/Lec14.html#two-populations-1",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Two Populations",
     "text": "Two Populations\n\nStatistically: we are imagining two populations, Population 1 and Population 2, governed by parameters \\(\\theta_1\\) and \\(\\theta_2\\), respectively, and trying to test claims about the relationship between \\(\\theta_1\\) and \\(\\theta_2\\).\n\nFor example, we could consider two populations with means \\(\\mu_1\\) and \\(\\mu_2\\), respectively, and try to make claims about whether or not \\(\\mu_1\\) and \\(\\mu_2\\) are equal.\n\nThe trick Statisticians use is to think in terms of the difference \\(\\mu_1 - \\mu_2.\\)\n\nFor example, if our null hypothesis is that \\(\\mu_1 = \\mu_2\\), this can be rephrased as \\(H_0: \\ \\mu_1 - \\mu_2 = 0\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#two-populations-2",
     "href": "Pages/Lectures/Lecture14/Lec14.html#two-populations-2",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Two Populations",
     "text": "Two Populations\n\nThe reason we do this is because we have now effectively reduced our two-parameter problem into a one-parameter problem, involving only the parameter \\(\\delta := \\mu_1 - \\mu_2\\).\nNow, we will need a point estimator of \\(\\delta\\). Just as before, we used \\(\\bar{X}\\) to estimate \\(\\mu\\), we now use \\(\\bar{X}_2-\\bar{X}_1\\) to estimate \\(\\mu_1 - \\mu_2\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#two-populations-3",
     "href": "Pages/Lectures/Lecture14/Lec14.html#two-populations-3",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Two Populations",
-    "text": "Two Populations\n\nWe will ultimately need access to the sampling distribution of \\(\\bar{X}_1-\\bar{X}_2\\).\nJust as before, we have to check conditions to determine the sampling distribution of \\(\\bar{X}_1-\\bar{X}_2\\):\n\n\nIndependence within each sample: The observations within each sample are independent (e.g. we have a random sample from each of the two populations).\nIndependence between the samples: he two samples are independent of one another such that observations in one sample tell us nothing about the observations in the other sample (and vice versa).\nNormality: When the sample sizes are small, we require that the observations in each sample come from a normally distributed population. We can relax this condition more and more for larger and larger sample sizes. (You need to check normality for both groups.)"
+    "text": "Two Populations\n\nWe will ultimately need access to the sampling distribution of \\(\\bar{X}_1-\\bar{X}_2\\).\nJust as before, we have to check conditions to determine the sampling distribution of \\(\\bar{X}_1-\\bar{X}_2\\):\n\n\nIndependence within each sample: The observations within each sample are independent (e.g. we have a random sample from each of the two populations).\nIndependence between the samples: the two samples are independent of one another such that observations in one sample tell us nothing about the observations in the other sample (and vice versa).\nNormality: When the sample sizes are small, we require that the observations in each sample come from a normally distributed population. We can relax this condition more and more for larger and larger sample sizes. (You need to check normality for both groups.)"
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#sampling-distribution-of-barx_1-barx_2",
     "href": "Pages/Lectures/Lecture14/Lec14.html#sampling-distribution-of-barx_1-barx_2",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Sampling Distribution of \\(\\bar{X}_1-\\bar{X}_2\\)",
     "text": "Sampling Distribution of \\(\\bar{X}_1-\\bar{X}_2\\)\nWhen the conditions are satisfied, the sampling distribution of \\(\\bar{X}_1-\\bar{X}_2\\) will be nearly normal with mean \\[\\mu_1 -\\mu_2\\] and standard error \\[SE = \\sqrt{\\frac{\\sigma_1^2}{n_1}+\\frac{\\sigma_2^2}{n_2}}\\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#sampling-distribution-of-barx_1-barx_2-1",
     "href": "Pages/Lectures/Lecture14/Lec14.html#sampling-distribution-of-barx_1-barx_2-1",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Sampling Distribution of \\(\\bar{X}_1-\\bar{X}_2\\)",
     "text": "Sampling Distribution of \\(\\bar{X}_1-\\bar{X}_2\\)\nThis is only if we know the population standard deviation \\(\\sigma_1\\) and \\(\\sigma_2\\), which is unlikely. Instead, we can use the sample standard deviations \\(s_1\\) and \\(s_2\\) so we have \\[SE = \\sqrt{\\frac{s_1^2}{n_1}+\\frac{s_2^2}{n_2}}\\]\nWe will use technology to calculate the degrees of freedom. When we can’t use technologies, we will use the smaller of \\(n_1-1\\) and \\(n_2-1\\) for the degrees of freedom."
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#hypothesis-test-for-mu_1-mu_2-1",
     "href": "Pages/Lectures/Lecture14/Lec14.html#hypothesis-test-for-mu_1-mu_2-1",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Hypothesis Test for \\(\\mu_1-\\mu_2\\)",
     "text": "Hypothesis Test for \\(\\mu_1-\\mu_2\\)\nWe will still follow the 5 steps to hypothesis test:\nStep 1: Write the hypothesis statements\nStep 2: Check conditions for determining the distribution of your sample statistic\nStep 3: Calculate test statistic\nStep 4: Use test statistic to determine decision of test (either using comparison to critical value or calculate p-value)\nStep 5: Write a conclusion in the context of the problem"
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#step-1-write-the-hypothesis-statements",
     "href": "Pages/Lectures/Lecture14/Lec14.html#step-1-write-the-hypothesis-statements",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Step 1: Write the hypothesis statements",
     "text": "Step 1: Write the hypothesis statements\nThe null hypothesis is\n\\[H_0: \\mu_1-\\mu_2 = 0\\] The alternative is one of\n\\[H_A: \\mu_1-\\mu_2 &lt; 0\\] \\[H_A: \\mu_1-\\mu_2 \\neq 0\\] \\[H_A: \\mu_1-\\mu_2 &gt; 0\\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#step-2-check-conditions-for-your-sampling-distribution",
     "href": "Pages/Lectures/Lecture14/Lec14.html#step-2-check-conditions-for-your-sampling-distribution",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Step 2: Check conditions for your sampling distribution",
     "text": "Step 2: Check conditions for your sampling distribution\n\nIndependence within each sample\nIndependence between samples\nNormality"
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#step-3-calculate-test-statistic",
     "href": "Pages/Lectures/Lecture14/Lec14.html#step-3-calculate-test-statistic",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Step 3: Calculate test statistic",
     "text": "Step 3: Calculate test statistic\nSimilar to how we determined our test statistic before, with the generic form:\n\\[\\frac{\\text{sample statistic} - \\text{null value}}{\\text{standard error}}\\]\nIn this situation, we have:\n\\[\\text{TS} = \\frac{\\bar{x}_1-\\bar{x}_2 - 0}{\\sqrt{\\frac{s_1^2}{n_1} + \\frac{s_2^2}{n_2}}}\\]\nAnd similar to the one mean problem, this test statistic follows a \\(t\\) distribution with degrees of freedom calculated from technology."
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#step-4-make-decision-on-test-and-step-5-write-a-conclusion",
     "href": "Pages/Lectures/Lecture14/Lec14.html#step-4-make-decision-on-test-and-step-5-write-a-conclusion",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Step 4: Make decision on test and Step 5: Write a conclusion",
     "text": "Step 4: Make decision on test and Step 5: Write a conclusion\n\nAs we did with one mean, the decision will be based on the kind of test (two sided, lower tail, or greater tail tests). We will calculate the p-value to measure the strength of the evidence against the null hypothesis, comparing it to the significance level, \\(\\alpha\\).\nFinally, we write a conclusion in the context of the problem which include our 5 elements:\n\nsignificance level,\ndecision of the test,\nas a function of the null hypothesis. Then we write an interpretation that is\nnot too strong, and\nin affirmation or not in affirmation of the alternative hypothesis."
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#worked-out-example",
     "href": "Pages/Lectures/Lecture14/Lec14.html#worked-out-example",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Worked-Out Example",
     "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nGaucho Gourmande has two locations: one in Goleta and one in Santa Barbara. The owner would like to determine whether the average revenue generated by the two locations are equal or not. To that end, he computes the net revenue generated by the Goleta location over 30 days and also computes the net revenue generated by the Santa Barbara location over 35 days (assume all of the necessary independence conditions hold), and produced the following information:\n\\[\\begin{array}{r|cc}\n                    & \\text{Sample Average}     & \\text{Sample Standard Deviation}    \\\\\n  \\hline\n  \\textbf{Goleta}   &     \\$13                    & \\$3.45        \\\\\n  \\textbf{Santa Barbara}   &     \\$15                    & \\$4.23\n\\end{array}\\]\nTest the owner’s claims at an \\(\\alpha = 0.05\\) level of significance, using a two-sided alternative."
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#solutions",
     "href": "Pages/Lectures/Lecture14/Lec14.html#solutions",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Solutions",
     "text": "Solutions\n\nOur first step should be to figure out what “Population 1” and “Population 2” are in the context of the problem.\nLet “Goleta Location” be Population 1 and “Santa Barbara Location” be Population 2.\n\nIt is perfectly acceptable to swap these two, but just be sure you remain consistent throughout the problem!\nAlso, I will expect you to explicitly write out your definitions of the populations (like above), even if the problem doesn’t explicitly ask you to do so.\n\nIn this way, \\[ \\overline{X} = 13; \\quad s_X = 3.45; \\quad \\overline{Y} = 15; \\quad s_Y = 4.23 \\]\nAdditionally, \\(n_1 = 30\\) and \\(n_2 = 35\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#solutions-1",
     "href": "Pages/Lectures/Lecture14/Lec14.html#solutions-1",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Solutions",
     "text": "Solutions\n\nNow, let’s compute the value of the test statistic. \\[ \\mathrm{TS} =   \\frac{\\overline{Y} - \\overline{X}}{\\sqrt{ \\frac{s_X^2}{n_1} + \\frac{s_Y^2}{n_2}}} = \\frac{15 - 13}{\\sqrt{\\frac{3.45^2}{30}  + \\frac{4.23^2}{35} }} = 2.10 \\]\nWe should next figure out the degrees of freedom: \\[\\begin{align*}\n\\mathrm{df}   &  = \\mathrm{round}\\left\\{ \\frac{ \\left[ \\left( \\frac{s_X^2}{n_1} \\right) + \\left( \\frac{s_Y^2}{n_2} \\right) \\right]^2 }{ \\frac{\\left( \\frac{s_X^2}{n_1} \\right)^2}{n_1 - 1} + \\frac{\\left( \\frac{s_Y^2}{n_2} \\right)^2}{n_2 - 1} } \\right\\}     \\\\\n  & =  \\mathrm{round}\\left\\{ \\frac{ \\left[ \\left( \\frac{3.45^2}{30} \\right) + \\left( \\frac{4.23^2}{35} \\right) \\right]^2 }{ \\frac{\\left( \\frac{3.45^2}{30} \\right)^2}{30 - 1} + \\frac{\\left( \\frac{4.23^2}{35} \\right)^2}{35 - 1} } \\right\\} = 63\n\\end{align*}\\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#solutions-2",
     "href": "Pages/Lectures/Lecture14/Lec14.html#solutions-2",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Solutions",
     "text": "Solutions\n\nAt this point, we could either proceed using critical values or using p-values.\nLet’s use p-values, for practice.\nOur p-value is computed as\n\n\n\nimport scipy.stats as sps\n2*sps.t.cdf(-2.10, 63)\n\nnp.float64(0.03973904581390475)\n\n\n\n\nThis is below our level of significance \\(\\alpha = 0.05\\) meaning we would reject the null.\nIf we wanted to instead use critical values:\n\n\n\n-sps.t.ppf(0.05, 63)\n\nnp.float64(1.669402221706813)\n\n\n\n\nThis means our critical value is 1.67; since \\(|\\mathrm{TS}| = |2.10| = 2.10 &gt; 1.67\\), we would again reject at an \\(\\alpha = 0.05\\) level of significance."
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#solutions-3",
     "href": "Pages/Lectures/Lecture14/Lec14.html#solutions-3",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Solutions",
     "text": "Solutions\n\nAt a 5% level of significance, there was sufficient evidence to reject the owner’s claims that the revenue generated by the two locations are equal, in favor of the alternative that the revenue generated by the two locations are not equal."
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#extensions",
     "href": "Pages/Lectures/Lecture14/Lec14.html#extensions",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Extensions",
     "text": "Extensions\n\nUnsurprisingly, we can adapt the above procedure to account for one-sided alternatives as well.\nFor instance, suppose we wish to test \\[ \\left[ \\begin{array}{rr}\nH_0:    & \\mu_1 = \\mu_2   \\\\\nH_A:    & \\mu_1 &lt; \\mu_2\n\\end{array} \\right.\\]\nAgain, we rephrase things as: \\[ \\left[ \\begin{array}{rr}\nH_0:    & \\mu_2 - \\mu_1 = 0   \\\\\nH_A:    & \\mu_2 - \\mu_1 &gt; 0\n\\end{array} \\right.\\] which is now a familiar upper-tailed test on \\(\\delta = \\mu_2 - \\mu_1\\) and \\(\\mu_0 = 0.\\)"
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#extensions-1",
     "href": "Pages/Lectures/Lecture14/Lec14.html#extensions-1",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Extensions",
     "text": "Extensions\n\nSpecifically, we would take the same test statistic (which would still follow the same distribution under the null) and use the decision rule \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\mathrm{TS} &gt; c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] where \\(c\\) is the appropriate quantile of the approximate t distribution (with degrees of freedom given by the Satterthwaite Approximation).\nA similar result holds for the lower-tailed test- I encourage you to work it out on your own."
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#confidence-interval-for-mu_1-mu_2-1",
     "href": "Pages/Lectures/Lecture14/Lec14.html#confidence-interval-for-mu_1-mu_2-1",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Confidence Interval for \\(\\mu_1-\\mu_2\\)",
     "text": "Confidence Interval for \\(\\mu_1-\\mu_2\\)\nAs with the confidence interval for one mean, we had the generic form\n\\[\\hat{\\theta} \\pm c \\cdot \\text{standard error}\\]\nSo confidence interval for \\(\\mu_1-\\mu_2\\) is \\[\\bar{x}_1-\\bar{x}_2 \\pm t^* \\sqrt{\\frac{s_1^2}{n_1}+\\frac{s_2^2}{n_2}}\\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#worked-out-example-2",
     "href": "Pages/Lectures/Lecture14/Lec14.html#worked-out-example-2",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Worked-Out Example",
     "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\nSince public universities are subsidized by state governments, it is usually less expensive to attend a public university in your home state than a private university. Is this still true when you must pay out-of-state tuition? A random sample of 75 private universities had an average total cost of $42,336 with standard deviation of $14,004. A similar random sample of 80 public universities had an average out-of-state total cost of $32,240 with standard deviation $7,730. Calculate the 90% confidence interval for the difference in population mean total cost for students at private schools and the population mean total cost for out-of-state students at public schools."
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#solutions-4",
     "href": "Pages/Lectures/Lecture14/Lec14.html#solutions-4",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Solutions",
     "text": "Solutions\n\nThese are both random samples so the observations with each sample are independent of one another.\nThere is no reason why the two samples would not be independent between each other.\nGiven \\(n_1 = 75 \\geq 30\\) and \\(n_2 = 80 \\geq 30\\), we have large enough sample to relax normality assumption and use CLT.\nTo calculate the degrees of freedom:\n\n\\[df =\\min(n_1-1,n_2-1) = \\min(74, 79) = 74\\] - Calculate \\(t^*\\) critical value given \\(\\alpha = 0.1\\) which is 1.6657"
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#solutions-5",
     "href": "Pages/Lectures/Lecture14/Lec14.html#solutions-5",
-    "title": "PSTAT 5A: Lecture 19",
+    "title": "PSTAT 5A: Lecture 14",
     "section": "Solutions",
     "text": "Solutions\n\\[\\bar{x}_1-\\bar{x}_2 \\pm t^* \\sqrt{\\frac{s_1^2}{n_1}+\\frac{s_2^2}{n_2}}\\]\n\\[(42336 - 32240) \\pm 1.6657 \\sqrt{\\frac{14004^2}{75}+\\frac{7730^2}{80}}\\]\n\\[10096 \\pm 3054\\]\n\\[[\\$7,042, \\$13,150]\\]\nWe are 90% confident that the true difference in population mean total cost for students at private schools and population mean total cost for out-of-state students at public schools is between $7,042 and $13,150."
   },
@@ -5416,5 +5416,12 @@
     "title": "PSTAT 5A: Understanding Data",
     "section": "Week 6 (9/08 - 9/11)",
     "text": "Week 6 (9/08 - 9/11)\n\n\nLectures\n19: Regression Diagnostics, and  Sampling Procedures 20: Ways Statistics Can Deceive 21: Review FINAL EXAM: Thursday, Sept 11 during lecture\n\n\nDiscussion\nQ&A with TA\n\n\nLab\nLab 06"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#alternatively",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#alternatively",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Alternatively",
+    "text": "Alternatively\n\n\nAt an \\(\\alpha = 0.05\\) level of significance, there is insufficient evidence to reject Forbes’s claim that 91.7% of US households own a vehicle in favor of the alternative that the true proportion of US households that own a vehicle is not 91.7%.\n\n\n\nIt is very important to include the level of significance in our conclusion! This is because the final outcome of our test may change depending on which level of significance we use."
   }
 ]

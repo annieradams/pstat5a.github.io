@@ -1,8 +1,8 @@
 ---
 title: "PSTAT 5A: Lecture 18"
 subtitle: "Review of Random Variables and Confidence Interval and Hypothesis Tests"
-author: "Mallory Wang"
-date: "07/22/24"
+author: "Annie Adams"
+date: "08/28/25"
 format: 
     revealjs:
       html-math-method: mathjax

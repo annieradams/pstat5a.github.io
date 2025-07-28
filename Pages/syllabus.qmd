@@ -11,7 +11,7 @@ format: html
 linkcolor: "#ffa07a"
 ---
 
-**WELCOME TO PSTAT 5A**! I am very excited to introduce to you the wonderful fields of Statistics and Data Science. As our world becomes ever more saturated with data, the need for data literacy becomes increasingly important. By the end of this course, I hope you will be able to think critically about statistical studies and results, understand how data can be used to simultaneously inform and manipulate, and begin applying your new skills to your future endeavors. I am very much looking forward to a great summer session with all of you!
+WELCOME TO PSTAT 5A! I'm thrilled to dive into the fascinating world of Statistics and Data Science with all of you. In our data-rich world, the ability to interpret and analyze information has become a crucial skill across countless fields and disciplines. Throughout this course, you'll develop the tools to evaluate statistical claims with a discerning eye, recognize how data can both illuminate truth and obscure it, and start building a foundation for applying these powerful techniques in your own academic and professional pursuits. I am very much looking forward to a wonderful and fun summer session with you all!
 
 --- Annie
 
@@ -96,7 +96,14 @@ There is a **final** exam for this class. You are required to take the final exa
 
 ### Homework:
 
-There will be weekly homework due on Thursday at 11:59p. It must be turned into Gradescope. No late homework will be accepted since solutions to the homework will be posted at midnight (Thursday to Friday). I advise you review your homework in preparation for the quiz on Monday.
+There will be weekly homework due on Thursday at 11:59p. It must be turned into Gradescope. No late homework will be accepted since solutions to the homework will be posted at midnight (Thursday to Friday). I advise you review your homework in preparation for the quiz on Monday.There will be six homework assignments, all weighted equally. Homework will be graded on an effort-based basis with the following cutoffs: 
+
+| Submission Quality | Credit Earned |
+|:-------------------|:--------------|
+| No submission or minimal effort | 0 points |
+| Partial completion or limited effort (some questions incomplete or responses lack depth) | 50% credit |
+| All questions completed with clear thought and effort demonstrating engagement | 100% credit |
+
 
 ### Schedule of Due Dates
 
@@ -191,4 +198,4 @@ I will try my best to answer all emails within 48 hours. If you have not gotten 
 
 ## Disclaimer
 
-This syllabus and much of the content for this course has been graciously borrowed from the original work of Ethan P. Marzban with some modifications. Thank you, Ethan!
+This syllabus and much of the content for this course has been graciously borrowed from the original work of Ethan P. Marzban with some modifications. Thank you, Ethan! Thank you, Mallory Wang, for your contributions as well!

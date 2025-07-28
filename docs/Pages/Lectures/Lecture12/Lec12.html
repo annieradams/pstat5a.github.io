@@ -397,13 +397,13 @@
   <p class="author" style="text-align: right">Annie Adams</p>
   <p class="date" style="text-align: right">2025-08-25</p>
 </section>
-<section id="lets-return-to-pets" class="slide level2" style="font-size:30px">
+<section id="lets-return-to-pets" class="slide level2" style="font-size:20px">
 <h2>Let’s return to pets</h2>
 <ul>
-<li class="fragment">According to the American Pet Products Association, prior to the pandemic, 67% of all U.S. households had pets. Many people have speculated that the. rate of pet ownership changed during the pandemic. Recently, a group of veterinarians surveyed a random sample of 480 U.S. households and found that 336 had at least one pet. <em>Is there evidence to support the claim that the rate of pet ownership now differs from the 67% before the pandemic?</em></li>
+<li class="fragment">According to the American Pet Products Association, prior to the pandemic, 67% of all U.S. households had pets. Many people have speculated that the rate of pet ownership changed during the pandemic. Recently, a group of veterinarians surveyed a random sample of 480 U.S. households and found that 336 had at least one pet. <em>Is there evidence to support the claim that the rate of pet ownership now differs from the 67% before the pandemic?</em></li>
 </ul>
 <div style="text-align:center">
-<p><img data-src="pets.png" style="width:70.0%"></p>
+<p><img data-src="pets.png" style="width:60.0%"></p>
 </div>
 </section>
 <section id="hypothesis-testing" class="slide level2" style="font-size:30px">
@@ -423,12 +423,12 @@
 <ul>
 <li class="fragment"><p>What about the alternative hypothesis?</p></li>
 <li class="fragment"><p>As the name suggests, the alternative hypothesis provides some sort of alternative to the null.</p></li>
-<li class="fragment"><p>Let’s look at our cat example again. Here are some potential alternatives to the null:</p>
+<li class="fragment"><p>Let’s look at our pet example again. Here are some potential alternatives to the null:</p>
 <ul>
 <li class="fragment"><span class="math inline">\(p \neq 0.67\)</span> (the true proportion of US households with pets is not 67%)</li>
 <li class="fragment"><span class="math inline">\(p &gt; 0.67\)</span> (the true proportion of US households with pets is larger than 67%)</li>
 <li class="fragment"><span class="math inline">\(p &lt; 0.67\)</span> (the true proportion of US households with pets is less than 67%)</li>
-<li class="fragment"><span class="math inline">\(p = 0.67\)</span> (the true proportion of US households with pets is 33.5%)</li>
+<li class="fragment"><span class="math inline">\(p = 0.33.5\)</span> (the true proportion of US households with pets is 33.5%)</li>
 </ul></li>
 </ul>
 </section>
@@ -437,7 +437,7 @@
 <ul>
 <li class="fragment"><p>Each of these alternative hypotheses has a name.</p></li>
 <li class="fragment"><p>Before we talk about these names, let’s establish a slightly more general framework for conducting hypothesis testing on a proportion.</p></li>
-<li class="fragment"><p>Our null hypothesis will often take the form <span class="math display">\[ H_0 : \ p = p_0 \]</span> for some prespecified value <span class="math inline">\(p_0\)</span> (e.g.&nbsp;20%, like in our cat example above).</p></li>
+<li class="fragment"><p>Our null hypothesis will often take the form <span class="math display">\[ H_0 : \ p = p_0 \]</span> for some prespecified value <span class="math inline">\(p_0\)</span> (e.g.&nbsp;67%, like in our pet example above).</p></li>
 <li class="fragment"><p>This leads to four possible alternative hypotheses:</p>
 <ul>
 <li class="fragment"><span class="math inline">\(H_A: \ p \neq p_0\)</span></li>
@@ -492,7 +492,7 @@
 <div class="callout-content">
 <div>
 <div style="font-size: 28px">
-<p><em>Forbes</em> magazine has claimed that, as of May 2023, 91.7% of US households own a vehicle.</p>
+<p><em>Forbes</em> magazine has claimed that, as of May 2023, 91.7% of US households own a vehicle. To test this, we took a representative sample of 500 US households.</p>
 <ol type="a">
 <li>What is the population?</li>
 <li>What is the sample?</li>
@@ -554,7 +554,7 @@
 <li class="fragment"><p>All we are saying when we fail to reject the null is exactly that- we didn’t have enough information to reject <span class="math inline">\(H_0\)</span> outright. We are <em>not</em> saying that <span class="math inline">\(H_0\)</span> must be true.</p></li>
 <li class="fragment"><p>Admittedly, some statisticians have gotten a little lax with this distinction and you may encounter textbooks and/or professors that use terms like “accept the null”.</p>
 <ul>
-<li class="fragment">For better or for worse, I am a bit of a traditionalist in this respect and will adhere to the terminology “fail to reject” in favor of “accept”.</li>
+<li class="fragment">We will stick with the terminology “fail to reject” in favor of “accept”.</li>
 </ul></li>
 </ul>
 </section>
@@ -792,7 +792,7 @@
 <h2>Solutions</h2>
 <ul>
 <li class="fragment"><p>A Type I error would be concluding that the true proportion of US households that own a vehicle is not 91.7%, when in fact 91.7% of US households own a vehicle.</p></li>
-<li class="fragment"><p>A Type II error would be concluding that the true proportion of US households that own a vehicle is 91.7%, when in fact the true proportion is <em>not</em> 91.8%.</p></li>
+<li class="fragment"><p>A Type II error would be concluding that the true proportion of US households that own a vehicle is 91.7%, when in fact the true proportion is <em>not</em> 91.7%.</p></li>
 </ul>
 </section>
 <section>
@@ -823,7 +823,7 @@
 <section id="test-statistic" class="slide level2" style="font-size:30px">
 <h2>Test Statistic</h2>
 <ul>
-<li class="fragment"><p>So, it makes sense to reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(\widehat{p}\)</span> is very far away from <span class="math inline">\(p_0\)</span> (which, in the cat example, is <span class="math inline">\(0.2\)</span>). <span class="math display">\[ \texttt{decision}(\widehat{p}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if $\widehat{p}$ is far from $p_0$} \\  \texttt{fail to reject } H_0 &amp; \text{otherwise}\\ \end{cases}  \]</span></p></li>
+<li class="fragment"><p>So, it makes sense to reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(\widehat{p}\)</span> is very far away from <span class="math inline">\(p_0\)</span> (which, in the pet example, is <span class="math inline">\(0.67\)</span>). <span class="math display">\[ \texttt{decision}(\widehat{p}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if $\widehat{p}$ is far from $p_0$} \\  \texttt{fail to reject } H_0 &amp; \text{otherwise}\\ \end{cases}  \]</span></p></li>
 <li class="fragment"><p>For reasons that will become clear in a few slides, we typically avoid using <span class="math inline">\(\widehat{p}\)</span> and instead use a <em>standardized</em> version of <span class="math inline">\(\widehat{p}\)</span>: <span class="math display">\[ \mathrm{TS} = \frac{\widehat{P} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{n}}} \]</span> where <span class="math inline">\(\mathrm{TS}\)</span> stands for <strong>test statistic</strong>.</p></li>
 </ul>
 </section>
@@ -877,7 +877,7 @@
 <h1></h1>
 
 </section>
-<section id="the-compromise" class="slide level2" style="font-size:30px">
+<section id="the-compromise" class="slide level2" style="font-size:25px">
 <h2>The Compromise</h2>
 <ul>
 <li class="fragment"><p>We need to compromise!</p></li>
@@ -1050,7 +1050,9 @@
 <p>At an <span class="math inline">\(\alpha = 0.05\)</span> level of significance, we do not have enough evidence to reject the null hypothesis that 91.7% of US households own a vehicle. Thus, our analysis suggests that the true proportion of US households with vehicle is not different from 91.7%.</p>
 </blockquote>
 </div>
-<p>Alternatively</p>
+</section>
+<section id="alternatively" class="slide level2">
+<h2>Alternatively</h2>
 <div class="fragment">
 <blockquote>
 <p>At an <span class="math inline">\(\alpha = 0.05\)</span> level of significance, there is insufficient evidence to reject Forbes’s claim that 91.7% of US households own a vehicle in favor of the alternative that the true proportion of US households that own a vehicle is not 91.7%.</p>
@@ -1187,7 +1189,6 @@
 <ul>
 <li class="fragment"><p>I don’t recommend you try and memorize all of the different percentiles and critical values.</p></li>
 <li class="fragment"><p>Instead, I recommend you familiarize yourself with the process used to derive these tests, as that will immediately tell you what picture to draw, which will in turn tell you which quantile we are after in a given situation.</p></li>
-<li class="fragment"><p>There are some problems on the practice problems that give you practice with these one-sided alternatives.</p></li>
 </ul>
 
 
