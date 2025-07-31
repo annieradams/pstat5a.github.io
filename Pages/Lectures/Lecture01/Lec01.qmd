@@ -237,7 +237,7 @@ If the possible values a numerical variable can take has "jumps", then it is a d
 ## Exercise 1
 
 ::: {style="font-size: 30px"}
-Classify each of the following variables as either discrete, continuous, ordinal, or nominal.
+Classify each of the following variables as either discrete, continuous, ordinal,  nominal, or binary.
 
 ::: nonincremental
 -   The number of times a computer program returns an error

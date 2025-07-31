@@ -50,8 +50,8 @@ title-slide-attributes:
 
 :::{.nonincremental}
 
-- **Daniel Silva**
-- dcsilva@ucsb.edu
+- **Summer Le**
+- sle@ucsb.edu
 - OH: TBD
 
 :::
@@ -61,8 +61,8 @@ title-slide-attributes:
 
 :::{.nonincremental}
 
-- **Hezhong Zhang**
-- hzhang586@umail.ucsb.edu
+- **Mallory Wang**
+- mallorywang@ucsb.edu
 - OH: TBD
 
 :::
@@ -105,13 +105,7 @@ title-slide-attributes:
   
 ---
 
-:::{.nonincremental}
-- However, Data Science is not just running things through computer programs.
-:::
 
-- An equally integral part of Data Science is the **theory** that surrounds data, modeling, and randomness- theory that comes from the field of **Statistics**.
-
-- Even if you are planning on going into industry right after university, you will still need to know some of the theory.
 
 
 ## The Path Forward
@@ -153,7 +147,6 @@ title-slide-attributes:
 
     - So, even if you are working in (what you might think is) a field that is far removed from Statsitics, the minute you start dealing with Data is the minute you start needing to know Data Science!
 
-- Here's a perhaps more pragmatic answer: even if you think you want to go straight into industry right after this course, no company wants to hire someone to just mindlessly crunch numbers - though computing experience is absolutely crucial in making yourself a good candidate, employers would much rather have someone who is *both* skilled at running code *but also understands <u>why</u> they are running the code they are running!*
 
 
 
