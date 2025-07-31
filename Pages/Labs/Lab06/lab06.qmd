@@ -4,7 +4,7 @@ subtitle: "A Trip to the Movies"
 author:
   - name: "PSTAT 5A"
     affiliations:
-      - name: "Summer Session A 2024"
+      - name: "Summer Session B 2025"
 author-title: "Course"
 affiliation-title: "Quarter"
 format: html

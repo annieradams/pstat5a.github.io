@@ -4,7 +4,7 @@ subtitle: "Getting to Know Python"
 author:
   - name: "PSTAT 5A"
     affiliations:
-      - name: "Summer Session A, 2024"
+      - name: "Summer Session B, 2025"
 author-title: "Course"
 affiliation-title: "Quarter"
 format: html
@@ -397,4 +397,4 @@ Congrats on finishing the first PSTAT 5A Computing Lab! Here's what you need to 
 1) Your downloaded `.ipynb` file
 2) Your downloaded `.PDF` file
 
-(Please consult the video on Canvas showing you how to upload your work to Gradescope). Toward the end of Lab, your TA will show you how to download the above files. **You will have until 40 minutes after the end of your Section (e.g. if your Section ends at 1:20pm, then you have until 2:00pm to submit) to turn in your work in order to get credit for the lab.** Also, please remember that you need to upload *both* a `.ipynb` file *and* a `.pdf`. We will be grading labs based on effort, so just turn in what you are able to!
+Toward the end of Lab, your TA will show you how to download the above files. **You will have until 40 minutes after the end of your Section (e.g. if your Section ends at 1:20pm, then you have until 2:00pm to submit) to turn in your work in order to get credit for the lab.** Also, please remember that you need to upload *both* a `.ipynb` file *and* a `.pdf`. We will be grading labs based on effort, so just turn in what you are able to!

@@ -38,9 +38,9 @@ Last Updated: *August 4, 2025*
 </div>
 
 <div>
-**Worksheet**  
-<a href="../Files/Wkshts/Wksht01_Blank.pdf" class="button label-outline worksheet" target="_blank">Worksheet 01</a><br/>
-<!-- <a href="../Files/Wkshts/Wksht01_Solns.pdf" class="button label-outline worksheet">Solutions</a><br/> -->
+**Discussion**  
+<a href="../Files/Wkshts/Wksht01_Blank.pdf" class="button label-outline Discussion" target="_blank">Discussion 01</a><br/>
+<!-- <a href="../Files/Wkshts/Wksht01_Solns.pdf" class="button label-outline Discussion">Solutions</a><br/> -->
 </div>
 
 <div>
@@ -69,9 +69,9 @@ Last Updated: *August 4, 2025*
 </div>
 
 <div>
-**Worksheet**  
-<a href="../Files/Wkshts/Wksht02_Blank.pdf" class="button label-outline worksheet">Worksheet 02</a><br/>
-<!-- <a href="../Files/Wkshts/Wksht02_Solns.pdf" class="button label-outline worksheet">Solutions</a><br/> -->
+**Discussion**  
+<a href="../Files/Wkshts/Wksht02_Blank.pdf" class="button label-outline Discussion">Discussion 02</a><br/>
+<!-- <a href="../Files/Wkshts/Wksht02_Solns.pdf" class="button label-outline Discussion">Solutions</a><br/> -->
 </div>
 
 <div>
@@ -95,17 +95,17 @@ Last Updated: *August 4, 2025*
 <a href="Lectures/Lecture10/Lec10.qmd" class="button label-outline lecture">10: Confidence Intervals for <br>Proportions</a><br/>
 <a href="Lectures/Lecture11/Lec11.qmd" class="button label-outline lecture">11: Confidence Intervals for Means</a><br/>
 
-<a href="../Files/Tables/T_Table.pdf" class="button label-outline worksheet">T-Table</a><br/>
-<a href="../Files/Lec_Ex/Lec12_Ex3.pdf" class="button label-outline worksheet">Exercise 3</a><br/>
-<a href="../Files/Tables/Z_Table.pdf" class="button label-outline worksheet">Z-Table</a><br/>
+<a href="../Files/Tables/T_Table.pdf" class="button label-outline Discussion">T-Table</a><br/>
+<a href="../Files/Lec_Ex/Lec12_Ex3.pdf" class="button label-outline Discussion">Exercise 3</a><br/>
+<a href="../Files/Tables/Z_Table.pdf" class="button label-outline Discussion">Z-Table</a><br/>
 <!-- <a href="../Files/HW/HW03_Solns.pdf" class="button label-outline hw">HW3 Soln</a><br/> -->
 <!-- <a href="../Files/QzSolns/Qz03_solns.pdf" class="button label-outline quiz">Quiz3 Soln</a><br/> -->
 </div>
 
 <div>
-**Worksheet**  
-<a href="../Files/Wkshts/Wksht03_Blank.pdf" class="button label-outline worksheet">Worksheet 03</a><br/>
-<!-- <a href="../Files/Wkshts/Wksht03_Solns.pdf" class="button label-outline worksheet">Solutions</a><br/> -->
+**Discussion**  
+<a href="../Files/Wkshts/Wksht03_Blank.pdf" class="button label-outline Discussion">Discussion 03</a><br/>
+<!-- <a href="../Files/Wkshts/Wksht03_Solns.pdf" class="button label-outline Discussion">Solutions</a><br/> -->
 </div>
 
 <div>
@@ -133,9 +133,9 @@ Last Updated: *August 4, 2025*
 </div>
 
 <div>
-**Worksheet**  
-<a href="../Files/Wkshts/Wksht01_Blank.pdf" class="button label-outline worksheet">Worksheet 04</a><br/>
-<!-- <a href="../Files/Wkshts/Wksht04_Solns.pdf" class="button label-outline worksheet">Solutions</a><br/> -->
+**Discussion**  
+<a href="../Files/Wkshts/Wksht01_Blank.pdf" class="button label-outline Discussion">Discussion 04</a><br/>
+<!-- <a href="../Files/Wkshts/Wksht04_Solns.pdf" class="button label-outline Discussion">Solutions</a><br/> -->
 </div>
 
 <div>
@@ -163,9 +163,9 @@ Last Updated: *August 4, 2025*
 </div>
 
 <div>
-**Worksheet**  
-<a href="../Files/Wkshts/Wksht05_Blank.pdf" class="button label-outline worksheet">Worksheet 05</a><br/>
-<!-- <a href="../Files/Wkshts/Wksht05_Solns.pdf" class="button label-outline worksheet">Solutions</a><br/> -->
+**Discussion**  
+<a href="../Files/Wkshts/Wksht05_Blank.pdf" class="button label-outline Discussion">Discussion 05</a><br/>
+<!-- <a href="../Files/Wkshts/Wksht05_Solns.pdf" class="button label-outline Discussion">Solutions</a><br/> -->
 </div>
 
 <div>
