@@ -1,8 +1,8 @@
 ---
-title: "PSTAT 5A: Lecture 21"
+title: "PSTAT 5A: Lecture 17"
 subtitle: "Intro to Statistical Modeling, and Correlation"
-author: "Mallory Wang"
-date: "07/25/24"
+author: "Annie Adams"
+date: "09/03/25"
 format: 
     revealjs:
       html-math-method: mathjax

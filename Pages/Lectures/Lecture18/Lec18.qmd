@@ -1,8 +1,8 @@
 ---
-title: "PSTAT 5A: Lecture 21"
+title: "PSTAT 5A: Lecture 18"
 subtitle: "Regression, Part II"
-author: "Ethan P. Marzban"
-date: "07/31/23"
+author: "Annie Adams"
+date: "09/04/25"
 format: 
     revealjs:
       html-math-method: mathjax

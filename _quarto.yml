@@ -15,7 +15,7 @@ website:
           - href: Pages/syllabus.qmd
             text: Syllabus
           - href: Pages/schedule.qmd
-            text: Schedule of Topics
+            text: Weekly Schedule
           - href: Pages/calendar.qmd
             text: Sections and Calendar
           - href: Pages/course_staff.qmd

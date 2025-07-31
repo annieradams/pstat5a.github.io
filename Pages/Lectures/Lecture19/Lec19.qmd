@@ -1,8 +1,8 @@
 ---
-title: "PSTAT 5A: Lecture 22"
+title: "PSTAT 5A: Lecture 19"
 subtitle: "Regression Diagnostics, and Sampling Procedures"
-author: "Ethan P. Marzban"
-date: "08/01/23"
+author: "Annie Adams"
+date: "09/08/25"
 format: 
     revealjs:
       html-math-method: mathjax

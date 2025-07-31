@@ -1,8 +1,8 @@
 ---
-title: "PSTAT 5A: Lecture 20"
+title: "PSTAT 5A: Lecture 16"
 subtitle: "Inference for Paired Data"
-author: "Mallory Wang"
-date: "07/24/24"
+author: "Annie Adams"
+date: "09/02/25"
 format: 
     revealjs:
       html-math-method: mathjax

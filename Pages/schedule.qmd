@@ -1,6 +1,6 @@
 ---
 title: "PSTAT 5A: Understanding Data"
-subtitle: "Schedule of Topics"
+subtitle: "Weekly Schedule"
 author:
   - name: "Annie Adams"
     affiliations:
@@ -17,7 +17,7 @@ css: "../schedule.css"
 This schedule is tentative, and is subject to change. Please check back regularly for updates!
 :::
 
-Last Updated: *August 4, 2024*
+Last Updated: *August 4, 2025*
 
 **As a reminder:** Monday sections are Lab Sections and Wednesday sections are Discussion Sections.
 
@@ -92,7 +92,7 @@ Last Updated: *August 4, 2024*
 **Lectures**  
 <a href="Lectures/Lecture08/Lec08.qmd" class="button label-outline lecture">08: Continuous Random Variables</a><br/>
 <a href="Lectures/Lecture09/Lec09.qmd" class="button label-outline lecture">09: Introduction to Inference</a><br/>
-<a href="Lectures/Lecture10/Lec10.qmd.qmd" class="button label-outline lecture">10: Confidence Intervals for <br>Proportions</a><br/>
+<a href="Lectures/Lecture10/Lec10.qmd" class="button label-outline lecture">10: Confidence Intervals for <br>Proportions</a><br/>
 <a href="Lectures/Lecture11/Lec11.qmd" class="button label-outline lecture">11: Confidence Intervals for Means</a><br/>
 
 <a href="../Files/Tables/T_Table.pdf" class="button label-outline worksheet">T-Table</a><br/>

@@ -107,28 +107,33 @@ There will be weekly homework due on Thursday at 11:59p. It must be turned into 
 
 ### Schedule of Due Dates
 
-**Lab1**: Thursday, August 7 at 11:59pm
-**HW1**: Thursday, August 7 at 11:59pm
-**Quiz1**: Monday, August 11 (8a- 11:59p)
+**Week 1**|
+**Lab1**: Thurs., August 7 at 11:59pm
+**HW1**: Thurs., August 7 at 11:59pm
 
-**Lab2**: Thursday, August 14 at 11:59pm
-**HW2**: Thursday, August 14 at 11:59pm
-**Quiz2**: Monday, August 18 (8a- 11:59p)
+**Week 2**|
+**Quiz1**: Mon., August 11 (8a- 11:59p)
+**Lab2**: Thurs., August 14 at 11:59pm
+**HW2**: Thurs., August 14 at 11:59pm
 
-**Lab3**: Thursday, August 21 at 11:59pm
-**HW3**: Thursday, August 21 at 11:59pm
-**Quiz3**: Monday, August 25 (8a- 11:59p)
+**Week 3**|
+**Quiz2**: Mon., August 18 (8a- 11:59p)
+**Lab3**: Thurs., August 21 at 11:59pm
+**HW3**: Thurs., August 21 at 11:59pm
 
-**Lab4**: Thursday, August 28 at 11:59pm
-**HW4**: Thursday, August 28 at 11:59pm
-**Quiz4**: Monday, Sept 1 (8a- 11:59p)
+**Week 4**|
+**Quiz3**: Mon., August 25 (8a- 11:59p)
+**Lab4**: Thurs., August 28 @ 11:59pm
+**HW4**: Thurs., August 28 @ 11:59pm
 
-**Lab5**: Thursday, Sept 4 at 11:59pm
-**HW5**: Thursday, Sept 4 at 11:59pm
-**Quiz5**: Monday, Sept 8 (8a- 11:59p)
+**Week 5**|
+**Quiz4**: Mon., Sept 1 (8a- 11:59p)
+**Lab5**: Thurs., Sept 4 at 11:59pm
+**HW5**: Thurs., Sept 4 at 11:59pm
 
-**Lab6**: Thursday, Sept 11 at 11:59pm
-**HW6**: Thursday, Sept 11 at 11:59pm 
+**Week 6**|
+**Lab6**: Thurs., Sept 11 at 11:59pm
+**HW6**: Thurs., Sept 11 at 11:59pm 
 
 ## Grading Scheme
 
@@ -152,7 +157,7 @@ Your final letter grade will be issued according to the following scheme (cutoff
 -   D^--^ -- D^+^ : 60 -- 69.99%
 -   F: 0 -- 59.99%
 
-I have elected to adopt an uncurved grading scheme to eliminate any sense of "competition" among students; I highly encourage you all to collaborate with and uplift each other. Having said that, I will certainly consider adjusting the cutoffs (naturally, in everyone's favor) at the end of the quarter if necessary.
+
 
 ## Academic Integrity
 

@@ -1318,595 +1318,595 @@
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#recap",
     "href": "Pages/Lectures/Lecture19/Lec19.html#recap",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Recap",
     "text": "Recap\n\nGiven observations \\(\\{(x_i, \\ y_i)\\}_{i=1}^{n}\\) on a response variable y and an explanatory variable x, we adopt the model \\[ \\texttt{y} = f(\\texttt{x}) + \\texttt{noise} \\]\nAssuming a linear signal function, we obtain a model \\[ \\texttt{y} = \\beta_0 + \\beta_1 \\cdot \\texttt{x} + \\texttt{noise} \\] and we have previously seen how to use our data to obtain good estimates \\(\\widehat{\\beta}_0\\) and \\(\\widehat{\\beta}_1\\) of \\(\\beta_0\\) and \\(\\beta_1\\), respectively.\nA natural question arises- how can we assess how good our fit is?\nTo answer this question, it turns out we need to be a little more specific in our model."
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#modelling-noise",
     "href": "Pages/Lectures/Lecture19/Lec19.html#modelling-noise",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Modelling Noise",
     "text": "Modelling Noise\n\nLet’s start off by rewriting our model as \\[ \\texttt{y} = f(\\texttt{x}) + \\varepsilon \\] where we use \\(\\varepsilon\\) to now denote our noise.\nThe reason we do this is we can now rewrite the model to be in terms of the individual observations \\(x_i\\) and \\(y_i\\) (as opposed to the variables x and y): \\[ y_i = f(x_i) + \\varepsilon_i \\] where \\(\\varepsilon_i\\) represents the noise associated with a single observation.\nIn a wide array of situations, it turns out to be a good idea to assume normally-distributed noise; that is, we often assume \\(\\varepsilon_i \\sim \\mathcal{N}(0, \\ \\sigma^2)\\) for all indices i."
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#modelling-noise-1",
     "href": "Pages/Lectures/Lecture19/Lec19.html#modelling-noise-1",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Modelling Noise",
     "text": "Modelling Noise\n\nAgain, crucially, we never get to see exactly what the observed value of \\(\\varepsilon_i\\) is for any particular i.\nHowever, if we rewrite our model as \\[ \\varepsilon_i = y_i - f(x_i) \\] then we see that we actually already have a pretty good estimator for \\(\\varepsilon_i\\)- the ith residual!\n\nThat is, \\[ e_i = y_i - \\widehat{y}_i \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#residual-plots",
     "href": "Pages/Lectures/Lecture19/Lec19.html#residual-plots",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Residual Plots",
     "text": "Residual Plots\n\nThis leads us to one of the most important regression diagnostic tools: residual plots.\nPoints in a residual plot have x-coordinate given by the value of the residual and y-coordinate given by the corresponding fitted value.\nLet’s do an example quickly to illustrate how to construct one by hand, using our toy example from last lecture: \\[\\begin{align*}\n\\boldsymbol{x}    & = \\{3, \\ 7, \\ 8\\}   \\\\\n\\boldsymbol{y}    & = \\{20, \\ 14, \\ 17\\}\n\\end{align*}\\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#residual-plots-1",
     "href": "Pages/Lectures/Lecture19/Lec19.html#residual-plots-1",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Residual Plots",
     "text": "Residual Plots\n\n\nThe fitted value of the blue point above is \\((155 - 6 \\cdot 3) / 7 = 19.57143\\) and its corresponding residual is \\(20 - 19.57143 = 0.42857\\), meaning one of the points on our residual plot will be \\[ (0.42857, \\ 19.57143) \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#residual-plots-2",
     "href": "Pages/Lectures/Lecture19/Lec19.html#residual-plots-2",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Residual Plots",
     "text": "Residual Plots\n\n\nThe fitted value of the blue point above is \\((155 - 6 \\cdot 7) / 7 = 16.14286\\) and its corresponding residual is \\(14 - 16.14286 = -2.14286\\), meaning one of the points on our residual plot will be \\[ (-2.14286, \\ 16.14286) \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#residual-plots-3",
     "href": "Pages/Lectures/Lecture19/Lec19.html#residual-plots-3",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Residual Plots",
     "text": "Residual Plots\n\n\nThe fitted value of the blue point above is \\((155 - 6 \\cdot 7) / 7 = 15.28571\\) and its corresponding residual is \\(17 - 15.28571 = 1.71429\\), meaning one of the points on our residual plot will be \\[ (1.71429, \\ 15.28571) \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#residual-plots-4",
     "href": "Pages/Lectures/Lecture19/Lec19.html#residual-plots-4",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Residual Plots",
     "text": "Residual Plots\n\nHence, the residual plot for the above regression would be"
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#residual-plots-5",
     "href": "Pages/Lectures/Lecture19/Lec19.html#residual-plots-5",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Residual Plots",
     "text": "Residual Plots\n\nOne of the main purposes of examining residual plots is to see whether or not there are any remaining patterns in the data after fitting a model.\nRemember- residuals are meant to mimic the noise apparent in our observations.\nHence, if our model fit truly capture all of the relationship present in the data, we would expect the residuals to not display any noticeable pattern.\nThis leads us to how we use residual plots:\n\n\n\n\n\n\n\n\nTip\n\n\nIf the residual plot displays a pattern, then the fitted model is not capturing all of the relationship present in the data."
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#residual-plots-6",
     "href": "Pages/Lectures/Lecture19/Lec19.html#residual-plots-6",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Residual Plots",
     "text": "Residual Plots"
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#residual-plots-7",
     "href": "Pages/Lectures/Lecture19/Lec19.html#residual-plots-7",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Residual Plots",
     "text": "Residual Plots"
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#residual-plots-8",
     "href": "Pages/Lectures/Lecture19/Lec19.html#residual-plots-8",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Residual Plots",
     "text": "Residual Plots"
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#other-diagnostics",
     "href": "Pages/Lectures/Lecture19/Lec19.html#other-diagnostics",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Other Diagnostics",
     "text": "Other Diagnostics\n\nThere are, of course, many other diagnostics one can perform after performing regression.\n\nEven within the residual plot, there are other things to look for (things like homoskedasticity and heterodskedasticity)\nThere are also numerical tools we can use to diagnose our model performance.\n\nI save these for your future courses to cover."
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#where-does-data-come-from-1",
     "href": "Pages/Lectures/Lecture19/Lec19.html#where-does-data-come-from-1",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Where Does Data Come From?",
     "text": "Where Does Data Come From?\n\nThroughout this course, we have been using various pieces of data.\nOne thing we should discuss, as good Data Scientists, is where this data actually came from?\n\nWho collected it? How was the data collected? Who were the subjects included in the data?\n\nWe will now begin to discuss some possible answers to these questions, as well as some practical strategies for collecting data of our own!"
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#the-research-process",
     "href": "Pages/Lectures/Lecture19/Lec19.html#the-research-process",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "The Research Process",
     "text": "The Research Process\n\nIndeed, most experiments and studies begin with some sort of question.\n\nFor example: “does this new drug truly reduce blood pressure?”\nOr: “is smoking really linked with higher rates of lung cancer?”\nOr: “what is the average mercury content in swordfish in the Atlantic Ocean?”\nOr: “over the past 3 years, what is the average number of people that have been admitted into the PSTAT major?”\n\nThe next step is something we’ve actually done several times in this class already: identify the population of interest!\n\nCan anyone tell me what the populations associated with the above research questions are?"
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#sampling-procedures",
     "href": "Pages/Lectures/Lecture19/Lec19.html#sampling-procedures",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Sampling Procedures",
     "text": "Sampling Procedures\n\nNow, we need the most crucial piece of all: data!\n\nSpecifically, we need to collect our data.\n\nThis will entail taking a sample (or possibly many samples) from our population.\n\nThis is why it’s important to know what our population is- so we know where to start taking samples from.\n\nThere are many ways to take a sample!\nOne way is to take what is known as a simple random sample (or SRS, for short).\nA simple random sample is akin to assigning a unique number to each person in the population, and then picking some subset of these numbers uniformly at random.\n\nCrucially, in this way, each member of the population has an equal chance of being included in the sample."
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#sampling-procedures-1",
     "href": "Pages/Lectures/Lecture19/Lec19.html#sampling-procedures-1",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Sampling Procedures",
     "text": "Sampling Procedures\n\nNow, Simple Random Samples do have some potential downsides.\nAs an example, let’s consider the following situation: suppose our population is the workplace at some company (which we will call Company X).\nSay we are interested in determining whether or not there is systemic racism present in Company X.\nTo determine whether or not this is the case, we might take a sample and administer a survey (we’ll talk more about surveys in a bit).\nCan anyone tell me a potential problem with this setup if we were to take a Simple Random Sample?\n\nWhat if I tell you, for example, that 80% of people in this company are Caucasian and only 20% are not?"
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#sampling-procedures-2",
     "href": "Pages/Lectures/Lecture19/Lec19.html#sampling-procedures-2",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Sampling Procedures",
     "text": "Sampling Procedures\n\nThat’s right- we run the risk of obtaining a biased sample.\nSaid differently: if we take an SRS of employees at this company, there is a high probability that this sample will contain a disproportionately larger number of Caucasians than non-Caucasians.\n\nThis would almost certainly affect the results of our survey!\n\nOne way to remedy this would be to perform what is known as in which we first divide the population into several strata (i.e. groups), and then take an SRS from each stratum.\n\nThis has the benefit of ensuring a roughly equal number of participants from each stratum, but has the downsides of being very dependent on the strata that are created.\nThat is, sometimes it won’t necessarily be obvious how to divide the population!"
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#sampling-procedures-3",
     "href": "Pages/Lectures/Lecture19/Lec19.html#sampling-procedures-3",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Sampling Procedures",
     "text": "Sampling Procedures\n\nAnother type of sampling is called cluster sampling. Similar to stratified sampling, the population is first divided into several groups (now called clusters). But, instead of taking an SRS from every cluster we instead take an SRS of clusters and then take an SRS from each included cluster\n\nNote, then, that we are not including every cluster in our sample in this way of sampling.\nThis has the benefit of being (potentially) cheaper, but has the (obvious) downside of potentially skewing results due to the lack of certain clusters.\n\nBy the way, this is slightly different than the notion of Cluster Sampling outlined in the textbook; the textbook calls the above scheme “multistage sampling”. However, this term is not widely used, and as such we will simply refer to the above as “Cluster Sampling”, as most statisticians do."
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#example",
     "href": "Pages/Lectures/Lecture19/Lec19.html#example",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Example",
     "text": "Example\n\nLet’s consider an example from the textbook:\n\n\n\n\n\n\n\n\nExample (credit to OpenIntro Statistics)\n\n\n\n\nSuppose we are interested in estimating the malaria rate in a densely tropical portion of rural Indonesia. We learn that there are 30 villages in that part of the Indonesian jungle, each more or less similar to the next. Our goal is to test 150 individuals for malaria. What sampling method should be employed?\n\n\n\n\n\n\n\nAt surface level, an SRS may seem tempting.\n\nAfter all, the villages are “more or less similar to the next”.\n\nHowever, an SRS will likely contain individuals from all (or certainly most) of the villages.\nThis would require someone to actually visit these villages to collect data, which will be incredibly costly.\nAs such, an SRS is probably not a good idea."
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#example-1",
     "href": "Pages/Lectures/Lecture19/Lec19.html#example-1",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Example",
     "text": "Example\n\nIndeed, cluster sampling seems to be the way to go.\nSpecifically, we could assign each village to its own cluster, then select some number of villages (say, maybe 15 or so) randomly, and then select some number of people (say, 10 or so) from each of the selected villages.\nBecause the villages are “more or less similar”, the people included in our sample would likely not have many obvious differences (in the context of the experiment) and we would believe our sample to be relatively representative.\nAdditionally, the experimenter (or a volunteer) would only need to visit 15 villages instead of all 30.\nOf course, we would need to modify our statistical tools slightly to reflect the fact that our sample was actually collected via a clustering scheme- such modifications (though not too challenging) are outside the scope of this course.\n\nRight now, I’m merely trying to get us to think about the practicalities of data collection!"
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#bias",
     "href": "Pages/Lectures/Lecture19/Lec19.html#bias",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Bias",
     "text": "Bias\n\nEven if we end up with a fairly representative sample, there are ways bias can creep in.\nSuppose we administer a survey to a representative sample of people.\nIt is not guaranteed that everyone in our sample will actually fill out the survey; even if a particular individual does attempt the survey, there is no guarantee they will finish the entirety of the survey.\nThis can lead to gaps in our data with respect to certain demographics, which is itself a form of bias.\nWe call this non-response bias."
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#bias-1",
     "href": "Pages/Lectures/Lecture19/Lec19.html#bias-1",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Bias",
     "text": "Bias\n\nAnother sampling strategy that is prone to bias is known as convenience sampling.\nWe can think of convenience sampling as any sort of sampling scheme where individuals who are easily accessed have a higher chance of being included in the sample.\nFor example, suppose we poll students about their views on the housing crisis in Santa Barbara.\n\nIf we conduct this poll at UCSB, we are more likely to get UCSB students and much less likely to get, say, UCLA students.\nSimilarly, if we conducted our study at UCLA, we would be more likely to include UCLA students than, say, NYU students."
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#bias-2",
     "href": "Pages/Lectures/Lecture19/Lec19.html#bias-2",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Bias",
     "text": "Bias\n\nSo, why would we ever use a convenience sample?\nWell, as the name suggests- it is convenient!\nConvenience samples are often both the easiest to obtain, as well as the cheapest.\nHaving said that, most statisticans agree thate convenience samples are bad. This is due to what is known as the garbage in garbage out philosophy.\nLoosely speaking, the “garbage in garbage out” philosophy states that our results are only as good as our data- even the most sophisticated statistical models will output nonsensical or skewed results if we are feeding them nonsensical or skewed data!"
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#another-distinction",
     "href": "Pages/Lectures/Lecture19/Lec19.html#another-distinction",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Another Distinction",
     "text": "Another Distinction\n\nThere is another distinction we should be aware of: the difference between an observational study and an experiment.\nIn an observational study, no treatment is ever explicitly applied (or withheld).\nThis is in contrast to an experiment, in which researchers assign treatments to cases.\nFor example, suppose a researcher is interested in determining the relationship between cancer rates and tanning beds.\nIn an experiment, the researcher would take some sample of volunteers, split them into groups, and assign one group to tan regularly and another to not use tanning beds at all for the duration of the study.\n\nAt the end of the study, the researcher would collect data and analyze."
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#another-distinction-1",
     "href": "Pages/Lectures/Lecture19/Lec19.html#another-distinction-1",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Another Distinction",
     "text": "Another Distinction\n\nIf instead the researcher were to conduct an observational study, they might take some sample of people who already use tanning beds, analyze cancer rates, and repeat for a sample of people who do not use tanning beds.\n\nNote that in this case, the experimenter has not explicitly assigned a treatment (i.e. using a tanning bed) to either group. In a sense, the groups were formed around the treatment.\n\nNaturally, experiments come with all sorts of ethical considerations.\n\nFor instance, in trying to determine the relationship between cancer rates and smoking, nobody would actually force a group of participants to smoke, just for the purposes of an experiment.\nThis is one “pro” in favor of observational studies- the experimenter is not responsible for forcing a group of people to do (or not do something) they wouldn’t want to."
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#another-distinction-2",
     "href": "Pages/Lectures/Lecture19/Lec19.html#another-distinction-2",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Another Distinction",
     "text": "Another Distinction\n\nOf course, observational studies are not perfect either.\nSpecifically, observational studies cannot be used to identify causal relationships; they can only ever identify associations (or a lack thereof).\nRemember that assocations are not the same things as causation!\n\nSo, just because an observational study indicates a link between smoking and increased lung cancer rates, that is not sufficient justification to say that smoking causes increased lung cancer rates. To make that causal claim, an experiment would need to be conducted."
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#example-2",
     "href": "Pages/Lectures/Lecture19/Lec19.html#example-2",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Example",
     "text": "Example\n\n\n\n\n\n\n\nExample (OpenIntro Statistics, 1.19)\n\n\n\n\nA large college class has 160 students. All 160 students attend the lectures together, but the students are divided into 4 groups, each of 40 students, for lab sections administered by different teaching assistants. The professor wants to conduct a survey about how satisfied the students are with the course, and he believes that the lab section a student is in might affect the student’s overall satisfaction with the course.\n\nWhat type of study is this?\nSuggest a sampling strategy for carrying out this study."
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#solutions",
     "href": "Pages/Lectures/Lecture19/Lec19.html#solutions",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Solutions",
     "text": "Solutions\n\nBecause treatment has neither been administered nor withheld by the researcher, this is an example of an observational study.\nIn this case, stratified sampling would likely be a good idea, with each lab section assigned to a stratum. This ensures each stratum (lab section) is represented in the sample."
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#longitudinal-vs.-cross-sectional-studies",
     "href": "Pages/Lectures/Lecture19/Lec19.html#longitudinal-vs.-cross-sectional-studies",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Longitudinal vs. Cross-Sectional Studies",
     "text": "Longitudinal vs. Cross-Sectional Studies\n\nSuppose a particular drug claims to significantly reduce blood sugar levels. Consider the following two scenarios:\n\nAn SRS of 100 people is taken from a certain demographic, and divided randomly into two groups: group A and group B. Group A is administered the drug and Group B is not administered the drug. After a week, the researcher collects data on the blood sugar levels of the two groups.\nAn SRS of 50 people is taken from a certain demographic. These 50 people have their blood sugar levels recorded, and are then all administered the drug. A week later, the participants have their blood sugar levels recorded."
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#longitudinal-vs.-cross-sectional-studies-1",
     "href": "Pages/Lectures/Lecture19/Lec19.html#longitudinal-vs.-cross-sectional-studies-1",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Longitudinal vs. Cross-Sectional Studies",
     "text": "Longitudinal vs. Cross-Sectional Studies\n\nNote that both of these situations seemingly end up with the same data: 50 measurements of pre-treatment blood sugar levels, and 50 measurements of post-treatment blood sugar levels.\nHowever, we can see that these two studies are fundamentally different.\nIn the first study, people were divided into two groups (called the treatment and control groups, respectively).\nIn the second, the same 50 individuals were tracked over time.\nThis is an example of the distinction between a cross-sectional study and a longitudinal study."
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#longitudinal-vs.-cross-sectional-studies-2",
     "href": "Pages/Lectures/Lecture19/Lec19.html#longitudinal-vs.-cross-sectional-studies-2",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Longitudinal vs. Cross-Sectional Studies",
     "text": "Longitudinal vs. Cross-Sectional Studies\n\nIn a longitudinal study, the same set of individuals is tracked over time.\nIn a cross-sectional study, individuals are divided into several groups.\nNotice that data in longitudinal studies necessarily possess serial correlation: that is, measurements are correlated!\n\nPre-treatment measurements for, say, John, are very likely correlated with John’s post-treatment measurements since these measurements were still collected from John!"
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#principles-of-experimental-design",
     "href": "Pages/Lectures/Lecture19/Lec19.html#principles-of-experimental-design",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Principles of Experimental Design",
     "text": "Principles of Experimental Design\n\nLet’s quickly return to our distinction between observational studies and experiments.\nSuppose it is decided that we want to conduct an experiment.\nWe then need to think very carefully about how we want to design our experiment.\nThis leads us into our final discussion for this course: Experimental Design."
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#treatment-vs.-control-groups",
     "href": "Pages/Lectures/Lecture19/Lec19.html#treatment-vs.-control-groups",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Treatment vs. Control Groups",
     "text": "Treatment vs. Control Groups\n\nFirst, let me make clear the distinction between treatment and control groups.\nTreatment groups are groups to which one or more treatments is/are administered.\n\nThere can potentially be multiple treatment groups; for example, we could have 4 groups each testing a different medicine\n\nTypically, we always leave at least one group “alone”; i.e. one group to which no treatment is administered. This group is called the control group.\n\nIt is also possible to have multiple control groups!"
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#experimental-design",
     "href": "Pages/Lectures/Lecture19/Lec19.html#experimental-design",
-    "title": "PSTAT 5A: Lecture 22",
+    "title": "PSTAT 5A: Lecture 19",
     "section": "Experimental Design",
     "text": "Experimental Design\n\nExperimental Design loosely refers to the principles of and procedures related to setting up an experiment.\nI won’t go into this in too much detail.\nI do highly encourage you to read Section 1.4 of your textbook, as it provides a very nice summary of some of the main tenants of experimental design.\nRemember - as Data Scientists, it is very important we understand our data as much as possible before performing analyses.\n\nPart of knowing our data is knowing how it was collected, and, indeed, how we might go about collecting our own!"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#scatterplots-and-trends",
     "href": "Pages/Lectures/Lecture17/Lec17.html#scatterplots-and-trends",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Scatterplots and Trends",
     "text": "Scatterplots and Trends\n\nThis week, we talked about two sample problems.\nLet’s take a moment to revisit some material from Lecture 2.\nSpecifically, suppose we have data of the form \\(\\{(y_i, \\ x_i)\\}_{i=1}^{n}\\).\n\nFor simplicity’s sake, let’s assume both x and y are numerical.\n\nWe have previously seen that the best way to visualize the relationship between y and x is with a scatterplot"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#no-relationship",
     "href": "Pages/Lectures/Lecture17/Lec17.html#no-relationship",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "No Relationship",
     "text": "No Relationship\n\nSometimes, two variables will have no relationship at all:"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#statistical-modeling",
     "href": "Pages/Lectures/Lecture17/Lec17.html#statistical-modeling",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Statistical Modeling",
     "text": "Statistical Modeling\n\nThe goal of statistical modeling, loosely speaking, is to try and model the relationship between x and y.\nSpecifically, we assume the relationship takes the form \\[ \\texttt{y} = f(\\texttt{x}) + \\texttt{noise} \\] where \\(f()\\) is some function (e.g. linear, nonlinear, etc.)\nHang on, what’s the noise term doing?\nWell, take a look at the previous scatterplots. Even though many of these display (what we visually would describe as) relationships between x and y, the datapoints do not fall perfectly along a single curve."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#statistical-modeling-1",
     "href": "Pages/Lectures/Lecture17/Lec17.html#statistical-modeling-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Statistical Modeling",
     "text": "Statistical Modeling\n\nAs a concrete example, suppose y represents weight and x represents height.\nWe do believe there would be some sort of a positive association between weight and height (taller people tend to, in general, weigh more) and we may even assume the relationship is linear.\nHowever, just because we know someone’s height, we don’t exactly know what their weight will be.\n\nAgain, this is because there is uncertainty and randomness inherent in pretty much everything!"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#terminology",
     "href": "Pages/Lectures/Lecture17/Lec17.html#terminology",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Terminology",
     "text": "Terminology\n\nAlright, so: given variables y and x, we assume the relationship between them can be modeled as \\[ \\texttt{y} = f(\\texttt{x}) + \\texttt{noise} \\]\nHere is some terminology we use:\n\ny is referred to as the response variable, or sometimes the dependent variable.\nx is referred to as the explanatory variable, or sometimes the independent variable.\nThe function \\(f()\\) is sometimes referred to as the signal function."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#terminology-1",
     "href": "Pages/Lectures/Lecture17/Lec17.html#terminology-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Terminology",
     "text": "Terminology\n\nWe also have some additional terminology about the entire model, based on the type of the response variable.\n\nIf y is numerical, we call the resulting model a regression model (or we just say we are in a regression setting)\nIf y is categorical, we call the resulting model a classification model (or we just say we are in a classification setting)\n\nSo, for example, trying to model the relationship between weight and height (assuming weight is our response variable) is a regression problem, since weight is a numerical variable."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#classification-problem",
     "href": "Pages/Lectures/Lecture17/Lec17.html#classification-problem",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Classification Problem",
     "text": "Classification Problem\n\nAs an illustration of a classic classification problem, suppose we have access to a roster of passengers on the Titanic.\n\nFor those who don’t know, the RMS Titanic was a British passenger line that crahsed into an iceberg on April 15, 1912.\n\nTragically, not all passengers survived.\nOne question we may want to ask is: how did various factors (e.g. class, gender, etc.) affect whether or not a given passenger survived?\n\nFor instance, since women and children boarded lifeboats first, it may be plausible surmise that women and children had a higher likelihood of surviving."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#classification-problem-1",
     "href": "Pages/Lectures/Lecture17/Lec17.html#classification-problem-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Classification Problem",
     "text": "Classification Problem\nAnother example is returning to our Penguins dataset. Here is a scatterplot of flipper length by bill length:\n\nThis is clearly very linear but it’s missing an additional element."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#classification-problem-2",
     "href": "Pages/Lectures/Lecture17/Lec17.html#classification-problem-2",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Classification Problem",
     "text": "Classification Problem"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#multivariate-models",
     "href": "Pages/Lectures/Lecture17/Lec17.html#multivariate-models",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Multivariate Models",
     "text": "Multivariate Models\n\nWe don’t have to restrict ourselves to modeling the relationship between a response variable and a single explanatory variable.\n\nFor example, suppose y measures income.\nThere are several factors that might contribute to someone’s monthly income: things like education_level, gender, industry, etc.\n\nWe can easily adapt a linear regression model to allow for multiple explanatory variables, which leads to what is known as a multivariate regression/classification model: \\[ \\texttt{y} = f(\\texttt{x}_1, \\ \\cdots , \\ \\texttt{x}_k) + \\texttt{noise} \\]\n\nA full treatment of multivariate models requires linear alebra, so I refer you to a course like PSTAT 126 or PSTAT 131/231 for further details."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#linear-models",
     "href": "Pages/Lectures/Lecture17/Lec17.html#linear-models",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Linear Models",
     "text": "Linear Models\n\nFor now, let’s focus on modeling the relationship between a numerical response variable and a single numerical explanatory variable: \\[ \\texttt{y} = f(\\texttt{x}) + \\texttt{noise} \\]\nOf particular interest to statisticians are the class of linear models, which assume a linear form for the signal function.\nRecall that a line is described by two parameters: an intercept and a slope. As such, to say we are assuming a “linear form” for \\(f()\\) is to say we are assuming \\(f(x) = \\beta_0 + \\beta_1 \\cdot x\\), so our model becomes \\[ \\texttt{y} = \\beta_0 + \\beta_1 \\cdot \\texttt{x} + \\texttt{noise} \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#scatterplots",
     "href": "Pages/Lectures/Lecture17/Lec17.html#scatterplots",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Scatterplots",
     "text": "Scatterplots\n\nThe first step in examining the elationship between two quantitative variables is to use a graphical display—a scatterplot—to display the association between the two variables.\nEach point in the scatterplot represents an individual in the dataset.\nA scatterplot allows us to see if there is an overall pattern in the data and whether there are any striking deviations from that pattern. In particular, we are interested in whether there is a linear relationship between the two variables."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#scatterplots-1",
     "href": "Pages/Lectures/Lecture17/Lec17.html#scatterplots-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Scatterplots",
     "text": "Scatterplots\nHow do we describe a scatterplot?\n\ndirection: positive or negative\nlinearity: linear or not linear\nstrength: weak, moderate, strong\noutliers: points that clearly fall outside of the overall pattern of the relationship"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#strength-of-a-relationship",
     "href": "Pages/Lectures/Lecture17/Lec17.html#strength-of-a-relationship",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Strength of a Relationship",
     "text": "Strength of a Relationship\n\nNow, before we delve into the mathematics and mechanics of model fitting, there is another thing we should be aware of.\nAs an example, consider the following two scatterplots:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBoth scatterplots display a positive linear trend. However, the relationship between Y2 and X2 seems to be “stronger” than the relationship between Y1 and X1, does it not?"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#correlation-coefficient",
     "href": "Pages/Lectures/Lecture17/Lec17.html#correlation-coefficient",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Correlation Coefficient",
     "text": "Correlation Coefficient\n\nUltimately, we would like to develop a mathematical metric to quantify not only the relationship between two variables, but also the strength of the relationship between these two variables.\nThis quantity is referred to as the correlation coefficient.\nNow, it turns out there are actually a few different correlation coefficients out there. The one we will use in this class (and one of the metrics that is very widely used by statisticians) is called Pearson’s Correlation Coefficient, or often just Pearson’s r (as we use the letter r to denote it.)"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#pearsons-r",
     "href": "Pages/Lectures/Lecture17/Lec17.html#pearsons-r",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Pearson’s r",
     "text": "Pearson’s r\n\nGiven two sets \\(X = \\{y_i\\}_{i=1}^{n}\\) and \\(Y = \\{y_i\\}_{i=1}^{n}\\) (note that we require the two sets to have the same number of elements!), we compute r using the formula \\[ r = \\frac{1}{n - 1} \\sum_{i=1}^{n} \\left( \\frac{x_i - \\overline{x}}{s_X} \\right) \\left( \\frac{y_i - \\overline{y}}{s_Y} \\right)  \\] where:\n\n\\(\\overline{x}\\) and \\(\\overline{y}\\) denote the sample means of \\(X\\) and \\(Y\\), respectively\n\\(s_X\\) and \\(s_Y\\) denote the sample standard deviations of \\(X\\) and \\(Y\\), respectively."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#example",
     "href": "Pages/Lectures/Lecture17/Lec17.html#example",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Example",
     "text": "Example\n\nI find it useful to sometimes consider extreme cases, and ensure that the math matches up with our intuition.\nFor example, consider the sets \\(X = \\{1, 2, 3\\}\\) and \\(Y = \\{1, 2, 3\\}\\).\nFrom a scatterplot, I think we would all agree that \\(X\\) and \\(Y\\) have a positive linear relationship, and that the relationship is very strong!"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#example-1",
     "href": "Pages/Lectures/Lecture17/Lec17.html#example-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Example",
     "text": "Example\n\nIndeed, \\(\\overline{x} = 2 = \\overline{y}\\) and \\(s_X = 1 = s_Y\\), meaning \\[\\begin{align*}\nr   & = \\frac{1}{3 - 1} \\left[ \\left( \\frac{1 - 2}{1} \\right) \\left( \\frac{1 - 2}{1} \\right)  + \\left( \\frac{2 - 2}{1} \\right) \\left( \\frac{2 - 2}{1} \\right)  \\right.   \\\\\n  & \\hspace{45mm} \\left. +  \\left( \\frac{3 - 2}{1} \\right) \\left( \\frac{3 - 2}{1} \\right)  \\right] \\\\\n  & = \\frac{1}{2} \\left[ 1 + 0 + 1 \\right] = \\boxed{1}\n\\end{align*}\\]\nIt turns out, r will always be between \\(-1\\) and \\(1\\), inclusive, regardless of what two sets we are comparing!"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#interpretation",
     "href": "Pages/Lectures/Lecture17/Lec17.html#interpretation",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Interpretation",
     "text": "Interpretation\n\nSo, here is how we interpret the value of r.\n\nThe sign of r (i.e. whether it is positive or negative) indicates whether or not the linear association between the two variables is positive or negative.\nThe magnitude of r indicates how strong the linear relationship between the two variables is, with magnitudes close to \\(1\\) or \\(-1\\) indicating very strong linear relationships.\nAn r value of 0 indicates no linear relationship between the variables."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#important-distinction",
     "href": "Pages/Lectures/Lecture17/Lec17.html#important-distinction",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Important Distinction",
     "text": "Important Distinction\n\nNow, something that is very important to mention is that r only quantifies linear relationships- it is very bad at quantifying nonlinear relationships.\nFor example, consider the following scatterplot:"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#important-distinction-1",
     "href": "Pages/Lectures/Lecture17/Lec17.html#important-distinction-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Important Distinction",
     "text": "Important Distinction\n\nI think we would all agree that Y and X have a fairly strong relationship.\nHowever, the correlation between Y and X is actually only 0.1953333!\nSo, again- r should only be used as a determination of the strength of linear trends, not nonlinear trends."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#your-turn",
     "href": "Pages/Lectures/Lecture17/Lec17.html#your-turn",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Your Turn!",
     "text": "Your Turn!"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#your-turn-1",
     "href": "Pages/Lectures/Lecture17/Lec17.html#your-turn-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Your Turn!",
     "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 1\n\n\n\n\nCompute the correlation between the following two sets of numbers: \\[\\begin{align*}\n  \\boldsymbol{x}    & = \\{-1, \\ 0, \\ 1\\}    \\\\\n  \\boldsymbol{y}    & = \\{1, \\ 2, \\ 0\\}\n\\end{align*}\\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#leadup",
     "href": "Pages/Lectures/Lecture17/Lec17.html#leadup",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Leadup",
     "text": "Leadup\n\nThere is another thing to note about correlation.\nLet’s see this by way of an example: consider the following two scatterplots:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBoth cor(X, Y1) and cor(X, Y2) are equal to 1, despite the fact that a one unit increase in x corresponds to a different unit increase in y1 as opposed to y2."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#leadup-1",
     "href": "Pages/Lectures/Lecture17/Lec17.html#leadup-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Leadup",
     "text": "Leadup\n\nSo, don’t be fooled- the magnitude of r says nothing about how a one-unit increase in x translates to a change in y!\n\nAgain, the magnitude of r only tells us how strongly the two variables are related.\n\nTo figure out exactly how a change in x translates to a change in y, we need to return to our model."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#regression-problem",
     "href": "Pages/Lectures/Lecture17/Lec17.html#regression-problem",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Regression Problem",
     "text": "Regression Problem\n\nAs a concrete example, let’s examine a dataset that contains several measurements on heights and weights:"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#regression-model",
     "href": "Pages/Lectures/Lecture17/Lec17.html#regression-model",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Regression Model",
     "text": "Regression Model\n\nLetting y denote our response variable (weight) and x denote our explanatory variable (height), our model is \\[ \\texttt{y} = \\beta_0 + \\beta_1 \\cdot \\texttt{x} + \\texttt{noise} \\]\n\nIf you wanted to be a little more explicit, you could also write \\[ \\texttt{weight} = \\beta_0 + \\beta_1 \\cdot (\\texttt{height}) + \\texttt{noise} \\]\n\nUltimately, we would like to know the values of \\(\\beta_0\\) and \\(\\beta_1\\).\nHowever, we will never be able to determine their values exactly!\nWhy? Well, take a look at the model again- though we are assuming a linear relationship between height and weight, our weight observations contain some noise, the magnitude of which we never get to see!\n\nIn this way, we can think of \\(\\beta_0\\) and \\(\\beta_1\\) as population parameters."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#fitting-the-model",
     "href": "Pages/Lectures/Lecture17/Lec17.html#fitting-the-model",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Fitting the Model",
     "text": "Fitting the Model\n\nOur goal, therefore, is to try and determine good estimators \\(\\widehat{\\beta}_0\\) and \\(\\widehat{\\beta}_1\\) of \\(\\beta_0\\) and \\(\\beta_1\\), respectively.\nIn the more general setting, given a model \\[ \\texttt{y} = f(\\texttt{x}) + \\texttt{noise} \\] the goal of model fitting is to take data \\(\\{(y_i, \\ x_i)\\}_{i=1}^{n}\\) and use it to construct a function \\(\\widehat{f}()\\) that we believe best approximates the function \\(f():\\) \\[ \\widehat{\\texttt{y}} = \\widehat{f}(\\texttt{x}) + \\texttt{noise} \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#height-and-weight",
     "href": "Pages/Lectures/Lecture17/Lec17.html#height-and-weight",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Height and Weight",
     "text": "Height and Weight\n\nOkay, back to our height and weight example:"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#height-and-weight-1",
     "href": "Pages/Lectures/Lecture17/Lec17.html#height-and-weight-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Height and Weight",
     "text": "Height and Weight\n\nThe regression problem basically boils down to finding the line that best fits the data.\nThe specific line we will discuss in a bit is called the ordinary least squares line (or just OLS line):"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#simple-linear-regression",
     "href": "Pages/Lectures/Lecture17/Lec17.html#simple-linear-regression",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Simple Linear Regression",
     "text": "Simple Linear Regression\n\nHere is how simple linear regression works.\nWe are given observations \\(\\{(y_i, \\ x_i)\\}_{i=1}^{n}\\) on a response variable y and an explanatory variable x.\nIn simple linear regression, we adopt the following model: \\[ \\texttt{y} = \\beta_0 + \\beta_1 \\cdot \\texttt{x} + \\texttt{noise} \\]\nOur goal is to use the data \\(\\{(y_i, \\ x_i)\\}_{i=1}^{n}\\) to determine suitable estimators for \\(\\beta_0\\) and \\(\\beta_1\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#simple-linear-regression-1",
     "href": "Pages/Lectures/Lecture17/Lec17.html#simple-linear-regression-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Simple Linear Regression",
     "text": "Simple Linear Regression\n\nHere’s a visual way of thinking about this. Consider the following scatterplot:"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#goals",
     "href": "Pages/Lectures/Lecture17/Lec17.html#goals",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Goals",
     "text": "Goals\n\n\nWe are assuming that there exists some true linear relationship (i.e. some “fit”) between y and x. But, because of natural variability due to randomness, we cannot figure out exactly what the true relationship is."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#goals-1",
     "href": "Pages/Lectures/Lecture17/Lec17.html#goals-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Goals",
     "text": "Goals\n\n\nFinding the “best” estimate of the signal function is, therefore, akin to finding the line that “best” fits the data."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#line-of-best-fit",
     "href": "Pages/Lectures/Lecture17/Lec17.html#line-of-best-fit",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Line of Best Fit",
     "text": "Line of Best Fit\n\nNow, if we are to find the line that best fits the data, we first need to quantify what we mean by “best”.\nHere is one idea: consider minimizing the average distance from the datapoints to the line.\nAs a measure of “average distance from the points to the line”, we will use the so-called residual sum of squares (often abbreviated as RSS)."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#residuals",
     "href": "Pages/Lectures/Lecture17/Lec17.html#residuals",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Residuals",
     "text": "Residuals\n\nThe ith residual is defined to be the quantity \\(e_i\\) below:\n\n\n\n\n\nRSS is then just \\(\\displaystyle \\mathrm{RSS} = \\sum_{i=1}^{n} e_i^2\\)"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#results",
     "href": "Pages/Lectures/Lecture17/Lec17.html#results",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Results",
     "text": "Results\n\nIt turns out, using a bit of Calculus, the estimators we seek (i.e. the ones that minimize the RSS) are \\[\\begin{align*}\n\\widehat{\\beta_1}   & = \\frac{\\sum\\limits_{i=1}^{n} (x_i - \\overline{x})(y_i - \\overline{y})}{\\sum\\limits_{i=1}^{n} (x_i - \\overline{x})^2}    \\\\\n\\widehat{\\beta_0}   & = \\overline{y} - \\widehat{\\beta_1} \\overline{x}\n\\end{align*}\\]\nThese are what are known as the ordinary least squares estimators of \\(\\beta_0\\) and \\(\\beta_1\\), and the line \\(\\widehat{\\beta_0} + \\widehat{\\beta_1} x\\) is called the ordinary least-squares regression line (or just OLS regression line, for short).\nPerhaps an example may illustrate what I am talking about."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#example-2",
     "href": "Pages/Lectures/Lecture17/Lec17.html#example-2",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Example",
     "text": "Example"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#example-3",
     "href": "Pages/Lectures/Lecture17/Lec17.html#example-3",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Example",
     "text": "Example\n\n\n\\(\\widehat{\\beta_0} =\\) -0.2056061; \\(\\widehat{\\beta_1} =\\) -2.1049432.\nI.e. the equation of the line in blue is -0.2056061 + -2.1049432 * x."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#fitted-values",
     "href": "Pages/Lectures/Lecture17/Lec17.html#fitted-values",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Fitted Values",
     "text": "Fitted Values\n\nLet’s return to our cartoon picture of OLS regression:"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#fitted-values-1",
     "href": "Pages/Lectures/Lecture17/Lec17.html#fitted-values-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Fitted Values",
     "text": "Fitted Values\n\nNotice that each point in our dataset (i.e. the blue points) have a corresponding point on the OLS regression line:"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#fitted-values-2",
     "href": "Pages/Lectures/Lecture17/Lec17.html#fitted-values-2",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Fitted Values",
     "text": "Fitted Values\n\nThese points are referred to as fitted values; the y-values of the fitted values are denoted as \\(\\widehat{y}_i\\).\nIn this way, the OLS regression line is commonly written as a relationship between the fitted values and the x-values: \\[ \\widehat{y} = \\widehat{\\beta_0} + \\widehat{\\beta_1} x \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#back-to-height-and-weight",
     "href": "Pages/Lectures/Lecture17/Lec17.html#back-to-height-and-weight",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Back to height and weight",
     "text": "Back to height and weight\n\nBefore we work through the math once, let’s apply this technique to the height and weight data from before."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#back-to-height-and-weight-1",
     "href": "Pages/Lectures/Lecture17/Lec17.html#back-to-height-and-weight-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Back to height and weight",
     "text": "Back to height and weight\n\nUsing a computer software, the OLS regression line can be found to be:\n\n\n\n\n\n\n\n\n\n\n\n\nSpecifically, \\(\\widehat{\\beta_0} =\\) 3.366744 and \\(\\widehat{\\beta_1} =\\) 0.9790114\n\n\n\n\nWe will return to the notion of fitted values in a bit."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#back-to-height-and-weight-2",
     "href": "Pages/Lectures/Lecture17/Lec17.html#back-to-height-and-weight-2",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Back to height and weight",
     "text": "Back to height and weight\n\nA quick note:\nThough there was no way to know this, the true \\(\\beta_1\\) was actually \\(1.0\\). Again, this is just to demonstrate that the OLS estimate \\(\\widehat{\\beta_1}\\) is just that- an estimate!"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#worked-out-example",
     "href": "Pages/Lectures/Lecture17/Lec17.html#worked-out-example",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Worked-Out Example",
     "text": "Worked-Out Example\n\nAlright, let’s work through a computation by hand once.\nSuppose we have the variables \\[\\begin{align*}\n\\boldsymbol{x}    & = \\{3, \\ 7, \\ 8\\}   \\\\\n\\boldsymbol{y}    & = \\{20, \\ 14, \\ 17\\}\n\\end{align*}\\] and suppose we wish to construct the least-squares regression line when regressing \\(\\boldsymbol{y}\\) onto \\(\\boldsymbol{x}\\).\nFirst, we compute \\[\\begin{align*}\n\\overline{x}    & = 6   \\\\\n\\overline{y}    & = 17\n\\end{align*}\\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#worked-out-example-1",
     "href": "Pages/Lectures/Lecture17/Lec17.html#worked-out-example-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Worked-Out Example",
     "text": "Worked-Out Example\n\nNext, we compute \\[\\begin{align*}\n\\sum_{i=1}^{n} (x_i - \\overline{x})^2   & = (3 - 6)^2 + (7 - 6)^2 + (8 - 6)^2 = 14   \\\\\n\\sum_{i=1}^{n} (y_i - \\overline{y})^2   & = (20 - 17)^2 + (14 - 17)^2 + (17 - 17)^2 = 18\n\\end{align*}\\]\nAdditionally, \\[\\begin{align*}\n\\sum_{i=1}^{n} (x_i - \\overline{x})(y_i - \\overline{y})   & = (3 - 6)(20 - 17) + (7 - 6)(14 - 17)    \\\\[-7mm]\n  & \\hspace{10mm} + (8 - 6)(17 - 17)    \\\\[5mm]\n  & = -12\n\\end{align*}\\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#worked-out-example-2",
     "href": "Pages/Lectures/Lecture17/Lec17.html#worked-out-example-2",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Worked-Out Example",
     "text": "Worked-Out Example\n\nTherefore, \\[ \\widehat{\\beta_1} = \\frac{\\sum_{i=1}^{n} (x_i - \\overline{x})(y_i - \\overline{y})}{\\sum_{i=1}^{n} (x_i - \\overline{x})^2}   = \\frac{-12}{14} = - \\frac{6}{7} \\]\nAdditionally, \\[ \\widehat{\\beta_0} = \\overline{y} - \\widehat{\\beta_1} \\overline{x} = 17 - \\left( - \\frac{6}{7} \\right) (6) = \\frac{155}{7} \\]\nThis means that the ordinary least-squares regression line is \\[ \\boxed{\\widehat{y} = \\frac{1}{7} ( 155 - 6 x )} \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#interpreting-the-coefficients",
     "href": "Pages/Lectures/Lecture17/Lec17.html#interpreting-the-coefficients",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Interpreting the Coefficients",
     "text": "Interpreting the Coefficients\n\nAlright, so how do we interpret the OLS regression line? \\[\\widehat{y} = \\widehat{\\beta_0} + \\widehat{\\beta_1} x\\]\nWe can see that a one-unit increase in x corresponds to a \\(\\widehat{\\beta_1}\\)-unit increase in y.\n\nFor example, in our height and weight example we found \\[ \\widehat{\\texttt{weight}} = 3.367 + 0.979 \\cdot \\texttt{height} \\]\nThis means that a one-cm change in height is associated with a (predicted/estimated) 0.979 lbs change in weight."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#next-time",
     "href": "Pages/Lectures/Lecture17/Lec17.html#next-time",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 17",
     "section": "Next Time",
     "text": "Next Time\n\nNext time, we’ll discuss how to use the OLS regression line to make predictions."
   },
@@ -2727,7 +2727,7 @@
     "href": "Pages/hw.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Here you will find all homework assignments and their solutions. Please remember that solutions to homework will only be released during Exam Weeks; we encourage you to come to Office Hours to ask any questions you may have about the assignments!\n\nHomework 1: Blank \nHomework 2: Blank \nHomework 3: Blank \nHomework 4: Blank \nHomework 5: Blank"
+    "text": "Here you will find all homework assignments and their solutions. Please remember that solutions to homework will only be released after each respective homework assignment is due; we encourage you to come to Office Hours to ask any questions you may have about the assignments!\n\nHomework 1: Blank \nHomework 2:  \nHomework 3:  \nHomework 4:  \nHomework 5:"
   },
   {
     "objectID": "Pages/exam_prep.html",
@@ -3154,7 +3154,7 @@
     "href": "Pages/syllabus.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "WELCOME TO PSTAT 5A! I am very excited to introduce to you the wonderful fields of Statistics and Data Science. As our world becomes ever more saturated with data, the need for data literacy becomes increasingly important. By the end of this course, I hope you will be able to think critically about statistical studies and results, understand how data can be used to simultaneously inform and manipulate, and begin applying your new skills to your future endeavors. I am very much looking forward to a great summer session with all of you!\n— Annie"
+    "text": "WELCOME TO PSTAT 5A! I’m thrilled to dive into the fascinating world of Statistics and Data Science with all of you. In our data-rich world, the ability to interpret and analyze information has become a crucial skill across countless fields and disciplines. Throughout this course, you’ll develop the tools to evaluate statistical claims with a discerning eye, recognize how data can both illuminate truth and obscure it, and start building a foundation for applying these powerful techniques in your own academic and professional pursuits. I am very much looking forward to a wonderful and fun summer session with you all!\n— Annie"
   },
   {
     "objectID": "Pages/syllabus.html#lecture-information",
@@ -3196,14 +3196,14 @@
     "href": "Pages/syllabus.html#course-components",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Course Components",
-    "text": "Course Components\nThe following are the assignments and metrics that will be used to compute your final grade in this course:\n\nLabs\nEvery Tuesday you will work through a Lab assignment. It is advised that you turn in the Lab at the end of the section on Tuesdays, but you will have until the end of Thursday (11:59p) to submit your work through Gradescope. Your TA will explain more about the structure of lab during your first Section meeting of the quarter.\n\n\nQuizzes\nQuizzes will be administered asynchronously on Mondays, through Gradescope. Specifically, the quiz will remain open from 8am until 11:59pm, and you must find 60 consecutive minutes to take the quiz. (Consecutive means you cannot start the quiz, and then come back to it later- once you start, you will have 60 minutes to both complete the quiz as well as upload your work). I encourage you to spend 45 minutes working on the quiz, and 15 minutes uploading. No quiz scores will be dropped. There is no quizzes on the first and last week of class.\n\n\nExam\nThere is a final exam for this class. You are required to take the final exam, which will take place during the last lecture.\n\n\nHomework:\nThere will be weekly homework due on Thursday at 11:59p. It must be turned into Gradescope. No late homework will be accepted since solutions to the homework will be posted at midnight (Thursday to Friday). I advise you review your homework in preparation for the quiz on Monday.\n\n\nSchedule of Due Dates\nLab1: Thursday, August 7 at 11:59pm HW1: Thursday, August 7 at 11:59pm Quiz1: Monday, August 11 (8a- 11:59p)\nLab2: Thursday, August 14 at 11:59pm HW2: Thursday, August 14 at 11:59pm Quiz2: Monday, August 18 (8a- 11:59p)\nLab3: Thursday, August 21 at 11:59pm HW3: Thursday, August 21 at 11:59pm Quiz3: Monday, August 25 (8a- 11:59p)\nLab4: Thursday, August 28 at 11:59pm HW4: Thursday, August 28 at 11:59pm Quiz4: Monday, Sept 1 (8a- 11:59p)\nLab5: Thursday, Sept 4 at 11:59pm HW5: Thursday, Sept 4 at 11:59pm Quiz5: Monday, Sept 8 (8a- 11:59p)\nLab6: Thursday, Sept 11 at 11:59pm HW6: Thursday, Sept 11 at 11:59pm"
+    "text": "Course Components\nThe following are the assignments and metrics that will be used to compute your final grade in this course:\n\nLabs\nEvery Tuesday you will work through a Lab assignment. It is advised that you turn in the Lab at the end of the section on Tuesdays, but you will have until the end of Thursday (11:59p) to submit your work through Gradescope. Your TA will explain more about the structure of lab during your first Section meeting of the quarter.\n\n\nQuizzes\nQuizzes will be administered asynchronously on Mondays, through Gradescope. Specifically, the quiz will remain open from 8am until 11:59pm, and you must find 60 consecutive minutes to take the quiz. (Consecutive means you cannot start the quiz, and then come back to it later- once you start, you will have 60 minutes to both complete the quiz as well as upload your work). I encourage you to spend 45 minutes working on the quiz, and 15 minutes uploading. No quiz scores will be dropped. There is no quizzes on the first and last week of class.\n\n\nExam\nThere is a final exam for this class. You are required to take the final exam, which will take place during the last lecture.\n\n\nHomework:\nThere will be weekly homework due on Thursday at 11:59p. It must be turned into Gradescope. No late homework will be accepted since solutions to the homework will be posted at midnight (Thursday to Friday). I advise you review your homework in preparation for the quiz on Monday.There will be six homework assignments, all weighted equally. Homework will be graded on an effort-based basis with the following cutoffs:\n\n\n\n\n\n\n\nSubmission Quality\nCredit Earned\n\n\n\n\nNo submission or minimal effort\n0 points\n\n\nPartial completion or limited effort (some questions incomplete or responses lack depth)\n50% credit\n\n\nAll questions completed with clear thought and effort demonstrating engagement\n100% credit\n\n\n\n\n\nSchedule of Due Dates\nWeek 1| Lab1: Thurs., August 7 at 11:59pm HW1: Thurs., August 7 at 11:59pm\nWeek 2| Quiz1: Mon., August 11 (8a- 11:59p) Lab2: Thurs., August 14 at 11:59pm HW2: Thurs., August 14 at 11:59pm\nWeek 3| Quiz2: Mon., August 18 (8a- 11:59p) Lab3: Thurs., August 21 at 11:59pm HW3: Thurs., August 21 at 11:59pm\nWeek 4| Quiz3: Mon., August 25 (8a- 11:59p) Lab4: Thurs., August 28 @ 11:59pm HW4: Thurs., August 28 @ 11:59pm\nWeek 5| Quiz4: Mon., Sept 1 (8a- 11:59p) Lab5: Thurs., Sept 4 at 11:59pm HW5: Thurs., Sept 4 at 11:59pm\nWeek 6| Lab6: Thurs., Sept 11 at 11:59pm HW6: Thurs., Sept 11 at 11:59pm"
   },
   {
     "objectID": "Pages/syllabus.html#grading-scheme",
     "href": "Pages/syllabus.html#grading-scheme",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Grading Scheme",
-    "text": "Grading Scheme\nYour final grade will be computed using the following weights:\n\n\n\nHomework:\n25%\n\n\nLabs:\n25%\n\n\nQuizzes:\n25%\n\n\nFinal Examination:\n25%\n\n\n\nPlease note that late submissions for any of the above will not be accepted. Additionally, make-up exams cannot be accommodated.\nYour final letter grade will be issued according to the following scheme (cutoffs between plusses and minuses will be calculated at the end of the quarter):\n\nA– – A+: 90 – 100%\nB– – B+: 80 – 89.99%\nC– – C+: 70 – 79.99%\nD– – D+ : 60 – 69.99%\nF: 0 – 59.99%\n\nI have elected to adopt an uncurved grading scheme to eliminate any sense of “competition” among students; I highly encourage you all to collaborate with and uplift each other. Having said that, I will certainly consider adjusting the cutoffs (naturally, in everyone’s favor) at the end of the quarter if necessary."
+    "text": "Grading Scheme\nYour final grade will be computed using the following weights:\n\n\n\nHomework:\n25%\n\n\nLabs:\n25%\n\n\nQuizzes:\n25%\n\n\nFinal Examination:\n25%\n\n\n\nPlease note that late submissions for any of the above will not be accepted. Additionally, make-up exams cannot be accommodated.\nYour final letter grade will be issued according to the following scheme (cutoffs between plusses and minuses will be calculated at the end of the quarter):\n\nA– – A+: 90 – 100%\nB– – B+: 80 – 89.99%\nC– – C+: 70 – 79.99%\nD– – D+ : 60 – 69.99%\nF: 0 – 59.99%"
   },
   {
     "objectID": "Pages/syllabus.html#academic-integrity",
@@ -3245,7 +3245,7 @@
     "href": "Pages/syllabus.html#disclaimer",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Disclaimer",
-    "text": "Disclaimer\nThis syllabus and much of the content for this course has been graciously borrowed from the original work of Ethan P. Marzban with some modifications. Thank you, Ethan!"
+    "text": "Disclaimer\nThis syllabus and much of the content for this course has been graciously borrowed from the original work of Ethan P. Marzban with some modifications. Thank you, Ethan! Thank you, Mallory Wang, for your contributions as well!"
   },
   {
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#last-time",
@@ -3614,315 +3614,315 @@
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#last-time",
     "href": "Pages/Lectures/Lecture18/Lec18.html#last-time",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Last Time",
     "text": "Last Time\n\nLast time, we began our foray into statistical modeling.\nGiven data \\(\\{(x_i, \\ y_i)\\}_{i=1}^{n}\\) on a response variable y and an explanatory variable x, we model the relationship between y and x as \\[ \\texttt{y} = f(\\texttt{x}) + \\texttt{noise} \\] for some signal function \\(f()\\).\nWhen the response variable is numerical, we call the model a regression model; when the variable is categorical, we call the model a classification model.\nUlimately, we wish to fit a signal function \\(\\widehat{f}()\\) to our data."
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#simple-linear-regression",
     "href": "Pages/Lectures/Lecture18/Lec18.html#simple-linear-regression",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Simple Linear Regression",
     "text": "Simple Linear Regression\n\nSimple Linear Regression refers to a situation in which we have:\n\na numerical response variable y\na single explanatory variable x\na linear signal function; i.e. \\(f(x) = \\beta_0 + \\beta_1 \\cdot x\\)\n\nThat is, the model in a simple linear regression setting is \\[ \\texttt{y} = \\beta_0 + \\beta_1 \\cdot x  + \\texttt{noise} \\]\n\nFitting a signal function \\(\\widehat{f}()\\) to the data is therefore equivalent to finding suitable estimators \\(\\widehat{\\beta}_0\\) and \\(\\widehat{\\beta}_1\\) of \\(\\beta_0\\) and \\(\\beta_1\\) respectively."
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#a-noteconnection",
     "href": "Pages/Lectures/Lecture18/Lec18.html#a-noteconnection",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "A Note/Connection",
     "text": "A Note/Connection\n\nI’d like to stress- writing \\(f(x) = \\beta_0 + \\beta_1 \\cdot x\\) is exactly the same as our familiar \\(mx + b\\) form for a line!\n\nThe reason we use \\(\\beta_0\\) and \\(\\beta_1\\) in place of \\(b\\) and \\(m\\), respectively, is to allow for an extension of the same notation practices to a multivariate setting.\nThat is, if we have \\(k\\) explanatory variables x1 through xk, it is easier to write a linear model as \\[ \\texttt{y} = \\beta_0 + \\beta_1 \\cdot x_1 + \\cdots + \\beta_k \\cdot x_k + \\texttt{noise} \\] instead of having to find new letters for the coefficients of x1 through xk."
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#ols-estimators-and-the-ols-regression-line",
     "href": "Pages/Lectures/Lecture18/Lec18.html#ols-estimators-and-the-ols-regression-line",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "OLS Estimators and the OLS Regression Line",
     "text": "OLS Estimators and the OLS Regression Line\n\nBack to the model fitting problem: we seek to find “good” estimators \\(\\widehat{\\beta}_0\\) and \\(\\widehat{\\beta}_1\\) for \\(\\beta_0\\) and \\(\\beta_1\\) respectively.\nOne quantification of “good” is “minimizing the residual sum of squares”:\n\n\n \\[ \\mathrm{RSS} = \\sum_{i=1}^{n} e_i^2 \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#ols-estimators-and-the-ols-regression-line-1",
     "href": "Pages/Lectures/Lecture18/Lec18.html#ols-estimators-and-the-ols-regression-line-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "OLS Estimators and the OLS Regression Line",
     "text": "OLS Estimators and the OLS Regression Line\n\nThe estimators that minimize the RSS are \\[\\begin{align*}\n\\widehat{\\beta}_1   & = \\frac{\\sum\\limits_{i=1}^{n} (x_i - \\overline{x})(y_i - \\overline{y})}{\\sum\\limits_{i=1}^{n} (x_i - \\overline{x})^2}    \\\\\n\\widehat{\\beta}_0   & = \\overline{y} - \\widehat{\\beta}_1 \\overline{x}\n\\end{align*}\\] which are called the ordinary least squares (or just OLS) estimators of \\(\\beta_0\\) and \\(\\beta_1\\).\nWe write the OLS regression line as \\[ \\widehat{y} = \\widehat{\\beta}_0 + \\widehat{\\beta}_1 \\cdot x \\] which is just the line that “best” fits the data (where, again, “best” is quantified by minimizing the RSS)."
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#correlation",
     "href": "Pages/Lectures/Lecture18/Lec18.html#correlation",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Correlation?",
     "text": "Correlation?\n\nBy the way: remember that we also talked about Pearson’s correlation coefficient last lecture.\nIt is defined as \\[ r = \\frac{1}{n - 1} \\sum_{i=1}^{n} \\left( \\frac{x_i - \\overline{x}}{s_X} \\right)  \\left( \\frac{y_i - \\overline{y}}{s_Y} \\right) \\] and gives a way of quantifying the strength of the linear association between two lists of numbers \\(\\{x_i\\}_{i=1}^{n}\\) and \\(\\{y_i\\}_{i=1}^{n}\\).\nI mentioned last time that \\(r\\) does NOT give the slope of the line that best fits the data- that role is given to \\(\\widehat{\\beta}_1\\)!\nHowever, there is in fact a connection between \\(\\widehat{\\beta}_1\\) and \\(r\\): it turns out (after a bit of math), we can equivalently compute \\(\\widehat{\\beta}_1\\) as \\[ \\widehat{\\beta} = \\frac{s_Y}{s_X} \\cdot r \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#fitted-values",
     "href": "Pages/Lectures/Lecture18/Lec18.html#fitted-values",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Fitted Values",
     "text": "Fitted Values\n\nWe also introduced the notion of fitted values:\n\n\n\n\n\nThis is why we write the OLS regression line as \\[ \\widehat{y} = \\widehat{\\beta}_0 + \\widehat{\\beta}_1 \\cdot x \\] the fitted values are simply the points along the OLS regression line!"
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#prediction",
     "href": "Pages/Lectures/Lecture18/Lec18.html#prediction",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Prediction",
     "text": "Prediction\n\nIn this way, we can perhaps see how the OLS regression line can be used to perform prediction.\nTo see how this works, let’s return to a toy example from last lecture: \\[\\begin{align*}\n\\boldsymbol{x}    & = \\{3, \\ 7, \\ 8\\}   \\\\\n\\boldsymbol{y}    & = \\{20, \\ 14, \\ 17\\}\n\\end{align*}\\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#prediction-1",
     "href": "Pages/Lectures/Lecture18/Lec18.html#prediction-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Prediction",
     "text": "Prediction\n\nNotice that we do not have an x-observation of 5. As such, we don’t know what the y-value corresponding to an x-value of 5 is.\nHowever, we do have a decent guess as to what the y-value corresponding to an x-value of 5 is- the corresponding fitted value!"
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#prediction-2",
     "href": "Pages/Lectures/Lecture18/Lec18.html#prediction-2",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Prediction",
     "text": "Prediction\n\nIn other words, our best guess at (i.e. our best prediction of) the \\(y-\\)value corresponding to an \\(x-\\)value of \\(5\\) is the point \\(\\widehat{y}^{(5)}\\) obtained by plugging \\(x = 5\\) into the OLS regression line:\n\n\n\\[ \\widehat{y}^{(5)} = \\frac{1}{7} (155 - 6 \\cdot 5) \\approx 17.857 \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#leadup",
     "href": "Pages/Lectures/Lecture18/Lec18.html#leadup",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Leadup",
     "text": "Leadup\n\nLet’s look at another toy dataset:"
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#leadup-1",
     "href": "Pages/Lectures/Lecture18/Lec18.html#leadup-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Leadup",
     "text": "Leadup\n\nSay we want to predict the corresponding y value of an x value of, 40.\nFollowing our steps from before, we would just find the fitted value corresponding to x = 40:"
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#leadup-2",
     "href": "Pages/Lectures/Lecture18/Lec18.html#leadup-2",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Leadup",
     "text": "Leadup\n\nHere’s the kicker: the true fit was actually NOT linear!"
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#extrapolation-and-the-dangers-thereof",
     "href": "Pages/Lectures/Lecture18/Lec18.html#extrapolation-and-the-dangers-thereof",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Extrapolation, and the Dangers Thereof",
     "text": "Extrapolation, and the Dangers Thereof\n\nSpecifically, the true signal function was quadratic. (When you zoom in close enough, parabolas look linear!)\nThis is why it is a bad idea to try to extrapolate too far.\n\nExtrapolation is the name we give to trying to apply a model estimate to values that are very far outside the realm of the original data.\nHow far is “very far”? Statisticians disagree on this front. For the purposes of this class, just use your best judgment."
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#your-turn",
     "href": "Pages/Lectures/Lecture18/Lec18.html#your-turn",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Your Turn!",
     "text": "Your Turn!\n\n\n\n\n\n\nExercise 1\n\n\n\n\nAn airline is interested in determining the relationship between flight duration (in minutes) and the net amount of soda consumed (in oz.). Letting x denote flight duration (the explanatory variable) and y denote amount of soda consumed (the response variable), a sample yielded the following results: \\[ \\begin{array}{cc}\n  \\displaystyle \\sum_{i=1}^{102} x_i  = 20,\\!190.55;   & \\displaystyle \\sum_{i=1}^{102} (x_i - \\overline{x})^2 =  101,\\!865    \\\\\n  \\displaystyle \\sum_{i=1}^{102} y_i  = 166,\\!907.8   & \\displaystyle \\sum_{i=1}^{102} (y_i - \\overline{y})^2 =  120,\\!794.2   \\\\\n\\displaystyle \\sum_{i=1}^{100} (x_i - \\overline{x})(y_i - \\overline{y}) = 80,\\!184.62 \\\\\n\\end{array} \\]\n\nFind the equation of the OLS Regression line.\nIf a particular flight has a duration of 130 minutes, how many ounces of soda would we expect to be consumed on the flight? (Suppose the \\(x-\\)observations ranged from around \\(114\\) to around \\(271\\))"
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#back-to-widehatbeta_1",
     "href": "Pages/Lectures/Lecture18/Lec18.html#back-to-widehatbeta_1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Back to \\(\\widehat{\\beta}_1\\)",
     "text": "Back to \\(\\widehat{\\beta}_1\\)\n\nRecall that, by virtue of being the slope of the OLS regression line, \\(\\widehat{\\beta}_1\\) has the following interpretation:\n\n\n\nA one-unit change in x corresponds to a predicted \\(\\widehat{\\beta}_1\\)-unit change in y.\n\n\n\nNotice the word “predicted” there- remember that \\(\\widehat{\\beta}_1\\) is an estimator, not the true slope!\n\nThat is to say: different datasets generated from the same model may produce different values of \\(\\widehat{\\beta}_1\\).\n\nThat’s right: \\(\\widehat{\\beta}_1\\) can be thought of as a random variable."
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#back-to-widehatbeta_1-1",
     "href": "Pages/Lectures/Lecture18/Lec18.html#back-to-widehatbeta_1-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Back to \\(\\widehat{\\beta}_1\\)",
     "text": "Back to \\(\\widehat{\\beta}_1\\)\n\nWe know that \\(\\widehat{\\beta}_1\\) seeks to estimate \\(\\beta_1\\).\nIt seems plausible, then, that we might be able to perform inference on \\(\\beta_1\\) (the true slope) using \\(\\widehat{\\beta}_1\\) (the OLS estimator).\nIndeed, we can!\nLet’s start off by considering confidence intervals for the true slope \\(\\beta_1\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#confidence-intervals-for-beta_1",
     "href": "Pages/Lectures/Lecture18/Lec18.html#confidence-intervals-for-beta_1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Confidence Intervals for \\(\\beta_1\\)",
     "text": "Confidence Intervals for \\(\\beta_1\\)\n\nRecall that (at least in the confines of this course), given a parameter \\(\\theta\\) and an estimator \\(\\widehat{\\theta}\\) of \\(\\theta\\), we construct a confidence interval for \\(\\theta\\) as \\[ \\widehat{\\theta} \\pm c \\cdot \\mathrm{SD}(\\widehat{\\theta}) \\] where \\(c\\) is a constant that depends on both the sampling distribution of \\(\\widehat{\\theta}\\) along with the confidence level.\nThis means we can construct a confidence interval for \\(\\beta_1\\) using \\[ \\widehat{\\beta}_1 \\pm c \\cdot \\mathrm{SD}(\\widehat{\\beta}_1) \\] where \\(\\widehat{\\beta}_1\\) is the OLS estimator of \\(\\beta_1\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#confidence-intervals-for-beta_1-1",
     "href": "Pages/Lectures/Lecture18/Lec18.html#confidence-intervals-for-beta_1-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Confidence Intervals for \\(\\beta_1\\)",
     "text": "Confidence Intervals for \\(\\beta_1\\)\n\nIt turns out that finding \\(\\mathrm{SD}(\\widehat{\\beta}_1)\\) is fairly involved. As such, I won’t expect you to compute it- you will be provided with its value for a given problem (see the practice problems for an example of what I mean).\nWe also need access to the sampling distribution of \\(\\widehat{\\beta}_1\\).\nAssuming both the x-observations and y-observations are roughly normal, then \\[ \\frac{\\widehat{\\beta}_1 - \\beta_1}{\\mathrm{SD}(\\widehat{\\beta_1})} \\sim t_{n - 2} \\]\nThis means our critical value should be the appropriately-selected quantiles of the tn-2 distribution."
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#worked-out-example",
     "href": "Pages/Lectures/Lecture18/Lec18.html#worked-out-example",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Worked-Out Example",
     "text": "Worked-Out Example\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nConsider the same setup as Exercise 1. Suppose it is known that \\[ \\mathrm{Var}(\\widehat{\\beta}_1) \\approx 0.006135 \\] Construct a 95% confidence interval for \\(\\beta_1\\), the true amount of change in y (amount of soda consumed) associated with a one-unit change in x (flight duration)"
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#solutions",
     "href": "Pages/Lectures/Lecture18/Lec18.html#solutions",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Solutions",
     "text": "Solutions\n\nWe previously saw that \\(\\widehat{\\beta}_1 \\approx 0.7871656\\).\nWe know to use the \\(t_{100}\\) distribution; since we are using a 95% confidence level, we take \\(1.98\\) as our confidence coefficient (make sure you know where this came from!)\nHence, our confidence interval is \\[(0.7871656) \\pm 1.98 \\cdot \\sqrt{0.006135} = \\boxed{[0.6321 \\ , \\ 0.9423]}\\]\nThe interpretation of this interval is similar to the interpretation of our confidence intervals thus far:\n\n\n\nWe are 95% confident that the interval \\([0.6321 \\ , \\ 0.9423]\\) covers the true value of \\(\\beta_1\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#example",
     "href": "Pages/Lectures/Lecture18/Lec18.html#example",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Example",
     "text": "Example\n\n\n\\(\\widehat{\\beta_0} =\\) -2.5884231; \\(\\widehat{\\beta_1} =\\) -1.733778"
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#example-1",
     "href": "Pages/Lectures/Lecture18/Lec18.html#example-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Example",
     "text": "Example\n\n\n\\(\\widehat{\\beta_0} =\\) -2.5884231; \\(\\widehat{\\beta_1} =\\) -0.483778"
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#example-2",
     "href": "Pages/Lectures/Lecture18/Lec18.html#example-2",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Example",
     "text": "Example\n\n\n\\(\\widehat{\\beta_0} =\\) -2.5884231; \\(\\widehat{\\beta_1} =\\) 0.266222\nDo we really believe the slope, though?"
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#leadup-3",
     "href": "Pages/Lectures/Lecture18/Lec18.html#leadup-3",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Leadup",
     "text": "Leadup\n\nWithout the OLS regression line, the scatterplot on the previous page would likely be one we classify as exhibiting “no relationship” between x and y.\nHowever, the OLS regression line has picked up a positive slope.\nWhat’s going on?\nIn other words, does our data (i.e. the data that gave rise to the value of \\(\\widehat{\\beta}_1\\) computed) support our claim that there is no relationship?"
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#hypothesis-testing-on-beta_1",
     "href": "Pages/Lectures/Lecture18/Lec18.html#hypothesis-testing-on-beta_1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Hypothesis Testing on \\(\\beta_1\\)",
     "text": "Hypothesis Testing on \\(\\beta_1\\)\n\nWhat do you know- we’ve entered the realm of hypothesis testing!\nSpecifically, we are trying to use our data to test the hypotheses \\[ \\left[ \\begin{array}{rl}\nH_0:    & \\beta_1 = 0   \\\\\nH_A:    & \\beta_1 \\neq 0\n\\end{array} \\right. \\]\n\nWhy is our null \\(\\beta_1 = 0\\)?\nWell, our null is that there is no relationship.\nRecall that \\(\\beta_1\\) is the slope of the linear relationship assumed to exist between y and x.\nHence, saying “no relationship” is equivalent to saying “a change in x corresponds to no change in y”; i.e. that \\(\\beta_1 = 0\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#hypothesis-testing-on-beta_1-1",
     "href": "Pages/Lectures/Lecture18/Lec18.html#hypothesis-testing-on-beta_1-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Hypothesis Testing on \\(\\beta_1\\)",
     "text": "Hypothesis Testing on \\(\\beta_1\\)\n\nWe already have a pretty good candidate for a test statistic: \\[ \\mathrm{TS} = \\frac{\\widehat{\\beta}_1}{\\mathrm{SD}(\\widehat{\\beta}_1)} \\] since, under the null, this follows a \\(t_{n - 2}\\) distribution: \\[ \\mathrm{TS} = \\frac{\\widehat{\\beta}_1}{\\mathrm{SD}(\\widehat{\\beta}_1)} \\stackrel{H_0}{\\sim} t_{n - 2} \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#hypothesis-testing-on-beta_1-2",
     "href": "Pages/Lectures/Lecture18/Lec18.html#hypothesis-testing-on-beta_1-2",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Hypothesis Testing on \\(\\beta_1\\)",
     "text": "Hypothesis Testing on \\(\\beta_1\\)\n\nOur test then takes the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| &gt; c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] where \\(c\\) is the appropriately-selected quantile of the tn-2 distribution.\nEquivalently, we compute p-values using the tn-2 distribution."
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#hypothesis-testing-on-beta_1-3",
     "href": "Pages/Lectures/Lecture18/Lec18.html#hypothesis-testing-on-beta_1-3",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Hypothesis Testing on \\(\\beta_1\\)",
     "text": "Hypothesis Testing on \\(\\beta_1\\)\n\nIndeed, many computer softwares (and statistical papers!) report a table resembling the following after running a regression:\n\n\n\n\n\n\nEstimate\nStd. Error\nt-value\nPr(&gt;|t|)\n\n\n\n\nIntercept\n-2.588\n2.327\n-1.112\n0.269\n\n\nSlope\n-1.734\n0.222\n-7.811\n6.41e-12\n\n\n\n\n\nThe first column is the raw estimated value (i.e. \\(\\widehat{\\beta_0}\\) and \\(\\widehat{\\beta_1}\\), respectively)\nThe second column is the standard error (i.e. standard deviation) of the estimator\nThe third column is the test statistic (i.e. the first column divided by the second)\nThe fourth column is the p-value in a two-sided test, testing whether or not the given parameter is actually zero or not."
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#task",
     "href": "Pages/Lectures/Lecture18/Lec18.html#task",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Task",
     "text": "Task\n\nHere’s a task for you: write a function called regtab() that takes in two inputs, x and y, and returns a regression table resulting from regressing y on x.\n\nYou can use the scipy.stats.linregress() function"
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#some-exercises",
     "href": "Pages/Lectures/Lecture18/Lec18.html#some-exercises",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Some Exercises",
     "text": "Some Exercises\n\n\n\n\n\n\nExercise 2 (modified from StatClass)\n\n\n\n\nConsider the following regression equation, obtained from a sample of size \\(50\\): \\[ \\widehat{y} = 3.8 - 0.277 x \\] and the standard deviation of \\(\\widehat{\\beta}_1\\) is 0.39.\nUsing a 5% level of significance, perform a test of the hypotheses \\[ \\left[ \\begin{array}{rl}\n  H_0:    & \\beta_1 = 0   \\\\\n  H_A:    & \\beta_1 \\neq 0\n\\end{array} \\right.\\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#some-exercises-1",
     "href": "Pages/Lectures/Lecture18/Lec18.html#some-exercises-1",
-    "title": "PSTAT 5A: Lecture 21",
+    "title": "PSTAT 5A: Lecture 18",
     "section": "Some Exercises",
     "text": "Some Exercises\n\n\n\n\n\n\nExercise 3 (modified from StatClass)\n\n\n\n\nTen towns were the subject of a study to determine whether or not an increased number of stores selling liquor in their downtown areas is linked with a higher number of DUI arrests downtown during one month. The data and summary information is provided below.\n\n\n\nx\n0\n5\n6\n5\n11\n9\n10\n3\n7\n4\n\n\n\n\ny\n40\n50\n55\n64\n73\n75\n88\n25\n20\n10\n\n\n\n\\[ \\begin{array}{lll}\n  \\overline{x} = 6    & \\displaystyle \\sum_{i=1}^{10} (x_i - \\overline{x})^2 = 102   \\\\\n  \\overline{y} = 50    & \\displaystyle \\sum_{i=1}^{10} (y_i - \\overline{y})^2 = 6,\\!024 & \\displaystyle \\sum_{i=1}^{10} (x_i - \\overline{x})(y_i - \\overline{y}) = 513\n\\end{array} \\]\n\nWhat is the explanatory variable?\nWhat is the response variable?\nFind the equation of the OLS regression line.\nIf the standard deviation of \\(\\widehat{\\beta}_1\\) is \\(0.37\\), construct a 95% confidence interval for \\(\\beta_1\\).\nIs the slope significant? (Use the standard deviation from part (d) if necessary.)"
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#paired-data",
     "href": "Pages/Lectures/Lecture16/Lec16.html#paired-data",
-    "title": "PSTAT 5A: Lecture 20",
+    "title": "PSTAT 5A: Lecture 16",
     "section": "Paired Data",
     "text": "Paired Data\n\nData are paired when each observation in one data set corresponds to exactly one observation in the other data set. This can happen when there are two measurements on each individual in the sample or when there is a natural pairing between the samples (e.g., siblings, spouses, days of the week).\n“Studies leading to paired data are often more efficient—better able to detect differences between conditions—because you have controlled for a source of variation (individual variability among the observational units).”\nWith paired data, we have two measurements on each pair. Instead of being interested in the two measurements separately, we are interested in the differences within each pair. What may originally look like two data sets is actually just one data set of differences."
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#example",
     "href": "Pages/Lectures/Lecture16/Lec16.html#example",
-    "title": "PSTAT 5A: Lecture 20",
+    "title": "PSTAT 5A: Lecture 16",
     "section": "Example",
     "text": "Example\n\nThe Comprehensive Assessment of Outcomes in Statistics (CAOS) test was developed by statistics education researchers to be “a reliable assessment consisting of a set of items that students completing any introductory statistics course would be expected to understand.” When doing research about a particular teaching method, Professor Miller had students take the CAOS test at the beginning of the term (pretest) and at the end of the term (posttest). Why does it make sense to treat these measurements as paired data?\n\nBy examining the differences between the pretest and posttest measurements, we eliminate the variability across different students and focus in on that improvement measure (the difference between the posttest and pretest scores) itself: we have controlled for one source of variation (variability within each student)."
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#paired-data-procedures",
     "href": "Pages/Lectures/Lecture16/Lec16.html#paired-data-procedures",
-    "title": "PSTAT 5A: Lecture 20",
+    "title": "PSTAT 5A: Lecture 16",
     "section": "Paired Data Procedures",
     "text": "Paired Data Procedures\nOnce we compute the set of differences, we use our one-sample methods for inference. Our notation changes to indicate that we are working with differences.\n\nOur parameter of interest is \\(\\mu_d\\), the populatioon mean of the differences.\nThe point estimate for \\(\\mu_d\\) is \\(\\bar{x}_d\\), the sample mean of the differences."
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#sampling-distribution-of-the-sample-mean-of-the-differences-barx_d",
     "href": "Pages/Lectures/Lecture16/Lec16.html#sampling-distribution-of-the-sample-mean-of-the-differences-barx_d",
-    "title": "PSTAT 5A: Lecture 20",
+    "title": "PSTAT 5A: Lecture 16",
     "section": "Sampling Distribution of the Sample Mean of the Differences \\(\\bar{x}_d\\)",
     "text": "Sampling Distribution of the Sample Mean of the Differences \\(\\bar{x}_d\\)\nThe sampling distribution of \\(\\bar{x}_d\\) will be approximately normal when the following two conditions are met:\n\nIndependence: The observations within the sample of differences are independent (e.g., the differences are a random sample from the population of differences).\nNormality: When the sample is small, we require that the sample of differences comes from a population with a nearly normal distribution. Thanks to the Central Limit Theorem, we can relax this condition more and more for larger and larger sample sizes."
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#sampling-distribution-of-the-sample-mean-of-the-differences-barx_d-1",
     "href": "Pages/Lectures/Lecture16/Lec16.html#sampling-distribution-of-the-sample-mean-of-the-differences-barx_d-1",
-    "title": "PSTAT 5A: Lecture 20",
+    "title": "PSTAT 5A: Lecture 16",
     "section": "Sampling Distribution of the Sample Mean of the Differences \\(\\bar{x}_d\\)",
     "text": "Sampling Distribution of the Sample Mean of the Differences \\(\\bar{x}_d\\)\nThe mean for sampling distribution of \\(\\bar{x}_d\\) is \\(\\mu_d\\). The standard error for this sampling distribution is\n\\[\\frac{\\sigma_d}{\\sqrt{n}}\\] where \\(\\sigma_d\\) is the standard deviation of the population of differences and \\(n\\) is the number of pairs."
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#sampling-distribution-of-the-sample-mean-of-the-differences-barx_d-2",
     "href": "Pages/Lectures/Lecture16/Lec16.html#sampling-distribution-of-the-sample-mean-of-the-differences-barx_d-2",
-    "title": "PSTAT 5A: Lecture 20",
+    "title": "PSTAT 5A: Lecture 16",
     "section": "Sampling Distribution of the Sample Mean of the Differences \\(\\bar{x}_d\\)",
     "text": "Sampling Distribution of the Sample Mean of the Differences \\(\\bar{x}_d\\)\n\nSince we do not usually know the population standard deviation of the differences \\(\\sigma_d\\), we estimate it with the sample standard deviation of the differences \\(s_d\\).\nAs soon as we estimate the population standard deviation \\(\\sigma_d\\) with the sample standard deviation \\(s_d\\), we need to switch from the standard normal N(0, 1) distribution to a \\(t\\) distribution.\nThe sample mean of the differences \\(\\bar{x}_d\\) can be modeled using a \\(t\\) distribution and the estimated standard error \\(\\frac{s_d}{\\sqrt{n}}\\) when each sample mean can itself be modeled using a \\(t\\) distribution with \\(n − 1\\) degrees of freedom."
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#hypothesis-test-for-mu_d",
     "href": "Pages/Lectures/Lecture16/Lec16.html#hypothesis-test-for-mu_d",
-    "title": "PSTAT 5A: Lecture 20",
+    "title": "PSTAT 5A: Lecture 16",
     "section": "Hypothesis Test for \\(\\mu_d\\)",
     "text": "Hypothesis Test for \\(\\mu_d\\)\nBased on a sample of \\(n\\) independent differences from a nearly normal distribution, the test statistic is\n\\[t = \\frac{\\bar{x}_d -\\mu_0}{\\frac{s_d}{\\sqrt{n}}}\\] where \\(\\bar{x}_d\\) is the sample mean of the differences, \\(s_d\\) is the sample standard deviation of the differences, \\(n\\) is the sample size (number of pairs), and \\(\\mu_0\\) corresponds to the null value of the population mean of the differences, \\(\\mu_d\\).\nWe use the \\(t\\) distribution with \\(n-1\\) degrees of freedom to calculate our p-values."
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#confidence-interval-for-mu_d",
     "href": "Pages/Lectures/Lecture16/Lec16.html#confidence-interval-for-mu_d",
-    "title": "PSTAT 5A: Lecture 20",
+    "title": "PSTAT 5A: Lecture 16",
     "section": "Confidence Interval for \\(\\mu_d\\)",
     "text": "Confidence Interval for \\(\\mu_d\\)\nBased on a sample of \\(n\\) independent differences from a nearly normal distributioon, a confidence interval for the population mean of the differences \\(\\mu_d\\) is\n\\[\\bar{x}_d \\pm t^* \\frac{s_d}{\\sqrt{n}}\\]\nwhere \\(\\bar{x}_d\\) is the sample mean of the differences, \\(s_d\\) is the sample standard deviation of the differences, n is the sample size, and \\(t^*\\) corresponds to the confidence level and n-1 degrees of freedom."
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#example-1",
     "href": "Pages/Lectures/Lecture16/Lec16.html#example-1",
-    "title": "PSTAT 5A: Lecture 20",
+    "title": "PSTAT 5A: Lecture 16",
     "section": "Example",
     "text": "Example\nA company institutes an exercise break for its workers to see if this will improve job satisfaction, as measured by a questionnaire that assesses workers’ satisfaction. A random sample of 50 workers was taken. Each worker was given the questionnaire twice: once prior to the implementation of the exercise break; a second time after the implementation of the exercise break. The differences in job satisfaction (satisfaction after implementation of the exercise program minus satisfaction before implementation of the exercise program) were calculated, and the mean of the difference is calculated to be 11.727 and standard deviation of 17.3869."
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#solution",
     "href": "Pages/Lectures/Lecture16/Lec16.html#solution",
-    "title": "PSTAT 5A: Lecture 20",
+    "title": "PSTAT 5A: Lecture 16",
     "section": "Solution",
     "text": "Solution\n\nStep 1: Write hypotheses\n\n\nSince the company is interested in if exercise break will improve job satisfaction, we can formulate the hypotheses as\n\n\\[H_0: \\mu_d = 0\\] \\[H_A: \\mu_d &gt; 0\\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#solution-1",
     "href": "Pages/Lectures/Lecture16/Lec16.html#solution-1",
-    "title": "PSTAT 5A: Lecture 20",
+    "title": "PSTAT 5A: Lecture 16",
     "section": "Solution",
     "text": "Solution\n\nStep 2: Check conditions\n\nThis is paired data so we want to check\n\nSince the data comes from a random sample of workers, we can assume the independence condition is met.\nThe population of differences is normally distributed. Suppose this is the histogram of job satisfaction differences:"
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#solution-2",
     "href": "Pages/Lectures/Lecture16/Lec16.html#solution-2",
-    "title": "PSTAT 5A: Lecture 20",
+    "title": "PSTAT 5A: Lecture 16",
     "section": "Solution",
     "text": "Solution\n\nStep 3: Calculate test statistic and critical value\n\n\\[TS = \\frac{\\bar{x}_d -\\mu_0}{\\frac{s_d}{\\sqrt{n}}} = \\frac{11.727 - 0}{\\frac{17.3869}{\\sqrt{50}}} = 4.77\\]\nFor one-tail test with \\(\\alpha = 0.05\\) and \\(df = 50-1 = 49\\), the critical value \\(t_{0.05, 49} = 1.68\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#solution-3",
     "href": "Pages/Lectures/Lecture16/Lec16.html#solution-3",
-    "title": "PSTAT 5A: Lecture 20",
+    "title": "PSTAT 5A: Lecture 16",
     "section": "Solution",
     "text": "Solution\n\nStep 4: Decision\n\nSince this is an upper tail test, we want \\[TS &gt; t\\] \\[4.77 &gt; 1.68\\] Therefore, we have enough evidence to reject the null hypothesis.\n\nStep 5: Write a conclusion\n\nAt the \\(\\alpha = 0.05\\) significance level, we have enough evidence to reject the claim that mean difference in job satisfaction before and after implementing exercise break is the same. This data suggests that the mean difference in job satisfaction after implementing exercise break is greater than that before."
   },
@@ -5166,6 +5166,13 @@
     "text": "Solutions\n\nConduct the test: We see that \\(|\\mathrm{TS}| = |-1.86| = 1.86\\) which is not greater than \\(1.96\\). As such, we fail to reject the null.\n\n\nNow, the problem told us to phrase our conclusions carefully and in the context of the problem.\nIt is VERY important to include the level of significance in your final conclusions.\nSo, here is how we would phrase the final conclusion of our test:\n\n\n\nAt an \\(\\alpha = 0.05\\) level of significance, we do not have enough evidence to reject the null hypothesis that 91.7% of US households own a vehicle. Thus, our analysis suggests that the true proportion of US households with vehicle is not different from 91.7%."
   },
   {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#alternatively",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#alternatively",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Alternatively",
+    "text": "Alternatively\n\n\nAt an \\(\\alpha = 0.05\\) level of significance, there is insufficient evidence to reject Forbes’s claim that 91.7% of US households own a vehicle in favor of the alternative that the true proportion of US households that own a vehicle is not 91.7%.\n\n\n\nIt is very important to include the level of significance in our conclusion! This is because the final outcome of our test may change depending on which level of significance we use."
+  },
+  {
     "objectID": "Pages/Lectures/Lecture12/Lec12.html#worked-out-example-4",
     "href": "Pages/Lectures/Lecture12/Lec12.html#worked-out-example-4",
     "title": "PSTAT 5A: Lecture 12",
@@ -5373,7 +5380,7 @@
     "href": "Pages/schedule.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\nLast Updated: August 4, 2024\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections."
+    "text": "Disclaimer\n\n\n\nThis schedule is tentative, and is subject to change. Please check back regularly for updates!\nLast Updated: August 4, 2025\nAs a reminder: Monday sections are Lab Sections and Wednesday sections are Discussion Sections."
   },
   {
     "objectID": "Pages/schedule.html#week-1-804---807",
@@ -5416,12 +5423,5 @@
     "title": "PSTAT 5A: Understanding Data",
     "section": "Week 6 (9/08 - 9/11)",
     "text": "Week 6 (9/08 - 9/11)\n\n\nLectures\n19: Regression Diagnostics, and  Sampling Procedures 20: Ways Statistics Can Deceive 21: Review FINAL EXAM: Thursday, Sept 11 during lecture\n\n\nDiscussion\nQ&A with TA\n\n\nLab\nLab 06"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture12/Lec12.html#alternatively",
-    "href": "Pages/Lectures/Lecture12/Lec12.html#alternatively",
-    "title": "PSTAT 5A: Lecture 12",
-    "section": "Alternatively",
-    "text": "Alternatively\n\n\nAt an \\(\\alpha = 0.05\\) level of significance, there is insufficient evidence to reject Forbes’s claim that 91.7% of US households own a vehicle in favor of the alternative that the true proportion of US households that own a vehicle is not 91.7%.\n\n\n\nIt is very important to include the level of significance in our conclusion! This is because the final outcome of our test may change depending on which level of significance we use."
   }
 ]
