@@ -51,7 +51,7 @@ linkcolor: "#ffa07a"
       <img src = "../Images/Profiles/placeholder.png" width = 175>
     </td>
     <td>
-      <p style = "font-size:24px"><b>Daniel Silva</b></p>
+      <p style = "font-size:24px"><b>Summer Le</b></p>
       <p>
         Summer is a PhD Student in the PSTAT Department.
       </p>
@@ -78,7 +78,7 @@ linkcolor: "#ffa07a"
       <img src = "../Images/Profiles/placeholder.png" width = 175>
     </td>
     <td>
-      <p style = "font-size:24px"><b>Hezhong Zhang</b></p>
+      <p style = "font-size:24px"><b>Mallory Wang</b></p>
       <p>
         Mallory is a PhD Student in the PSTAT Department.
       </p>

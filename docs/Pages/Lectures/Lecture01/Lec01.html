@@ -526,13 +526,13 @@
 </style>
 </div>
 <ul>
-<li class="fragment">Notice that our data is formatted as a table. This table is what data scientists refer to as the <strong>data matrix</strong> or data frame.</li>
+<li class="fragment">Notice that our data is formatted as a table. This table is what data scientists refer to as the data frame.</li>
 </ul>
 </section>
 <section id="the-data-matrix" class="slide level2">
 <h2>The Data Matrix</h2>
 <ul>
-<li class="fragment"><p>Each row of the data matrix above corresponds to an individual penguin.</p>
+<li class="fragment"><p>Each row of the data frame above corresponds to an individual penguin.</p>
 <ul>
 <li class="fragment">In general, we refer to a given row of the data matrix as an <strong>observational unit</strong>, or <strong>case</strong>.</li>
 </ul></li>
@@ -546,7 +546,7 @@
 
 <div>
 <ul>
-<li>So, to summarize, each row of the data matrix corresponds to a unique observational unit, and each column corresponds to a unique variable.</li>
+<li>So, to summarize, each row of the data frame corresponds to a unique observational unit, and each column corresponds to a unique variable.</li>
 </ul>
 </div>
 <ul>
@@ -554,14 +554,14 @@
 <ul>
 <li class="fragment">As Data Scientists, it is absolutely crucial that we understand our data as best as possible before embarking on any analyses, explorations, etc.</li>
 </ul></li>
-<li class="fragment"><p>As such, most datasets come equipped with a so-called <strong>data dictionary</strong>, or <strong>metadata</strong>, which lists the variables included in the dataset as well as a brief description of each variable.</p></li>
+<li class="fragment"><p>As such, most datasets come equipped with <strong>metadata</strong>, which lists the variables included in the dataset as well as a brief description of each variable.</p></li>
 </ul>
 </section>
 <section class="slide level2">
 
 <div>
 <ul>
-<li>For example, the data dictionary for the <code>palmerpenguins</code> dataset might be formatted as:</li>
+<li>For example, the metadata for the <code>palmerpenguins</code> dataset might be formatted as:</li>
 </ul>
 </div>
 <div style="font-size:27px">
@@ -647,18 +647,6 @@
 </ul></li>
 </ul>
 </section>
-<section id="a-note-on-language" class="slide level2" style="font-size:32px">
-<h2>A Note on Language</h2>
-<ul>
-<li class="fragment"><p>Question: can we say that <em>data</em> is numerical? Or, can we say we have “categorical data”?</p></li>
-<li class="fragment"><p>Sure- if our data consists of just a single variable!</p></li>
-<li class="fragment"><p>That is to say- the classification terms we learned (and will learn) can be used to describe <em>data</em>, <em>provided our data contains only one variable</em>.</p></li>
-<li class="fragment"><p>The definition of data we are using (i.e.&nbsp;in the context of the data matrix) is that data is comprised of <em>several</em> variables. As such, we cannot simply take the classification of variables and apply that to the entire dataset (unless our dataset consists of only one variable).</p>
-<ul>
-<li class="fragment">This may seem like a subtle point… and it is! I’m just pointing it out so you are aware of it.</li>
-</ul></li>
-</ul>
-</section>
 <section id="continuous-vs.-discrete-variables" class="slide level2">
 <h2>Continuous vs.&nbsp;Discrete Variables</h2>
 <ul>
@@ -741,7 +729,7 @@ Continuous vs.&nbsp;Discrete Variables
 </div>
 <div class="callout-content">
 <div style="font-size: 30px">
-<p>Classify each of the following variables as either discrete, continuous, ordinal, or nominal.</p>
+<p>Classify each of the following variables as either discrete, continuous, ordinal, nominal, or binary.</p>
 <div>
 <ul>
 <li>The number of times a computer program returns an error</li>
@@ -850,11 +838,11 @@ Continuous vs.&nbsp;Discrete Variables
 <h2>Descriptive Statistics</h2>
 <div>
 <ul>
-<li>This is the goal of <strong>Descriptive Statistics</strong>- to find different summarizing techniques to <em>desribe</em> the data.</li>
+<li>This is the goal of <strong>Descriptive Statistics</strong>- to find different summarizing techniques to <em>describe</em> the data.</li>
 </ul>
 </div>
 <ul>
-<li class="fragment"><p>There are two ways we can seek to summarize data: numerically (using numbers), and graphically.</p></li>
+<li class="fragment"><p>There are two ways we can seek to summarize data: numerically (using numbers), and visually (using graphs).</p></li>
 <li class="fragment"><p>Let’s start with the latter- that is, let’s discuss how we might summarize our data using graphs.</p></li>
 </ul>
 </section></section>
@@ -1096,15 +1084,15 @@ Continuous vs.&nbsp;Discrete Variables
 <li class="fragment"><p>So, what if we viewed our continuous variable as being, in a sense, categorical, with categories “between 30 and 35”, “between 35 and 40”, etc.?</p></li>
 </ul>
 </section>
-<section id="discretizationbinning" class="slide level2">
-<h2>Discretization/Binning</h2>
+<section id="binning" class="slide level2">
+<h2>Binning</h2>
 <div>
 <ul>
-<li>This is what is known as <strong>discretizing</strong> or <strong>binning</strong> our variable.</li>
+<li>This is what is known as <strong>binning</strong> our variable.</li>
 </ul>
 </div>
 <ul>
-<li class="fragment"><p>In other words, when we discretize our data, we carve it up into a bunch of chunks of equal width and see how many observations fall in each chunk.</p>
+<li class="fragment"><p>In other words, when we bin our data, we carve it up into a bunch of chunks of equal width and see how many observations fall in each chunk.</p>
 <ul>
 <li class="fragment">The width of each chunk is what we call the <strong>binwidth</strong>. For example, if my categories are “between 30 and 35”, “between 35 and 40”, etc., then the binwidth is 5mm as each category spans a width of 5mm.</li>
 </ul></li>
@@ -1119,17 +1107,13 @@ Continuous vs.&nbsp;Discrete Variables
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[30, 35] (35, 40] (40, 45] (45, 50] (50, 55] (55, 60] 
+<pre><code>(30, 35] (35, 40] (40, 45] (45, 50] (50, 55] (55, 60] 
       11       89       77      113       47        5 </code></pre>
 </div>
 </div>
 <ul>
 <li class="fragment"><p>So, for example, there were 11 penguins with bill lengths between 30 and 35mm, 89 between 35 and 40, and so on and so forth.</p></li>
-<li class="fragment"><p>By the way, I am using interval notation in the bin names above. So, when we write <span class="math inline">\((35, 40]\)</span> we mean all numbers between 35 and 40, including 35 but excluding 40.</p>
-<ul>
-<li class="fragment"><p>The reason for this is that if a datapoint falls on the boundary of a bin, we conventionally assign it to the left (lower) bin.</p></li>
-<li class="fragment"><p>If you are not familiar with interval notation, I have posted some supplementary materials to the website.</p></li>
-</ul></li>
+<li class="fragment"><p>By the way, I am using interval notation in the bin names above. So, when we write <span class="math inline">\((35, 40]\)</span> we mean all numbers between 35 and 40, including 35 but excluding 40.</p></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -1322,10 +1306,7 @@ Continuous vs.&nbsp;Discrete Variables
 </div>
 </div>
 <ul>
-<li class="fragment"><p>Maybe now you can see why I switched over to this data of scores- I think percentiles are sometimes easier to interpret in the context of exam scores, since they are very commonly reported with standardized testing scores (e.g.&nbsp;SAT, GRE, etc.)</p>
-<ul>
 <li class="fragment">In the context of scores: someone who scored at the <em>p</em><sup>th</sup> percentile performed <em>better</em> than <em>p</em>% of all test-takers.</li>
-</ul></li>
 </ul>
 </section>
 <section id="quartiles" class="slide level2">
@@ -1340,15 +1321,6 @@ Continuous vs.&nbsp;Discrete Variables
 <li class="fragment"><p>As such, the median is the value that “splits the data in half”.</p></li>
 <li class="fragment"><p>We’ll talk more about the median in the next lecture.</p></li>
 </ul></li>
-</ul>
-</section>
-<section id="small-caveat" class="slide level2">
-<h2>Small Caveat</h2>
-<ul>
-<li class="fragment"><p>I should quickly mention one small caveat- computing softwares often use a different procedure for computing quartiles.</p></li>
-<li class="fragment"><p>This procedure is quite long and complicated, and is based off an entire paper written back in the 90’s.</p></li>
-<li class="fragment"><p>For example, if we consider the set <span class="math inline">\(S = \{1, 2, 3, 4, 5, 6\}\)</span>, we would (based on the definition from the previous slide) call the first quartile <span class="math inline">\(2\)</span>, whereas most softwares would return a value of <span class="math inline">\(2.25\)</span>.</p></li>
-<li class="fragment"><p><strong>Don’t worry about why this is</strong>- whenever we talk about quartiles in this class, you can just think of the definition I posed on the previous slide.</p></li>
 </ul>
 </section>
 <section id="whiskers" class="slide level2">
@@ -1418,7 +1390,7 @@ Continuous vs.&nbsp;Discrete Variables
 <section id="summary" class="slide level2" style="font-size:32px">
 <h2>Summary</h2>
 <ul>
-<li class="fragment"><p>We started off by talking about the structure of data, and the data matrix.</p></li>
+<li class="fragment"><p>We started off by talking about the structure of data, and the data frame</p></li>
 <li class="fragment"><p>We then discussed how to classify variables.</p></li>
 <li class="fragment"><p>Next, we explored graphical methods for summarizing data.</p>
 <ul>
@@ -1426,8 +1398,8 @@ Continuous vs.&nbsp;Discrete Variables
 <li class="fragment"><p>Histograms and boxplots are best-suited for numerical data</p></li>
 </ul></li>
 <li class="fragment"><p>We also introduced the notions of percentiles, the median, and outliers.</p></li>
-<li class="fragment"><p>Next time we’ll discuss how to visualize the relationship between two variables.</p></li>
 <li class="fragment"><p>We’ll also discuss some numerical summaries for data, including the mean, median, standard deviation, and IQR.</p></li>
+<li class="fragment"><p>Next time we’ll discuss how to visualize the relationship between two variables.</p></li>
 </ul>
 
 

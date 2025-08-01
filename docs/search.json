@@ -4,14 +4,14 @@
     "href": "Pages/calendar.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "TA\n\n\nEmail\n\n\nSection Time\n\n\nLocation\n\n\n\n\n\n\nSummer Le\n\n\nsle@ucsb.edu\n\n\n11:00 - 11:50am\n\n\nPhelps 1513\n\n\n\n\nMallory Wang\n\n\nmallorywang@ucsb.edu\n\n\n12:00 - 12:50pm\n\n\nPhelps 1525\n\n\n\n1:00 - 1:50pm\n\n\nPhelps 1525"
+    "text": "TA\n\n\nEmail\n\n\nSection Time\n\n\nLocation\n\n\n\n\n\n\nMallory Wang\n\n\nmallorywang@ucsb.edu\n\n\n11:00 - 11:50am\n\n\nPhelps 1513\n\n\n\n12:00 - 12:50pm\n\n\nPhelps 1525\n\n\n\n\nSummer Le\n\n\nsle@ucsb.edu\n\n\n1:00 - 1:50pm\n\n\nPhelps 1525"
   },
   {
     "objectID": "Pages/calendar.html#schedule-of-sections",
     "href": "Pages/calendar.html#schedule-of-sections",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "TA\n\n\nEmail\n\n\nSection Time\n\n\nLocation\n\n\n\n\n\n\nSummer Le\n\n\nsle@ucsb.edu\n\n\n11:00 - 11:50am\n\n\nPhelps 1513\n\n\n\n\nMallory Wang\n\n\nmallorywang@ucsb.edu\n\n\n12:00 - 12:50pm\n\n\nPhelps 1525\n\n\n\n1:00 - 1:50pm\n\n\nPhelps 1525"
+    "text": "TA\n\n\nEmail\n\n\nSection Time\n\n\nLocation\n\n\n\n\n\n\nMallory Wang\n\n\nmallorywang@ucsb.edu\n\n\n11:00 - 11:50am\n\n\nPhelps 1513\n\n\n\n12:00 - 12:50pm\n\n\nPhelps 1525\n\n\n\n\nSummer Le\n\n\nsle@ucsb.edu\n\n\n1:00 - 1:50pm\n\n\nPhelps 1525"
   },
   {
     "objectID": "Pages/calendar.html#visual-weekly-schedule",
@@ -711,7 +711,7 @@
     "href": "Pages/Lectures/Lecture01/Lec01.html#the-data-matrix",
     "title": "PSTAT 5A: Lecture 01",
     "section": "The Data Matrix",
-    "text": "The Data Matrix\n\nEach row of the data matrix above corresponds to an individual penguin.\n\nIn general, we refer to a given row of the data matrix as an observational unit, or case.\n\nFor each penguin, we can see that there are observations on several different characteristics; specifically, for each penguin she encountered, Dr. Gorman measured and recorded the penguin’s species, island, bill length (in mm), bill depth (in mm), flipper length (in mm), body mass (in grams), sex, and year of observation.\n\nNotice that these are the column names in our data matrix above. In general, the columns of the data matrix are referred to as variables."
+    "text": "The Data Matrix\n\nEach row of the data frame above corresponds to an individual penguin.\n\nIn general, we refer to a given row of the data matrix as an observational unit, or case.\n\nFor each penguin, we can see that there are observations on several different characteristics; specifically, for each penguin she encountered, Dr. Gorman measured and recorded the penguin’s species, island, bill length (in mm), bill depth (in mm), flipper length (in mm), body mass (in grams), sex, and year of observation.\n\nNotice that these are the column names in our data matrix above. In general, the columns of the data matrix are referred to as variables."
   },
   {
     "objectID": "Pages/Lectures/Lecture01/Lec01.html#numerical-vs.-categorical",
@@ -767,7 +767,7 @@
     "href": "Pages/Lectures/Lecture01/Lec01.html#time-for-an-exercise",
     "title": "PSTAT 5A: Lecture 01",
     "section": "Time for an Exercise!",
-    "text": "Time for an Exercise!\n\n\n\n\n\n\nExercise 1\n\n\n\nClassify each of the following variables as either discrete, continuous, ordinal, or nominal.\n\n\nThe number of times a computer program returns an error\nThe time it takes an experienced swimmer to complete 4 laps of a pool\nThe favorite flavor of donut of a randomly selected person\nThe months of the year, as written in MM format (e.g. “01” for “January”, “02” for “February”, etc.)\nThe presence or absence of a species observation\n\n\nDiscuss with your neighbors!"
+    "text": "Time for an Exercise!\n\n\n\n\n\n\nExercise 1\n\n\n\nClassify each of the following variables as either discrete, continuous, ordinal, nominal, or binary.\n\n\nThe number of times a computer program returns an error\nThe time it takes an experienced swimmer to complete 4 laps of a pool\nThe favorite flavor of donut of a randomly selected person\nThe months of the year, as written in MM format (e.g. “01” for “January”, “02” for “February”, etc.)\nThe presence or absence of a species observation\n\n\nDiscuss with your neighbors!"
   },
   {
     "objectID": "Pages/Lectures/Lecture01/Lec01.html#real-world-data-set",
@@ -781,7 +781,7 @@
     "href": "Pages/Lectures/Lecture01/Lec01.html#descriptive-statistics",
     "title": "PSTAT 5A: Lecture 01",
     "section": "Descriptive Statistics",
-    "text": "Descriptive Statistics\n\n\nThis is the goal of Descriptive Statistics- to find different summarizing techniques to desribe the data.\n\n\n\nThere are two ways we can seek to summarize data: numerically (using numbers), and graphically.\nLet’s start with the latter- that is, let’s discuss how we might summarize our data using graphs."
+    "text": "Descriptive Statistics\n\n\nThis is the goal of Descriptive Statistics- to find different summarizing techniques to describe the data.\n\n\n\nThere are two ways we can seek to summarize data: numerically (using numbers), and visually (using graphs).\nLet’s start with the latter- that is, let’s discuss how we might summarize our data using graphs."
   },
   {
     "objectID": "Pages/Lectures/Lecture01/Lec01.html#back-to-penguins",
@@ -851,7 +851,7 @@
     "href": "Pages/Lectures/Lecture01/Lec01.html#percentiles",
     "title": "PSTAT 5A: Lecture 01",
     "section": "Percentiles",
-    "text": "Percentiles\n\n\n\n\n\n\n\nDefinition\n\n\n\nThe pth percentile of a set of observations \\(X\\) is the value \\(\\pi_{x, \\ 0.5}\\) such that p% of observations lie to the left of (i.e. are less than) \\(\\pi_{x, \\ p}\\).\n\n\n\n\n\n\nMaybe now you can see why I switched over to this data of scores- I think percentiles are sometimes easier to interpret in the context of exam scores, since they are very commonly reported with standardized testing scores (e.g. SAT, GRE, etc.)\n\nIn the context of scores: someone who scored at the pth percentile performed better than p% of all test-takers."
+    "text": "Percentiles\n\n\n\n\n\n\n\nDefinition\n\n\n\nThe pth percentile of a set of observations \\(X\\) is the value \\(\\pi_{x, \\ 0.5}\\) such that p% of observations lie to the left of (i.e. are less than) \\(\\pi_{x, \\ p}\\).\n\n\n\n\n\n\nIn the context of scores: someone who scored at the pth percentile performed better than p% of all test-takers."
   },
   {
     "objectID": "Pages/Lectures/Lecture01/Lec01.html#quartiles",
@@ -893,7 +893,7 @@
     "href": "Pages/Lectures/Lecture01/Lec01.html#summary",
     "title": "PSTAT 5A: Lecture 01",
     "section": "Summary",
-    "text": "Summary\n\nWe started off by talking about the structure of data, and the data matrix.\nWe then discussed how to classify variables.\nNext, we explored graphical methods for summarizing data.\n\nBargraphs are best-suited for categorical data\nHistograms and boxplots are best-suited for numerical data\n\nWe also introduced the notions of percentiles, the median, and outliers.\nNext time we’ll discuss how to visualize the relationship between two variables.\nWe’ll also discuss some numerical summaries for data, including the mean, median, standard deviation, and IQR."
+    "text": "Summary\n\nWe started off by talking about the structure of data, and the data frame\nWe then discussed how to classify variables.\nNext, we explored graphical methods for summarizing data.\n\nBargraphs are best-suited for categorical data\nHistograms and boxplots are best-suited for numerical data\n\nWe also introduced the notions of percentiles, the median, and outliers.\nWe’ll also discuss some numerical summaries for data, including the mean, median, standard deviation, and IQR.\nNext time we’ll discuss how to visualize the relationship between two variables."
   },
   {
     "objectID": "Pages/Lectures/Lecture08/Lec08.html#last-time",
@@ -3147,7 +3147,7 @@
     "href": "Pages/course_staff.html#teaching-assistants-tas",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Teaching Assistants (TAs)",
-    "text": "Teaching Assistants (TAs)\n\n\n\n\n\n\n\nTA: Summer Le\n\n\n\n\n\n\n\n\n\n\n\n\n\nDaniel Silva\n\n\nSummer is a PhD Student in the PSTAT Department.\n\n\n\n\n\nEmail:\n\n\nsle@ucsb.edu&gt;\n\n\n\n\nOH:\n\n\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTA: Mallory Wang\n\n\n\n\n\n\n\n\n\n\n\n\n\nHezhong Zhang\n\n\nMallory is a PhD Student in the PSTAT Department.\n\n\n\n\n\nEmail:\n\n\nmallorywang@ucsb.edu\n\n\n\n\nOH:\n\n\nTBD"
+    "text": "Teaching Assistants (TAs)\n\n\n\n\n\n\n\nTA: Summer Le\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummer Le\n\n\nSummer is a PhD Student in the PSTAT Department.\n\n\n\n\n\nEmail:\n\n\nsle@ucsb.edu&gt;\n\n\n\n\nOH:\n\n\nTBD\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTA: Mallory Wang\n\n\n\n\n\n\n\n\n\n\n\n\n\nMallory Wang\n\n\nMallory is a PhD Student in the PSTAT Department.\n\n\n\n\n\nEmail:\n\n\nmallorywang@ucsb.edu\n\n\n\n\nOH:\n\n\nTBD"
   },
   {
     "objectID": "Pages/syllabus.html",
@@ -3175,7 +3175,7 @@
     "href": "Pages/syllabus.html#schedule-of-sections",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Schedule of Sections",
-    "text": "Schedule of Sections\n\n\n\nTimes\nTA\nLocation\n\n\n\n\nTR 11:00 - 11:50pm\nSummer Le\nPHELPS 1513\n\n\nTR 12:00 - 12:50pm\nMallory Wang\nPHELPS 1525\n\n\nTR 1:00 - 1:50pm\nMallory Wang\nPHELPS 1525"
+    "text": "Schedule of Sections\n\n\n\nTimes\nTA\nLocation\n\n\n\n\nTR 11:00 - 11:50pm\nMallory Wang\nPHELPS 1513\n\n\nTR 12:00 - 12:50pm\nMallory Wang\nPHELPS 1525\n\n\nTR 1:00 - 1:50pm\nSummer Le\nPHELPS 1525"
   },
   {
     "objectID": "Pages/syllabus.html#course-description",
@@ -3196,7 +3196,7 @@
     "href": "Pages/syllabus.html#course-components",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Course Components",
-    "text": "Course Components\nThe following are the assignments and metrics that will be used to compute your final grade in this course:\n\nLabs\nEvery Tuesday you will work through a Lab assignment. It is advised that you turn in the Lab at the end of the section on Tuesdays, but you will have until the end of Thursday (11:59p) to submit your work through Gradescope. Your TA will explain more about the structure of lab during your first Section meeting of the quarter.\n\n\nQuizzes\nQuizzes will be administered asynchronously on Mondays, through Gradescope. Specifically, the quiz will remain open from 8am until 11:59pm, and you must find 60 consecutive minutes to take the quiz. (Consecutive means you cannot start the quiz, and then come back to it later- once you start, you will have 60 minutes to both complete the quiz as well as upload your work). I encourage you to spend 45 minutes working on the quiz, and 15 minutes uploading. No quiz scores will be dropped. There is no quizzes on the first and last week of class.\n\n\nExam\nThere is a final exam for this class. You are required to take the final exam, which will take place during the last lecture.\n\n\nHomework:\nThere will be weekly homework due on Thursday at 11:59p. It must be turned into Gradescope. No late homework will be accepted since solutions to the homework will be posted at midnight (Thursday to Friday). I advise you review your homework in preparation for the quiz on Monday.There will be six homework assignments, all weighted equally. Homework will be graded on an effort-based basis with the following cutoffs:\n\n\n\n\n\n\n\nSubmission Quality\nCredit Earned\n\n\n\n\nNo submission or minimal effort\n0 points\n\n\nPartial completion or limited effort (some questions incomplete or responses lack depth)\n50% credit\n\n\nAll questions completed with clear thought and effort demonstrating engagement\n100% credit\n\n\n\n\n\nSchedule of Due Dates\nWeek 1| Lab1: Thurs., August 7 at 11:59pm HW1: Thurs., August 7 at 11:59pm\nWeek 2| Quiz1: Mon., August 11 (8a- 11:59p) Lab2: Thurs., August 14 at 11:59pm HW2: Thurs., August 14 at 11:59pm\nWeek 3| Quiz2: Mon., August 18 (8a- 11:59p) Lab3: Thurs., August 21 at 11:59pm HW3: Thurs., August 21 at 11:59pm\nWeek 4| Quiz3: Mon., August 25 (8a- 11:59p) Lab4: Thurs., August 28 @ 11:59pm HW4: Thurs., August 28 @ 11:59pm\nWeek 5| Quiz4: Mon., Sept 1 (8a- 11:59p) Lab5: Thurs., Sept 4 at 11:59pm HW5: Thurs., Sept 4 at 11:59pm\nWeek 6| Lab6: Thurs., Sept 11 at 11:59pm HW6: Thurs., Sept 11 at 11:59pm"
+    "text": "Course Components\nThe following are the assignments and metrics that will be used to compute your final grade in this course:\n\nLabs\nEvery Tuesday you will work through a Lab assignment. It is advised that you turn in the Lab at the end of the section on Tuesdays, but you will have until the end of Thursday (11:59p) to submit your work through Gradescope. Your TA will explain more about the structure of lab during your first Section meeting of the quarter.\n\n\nQuizzes\nQuizzes will be administered asynchronously on Mondays, through Gradescope. Specifically, the quiz will remain open from 8am until 11:59pm, and you must find 60 consecutive minutes to take the quiz. (Consecutive means you cannot start the quiz, and then come back to it later- once you start, you will have 60 minutes to both complete the quiz as well as upload your work). I encourage you to spend 45 minutes working on the quiz, and 15 minutes uploading. No quiz scores will be dropped. There is no quizzes on the first and last week of class.\n\n\nExam\nThere is a final exam for this class. You are required to take the final exam, which will take place during the last lecture.\n\n\nHomework:\nThere will be weekly homework due on Thursday at 11:59p. It must be turned into Gradescope. No late homework will be accepted since solutions to the homework will be posted on Friday. I advise you review your homework in preparation for the quiz on Monday.There will be six homework assignments, all weighted equally. Homework will be graded on an effort-based basis with the following cutoffs:\n\n\n\n\n\n\n\nSubmission Quality\nCredit Earned\n\n\n\n\nNo submission or minimal effort\nNo Credit\n\n\nPartial completion or limited effort (some questions incomplete or responses lack depth)\n50% credit\n\n\nAll questions completed with clear thought and effort demonstrating engagement\n100% credit\n\n\n\n\n\nSchedule of Due Dates\nWeek 1| Lab1: Thurs., August 7 at 11:59pm HW1: Thurs., August 7 at 11:59pm\nWeek 2| Quiz1: Mon., August 11 (8a- 11:59p) Lab2: Thurs., August 14 at 11:59pm HW2: Thurs., August 14 at 11:59pm\nWeek 3| Quiz2: Mon., August 18 (8a- 11:59p) Lab3: Thurs., August 21 at 11:59pm HW3: Thurs., August 21 at 11:59pm\nWeek 4| Quiz3: Mon., August 25 (8a- 11:59p) Lab4: Thurs., August 28 @ 11:59pm HW4: Thurs., August 28 @ 11:59pm\nWeek 5| Quiz4: Mon., Sept 1 (8a- 11:59p) Lab5: Thurs., Sept 4 at 11:59pm HW5: Thurs., Sept 4 at 11:59pm\nWeek 6| Lab6: Thurs., Sept 11 at 11:59pm HW6: Thurs., Sept 11 at 11:59pm"
   },
   {
     "objectID": "Pages/syllabus.html#grading-scheme",
@@ -3469,7 +3469,7 @@
     "href": "Pages/Lectures/Lecture02/Lec02.html#causality",
     "title": "PSTAT 5A: Lecture 02",
     "section": "Causality",
-    "text": "Causality\n\nI should make a very important point: identifying trends is not the same thing as identifying causal relationships.\nFor example, the side-by-side boxplot from a few slides ago does not tell us that “studying less causes your grade to decrease”\n\nThere are a lot of other confounding variables that could contribute to the decrease in grade.\n\nWe won’t talk too much about causality in this course, but it is an important thing to be aware of: association is not the same thing as causation!"
+    "text": "Causality\n\nIdentifying trends is not the same thing as identifying causal relationships.\nFor example, the side-by-side boxplot from a few slides ago does not tell us that “studying less causes your grade to decrease”\n\nThere are a lot of other confounding variables that could contribute to the decrease in grade.\n\nWe won’t talk too much about causality in this course, but it is an important thing to be aware of: association is not the same thing as causation!"
   },
   {
     "objectID": "Pages/Lectures/Lecture02/Lec02.html#quantifying-data",
@@ -4554,7 +4554,7 @@
     "href": "Pages/Lectures/Lecture00/Lec00.html#course-staff",
     "title": "PSTAT 5A: Lecture 00",
     "section": "Course Staff",
-    "text": "Course Staff\n\n\n\n\nInstructor:\n\nAnnie (she/her)\naradams@ucsb.edu\nOffice Hours: Monday 11 am - 12 pm, Wednesday 11 am - 12 pm\n\n\n\n\n\n\n\nTeaching Assistants:\n\n\n\n\nDaniel Silva\ndcsilva@ucsb.edu\nOH: TBD\n\n\n\n\n\nHezhong Zhang\nhzhang586@umail.ucsb.edu\nOH: TBD"
+    "text": "Course Staff\n\n\n\n\nInstructor:\n\nAnnie (she/her)\naradams@ucsb.edu\nOffice Hours: Monday 11 am - 12 pm, Wednesday 11 am - 12 pm\n\n\n\n\n\n\n\nTeaching Assistants:\n\n\n\n\nSummer Le\nsle@ucsb.edu\nOH: TBD\n\n\n\n\n\nMallory Wang\nmallorywang@ucsb.edu\nOH: TBD"
   },
   {
     "objectID": "Pages/Lectures/Lecture00/Lec00.html#course-resources",
@@ -4568,21 +4568,21 @@
     "href": "Pages/Lectures/Lecture00/Lec00.html#what-is-data-science-1",
     "title": "PSTAT 5A: Lecture 00",
     "section": "What is Data Science?",
-    "text": "What is Data Science?\n\nNot a bad definition! To be fair, data science means different things to different people / companies.\nThere isn’t a single agreed-upon definition of what data science is.\nMost people agree that Data science is cross-disciplinary, drawing experience and expertise from a wide variety of different fields.\n\nPerhaps the two main fields from which Data Science draws are Statistics and Computer Science\n\nLike ChatGPT suggested, computation is an integral part of Data Science.\n\nAs we will soon see, the data that is being analyzed these days is huge; certainly too large to be able to do anything with it on pen and paper."
+    "text": "What is Data Science?\n\nAll valid definitions! Data science means different things to different people / companies.\nThere isn’t a single agreed-upon definition of what data science is.\nMost people agree that Data science is cross-disciplinary, drawing experience and expertise from a wide variety of different fields.\n\nAs we will soon see, the data that is being analyzed these days is huge; certainly too large to be able to do anything with it on pen and paper."
   },
   {
     "objectID": "Pages/Lectures/Lecture00/Lec00.html#the-path-forward",
     "href": "Pages/Lectures/Lecture00/Lec00.html#the-path-forward",
     "title": "PSTAT 5A: Lecture 00",
     "section": "The Path Forward",
-    "text": "The Path Forward\n\nSo, how does this course factor into the discourse surrounding Data Science?\nFrom the course description:\n\n\n\nIntroduction to data science. Concepts of statistical thinking. Topics include random variables, sampling distributions, hypothesis testing, correlation and regression. Visualizing, analyzing and interpreting real world data using Python. Computing labs required.\n\n\n\nIndeed, this course will serve as a sort of “table of contents” of Data Science, touching on many (but still not all) of the wonderful subfields and subtopics that comprise the field."
+    "text": "The Path Forward\n\nSo, how does this course factor into the discourse surrounding Data Science?\nFrom the course description:\n\n\n\nIntroduction to data science. Concepts of statistical thinking. Topics include random variables, sampling distributions, hypothesis testing, correlation and regression. Visualizing, analyzing and interpreting real world data using Python. Computing labs required.\n\n\n\nIndeed, this course will serve as a sort of “table of contents” of Data Science, touching on many (but still not all) of the many subfields and subtopics that comprise the field."
   },
   {
     "objectID": "Pages/Lectures/Lecture00/Lec00.html#why-should-i-care",
     "href": "Pages/Lectures/Lecture00/Lec00.html#why-should-i-care",
     "title": "PSTAT 5A: Lecture 00",
     "section": "Why Should I Care?",
-    "text": "Why Should I Care?\n\n\nI suspect not all of you are necessarily pursuing a degree in Statistics or Data Science. However, this day in age, data is truly everywhere, and having strong mathematical thinking will give you a leg up in any role you want.\n\n\n\nHowever, wherever there is data, there is the need for a Data Scientist (or, at least, some of the principles from Data Science).\n\nSo, even if you are working in (what you might think is) a field that is far removed from Statsitics, the minute you start dealing with Data is the minute you start needing to know Data Science!\n\nHere’s a perhaps more pragmatic answer: even if you think you want to go straight into industry right after this course, no company wants to hire someone to just mindlessly crunch numbers - though computing experience is absolutely crucial in making yourself a good candidate, employers would much rather have someone who is both skilled at running code but also understands why they are running the code they are running!"
+    "text": "Why Should I Care?\n\n\nI suspect not all of you are necessarily pursuing a degree in Statistics or Data Science. However, this day in age, data is truly everywhere, and having strong mathematical thinking will give you a leg up in any role you want.\n\n\n\nHowever, wherever there is data, there is the need for a Data Scientist (or, at least, some of the principles from Data Science).\n\nSo, even if you are working in (what you might think is) a field that is far removed from Statsitics, the minute you start dealing with Data is the minute you start needing to know Data Science!"
   },
   {
     "objectID": "Pages/Lectures/Lecture00/Lec00.html#section",
@@ -5423,5 +5423,19 @@
     "title": "PSTAT 5A: Understanding Data",
     "section": "Week 6 (9/08 - 9/11)",
     "text": "Week 6 (9/08 - 9/11)\n\n\nLectures\n19: Regression Diagnostics, and  Sampling Procedures 20: Ways Statistics Can Deceive 21: Review FINAL EXAM: Thursday, Sept 11 during lecture\n\n\nDiscussion\nQ&A with TA\n\n\nLab\nLab 06"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture00/Lec00.html#what-is-data-science",
+    "href": "Pages/Lectures/Lecture00/Lec00.html#what-is-data-science",
+    "title": "PSTAT 5A: Lecture 00",
+    "section": "What is Data Science?",
+    "text": "What is Data Science?\n\n“Data science combines math and statistics, specialized programming, advanced analytics, artificial intelligence (AI) and machine learning with specific subject matter expertise to uncover actionable insights hidden in an organization’s data. These insights can be used to guide decision making and strategic planning.” - IBM\n“a field of study that uses scientific methods, processes, and systems to extract knowledge and insights from data” - The US Census Bureau\n“Data science is the field that uses statistical methods, programming, and domain knowledge to extract insights and make decisions from data. It combines data analysis, machine learning, and data visualization to solve real-world problems across various industries.” - ChatGPT"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#binning",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#binning",
+    "title": "PSTAT 5A: Lecture 01",
+    "section": "Binning",
+    "text": "Binning\n\n\nThis is what is known as binning our variable.\n\n\n\nIn other words, when we bin our data, we carve it up into a bunch of chunks of equal width and see how many observations fall in each chunk.\n\nThe width of each chunk is what we call the binwidth. For example, if my categories are “between 30 and 35”, “between 35 and 40”, etc., then the binwidth is 5mm as each category spans a width of 5mm."
   }
 ]

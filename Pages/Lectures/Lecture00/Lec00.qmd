@@ -83,23 +83,21 @@ title-slide-attributes:
 
 # Any Questions about the syllabus?
 
-# What is Data Science
+## What is Data Science?
 
----
+- "Data science combines math and statistics, specialized programming, advanced analytics, artificial intelligence (AI) and machine learning with specific subject matter expertise to uncover actionable insights hidden in an organization’s data. These insights can be used to guide decision making and strategic planning." - IBM
 
-![](datasci_def.svg){width=80% fig-align="center"}
+- "a field of study that uses scientific methods, processes, and systems to extract knowledge and insights from data" - The US Census Bureau
+
+- "Data science is the field that uses statistical methods, programming, and domain knowledge to extract insights and make decisions from data. It combines data analysis, machine learning, and data visualization to solve real-world problems across various industries." - ChatGPT
 
 ## What is Data Science? {style="font-size:33px"}
 
-- Not a bad definition! To be fair, data science means different things to different people / companies.
+- All valid definitions! Data science means different things to different people / companies.
 
 - There isn't a single agreed-upon definition of what data science is.
 
 - Most people agree that Data science is **cross-disciplinary**, drawing experience and expertise from a wide variety of different fields.
-
-    - Perhaps the two main fields from which Data Science draws are Statistics and Computer Science
-
-- Like ChatGPT suggested, computation is an integral part of Data Science.
 
     - As we will soon see, the data that is being analyzed these days is *huge*; certainly too large to be able to do anything with it on pen and paper.
   
@@ -118,7 +116,7 @@ title-slide-attributes:
 > Introduction to data science. Concepts of statistical thinking. Topics include random variables, sampling distributions, hypothesis testing, correlation and regression. Visualizing, analyzing and interpreting real world data using Python. Computing labs required.
 :::
 
-- Indeed, this course will serve as a sort of "table of contents" of Data Science, touching on many (but still not all) of the wonderful subfields and subtopics that comprise the field.
+- Indeed, this course will serve as a sort of "table of contents" of Data Science, touching on many (but still not all) of the many subfields and subtopics that comprise the field.
 
 ---
 

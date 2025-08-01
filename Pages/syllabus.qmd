@@ -57,9 +57,9 @@ M, T, W, Th: 9:30 am - 10:50 am in **HSSB 1173**
 
 |       Times       |       TA       |  Location   |
 |:-----------------:|:--------------:|:-----------:|
-| TR 11:00 - 11:50pm | Summer Le  | PHELPS 1513 |
+| TR 11:00 - 11:50pm | Mallory Wang | PHELPS 1513 |
 | TR 12:00 - 12:50pm | Mallory Wang | PHELPS 1525 |
-| TR 1:00 - 1:50pm | Mallory Wang | PHELPS 1525 |
+| TR 1:00 - 1:50pm | Summer Le | PHELPS 1525 |
 
 ## Course Description
 
@@ -96,11 +96,11 @@ There is a **final** exam for this class. You are required to take the final exa
 
 ### Homework:
 
-There will be weekly homework due on Thursday at 11:59p. It must be turned into Gradescope. No late homework will be accepted since solutions to the homework will be posted at midnight (Thursday to Friday). I advise you review your homework in preparation for the quiz on Monday.There will be six homework assignments, all weighted equally. Homework will be graded on an effort-based basis with the following cutoffs: 
+There will be weekly homework due on Thursday at 11:59p. It must be turned into Gradescope. No late homework will be accepted since solutions to the homework will be posted on Friday. I advise you review your homework in preparation for the quiz on Monday.There will be six homework assignments, all weighted equally. Homework will be graded on an effort-based basis with the following cutoffs: 
 
 | Submission Quality | Credit Earned |
 |:-------------------|:--------------|
-| No submission or minimal effort | 0 points |
+| No submission or minimal effort | No Credit |
 | Partial completion or limited effort (some questions incomplete or responses lack depth) | 50% credit |
 | All questions completed with clear thought and effort demonstrating engagement | 100% credit |
 

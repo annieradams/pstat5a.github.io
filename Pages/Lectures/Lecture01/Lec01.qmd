@@ -75,13 +75,13 @@ kable(head(penguins))
 }
 ```
 
-- Notice that our data is formatted as a table. This table is what data scientists refer to as the **data matrix** or data frame.
+- Notice that our data is formatted as a table. This table is what data scientists refer to as the data frame.
 
 ---
 
 ## The Data Matrix
 
-- Each row of the data matrix above corresponds to an individual penguin. 
+- Each row of the data frame above corresponds to an individual penguin. 
 
     - In general, we refer to a given row of the data matrix as an **observational unit**, or **case**.
 
@@ -92,19 +92,19 @@ kable(head(penguins))
 ---
 
 :::{.nonincremental}
-- So, to summarize, each row of the data matrix corresponds to a unique observational unit, and each column corresponds to a unique variable.
+- So, to summarize, each row of the data frame corresponds to a unique observational unit, and each column corresponds to a unique variable.
 :::
 
 - Now, it will not always be immediately obvious what each variable in a dataset represents.
 
     - As Data Scientists, it is absolutely crucial that we understand our data as best as possible before embarking on any analyses, explorations, etc.
     
-- As such, most datasets come equipped with a so-called **data dictionary**, or **metadata**, which lists the variables included in the dataset as well as a brief description of each variable.
+- As such, most datasets come equipped with **metadata**, which lists the variables included in the dataset as well as a brief description of each variable.
 
 ---
 
 :::{.nonincremental}
-- For example, the data dictionary for the `palmerpenguins` dataset might be formatted as:
+- For example, the metadata for the `palmerpenguins` dataset might be formatted as:
 :::
 
 :::{style="font-size:27px"}
@@ -147,19 +147,6 @@ kable(head(penguins))
     
     - As such, we describe non-numerical variables as **categorical variables**.
 
-## A Note on Language {style="font-size:32px"}
-
-- Question: can we say that *data* is numerical? Or, can we say we have "categorical data"?
-
-- Sure- if our data consists of just a single variable! 
-
-- That is to say- the classification terms we learned (and will learn) can be used to describe *data*, _provided our data contains only one variable_.
-
-- The definition of data we are using (i.e. in the context of the data matrix) is that data is comprised of *several* variables. As such, we cannot simply take the classification of variables and apply that to the entire dataset (unless our dataset consists of only one variable).
-    
-    - This may seem like a subtle point... and it is! I'm just pointing it out so you are aware of it.
-
-------------------------------------------------------------------------
 
 ## Continuous vs. Discrete Variables
 
@@ -287,10 +274,10 @@ penguins$species
 ## Descriptive Statistics 
 
 :::{.nonincremental}
-- This is the goal of **Descriptive Statistics**- to find different summarizing techniques to *desribe* the data.
+- This is the goal of **Descriptive Statistics**- to find different summarizing techniques to *describe* the data.
 :::
 
-- There are two ways we can seek to summarize data: numerically (using numbers), and graphically. 
+- There are two ways we can seek to summarize data: numerically (using numbers), and visually (using graphs). 
 
 - Let's start with the latter- that is, let's discuss how we might summarize our data using graphs.
 
@@ -471,13 +458,13 @@ penguins$bill_length_mm
 
 - So, what if we viewed our continuous variable as being, in a sense, categorical, with categories "between 30 and 35", "between 35 and 40", etc.?
 
-## Discretization/Binning
+## Binning
 
 :::{.nonincremental}
-- This is what is known as **discretizing** or **binning** our variable.
+- This is what is known as **binning** our variable.
 :::
 
-- In other words, when we discretize our data, we carve it up into a bunch of chunks of equal width and see how many observations fall in each chunk.
+- In other words, when we bin our data, we carve it up into a bunch of chunks of equal width and see how many observations fall in each chunk.
 
     - The width of each chunk is what we call the **binwidth**. For example, if my categories are "between 30 and 35", "between 35 and 40", etc., then the binwidth is 5mm as each category spans a width of 5mm.
 
@@ -489,7 +476,7 @@ penguins$bill_length_mm
 :::
 
 ```{r}
-bins <- c("[30, 35]", "(35, 40]", "(40, 45]", "(45, 50]", "(50, 55]", "(55, 60]")
+bins <- c("(30, 35]", "(35, 40]", "(40, 45]", "(45, 50]", "(50, 55]", "(55, 60]")
 bill_length_mm <- na.omit(penguins$bill_length_mm)
 counts <- hist(bill_length_mm, plot = F, breaks = 8)$counts
 
@@ -500,10 +487,7 @@ counts
 
 - By the way, I am using interval notation in the bin names above. So, when we write $(35, 40]$ we mean all numbers between 35 and 40, including 35 but excluding 40.
 
-    - The reason for this is that if a datapoint falls on the boundary of a bin, we conventionally assign it to the left (lower) bin.
 
-    - If you are not familiar with interval notation, I have posted some supplementary materials to the website.
-  
 ---
 
 :::{.nonincremental}
@@ -766,9 +750,8 @@ The **_p_^th^ percentile** of a set of observations $X$ is the value $\pi_{x, \ 
 :::
 :::
 
-- Maybe now you can see why I switched over to this data of scores- I think percentiles are sometimes easier to interpret in the context of exam scores, since they are very commonly reported with standardized testing scores (e.g. SAT, GRE, etc.)
 
-    - In the context of scores: someone who scored at the _p_^th^ percentile performed *better* than _p_\% of all test-takers.
+  - In the context of scores: someone who scored at the _p_^th^ percentile performed *better* than _p_\% of all test-takers.
     
 ## Quartiles
 
@@ -782,15 +765,6 @@ The **_p_^th^ percentile** of a set of observations $X$ is the value $\pi_{x, \ 
     
     - We'll talk more about the median in the next lecture.
 
-## Small Caveat
-
-- I should quickly mention one small caveat- computing softwares often use a different procedure for computing quartiles.
-
-- This procedure is quite long and complicated, and is based off an entire paper written back in the 90's. 
-
-- For example, if we consider the set $S = \{1, 2, 3, 4, 5, 6\}$, we would (based on the definition from the previous slide) call the first quartile $2$, whereas most softwares would return a value of $2.25$.
-
-- **Don't worry about why this is**- whenever we talk about quartiles in this class, you can just think of the definition I posed on the previous slide.
 
 
 ## Whiskers
@@ -882,7 +856,7 @@ penguins %>%
 
 ## Summary {style="font-size:32px"}
 
-- We started off by talking about the structure of data, and the data matrix.
+- We started off by talking about the structure of data, and the data frame
 
 - We then discussed how to classify variables.
 
@@ -894,6 +868,8 @@ penguins %>%
 
 - We also introduced the notions of percentiles, the median, and outliers.
 
+- We'll also discuss some numerical summaries for data, including the mean, median, standard deviation, and IQR.
+
 - Next time we'll discuss how to visualize the relationship between two variables.
 
-- We'll also discuss some numerical summaries for data, including the mean, median, standard deviation, and IQR.
+
