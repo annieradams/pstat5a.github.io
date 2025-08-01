@@ -721,13 +721,6 @@
     "text": "Numerical vs. Categorical\n\nNumerical variables are variables whose observations consist of numbers.\n\nExamples: heights, temperatures, number of free throws, etc.\n\nNot all variables are numerical. For example, I could take a poll asking people’s opinions on the movie Dune 2- the observations of this variable will most certainly not be numerical.\n\nRather, the observations of this variable will fall into one of a series of fixed categories (e.g. “Enjoyed the movie”, “Neutral about the movie”, “Too much sand”, etc.).\nAs such, we describe non-numerical variables as categorical variables."
   },
   {
-    "objectID": "Pages/Lectures/Lecture01/Lec01.html#a-note-on-language",
-    "href": "Pages/Lectures/Lecture01/Lec01.html#a-note-on-language",
-    "title": "PSTAT 5A: Lecture 01",
-    "section": "A Note on Language",
-    "text": "A Note on Language\n\nQuestion: can we say that data is numerical? Or, can we say we have “categorical data”?\nSure- if our data consists of just a single variable!\nThat is to say- the classification terms we learned (and will learn) can be used to describe data, provided our data contains only one variable.\nThe definition of data we are using (i.e. in the context of the data matrix) is that data is comprised of several variables. As such, we cannot simply take the classification of variables and apply that to the entire dataset (unless our dataset consists of only one variable).\n\nThis may seem like a subtle point… and it is! I’m just pointing it out so you are aware of it."
-  },
-  {
     "objectID": "Pages/Lectures/Lecture01/Lec01.html#continuous-vs.-discrete-variables",
     "href": "Pages/Lectures/Lecture01/Lec01.html#continuous-vs.-discrete-variables",
     "title": "PSTAT 5A: Lecture 01",
@@ -812,11 +805,11 @@
     "text": "Leadup\n\n\nAll of our discussions above were related to categorical variables.\n\n\n\nAs we discussed at the beginning of this lecture, not all variables are categorical- how do we visualize numerical variables?\nAgain, I find it useful to consider a concrete example: this time, let’s use the bill_length_mm variable from the palmerpenguins dataset."
   },
   {
-    "objectID": "Pages/Lectures/Lecture01/Lec01.html#discretizationbinning",
-    "href": "Pages/Lectures/Lecture01/Lec01.html#discretizationbinning",
+    "objectID": "Pages/Lectures/Lecture01/Lec01.html#binning",
+    "href": "Pages/Lectures/Lecture01/Lec01.html#binning",
     "title": "PSTAT 5A: Lecture 01",
-    "section": "Discretization/Binning",
-    "text": "Discretization/Binning\n\n\nThis is what is known as discretizing or binning our variable.\n\n\n\nIn other words, when we discretize our data, we carve it up into a bunch of chunks of equal width and see how many observations fall in each chunk.\n\nThe width of each chunk is what we call the binwidth. For example, if my categories are “between 30 and 35”, “between 35 and 40”, etc., then the binwidth is 5mm as each category spans a width of 5mm."
+    "section": "Binning",
+    "text": "Binning\n\n\nThis is what is known as binning our variable.\n\n\n\nIn other words, when we bin our data, we carve it up into a bunch of chunks of equal width and see how many observations fall in each chunk.\n\nThe width of each chunk is what we call the binwidth. For example, if my categories are “between 30 and 35”, “between 35 and 40”, etc., then the binwidth is 5mm as each category spans a width of 5mm."
   },
   {
     "objectID": "Pages/Lectures/Lecture01/Lec01.html#the-importance-of-binwidth",
@@ -859,13 +852,6 @@
     "title": "PSTAT 5A: Lecture 01",
     "section": "Quartiles",
     "text": "Quartiles\n\nWe give a special name to the 25th and 75th percentiles of a set of observations- we call these the first quartile and third quartile, respectively, and use the notation \\(Q_1\\) and \\(Q_3\\) to denote them, respectively.\n\nSo, \\(Q_1\\) is the value such that 25% of observations are less than \\(Q_1\\), and \\(Q_3\\) is the value such that 75% of observations are less than \\(Q_3\\)\n\nThe second quartile (i.e. the 50th percentile) is called the median.\n\nAs such, the median is the value that “splits the data in half”.\nWe’ll talk more about the median in the next lecture."
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture01/Lec01.html#small-caveat",
-    "href": "Pages/Lectures/Lecture01/Lec01.html#small-caveat",
-    "title": "PSTAT 5A: Lecture 01",
-    "section": "Small Caveat",
-    "text": "Small Caveat\n\nI should quickly mention one small caveat- computing softwares often use a different procedure for computing quartiles.\nThis procedure is quite long and complicated, and is based off an entire paper written back in the 90’s.\nFor example, if we consider the set \\(S = \\{1, 2, 3, 4, 5, 6\\}\\), we would (based on the definition from the previous slide) call the first quartile \\(2\\), whereas most softwares would return a value of \\(2.25\\).\nDon’t worry about why this is- whenever we talk about quartiles in this class, you can just think of the definition I posed on the previous slide."
   },
   {
     "objectID": "Pages/Lectures/Lecture01/Lec01.html#whiskers",
@@ -3486,20 +3472,6 @@
     "text": "Summarizing Data\n\nThe remainder of today’s lecture will be devoted to finding numerical summaries of a dataset \\(X = \\{x_i\\}_{i=1}^{n}\\).\nThis will lead us to several different summary statistics, which are mathematical quantities that seek to describe different aspects of our data."
   },
   {
-    "objectID": "Pages/Lectures/Lecture02/Lec02.html#quantifying-center",
-    "href": "Pages/Lectures/Lecture02/Lec02.html#quantifying-center",
-    "title": "PSTAT 5A: Lecture 02",
-    "section": "Quantifying “Center”",
-    "text": "Quantifying “Center”\n\nHere is a very broad question: what is the center of a dataset \\(X = \\{x_i\\}_{i=1}^{n}\\)?\nPerhaps the scores dataset from earlier is a bit too complicated- let’s simplify things and look at the dataset \\[ X = \\{1, 1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 6\\} \\]\nAs a starting point, I can “plot” these points on a number line (to produce what is known as a dotplot):"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture02/Lec02.html#quantifying-center-1",
-    "href": "Pages/Lectures/Lecture02/Lec02.html#quantifying-center-1",
-    "title": "PSTAT 5A: Lecture 02",
-    "section": "Quantifying “Center”",
-    "text": "Quantifying “Center”\n\n\nBack to our question: what is the center of this dataset?\n\n\n\nPerhaps we can think of center as a balancing point. In other words: where should I place a fulcrum to ensure this number line remains balanced?\n\n\n\n\n\n\n\n\n\nWe call this balancing point the arithmetic mean (or just mean, or average, for short), and denote it \\(\\overline{x}\\)."
-  },
-  {
     "objectID": "Pages/Lectures/Lecture02/Lec02.html#the-mean",
     "href": "Pages/Lectures/Lecture02/Lec02.html#the-mean",
     "title": "PSTAT 5A: Lecture 02",
@@ -4564,6 +4536,13 @@
     "text": "Course Resources\n\nCanvas: for grades\nGradescope: for homework, quizzes, and labs\nCourse Website: https://annieradams.github.io/pstat5a.github.io/\n\nAll relevant course material will be posted to the website!\nOne exception: quizzes, which will be administered through Gradescope\n\nPlease read the syllabus fully and carefully!"
   },
   {
+    "objectID": "Pages/Lectures/Lecture00/Lec00.html#what-is-data-science",
+    "href": "Pages/Lectures/Lecture00/Lec00.html#what-is-data-science",
+    "title": "PSTAT 5A: Lecture 00",
+    "section": "What is Data Science?",
+    "text": "What is Data Science?\n\n“Data science combines math and statistics, specialized programming, advanced analytics, artificial intelligence (AI) and machine learning with specific subject matter expertise to uncover actionable insights hidden in an organization’s data. These insights can be used to guide decision making and strategic planning.” - IBM\n“a field of study that uses scientific methods, processes, and systems to extract knowledge and insights from data” - The US Census Bureau\n“Data science is the field that uses statistical methods, programming, and domain knowledge to extract insights and make decisions from data. It combines data analysis, machine learning, and data visualization to solve real-world problems across various industries.” - ChatGPT"
+  },
+  {
     "objectID": "Pages/Lectures/Lecture00/Lec00.html#what-is-data-science-1",
     "href": "Pages/Lectures/Lecture00/Lec00.html#what-is-data-science-1",
     "title": "PSTAT 5A: Lecture 00",
@@ -5423,19 +5402,5 @@
     "title": "PSTAT 5A: Understanding Data",
     "section": "Week 6 (9/08 - 9/11)",
     "text": "Week 6 (9/08 - 9/11)\n\n\nLectures\n19: Regression Diagnostics, and  Sampling Procedures 20: Ways Statistics Can Deceive 21: Review FINAL EXAM: Thursday, Sept 11 during lecture\n\n\nDiscussion\nQ&A with TA\n\n\nLab\nLab 06"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture00/Lec00.html#what-is-data-science",
-    "href": "Pages/Lectures/Lecture00/Lec00.html#what-is-data-science",
-    "title": "PSTAT 5A: Lecture 00",
-    "section": "What is Data Science?",
-    "text": "What is Data Science?\n\n“Data science combines math and statistics, specialized programming, advanced analytics, artificial intelligence (AI) and machine learning with specific subject matter expertise to uncover actionable insights hidden in an organization’s data. These insights can be used to guide decision making and strategic planning.” - IBM\n“a field of study that uses scientific methods, processes, and systems to extract knowledge and insights from data” - The US Census Bureau\n“Data science is the field that uses statistical methods, programming, and domain knowledge to extract insights and make decisions from data. It combines data analysis, machine learning, and data visualization to solve real-world problems across various industries.” - ChatGPT"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture01/Lec01.html#binning",
-    "href": "Pages/Lectures/Lecture01/Lec01.html#binning",
-    "title": "PSTAT 5A: Lecture 01",
-    "section": "Binning",
-    "text": "Binning\n\n\nThis is what is known as binning our variable.\n\n\n\nIn other words, when we bin our data, we carve it up into a bunch of chunks of equal width and see how many observations fall in each chunk.\n\nThe width of each chunk is what we call the binwidth. For example, if my categories are “between 30 and 35”, “between 35 and 40”, etc., then the binwidth is 5mm as each category spans a width of 5mm."
   }
 ]
