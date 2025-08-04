@@ -5408,6 +5408,6 @@
     "href": "Pages/Lectures/Lecture01/Lec01.html#the-data-frame",
     "title": "PSTAT 5A: Lecture 01",
     "section": "The Data Frame",
-    "text": "The Data Frame\n\nEach row of the data frame above corresponds to an individual penguin.\n\nIn general, we refer to a given row of the data matrix as an observational unit, or case.\n\nFor each penguin, we can see that there are observations on several different characteristics; specifically, for each penguin she encountered, Dr. Gorman measured and recorded the penguin’s species, island, bill length (in mm), bill depth (in mm), flipper length (in mm), body mass (in grams), sex, and year of observation.\n\nNotice that these are the column names in our data matrix above. In general, the columns of the data matrix are referred to as variables."
+    "text": "The Data Frame\n\nEach row of the data frame above corresponds to an individual penguin.\n\nIn general, we refer to a given row of the data frame as an observational unit, or case.\n\nFor each penguin, we can see that there are observations on several different characteristics; specifically, for each penguin she encountered, Dr. Gorman measured and recorded the penguin’s species, island, bill length (in mm), bill depth (in mm), flipper length (in mm), body mass (in grams), sex, and year of observation.\n\nNotice that these are the column names in our data frame above. In general, the columns of the data frame are referred to as variables."
   }
 ]

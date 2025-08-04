@@ -83,11 +83,11 @@ kable(head(penguins))
 
 - Each row of the data frame above corresponds to an individual penguin. 
 
-    - In general, we refer to a given row of the data matrix as an **observational unit**, or **case**.
+    - In general, we refer to a given row of the data frame as an **observational unit**, or **case**.
 
 - For each penguin, we can see that there are observations on several different characteristics; specifically, for each penguin she encountered, Dr. Gorman measured and recorded the penguin's species, island, bill length (in mm), bill depth (in mm), flipper length (in mm), body mass (in grams), sex, and year of observation.
 
-    - Notice that these are the column names in our data matrix above. In general, the columns of the data matrix are referred to as **variables.**
+    - Notice that these are the column names in our data frame above. In general, the columns of the data frame are referred to as **variables.**
     
 ---
 
@@ -123,7 +123,7 @@ kable(head(penguins))
 ---
 
 :::{.nonincremental}
-- So, to summarize, the data matrix of the `palmerpenguins` dataset consists of 344 observational units on 8 different variables.
+- So, to summarize, the data frame of the `palmerpenguins` dataset consists of 344 observational units on 8 different variables.
 :::
 
 
