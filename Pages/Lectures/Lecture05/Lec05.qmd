@@ -25,37 +25,7 @@ library(tidyverse)
 library(ggthemes)
 ```
 
-## Homework 1 Review
 
-- Submission: Syllabus states that all course submissions (HW, labs, and quizzes) will be via Gradescope!
-
-- No late homework!
-
-- Please show your work!
-
-## Homework 1 - Distribution of Scores
-
-![](hw1_dist.png)
-
-## Homework 1 - Questions and number of correct answers
-
-![](hw1q.png)
-
-## Homework 1 
-
-- Q1.3 asks for calculating the standard deviation.
-
-- Q3.2: Approximately what percent of AQI readings at Location D were less than 16?
-
-![](hw1_q3.2.png)
-
-## Homework 1 
-
-- Q4: Read Tranforming Data
-
-- Q6.4: D = the irst number selected was odd, and the irst number selected was even.
-
-- Q7.3: On a particular website, passwords must be exactly 7 characters long and consist of 3 letters (A through Z), followed by 2 digits (0 through 9), followed by another letter (A through Z), followed by a special character (!, @, #, $, %).  Suppose now that the letters must still appear together, the digits must still appear together, and the special characters must still appear together, but the order in which these three categories of characters appear is now free to vary. How many passwords can be created using this new scheme?
 
 
 
