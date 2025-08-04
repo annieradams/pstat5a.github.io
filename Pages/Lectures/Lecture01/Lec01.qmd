@@ -79,7 +79,7 @@ kable(head(penguins))
 
 ---
 
-## The Data Matrix
+## The Data Frame
 
 - Each row of the data frame above corresponds to an individual penguin. 
 
