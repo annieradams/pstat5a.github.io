@@ -397,4 +397,4 @@ Congrats on finishing the first PSTAT 5A Computing Lab! Here's what you need to 
 1) Your downloaded `.ipynb` file
 2) Your downloaded `.PDF` file
 
-Toward the end of Lab, your TA will show you how to download the above files. **You will have until 40 minutes after the end of your Section (e.g. if your Section ends at 1:20pm, then you have until 2:00pm to submit) to turn in your work in order to get credit for the lab.** Also, please remember that you need to upload *both* a `.ipynb` file *and* a `.pdf`. We will be grading labs based on effort, so just turn in what you are able to!
+Toward the end of Lab, your TA will show you how to download the above files. **You will have until Thursday at 11:59 pm to turn in your work in order to get credit for the lab.** Also, please remember that you need to upload *both* a `.ipynb` file *and* a `.pdf`. We will be grading labs based on effort, so just turn in what you are able to!If we don't finish the lab, you may complete the rest of the lab to earn up to 10% extra credit. 
