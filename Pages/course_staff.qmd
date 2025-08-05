@@ -32,7 +32,7 @@ linkcolor: "#ffa07a"
         </tr>
         <tr>
           <td><b>OH:</b></td>
-          <td>Mondays 11 am - 12 pm <br /> Wednesdays 11 am - 12 pm </td>
+          <td>Mondays 11 am - 12 pm <br /> Wednesdays 11 am - 12 pm @ Sobel Seminar (South Hall 5607F) </td>
         </tr>
       </table>
     </td>
@@ -62,7 +62,7 @@ linkcolor: "#ffa07a"
         </tr>
         <tr>
           <td><b>OH:</b></td>
-          <td>TBD</td>
+          <td>Wednesdays 2 pm - 3 pm @ https://ucsb.zoom.us/j/82163408541?pwd=0glYZbaKooTkkL1Ny3cJIpECqn4Gn4.1#success </td>
         </tr>
       </table>
     </td>
