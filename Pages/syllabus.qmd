@@ -34,7 +34,8 @@ M, T, W, Th: 9:30 am - 10:50 am in **HSSB 1173**
 | **Email:**      | [aradams@ucsb.edu](mailto:aradams@ucsb.edu)  
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | **Help Hours:** | -   [**Mondays:**]{.underline} 11:00 am - 12:00 pm 
-|                 | -   [**Wednesdays:**]{.underline} 11:00 am - 12:00 pm 
+|                 | -   [**Wednesdays:**]{.underline} 11:00 am - 12:00 pm
+|                 | -   [**Location:**]{.underline} Sobel Seminar (SH 5607F)
 +-----------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 : {tbl-colwidths="\[20, 30\]"}
@@ -43,7 +44,8 @@ M, T, W, Th: 9:30 am - 10:50 am in **HSSB 1173**
 | **TAs**                                        |
 +------------------------------------------------+
 | **Summer Le**\                             
-| ([sle@ucsb.eduu](mailto:sle@ucsb.edu)) 
+| ([sle@ucsb.edu](mailto:sle@ucsb.edu)) 
+| **Help Hours:** | [**Wednesdays:**]{.underline} 2:00 pm - 3:00 pm on [zoom](https://ucsb.zoom.us/j/82163408541?pwd=0glYZbaKooTkkL1Ny3cJIpECqn4Gn4.1#success))
 +------------------------------------------------+
 | **Mallory Wang**\                            
 | ([mallorywang@ucsb.edu](mailto:mallorywang@ucsb.edu) |
