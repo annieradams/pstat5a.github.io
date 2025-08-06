@@ -5,6 +5,7 @@ author: "Ethan P. Marzban"
 date: "08/03/23"
 format: 
     revealjs:
+      chalkboard: true
       html-math-method: mathjax
       theme: [default, ../CSS/custom.scss]
       incremental: true

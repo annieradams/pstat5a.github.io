@@ -5,6 +5,7 @@ author: "Annie Adams"
 date: "09/03/25"
 format: 
     revealjs:
+      chalkboard: true
       html-math-method: mathjax
       theme: [default, ../CSS/custom.scss]
       incremental: true
