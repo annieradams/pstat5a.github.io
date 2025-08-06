@@ -758,6 +758,22 @@ For the set $X = \{1, 2, 3, 4, 5\}$, compute $s_x$. Discuss with your neighbor!
 :::
 :::
 
+
+## Practice Problem # 1 
+
+Given the set X = {1, 4, 9, 16, 25, 36}, find the summation of the square root of each element in X.
+
+
+## Practice Problem #2
+
+A basketball coach recorded the points scored by her starting five players in their last game and recorded them below:
+
+**Data:** {12, 8, 15, 10, 20}
+
+Calculate the standard deviation of points scored by these players. Interpret what the answer you get means in terms of points. 
+
+
+
 ## IQR
 
 - There is yet another way to quantify the spread of a dataset, and that is what is known as the **Interquartile Range** (IQR, for short). 

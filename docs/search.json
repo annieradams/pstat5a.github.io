@@ -5367,5 +5367,19 @@
     "title": "PSTAT 5A: Understanding Data",
     "section": "Week 6 (9/08 - 9/11)",
     "text": "Week 6 (9/08 - 9/11)\n\n\nLectures\n19: Regression Diagnostics, and  Sampling Procedures 20: Ways Statistics Can Deceive 21: Review FINAL EXAM: Thursday, Sept 11 during lecture\n\n\nDiscussion\nQ&A with TA\n\n\nLab\nLab 06"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#practice-problem-1",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#practice-problem-1",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Practice Problem # 1",
+    "text": "Practice Problem # 1\nGiven the set X = {1, 4, 9, 16, 25, 36}, find the summation of the square root of each element in X."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture02/Lec02.html#practice-problem-2",
+    "href": "Pages/Lectures/Lecture02/Lec02.html#practice-problem-2",
+    "title": "PSTAT 5A: Lecture 02",
+    "section": "Practice Problem #2",
+    "text": "Practice Problem #2\nA basketball coach recorded the points scored by her starting five players in their last game and recorded them below:\nData: {12, 8, 15, 10, 20}\nCalculate the standard deviation of points scored by these players. Interpret what the answer you get means in terms of points."
   }
 ]
