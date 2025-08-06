@@ -58,11 +58,11 @@ linkcolor: "#ffa07a"
       <table>
         <tr>
           <td><b>Email:</b></td>
-          <td><a href="mailto:sle@ucsb.edu>">sle@ucsb.edu></a></td>
+          <td><a href="mailto:sle@ucsb.edu">sle@ucsb.edu</a></td>
         </tr>
         <tr>
           <td><b>OH:</b></td>
-          <td>Wednesdays 2 pm - 3 pm @ https://ucsb.zoom.us/j/82163408541?pwd=0glYZbaKooTkkL1Ny3cJIpECqn4Gn4.1#success </td>
+          <td>Wednesdays 2 pm - 3 pm on [zoom](https://ucsb.zoom.us/j/82163408541?pwd=0glYZbaKooTkkL1Ny3cJIpECqn4Gn4.1#success) </td>
         </tr>
       </table>
     </td>
@@ -88,8 +88,7 @@ linkcolor: "#ffa07a"
           <td><a href="mailto:mallorywang@ucsb.edu">mallorywang@ucsb.edu</a></td>
         </tr>
         <tr>
-          <td><b>OH:</b></td>
-          <td>TBD</td>
+          <td>OH: Wednesdays 3:00 pm - 5:00 pm on [zoom](https://ucsb.zoom.us/j/9244358693?_x_zm_rtaid=P3INdzOiQzuvGFCjx7kCdw.1754445616187.6d8e808b0aefc966173684a3cce8e8a1&_x_zm_rhtaid=794#success) </b></td>
         </tr>
       </table>
     </td>

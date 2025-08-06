@@ -44,11 +44,12 @@ M, T, W, Th: 9:30 am - 10:50 am in **HSSB 1173**
 | **TAs**                                        |
 +------------------------------------------------+
 | **Summer Le**\                             
-| ([sle@ucsb.edu](mailto:sle@ucsb.edu)) 
-| **Help Hours:** | [**Wednesdays:**]{.underline} 2:00 pm - 3:00 pm on [zoom](https://ucsb.zoom.us/j/82163408541?pwd=0glYZbaKooTkkL1Ny3cJIpECqn4Gn4.1#success))
+| [sle@ucsb.edu](mailto:sle@ucsb.edu) 
+| **Help Hours:** | [**Wednesdays:**]{.underline} 2:00 pm - 3:00 pm on [zoom](https://ucsb.zoom.us/j/82163408541?pwd=0glYZbaKooTkkL1Ny3cJIpECqn4Gn4.1#success)
 +------------------------------------------------+
 | **Mallory Wang**\                            
-| ([mallorywang@ucsb.edu](mailto:mallorywang@ucsb.edu) |
+| [mallorywang@ucsb.edu](mailto:mallorywang@ucsb.edu)
+|**Help Hours:** | [**Wednesdays:**]{.underline} 3:00 pm - 5:00 pm on [zoom](https://ucsb.zoom.us/j/9244358693?_x_zm_rtaid=P3INdzOiQzuvGFCjx7kCdw.1754445616187.6d8e808b0aefc966173684a3cce8e8a1&_x_zm_rhtaid=794#success))
 +------------------------------------------------+
 
 : {tbl-colwidths="\[50\]"}
