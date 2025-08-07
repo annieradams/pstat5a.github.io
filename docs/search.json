@@ -2643,7 +2643,7 @@
     "href": "Pages/Lectures/Lecture03/Lec03.html#time-to-put-everything-together",
     "title": "PSTAT 5A: Lecture 03",
     "section": "Time to Put Everything Together!",
-    "text": "Time to Put Everything Together!\n\n\n\n\n\n\nExercise 5\n\n\n\n\nTwo fair six-sided dice are rolled.\n\nWhat is the outcome space of this experiment?\nWhat is the probability that the first die lands on the number 2?\nWhat is the probability that the first die lands on the number 2, or the second die lands on an even number?"
+    "text": "Time to Put Everything Together!\n\n\n\n\n\n\nExercise 5\n\n\n\n\nTwo fair six-sided dice are rolled.\n\nWhat is the outcome space of this experiment?\nWhat is the probability that the first die lands on the number 2?\nWhat is the probability that the first die lands on the number 2, or the second die lands on an even number?\n\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "Pages/Lectures/Lecture03/Lec03.html#venn-diagrams",
@@ -5381,5 +5381,12 @@
     "title": "PSTAT 5A: Lecture 02",
     "section": "Practice Problem #2",
     "text": "Practice Problem #2\nA basketball coach recorded the points scored by her starting five players in their last game and recorded them below:\nData: {12, 8, 15, 10, 20}\nCalculate the standard deviation of points scored by these players. Interpret what the answer you get means in terms of points."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture03/Lec03.html#warm-up",
+    "href": "Pages/Lectures/Lecture03/Lec03.html#warm-up",
+    "title": "PSTAT 5A: Lecture 03",
+    "section": "Warm up",
+    "text": "Warm up\nFrank is Ortega Dining Hall and wants to consider his lunch options. He gets to pick one food item from each of the following categories. - Entree: Pizza or Sandwich - Side: Chips or Apple - Drink: Water or Soda\nCreate a tree diagram of all of Frank’s possible lunch combination options. How many different lunch options does he have?\n\n\n\n−+\n03:00"
   }
 ]

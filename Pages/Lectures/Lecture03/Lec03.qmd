@@ -24,6 +24,7 @@ title-slide-attributes:
 ```{r setup, include=FALSE}
 library(tidyverse)
 library(ggthemes)
+library(countdown)
 ```
 
 :::{style="text-align:center"}
@@ -432,6 +433,45 @@ Consider the experiment of tossing three coins and recording the faces that appe
 :::
 :::
 
+
+---
+
+:::{.fragment}
+:::{.nonincremental}
+::: callout-tip
+## Warm Up 
+
+::: {style="font-size: 30px"}
+
+Frank is at Ortega Dining Hall and wants to consider his lunch options. He gets to pick one food item from each of the following categories. 
+
+  - Entree: Pizza or Sandwich 
+  - Side: Chips or Apple
+  - Drink: Water or Soda
+  
+Create a tree diagram of all of Frank's possible lunch combination options. How many different lunch options does he have? 
+
+```{r}
+countdown::countdown(
+  minutes = 2,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+:::
+:::
+:::
+:::
+
 ## Unions and Intersections
 
 - Remember how we talked about the *union* of two sets last lecture? 
@@ -510,6 +550,26 @@ Express the following events in words:
 
 - $(A \cup C)^\complement$
 - $A \cap B$
+
+```{r}
+countdown::countdown(
+  minutes = 2,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+
+
+
 :::
 :::
 :::
@@ -731,6 +791,24 @@ data.frame(x = x, y = y) %>%
   ggtitle("Relative Frequencies of Heads")
 ```
 
+
+```{r}
+countdown::countdown(
+  minutes = 2,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+
 :::
 :::
 
@@ -917,6 +995,23 @@ Two fair six-sided dice are rolled.
 a) What is the outcome space of this experiment?
 b) What is the probability that the first die lands on the number 2?
 c) What is the probability that the first die lands on the number 2, or the second die lands on an even number?
+
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
 
 :::
 :::
