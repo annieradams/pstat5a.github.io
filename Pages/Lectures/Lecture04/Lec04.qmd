@@ -26,7 +26,15 @@ library(tidyverse)
 library(ggthemes)
 ```
 
-# Recap, and Addendum
+
+## Reminders
+
+- Quiz 1 today! 60 minute quiz due by 11:59 PM. Be sure to leave 10 - 15 minutes for converting to PDF and uploading your quiz. 
+
+- Gradescope submissions
+
+
+
 
 ## Last Time
 
@@ -432,6 +440,25 @@ a. Suppose we do not allow repeated letters or digits in a license plate: i.e. `
 b. Realistically, license plates *are* allowed to contain repeated letters or digits. Re-answer the question of how many license plates can be created using this scheme. 
 
 c. Using the scheme outlined in part (b), what is the probability of picking a random license plate and having it be `B131GHA`?
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+
+
 :::
 :::
 :::

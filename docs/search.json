@@ -3315,7 +3315,7 @@
     "href": "Pages/Lectures/Lecture04/Lec04.html#an-exercise",
     "title": "PSTAT 5A: Lecture 04",
     "section": "An Exercise",
-    "text": "An Exercise\n\n\n\n\n\n\nExercise 1\n\n\n\n\nCalifornia state license plates consist of 7 characters: a digit, followed by 3 letters, followed by 3 digits.\n\nSuppose we do not allow repeated letters or digits in a license plate: i.e. A123BCD456 is a valid plate whereas A122BCC345 is not. How many license plates can be created using this scheme?\nRealistically, license plates are allowed to contain repeated letters or digits. Re-answer the question of how many license plates can be created using this scheme.\nUsing the scheme outlined in part (b), what is the probability of picking a random license plate and having it be B131GHA?"
+    "text": "An Exercise\n\n\n\n\n\n\nExercise 1\n\n\n\n\nCalifornia state license plates consist of 7 characters: a digit, followed by 3 letters, followed by 3 digits.\n\nSuppose we do not allow repeated letters or digits in a license plate: i.e. A123BCD456 is a valid plate whereas A122BCC345 is not. How many license plates can be created using this scheme?\nRealistically, license plates are allowed to contain repeated letters or digits. Re-answer the question of how many license plates can be created using this scheme.\nUsing the scheme outlined in part (b), what is the probability of picking a random license plate and having it be B131GHA?\n\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#lecture-summary-1",
@@ -5381,5 +5381,12 @@
     "title": "PSTAT 5A: Understanding Data",
     "section": "Week 6 (9/08 - 9/11)",
     "text": "Week 6 (9/08 - 9/11)\n\n\nLectures\n19: Regression Diagnostics, and  Sampling Procedures 20: Ways Statistics Can Deceive 21: Review FINAL EXAM: Thursday, Sept 11 during lecture\n\n\nDiscussion\nQ&A with TA\n\n\nLab\nLab 06"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture04/Lec04.html#reminders",
+    "href": "Pages/Lectures/Lecture04/Lec04.html#reminders",
+    "title": "PSTAT 5A: Lecture 04",
+    "section": "Reminders",
+    "text": "Reminders\n\nQuiz 1 today! 60 minute quiz due by 11:59 PM. Be sure to leave 10 - 15 minutes for converting to PDF and uploading your quiz.\nGradescope submissions"
   }
 ]
