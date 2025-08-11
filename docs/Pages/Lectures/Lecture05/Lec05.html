@@ -388,6 +388,8 @@
       margin-right: 0; 
     }
   </style>
+  <link href="../../../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
+  <script src="../../../site_libs/countdown-0.4.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -768,9 +770,12 @@ Pineapple Freshman Junior Senior Sophomore
 </div>
 <div class="callout-content">
 <div style="font-size: 30px">
-<p>It is known that a particular disease affects 5% of the population. There exists a test for this disease, but it is not perfect: there is a 10% chance it will return a “negative” result for a person who is actually infected, and there is a 8% chance it will return a “positive” result for a person who is actually healthy.<br>
-</p>
-<p>Arasha has taken a test for the disease, and it has indicated a “positive” result. What is the probability that Arasha actually has the disease?</p>
+<p>It’s known that 5% of all widgets produced at a factory are defective. A quality control test is used to check for these defects. The test isn’t perfect:</p>
+<ul>
+<li class="fragment">It will correctly identify a defective widget 90% of the time.</li>
+<li class="fragment">It will incorrectly flag a non-defective widget as defective 8% of the time.</li>
+</ul>
+<p>If a widget is randomly selected and the test flags it as defective, what is the probability that it is actually defective?</p>
 </div>
 </div>
 </div>
@@ -781,62 +786,38 @@ Pineapple Freshman Junior Senior Sophomore
 <h2>Step 1: Define Events</h2>
 <ul>
 <li class="fragment"><p>As always, we start by defining events.</p></li>
-<li class="fragment"><p>Let + denote “the test returns a positive result” and let <span class="math inline">\(D\)</span> denote “Arasha actually has the disease.”</p></li>
-<li class="fragment"><p>First of all, note that we are <strong>not</strong> interested in simply finding <span class="math inline">\(\mathbb{P}(D)\)</span>; rather, we are interested in finding <span class="math inline">\(\mathbb{P}(D \mid +)\)</span>.</p>
-<ul>
-<li class="fragment">This is because Arasha has already been tested and received a positive result; this is information we need to incorporate into our beliefs!</li>
-</ul></li>
+<li class="fragment"><p>Let A denote the event “the widget is actually defective”</p></li>
+<li class="fragment"><p>Let B denote the event, “the widget is flagged as defective”</p></li>
+<li class="fragment"><p>Our goal is to find <span class="math inline">\(\mathbb{P}(A \mid B)\)</span>, which the probability of the widget being defective given that the test flags it as defective.</p></li>
 </ul>
 </section>
 <section id="step-2-translate-the-information" class="slide level2" style="font-size:30px">
 <h2>Step 2: Translate the Information</h2>
 <ul>
 <li class="fragment"><p>With our events from Step 1, we now turn our attention to translating the information provided in the problem.</p></li>
-<li class="fragment"><p>Since there is a <span class="math inline">\(10\%\)</span> chance that the test returns a negative result <strong>given</strong> that a person actually has the disease, we have <span class="math display">\[ \mathbb{P}(+^\complement \mid D) = 0.1 \]</span></p></li>
-<li class="fragment"><p>Additionally, we are told that there is an <span class="math inline">\(8\%\)</span> chance that the test returns a positive result <strong>given</strong> that a person does not have disease, we have <span class="math display">\[ \mathbb{P}(+ \mid D^\complement) = 0.08 \]</span></p></li>
-<li class="fragment"><p>Finally, we are told that 5% of the population has the disease; hence, <span class="math display">\[ \mathbb{P}(D) = 0.05 \]</span></p></li>
-</ul>
-</section>
-<section id="step-2-translate-the-information-1" class="slide level2" style="font-size:30px">
-<h2>Step 2: Translate the Information</h2>
-<ul>
-<li class="fragment"><p>But wait- there’s more!</p></li>
-<li class="fragment"><p>Given that a person <em>has</em> the disease, they will either test positive or test negative.</p>
-<ul>
-<li class="fragment"><p>What that means is that <span class="math display">\[ \mathbb{P}(+ \mid D) = 1 - \mathbb{P}(+^\complement \mid D) = 1 - 0.1 = 0.9 \]</span></p></li>
-<li class="fragment"><p>Think of this as a modified complement rule</p></li>
-</ul></li>
-<li class="fragment"><p>Similarly, <span class="math display">\[ \mathbb{P}(+^\complement \mid D^\complement) = 1 - \mathbb{P}(+ \mid D^\complement) = 1 - 0.08 = 0.92 \]</span></p></li>
-<li class="fragment"><p>Additionally, <span class="math display">\[ \mathbb{P}(D^\complement) =  1 - \mathbb{P}(D) = 1 - 0.05 = 0.95 \]</span></p></li>
-</ul>
-</section>
-<section id="step-2-translate-the-information-2" class="slide level2" style="font-size:30px">
-<h2>Step 2: Translate the Information</h2>
-<ul>
-<li class="fragment">So, here’s a summary of everything we know, just from the problem statement: <span class="math display">\[\begin{align*}
-\mathbb{P}(+ \mid D) = 0.9    &amp; \hspace{15mm} \mathbb{P}(+^\complement \mid D) = 0.1    \\
-\mathbb{P}(+ \mid D^\complement) = 0.08   &amp; \hspace{15mm}  \mathbb{P}(P^\complement \mid D^\complement) = 0.92   \\
-\mathbb{P}(D) = 0.05    &amp; \hspace{15mm}  \mathbb{P}(D^\complement) = 0.95
-\end{align*}\]</span></li>
+<li class="fragment"><p>Since <span class="math inline">\(5\%\)</span> of all widgets are defective, we know <span class="math display">\[ \mathbb{P}(A) = 0.5 \]</span></p></li>
+<li class="fragment"><p>The probability of a widget not being defective is the complement of A,<span class="math display">\[ \mathbb{P}(A ^\complement) = 1 - \mathbb{P}(A) = 1 - 0.05 = .95 \]</span></p></li>
+<li class="fragment"><p>The test correctly identifies a defective widget 90% of the time. This tells us <span class="math inline">\(\mathbb{P}(B \mid A) = 0.9\)</span></p></li>
+<li class="fragment"><p>Additionally, we are told that there is an <span class="math inline">\(8\%\)</span> chance that the widget is flagged as defective, when it is actually not defective. This gives us <span class="math inline">\(\mathbb{P}(B \mid A^\complement) = 0.08\)</span></p></li>
 </ul>
 </section>
 <section id="step-3-solve-the-problem" class="slide level2">
 <h2>Step 3: Solve the Problem</h2>
 <ul>
 <li class="fragment">Now we are in a position to begin solving the problem.</li>
-<li class="fragment">Recall that we seek <span class="math inline">\(\mathbb{P}(D \mid +)\)</span>.</li>
-<li class="fragment">But, we only have information on <span class="math inline">\(\mathbb{P}(+ \mid D)\)</span>.</li>
+<li class="fragment">Recall that we seek <span class="math inline">\(\mathbb{P}(A \mid B)\)</span>.</li>
+<li class="fragment">But, we only have information on <span class="math inline">\(\mathbb{P}(B \mid A)\)</span>.</li>
 <li class="fragment">Any ideas what rule/tool we should use?
 <ul>
 <li class="fragment">That’s right; <strong>Bayes’ Rule!</strong></li>
 </ul></li>
-<li class="fragment">We use Bayes’ Rule to write <span class="math display">\[ \mathbb{P}(D \mid +) = \frac{\mathbb{P}(+ \mid D) \cdot \mathbb{P}(D)}{\mathbb{P}(+)} \]</span></li>
+<li class="fragment">We use Bayes’ Rule to write <span class="math display">\[ \mathbb{P}(A \mid B) = \frac{\mathbb{P}(B \mid A) \cdot \mathbb{P}(A)} {\mathbb{P}(B)} \]</span></li>
 </ul>
 </section>
 <section id="step-3-solve-the-problem-1" class="slide level2">
 <h2>Step 3: Solve the Problem</h2>
 <ul>
-<li class="fragment">Do we have <span class="math inline">\(\mathbb{P}(+)?\)</span>
+<li class="fragment">Do we have <span class="math inline">\(\mathbb{P}(B)?\)</span>
 <ul>
 <li class="fragment">No…</li>
 <li class="fragment">But how can we get it?</li>
@@ -846,7 +827,7 @@ Pineapple Freshman Junior Senior Sophomore
 </ul>
 <div class="fragment" style="text-align:center">
 <p><span class="math display">\[\begin{align*}
-  \mathbb{P}(+)   &amp; = \mathbb{P}(+ \mid D) \cdot \mathbb{P}(D) + \mathbb{P}(+ \mid D^\complement) \cdot \mathbb{P}(D^\complement)    \\
+  \mathbb{P}(B)   &amp; = \mathbb{P}(B \mid A) \cdot \mathbb{P}(A) + \mathbb{P}(B \mid A^\complement) \cdot \mathbb{P}(A^\complement)    \\
     &amp; = (0.9) \cdot (0.05) + (0.08) \cdot (0.95) = 0.121
 \end{align*}\]</span></p>
 </div>
@@ -858,12 +839,12 @@ Pineapple Freshman Junior Senior Sophomore
 </ul>
 <div class="fragment" style="text-align:center">
 <p><span class="math display">\[\begin{align*}
-  \mathbb{P}(D \mid +)    &amp; = \frac{\mathbb{P}(+ \mid D) \cdot \mathbb{P}(D)}{\mathbb{P}(+)}   \\
+  \mathbb{P}(A \mid B)    &amp; =\frac{\mathbb{P}(B \mid A) \cdot \mathbb{P}(A)} {\mathbb{P}(B)}   \\
     &amp; = \frac{(0.9) \cdot (0.05)}{0.121} \boxed{\approx 37.19\%}
 \end{align*}\]</span></p>
 </div>
 <ul>
-<li class="fragment">If that seems low… you’re right! But, it is actually in line with the problem- the test for the disease is pretty bad, considering how often it gets things wrong. This is why this probability is low- because the test is so bad, we cannot be confident that Arasha actually has the disease, even though she tested positive!</li>
+<li class="fragment">The probability that the widget is actually defective give it was flagged defective by the test is approximately 37.2%.</li>
 </ul>
 </section>
 <section id="some-terminology" class="slide level2" style="font-size:30px">
@@ -907,6 +888,14 @@ Adopted       Bunny Cat Dog Hamster
 <li><p>A pet is selected at random: what is the probability that it is an adopted dog?</p></li>
 <li><p>A pet is selected at random: if it is a dog, what is the probability that it was adopted?</p></li>
 </ol>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_aab49250" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -931,6 +920,14 @@ Adopted       Bunny Cat Dog Hamster
 <li>Find <span class="math inline">\(\mathbb{P}(A \cup B)\)</span></li>
 <li>Find <span class="math inline">\(\mathbb{P}(A \mid B)\)</span>.</li>
 </ol>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_715b9ae2" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -982,12 +979,6 @@ Adopted       Bunny Cat Dog Hamster
 </div>
 </div>
 </div>
-<ul>
-<li class="fragment"><p>Note- the probability of an intersection equals the product of unconditional (i.e.&nbsp;<strong>marginal</strong>) probabilities ONLY WHEN THE EVENTS ARE INDEPENDENT.</p>
-<ul>
-<li class="fragment">In general, the only way to compute the probability of an intersection is to use the Multiplication Rule.</li>
-</ul></li>
-</ul>
 
 
 <img src="5a_hex.png" class="slide-logo r-stretch"><div class="footer footer-default">

@@ -2356,21 +2356,21 @@
     "href": "Pages/Lectures/Lecture05/Lec05.html#worked-out-example-2",
     "title": "PSTAT 5A: Lecture 05",
     "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\nAlright, let’s get down to business and tackle a slightly more real-world problem.\n\n\n\n\n\n\n\n\nWorked-Out Exercise 1\n\n\n\nIt is known that a particular disease affects 5% of the population. There exists a test for this disease, but it is not perfect: there is a 10% chance it will return a “negative” result for a person who is actually infected, and there is a 8% chance it will return a “positive” result for a person who is actually healthy.\n\nArasha has taken a test for the disease, and it has indicated a “positive” result. What is the probability that Arasha actually has the disease?"
+    "text": "Worked-Out Example\n\nAlright, let’s get down to business and tackle a slightly more real-world problem.\n\n\n\n\n\n\n\n\nWorked-Out Exercise 1\n\n\n\nIt’s known that 5% of all widgets produced at a factory are defective. A quality control test is used to check for these defects. The test isn’t perfect:\n\nIt will correctly identify a defective widget 90% of the time.\nIt will incorrectly flag a non-defective widget as defective 8% of the time.\n\nIf a widget is randomly selected and the test flags it as defective, what is the probability that it is actually defective?"
   },
   {
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#step-1-define-events",
     "href": "Pages/Lectures/Lecture05/Lec05.html#step-1-define-events",
     "title": "PSTAT 5A: Lecture 05",
     "section": "Step 1: Define Events",
-    "text": "Step 1: Define Events\n\nAs always, we start by defining events.\nLet + denote “the test returns a positive result” and let \\(D\\) denote “Arasha actually has the disease.”\nFirst of all, note that we are not interested in simply finding \\(\\mathbb{P}(D)\\); rather, we are interested in finding \\(\\mathbb{P}(D \\mid +)\\).\n\nThis is because Arasha has already been tested and received a positive result; this is information we need to incorporate into our beliefs!"
+    "text": "Step 1: Define Events\n\nAs always, we start by defining events.\nLet A denote the event “the widget is actually defective”\nLet B denote the event, “the widget is flagged as defective”\nOur goal is to find \\(\\mathbb{P}(A \\mid B)\\), which the probability of the widget being defective given that the test flags it as defective."
   },
   {
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#step-2-translate-the-information",
     "href": "Pages/Lectures/Lecture05/Lec05.html#step-2-translate-the-information",
     "title": "PSTAT 5A: Lecture 05",
     "section": "Step 2: Translate the Information",
-    "text": "Step 2: Translate the Information\n\nWith our events from Step 1, we now turn our attention to translating the information provided in the problem.\nSince there is a \\(10\\%\\) chance that the test returns a negative result given that a person actually has the disease, we have \\[ \\mathbb{P}(+^\\complement \\mid D) = 0.1 \\]\nAdditionally, we are told that there is an \\(8\\%\\) chance that the test returns a positive result given that a person does not have disease, we have \\[ \\mathbb{P}(+ \\mid D^\\complement) = 0.08 \\]\nFinally, we are told that 5% of the population has the disease; hence, \\[ \\mathbb{P}(D) = 0.05 \\]"
+    "text": "Step 2: Translate the Information\n\nWith our events from Step 1, we now turn our attention to translating the information provided in the problem.\nSince \\(5\\%\\) of all widgets are defective, we know \\[ \\mathbb{P}(A) = 0.5 \\]\nThe probability of a widget not being defective is the complement of A,\\[ \\mathbb{P}(A ^\\complement) = 1 - \\mathbb{P}(A) = 1 - 0.05 = .95 \\]\nThe test correctly identifies a defective widget 90% of the time. This tells us \\(\\mathbb{P}(B \\mid A) = 0.9\\)\nAdditionally, we are told that there is an \\(8\\%\\) chance that the widget is flagged as defective, when it is actually not defective. This gives us \\(\\mathbb{P}(B \\mid A^\\complement) = 0.08\\)"
   },
   {
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#step-2-translate-the-information-1",
@@ -2391,21 +2391,21 @@
     "href": "Pages/Lectures/Lecture05/Lec05.html#step-3-solve-the-problem",
     "title": "PSTAT 5A: Lecture 05",
     "section": "Step 3: Solve the Problem",
-    "text": "Step 3: Solve the Problem\n\nNow we are in a position to begin solving the problem.\nRecall that we seek \\(\\mathbb{P}(D \\mid +)\\).\nBut, we only have information on \\(\\mathbb{P}(+ \\mid D)\\).\nAny ideas what rule/tool we should use?\n\nThat’s right; Bayes’ Rule!\n\nWe use Bayes’ Rule to write \\[ \\mathbb{P}(D \\mid +) = \\frac{\\mathbb{P}(+ \\mid D) \\cdot \\mathbb{P}(D)}{\\mathbb{P}(+)} \\]"
+    "text": "Step 3: Solve the Problem\n\nNow we are in a position to begin solving the problem.\nRecall that we seek \\(\\mathbb{P}(A \\mid B)\\).\nBut, we only have information on \\(\\mathbb{P}(B \\mid A)\\).\nAny ideas what rule/tool we should use?\n\nThat’s right; Bayes’ Rule!\n\nWe use Bayes’ Rule to write \\[ \\mathbb{P}(A \\mid B) = \\frac{\\mathbb{P}(B \\mid A) \\cdot \\mathbb{P}(A)} {\\mathbb{P}(B)} \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#step-3-solve-the-problem-1",
     "href": "Pages/Lectures/Lecture05/Lec05.html#step-3-solve-the-problem-1",
     "title": "PSTAT 5A: Lecture 05",
     "section": "Step 3: Solve the Problem",
-    "text": "Step 3: Solve the Problem\n\nDo we have \\(\\mathbb{P}(+)?\\)\n\nNo…\nBut how can we get it?\nYup- Law of Total Probability!\n\nWe use the Law of Total Probability to write\n\n\n\\[\\begin{align*}\n  \\mathbb{P}(+)   & = \\mathbb{P}(+ \\mid D) \\cdot \\mathbb{P}(D) + \\mathbb{P}(+ \\mid D^\\complement) \\cdot \\mathbb{P}(D^\\complement)    \\\\\n    & = (0.9) \\cdot (0.05) + (0.08) \\cdot (0.95) = 0.121\n\\end{align*}\\]"
+    "text": "Step 3: Solve the Problem\n\nDo we have \\(\\mathbb{P}(B)?\\)\n\nNo…\nBut how can we get it?\nYup- Law of Total Probability!\n\nWe use the Law of Total Probability to write\n\n\n\\[\\begin{align*}\n  \\mathbb{P}(B)   & = \\mathbb{P}(B \\mid A) \\cdot \\mathbb{P}(A) + \\mathbb{P}(B \\mid A^\\complement) \\cdot \\mathbb{P}(A^\\complement)    \\\\\n    & = (0.9) \\cdot (0.05) + (0.08) \\cdot (0.95) = 0.121\n\\end{align*}\\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#step-3-solve-the-problem-2",
     "href": "Pages/Lectures/Lecture05/Lec05.html#step-3-solve-the-problem-2",
     "title": "PSTAT 5A: Lecture 05",
     "section": "Step 3: Solve the Problem",
-    "text": "Step 3: Solve the Problem\n\nFinally, putting everything together:\n\n\n\\[\\begin{align*}\n  \\mathbb{P}(D \\mid +)    & = \\frac{\\mathbb{P}(+ \\mid D) \\cdot \\mathbb{P}(D)}{\\mathbb{P}(+)}   \\\\\n    & = \\frac{(0.9) \\cdot (0.05)}{0.121} \\boxed{\\approx 37.19\\%}\n\\end{align*}\\]\n\n\nIf that seems low… you’re right! But, it is actually in line with the problem- the test for the disease is pretty bad, considering how often it gets things wrong. This is why this probability is low- because the test is so bad, we cannot be confident that Arasha actually has the disease, even though she tested positive!"
+    "text": "Step 3: Solve the Problem\n\nFinally, putting everything together:\n\n\n\\[\\begin{align*}\n  \\mathbb{P}(A \\mid B)    & =\\frac{\\mathbb{P}(B \\mid A) \\cdot \\mathbb{P}(A)} {\\mathbb{P}(B)}   \\\\\n    & = \\frac{(0.9) \\cdot (0.05)}{0.121} \\boxed{\\approx 37.19\\%}\n\\end{align*}\\]\n\n\nThe probability that the widget is actually defective give it was flagged defective by the test is approximately 37.2%."
   },
   {
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#some-terminology",
@@ -2419,7 +2419,7 @@
     "href": "Pages/Lectures/Lecture05/Lec05.html#some-problems-to-think-on",
     "title": "PSTAT 5A: Lecture 05",
     "section": "Some Problems To Think On:",
-    "text": "Some Problems To Think On:\n\n\n\n\n\n\nExercise 1\n\n\n\n\nA recent survey interviewed several UCSB students about their pets. The following data was collected:\n\n\n             Animal\nAdopted       Bunny Cat Dog Hamster\n  Adopted         3   5   8       4\n  Not Adopted     1   5   7       7\n\n\n\nIf a pet is to be selected at random, what is the probability that it is either a cat or adopted?\nA pet is selected at random: what is the probability that it is an adopted dog?\nA pet is selected at random: if it is a dog, what is the probability that it was adopted?"
+    "text": "Some Problems To Think On:\n\n\n\n\n\n\nExercise 1\n\n\n\n\nA recent survey interviewed several UCSB students about their pets. The following data was collected:\n\n\n             Animal\nAdopted       Bunny Cat Dog Hamster\n  Adopted         3   5   8       4\n  Not Adopted     1   5   7       7\n\n\n\nIf a pet is to be selected at random, what is the probability that it is either a cat or adopted?\nA pet is selected at random: what is the probability that it is an adopted dog?\nA pet is selected at random: if it is a dog, what is the probability that it was adopted?\n\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#leadup-3",
@@ -2433,7 +2433,7 @@
     "href": "Pages/Lectures/Lecture05/Lec05.html#independence-1",
     "title": "PSTAT 5A: Lecture 05",
     "section": "Independence",
-    "text": "Independence\n\n\n\n\n\n\n\nDefinition\n\n\n\nTwo events \\(E\\) and \\(F\\) are defined to be independent (notated \\(E \\perp F\\)) if any of the following hold:\n\n\\(\\mathbb{P}(E \\mid F) = \\mathbb{P}(E)\\)\n\\(\\mathbb{P}(F \\mid E) = \\mathbb{P}(F)\\)\n\\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E) \\cdot \\mathbb{P}(F)\\)\n\n\n\n\n\n\n\nNote- the probability of an intersection equals the product of unconditional (i.e. marginal) probabilities ONLY WHEN THE EVENTS ARE INDEPENDENT.\n\nIn general, the only way to compute the probability of an intersection is to use the Multiplication Rule."
+    "text": "Independence\n\n\n\n\n\n\n\nDefinition\n\n\n\nTwo events \\(E\\) and \\(F\\) are defined to be independent (notated \\(E \\perp F\\)) if any of the following hold:\n\n\\(\\mathbb{P}(E \\mid F) = \\mathbb{P}(E)\\)\n\\(\\mathbb{P}(F \\mid E) = \\mathbb{P}(F)\\)\n\\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E) \\cdot \\mathbb{P}(F)\\)"
   },
   {
     "objectID": "Pages/Lectures/Lecture03/Lec03.html#uncertainty",

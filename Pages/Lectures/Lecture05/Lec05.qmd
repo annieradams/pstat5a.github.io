@@ -340,9 +340,12 @@ $$ \mathbb{P}(F) = \mathbb{P}(F \mid E) \cdot \mathbb{P}(E) + \mathbb{P}(F \mid 
 ## Worked-Out Exercise 1
 
 ::: {style="font-size: 30px"}
-It is known that a particular disease affects 5\% of the population. There exists a test for this disease, but it is not perfect: there is a 10\% chance it will return a "negative" result for a person who is actually infected, and there is a 8\% chance it will return a "positive" result for a person who is actually healthy. \
+It's known that 5% of all widgets produced at a factory are defective. A quality control test is used to check for these defects. The test isn't perfect:
 
-Arasha has taken a test for the disease, and it has indicated a "positive" result. What is the probability that Arasha actually has the disease?
+- It will correctly identify a defective widget 90% of the time.
+- It will incorrectly flag a non-defective widget as defective 8% of the time.
+
+If a widget is randomly selected and the test flags it as defective, what is the probability that it is actually defective?
 :::
 :::
 :::
@@ -351,65 +354,41 @@ Arasha has taken a test for the disease, and it has indicated a "positive" resul
 
 - As always, we start by defining events.
 
-- Let + denote "the test returns a positive result" and let $D$ denote "Arasha actually has the disease." 
+- Let A denote the event "the widget is actually defective"
+- Let B denote the event, "the widget is flagged as defective"
 
-- First of all, note that we are **not** interested in simply finding $\mathbb{P}(D)$; rather, we are interested in finding $\mathbb{P}(D \mid +)$.
-    - This is because Arasha has already been tested and received a positive result; this is information we need to incorporate into our beliefs!
+
+- Our goal is to find $\mathbb{P}(A \mid B)$, which the probability of the widget being defective given that the test flags it as defective. 
+
     
 ## Step 2: Translate the Information {style="font-size:30px"}
 
 - With our events from Step 1, we now turn our attention to translating the information provided in the problem.
 
-- Since there is a $10\%$ chance that the test returns a negative result **given** that a person actually has the disease, we have
-$$ \mathbb{P}(+^\complement \mid D) = 0.1 $$
+- Since $5\%$ of all widgets are defective, we know $$ \mathbb{P}(A) = 0.5 $$
 
-- Additionally, we are told that there is an $8\%$ chance that the test returns a positive result **given** that a person does not have disease, we have
-$$ \mathbb{P}(+ \mid D^\complement) = 0.08 $$
+- The probability of a widget not being defective is the complement of A,$$ \mathbb{P}(A ^\complement) = 1 - \mathbb{P}(A) = 1 - 0.05 = .95 $$
 
-- Finally, we are told that 5\% of the population has the disease; hence,
-$$ \mathbb{P}(D) = 0.05 $$
+- The test correctly identifies a defective widget 90% of the time. This tells us $\mathbb{P}(B \mid A) = 0.9$
+
+- Additionally, we are told that there is an $8\%$ chance that the widget is flagged as defective, when it is actually not defective. This gives us  $\mathbb{P}(B \mid A^\complement) = 0.08$
 
 
-## Step 2: Translate the Information {style="font-size:30px"}
-
-- But wait- there's more!
-
-- Given that a person *has* the disease, they will either test positive or test negative. 
-
-    - What that means is that 
-    $$ \mathbb{P}(+ \mid D) = 1 - \mathbb{P}(+^\complement \mid D) = 1 - 0.1 = 0.9 $$
-    
-    - Think of this as a modified complement rule
-
-- Similarly,
-$$ \mathbb{P}(+^\complement \mid D^\complement) = 1 - \mathbb{P}(+ \mid D^\complement) = 1 - 0.08 = 0.92 $$
-
-- Additionally,
-$$ \mathbb{P}(D^\complement) =  1 - \mathbb{P}(D) = 1 - 0.05 = 0.95 $$
-
-## Step 2: Translate the Information {style="font-size:30px"}
-
-- So, here's a summary of everything we know, just from the problem statement:
-\begin{align*}
-  \mathbb{P}(+ \mid D) = 0.9    & \hspace{15mm} \mathbb{P}(+^\complement \mid D) = 0.1    \\
-  \mathbb{P}(+ \mid D^\complement) = 0.08   & \hspace{15mm}  \mathbb{P}(P^\complement \mid D^\complement) = 0.92   \\
-  \mathbb{P}(D) = 0.05    & \hspace{15mm}  \mathbb{P}(D^\complement) = 0.95
-\end{align*}
 
 ## Step 3: Solve the Problem
 
 - Now we are in a position to begin solving the problem.
-- Recall that we seek $\mathbb{P}(D \mid +)$.
-- But, we only have information on $\mathbb{P}(+ \mid D)$.
+- Recall that we seek $\mathbb{P}(A \mid B)$.
+- But, we only have information on $\mathbb{P}(B \mid A)$.
 - Any ideas what rule/tool we should use?
     - That's right; **Bayes' Rule!**
 
 - We use Bayes' Rule to write
-$$ \mathbb{P}(D \mid +) = \frac{\mathbb{P}(+ \mid D) \cdot \mathbb{P}(D)}{\mathbb{P}(+)} $$
+$$ \mathbb{P}(A \mid B) = \frac{\mathbb{P}(B \mid A) \cdot \mathbb{P}(A)} {\mathbb{P}(B)} $$
 
 ## Step 3: Solve the Problem
 
-- Do we have $\mathbb{P}(+)?$
+- Do we have $\mathbb{P}(B)?$
     - No...
     - But how can we get it?
     - Yup- Law of Total Probability!
@@ -418,7 +397,7 @@ $$ \mathbb{P}(D \mid +) = \frac{\mathbb{P}(+ \mid D) \cdot \mathbb{P}(D)}{\mathb
 
 :::{.fragment style="text-align:center"}
 \begin{align*}
-  \mathbb{P}(+)   & = \mathbb{P}(+ \mid D) \cdot \mathbb{P}(D) + \mathbb{P}(+ \mid D^\complement) \cdot \mathbb{P}(D^\complement)    \\
+  \mathbb{P}(B)   & = \mathbb{P}(B \mid A) \cdot \mathbb{P}(A) + \mathbb{P}(B \mid A^\complement) \cdot \mathbb{P}(A^\complement)    \\
     & = (0.9) \cdot (0.05) + (0.08) \cdot (0.95) = 0.121
 \end{align*}
 :::
@@ -430,12 +409,12 @@ $$ \mathbb{P}(D \mid +) = \frac{\mathbb{P}(+ \mid D) \cdot \mathbb{P}(D)}{\mathb
 
 :::{.fragment style="text-align:center"}
 \begin{align*}
-  \mathbb{P}(D \mid +)    & = \frac{\mathbb{P}(+ \mid D) \cdot \mathbb{P}(D)}{\mathbb{P}(+)}   \\
+  \mathbb{P}(A \mid B)    & =\frac{\mathbb{P}(B \mid A) \cdot \mathbb{P}(A)} {\mathbb{P}(B)}   \\
     & = \frac{(0.9) \cdot (0.05)}{0.121} \boxed{\approx 37.19\%}
 \end{align*}
 :::
 
-- If that seems low... you're right! But, it is actually in line with the problem- the test for the disease is pretty bad, considering how often it gets things wrong. This is why this probability is low- because the test is so bad, we cannot be confident that Arasha actually has the disease, even though she tested positive!
+- The probability that the widget is actually defective give it was flagged defective by the test is approximately 37.2%. 
 
 ## Some Terminology {style="font-size:30px"}
 
@@ -482,6 +461,27 @@ a) If a pet is to be selected at random, what is the probability that it is eith
 b) A pet is selected at random: what is the probability that it is an adopted dog?
 
 c) A pet is selected at random: if it is a dog, what is the probability that it was adopted?
+
+
+
+
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
 :::
 :::
 :::
@@ -497,6 +497,25 @@ Two events $A$ and $B$ are such that $\mathbb{P}(A) = 5/10$, \ $\mathbb{P}(B) = 
 
 a. Find $\mathbb{P}(A \cup B)$
 b. Find $\mathbb{P}(A \mid B)$.
+
+
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
 :::
 :::
 :::
@@ -533,7 +552,5 @@ Two events $E$ and $F$ are defined to be **independent** (notated $E \perp F$) i
 :::
 :::
 
-- Note- the probability of an intersection equals the product of unconditional (i.e. **marginal**) probabilities ONLY WHEN THE EVENTS ARE INDEPENDENT.
 
-    - In general, the only way to compute the probability of an intersection is to use the Multiplication Rule.
     
