@@ -558,3 +558,6 @@ for k in _________________:
 Plot your `means` list against the list containing the integers `1`, `2`, `3`, ..., `12` (this list functions like a list of month names.)
 :::
 
+## What to Turn In
+
+Congrats on finishing Lab 05! Download the `.ipnyb` version of your notebook and upload it to Gradescope!

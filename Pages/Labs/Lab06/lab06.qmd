@@ -380,3 +380,7 @@ Include a QQ-plot of both the explanatory and response variables, and comment.
 
 :::
 
+
+## What to Turn In
+
+Congrats on finishing Lab 06! Download the `.ipnyb` version of your notebook and upload it to Gradescope!

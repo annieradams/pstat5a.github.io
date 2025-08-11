@@ -481,3 +481,8 @@ Write a function called `parity()` that returns the parity (i.e. whether a numbe
 - Recall that `%` is the *modulus* operator in Python. Specifically, `x % y` returns the remainder of performing `y` divided by `x`.
 - Recall that even numbers are divisible by `2` (so what does this mean about the remainder of dividing `x` by `2` if `x` is even?)
 :::
+
+
+## What to Turn In
+
+Congrats on finishing Lab 02! Download the `.ipnyb` version of your notebook and upload it to Gradescope!

@@ -502,3 +502,6 @@ plt.ylim(-1.5, 2.0);
 Note that the sine curve is now dotted, and the cosine curve is now dashed.
 :::
 
+## What to Turn In
+
+Congrats on finishing Lab 03! Download the `.ipnyb` version of your notebook and upload it to Gradescope!
