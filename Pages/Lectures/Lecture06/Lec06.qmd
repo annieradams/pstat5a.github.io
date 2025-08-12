@@ -109,10 +109,6 @@ s4 = coin[Math.floor(Math.random()*coin.length*dummy/dummy)];
 
 \
 
-- Additionally, let's keep track of the number of heads we observe each time we run this experiment.
-
-    - In fact, let's do this on the whiteboard.
-
 ---
 
 ## An Experiment
