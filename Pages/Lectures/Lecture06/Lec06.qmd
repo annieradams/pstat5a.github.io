@@ -178,8 +178,8 @@ s4 = coin[Math.floor(Math.random()*coin.length*dummy/dummy)];
 ::: {style="font-size: 28px"}
 Given a random variable $X$, we say that:
 
-- $X$ is a **discrete random variable** (or just "$X$ is **discrete**) if $S_X$ is has jumps
-- $X$ is a **continuous random variable** (or just "$X$ is **continuous**) if $S_X$ has no jumps
+- $X$ is a **discrete random variable** (or just "$X$ is **discrete**) if $S_X$ contains distinct values (often integers)
+- $X$ is a **continuous random variable** (or just "$X$ is **continuous**) if $S_X$ has an infinite amount of values within a range
 :::
 :::
 :::
@@ -523,6 +523,24 @@ d. Find $\mathbb{P}(X \leq 1)$
 e. Find $\mathbb{P}(X > 1)$
 f. Find $\mathbb{E}[X]$
 f. Find $\mathrm{Var}(X)$ and $\mathrm{SD}(X)$
+
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
 :::
 :::
 :::
@@ -540,6 +558,23 @@ Consider the following game: a fair six-sided die is rolled. If the number showi
 a. Write down the state space $S_W$ of $W$.
 b. Find the p.m.f. of $W$.
 c. What are your expected winnings after one round of the game?
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
 :::
 :::
 :::

@@ -4736,7 +4736,7 @@
     "href": "Pages/Lectures/Lecture06/Lec06.html#classifying-random-variables",
     "title": "PSTAT 5A: Lecture 06",
     "section": "Classifying Random Variables",
-    "text": "Classifying Random Variables\n\nBecause random variables are numerical, their state spaces will always be numerical sets of values.\nThis means we can classify state spaces using our Variable Classification scheme from Week 1!\n\nSpecifically: the state space \\(S_X\\) of a random variable will either have “jumps”, or not.\n\nWe extend the same classification language to random variables:\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nGiven a random variable \\(X\\), we say that:\n\n\\(X\\) is a discrete random variable (or just “\\(X\\) is discrete) if \\(S_X\\) is has jumps\n\\(X\\) is a continuous random variable (or just “\\(X\\) is continuous) if \\(S_X\\) has no jumps"
+    "text": "Classifying Random Variables\n\nBecause random variables are numerical, their state spaces will always be numerical sets of values.\nThis means we can classify state spaces using our Variable Classification scheme from Week 1!\n\nSpecifically: the state space \\(S_X\\) of a random variable will either have “jumps”, or not.\n\nWe extend the same classification language to random variables:\n\n\n\n\n\n\n\n\nDefinition\n\n\n\nGiven a random variable \\(X\\), we say that:\n\n\\(X\\) is a discrete random variable (or just “\\(X\\) is discrete) if \\(S_X\\) contains distinct values (often integers)\n\\(X\\) is a continuous random variable (or just “\\(X\\) is continuous) if \\(S_X\\) has an infinite amount of values within a range"
   },
   {
     "objectID": "Pages/Lectures/Lecture06/Lec06.html#leadup",
@@ -4820,14 +4820,14 @@
     "href": "Pages/Lectures/Lecture06/Lec06.html#your-turn",
     "title": "PSTAT 5A: Lecture 06",
     "section": "Your Turn!",
-    "text": "Your Turn!\n\n\n\n\n\n\nExercise 1\n\n\n\n\nSuppose \\(X\\) is a random variable with p.m.f. (probability mass function) given by \\[\\begin{array}{r|cccc}\n  \\boldsymbol{k}    &     -1 & 0 & 1 & 2   \\\\\n  \\hline\n  \\boldsymbol{\\mathbb{P}(X = k)}   & 0.3 & 0.2 & 0.1 & \\boldsymbol{a}\n\\end{array}\\]\n\nFind the state space \\(S_X\\) of \\(X\\).\nFind the value of \\(\\boldsymbol{a}\\)\nFind \\(\\mathbb{P}(X = 0.5)\\)\nFind \\(\\mathbb{P}(X \\leq 1)\\)\nFind \\(\\mathbb{P}(X &gt; 1)\\)\nFind \\(\\mathbb{E}[X]\\)\nFind \\(\\mathrm{Var}(X)\\) and \\(\\mathrm{SD}(X)\\)"
+    "text": "Your Turn!\n\n\n\n\n\n\nExercise 1\n\n\n\n\nSuppose \\(X\\) is a random variable with p.m.f. (probability mass function) given by \\[\\begin{array}{r|cccc}\n  \\boldsymbol{k}    &     -1 & 0 & 1 & 2   \\\\\n  \\hline\n  \\boldsymbol{\\mathbb{P}(X = k)}   & 0.3 & 0.2 & 0.1 & \\boldsymbol{a}\n\\end{array}\\]\n\nFind the state space \\(S_X\\) of \\(X\\).\nFind the value of \\(\\boldsymbol{a}\\)\nFind \\(\\mathbb{P}(X = 0.5)\\)\nFind \\(\\mathbb{P}(X \\leq 1)\\)\nFind \\(\\mathbb{P}(X &gt; 1)\\)\nFind \\(\\mathbb{E}[X]\\)\nFind \\(\\mathrm{Var}(X)\\) and \\(\\mathrm{SD}(X)\\)\n\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "Pages/Lectures/Lecture06/Lec06.html#your-turn-1",
     "href": "Pages/Lectures/Lecture06/Lec06.html#your-turn-1",
     "title": "PSTAT 5A: Lecture 06",
     "section": "Your Turn!",
-    "text": "Your Turn!\n\n\n\n\n\n\nExercise 2\n\n\n\n\nConsider the following game: a fair six-sided die is rolled. If the number showing is 1 or 2, you win a dollar; if the number showing is 3, 4, or 5 you win 2 dollars; if the number showing is 6, you lose 1 dollar. Let \\(W\\) denote your net winnings after playing this game once.\n\nWrite down the state space \\(S_W\\) of \\(W\\).\nFind the p.m.f. of \\(W\\).\nWhat are your expected winnings after one round of the game?"
+    "text": "Your Turn!\n\n\n\n\n\n\nExercise 2\n\n\n\n\nConsider the following game: a fair six-sided die is rolled. If the number showing is 1 or 2, you win a dollar; if the number showing is 3, 4, or 5 you win 2 dollars; if the number showing is 6, you lose 1 dollar. Let \\(W\\) denote your net winnings after playing this game once.\n\nWrite down the state space \\(S_W\\) of \\(W\\).\nFind the p.m.f. of \\(W\\).\nWhat are your expected winnings after one round of the game?\n\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "Pages/Lectures/Lecture06/Lec06.html#back-to-coins",
