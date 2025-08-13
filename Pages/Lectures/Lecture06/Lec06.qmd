@@ -527,7 +527,7 @@ f. Find $\mathrm{Var}(X)$ and $\mathrm{SD}(X)$
 
 ```{r}
 countdown::countdown(
-  minutes = 3,
+  minutes = 4,
   # left = 0, right = 0,
   # Fanfare when it's over
   play_sound = TRUE,
@@ -595,40 +595,13 @@ $$\begin{array}{r|cccc}
 
 - What if instead of tossing 3 coins, we had tossed 4? Or 5? Or 10?
 
-- We could go through the same steps we did before, when deriving the p.m.f. for three tosses, but let's be a little smarter about this; let's answer the following more general question:
+- We could go through the same steps we did before, when deriving the p.m.f. for three tosses, but that could end up being quite long with the more tosses we have. Instead, we can use the following formula: 
 
----
 
-:::{style="font-size:28px"}
-> If $X$ denotes the number of heads in $n$ tosses of a $p-$coin, what is the p.m.f. of $X$?
-
-- It's always a good idea to start with the support. If we are tossing $n$ coins, we cannot observe any more than $n$ heads, nor can we observe any less than $0$ heads. As such,
-$$ S_X = \{0, 1, 2, \cdots, n\} $$
-
-- Now, let's consider an arbitrary $k \in S_X$, and examine the event $\{X = k \}$.
-
-- In words, $\{X = k \}$ means "we observe exactly $k$ heads", which is equivalent to "we observe exactly $k$ heads and $(n - k)$ tails."
-
-- Suppose, for the moment, that these $k$ heads occurred consecutively, and at the beginning of our tosses. I.e., suppose we have the outcome
-$$ (\underbrace{H, \ H, \ \cdots, \ H}_{\text{$k$ heads}}, \ \underbrace{T, \ T, \ \cdots, \ T}_{\text{$n - k$ tails}}) $$
-
-    - The probability of this outcome is $p^k \cdot (1 - p)^{n - k}$.
-:::
-
----
-
-:::{style="font-size:28px"}
-:::{.nonincremental}
-- However, the event $\{X = k\}$ does not mean "$k$ heads *at the beginning* followed by $(n - k)$ tails"; it just means "$k$ heads *anywhere among our $n$ tosses* and $(n - k)$ tails".
-:::
-
-- As such, there are $\binom{n}{k}$ other outcomes in the event $\{X = k\}$, corresponding to the $\binom{n}{k}$ different ways to place the $k$ heads among the $n$ tosses.
-
-- So, what we have is
-$$ \mathbb{P}(X = k) = \binom{n}{k} \cdot p^k \cdot (1 - p)^{n - k} $$
+  - $$ \mathbb{P}(X = k) = \binom{n}{k} \cdot p^k \cdot (1 - p)^{n - k} $$
 
     - As an aside, note that this agrees with our three-coin case from above: plugging in $n = 3$ yields exactly the same p.m.f. we found before.
-:::
+
 
 ## Binomial Distribution
 

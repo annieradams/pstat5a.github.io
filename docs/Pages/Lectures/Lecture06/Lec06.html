@@ -1193,9 +1193,9 @@ T22-&gt;T322
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_0f728ddb" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_0389688d" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -1226,7 +1226,7 @@ T22-&gt;T322
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_dc57b072" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_f65e1e24" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1253,42 +1253,14 @@ T22-&gt;T322
 </div>
 <ul>
 <li class="fragment"><p>What if instead of tossing 3 coins, we had tossed 4? Or 5? Or 10?</p></li>
-<li class="fragment"><p>We could go through the same steps we did before, when deriving the p.m.f. for three tosses, but let’s be a little smarter about this; let’s answer the following more general question:</p></li>
-</ul>
-</section>
-<section class="slide level2">
-
-<div style="font-size:28px">
-<blockquote>
-<p>If <span class="math inline">\(X\)</span> denotes the number of heads in <span class="math inline">\(n\)</span> tosses of a <span class="math inline">\(p-\)</span>coin, what is the p.m.f. of <span class="math inline">\(X\)</span>?</p>
-</blockquote>
+<li class="fragment"><p>We could go through the same steps we did before, when deriving the p.m.f. for three tosses, but that could end up being quite long with the more tosses we have. Instead, we can use the following formula:</p>
 <ul>
-<li class="fragment"><p>It’s always a good idea to start with the support. If we are tossing <span class="math inline">\(n\)</span> coins, we cannot observe any more than <span class="math inline">\(n\)</span> heads, nor can we observe any less than <span class="math inline">\(0\)</span> heads. As such, <span class="math display">\[ S_X = \{0, 1, 2, \cdots, n\} \]</span></p></li>
-<li class="fragment"><p>Now, let’s consider an arbitrary <span class="math inline">\(k \in S_X\)</span>, and examine the event <span class="math inline">\(\{X = k \}\)</span>.</p></li>
-<li class="fragment"><p>In words, <span class="math inline">\(\{X = k \}\)</span> means “we observe exactly <span class="math inline">\(k\)</span> heads”, which is equivalent to “we observe exactly <span class="math inline">\(k\)</span> heads and <span class="math inline">\((n - k)\)</span> tails.”</p></li>
-<li class="fragment"><p>Suppose, for the moment, that these <span class="math inline">\(k\)</span> heads occurred consecutively, and at the beginning of our tosses. I.e., suppose we have the outcome <span class="math display">\[ (\underbrace{H, \ H, \ \cdots, \ H}_{\text{$k$ heads}}, \ \underbrace{T, \ T, \ \cdots, \ T}_{\text{$n - k$ tails}}) \]</span></p>
-<ul>
-<li class="fragment">The probability of this outcome is <span class="math inline">\(p^k \cdot (1 - p)^{n - k}\)</span>.</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section class="slide level2">
-
-<div style="font-size:28px">
-<div>
-<ul>
-<li>However, the event <span class="math inline">\(\{X = k\}\)</span> does not mean “<span class="math inline">\(k\)</span> heads <em>at the beginning</em> followed by <span class="math inline">\((n - k)\)</span> tails”; it just means “<span class="math inline">\(k\)</span> heads <em>anywhere among our <span class="math inline">\(n\)</span> tosses</em> and <span class="math inline">\((n - k)\)</span> tails”.</li>
-</ul>
-</div>
-<ul>
-<li class="fragment"><p>As such, there are <span class="math inline">\(\binom{n}{k}\)</span> other outcomes in the event <span class="math inline">\(\{X = k\}\)</span>, corresponding to the <span class="math inline">\(\binom{n}{k}\)</span> different ways to place the <span class="math inline">\(k\)</span> heads among the <span class="math inline">\(n\)</span> tosses.</p></li>
-<li class="fragment"><p>So, what we have is <span class="math display">\[ \mathbb{P}(X = k) = \binom{n}{k} \cdot p^k \cdot (1 - p)^{n - k} \]</span></p>
+<li class="fragment"><p><span class="math display">\[ \mathbb{P}(X = k) = \binom{n}{k} \cdot p^k \cdot (1 - p)^{n - k} \]</span></p>
 <ul>
 <li class="fragment">As an aside, note that this agrees with our three-coin case from above: plugging in <span class="math inline">\(n = 3\)</span> yields exactly the same p.m.f. we found before.</li>
 </ul></li>
+</ul></li>
 </ul>
-</div>
 </section>
 <section id="binomial-distribution" class="slide level2">
 <h2>Binomial Distribution</h2>

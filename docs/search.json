@@ -4820,7 +4820,7 @@
     "href": "Pages/Lectures/Lecture06/Lec06.html#your-turn",
     "title": "PSTAT 5A: Lecture 06",
     "section": "Your Turn!",
-    "text": "Your Turn!\n\n\n\n\n\n\nExercise 1\n\n\n\n\nSuppose \\(X\\) is a random variable with p.m.f. (probability mass function) given by \\[\\begin{array}{r|cccc}\n  \\boldsymbol{k}    &     -1 & 0 & 1 & 2   \\\\\n  \\hline\n  \\boldsymbol{\\mathbb{P}(X = k)}   & 0.3 & 0.2 & 0.1 & \\boldsymbol{a}\n\\end{array}\\]\n\nFind the state space \\(S_X\\) of \\(X\\).\nFind the value of \\(\\boldsymbol{a}\\)\nFind \\(\\mathbb{P}(X = 0.5)\\)\nFind \\(\\mathbb{P}(X \\leq 1)\\)\nFind \\(\\mathbb{P}(X &gt; 1)\\)\nFind \\(\\mathbb{E}[X]\\)\nFind \\(\\mathrm{Var}(X)\\) and \\(\\mathrm{SD}(X)\\)\n\n\n\n\n−+\n03:00"
+    "text": "Your Turn!\n\n\n\n\n\n\nExercise 1\n\n\n\n\nSuppose \\(X\\) is a random variable with p.m.f. (probability mass function) given by \\[\\begin{array}{r|cccc}\n  \\boldsymbol{k}    &     -1 & 0 & 1 & 2   \\\\\n  \\hline\n  \\boldsymbol{\\mathbb{P}(X = k)}   & 0.3 & 0.2 & 0.1 & \\boldsymbol{a}\n\\end{array}\\]\n\nFind the state space \\(S_X\\) of \\(X\\).\nFind the value of \\(\\boldsymbol{a}\\)\nFind \\(\\mathbb{P}(X = 0.5)\\)\nFind \\(\\mathbb{P}(X \\leq 1)\\)\nFind \\(\\mathbb{P}(X &gt; 1)\\)\nFind \\(\\mathbb{E}[X]\\)\nFind \\(\\mathrm{Var}(X)\\) and \\(\\mathrm{SD}(X)\\)\n\n\n\n\n−+\n04:00"
   },
   {
     "objectID": "Pages/Lectures/Lecture06/Lec06.html#your-turn-1",
@@ -4834,7 +4834,7 @@
     "href": "Pages/Lectures/Lecture06/Lec06.html#back-to-coins",
     "title": "PSTAT 5A: Lecture 06",
     "section": "Back to Coins",
-    "text": "Back to Coins\n\nAlright, let’s close out this lecture by returning to our coin tossing example.\nAs a reminder: if we let \\(X\\) denote the number of heads in 3 tosses of a \\(p-\\)coin (i.e. a coin that lands ‘heads’ with probability \\(p\\)), the p.m.f. of \\(X\\) is given by\n\n\n\\[\\begin{array}{r|cccc}\n  \\boldsymbol{k}    &     0   & 1   & 2   & 3   \\\\\n  \\hline\n  \\boldsymbol{\\mathbb{P}(X = k)}   & (1 - p)^3   & 3  p (1 - p)^2  & 3  p^2 (1 - p) &  p^3\n\\end{array}\\]\n\n\nWhat if instead of tossing 3 coins, we had tossed 4? Or 5? Or 10?\nWe could go through the same steps we did before, when deriving the p.m.f. for three tosses, but let’s be a little smarter about this; let’s answer the following more general question:"
+    "text": "Back to Coins\n\nAlright, let’s close out this lecture by returning to our coin tossing example.\nAs a reminder: if we let \\(X\\) denote the number of heads in 3 tosses of a \\(p-\\)coin (i.e. a coin that lands ‘heads’ with probability \\(p\\)), the p.m.f. of \\(X\\) is given by\n\n\n\\[\\begin{array}{r|cccc}\n  \\boldsymbol{k}    &     0   & 1   & 2   & 3   \\\\\n  \\hline\n  \\boldsymbol{\\mathbb{P}(X = k)}   & (1 - p)^3   & 3  p (1 - p)^2  & 3  p^2 (1 - p) &  p^3\n\\end{array}\\]\n\n\nWhat if instead of tossing 3 coins, we had tossed 4? Or 5? Or 10?\nWe could go through the same steps we did before, when deriving the p.m.f. for three tosses, but that could end up being quite long with the more tosses we have. Instead, we can use the following formula:\n\n\\[ \\mathbb{P}(X = k) = \\binom{n}{k} \\cdot p^k \\cdot (1 - p)^{n - k} \\]\n\nAs an aside, note that this agrees with our three-coin case from above: plugging in \\(n = 3\\) yields exactly the same p.m.f. we found before."
   },
   {
     "objectID": "Pages/Lectures/Lecture06/Lec06.html#binomial-distribution",
