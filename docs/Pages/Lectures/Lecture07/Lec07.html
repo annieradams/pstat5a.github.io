@@ -408,8 +408,8 @@
 <h2>Structure of Data</h2>
 <ul>
 <li class="fragment">We started by talking about the structure of data.</li>
-<li class="fragment">We were exposed to the notion of a <strong>data matrix</strong>, which is comprised of a series of <strong>observational units</strong> (i.e.&nbsp;rows) on a series of <strong>variables</strong> (i.e.&nbsp;columns)</li>
-<li class="fragment">For instance, the <code>palmerpenguins</code> data matrix is:</li>
+<li class="fragment">We were exposed to the notion of a <strong>data frame</strong>, which is comprised of a series of <strong>observational units</strong> (i.e.&nbsp;rows) on a series of <strong>variables</strong> (i.e.&nbsp;columns)</li>
+<li class="fragment">For instance, the <code>palmerpenguins</code> data frame is:</li>
 </ul>
 <div class="fragment">
 <div class="cell">
@@ -881,108 +881,12 @@
 <ul>
 <li class="fragment">Don’t forget about counting!</li>
 </ul>
-</section>
-
-<section>
-<section id="programming" class="title-slide slide level1 center">
-<h1>Programming</h1>
-
-</section>
-<section id="basics-of-programming" class="slide level2">
-<h2>Basics of Programming</h2>
-<ul>
-<li class="fragment"><p>Recall that, in this class, we use <strong>Python</strong> as our main computing language</p>
-<ul>
-<li class="fragment">We run Python in <strong>Jupyter Notebooks</strong></li>
-</ul></li>
-<li class="fragment"><p>There are a few <strong>data types</strong> we have encountered thus far:</p>
-<ul>
-<li class="fragment"><code>str</code>, for “string”</li>
-<li class="fragment"><code>int</code>, for “integer”</li>
-<li class="fragment"><code>float</code>, aka “real number with decimals”</li>
-<li class="fragment"><code>bool</code>, for “boolean”</li>
-</ul></li>
-</ul>
-</section>
-<section id="basics-of-programming-1" class="slide level2">
-<h2>Basics of Programming</h2>
-<ul>
-<li class="fragment"><p>There are also certain <strong>data classes</strong> we have encountered, which are effectively various python objects aggregated into a larger structure. These include:</p>
-<ul>
-<li class="fragment">Tables</li>
-<li class="fragment">Lists</li>
-<li class="fragment">Arrays</li>
-</ul></li>
-<li class="fragment"><p>We can use <strong>indexing</strong> to extract certain pieces of data classes; e.g.&nbsp;for a list <code>x</code>, <code>x[i]</code> returns the (<code>i</code> + 1)<sup>th</sup> element of <code>x</code>.</p>
-<ul>
-<li class="fragment">Remember that Python starts indexing at zero!</li>
-</ul></li>
-</ul>
-</section>
-<section id="comparisons-and-conditionals" class="slide level2">
-<h2>Comparisons and Conditionals</h2>
-<ul>
-<li class="fragment">Take a look at lab 2.</li>
-</ul>
-</section>
-<section id="functions" class="slide level2">
-<h2>Functions</h2>
-<ul>
-<li class="fragment"><p>I’d also like to take a minute to talk about <strong>functions</strong> in Python.</p></li>
-<li class="fragment"><p>Python functions behave much like mathematical functions: they take in some number of <strong>arguments</strong> (i.e.&nbsp;inputs) and can output a variety of things.</p>
-<ul>
-<li class="fragment"><p>For example, the <code>type()</code> function returns either the data type or data structure of a single input.</p></li>
-<li class="fragment"><p>There is some language we use when dealing with functions in programming: when we pass the argument <code>x</code> into the function <code>f()</code>, we say that we have “called” the function <code>f()</code> on the argument/input <code>x</code>. The object <code>f(x)</code> is called a <strong>function call</strong>.</p></li>
-</ul></li>
-</ul>
-</section>
-<section id="functions-1" class="slide level2">
-<h2>Functions</h2>
-<ul>
-<li class="fragment">To create a user-defined function <code>function_name()</code>, we use the following structure:</li>
-</ul>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">def</span> function_name(<span class="op">&lt;</span>arg1<span class="op">&gt;</span>, ...., <span class="op">&lt;</span>argn<span class="op">&gt;</span>):</span>
-<span id="cb2-2"><a href="#cb2-2"></a>  <span class="co">"""</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co">  include a docstring here</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co">  """</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a>  <span class="op">&lt;</span>body of the function here<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<ul>
-<li class="fragment"><p>By the way, when writing <strong>skeleton code</strong> like the above (i.e.&nbsp;a chunk of code that mimics the structure/format of an actual piece of code, but isn’t fully filled in), programmers often use the symbols <code>&lt;</code> and <code>&gt;</code> to denote text. These symbols should not be included in your actual code.</p>
-<ul>
-<li class="fragment">For example, we would not actually enclose our arguments in <code>&lt;</code> and <code>&gt;</code>’s; we would simply write out the arguments. We’ll see an example of this in a minute</li>
-</ul></li>
-</ul>
-</section>
-<section id="exercise" class="slide level2">
-<h2>Exercise</h2>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Exercise</strong></p>
-</div>
-<div class="callout-content">
-<div class="fragment" style="font-size:32px">
-<p>Write a function <code>is_mult_of_three()</code> that takes in a single input <code>x</code> and outputs <code>True</code> if <code>x</code> is a multiple of three and <code>False</code> if not. Additionally, the function should return <code>"Error: input must be numeric"</code> if the argument <code>x</code> that is provided is not numerical.</p>
-</div>
-</div>
-</div>
-</div>
-<ul>
-<li class="fragment">Take a moment to open up our JupyterHub server instance, and try writing out the function on your own. Then we’ll work through it together (please note that solutions to this won’t be provided, so make sure you take notes!)</li>
-</ul>
 
 
 <img src="5a_hex.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
