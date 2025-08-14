@@ -846,18 +846,123 @@
 </ul></li>
 </ul>
 </section></section>
-<section id="counting" class="title-slide slide level1 center">
-<h1>Counting</h1>
+<section>
+<section id="random-variables" class="title-slide slide level1 center">
+<h1>Random Variables</h1>
+
+</section>
+<section id="basics-of-random-variables" class="slide level2" style="font-size:32px">
+<h2>Basics of Random Variables</h2>
 <ul>
-<li class="fragment">Don’t forget about counting!</li>
+<li class="fragment"><p>Recall long ago we discussed the notion of an experiment: any procedure we can repeat an infinite number of times where each time we repeat the experiment the same fixed set of things (i.e.&nbsp;the <em>outcomes</em>) can occur.</p></li>
+<li class="fragment"><p>A <strong>random variable</strong>, loosely speaking, is some sort of numerical variable that keeps track of certain quantities relating to an experiment.</p></li>
+<li class="fragment"><p>For example, if we toss 7 coins and let <span class="math inline">\(X\)</span> denote the number of heads we observe in these 7 coin tosses, then <span class="math inline">\(X\)</span> would be a random variable.</p></li>
+<li class="fragment"><p>The set of all values a random variable can attain is called the <strong>state space</strong>, and is denoted <span class="math inline">\(S_X\)</span>.</p></li>
+<li class="fragment"><p>We classify random variables based on their state space:</p>
+<ul>
+<li class="fragment">If <span class="math inline">\(S_X\)</span> has jumps, we say <span class="math inline">\(X\)</span> is a <strong>discrete random variable</strong></li>
+<li class="fragment">If <span class="math inline">\(S_X\)</span> does not have jumps, we say <span class="math inline">\(X\)</span> is a <strong>continuous random variable</strong></li>
+</ul></li>
 </ul>
-<p>g</p>
+</section>
+<section id="discrete-random-variables" class="slide level2" style="font-size:30px">
+<h2>Discrete Random Variables</h2>
+<ul>
+<li class="fragment"><p>Discrete random variables are described/summarized by a <strong>probability mass function</strong> (p.m.f.), which is a specification of the values the random variable can take (i.e.&nbsp;the state space) along with the probabilities with which the random variable attains those values.</p>
+<ul>
+<li class="fragment"><p>P.M.F.’s are often displayed in tabular form: e.g. <span class="math display">\[ \begin{array}{r|cccc}
+\boldsymbol{k}              &amp; -1    &amp; 0   &amp; 1   &amp; 2   \\
+\hline
+\boldsymbol{\mathbb{P}(X = k)}   &amp; 0.1   &amp; 0.2   &amp; 0.3   &amp; 0.4
+  \end{array}\]</span></p></li>
+<li class="fragment"><p>Note that the probability values in a P.M.F. must sum to 1.</p></li>
+</ul></li>
+<li class="fragment"><p>Quantities like <span class="math inline">\(\mathbb{P}(X \leq k)\)</span> are found by summing up the values of <span class="math inline">\(\mathbb{P}(X = x)\)</span> for all values of <span class="math inline">\(x\)</span> in the state space that are less than <span class="math inline">\(k\)</span>.</p>
+<ul>
+<li class="fragment">For example, in the example above, <span class="math display">\[\mathbb{P}(X \leq 0.5) = \mathbb{P}(X = -1) + \mathbb{P}(X = 0)  = 0.1 + 0.2 = 0.3 \]</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="expected-value" class="slide level2" style="font-size:30px">
+<h2>Expected Value</h2>
+<ul>
+<li class="fragment"><p>The <strong>expected value</strong> of a random variable <span class="math inline">\(X\)</span>, denoted <span class="math inline">\(\mathbb{E}[X]\)</span>, represents a sort of “average” of <span class="math inline">\(X\)</span>, and is computed as <span class="math display">\[ \mathbb{E}[X] = \sum_{\text{all $k$}} k \cdot \mathbb{P}(X = k) \]</span></p>
+<ul>
+<li class="fragment"><p>Again, don’t be scared by the sigma notation! It just represents a sum.</p></li>
+<li class="fragment"><p>So, for example, using our P.M.F. from the previous slide, <span class="math display">\[\begin{align*}
+\mathbb{E}[X]   &amp; = (-1) \cdot \mathbb{P}(X = -1) + (0) \cdot \mathbb{P}(X = 0)    \\
+&amp; \hspace{10mm} + (1) \cdot \mathbb{P}(X = 1) + (2) \cdot \mathbb{P}(X = 2)    \\[3mm]
+  &amp; = (-1) \cdot (0.1) + (0) \cdot (0.2) + (1) \cdot (0.3) + (2) \cdot (0.4)     \\[3mm]
+  &amp; = \boxed{1}
+  \end{align*}\]</span></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="variance-and-standard-deviation" class="slide level2" style="font-size:30px">
+<h2>Variance and Standard Deviation</h2>
+<ul>
+<li class="fragment"><p>There are two formulas we can use for the <strong>variance</strong> of a random variable <span class="math inline">\(X\)</span>: <span class="math display">\[ \mathrm{Var}(X) = \sum_{\text{all $k$}} (k - \mathbb{E}[X])^2 \cdot \mathbb{P}(X = k) \]</span> or <span class="math display">\[ \mathrm{Var}(X) = \left(\sum_{\text{all $k$}} k^2 \cdot \mathbb{P}(X = k) \right) - (\mathbb{E}[X])^2 \]</span></p></li>
+<li class="fragment"><p>The <strong>standard deviation</strong> of a random variable is simply the square root of the variance: <span class="math display">\[ \mathrm{SD}(X) = \sqrt{\mathrm{Var}(X)} \]</span></p></li>
+</ul>
+</section>
+<section id="variance-and-standard-deviation-1" class="slide level2" style="font-size:30px">
+<h2>Variance and Standard Deviation</h2>
+<ul>
+<li class="fragment">For example, using the PMF from a few slides ago, the first formula for variance tells us to compute <span class="math display">\[\begin{align*}
+\mathrm{Var}(X)     &amp; = \sum_{\text{all $k$}} (k - \mathbb{E}[X])^2 \cdot \mathbb{P}(X = k)    \\
+  &amp; = (-1 - 1)^2 \cdot \mathbb{P}(X = -1) + (0 - 1)^2 \cdot \mathbb{P}(X = 0)    \\
+    &amp; \hspace{10mm} + (1 - 1)^2 \cdot \mathbb{P}(X = 1) + (2 - 1)^2 \cdot \mathbb{P}(X = 2)    \\[3mm]
+      &amp; = (-1 - 1)^2 \cdot (0.1) + (0 - 1)^2 \cdot (0.2)    \\
+      &amp; \hspace{10mm}+ (1 - 1)^2 \cdot (0.3) + (2 - 1)^2 \cdot (0.4)   \\[3mm]
+      &amp; = \boxed{1}
+\end{align*}\]</span></li>
+</ul>
+</section>
+<section id="variance-and-standard-deviation-2" class="slide level2" style="font-size:30px">
+<h2>Variance and Standard Deviation</h2>
+<div>
+<ul>
+<li>Using the second formula for variance, we first compute <span class="math display">\[\begin{align*}
+\sum_{\text{all $k$}} k^2 \mathbb{P}(X = k)    &amp;  = (-1)^2 \cdot \mathbb{P}(X = -1) + (0)^2 \cdot \mathbb{P}(X = 0)    \\
+    &amp; \hspace{10mm} + (1)^2 \cdot \mathbb{P}(X = 1) + (2 - 1)^2 \cdot \mathbb{P}(X = 2)    \\[3mm]
+      &amp; = (-1)^2 \cdot (0.1) + (0)^2 \cdot (0.2)    \\
+      &amp; \hspace{10mm}+ (1)^2 \cdot (0.3) + (2)^2 \cdot (0.4)   \\[3mm]
+      &amp; = 2
+\end{align*}\]</span> which means <span class="math display">\[ \mathrm{Var}(X) = 2 - (1)^2 = \boxed{1}\]</span></li>
+</ul>
+</div>
+</section>
+<section id="binomial-distribution" class="slide level2" style="font-size:32px">
+<h2>Binomial Distribution</h2>
+<ul>
+<li class="fragment"><p>Suppose we have <span class="math inline">\(n\)</span> independent trials, each resulting in “success” with probability <span class="math inline">\(p\)</span> and “failure” with probability <span class="math inline">\(1 - p\)</span>. If <span class="math inline">\(X\)</span> denotes the number of successes in these <span class="math inline">\(n\)</span> trials, we say <span class="math inline">\(X\)</span> follow the <strong>Binomial distribution</strong> with parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>, notated <span class="math display">\[ X \sim \mathrm{Bin}(n, \ p) \]</span></p></li>
+<li class="fragment"><p>If <span class="math inline">\(X \sim \mathrm{Bin}(n, \ p)\)</span>, then:</p>
+<ul>
+<li class="fragment"><span class="math inline">\(S_X = \{0, 1, 2, \cdots, n\}\)</span></li>
+<li class="fragment"><span class="math inline">\(\mathbb{P}(X = k) = \binom{n}{k} p^k (1 - p)^{n - k}\)</span></li>
+<li class="fragment"><span class="math inline">\(\mathbb{E}[X] = np\)</span></li>
+<li class="fragment"><span class="math inline">\(\mathrm{Var}(X) = np(1 - p)\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="binomial-distribution-1" class="slide level2" style="font-size:32px">
+<h2>Binomial Distribution</h2>
+<ul>
+<li class="fragment"><p>In order to verify that the Binomial distribution is appropriate to use, we need to check the Binomial Criteria:</p>
+<ol type="1">
+<li class="fragment">Independence across trials</li>
+<li class="fragment">Fixed number <span class="math inline">\(n\)</span> of trials</li>
+<li class="fragment">Well-defined notion of “success” and “failure”</li>
+<li class="fragment">Fixed probability <span class="math inline">\(p\)</span> of success across trials.</li>
+</ol></li>
+<li class="fragment"><p>If you are going to use the Binomial distribution in a problem, you <strong>must</strong> check <strong>all four</strong> of these!</p></li>
+</ul>
 
 
 <img src="5a_hex.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

@@ -1225,13 +1225,6 @@
     "text": "Set Operations\n\nGiven two events \\(E\\) and \\(F\\), there are several operations we can perform:\n\nComplement: \\(E^\\complement\\); denotes “not \\(E\\)”\nUnion: \\(E \\cup F\\); denotes \\(E\\) or \\(F\\) (or both)\nIntersection: \\(E \\cap F\\); denotes \\(E\\) and \\(F\\)"
   },
   {
-    "objectID": "Pages/Lectures/Lecture07/Lec07.html#venn-diagrams",
-    "href": "Pages/Lectures/Lecture07/Lec07.html#venn-diagrams",
-    "title": "PSTAT 5A: Review 1",
-    "section": "Venn Diagrams",
-    "text": "Venn Diagrams\n\n\n\n\n\n \\(A^\\complement\\)  (complement)\n\n\n\n\n\n\n\n\n \\(A \\cap B\\)  (intersection)\n\n\n\n\n\n\n\n\n \\(A \\cup B\\)  (union)"
-  },
-  {
     "objectID": "Pages/Lectures/Lecture07/Lec07.html#axioms-of-probability",
     "href": "Pages/Lectures/Lecture07/Lec07.html#axioms-of-probability",
     "title": "PSTAT 5A: Review 1",
@@ -1260,46 +1253,60 @@
     "text": "Independence\n\nIndependence asserts that \\(\\mathbb{P}(E \\mid F) = \\mathbb{P}(E)\\), which in turn implies \\(\\mathbb{P}(F \\mid E) = \\mathbb{P}(F)\\) and \\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E) \\cdot \\mathbb{P}(F)\\)\n\nNote that \\(\\mathbb{P}(E \\cap F) = \\mathbb{P}(E) \\cdot \\mathbb{P}(F)\\) only when \\(E\\) and \\(F\\) are independent! Otherwise, you have to compute \\(\\mathbb{P}(E \\cap F)\\) using the multiplication rule.\nThe interpretation of independence is that the two events “do not affect each other”"
   },
   {
-    "objectID": "Pages/Lectures/Lecture07/Lec07.html#basics-of-programming",
-    "href": "Pages/Lectures/Lecture07/Lec07.html#basics-of-programming",
+    "objectID": "Pages/Lectures/Lecture07/Lec07.html#basics-of-random-variables",
+    "href": "Pages/Lectures/Lecture07/Lec07.html#basics-of-random-variables",
     "title": "PSTAT 5A: Review 1",
-    "section": "Basics of Programming",
-    "text": "Basics of Programming\n\nRecall that, in this class, we use Python as our main computing language\n\nWe run Python in Jupyter Notebooks\n\nThere are a few data types we have encountered thus far:\n\nstr, for “string”\nint, for “integer”\nfloat, aka “real number with decimals”\nbool, for “boolean”"
+    "section": "Basics of Random Variables",
+    "text": "Basics of Random Variables\n\nRecall long ago we discussed the notion of an experiment: any procedure we can repeat an infinite number of times where each time we repeat the experiment the same fixed set of things (i.e. the outcomes) can occur.\nA random variable, loosely speaking, is some sort of numerical variable that keeps track of certain quantities relating to an experiment.\nFor example, if we toss 7 coins and let \\(X\\) denote the number of heads we observe in these 7 coin tosses, then \\(X\\) would be a random variable.\nThe set of all values a random variable can attain is called the state space, and is denoted \\(S_X\\).\nWe classify random variables based on their state space:\n\nIf \\(S_X\\) has jumps, we say \\(X\\) is a discrete random variable\nIf \\(S_X\\) does not have jumps, we say \\(X\\) is a continuous random variable"
   },
   {
-    "objectID": "Pages/Lectures/Lecture07/Lec07.html#basics-of-programming-1",
-    "href": "Pages/Lectures/Lecture07/Lec07.html#basics-of-programming-1",
+    "objectID": "Pages/Lectures/Lecture07/Lec07.html#discrete-random-variables",
+    "href": "Pages/Lectures/Lecture07/Lec07.html#discrete-random-variables",
     "title": "PSTAT 5A: Review 1",
-    "section": "Basics of Programming",
-    "text": "Basics of Programming\n\nThere are also certain data classes we have encountered, which are effectively various python objects aggregated into a larger structure. These include:\n\nTables\nLists\nArrays\n\nWe can use indexing to extract certain pieces of data classes; e.g. for a list x, x[i] returns the (i + 1)th element of x.\n\nRemember that Python starts indexing at zero!"
+    "section": "Discrete Random Variables",
+    "text": "Discrete Random Variables\n\nDiscrete random variables are described/summarized by a probability mass function (p.m.f.), which is a specification of the values the random variable can take (i.e. the state space) along with the probabilities with which the random variable attains those values.\n\nP.M.F.’s are often displayed in tabular form: e.g. \\[ \\begin{array}{r|cccc}\n\\boldsymbol{k}              & -1    & 0   & 1   & 2   \\\\\n\\hline\n\\boldsymbol{\\mathbb{P}(X = k)}   & 0.1   & 0.2   & 0.3   & 0.4\n  \\end{array}\\]\nNote that the probability values in a P.M.F. must sum to 1.\n\nQuantities like \\(\\mathbb{P}(X \\leq k)\\) are found by summing up the values of \\(\\mathbb{P}(X = x)\\) for all values of \\(x\\) in the state space that are less than \\(k\\).\n\nFor example, in the example above, \\[\\mathbb{P}(X \\leq 0.5) = \\mathbb{P}(X = -1) + \\mathbb{P}(X = 0)  = 0.1 + 0.2 = 0.3 \\]"
   },
   {
-    "objectID": "Pages/Lectures/Lecture07/Lec07.html#comparisons-and-conditionals",
-    "href": "Pages/Lectures/Lecture07/Lec07.html#comparisons-and-conditionals",
+    "objectID": "Pages/Lectures/Lecture07/Lec07.html#expected-value",
+    "href": "Pages/Lectures/Lecture07/Lec07.html#expected-value",
     "title": "PSTAT 5A: Review 1",
-    "section": "Comparisons and Conditionals",
-    "text": "Comparisons and Conditionals\n\nTake a look at lab 2."
+    "section": "Expected Value",
+    "text": "Expected Value\n\nThe expected value of a random variable \\(X\\), denoted \\(\\mathbb{E}[X]\\), represents a sort of “average” of \\(X\\), and is computed as \\[ \\mathbb{E}[X] = \\sum_{\\text{all $k$}} k \\cdot \\mathbb{P}(X = k) \\]\n\nAgain, don’t be scared by the sigma notation! It just represents a sum.\nSo, for example, using our P.M.F. from the previous slide, \\[\\begin{align*}\n\\mathbb{E}[X]   & = (-1) \\cdot \\mathbb{P}(X = -1) + (0) \\cdot \\mathbb{P}(X = 0)    \\\\\n& \\hspace{10mm} + (1) \\cdot \\mathbb{P}(X = 1) + (2) \\cdot \\mathbb{P}(X = 2)    \\\\[3mm]\n  & = (-1) \\cdot (0.1) + (0) \\cdot (0.2) + (1) \\cdot (0.3) + (2) \\cdot (0.4)     \\\\[3mm]\n  & = \\boxed{1}\n  \\end{align*}\\]"
   },
   {
-    "objectID": "Pages/Lectures/Lecture07/Lec07.html#functions",
-    "href": "Pages/Lectures/Lecture07/Lec07.html#functions",
+    "objectID": "Pages/Lectures/Lecture07/Lec07.html#variance-and-standard-deviation",
+    "href": "Pages/Lectures/Lecture07/Lec07.html#variance-and-standard-deviation",
     "title": "PSTAT 5A: Review 1",
-    "section": "Functions",
-    "text": "Functions\n\nI’d also like to take a minute to talk about functions in Python.\nPython functions behave much like mathematical functions: they take in some number of arguments (i.e. inputs) and can output a variety of things.\n\nFor example, the type() function returns either the data type or data structure of a single input.\nThere is some language we use when dealing with functions in programming: when we pass the argument x into the function f(), we say that we have “called” the function f() on the argument/input x. The object f(x) is called a function call."
+    "section": "Variance and Standard Deviation",
+    "text": "Variance and Standard Deviation\n\nThere are two formulas we can use for the variance of a random variable \\(X\\): \\[ \\mathrm{Var}(X) = \\sum_{\\text{all $k$}} (k - \\mathbb{E}[X])^2 \\cdot \\mathbb{P}(X = k) \\] or \\[ \\mathrm{Var}(X) = \\left(\\sum_{\\text{all $k$}} k^2 \\cdot \\mathbb{P}(X = k) \\right) - (\\mathbb{E}[X])^2 \\]\nThe standard deviation of a random variable is simply the square root of the variance: \\[ \\mathrm{SD}(X) = \\sqrt{\\mathrm{Var}(X)} \\]"
   },
   {
-    "objectID": "Pages/Lectures/Lecture07/Lec07.html#functions-1",
-    "href": "Pages/Lectures/Lecture07/Lec07.html#functions-1",
+    "objectID": "Pages/Lectures/Lecture07/Lec07.html#variance-and-standard-deviation-1",
+    "href": "Pages/Lectures/Lecture07/Lec07.html#variance-and-standard-deviation-1",
     "title": "PSTAT 5A: Review 1",
-    "section": "Functions",
-    "text": "Functions\n\nTo create a user-defined function function_name(), we use the following structure:\n\n\n\ndef function_name(&lt;arg1&gt;, ...., &lt;argn&gt;):\n  \"\"\"\n  include a docstring here\n  \"\"\"\n  &lt;body of the function here&gt;\n\n\n\nBy the way, when writing skeleton code like the above (i.e. a chunk of code that mimics the structure/format of an actual piece of code, but isn’t fully filled in), programmers often use the symbols &lt; and &gt; to denote text. These symbols should not be included in your actual code.\n\nFor example, we would not actually enclose our arguments in &lt; and &gt;’s; we would simply write out the arguments. We’ll see an example of this in a minute"
+    "section": "Variance and Standard Deviation",
+    "text": "Variance and Standard Deviation\n\nFor example, using the PMF from a few slides ago, the first formula for variance tells us to compute \\[\\begin{align*}\n\\mathrm{Var}(X)     & = \\sum_{\\text{all $k$}} (k - \\mathbb{E}[X])^2 \\cdot \\mathbb{P}(X = k)    \\\\\n  & = (-1 - 1)^2 \\cdot \\mathbb{P}(X = -1) + (0 - 1)^2 \\cdot \\mathbb{P}(X = 0)    \\\\\n    & \\hspace{10mm} + (1 - 1)^2 \\cdot \\mathbb{P}(X = 1) + (2 - 1)^2 \\cdot \\mathbb{P}(X = 2)    \\\\[3mm]\n      & = (-1 - 1)^2 \\cdot (0.1) + (0 - 1)^2 \\cdot (0.2)    \\\\\n      & \\hspace{10mm}+ (1 - 1)^2 \\cdot (0.3) + (2 - 1)^2 \\cdot (0.4)   \\\\[3mm]\n      & = \\boxed{1}\n\\end{align*}\\]"
   },
   {
-    "objectID": "Pages/Lectures/Lecture07/Lec07.html#exercise",
-    "href": "Pages/Lectures/Lecture07/Lec07.html#exercise",
+    "objectID": "Pages/Lectures/Lecture07/Lec07.html#variance-and-standard-deviation-2",
+    "href": "Pages/Lectures/Lecture07/Lec07.html#variance-and-standard-deviation-2",
     "title": "PSTAT 5A: Review 1",
-    "section": "Exercise",
-    "text": "Exercise\n\n\n\n\n\n\nExercise\n\n\n\nWrite a function is_mult_of_three() that takes in a single input x and outputs True if x is a multiple of three and False if not. Additionally, the function should return \"Error: input must be numeric\" if the argument x that is provided is not numerical.\n\n\n\n\n\nTake a moment to open up our JupyterHub server instance, and try writing out the function on your own. Then we’ll work through it together (please note that solutions to this won’t be provided, so make sure you take notes!)"
+    "section": "Variance and Standard Deviation",
+    "text": "Variance and Standard Deviation\n\n\nUsing the second formula for variance, we first compute \\[\\begin{align*}\n\\sum_{\\text{all $k$}} k^2 \\mathbb{P}(X = k)    &  = (-1)^2 \\cdot \\mathbb{P}(X = -1) + (0)^2 \\cdot \\mathbb{P}(X = 0)    \\\\\n    & \\hspace{10mm} + (1)^2 \\cdot \\mathbb{P}(X = 1) + (2 - 1)^2 \\cdot \\mathbb{P}(X = 2)    \\\\[3mm]\n      & = (-1)^2 \\cdot (0.1) + (0)^2 \\cdot (0.2)    \\\\\n      & \\hspace{10mm}+ (1)^2 \\cdot (0.3) + (2)^2 \\cdot (0.4)   \\\\[3mm]\n      & = 2\n\\end{align*}\\] which means \\[ \\mathrm{Var}(X) = 2 - (1)^2 = \\boxed{1}\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture07/Lec07.html#binomial-distribution",
+    "href": "Pages/Lectures/Lecture07/Lec07.html#binomial-distribution",
+    "title": "PSTAT 5A: Review 1",
+    "section": "Binomial Distribution",
+    "text": "Binomial Distribution\n\nSuppose we have \\(n\\) independent trials, each resulting in “success” with probability \\(p\\) and “failure” with probability \\(1 - p\\). If \\(X\\) denotes the number of successes in these \\(n\\) trials, we say \\(X\\) follow the Binomial distribution with parameters \\(n\\) and \\(p\\), notated \\[ X \\sim \\mathrm{Bin}(n, \\ p) \\]\nIf \\(X \\sim \\mathrm{Bin}(n, \\ p)\\), then:\n\n\\(S_X = \\{0, 1, 2, \\cdots, n\\}\\)\n\\(\\mathbb{P}(X = k) = \\binom{n}{k} p^k (1 - p)^{n - k}\\)\n\\(\\mathbb{E}[X] = np\\)\n\\(\\mathrm{Var}(X) = np(1 - p)\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture07/Lec07.html#binomial-distribution-1",
+    "href": "Pages/Lectures/Lecture07/Lec07.html#binomial-distribution-1",
+    "title": "PSTAT 5A: Review 1",
+    "section": "Binomial Distribution",
+    "text": "Binomial Distribution\n\nIn order to verify that the Binomial distribution is appropriate to use, we need to check the Binomial Criteria:\n\nIndependence across trials\nFixed number \\(n\\) of trials\nWell-defined notion of “success” and “failure”\nFixed probability \\(p\\) of success across trials.\n\nIf you are going to use the Binomial distribution in a problem, you must check all four of these!"
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#recap",
@@ -2373,20 +2380,6 @@
     "text": "Step 2: Translate the Information\n\nWith our events from Step 1, we now turn our attention to translating the information provided in the problem.\nSince \\(5\\%\\) of all widgets are defective, we know \\[ \\mathbb{P}(A) = 0.5 \\]\nThe probability of a widget not being defective is the complement of A,\\[ \\mathbb{P}(A ^\\complement) = 1 - \\mathbb{P}(A) = 1 - 0.05 = .95 \\]\nThe test correctly identifies a defective widget 90% of the time. This tells us \\(\\mathbb{P}(B \\mid A) = 0.9\\)\nAdditionally, we are told that there is an \\(8\\%\\) chance that the widget is flagged as defective, when it is actually not defective. This gives us \\(\\mathbb{P}(B \\mid A^\\complement) = 0.08\\)"
   },
   {
-    "objectID": "Pages/Lectures/Lecture05/Lec05.html#step-2-translate-the-information-1",
-    "href": "Pages/Lectures/Lecture05/Lec05.html#step-2-translate-the-information-1",
-    "title": "PSTAT 5A: Lecture 05",
-    "section": "Step 2: Translate the Information",
-    "text": "Step 2: Translate the Information\n\nBut wait- there’s more!\nGiven that a person has the disease, they will either test positive or test negative.\n\nWhat that means is that \\[ \\mathbb{P}(+ \\mid D) = 1 - \\mathbb{P}(+^\\complement \\mid D) = 1 - 0.1 = 0.9 \\]\nThink of this as a modified complement rule\n\nSimilarly, \\[ \\mathbb{P}(+^\\complement \\mid D^\\complement) = 1 - \\mathbb{P}(+ \\mid D^\\complement) = 1 - 0.08 = 0.92 \\]\nAdditionally, \\[ \\mathbb{P}(D^\\complement) =  1 - \\mathbb{P}(D) = 1 - 0.05 = 0.95 \\]"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture05/Lec05.html#step-2-translate-the-information-2",
-    "href": "Pages/Lectures/Lecture05/Lec05.html#step-2-translate-the-information-2",
-    "title": "PSTAT 5A: Lecture 05",
-    "section": "Step 2: Translate the Information",
-    "text": "Step 2: Translate the Information\n\nSo, here’s a summary of everything we know, just from the problem statement: \\[\\begin{align*}\n\\mathbb{P}(+ \\mid D) = 0.9    & \\hspace{15mm} \\mathbb{P}(+^\\complement \\mid D) = 0.1    \\\\\n\\mathbb{P}(+ \\mid D^\\complement) = 0.08   & \\hspace{15mm}  \\mathbb{P}(P^\\complement \\mid D^\\complement) = 0.92   \\\\\n\\mathbb{P}(D) = 0.05    & \\hspace{15mm}  \\mathbb{P}(D^\\complement) = 0.95\n\\end{align*}\\]"
-  },
-  {
     "objectID": "Pages/Lectures/Lecture05/Lec05.html#step-3-solve-the-problem",
     "href": "Pages/Lectures/Lecture05/Lec05.html#step-3-solve-the-problem",
     "title": "PSTAT 5A: Lecture 05",
@@ -2744,6 +2737,13 @@
     "text": "A Regression\nIt is plausible that perhaps titles with more votes have higher scores. Let’s see if the data supports this.\n\n\n\n\n\n\nAction Item\n\n\n\nGenerate a scatterplot with the number of votes on the x-axis and the average rating on the y-axis. Comment on whether there appears to be an association between these two variables and, if applicable, what type of association there appears to be (e.g. non/linear, positive/negative).\n\n\nRegardless of the results of your previous plot, let’s go ahead and run a regression using “average rating” as the response variable and “number of votes” as the explanatory variable.\n\n\n\n\n\n\nAction Item\n\n\n\nIn a Markdown cell, write down the model assuming a linear form for the signal function.\n\n\nThe specific function we will use to perform the regression is called .linregress() from the scipy.stats module. You can read more about the function and its documentation here.\n\n\n\n\n\n\nAction Item\n\n\n\nRun a regression of “average rating” on “number of votes”. Report the estimated slope and intercept, as well as the \\(p-\\)value associated with testing \\(H_0: \\ \\beta_1 = 0\\) against \\(H_A: \\ \\beta_1 \\neq 0\\). Also re-generate a scatterplot of the original data with the OLS line superimposed on top (the aforementioned help file will be of IMMENSE help for this).\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nInclude a QQ-plot of both the explanatory and response variables, and comment."
   },
   {
+    "objectID": "Pages/Labs/Lab06/lab06.html#what-to-turn-in",
+    "href": "Pages/Labs/Lab06/lab06.html#what-to-turn-in",
+    "title": "Lab06",
+    "section": "What to Turn In",
+    "text": "What to Turn In\nCongrats on finishing Lab 06! Download the .ipnyb version of your notebook and upload it to Gradescope!"
+  },
+  {
     "objectID": "Pages/Labs/Lab02/lab02.html#data-classes",
     "href": "Pages/Labs/Lab02/lab02.html#data-classes",
     "title": "Lab02",
@@ -2800,6 +2800,13 @@
     "text": "Functions\nFinally, let’s quickly discuss Python functions. We’ve already been using quite a few functions:\n\n\n\n\n\n\nTask 10\n\n\n\nIn a Markdown cell, write down three functions we’ve used in Lab thus far.\n\n\nIf you recall, the general syntax for calling a function is:\n\n&lt;function name&gt;(&lt;arg1&gt;, &lt;arg2&gt;, ... )\n\nwhere &lt;function name&gt; denotes the function name and &lt;arg1&gt;, &lt;arg2&gt;, etc. denote the arguments of the function.\n\nCreating your own function in Python is actually fairly simple! Here is the syntax we use:\n\ndef &lt;function name&gt;(&lt;list out the argument names&gt;):\n  \"\"\"include a 'docstring' here\"\"\"\n  &lt;body of the function&gt;\n  return &lt;what you want the function to output&gt;\n\nFor example,\n\ndef f(x, y):\n  \"\"\"returns x^2 + y^2\"\"\"\n  return x**2 + y**2\n\ncreates a function f that can be called on two arguments, x and y, and returns the sum of squares of the arguments; e.g.\n\nf(3, 4)  # should return 3^2 + 4^2 = 25\n\n25\n\n\nBy the way, the docstring referenced above is a verbal description of what the function does. (Recall from Lab01 that it is just a multi-line comment, since it is enclosed in triple quotation marks!). All functions should include a docstring to convey to the user what the function does.\n\n\n\n\n\n\nImportant\n\n\n\nIf you don’t include a return statement in the definition of a function, then your function will never return anything.\n\n\nFor instance,\n\ndef g(x, y):\n  \"\"\"should return x^2 + y^2\"\"\"\n  x**2 + y**2\n\ng(3, 4)\n\n\n\n\n\n\n\nTask 11\n\n\n\nWrite a function called cent_to_far() which takes in a single temperature c as measured in degrees Centigrade and returns the corresponding temperature in degrees Farenheit. Check that cent_to_far(0) correctly returns 0 and cent_to_far(68) correctly returns 69.7777. As a reminder: \\[ {}^{\\circ}\\mathrm{F} = \\frac{5}{9} ({}^{\\circ}\\mathrm{C}) + 32 \\]\n\n\nFinally, let’s combine some things by way of a concluding Task:\n\n\n\n\n\n\nTask 12\n\n\n\nWrite a function called parity() that returns the parity (i.e. whether a number is even or odd) of an input x. Call your parity() function on 2 and then 3 to make sure your function behaves as expected. Some hints:\n\nRecall that % is the modulus operator in Python. Specifically, x % y returns the remainder of performing y divided by x.\nRecall that even numbers are divisible by 2 (so what does this mean about the remainder of dividing x by 2 if x is even?)"
   },
   {
+    "objectID": "Pages/Labs/Lab02/lab02.html#what-to-turn-in",
+    "href": "Pages/Labs/Lab02/lab02.html#what-to-turn-in",
+    "title": "Lab02",
+    "section": "What to Turn In",
+    "text": "What to Turn In\nCongrats on finishing Lab 02! Download the .ipnyb version of your notebook and upload it to Gradescope!"
+  },
+  {
     "objectID": "Pages/Labs/Lab04/lab04.html",
     "href": "Pages/Labs/Lab04/lab04.html",
     "title": "Lab04",
@@ -2833,6 +2840,13 @@
     "title": "Lab04",
     "section": "Introduction to Loops",
     "text": "Introduction to Loops\nSuppose we have the following outcomes of an experiment:\n\nx = ['success', 'failure', 'failure', 'success', 'failure', 'failure', 'failure', 'success']\n\nHow might we write code to count the number of successes in this string of outcomes? There are several different ways to accomplish this: one involves what is known as a for loop.\n\n\n\nfigure source: https://i.kym-cdn.com/photos/images/newsfeed/001/393/656/da7.jpg\n\n\nHere’s the general idea: we would like to perform an element-wise comparison; that is, we would like to iteratively check whether each element of x is a success or a failure. The “brute-force” way would be to check each element individually, using comparisons:\n\nx[0] == 'success'\n\nTrue\n\n\n\nx[1] == 'success'\n\nFalse\n\n\n\nx[2] == 'success'\n\nFalse\n\n\nAs you can imagine, though, this would get incredibly tedious, especially if x were large! This is where for loops become useful: they allow us to automate this iterative process.\nBefore returning to this success/failure problem, let’s look at an example to see how for loops work.\n\nfor fruit in ['apple', 'banana', 'pear']:\n  print(fruit)\n\napple\nbanana\npear\n\n\nHere are how the different components work:\n\nThe for keyword signifies the beginning of the for loop.\nThe name fruit is the variable.\nThe list following the in keyword contains all of the different values the variable will take during the execution of the for loop.\nThe code after the initial colon : is called the body of the loop. (Note that the body of a for loop must be indented properly!) Here is how the body is executed:\n\nFirst, the variable fruit is assigned the first value in the list of possible values specified in the first line of the loop\nThen, after assigning fruit this value, the code in the body is executed once.\nNext, the variable fruit is assigned the second value of the list of values, and the body is run again.\nThis continues until the list of all possible values is exhausted.\n\n\nSometimes, it may be useful to sketch a diagram/table to keep track of the code at each iteration of the loop:\n\n\n\n\nFIRST ITERATION\n\n\n\n\nStart of Iteration\n\n\n\n\nfruit: ‘apple’\n\n\n\n\n\n\nEnd of Iteration\n\n\n\n\nfruit: ‘apple’\n\n\n\n\n\n\n\nSECOND ITERATION\n\n\n\n\nStart of Iteration\n\n\n\n\nfruit: ‘banana’\n\n\n\n\n\n\nEnd of Iteration\n\n\n\n\nfruit: ‘banana’\n\n\n\n\n\n\n\nTHIRD ITERATION\n\n\n\n\nStart of Iteration\n\n\n\n\nfruit: ‘pear’\n\n\n\n\n\n\nEnd of Iteration\n\n\n\n\nfruit: ‘pear’\n\n\n\n\n\n\nIt may seem strange to keep track of the values of the variables at the end of each iteration. The reason we do so is because sometimes the body of the loop will actually change the value of a variable! For example, consider the code\n\nfor n in [1, 2, 3]:\n  n += 2\n  print(n)\n\n3\n4\n5\n\n\nthe associated diagram would look like\n\n\n\n\nFIRST ITERATION\n\n\n\n\nStart of Iteration\n\n\n\n\nn: 1\n\n\n\n\n\n\nEnd of Iteration\n\n\n\n\nn: 3\n\n\n\n\n\n\n\nSECOND ITERATION\n\n\n\n\nStart of Iteration\n\n\n\n\nn: 2\n\n\n\n\n\n\nEnd of Iteration\n\n\n\n\nn: 4\n\n\n\n\n\n\n\nTHIRD ITERATION\n\n\n\n\nStart of Iteration\n\n\n\n\nn: 3\n\n\n\n\n\n\nEnd of Iteration\n\n\n\n\nn: 5\n\n\n\n\n\n\nBy the way, notice the shorthand notation += that was used above:\n\n\n\n\n\n\nTip\n\n\n\nThe code x += y is equivalent to x = x + y.\n\n\nFinally, one thing that should be mentioned is that you can call the variable in a loop whatever you like!\n\nfor yummy in ['apple', 'banana', 'pear']:\n  print(yummy)\n\napple\nbanana\npear\n\n\n\n\n\n\n\n\nTask 8\n\n\n\nCopy-paste the code\n\nx = ['success', 'failure', 'failure', 'success', 'failure', 'failure', 'failure', 'success']\n\ninto a cell, and run it. Then, create a for loop that iterates through the elements of x and at each iteration prints True if the corresponding element of x is a 'success' and False if the corresponding element of x is a 'failure'. Your final output should look like:\n\n\nTrue\nFalse\nFalse\nTrue\nFalse\nFalse\nFalse\nTrue\n\n\n\n\nBy the way, the set of values a variable will take during a for loop doesn’t have to be a list- it could also be an array! This is particularly useful when there are multiple things we would like to iterate over. For example:\n\nimport datascience as ds\ncredit_scores = ds.make_array(\n  [\"Anne\", 750],\n  [\"Barbara\", 755],\n  [\"Cassandra\", 745]\n)\n\nfor k in credit_scores:\n  print(k[0], \"has a credit score of\", k[1])\n\nAnne has a credit score of 750\nBarbara has a credit score of 755\nCassandra has a credit score of 745\n\n\n\n\n\n\n\n\nTask 9\n\n\n\nMake a table like the one above that keeps track of the variables and their values in the above loop. You do not need to turn this in; do it on a separate sheet of paper and in your .ipynb file simply state “I have done Task 2 on a separate sheet of paper.”\n\n\nNow, we never quite finished our problem of counting the number of successes in the variable x. We were able to iterate through the elements of x to determine which were successes and which were failures, but we never counted the number of successes.\n\nHere is the general idea:\n\nWe initialize a counter variable, which starts off with the value of 0.\nThen, we iterate through the elements of x as we did in Task 1 above. Instead of printing True or False, however, we use a conditional statement to add 1 to count if the corresponding element of x (i.e. the element of x under consideration in the current iteration of the loop).\nFinally, we see what the value of our counter variable is- this will be exactly the number of successes in x!\n\n\n\n\n\n\n\nTask 10\n\n\n\nCombine everything we’ve learned so far to count the number of successes in x. Here is a rough template of how your code should look:\n\ncount = 0     # initialize the counter variable\n\n&lt;for loop code here, containing a conditional and a 'count += 1'&gt;\n\ncount       # display the final value of our counter variable\n\n\n\nThere is another way to iterate through the elements in a list, and this is to use indexing. Before talking about how this works, we should quickly introduce another function: the arange() function from the numpy module. Here is how a general call to numpy.arange() works:\n\nnumpy.arange(a, b, n)\n\nThis code returns the array of evenly spaced integers between a and b - including a but excluding b, where each element is s more than the previous element. That is, the code above is equivalent to array([a, a+s, a+2s, ...]) As a concrete example:\n\nimport numpy as np\nnp.arange(0, 5, 2)\n\narray([0, 2, 4])\n\n\nThe arange() function is particularly useful when we are iterating using indices. For example, given a list x = [1, 2, 3, 4, 5], we can loop through the entries of x using:\n\nfor k in np.arange(0, len(x)):\n  print(x[k])\n\n1\n2\n3\n4\n5\n\n\nNote that this is equivalent to\n\nfor k in x:\n  print(k)\n\n1\n2\n3\n4\n5\n\n\n\n\n\n\n\n\nTask 11\n\n\n\nRewrite your loop from Task 10, except now iterate through the indices of x. Check that your output is the same as in Task 10.\n\n\n\nQuick Aside: arange() vs linspace()\nSome of you may recall that we previously used the numpy.linspace() function to generate a list of numbers between two specified endpoints. The key difference between these two functions is that:\n\narange() allows you to specify the step size\nlinspace() allows you to specify the final number of elements\n\n\n\n\n\n\n\nTask 12\n\n\n\nGenerate the list of numbers [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 2.9, 2] in two ways: one using arange() and the other using linspace()."
+  },
+  {
+    "objectID": "Pages/Labs/Lab04/lab04.html#what-to-turn-in",
+    "href": "Pages/Labs/Lab04/lab04.html#what-to-turn-in",
+    "title": "Lab04",
+    "section": "What to Turn In",
+    "text": "What to Turn In\nCongrats on finishing Lab 04! Download the .ipnyb version of your notebook and upload it to Gradescope!"
   },
   {
     "objectID": "myenv/lib/python3.13/site-packages/httpx-0.28.1.dist-info/licenses/LICENSE.html",
@@ -2961,6 +2975,13 @@
     "text": "Plotting a Function\nFinally, I’d like to take a quick detour from descriptive statistics and talk about how to plot a function using Python. As a concrete example, let’s try and plot a sine curve from \\(0\\) to \\(2\\pi\\).\nIf you recall, on Lab01 we used the sin() function from the math module- it turns out that the numpy module (which, recall, we have imported as np) also has a sin() function, so let’s use that one today:\n\nnp.sin()\n\nNext, we create a set of finely-spaced points between our two desired endpoints (in this case, \\(0\\) and \\(2\\pi\\), respectively). We will do so using the np.linspace() function, which works as follows:\n\nnp.linspace(start, stop, num)\n\ncreates a set of num evenly-spaced values between start and stop, respectively. For instance:\n\nnp.linspace(0, 1, 10)\n\narray([ 0.        ,  0.11111111,  0.22222222,  0.33333333,  0.44444444,\n        0.55555556,  0.66666667,  0.77777778,  0.88888889,  1.        ])\n\n\nIn the context of plotting, the more points we generate the smoother our plot will seem (you will see what this means in a minute). As such, let’s start with 150 points between 0 and 2 * pi:\n\nx = np.linspace(0, 2 * np.pi, 150)\n\nFinally, we call the plt.plot() function on x and np.sin(x) to generate our plot:\n\nplt.figure(figsize=(4.5, 2.25))\nplt.plot(x, np.sin(x))\n\n\n\n\nLet’s see what would have happened if we used fewer values in our np.linspace() call:\n\nxnew = np.linspace(0, 2 * np.pi, 10)\nplt.plot(xnew, np.sin(xnew))\n\n\n\n\n\n\nSo, the more points we include in our call to np.linspace(), the smoother our final function will look!\n\nSo, to summarize, here is the general “recipe” to plot a function f() between two values a and b in Python:\n\nLet x = np.linspace(a, b, &lt;some large value&gt;)\nCall plt.plot(x, f(x))\nAdd labels/titles as necessary\n\n\n\n\n\n\n\nTask 8\n\n\n\nGenerate a plot of the function \\(f(x) = x - x^2 \\sin(x)\\) between \\(x = -10\\) and \\(x = 10\\). Experiment around with the number of values generated by np.linspace() to ensure your plot is relatively smooth. Be sure to include axis labels; also, change the color of the graph to red. Your final plot should look something like this:\n\n\n\n\n\n\n\n\n\n\n\n\n\nNOTICE\n\n\n\nYou only need to complete up to here during Lab, but you should complete the following tasks on your own as they are fair game for quizzes and exams (and are also very useful for your own edification!)\n\n\n\nOverlaying Plots\nSometimes it will be useful to overlay two plots on top of each other. Recall that, for a function f() and a variable x that has been assigned a value resulting from a call to numpy.linspace(), we generate a graph of f() using (assuming matplotlib.pyplot has been imported as plt)\n\nplt.plot(x, f(x));\n\nIt stands to reason, then that given another function g() we should be able to superimpose the graph of g() onto the graph of f() by simply adding another call to plt.plot():\n\nplt.plot(x, f(x));\nplt.plot(x, g(x));\n\n\n\n\n\n\n\nTask 9\n\n\n\nGenerate a graph of sin(); on top of this graph, superimpose the graph of cos(). Restrict the x values on your graph to be between \\(-4\\pi\\) and \\(4\\pi\\). Your final graph should look like the following (pay attention to the axis labels and title!):\n\n\n\n\n\n\n\nNow, as it stands, it’s a bit difficult to determine which curve corresponds to the sine curve and which corresponds to the cosine curve. As such, we should add some labels!\n\n\n\n\n\n\nTask 10\n\n\n\nCopy your code from Task 9 above into a new code cell, and\n\nadd label = \"sine\" to your call to plt.plot() containing the sine curve\nadd label = \"cosine\" to your call to plt.plot() containing the cosine curve.\n\nDoes this new plot look any different than the plot you generated in Task 3?\n\n\nHm, doesn’t look like anything changed… That’s because we didn’t add a legend to our plot! To add a legend, we simply tack on a call to plt.legend() after our code from above.\n\n\n\n\n\n\nTask 11\n\n\n\nCopy your code from Task 10 above into a new code cell, and add a line underneath it containing a call to plt.legend(). Look up the help file to figure out what arguments you need to pass in to obtain the following graph (note the position of the legend):\n\n\n\n\n\n\n\nOkay, we’re almost there! The only issue is that now the legend is covered up by the actual graphs. One way we can fix this is by extending the \\(y-\\)axis further, using the function plt.ylim():\n\n\n\n\n\n\nTask 12\n\n\n\nCopy your code from Task 11 above into a new code cell, and add a line underneath it containing a call to plt.ylim(). Look up the help file to figure out what arguments you need to pass in to obtain a lower \\(y-\\)limit of \\(-1.5\\) and an upper \\(y-\\)limit of \\(2.0\\). Your final graph should look like this:\n\n\n\n\n\n\n\nFinally, it is sometimes considered bad form to rely too heavily on colors in plots. This is because doing so alienates readers who are colorblind. One way around this is to rely on different line types; e.g. used dashed lines for one graph and dotted lines for another.\n\n\n\n\n\n\nTask 13\n\n\n\nCopy your code from Task 12 above into a new code cell. Read the following help file and figure out how to pass in a value to the linestyle argument to your two calls to plt.plot() to generate the following plot:\n\n\n\n\n\nNote that the sine curve is now dotted, and the cosine curve is now dashed."
   },
   {
+    "objectID": "Pages/Labs/Lab03/lab03.html#what-to-turn-in",
+    "href": "Pages/Labs/Lab03/lab03.html#what-to-turn-in",
+    "title": "Lab03",
+    "section": "What to Turn In",
+    "text": "What to Turn In\nCongrats on finishing Lab 03! Download the .ipnyb version of your notebook and upload it to Gradescope!"
+  },
+  {
     "objectID": "Pages/Labs/Lab05/lab05.html",
     "href": "Pages/Labs/Lab05/lab05.html",
     "title": "Lab05",
@@ -2987,6 +3008,13 @@
     "title": "Lab05",
     "section": "Importing and Manipulating Data",
     "text": "Importing and Manipulating Data\nFinally, let’s play with some real-world data!\n\nIntroduction to the Dataset\nThe dataset we will explore is called air22.csv, and can be accessed at https://pstat5a.github.io/Files/Datasets/air22.csv. It contains observations from the Bureau of Transportation Statistics https://www.transtats.bts.gov/ on flights taking place during 2022.\nHere is an abridged version of the data dictionary:\n\nyear: the year in which the data was collected\nmonth: the month in which the data was collected\ncarrier: the carrier abbreviation (e.g. AS for Alaska, AA for American Airlines, etc.)\ncarrier_name: the full name of the carrier (e.g. Alaska, American, etc.)\nairport: the airport IATA code (e.g. SEA for SeaTac International Airport, etc.)\nairport_name: the full name of the airport\narr_flights: the number of flights that arrived\narr_del15: the number of flights that were delayed for more than 15 minutes\ncarrier_ct: the number of flights delayed due to carrier-related issues (e.g. no crew, delayed captain, etc.)\nweather_ct: the number of flights delayed due to weather-related issues\nnas_ct: the number of flights delayed due to National Air Security (NAS)-related issues (e.g. heavy traffic)\nsecurity_ct: the number of flights cancelled due to security-related issues\nlate_aircraft_ct: the number of flights delayed due to the arriving aircraft being delayed\narr_cancelled: the number of cancelled flights\narr_diverted: the number of flights that were diverted\narr_delay: the total time (in minutes) of delayed flight\ncarrier_delay: the total time (in minutes) of delay due to air carrier-related issues\nweather_delay: the total time (in minutes) of delay due to air weather-related issues\nnas_delay: the total time (in minutes) of delay due to air NAS-related issues\nsecurity_delay: the total time (in minutes) of delay due to air security-related issues\nlate_aircraft_delay: the total time (in minutes) of delay due to the arriving aircraft being delayed\n\n\n\nPart 1: Importing\nWe should start by importing the dataset into our JupyterHub environment! In this class, we will almost exclusively import datasets to datascience tables (remember those, from Lab 1?) The syntax we use to import a dataset and store it in a table called table_name is:\n\ntable_name = Table.read_table(&lt;location of dataset&gt;)\n\nBy default, the read_table method will use the first line of data as labels for each of the columns. If, however, your data does not include labels as its first line you will need to manually specify the labels:\n\ntable_name = Table.read_table(&lt;location of dataset&gt;, names = [labl1, ...])\n\n\n\n\n\n\n\nAction Item\n\n\n\nAdd a first-level header that says Section 2: Importing and Manipulating Data.\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nImport the air22.csv dataset, and save it as a table called air. Hint: make sure you import any necessary modules first!\n\n\n\n\n\n\n\n\nTip\n\n\n\nThe list of Table()-related methods at http://data8.org/datascience/tables.html may prove very useful for this lab!\n\n\n\n\nPart 2: Getting a Feel for the Dataset\nLet’s start of easy by answering a few questions. You should use code to determine the answers to these questions, but should write your answers using descriptive sentences in a markdown cell.\n\n\n\n\n\n\nAction Item\n\n\n\nHow many rows are in the dataset? (Recall: in the language introduced in Week 1, this is the number of observational units in the data matrix.)\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nHow many columns are in the dataset? (Recall: in the language introduced in Week 1, this is the number of variables in the data matrix.)\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nReturn a list of the column names in the dataset. Hint: Recall that the column names, in the context of the datascience module, are sometimes called the labels of the table. Again, consult the help file if you need help!\n\n\n\n\nPart 3: Accessing Specific Elements of the Dataset\nThere are a few methods we can use to access specific parts of a Table:\n\ntable_name.column(&lt;index or label&gt;): returns an array containing the data in the specified column\ntable_name.row(&lt;index or label&gt;): returns an array containing the data in the specified column\ntable_name.column(i).item(j): returns the value in column i + 1, row j + 1 (note the plus ones!)\n\n\n\n\n\n\n\nAction Item\n\n\n\nDisplay only the arr_del15 column of the dataset.\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nWhat years are included in the dataset?\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nCreate a histogram of the delay times caused by weather-related issues. Use 100 bins, and include axis labels as well as a plot title.\n\n\nWe can also get creative, and use comparisons to subset various parts of our dataset. For example,\n\nair.column(\"carrier\") == \"AS\"\n\nwill return a Boolean vector (i.e. a vector of True and False elements), with True elements corresponding to values in the carrier column that have value \"AS\". In words: this would give us the indices of rows corresponding to data on Alaska Airlines.\n\n\n\n\n\n\nAction Item\n\n\n\nHow many observational units were recorded from Alaska Airlines? Hint: Think about how a sum could help us here.\n\n\n\n\nPart 4: A Mini-Project\nAlright, let’s close off this lab with a bit of a mini-project. Our goal is to examine the number of arrivals over time. Specifically, we would ultimately like to plot the average number of arrivals per month vs. month.\n\n\n\n\n\n\nAction Item\n\n\n\nExplain, in words, what the following line of code is doing:\n\nair.row(air.column(1) == 1)\n\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nExplain, in words, what the following line of code is doing:\n\nair.row(air.column(1) == 2)[6]\n\nHint: arr_flights is the 7th column in the dataset.\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nBased on your answers to the previous two Action Items, complete the following code to compute the average number of flights per month:\n\nmeans = []\nfor k in _________________:\n  means.______(np.nanmean(air.row(air.column(___) == ___)[___]))\n\n(By the way, the nanmeans() function is a variant of the mean() function from the numpy module that ignores missing values when computing the mean.)\n\n\n\n\n\n\n\n\nAction Item\n\n\n\nPlot your means list against the list containing the integers 1, 2, 3, …, 12 (this list functions like a list of month names.)"
+  },
+  {
+    "objectID": "Pages/Labs/Lab05/lab05.html#what-to-turn-in",
+    "href": "Pages/Labs/Lab05/lab05.html#what-to-turn-in",
+    "title": "Lab05",
+    "section": "What to Turn In",
+    "text": "What to Turn In\nCongrats on finishing Lab 05! Download the .ipnyb version of your notebook and upload it to Gradescope!"
   },
   {
     "objectID": "Pages/Labs/Lab01/lab01.html",
@@ -3197,6 +3225,13 @@
     "title": "PSTAT 5A: Understanding Data",
     "section": "Disclaimer",
     "text": "Disclaimer\nThis syllabus and much of the content for this course has been graciously borrowed from the original work of Ethan P. Marzban with some modifications. Thank you, Ethan! Thank you, Mallory Wang, for your contributions as well!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture04/Lec04.html#reminders",
+    "href": "Pages/Lectures/Lecture04/Lec04.html#reminders",
+    "title": "PSTAT 5A: Lecture 04",
+    "section": "Reminders",
+    "text": "Reminders\n\nQuiz 1 today! 60 minute quiz due by 11:59 PM. Be sure to leave 10 - 15 minutes for converting to PDF and uploading your quiz.\nGradescope submissions"
   },
   {
     "objectID": "Pages/Lectures/Lecture04/Lec04.html#last-time",
@@ -5381,47 +5416,5 @@
     "title": "PSTAT 5A: Understanding Data",
     "section": "Week 6 (9/08 - 9/11)",
     "text": "Week 6 (9/08 - 9/11)\n\n\nLectures\n19: Regression Diagnostics, and  Sampling Procedures 20: Ways Statistics Can Deceive 21: Review FINAL EXAM: Thursday, Sept 11 during lecture\n\n\nDiscussion\nQ&A with TA\n\n\nLab\nLab 06"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture04/Lec04.html#reminders",
-    "href": "Pages/Lectures/Lecture04/Lec04.html#reminders",
-    "title": "PSTAT 5A: Lecture 04",
-    "section": "Reminders",
-    "text": "Reminders\n\nQuiz 1 today! 60 minute quiz due by 11:59 PM. Be sure to leave 10 - 15 minutes for converting to PDF and uploading your quiz.\nGradescope submissions"
-  },
-  {
-    "objectID": "Pages/Labs/Lab06/lab06.html#what-to-turn-in",
-    "href": "Pages/Labs/Lab06/lab06.html#what-to-turn-in",
-    "title": "Lab06",
-    "section": "What to Turn In",
-    "text": "What to Turn In\nCongrats on finishing Lab 06! Download the .ipnyb version of your notebook and upload it to Gradescope!"
-  },
-  {
-    "objectID": "Pages/Labs/Lab02/lab02.html#what-to-turn-in",
-    "href": "Pages/Labs/Lab02/lab02.html#what-to-turn-in",
-    "title": "Lab02",
-    "section": "What to Turn In",
-    "text": "What to Turn In\nCongrats on finishing Lab 02! Download the .ipnyb version of your notebook and upload it to Gradescope!"
-  },
-  {
-    "objectID": "Pages/Labs/Lab04/lab04.html#what-to-turn-in",
-    "href": "Pages/Labs/Lab04/lab04.html#what-to-turn-in",
-    "title": "Lab04",
-    "section": "What to Turn In",
-    "text": "What to Turn In\nCongrats on finishing Lab 04! Download the .ipnyb version of your notebook and upload it to Gradescope!"
-  },
-  {
-    "objectID": "Pages/Labs/Lab03/lab03.html#what-to-turn-in",
-    "href": "Pages/Labs/Lab03/lab03.html#what-to-turn-in",
-    "title": "Lab03",
-    "section": "What to Turn In",
-    "text": "What to Turn In\nCongrats on finishing Lab 03! Download the .ipnyb version of your notebook and upload it to Gradescope!"
-  },
-  {
-    "objectID": "Pages/Labs/Lab05/lab05.html#what-to-turn-in",
-    "href": "Pages/Labs/Lab05/lab05.html#what-to-turn-in",
-    "title": "Lab05",
-    "section": "What to Turn In",
-    "text": "What to Turn In\nCongrats on finishing Lab 05! Download the .ipnyb version of your notebook and upload it to Gradescope!"
   }
 ]

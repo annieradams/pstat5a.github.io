@@ -502,8 +502,112 @@ data.frame(x = x, y = y) %>%
      - The interpretation of independence is that the two events "do not affect each other"
 
 
-# Counting
+# Random Variables
 
-- Don't forget about counting!
+## Basics of Random Variables {style="font-size:32px"}
 
-g
+- Recall long ago we discussed the notion of an experiment: any procedure we can repeat an infinite number of times where each time we repeat the experiment the same fixed set of things (i.e. the *outcomes*) can occur.
+
+- A **random variable**, loosely speaking, is some sort of numerical variable that keeps track of certain quantities relating to an experiment.
+
+- For example, if we toss 7 coins and let $X$ denote the number of heads we observe in these 7 coin tosses, then $X$ would be a random variable.
+
+- The set of all values a random variable can attain is called the **state space**, and is denoted $S_X$.
+
+- We classify random variables based on their state space:
+    - If $S_X$ has jumps, we say $X$ is a **discrete random variable**
+    - If $S_X$ does not have jumps, we say $X$ is a **continuous random variable**
+
+## Discrete Random Variables {style="font-size:30px"}
+
+- Discrete random variables are described/summarized by a **probability mass function** (p.m.f.), which is a specification of the values the random variable can take (i.e. the state space) along with the probabilities with which the random variable attains those values.
+
+    - P.M.F.'s are often displayed in tabular form: e.g.
+    $$ \begin{array}{r|cccc}
+      \boldsymbol{k}              & -1    & 0   & 1   & 2   \\
+      \hline
+      \boldsymbol{\mathbb{P}(X = k)}   & 0.1   & 0.2   & 0.3   & 0.4
+    \end{array}$$
+    
+    - Note that the probability values in a P.M.F. must sum to 1.
+    
+- Quantities like $\mathbb{P}(X \leq k)$ are found by summing up the values of $\mathbb{P}(X = x)$ for all values of $x$ in the state space that are less than $k$.
+
+    - For example, in the example above,
+    $$\mathbb{P}(X \leq 0.5) = \mathbb{P}(X = -1) + \mathbb{P}(X = 0)  = 0.1 + 0.2 = 0.3 $$
+    
+## Expected Value {style="font-size:30px"}
+
+- The **expected value** of a random variable $X$, denoted $\mathbb{E}[X]$, represents a sort of "average" of $X$, and is computed as
+$$ \mathbb{E}[X] = \sum_{\text{all $k$}} k \cdot \mathbb{P}(X = k) $$
+
+    - Again, don't be scared by the sigma notation! It just represents a sum.
+    
+    - So, for example, using our P.M.F. from the previous slide,
+    \begin{align*}
+      \mathbb{E}[X]   & = (-1) \cdot \mathbb{P}(X = -1) + (0) \cdot \mathbb{P}(X = 0)    \\
+      & \hspace{10mm} + (1) \cdot \mathbb{P}(X = 1) + (2) \cdot \mathbb{P}(X = 2)    \\[3mm]
+        & = (-1) \cdot (0.1) + (0) \cdot (0.2) + (1) \cdot (0.3) + (2) \cdot (0.4)     \\[3mm]
+        & = \boxed{1}
+    \end{align*}
+    
+## Variance and Standard Deviation {style="font-size:30px"}
+
+- There are two formulas we can use for the **variance** of a random variable $X$:
+$$ \mathrm{Var}(X) = \sum_{\text{all $k$}} (k - \mathbb{E}[X])^2 \cdot \mathbb{P}(X = k) $$
+or
+$$ \mathrm{Var}(X) = \left(\sum_{\text{all $k$}} k^2 \cdot \mathbb{P}(X = k) \right) - (\mathbb{E}[X])^2 $$
+
+- The **standard deviation** of a random variable is simply the square root of the variance:
+$$ \mathrm{SD}(X) = \sqrt{\mathrm{Var}(X)} $$
+
+## Variance and Standard Deviation {style="font-size:30px"}
+
+- For example, using the PMF from a few slides ago, the first formula for variance tells us to compute
+\begin{align*}
+\mathrm{Var}(X)     & = \sum_{\text{all $k$}} (k - \mathbb{E}[X])^2 \cdot \mathbb{P}(X = k)    \\
+    & = (-1 - 1)^2 \cdot \mathbb{P}(X = -1) + (0 - 1)^2 \cdot \mathbb{P}(X = 0)    \\
+      & \hspace{10mm} + (1 - 1)^2 \cdot \mathbb{P}(X = 1) + (2 - 1)^2 \cdot \mathbb{P}(X = 2)    \\[3mm]
+        & = (-1 - 1)^2 \cdot (0.1) + (0 - 1)^2 \cdot (0.2)    \\
+        & \hspace{10mm}+ (1 - 1)^2 \cdot (0.3) + (2 - 1)^2 \cdot (0.4)   \\[3mm]
+        & = \boxed{1}
+\end{align*}
+
+## Variance and Standard Deviation {style="font-size:30px"}
+
+:::{.nonincremental}
+- Using the second formula for variance, we first compute
+\begin{align*}
+\sum_{\text{all $k$}} k^2 \mathbb{P}(X = k)    &  = (-1)^2 \cdot \mathbb{P}(X = -1) + (0)^2 \cdot \mathbb{P}(X = 0)    \\
+      & \hspace{10mm} + (1)^2 \cdot \mathbb{P}(X = 1) + (2 - 1)^2 \cdot \mathbb{P}(X = 2)    \\[3mm]
+        & = (-1)^2 \cdot (0.1) + (0)^2 \cdot (0.2)    \\
+        & \hspace{10mm}+ (1)^2 \cdot (0.3) + (2)^2 \cdot (0.4)   \\[3mm]
+        & = 2
+\end{align*}
+which means
+$$ \mathrm{Var}(X) = 2 - (1)^2 = \boxed{1}$$
+:::
+
+## Binomial Distribution {style="font-size:32px"}
+
+- Suppose we have $n$ independent trials, each resulting in "success" with probability $p$ and "failure" with probability $1 - p$. If $X$ denotes the number of successes in these $n$ trials, we say $X$ follow the **Binomial distribution** with parameters $n$ and $p$, notated
+$$ X \sim \mathrm{Bin}(n, \ p) $$
+
+- If $X \sim \mathrm{Bin}(n, \ p)$, then:
+    - $S_X = \{0, 1, 2, \cdots, n\}$
+    - $\mathbb{P}(X = k) = \binom{n}{k} p^k (1 - p)^{n - k}$
+    - $\mathbb{E}[X] = np$
+    - $\mathrm{Var}(X) = np(1 - p)$
+  
+    
+## Binomial Distribution {style="font-size:32px"}
+
+- In order to verify that the Binomial distribution is appropriate to use, we need to check the Binomial Criteria:
+
+    1) Independence across trials
+    2) Fixed number $n$  of trials
+    3) Well-defined notion of "success" and "failure"
+    4) Fixed probability $p$ of success across trials.
+    
+- If you are going to use the Binomial distribution in a problem, you **must** check **all four** of these!
+
