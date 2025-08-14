@@ -506,7 +506,7 @@ data.frame(x = x, y = y) %>%
 
 ## Basics of Random Variables {style="font-size:32px"}
 
-- Recall long ago we discussed the notion of an experiment: any procedure we can repeat an infinite number of times where each time we repeat the experiment the same fixed set of things (i.e. the *outcomes*) can occur.
+- We discussed the notion of an experiment: any procedure we can repeat an infinite number of times where each time we repeat the experiment the same fixed set of things (i.e. the *outcomes*) can occur.
 
 - A **random variable**, loosely speaking, is some sort of numerical variable that keeps track of certain quantities relating to an experiment.
 
