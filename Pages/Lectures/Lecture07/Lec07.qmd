@@ -464,55 +464,7 @@ data.frame(x = x, y = y) %>%
     - **Union:** $E \cup F$; denotes $E$ or $F$ (or both)
     - **Intersection:** $E \cap F$; denotes $E$ and $F$
 
-## Venn Diagrams  {style="font-size:30px"}
 
-:::: {.columns}
-
-::: {.column width="50%"}
-![](VennDiagrams/a_complement.svg){width=50%}
-:::
-
-::: {.column width="50%"}
-:::{style="text-align:center"}
-
-<br />
-$A^\complement$ <br /> (complement)
-:::
-:::
-
-::::
-
-::::{.columns}
-
-::: {.column width="50%"}
-![](VennDiagrams/ab_intersect_shaded.svg){width=50%}
-:::
-
-::: {.column width="50%"}
-:::{style="text-align:center"}
-
-<br />
-$A \cap B$ <br /> (intersection)
-:::
-:::
-
-::::
-
-::::{.columns}
-
-::: {.column width="50%"}
-![](VennDiagrams/ab_union.svg){width=50%}
-:::
-
-::: {.column width="50%"}
-:::{style="text-align:center"}
-
-<br />
-$A \cup B$ <br /> (union)
-:::
-:::
-
-::::
 
 ## Axioms of Probability
 
@@ -554,3 +506,4 @@ $A \cup B$ <br /> (union)
 
 - Don't forget about counting!
 
+g
