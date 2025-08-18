@@ -72,6 +72,7 @@ Last Updated: *August 4, 2025*
 **Discussion**  
 <a href="../Files/Wkshts/Wksht02_Blank.pdf" class="button label-outline Discussion">Discussion 02</a><br/>
 <a href="../Files/Wkshts/Wksht02_Solns.pdf" class="button label-outline Discussion">Solutions</a><br/> 
+
 </div>
 
 <div>
@@ -96,7 +97,7 @@ Last Updated: *August 4, 2025*
 <a href="Lectures/Lecture11/Lec11.qmd" class="button label-outline lecture">11: Confidence Intervals for Means</a><br/>
 
 <a href="../Files/Tables/T_Table.pdf" class="button label-outline Discussion">T-Table</a><br/>
-<a href="../Files/Lec_Ex/Lec12_Ex3.pdf" class="button label-outline Discussion">Exercise 3</a><br/>
+<!-- <a href="../Files/Lec_Ex/Lec12_Ex3.pdf" class="button label-outline Discussion">Exercise 3</a><br/> -->
 <a href="../Files/Tables/Z_Table.pdf" class="button label-outline Discussion">Z-Table</a><br/>
 <!-- <a href="../Files/HW/HW03_Solns.pdf" class="button label-outline hw">HW3 Soln</a><br/> -->
 <!-- <a href="../Files/QzSolns/Qz03_solns.pdf" class="button label-outline quiz">Quiz3 Soln</a><br/> -->
