@@ -40,7 +40,7 @@ Last Updated: *August 4, 2025*
 <div>
 **Discussion**  
 <a href="../Files/Wkshts/Wksht01_Blank.pdf" class="button label-outline Discussion" target="_blank">Discussion 01</a><br/>
-<!-- <a href="../Files/Wkshts/Wksht01_Solns.pdf" class="button label-outline Discussion">Solutions</a><br/> -->
+<a href="../Files/Wkshts/Wksht01_Solns.pdf" class="button label-outline Discussion">Solutions</a><br/> 
 </div>
 
 <div>
@@ -71,7 +71,7 @@ Last Updated: *August 4, 2025*
 <div>
 **Discussion**  
 <a href="../Files/Wkshts/Wksht02_Blank.pdf" class="button label-outline Discussion">Discussion 02</a><br/>
-<!-- <a href="../Files/Wkshts/Wksht02_Solns.pdf" class="button label-outline Discussion">Solutions</a><br/> -->
+<a href="../Files/Wkshts/Wksht02_Solns.pdf" class="button label-outline Discussion">Solutions</a><br/> 
 </div>
 
 <div>

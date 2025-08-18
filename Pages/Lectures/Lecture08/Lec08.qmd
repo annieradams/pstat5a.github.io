@@ -26,6 +26,15 @@ library(tidyverse)
 library(ggthemes)
 ```
 
+## Class Updates 
+- Reminder: Quiz 2 today, due at 11:50 pm! 
+- Week 1 grades posted 
+- No more mandatory homework 6, extra credit hw instead! 
+- Homework 3 posted and due Thursday 
+
+
+
+
 ## Last Time {style="font-size:32px"}
 
 - Last lecture we started talking about random variables.
@@ -51,7 +60,7 @@ Here is a quick way to determine whether a random variable is continuous or disc
 :::
 :::
 
-- I'd like to stress, though- this is only a rule-of-thumb. If we ask you to *justify* your choice of classification of a random variable as either discrete or continuous, your argument **must** make mention of the state space (as this is the true *definitional* way of classifying random variables.)
+
 
 
 
@@ -732,7 +741,7 @@ $$ \mathbb{P}(x_1 \leq X \leq x_2)  = \mathbb{P}(X \leq x_2) - \mathbb{P}(X \leq
 :::
 :::
 
-- The quantity $\mathbb{P}(X \leq x)$, where we view $x$ as an arbitrary input (and hence the quantity $\mathbb{P}(X \leq x)$ as a function of $x$) is called the **cumulative distribution function** (or **c.d.f.** for short) of $X$.
+- The quantity $\mathbb{P}(X \leq x)$, where we view $x$ as an arbitrary input is called the **cumulative distribution function** (or **c.d.f.** for short) of $X$.
 
 ## Your Turn!
 
@@ -799,7 +808,7 @@ If we select a person at random, what is the expected amount of time (in minutes
 - The **normal distribution** takes two parameters $\mu$ and $\sigma$. We use the notation $X \sim \mathcal{N}(\mu, \ \sigma)$ to denote "$X$ follows the normal distribution with parameters $\mu$ and $\sigma$."
 
 - The normal distribution has distribution function given by
-$$ f(x) = \frac{1}{\sigma \cdot \sqrt{2 \pi}} \cdot \exp\left\{ - \frac{1}{2} \cdot \left( \frac{x - \mu}{\sigma} \right)^2 \right\} $$
+$$ f(x) = \frac{1}{\sigma \cdot \sqrt{2 \pi}} \cdot e^{- \frac{1}{2} \cdot \left( \frac{x - \mu}{\sigma} \right)^2} $$
 - Let's determine how the parameters affect the shape of the density curve.
 
 ## Changing $\mu$ and $\sigma$

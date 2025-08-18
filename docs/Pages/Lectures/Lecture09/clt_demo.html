@@ -15,7 +15,6 @@
             min-height: 100vh;
             color: #333;
         }
-
         .container {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
@@ -23,7 +22,6 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
         }
-
         h1 {
             text-align: center;
             color: #2c3e50;
@@ -34,14 +32,12 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .subtitle {
             text-align: center;
             color: #7f8c8d;
             margin-bottom: 30px;
             font-size: 1.2em;
         }
-
         .controls {
             display: flex;
             justify-content: center;
@@ -49,7 +45,6 @@
             margin-bottom: 30px;
             flex-wrap: wrap;
         }
-
         button {
             background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
@@ -62,23 +57,19 @@
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-
         button:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
-
         button:active {
             transform: translateY(0);
         }
-
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-bottom: 30px;
         }
-
         .stat-card {
             background: linear-gradient(135deg, #f8f9fa, #e9ecef);
             padding: 20px;
@@ -87,24 +78,20 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
-
         .stat-card:hover {
             transform: translateY(-5px);
         }
-
         .stat-label {
             font-size: 0.9em;
             color: #6c757d;
             margin-bottom: 5px;
             font-weight: 500;
         }
-
         .stat-value {
             font-size: 1.8em;
             font-weight: bold;
             color: #2c3e50;
         }
-
         .chart-container {
             background: white;
             border-radius: 15px;
@@ -112,7 +99,6 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
         }
-
         .chart-title {
             text-align: center;
             font-size: 1.3em;
@@ -120,31 +106,25 @@
             color: #2c3e50;
             margin-bottom: 15px;
         }
-
         .axis {
             font-size: 12px;
         }
-
         .bar {
             fill: #667eea;
             transition: all 0.3s ease;
         }
-
         .bar:hover {
             fill: #764ba2;
         }
-
         .population-line {
             stroke: #e74c3c;
             stroke-width: 3;
             stroke-dasharray: 5,5;
         }
-
         .mean-line {
             stroke: #27ae60;
             stroke-width: 2;
         }
-
         @media (max-width: 768px) {
             .controls {
                 flex-direction: column;
@@ -211,27 +191,29 @@
         const svg = d3.select("#histogram")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom);
-            
+        
         const g = svg.append("g")
             .attr("transform", `translate(${margin.left},${margin.top})`);
-            
+        
         const xScale = d3.scaleLinear()
             .domain([0.2, 0.45])
             .range([0, width]);
-            
+        
         const yScale = d3.scaleLinear()
             .range([height, 0]);
-            
-        // Add axes
-        g.append("g")
-            .attr("class", "axis")
+        
+        // Add axes with specific IDs for reliable selection
+        const xAxis = g.append("g")
+            .attr("class", "axis x-axis")
+            .attr("id", "x-axis")
             .attr("transform", `translate(0,${height})`)
             .call(d3.axisBottom(xScale));
-            
-        g.append("g")
-            .attr("class", "axis")
+        
+        const yAxis = g.append("g")
+            .attr("class", "axis y-axis")
+            .attr("id", "y-axis")
             .call(d3.axisLeft(yScale));
-            
+        
         // Add axis labels
         g.append("text")
             .attr("transform", "rotate(-90)")
@@ -241,7 +223,7 @@
             .style("text-anchor", "middle")
             .style("font-size", "14px")
             .text("Frequency");
-            
+        
         g.append("text")
             .attr("transform", `translate(${width / 2}, ${height + margin.bottom})`)
             .style("text-anchor", "middle")
@@ -255,7 +237,7 @@
             .attr("x2", xScale(POPULATION_PROPORTION))
             .attr("y1", 0)
             .attr("y2", height);
-            
+        
         // Add sample proportions line (initially hidden)
         const meanLine = g.append("line")
             .attr("class", "mean-line")
@@ -314,20 +296,19 @@
                 .domain(xScale.domain())
                 .thresholds(20)(sampleProportions);
             
-            // Update y scale
+            // Update y scale domain based on maximum frequency
             yScale.domain([0, d3.max(bins, d => d.length)]);
             
-            // Update y axis
-            g.select(".axis")
-                .filter(function() { return this.getAttribute("transform") === null; })
+            // Update y axis using the specific ID selector with integer ticks only
+            g.select("#y-axis")
                 .transition()
                 .duration(300)
-                .call(d3.axisLeft(yScale));
+                .call(d3.axisLeft(yScale).tickFormat(d3.format("d")).ticks(Math.max(1, d3.max(bins, d => d.length))));
             
             // Update bars
             const bars = g.selectAll(".bar")
                 .data(bins);
-                
+            
             bars.enter()
                 .append("rect")
                 .attr("class", "bar")
@@ -338,7 +319,7 @@
                 .attr("y", d => yScale(d.length))
                 .attr("width", d => Math.max(0, xScale(d.x1) - xScale(d.x0) - 1))
                 .attr("height", d => height - yScale(d.length));
-                
+            
             bars.exit().remove();
             
             // Update mean line
@@ -365,9 +346,8 @@
             meanLine.style("opacity", 0);
             
             yScale.domain([0, 1]);
-            g.select(".axis")
-                .filter(function() { return this.getAttribute("transform") === null; })
-                .call(d3.axisLeft(yScale));
+            g.select("#y-axis")
+                .call(d3.axisLeft(yScale).tickFormat(d3.format("d")).ticks(2));
         }
         
         // Initialize

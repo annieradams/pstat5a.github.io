@@ -882,6 +882,13 @@
     "text": "Summary\n\nWe started off by talking about the structure of data, and the data frame\nWe then discussed how to classify variables.\nNext, we explored graphical methods for summarizing data.\n\nBargraphs are best-suited for categorical data\nHistograms and boxplots are best-suited for numerical data\n\nWe also introduced the notions of percentiles, the median, and outliers.\nWe’ll also discuss some numerical summaries for data, including the mean, median, standard deviation, and IQR.\nNext time we’ll discuss how to visualize the relationship between two variables."
   },
   {
+    "objectID": "Pages/Lectures/Lecture08/Lec08.html#class-updates",
+    "href": "Pages/Lectures/Lecture08/Lec08.html#class-updates",
+    "title": "PSTAT 5A: Lecture 08",
+    "section": "Class Updates",
+    "text": "Class Updates\n\nReminder: Quiz 2 today, due at 11:50 pm!\nWeek 1 grades posted\nNo more mandatory homework 6, extra credit hw instead!\nHomework 3 posted and due Thursday"
+  },
+  {
     "objectID": "Pages/Lectures/Lecture08/Lec08.html#last-time",
     "href": "Pages/Lectures/Lecture08/Lec08.html#last-time",
     "title": "PSTAT 5A: Lecture 08",
@@ -970,7 +977,7 @@
     "href": "Pages/Lectures/Lecture08/Lec08.html#tail-probabilities-1",
     "title": "PSTAT 5A: Lecture 08",
     "section": "Tail Probabilities",
-    "text": "Tail Probabilities\n\nIn math, what we have found is:\n\n\n\n\n\n\n\n\nImportant\n\n\n\n\\[ \\mathbb{P}(x_1 \\leq X \\leq x_2)  = \\mathbb{P}(X \\leq x_2) - \\mathbb{P}(X \\leq x_1) \\]\n\n\n\n\n\n\nThe quantity \\(\\mathbb{P}(X \\leq x)\\), where we view \\(x\\) as an arbitrary input (and hence the quantity \\(\\mathbb{P}(X \\leq x)\\) as a function of \\(x\\)) is called the cumulative distribution function (or c.d.f. for short) of \\(X\\)."
+    "text": "Tail Probabilities\n\nIn math, what we have found is:\n\n\n\n\n\n\n\n\nImportant\n\n\n\n\\[ \\mathbb{P}(x_1 \\leq X \\leq x_2)  = \\mathbb{P}(X \\leq x_2) - \\mathbb{P}(X \\leq x_1) \\]\n\n\n\n\n\n\nThe quantity \\(\\mathbb{P}(X \\leq x)\\), where we view \\(x\\) as an arbitrary input is called the cumulative distribution function (or c.d.f. for short) of \\(X\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture08/Lec08.html#your-turn-1",
@@ -998,7 +1005,7 @@
     "href": "Pages/Lectures/Lecture08/Lec08.html#normal-distribution-1",
     "title": "PSTAT 5A: Lecture 08",
     "section": "Normal Distribution",
-    "text": "Normal Distribution\n\nThe normal distribution takes two parameters \\(\\mu\\) and \\(\\sigma\\). We use the notation \\(X \\sim \\mathcal{N}(\\mu, \\ \\sigma)\\) to denote “\\(X\\) follows the normal distribution with parameters \\(\\mu\\) and \\(\\sigma\\).”\nThe normal distribution has distribution function given by \\[ f(x) = \\frac{1}{\\sigma \\cdot \\sqrt{2 \\pi}} \\cdot \\exp\\left\\{ - \\frac{1}{2} \\cdot \\left( \\frac{x - \\mu}{\\sigma} \\right)^2 \\right\\} \\]\nLet’s determine how the parameters affect the shape of the density curve."
+    "text": "Normal Distribution\n\nThe normal distribution takes two parameters \\(\\mu\\) and \\(\\sigma\\). We use the notation \\(X \\sim \\mathcal{N}(\\mu, \\ \\sigma)\\) to denote “\\(X\\) follows the normal distribution with parameters \\(\\mu\\) and \\(\\sigma\\).”\nThe normal distribution has distribution function given by \\[ f(x) = \\frac{1}{\\sigma \\cdot \\sqrt{2 \\pi}} \\cdot e^{- \\frac{1}{2} \\cdot \\left( \\frac{x - \\mu}{\\sigma} \\right)^2} \\]\nLet’s determine how the parameters affect the shape of the density curve."
   },
   {
     "objectID": "Pages/Lectures/Lecture08/Lec08.html#changing-mu-and-sigma",
@@ -4589,14 +4596,14 @@
     "href": "Pages/Lectures/Lecture09/Lec09.html#leadup",
     "title": "PSTAT 5A: Lecture 09",
     "section": "Leadup",
-    "text": "Leadup\n\nLet’s, for the moment, don our Sociology hats and say we’re interested in estimating the average monthly income of US Citizens.\nSurveying every single US Citizen and recording their income is not feasible- doing so would be far too expensive (both in terms of monetary cost as well as temporal cost)\nInstead, a natural idea is to take a sample of some subset of US Citizens, and record the average monthly income of these sampled individuals.\nNow, here’s a question: given two separate samples of, say, 125 US Citizens- do we expect the average income of these two samples to be exactly the same, or slightly different?\n\nProbably slightly different!"
+    "text": "Leadup\n\nLet’s, for the moment, don our Sociology hats and say we’re interested in estimating the average monthly income of US Citizens.\nSurveying every single US Citizen and recording their income is not feasible\nInstead, a natural idea is to take a sample of some subset of US Citizens, and record the average monthly income of these sampled individuals.\nNow, here’s a question: given two separate samples of, say, 125 US Citizens- do we expect the average income of these two samples to be exactly the same, or slightly different?\n\nProbably slightly different!"
   },
   {
     "objectID": "Pages/Lectures/Lecture09/Lec09.html#leadup-1",
     "href": "Pages/Lectures/Lecture09/Lec09.html#leadup-1",
     "title": "PSTAT 5A: Lecture 09",
     "section": "Leadup",
-    "text": "Leadup\n\nSo, it seems we have two things to keep track of:\n\nThe true average monthly income of US Citizens\nThe average monthly income of a sample of US Citizens.\n\nBy the last point on the previous slide, we can see that the second quantity above is a random variable.\n\nThis is an example of a sample statistic, which is basically any quantity that is computed from our data.\n\nThe true average monthly income of US Citizens is a fixed number, which we call a population parameter.\n\nIn general, a population parameter is just a parameter that relates to the population (e.g. mean, median, variance, etc.)"
+    "text": "Leadup\n\nSo, it seems we have two things to keep track of:\n\nThe true average monthly income of US Citizens\nThe average monthly income of a sample of US Citizens.\n\nWe can see that the second quantity above is a random variable!.\n\nThis is an example of a sample statistic, which is basically any quantity that is computed from our data.\n\nThe true average monthly income of US Citizens is a fixed number, which we call a population parameter.\n\nIn general, a population parameter is just a parameter that relates to the population (e.g. mean, median, variance, etc.)"
   },
   {
     "objectID": "Pages/Lectures/Lecture09/Lec09.html#inferential-statistics",
@@ -4610,7 +4617,7 @@
     "href": "Pages/Lectures/Lecture09/Lec09.html#parameter-vs.-statistic",
     "title": "PSTAT 5A: Lecture 09",
     "section": "Parameter vs. Statistic",
-    "text": "Parameter vs. Statistic\n\nIt is extremely important to be able to distinguish a population parameter from a sample statistic.\nThere are a couple of ways to do this.\nThe first is to consider the general structure of the situation: if a given quatntity is describing the population, then it must be a population parameter.\n\nIf, instead, it is describing a sample, then it must be a sample statistic.\n\nThe other way to think about this is through randomness: remember that different samples correspond to different observed values of our sample statistic.\n\nSo, imagine asking yourself: “if I took a different sample, would this quantity change?” If so, then it is a sample statistic (or, more carefully, an observed instance of a sample statistic)."
+    "text": "Parameter vs. Statistic\n\nIt is extremely important to be able to distinguish a population parameter from a sample statistic.\nThere are a couple of ways to do this.\nThe first is to consider the general structure of the situation: if a given quatntity is describing the population, then it must be a population parameter.\n\nIf, instead, it is describing a sample, then it must be a sample statistic.\n\nThe other way to think about this is through randomness: remember that different samples correspond to different observed values of our sample statistic.\n\nSo, imagine asking yourself: “if I took a different sample, would this quantity change?” If so, then it is a sample statistic."
   },
   {
     "objectID": "Pages/Lectures/Lecture09/Lec09.html#worked-out-example",
@@ -5380,14 +5387,14 @@
     "href": "Pages/schedule.html#week-1-804---807",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Week 1 (8/04 - 8/07)",
-    "text": "Week 1 (8/04 - 8/07)\n\n\nLectures\n00: Introduction 01: Descriptive Statistics I 02: Descriptive Statistics II 03: Intro to Probability  \n\n\nDiscussion\nDiscussion 01 \n\n\nLab\nLab 01"
+    "text": "Week 1 (8/04 - 8/07)\n\n\nLectures\n00: Introduction 01: Descriptive Statistics I 02: Descriptive Statistics II 03: Intro to Probability  \n\n\nDiscussion\nDiscussion 01 Solutions\n\n\nLab\nLab 01"
   },
   {
     "objectID": "Pages/schedule.html#week-2-811---814",
     "href": "Pages/schedule.html#week-2-811---814",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Week 2 (8/11 - 8/14)",
-    "text": "Week 2 (8/11 - 8/14)\n\n\nLectures\n04: Counting 05: Conditional Probabilities 06: Discrete Random Variables 07: Review\n\n\n\n\nDiscussion\nDiscussion 02 \n\n\nLab\nLab 02"
+    "text": "Week 2 (8/11 - 8/14)\n\n\nLectures\n04: Counting 05: Conditional Probabilities 06: Discrete Random Variables 07: Review\n\n\n\n\nDiscussion\nDiscussion 02 Solutions\n\n\nLab\nLab 02"
   },
   {
     "objectID": "Pages/schedule.html#week-3-818---821",

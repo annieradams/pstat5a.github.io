@@ -29,7 +29,7 @@ library(ggthemes)
 ## Leadup {style="font-size:32px"}
 
 - Let's, for the moment, don our Sociology hats and say we're interested in estimating the average monthly income of US Citizens.
-- Surveying *every* *single* US Citizen and recording their income is not feasible- doing so would be far too expensive (both in terms of monetary cost as well as temporal cost)
+- Surveying *every* *single* US Citizen and recording their income is not feasible
 - Instead, a natural idea is to take a **sample** of some subset of US Citizens, and record the average monthly income of these sampled individuals. 
 - Now, here's a question: given two separate samples of, say, 125 US Citizens- do we expect the average income of these two samples to be exactly the same, or slightly different?
     - Probably slightly different!
@@ -39,7 +39,7 @@ library(ggthemes)
 - So, it seems we have two things to keep track of:
     - The true average monthly income of US Citizens
     - The average monthly income of a *sample* of US Citizens.
-- By the last point on the previous slide, we can see that the second quantity above [is a random variable]{.underline}.
+- We can see that the second quantity above [is a random variable!]{.underline}.
     - This is an example of a **sample statistic**, which is basically any quantity that is computed from our data.
 - The true average monthly income of US Citizens is a fixed number, which we call a **population parameter**.
     - In general, a population parameter is just a parameter that relates to the population (e.g. mean, median, variance, etc.)
@@ -66,7 +66,7 @@ library(ggthemes)
 - The first is to consider the general structure of the situation: if a given quatntity is describing the *population*, then it must be a *population parameter*.
     - If, instead, it is describing a *sample*, then it must be a *sample statistic*.
 - The other way to think about this is through randomness: remember that different samples correspond to different observed values of our sample statistic.
-    - So, imagine asking yourself: "if I took a different sample, would this quantity change?" If so, then it is a sample statistic (or, more carefully, an observed instance of a sample statistic).
+    - So, imagine asking yourself: "if I took a different sample, would this quantity change?" If so, then it is a sample statistic.
 
 ## Worked-Out Example
 
