@@ -90,13 +90,13 @@ d. Is the value of $3.2\%$ a population parameter, or an observed instance of a 
 
 ## Solution {style="font-size:30px"}
 
-a. the population is the set of all cats in the world, since we the veterinarian seeks to describe the prevalence of FIV among *all cats*.
+a. Identify the population : the population is the set of all cats in the world, since we the veterinarian seeks to describe the prevalence of FIV among *all cats*.
 
-b. In this context, the sample is the set of 100 cats the veterinarian examined.
+b. Identify the sample.: In this context, the sample is the set of 100 cats the veterinarian examined.
 
-c. The population parameter of interest is $p =$ "the true proportion of cats that suffer from FIV".
+c. Identify the population parameter of interest: The population parameter of interest is $p =$ "the true proportion of cats that suffer from FIV".
 
-d. The value of 3.2\% is an observed instance of a **sample statistic**, because if the veterinarian had taken a *different* sample of 100 cats she likely would have observed a different proportion of FIV-positive cats.
+d. Is the value of $3.2\%$ a population parameter, or an observed instance of a sample statistic?: The value of 3.2\% is an observed instance of a **sample statistic**, because if the veterinarian had taken a *different* sample of 100 cats she likely would have observed a different proportion of FIV-positive cats.
 
     - If, instead, the problem stated that 3.2% of *all cats* have FIV, then this would be describing a *population parameter* as it is a statement about the *population*.
 
@@ -127,8 +127,7 @@ d. Is the value of 0.98 a population parameter, or an observed instance of a sam
     - A **population mean**
 - Other population parameters exist! For instance, we could talk about the population *median*, the population *variance*, or even the population *IQR*.
 
-- Up until now, I've been pretty vague about what "inferences" mean. This is because "making inferences" is a broad term!
-- One part of making inferences is trying to **estimate** the value of a population parameter.
+- When we make inferences we are trying to **estimate** the value of a population parameter.
     - This process is called **parameter estimation**.
 
 ## Parameter Estimation {style="font-size:30px"}

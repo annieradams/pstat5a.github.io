@@ -4631,7 +4631,7 @@
     "href": "Pages/Lectures/Lecture09/Lec09.html#solution",
     "title": "PSTAT 5A: Lecture 09",
     "section": "Solution",
-    "text": "Solution\n\nthe population is the set of all cats in the world, since we the veterinarian seeks to describe the prevalence of FIV among all cats.\nIn this context, the sample is the set of 100 cats the veterinarian examined.\nThe population parameter of interest is \\(p =\\) “the true proportion of cats that suffer from FIV”.\nThe value of 3.2% is an observed instance of a sample statistic, because if the veterinarian had taken a different sample of 100 cats she likely would have observed a different proportion of FIV-positive cats.\n\nIf, instead, the problem stated that 3.2% of all cats have FIV, then this would be describing a population parameter as it is a statement about the population."
+    "text": "Solution\n\nIdentify the population : the population is the set of all cats in the world, since we the veterinarian seeks to describe the prevalence of FIV among all cats.\nIdentify the sample.: In this context, the sample is the set of 100 cats the veterinarian examined.\nIdentify the population parameter of interest: The population parameter of interest is \\(p =\\) “the true proportion of cats that suffer from FIV”.\nIs the value of \\(3.2\\%\\) a population parameter, or an observed instance of a sample statistic?: The value of 3.2% is an observed instance of a sample statistic, because if the veterinarian had taken a different sample of 100 cats she likely would have observed a different proportion of FIV-positive cats.\n\nIf, instead, the problem stated that 3.2% of all cats have FIV, then this would be describing a population parameter as it is a statement about the population."
   },
   {
     "objectID": "Pages/Lectures/Lecture09/Lec09.html#your-turn",
@@ -4645,7 +4645,7 @@
     "href": "Pages/Lectures/Lecture09/Lec09.html#different-population-parameters",
     "title": "PSTAT 5A: Lecture 09",
     "section": "Different Population Parameters",
-    "text": "Different Population Parameters\n\nSo far we’ve seen examples of two different population parameters:\n\nA population proportion\nA population mean\n\nOther population parameters exist! For instance, we could talk about the population median, the population variance, or even the population IQR.\nUp until now, I’ve been pretty vague about what “inferences” mean. This is because “making inferences” is a broad term!\nOne part of making inferences is trying to estimate the value of a population parameter.\n\nThis process is called parameter estimation."
+    "text": "Different Population Parameters\n\nSo far we’ve seen examples of two different population parameters:\n\nA population proportion\nA population mean\n\nOther population parameters exist! For instance, we could talk about the population median, the population variance, or even the population IQR.\nWhen we make inferences we are trying to estimate the value of a population parameter.\n\nThis process is called parameter estimation."
   },
   {
     "objectID": "Pages/Lectures/Lecture09/Lec09.html#parameter-estimation",
