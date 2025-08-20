@@ -99,7 +99,7 @@ where the constant $c$ depends on both the sampling distribution of $\overline{X
 
 - If the underlying population *is* normally distributed [again with population mean $\mu$ and population standard deviation $\sigma$], we have that
 $$ \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0, \ 1) $$
-meaning the constant $c$ should be selected as the appropriate percentile of the *standard normal* distribution:
+meaning the constant $z^*$ should be selected as the appropriate percentile of the *standard normal* distribution:
 $$ \overline{x} \pm z^{\ast} \cdot \frac{\sigma}{\sqrt{n}} $$
 
 ## Worked-Out Example {style="font-size:30px"}
@@ -273,7 +273,7 @@ $$ 0.8708 - 0.1292 = \boxed{74.16\%} $$
 $$ s = \sqrt{ \frac{1}{n - 1} \sum_{i=1}^{n} (X_i - \overline{X})^2} $$
 
 - In other words, our proposition is to use confidence intervals of the form
-$$ \overline{x} \pm c \cdot \frac{s}{\sqrt{n}} $$
+$$ \overline{x} \pm z^* \cdot \frac{s}{\sqrt{n}} $$
 
 - Notice, however, that this introduces additional uncertainty into the problem as $s$ itself is a random variable (different samples result in different sample standard deviations).
 
