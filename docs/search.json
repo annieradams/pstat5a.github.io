@@ -2104,7 +2104,7 @@
     "href": "Pages/Lectures/Lecture11/Lec11.html#solutions-contd-1",
     "title": "PSTAT 5A: Lecture 11",
     "section": "Solutions (cont’d)",
-    "text": "Solutions (cont’d)\n\nI’d also like to mention that we can use Python to help us:\n\n\n\nimport scipy.stats as sps\nsps.t.ppf(0.025, 48)\n\nnp.float64(-2.0106347576242323)\n\n\n\n\nYou’ll learn more about this code during Lab today!\nTherefore, our 95% confidence interval takes the form \\[ \\overline{x} \\pm 2.01 \\cdot \\frac{s}{\\sqrt{49}} \\] or, equivalently, \\[ (2.25) \\pm (2.01) \\cdot \\frac{1.66}{7} = 2.25 \\pm 0.477 = \\boxed{[1.773 \\ , \\ 2.727]}\\]\nThe interpretation of this interval is much the same as our intervals for proportions:\n\n\n\nWe are 95% confident that the true average monthly income (in thousands of dollars) of Gauchonian residents is between 1.773 and 2.727."
+    "text": "Solutions (cont’d)\n\nI’d also like to mention that we can use Python to help us:\n\n\n\nimport scipy.stats as sps\nsps.t.ppf(0.025, 48)\n\nnp.float64(-2.0106347576242323)\n\n\n\n\nTherefore, our 95% confidence interval takes the form \\[ \\overline{x} \\pm 2.01 \\cdot \\frac{s}{\\sqrt{49}} \\] or, equivalently, \\[ (2.25) \\pm (2.01) \\cdot \\frac{1.66}{7} = 2.25 \\pm 0.477 = \\boxed{[1.773 \\ , \\ 2.727]}\\]\nThe interpretation of this interval is much the same as our intervals for proportions:\n\n\n\nWe are 95% confident that the true average monthly income (in thousands of dollars) of Gauchonian residents is between 1.773 and 2.727."
   },
   {
     "objectID": "Pages/Lectures/Lecture11/Lec11.html#general-flowchart",
