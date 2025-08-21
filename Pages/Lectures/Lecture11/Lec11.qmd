@@ -234,6 +234,8 @@ c. The random variable of interest is $\overline{X}$, the average temperature ac
 - Therefore, the CLT applies and tells us that
 $$ \overline{X} \sim \mathcal{N}\left(\mu, \ \frac{8}{\sqrt{81}} \right) \sim \mathcal{N}\left(\mu, \ \frac{8}{9} \right) $$
 
+
+
 ## Solutions {style="font-size:30px"}
 
 - Again, what we have found is 
@@ -252,6 +254,21 @@ $$ \mathbb{P}(\overline{X} \leq \mu + 1) - \mathbb{P}(\overline{X} \leq \mu - 1)
 
 - The corresponding values from the normal table are $0.8708$ and $0.1292$, respectively, meaning the desired probability is
 $$ 0.8708 - 0.1292 = \boxed{74.16\%} $$
+
+## Solutions
+
+Part e. Construct a 90\% confidence interval for the true average temperature across all weather stations in Antarctica.
+
+$$ \overline{x} \pm z^{\ast} \cdot \frac{\sigma}{\sqrt{n}} $$
+
+With a 90% confidence interval, we know $z^*$ = 1.645. Therefore, 
+
+$$ 26 \pm 1.645 * \frac{8}{\sqrt{81}} $$
+
+$$ = 26 \pm 1.46$$ 
+
+$$ = \boxed{[24.54,\  27.46]}$$
+
 
 ## Unknown $\sigma$? {style="font-size:28px"}
 
@@ -281,7 +298,6 @@ $$ \overline{x} \pm z^* \cdot \frac{s}{\sqrt{n}} $$
 
 ## Using $s$ in place of $\sigma$ {style="font-size:28px"}
 
-- Firstly, recall that we used percentiles of the standard normal distribution because
 $$ \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0, \ 1) $$
 
 - Mathematically, what the above discussion is saying is that the distribution of
@@ -292,7 +308,7 @@ is no longer normal.
 
 ## The *t-*distribution {style="font-size:28px"}
 
-- The $t-$distribution looks very similar to the standard normal distribution in that it is centered at 1, and has a bell-like density curve.
+- The $t-$distribution looks very similar to the standard normal distribution in that it is centered at 0, and has a bell-like density curve.
 
 - However, one key difference is that the $t-$distribution is parameterized by a 
 *single* parameter, called the **degrees of freedom**, which we abbreviate $\mathrm{df}$.
@@ -338,10 +354,6 @@ data.frame(x = c(-3, 3)) %>%
 :::
 
 ## The *t-*distribution {style="font-size:28px"}
-
-- Another key property is that, for all finite degrees of freedom, the tails of the *t-*distribution density curve are "wider" (i.e. higher) than the tails of the standard normal density curve.
-
-    - What this means is that the *t-*distribution allows for higher probabilities of tail events, thereby incorporating the additional uncertainty injected into our confidence intervals by using $s$ in place of $\sigma$
 
 - An interesting fact is that the *t-*distribution with $\infty$ degrees of freedom is equivalent to the standard normal distribution. 
 

@@ -484,7 +484,7 @@
 <ul>
 <li class="fragment"><p>Let’s work on finding the sampling distribution of <span class="math inline">\(\overline{X}\)</span>.</p></li>
 <li class="fragment"><p>It turns out that the first thing we need to ask is whether the underlying population is normally distributed or not.</p></li>
-<li class="fragment"><p>If the underlying population <em>is</em> normally distributed [again with population mean <span class="math inline">\(\mu\)</span> and population standard deviation <span class="math inline">\(\sigma\)</span>], we have that <span class="math display">\[ \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0, \ 1) \]</span> meaning the constant <span class="math inline">\(c\)</span> should be selected as the appropriate percentile of the <em>standard normal</em> distribution: <span class="math display">\[ \overline{x} \pm z^{\ast} \cdot \frac{\sigma}{\sqrt{n}} \]</span></p></li>
+<li class="fragment"><p>If the underlying population <em>is</em> normally distributed [again with population mean <span class="math inline">\(\mu\)</span> and population standard deviation <span class="math inline">\(\sigma\)</span>], we have that <span class="math display">\[ \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0, \ 1) \]</span> meaning the constant <span class="math inline">\(z^*\)</span> should be selected as the appropriate percentile of the <em>standard normal</em> distribution: <span class="math display">\[ \overline{x} \pm z^{\ast} \cdot \frac{\sigma}{\sqrt{n}} \]</span></p></li>
 </ul>
 </section>
 <section id="worked-out-example" class="slide level2" style="font-size:30px">
@@ -653,6 +653,15 @@ z_2   &amp;  = \frac{(\mu - 1) - \mu}{8/9} = -\frac{9}{8} \approx -1.13
 <li class="fragment">The corresponding values from the normal table are <span class="math inline">\(0.8708\)</span> and <span class="math inline">\(0.1292\)</span>, respectively, meaning the desired probability is <span class="math display">\[ 0.8708 - 0.1292 = \boxed{74.16\%} \]</span></li>
 </ul>
 </section>
+<section id="solutions-5" class="slide level2">
+<h2>Solutions</h2>
+<p>Part e. Construct a 90% confidence interval for the true average temperature across all weather stations in Antarctica.</p>
+<p><span class="math display">\[ \overline{x} \pm z^{\ast} \cdot \frac{\sigma}{\sqrt{n}} \]</span></p>
+<p>With a 90% confidence interval, we know <span class="math inline">\(z^*\)</span> = 1.645. Therefore,</p>
+<p><span class="math display">\[ 26 \pm 1.645 * \frac{8}{\sqrt{81}} \]</span></p>
+<p><span class="math display">\[ = 26 \pm 1.46\]</span></p>
+<p><span class="math display">\[ = \boxed{[24.54,\  27.46]}\]</span></p>
+</section>
 <section id="unknown-sigma" class="slide level2" style="font-size:28px">
 <h2>Unknown <span class="math inline">\(\sigma\)</span>?</h2>
 <ul>
@@ -671,15 +680,15 @@ z_2   &amp;  = \frac{(\mu - 1) - \mu}{8/9} = -\frac{9}{8} \approx -1.13
 <ul>
 <li class="fragment"><p>Can anyone propose a point estimator for <span class="math inline">\(\sigma\)</span>?</p></li>
 <li class="fragment"><p>That’s right; <span class="math inline">\(s\)</span>, the sample standard deviation! <span class="math display">\[ s = \sqrt{ \frac{1}{n - 1} \sum_{i=1}^{n} (X_i - \overline{X})^2} \]</span></p></li>
-<li class="fragment"><p>In other words, our proposition is to use confidence intervals of the form <span class="math display">\[ \overline{x} \pm c \cdot \frac{s}{\sqrt{n}} \]</span></p></li>
+<li class="fragment"><p>In other words, our proposition is to use confidence intervals of the form <span class="math display">\[ \overline{x} \pm z^* \cdot \frac{s}{\sqrt{n}} \]</span></p></li>
 <li class="fragment"><p>Notice, however, that this introduces additional uncertainty into the problem as <span class="math inline">\(s\)</span> itself is a random variable (different samples result in different sample standard deviations).</p></li>
 <li class="fragment"><p>It turns out that the additional uncertainty introduced is so large that we become <strong>no longer able to use the normal distribution.</strong></p></li>
 </ul>
 </section>
 <section id="using-s-in-place-of-sigma" class="slide level2" style="font-size:28px">
 <h2>Using <span class="math inline">\(s\)</span> in place of <span class="math inline">\(\sigma\)</span></h2>
+<p><span class="math display">\[ \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0, \ 1) \]</span></p>
 <ul>
-<li class="fragment"><p>Firstly, recall that we used percentiles of the standard normal distribution because <span class="math display">\[ \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0, \ 1) \]</span></p></li>
 <li class="fragment"><p>Mathematically, what the above discussion is saying is that the distribution of <span class="math display">\[ \frac{\overline{X} - \mu}{s / \sqrt{n}} \]</span> is no longer normal.</p></li>
 <li class="fragment"><p>It turns out that, still assuming a large enough sample size, the quantity above follows what is known as a <strong><em>t</em>-distribution</strong>.</p></li>
 </ul>
@@ -687,7 +696,7 @@ z_2   &amp;  = \frac{(\mu - 1) - \mu}{8/9} = -\frac{9}{8} \approx -1.13
 <section id="the-t-distribution" class="slide level2" style="font-size:28px">
 <h2>The <em>t-</em>distribution</h2>
 <ul>
-<li class="fragment"><p>The <span class="math inline">\(t-\)</span>distribution looks very similar to the standard normal distribution in that it is centered at 1, and has a bell-like density curve.</p></li>
+<li class="fragment"><p>The <span class="math inline">\(t-\)</span>distribution looks very similar to the standard normal distribution in that it is centered at 0, and has a bell-like density curve.</p></li>
 <li class="fragment"><p>However, one key difference is that the <span class="math inline">\(t-\)</span>distribution is parameterized by a <em>single</em> parameter, called the <strong>degrees of freedom</strong>, which we abbreviate <span class="math inline">\(\mathrm{df}\)</span>.</p></li>
 </ul>
 <div class="fragment">
@@ -705,10 +714,6 @@ z_2   &amp;  = \frac{(\mu - 1) - \mu}{8/9} = -\frac{9}{8} \approx -1.13
 <section id="the-t-distribution-1" class="slide level2" style="font-size:28px">
 <h2>The <em>t-</em>distribution</h2>
 <ul>
-<li class="fragment"><p>Another key property is that, for all finite degrees of freedom, the tails of the <em>t-</em>distribution density curve are “wider” (i.e.&nbsp;higher) than the tails of the standard normal density curve.</p>
-<ul>
-<li class="fragment">What this means is that the <em>t-</em>distribution allows for higher probabilities of tail events, thereby incorporating the additional uncertainty injected into our confidence intervals by using <span class="math inline">\(s\)</span> in place of <span class="math inline">\(\sigma\)</span></li>
-</ul></li>
 <li class="fragment"><p>An interesting fact is that the <em>t-</em>distribution with <span class="math inline">\(\infty\)</span> degrees of freedom is equivalent to the standard normal distribution.</p>
 <ul>
 <li class="fragment">As such, with greater degrees of freedom, the <em>t-</em>distribution - and its percentiles - more and more closely resembles the standard normal distribution.</li>
@@ -750,7 +755,7 @@ z_2   &amp;  = \frac{(\mu - 1) - \mu}{8/9} = -\frac{9}{8} \approx -1.13
 </div>
 </div>
 </section>
-<section id="solutions-5" class="slide level2" style="font-size:32px">
+<section id="solutions-6" class="slide level2" style="font-size:32px">
 <h2>Solutions</h2>
 <ol type="a">
 <li class="fragment"><p>The population is the set of all <em>Gauchonian</em> residents.</p></li>

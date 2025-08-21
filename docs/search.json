@@ -1950,7 +1950,7 @@
     "href": "Pages/Lectures/Lecture11/Lec11.html#normal-population",
     "title": "PSTAT 5A: Lecture 11",
     "section": "Normal Population",
-    "text": "Normal Population\n\nLet’s work on finding the sampling distribution of \\(\\overline{X}\\).\nIt turns out that the first thing we need to ask is whether the underlying population is normally distributed or not.\nIf the underlying population is normally distributed [again with population mean \\(\\mu\\) and population standard deviation \\(\\sigma\\)], we have that \\[ \\frac{\\overline{X} - \\mu}{\\sigma / \\sqrt{n}} \\sim \\mathcal{N}(0, \\ 1) \\] meaning the constant \\(c\\) should be selected as the appropriate percentile of the standard normal distribution: \\[ \\overline{x} \\pm z^{\\ast} \\cdot \\frac{\\sigma}{\\sqrt{n}} \\]"
+    "text": "Normal Population\n\nLet’s work on finding the sampling distribution of \\(\\overline{X}\\).\nIt turns out that the first thing we need to ask is whether the underlying population is normally distributed or not.\nIf the underlying population is normally distributed [again with population mean \\(\\mu\\) and population standard deviation \\(\\sigma\\)], we have that \\[ \\frac{\\overline{X} - \\mu}{\\sigma / \\sqrt{n}} \\sim \\mathcal{N}(0, \\ 1) \\] meaning the constant \\(z^*\\) should be selected as the appropriate percentile of the standard normal distribution: \\[ \\overline{x} \\pm z^{\\ast} \\cdot \\frac{\\sigma}{\\sqrt{n}} \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture11/Lec11.html#worked-out-example",
@@ -2041,28 +2041,28 @@
     "href": "Pages/Lectures/Lecture11/Lec11.html#unknown-sigma-1",
     "title": "PSTAT 5A: Lecture 11",
     "section": "Unknown \\(\\sigma\\)?",
-    "text": "Unknown \\(\\sigma\\)?\n\nCan anyone propose a point estimator for \\(\\sigma\\)?\nThat’s right; \\(s\\), the sample standard deviation! \\[ s = \\sqrt{ \\frac{1}{n - 1} \\sum_{i=1}^{n} (X_i - \\overline{X})^2} \\]\nIn other words, our proposition is to use confidence intervals of the form \\[ \\overline{x} \\pm c \\cdot \\frac{s}{\\sqrt{n}} \\]\nNotice, however, that this introduces additional uncertainty into the problem as \\(s\\) itself is a random variable (different samples result in different sample standard deviations).\nIt turns out that the additional uncertainty introduced is so large that we become no longer able to use the normal distribution."
+    "text": "Unknown \\(\\sigma\\)?\n\nCan anyone propose a point estimator for \\(\\sigma\\)?\nThat’s right; \\(s\\), the sample standard deviation! \\[ s = \\sqrt{ \\frac{1}{n - 1} \\sum_{i=1}^{n} (X_i - \\overline{X})^2} \\]\nIn other words, our proposition is to use confidence intervals of the form \\[ \\overline{x} \\pm z^* \\cdot \\frac{s}{\\sqrt{n}} \\]\nNotice, however, that this introduces additional uncertainty into the problem as \\(s\\) itself is a random variable (different samples result in different sample standard deviations).\nIt turns out that the additional uncertainty introduced is so large that we become no longer able to use the normal distribution."
   },
   {
     "objectID": "Pages/Lectures/Lecture11/Lec11.html#using-s-in-place-of-sigma",
     "href": "Pages/Lectures/Lecture11/Lec11.html#using-s-in-place-of-sigma",
     "title": "PSTAT 5A: Lecture 11",
     "section": "Using \\(s\\) in place of \\(\\sigma\\)",
-    "text": "Using \\(s\\) in place of \\(\\sigma\\)\n\nFirstly, recall that we used percentiles of the standard normal distribution because \\[ \\frac{\\overline{X} - \\mu}{\\sigma / \\sqrt{n}} \\sim \\mathcal{N}(0, \\ 1) \\]\nMathematically, what the above discussion is saying is that the distribution of \\[ \\frac{\\overline{X} - \\mu}{s / \\sqrt{n}} \\] is no longer normal.\nIt turns out that, still assuming a large enough sample size, the quantity above follows what is known as a t-distribution."
+    "text": "Using \\(s\\) in place of \\(\\sigma\\)\n\\[ \\frac{\\overline{X} - \\mu}{\\sigma / \\sqrt{n}} \\sim \\mathcal{N}(0, \\ 1) \\]\n\nMathematically, what the above discussion is saying is that the distribution of \\[ \\frac{\\overline{X} - \\mu}{s / \\sqrt{n}} \\] is no longer normal.\nIt turns out that, still assuming a large enough sample size, the quantity above follows what is known as a t-distribution."
   },
   {
     "objectID": "Pages/Lectures/Lecture11/Lec11.html#the-t-distribution",
     "href": "Pages/Lectures/Lecture11/Lec11.html#the-t-distribution",
     "title": "PSTAT 5A: Lecture 11",
     "section": "The t-distribution",
-    "text": "The t-distribution\n\nThe \\(t-\\)distribution looks very similar to the standard normal distribution in that it is centered at 1, and has a bell-like density curve.\nHowever, one key difference is that the \\(t-\\)distribution is parameterized by a single parameter, called the degrees of freedom, which we abbreviate \\(\\mathrm{df}\\)."
+    "text": "The t-distribution\n\nThe \\(t-\\)distribution looks very similar to the standard normal distribution in that it is centered at 0, and has a bell-like density curve.\nHowever, one key difference is that the \\(t-\\)distribution is parameterized by a single parameter, called the degrees of freedom, which we abbreviate \\(\\mathrm{df}\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture11/Lec11.html#the-t-distribution-1",
     "href": "Pages/Lectures/Lecture11/Lec11.html#the-t-distribution-1",
     "title": "PSTAT 5A: Lecture 11",
     "section": "The t-distribution",
-    "text": "The t-distribution\n\nAnother key property is that, for all finite degrees of freedom, the tails of the t-distribution density curve are “wider” (i.e. higher) than the tails of the standard normal density curve.\n\nWhat this means is that the t-distribution allows for higher probabilities of tail events, thereby incorporating the additional uncertainty injected into our confidence intervals by using \\(s\\) in place of \\(\\sigma\\)\n\nAn interesting fact is that the t-distribution with \\(\\infty\\) degrees of freedom is equivalent to the standard normal distribution.\n\nAs such, with greater degrees of freedom, the t-distribution - and its percentiles - more and more closely resembles the standard normal distribution."
+    "text": "The t-distribution\n\nAn interesting fact is that the t-distribution with \\(\\infty\\) degrees of freedom is equivalent to the standard normal distribution.\n\nAs such, with greater degrees of freedom, the t-distribution - and its percentiles - more and more closely resembles the standard normal distribution."
   },
   {
     "objectID": "Pages/Lectures/Lecture11/Lec11.html#back-to-confidence-intervals",
@@ -2083,7 +2083,7 @@
     "href": "Pages/Lectures/Lecture11/Lec11.html#solutions-5",
     "title": "PSTAT 5A: Lecture 11",
     "section": "Solutions",
-    "text": "Solutions\n\nThe population is the set of all Gauchonian residents.\nThe sample is the set of 49 Gauchonian residents included in the sociologist’s sample.\nThe random variable of interest is \\(\\overline{X}\\), the sample average monthly income (in thousands of dollars) of a representative sample of 49 Gauchonian* residents."
+    "text": "Solutions\nPart e. Construct a 90% confidence interval for the true average temperature across all weather stations in Antarctica.\n\\[ \\overline{x} \\pm z^{\\ast} \\cdot \\frac{\\sigma}{\\sqrt{n}} \\]\nWith a 90% confidence interval, we know \\(z^*\\) = 1.645. Therefore,\n\\[ 26 \\pm 1.645 * \\frac{8}{\\sqrt{81}} \\]\n\\[ = 26 \\pm 1.46\\]\n\\[ = \\boxed{[24.54,\\  27.46]}\\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture11/Lec11.html#solutions-contd",
@@ -5423,5 +5423,12 @@
     "title": "PSTAT 5A: Understanding Data",
     "section": "Week 6 (9/08 - 9/11)",
     "text": "Week 6 (9/08 - 9/11)\n\n\nLectures\n19: Regression Diagnostics, and  Sampling Procedures 20: Ways Statistics Can Deceive 21: Review FINAL EXAM: Thursday, Sept 11 during lecture\n\n\nDiscussion\nQ&A with TA\n\n\nLab\nLab 06"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture11/Lec11.html#solutions-6",
+    "href": "Pages/Lectures/Lecture11/Lec11.html#solutions-6",
+    "title": "PSTAT 5A: Lecture 11",
+    "section": "Solutions",
+    "text": "Solutions\n\nThe population is the set of all Gauchonian residents.\nThe sample is the set of 49 Gauchonian residents included in the sociologist’s sample.\nThe random variable of interest is \\(\\overline{X}\\), the sample average monthly income (in thousands of dollars) of a representative sample of 49 Gauchonian* residents."
   }
 ]
