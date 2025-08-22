@@ -2030,6 +2030,13 @@
     "text": "Solutions\n\nThe corresponding values from the normal table are \\(0.8708\\) and \\(0.1292\\), respectively, meaning the desired probability is \\[ 0.8708 - 0.1292 = \\boxed{74.16\\%} \\]"
   },
   {
+    "objectID": "Pages/Lectures/Lecture11/Lec11.html#solutions-5",
+    "href": "Pages/Lectures/Lecture11/Lec11.html#solutions-5",
+    "title": "PSTAT 5A: Lecture 11",
+    "section": "Solutions",
+    "text": "Solutions\nPart e. Construct a 90% confidence interval for the true average temperature across all weather stations in Antarctica.\n\\[ \\overline{x} \\pm z^{\\ast} \\cdot \\frac{\\sigma}{\\sqrt{n}} \\]\nWith a 90% confidence interval, we know \\(z^*\\) = 1.645. Therefore,\n\\[ 26 \\pm 1.645 * \\frac{8}{\\sqrt{81}} \\]\n\\[ = 26 \\pm 1.46\\]\n\\[ = \\boxed{[24.54,\\  27.46]}\\]"
+  },
+  {
     "objectID": "Pages/Lectures/Lecture11/Lec11.html#unknown-sigma",
     "href": "Pages/Lectures/Lecture11/Lec11.html#unknown-sigma",
     "title": "PSTAT 5A: Lecture 11",
@@ -2079,11 +2086,11 @@
     "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 3\n\n\n\n\nA sociologist is interested in performing inference on the true average monthly income (in thousands of dollars) of all citizens of the nation of Gauchonia. As such, she takes a representative sample of 49 people, and finds that these 49 people have an average monthly income of 2.25 and a standard deviation of 1.66.\n\nWhat is the population?\nWhat is the sample?\nDefine the random variable of interest.\nConstruct a 95% confidence interval for the true average monthly income (in thousands of dollars) of Gauchonian citizens."
   },
   {
-    "objectID": "Pages/Lectures/Lecture11/Lec11.html#solutions-5",
-    "href": "Pages/Lectures/Lecture11/Lec11.html#solutions-5",
+    "objectID": "Pages/Lectures/Lecture11/Lec11.html#solutions-6",
+    "href": "Pages/Lectures/Lecture11/Lec11.html#solutions-6",
     "title": "PSTAT 5A: Lecture 11",
     "section": "Solutions",
-    "text": "Solutions\nPart e. Construct a 90% confidence interval for the true average temperature across all weather stations in Antarctica.\n\\[ \\overline{x} \\pm z^{\\ast} \\cdot \\frac{\\sigma}{\\sqrt{n}} \\]\nWith a 90% confidence interval, we know \\(z^*\\) = 1.645. Therefore,\n\\[ 26 \\pm 1.645 * \\frac{8}{\\sqrt{81}} \\]\n\\[ = 26 \\pm 1.46\\]\n\\[ = \\boxed{[24.54,\\  27.46]}\\]"
+    "text": "Solutions\n\nThe population is the set of all Gauchonian residents.\nThe sample is the set of 49 Gauchonian residents included in the sociologist’s sample.\nThe random variable of interest is \\(\\overline{X}\\), the sample average monthly income (in thousands of dollars) of a representative sample of 49 Gauchonian* residents."
   },
   {
     "objectID": "Pages/Lectures/Lecture11/Lec11.html#solutions-contd",
@@ -2678,7 +2685,7 @@
     "href": "Pages/hw.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Here you will find all homework assignments and their solutions. Please remember that solutions to homework will only be released after each respective homework assignment is due; we encourage you to come to Office Hours to ask any questions you may have about the assignments!\n\nHomework 1: Blank Solns\nHomework 2: Blank Solns\nHomework 3: Blank \nHomework 4:  \nHomework 5:"
+    "text": "Here you will find all homework assignments and their solutions. Please remember that solutions to homework will only be released after each respective homework assignment is due; we encourage you to come to Office Hours to ask any questions you may have about the assignments!\n\nHomework 1: Blank Solns\nHomework 2: Blank Solns\nHomework 3: Blank Solns\nHomework 4: Blank \nHomework 5:"
   },
   {
     "objectID": "Pages/exam_prep.html",
@@ -4060,34 +4067,6 @@
     "text": "Quick Aside: Percentiles of the Standard Normal Distribution\n\nAs a quick aside: notice that what we’ve done is actually found various percentiles of the standard normal distribution!\nPercentiles of a distribution are defined much in the same way we defined the percentiles of a list of numbers: the pth percentile of a random variable \\(X\\) is the value \\(\\pi_p\\) such that \\(\\mathbb{P}(X \\leq \\pi_p) = p\\).\nTo find the pth percentile of the standard normal table, here are the steps we use:\n\nFind \\(p\\) in the body of the table\nWhatever \\(z-\\)score that corresponds to the value of \\(p\\) in the table will be the pth percentile\n\n\n\n\n\n\n\n\n\nExercise 3\n\n\n\n\nFind the 4.55th, 83.4th, and 96.41th percentiles of the standard normal distribution."
   },
   {
-    "objectID": "Pages/Lectures/Lecture10/Lec10.html#symmetry-of-the-normal-distribution",
-    "href": "Pages/Lectures/Lecture10/Lec10.html#symmetry-of-the-normal-distribution",
-    "title": "PSTAT 5A: Lecture 10",
-    "section": "Symmetry of the Normal Distribution",
-    "text": "Symmetry of the Normal Distribution\n\nLet’s also quickly discuss one more property of the standard normal distribution: its density curve is symmetric about the \\(y-\\)axis.\nThis actually leads to an interesting (and very useful) result about percentiles of the standard normal distribution:\n\n\n\n\n\n\n\n\nResult\n\n\n\n\nThe \\(p\\)th percentile of the standard normal distribution is equal to negative one times the \\((1 - p)\\)th percentile of the standard normal distribution."
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture10/Lec10.html#symmetry-of-the-normal-distribution-1",
-    "href": "Pages/Lectures/Lecture10/Lec10.html#symmetry-of-the-normal-distribution-1",
-    "title": "PSTAT 5A: Lecture 10",
-    "section": "Symmetry of the Normal Distribution",
-    "text": "Symmetry of the Normal Distribution\n\nTo see why this is, we sketch a picture. Suppose \\(\\pi_{p}\\) is the \\(p\\)th percentile for the standard normal distribution. Then, the area below must be equal to \\(p\\):"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture10/Lec10.html#symmetry-of-the-normal-distribution-2",
-    "href": "Pages/Lectures/Lecture10/Lec10.html#symmetry-of-the-normal-distribution-2",
-    "title": "PSTAT 5A: Lecture 10",
-    "section": "Symmetry of the Normal Distribution",
-    "text": "Symmetry of the Normal Distribution\n\n\nBy the complement rule, the red area below must therefore be \\(1 - p\\):"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture10/Lec10.html#symmetry-of-the-normal-distribution-3",
-    "href": "Pages/Lectures/Lecture10/Lec10.html#symmetry-of-the-normal-distribution-3",
-    "title": "PSTAT 5A: Lecture 10",
-    "section": "Symmetry of the Normal Distribution",
-    "text": "Symmetry of the Normal Distribution\n\n\nFinally, it is precisely the symmetry of the standard normal density curve that guarantees the red area below will also be \\(1 - p\\):\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTherefore, if the area to the left of \\(\\pi_p\\) is \\(p\\) (which was our initial assumption), the area to the left of \\(-\\pi_p\\) is \\((1 - p)\\).\n\nIn other words, the \\(p\\)th percentile (\\(\\pi_p\\)) is negative one times the \\((1 - p)\\)th percentile (\\(-\\pi_p\\))."
-  },
-  {
     "objectID": "Pages/Lectures/Lecture10/Lec10.html#confidence-intervals-for-proportions-7",
     "href": "Pages/Lectures/Lecture10/Lec10.html#confidence-intervals-for-proportions-7",
     "title": "PSTAT 5A: Lecture 10",
@@ -5423,12 +5402,5 @@
     "title": "PSTAT 5A: Understanding Data",
     "section": "Week 6 (9/08 - 9/11)",
     "text": "Week 6 (9/08 - 9/11)\n\n\nLectures\n19: Regression Diagnostics, and  Sampling Procedures 20: Ways Statistics Can Deceive 21: Review FINAL EXAM: Thursday, Sept 11 during lecture\n\n\nDiscussion\nQ&A with TA\n\n\nLab\nLab 06"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture11/Lec11.html#solutions-6",
-    "href": "Pages/Lectures/Lecture11/Lec11.html#solutions-6",
-    "title": "PSTAT 5A: Lecture 11",
-    "section": "Solutions",
-    "text": "Solutions\n\nThe population is the set of all Gauchonian residents.\nThe sample is the set of 49 Gauchonian residents included in the sociologist’s sample.\nThe random variable of interest is \\(\\overline{X}\\), the sample average monthly income (in thousands of dollars) of a representative sample of 49 Gauchonian* residents."
   }
 ]
