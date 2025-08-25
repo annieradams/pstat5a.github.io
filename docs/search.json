@@ -4981,7 +4981,7 @@
     "href": "Pages/Lectures/Lecture12/Lec12.html#fail-to-reject",
     "title": "PSTAT 5A: Lecture 12",
     "section": "Fail To Reject?",
-    "text": "Fail To Reject?\n\nBy the way, the results of a hypothesis test are always framed in terms of the null hypothesis; e.g. “reject \\(H_0\\)” or “fail to reject \\(H_0\\)”.\nWait, why are we saying “fail to reject \\(H_0\\)”? Isn’t that just equivalent to “accept \\(H_0\\)”?\nWell, not quite…\nThink of it this way: just because we are saying the particular alternative hypothesis we picked is less plausible than the null, doesn’t mean there isn’t a different alternative hypothesis that is more plausible than the null.\nAll we are saying when we fail to reject the null is exactly that- we didn’t have enough information to reject \\(H_0\\) outright. We are not saying that \\(H_0\\) must be true.\nAdmittedly, some statisticians have gotten a little lax with this distinction and you may encounter textbooks and/or professors that use terms like “accept the null”.\n\nWe will stick with the terminology “fail to reject” in favor of “accept”."
+    "text": "Fail To Reject?\n\nBy the way, the results of a hypothesis test are always framed in terms of the null hypothesis; e.g. “reject \\(H_0\\)” or “fail to reject \\(H_0\\)”.\nWait, why are we saying “fail to reject \\(H_0\\)”? Isn’t that just equivalent to “accept \\(H_0\\)”?\nWell, not quite…\nThink of it this way: just because we are saying the particular alternative hypothesis we picked is less plausible than the null, doesn’t mean there isn’t a different alternative hypothesis that is more plausible than the null.\nAll we are saying when we fail to reject the null is exactly that- we didn’t have enough information to reject \\(H_0\\) outright. We are not saying that \\(H_0\\) must be true."
   },
   {
     "objectID": "Pages/Lectures/Lecture12/Lec12.html#four-states-of-the-world",
@@ -5037,21 +5037,21 @@
     "href": "Pages/Lectures/Lecture12/Lec12.html#leadup-1",
     "title": "PSTAT 5A: Lecture 12",
     "section": "Leadup",
-    "text": "Leadup\n\nFor the moment, let’s return to the pet example from the beginning of the lecture.\nLetting \\(p\\) denote the true proportion of US household with pets, our null hypothesis takes the form \\(H_0: \\ p = 0.67\\).\nSuppose we take a two-sided alternative: \\(H_A: \\ p \\neq 0.67\\).\nNow, we have a good summary statistic for proportions: \\(\\widehat{P}\\).\nAs such, our decision process should probably be of the form \\[ \\texttt{decision}(\\widehat{p}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\texttt{...} \\\\  \\texttt{fail to reject } H_0 & \\text{if } \\texttt{...} \\\\ \\end{cases}  \\]\nSaid differently: if we observe a value of \\(\\widehat{p} = 0.82\\), or a value of \\(\\widehat{p} = 0.001\\), we would likely be inclined to reject the null."
+    "text": "Leadup\n\nFor the moment, let’s return to the pet example from the beginning of the lecture.\nLetting \\(p\\) denote the true proportion of US household with pets, our null hypothesis takes the form \\(H_0: \\ p = 0.67\\).\nSuppose we take a two-sided alternative: \\(H_A: \\ p \\neq 0.67\\).\nAs such, our decision process should probably be of the form \\[ \\texttt{decision}(\\widehat{p}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\texttt{...} \\\\  \\texttt{fail to reject } H_0 & \\text{if } \\texttt{...} \\\\ \\end{cases}  \\]\nIf we observe a value of \\(\\widehat{p} = 0.82\\), or a value of \\(\\widehat{p} = 0.001\\), we would likely be inclined to reject the null."
   },
   {
     "objectID": "Pages/Lectures/Lecture12/Lec12.html#test-statistic",
     "href": "Pages/Lectures/Lecture12/Lec12.html#test-statistic",
     "title": "PSTAT 5A: Lecture 12",
     "section": "Test Statistic",
-    "text": "Test Statistic\n\nSo, it makes sense to reject \\(H_0\\) when \\(\\widehat{p}\\) is very far away from \\(p_0\\) (which, in the pet example, is \\(0.67\\)). \\[ \\texttt{decision}(\\widehat{p}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if $\\widehat{p}$ is far from $p_0$} \\\\  \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]\nFor reasons that will become clear in a few slides, we typically avoid using \\(\\widehat{p}\\) and instead use a standardized version of \\(\\widehat{p}\\): \\[ \\mathrm{TS} = \\frac{\\widehat{P} - p_0}{\\sqrt{\\frac{p_0 (1 - p_0)}{n}}} \\] where \\(\\mathrm{TS}\\) stands for test statistic."
+    "text": "Test Statistic\n\nSo, it makes sense to reject \\(H_0\\) when \\(\\widehat{p}\\) is very far away from \\(p_0\\) (which, in the pet example, is \\(0.67\\)). \\[ \\texttt{decision}(\\widehat{p}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if $\\widehat{p}$ is far from $p_0$} \\\\  \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]\nFor reasons that will become clear in a few slides, we typically avoid using \\(\\widehat{p}\\) and instead use a standardized version of \\(\\widehat{p}\\): \\[ \\mathrm{ts} = \\frac{\\widehat{p} - p_0}{\\sqrt{\\frac{p_0 (1 - p_0)}{n}}} \\] where \\(\\mathrm{ts}\\) stands for test statistic."
   },
   {
     "objectID": "Pages/Lectures/Lecture12/Lec12.html#test-statistic-1",
     "href": "Pages/Lectures/Lecture12/Lec12.html#test-statistic-1",
     "title": "PSTAT 5A: Lecture 12",
     "section": "Test Statistic",
-    "text": "Test Statistic\n\nNote that, by definition, the test statistic \\(\\mathrm{TS}\\) is a random variable!\n\nThis is because it is simply a centered and scaled version of \\(\\widehat{P}\\), which we know is a random variable.\n\nFor a given sample, however, we will have a given observed value of \\(\\widehat{P}\\), namely \\(\\widehat{p}\\), which will lead to an observed instance of our test statistic \\[ \\mathrm{ts} = \\frac{\\widehat{p} - p_0}{\\sqrt{ \\frac{p_0 (1 - p_0)}{n}}} \\]"
+    "text": "Test Statistic\n\nLet’s try and convert our decision-making process to be in terms of the test statistic.\nFirst, note that saying \\(\\widehat{p}\\) is “far away” from \\(p_0\\) could mean one of two things:\n\n\\(\\widehat{p}\\) was much larger than \\(p_0\\)\n\\(\\widehat{p}\\) was much smaller than \\(p_0\\)\n\nThese two cases can be combined into a single case if we think in terms of the magnitude of the distance bewteen \\(\\widehat{p}\\) and \\(p_0\\), which is equivalent to considering \\(|\\mathrm{ts}|\\).\nWhat I’m getting at is this: if \\(\\widehat{p}\\) was far away from \\(p_0\\), then \\(|\\mathrm{ts}|\\) must be large.\nHence, we can rephrase our decision process as \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if $|\\mathrm{TS}|$ is large} \\\\  \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture12/Lec12.html#test-statistic-2",
@@ -5402,5 +5402,19 @@
     "title": "PSTAT 5A: Understanding Data",
     "section": "Week 6 (9/08 - 9/11)",
     "text": "Week 6 (9/08 - 9/11)\n\n\nLectures\n19: Regression Diagnostics, and  Sampling Procedures 20: Ways Statistics Can Deceive 21: Review FINAL EXAM: Thursday, Sept 11 during lecture\n\n\nDiscussion\nQ&A with TA\n\n\nLab\nLab 06"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#how-to-pick-our-value-of-c",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#how-to-pick-our-value-of-c",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "How to pick our value of c",
+    "text": "How to pick our value of c\n\nWe can determine our critical value (c) by two main factors:\n\n\nThe significance level (\\(\\alpha\\)) : This is the probability of rejecting the null hypothesis when it is actually true ( Type I error!). Common values are \\(\\alpha = .05, .01,.10\\). A lower \\(\\alpha\\) means we have a lower probability of making an Type 1 error, requiring stronger evidence to reject the null\nThe type of test (one tailed vs two tailed)\n\n\nOnce we know \\(\\alpha\\) and our type of test, we can find c!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#how-to-pick-our-value-of-c-1",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#how-to-pick-our-value-of-c-1",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "How to pick our value of c",
+    "text": "How to pick our value of c\n\nAssuming the null is true (i.e. that \\(p = p_0\\)), the Central Limit Theorem for Proportions tells us \\[ \\widehat{P} \\stackrel{H_0}{\\sim} \\mathcal{N}\\left(p_0, \\ \\sqrt{\\frac{p_0(1 - p_0)}{n}} \\right) \\] where the symbol \\(\\stackrel{H_0}{\\sim}\\) is just a shorthand for “distributed as, under the null”\nSince our random variable follows the standard normal distribution, we can apply the symmetry of the standard normal distribution to find c:\n\nc = \\((-1) (\\frac{\\alpha}{2})* 100^{th} percentile\\) or c = \\((1 - \\frac{\\alpha}{2})* 100^{th} percentile\\)"
   }
 ]

@@ -554,10 +554,6 @@
 <li class="fragment"><p>Well, not quite…</p></li>
 <li class="fragment"><p>Think of it this way: just because we are saying the particular alternative hypothesis we picked is less plausible than the null, doesn’t mean there isn’t a <em>different</em> alternative hypothesis that is more plausible than the null.</p></li>
 <li class="fragment"><p>All we are saying when we fail to reject the null is exactly that- we didn’t have enough information to reject <span class="math inline">\(H_0\)</span> outright. We are <em>not</em> saying that <span class="math inline">\(H_0\)</span> must be true.</p></li>
-<li class="fragment"><p>Admittedly, some statisticians have gotten a little lax with this distinction and you may encounter textbooks and/or professors that use terms like “accept the null”.</p>
-<ul>
-<li class="fragment">We will stick with the terminology “fail to reject” in favor of “accept”.</li>
-</ul></li>
 </ul>
 </section>
 <section id="four-states-of-the-world" class="slide level2" style="font-size:30px">
@@ -817,29 +813,18 @@
 <li class="fragment"><p>For the moment, let’s return to the pet example from the beginning of the lecture.</p></li>
 <li class="fragment"><p>Letting <span class="math inline">\(p\)</span> denote the true proportion of US household with pets, our null hypothesis takes the form <span class="math inline">\(H_0: \ p = 0.67\)</span>.</p></li>
 <li class="fragment"><p>Suppose we take a two-sided alternative: <span class="math inline">\(H_A: \ p \neq 0.67\)</span>.</p></li>
-<li class="fragment"><p>Now, we have a good summary statistic for proportions: <span class="math inline">\(\widehat{P}\)</span>.</p></li>
 <li class="fragment"><p>As such, our decision process should probably be of the form <span class="math display">\[ \texttt{decision}(\widehat{p}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if } \texttt{...} \\  \texttt{fail to reject } H_0 &amp; \text{if } \texttt{...} \\ \end{cases}  \]</span></p></li>
-<li class="fragment"><p>Said differently: if we observe a value of <span class="math inline">\(\widehat{p} = 0.82\)</span>, or a value of <span class="math inline">\(\widehat{p} = 0.001\)</span>, we would likely be inclined to reject the null.</p></li>
+<li class="fragment"><p>If we observe a value of <span class="math inline">\(\widehat{p} = 0.82\)</span>, or a value of <span class="math inline">\(\widehat{p} = 0.001\)</span>, we would likely be inclined to reject the null.</p></li>
 </ul>
 </section>
 <section id="test-statistic" class="slide level2" style="font-size:30px">
 <h2>Test Statistic</h2>
 <ul>
 <li class="fragment"><p>So, it makes sense to reject <span class="math inline">\(H_0\)</span> when <span class="math inline">\(\widehat{p}\)</span> is very far away from <span class="math inline">\(p_0\)</span> (which, in the pet example, is <span class="math inline">\(0.67\)</span>). <span class="math display">\[ \texttt{decision}(\widehat{p}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if $\widehat{p}$ is far from $p_0$} \\  \texttt{fail to reject } H_0 &amp; \text{otherwise}\\ \end{cases}  \]</span></p></li>
-<li class="fragment"><p>For reasons that will become clear in a few slides, we typically avoid using <span class="math inline">\(\widehat{p}\)</span> and instead use a <em>standardized</em> version of <span class="math inline">\(\widehat{p}\)</span>: <span class="math display">\[ \mathrm{TS} = \frac{\widehat{P} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{n}}} \]</span> where <span class="math inline">\(\mathrm{TS}\)</span> stands for <strong>test statistic</strong>.</p></li>
+<li class="fragment"><p>For reasons that will become clear in a few slides, we typically avoid using <span class="math inline">\(\widehat{p}\)</span> and instead use a <em>standardized</em> version of <span class="math inline">\(\widehat{p}\)</span>: <span class="math display">\[ \mathrm{ts} = \frac{\widehat{p} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{n}}} \]</span> where <span class="math inline">\(\mathrm{ts}\)</span> stands for <strong>test statistic</strong>.</p></li>
 </ul>
 </section>
-<section id="test-statistic-1" class="slide level2">
-<h2>Test Statistic</h2>
-<ul>
-<li class="fragment"><p>Note that, by definition, the test statistic <span class="math inline">\(\mathrm{TS}\)</span> is a random variable!</p>
-<ul>
-<li class="fragment">This is because it is simply a centered and scaled version of <span class="math inline">\(\widehat{P}\)</span>, which we know is a random variable.</li>
-</ul></li>
-<li class="fragment"><p>For a given sample, however, we will have a given observed value of <span class="math inline">\(\widehat{P}\)</span>, namely <span class="math inline">\(\widehat{p}\)</span>, which will lead to an <em>observed instance</em> of our test statistic <span class="math display">\[ \mathrm{ts} = \frac{\widehat{p} - p_0}{\sqrt{ \frac{p_0 (1 - p_0)}{n}}} \]</span></p></li>
-</ul>
-</section>
-<section id="test-statistic-2" class="slide level2" style="font-size:30px">
+<section id="test-statistic-1" class="slide level2" style="font-size:30px">
 <h2>Test Statistic</h2>
 <ul>
 <li class="fragment"><p>Let’s try and convert our decision-making process to be in terms of the test statistic.</p></li>
@@ -873,39 +858,28 @@
 <li class="fragment"><p>Specifically, setting a larger value of <span class="math inline">\(c\)</span> corresponds to rejecting <span class="math inline">\(H_0\)</span> for <em>fewer</em> values, thereby <em>decreasing</em> the probability of committing a Type I errror but <em>increasing</em> the probability of committing a Type II error.</p></li>
 <li class="fragment"><p>Conversely, setting a smaller value of <span class="math inline">\(c\)</span> corresponds to rejecting <span class="math inline">\(H_0\)</span> for <em>more</em> values, thereby <em>increasing</em> the probability of committing a Type I error but <em>decreasing</em> the probability of committing a Type II error.</p></li>
 </ul>
-</section></section>
-<section>
-<section id="section" class="title-slide slide level1 center" data-background-color="black" data-background-image="https://media1.giphy.com/media/ZgURe4CWXu8gBEpwYy/giphy.gif?cid=ecf05e478scdoyx294uhpvadt2fcoifjt1mwm8y8lmhvud3b&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g" data-background-size="contain">
-<h1></h1>
-
 </section>
-<section id="the-compromise" class="slide level2" style="font-size:25px">
-<h2>The Compromise</h2>
+<section id="how-to-pick-our-value-of-c" class="slide level2">
+<h2>How to pick our value of c</h2>
 <ul>
-<li class="fragment"><p>We need to compromise!</p></li>
-<li class="fragment"><p>In practice, we go into the test knowing how much leeway we are going to allow ourselves to commit a Type I error. That is, we <em>prespecify</em> our tolerance for committing a Type I error.</p></li>
-<li class="fragment"><p>The probability of committing a Type I error is called the <strong>level of significance</strong> (or just <strong>significance level</strong>), and is often denoted <span class="math inline">\(\alpha\)</span>.</p></li>
-<li class="fragment"><p>Statisticians therefore construct a hypothesis test around a specific value of <span class="math inline">\(\alpha\)</span>.</p></li>
-<li class="fragment"><p>A common level of significance is <span class="math inline">\(\alpha = 0.05\)</span>, though <span class="math inline">\(\alpha = 0.01\)</span> and <span class="math inline">\(\alpha = 0.1\)</span> are sometimes used as well.</p></li>
-<li class="fragment"><p>Okay, so what does this mean for our test?</p></li>
-<li class="fragment"><p>We now know that <span class="math inline">\(\alpha\)</span> denotes the probability of rejecting the null when the null is true; i.e. <span class="math display">\[ \mathbb{P}_{H_0}(|\mathrm{TS}| &gt; c) = \alpha \]</span> where the symbol <span class="math inline">\(\mathbb{P}_{H_0}\)</span> just means “assuming the null, the probability of….”</p></li>
+<li class="fragment">We can determine our critical value (c) by two main factors:</li>
+</ul>
+<ol type="1">
+<li class="fragment">The significance level (<span class="math inline">\(\alpha\)</span>) : This is the probability of rejecting the null hypothesis when it is actually true ( Type I error!). Common values are <span class="math inline">\(\alpha = .05, .01,.10\)</span>. A lower <span class="math inline">\(\alpha\)</span> means we have a lower probability of making an Type 1 error, requiring stronger evidence to reject the null</li>
+<li class="fragment">The type of test (one tailed vs two tailed)</li>
+</ol>
+<ul>
+<li class="fragment">Once we know <span class="math inline">\(\alpha\)</span> and our type of test, we can find c!</li>
 </ul>
 </section>
-<section id="the-compromise-1" class="slide level2" style="font-size:28px">
-<h2>The Compromise</h2>
+<section id="how-to-pick-our-value-of-c-1" class="slide level2">
+<h2>How to pick our value of c</h2>
 <ul>
-<li class="fragment"><p>Again, remember that <span class="math inline">\(\alpha\)</span> is fixed (e.g.&nbsp;<span class="math inline">\(0.05\)</span>); it is the value of <span class="math inline">\(c\)</span> we are after!</p></li>
-<li class="fragment"><p>So, a natural question arises: what is the distribution of <span class="math inline">\(\mathrm{TS}\)</span> under the null?</p></li>
-<li class="fragment"><p>Recall that <span class="math display">\[ \mathrm{TS} = \frac{\widehat{P} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{n}}} \]</span></p></li>
-<li class="fragment"><p>Now, assuming the null is true (i.e.&nbsp;that <span class="math inline">\(p = p_0\)</span>), the Central Limit Theorem for Proportions tells us <span class="math display">\[ \widehat{P} \stackrel{H_0}{\sim} \mathcal{N}\left(p_0, \ \sqrt{\frac{p_0(1 - p_0)}{n}} \right) \]</span> where the symbol <span class="math inline">\(\stackrel{H_0}{\sim}\)</span> is just a shorthand for “distributed as, under the null”</p></li>
-</ul>
-</section>
-<section id="the-distribution-of-the-test-statistic" class="slide level2" style="font-size:30px">
-<h2>The Distribution of the Test Statistic</h2>
+<li class="fragment"><p>Assuming the null is true (i.e.&nbsp;that <span class="math inline">\(p = p_0\)</span>), the Central Limit Theorem for Proportions tells us <span class="math display">\[ \widehat{P} \stackrel{H_0}{\sim} \mathcal{N}\left(p_0, \ \sqrt{\frac{p_0(1 - p_0)}{n}} \right) \]</span> where the symbol <span class="math inline">\(\stackrel{H_0}{\sim}\)</span> is just a shorthand for “distributed as, under the null”</p></li>
+<li class="fragment"><p>Since our random variable follows the standard normal distribution, we can apply the symmetry of the standard normal distribution to find c:</p>
 <ul>
-<li class="fragment"><p>Therefore, assuming the null is correct, we have <span class="math display">\[ \mathrm{TS} \sim \mathcal{N}(0, \ 1)\]</span></p></li>
-<li class="fragment"><p>So, our condition <span class="math display">\[ \mathbb{P}_{H_0}(|\mathrm{TS}| &gt; c) = \alpha \]</span> which, by the symmetry of the standard normal distribution, is equivalent to <span class="math display">\[ \mathbb{P}_{H_0}(\mathrm{TS} &lt; -c) = \frac{\alpha}{2} \]</span></p></li>
-<li class="fragment"><p>Hence, <span class="math inline">\(-c\)</span> is just the <span class="math inline">\((\alpha / 2) \times 100\)</span> percentile of the standard normal distribution!!!</p></li>
+<li class="fragment">c = <span class="math inline">\((-1) (\frac{\alpha}{2})* 100^{th} percentile\)</span> <strong>or</strong> c = <span class="math inline">\((1 - \frac{\alpha}{2})* 100^{th} percentile\)</span></li>
+</ul></li>
 </ul>
 </section>
 <section id="the-test" class="slide level2" style="font-size:30px">
@@ -1122,14 +1096,6 @@
 <li class="fragment"><p>Intuitively, it makes sense why we might reject for this new level of significance.</p></li>
 <li class="fragment"><p>We know that the level of significance represents the probability of committing a Type I Error.</p></li>
 <li class="fragment"><p>If we increase this value (which we did, in adopting <span class="math inline">\(\alpha = 0.1\)</span> as opposed to <span class="math inline">\(\alpha = 0.05\)</span> in the previous example), we are allowing a greater chance of falsely rejecting the null, which comes part-in-parcel with rejecting for more values of the test statistic.</p></li>
-</ul>
-</section>
-<section id="one-sided-tests" class="slide level2">
-<h2>One-Sided Tests</h2>
-<ul>
-<li class="fragment"><p>On the homework, I ask you to walk through the details of deriving a lower-tailed test.</p></li>
-<li class="fragment"><p>You can use a similar set of arguments to derive the upper-tailed test as well.</p></li>
-<li class="fragment"><p>For posterity’s sake, here are the final results of each:</p></li>
 </ul>
 </section>
 <section id="lower-tailed-test" class="slide level2">

@@ -180,9 +180,6 @@ $$ \texttt{decision}(\texttt{data}) = \begin{cases} \texttt{reject } H_0 & \text
 
 - All we are saying when we fail to reject the null is exactly that- we didn't have enough information to reject $H_0$ outright. We are *not* saying that $H_0$ must be true.
 
-- Admittedly, some statisticians have gotten a little lax with this distinction and you may encounter textbooks and/or professors that use terms like "accept the null". 
-
-    - We will stick with the terminology "fail to reject" in favor of "accept".
     
 ## Four States of the World {style="font-size:30px"}
 
@@ -364,12 +361,10 @@ $$ \texttt{decision}(\texttt{data}) = \begin{cases} \texttt{reject } H_0 & \text
 
 - Suppose we take a two-sided alternative: $H_A: \ p \neq 0.67$. 
 
-- Now, we have a good summary statistic for proportions: $\widehat{P}$. 
-
 - As such, our decision process should probably be of the form
 $$ \texttt{decision}(\widehat{p}) = \begin{cases} \texttt{reject } H_0 & \text{if } \texttt{...} \\  \texttt{fail to reject } H_0 & \text{if } \texttt{...} \\ \end{cases}  $$
 
-- Said differently: if we observe a value of $\widehat{p} = 0.82$, or a value of $\widehat{p} = 0.001$, we would likely be inclined to reject the null.
+- If we observe a value of $\widehat{p} = 0.82$, or a value of $\widehat{p} = 0.001$, we would likely be inclined to reject the null.
 
 
 
@@ -379,17 +374,9 @@ $$ \texttt{decision}(\widehat{p}) = \begin{cases} \texttt{reject } H_0 & \text{i
 $$ \texttt{decision}(\widehat{p}) = \begin{cases} \texttt{reject } H_0 & \text{if $\widehat{p}$ is far from $p_0$} \\  \texttt{fail to reject } H_0 & \text{otherwise}\\ \end{cases}  $$
 
 - For reasons that will become clear in a few slides, we typically avoid using $\widehat{p}$ and instead use a *standardized* version of $\widehat{p}$:
-$$ \mathrm{TS} = \frac{\widehat{P} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{n}}} $$
-where $\mathrm{TS}$ stands for **test statistic**.
+$$ \mathrm{ts} = \frac{\widehat{p} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{n}}} $$
+where $\mathrm{ts}$ stands for **test statistic**.
 
-## Test Statistic
-
-- Note that, by definition, the test statistic $\mathrm{TS}$ is a random variable!
-
-    - This is because it is simply a centered and scaled version of $\widehat{P}$, which we know is a random variable.
-    
-- For a given sample, however, we will have a given observed value of $\widehat{P}$, namely $\widehat{p}$, which will lead to an *observed instance* of our test statistic
-$$ \mathrm{ts} = \frac{\widehat{p} - p_0}{\sqrt{ \frac{p_0 (1 - p_0)}{n}}} $$
 
 ## Test Statistic {style="font-size:30px"}
 
@@ -429,51 +416,24 @@ what value should we take $c$ to be?
 
 - Conversely, setting a smaller value of $c$ corresponds to rejecting $H_0$ for *more* values, thereby *increasing* the probability of committing a Type I error but *decreasing* the probability of committing a Type II error.
 
-# {background-color="black" background-image="https://media1.giphy.com/media/ZgURe4CWXu8gBEpwYy/giphy.gif?cid=ecf05e478scdoyx294uhpvadt2fcoifjt1mwm8y8lmhvud3b&ep=v1_gifs_search&rid=giphy.gif&ct=g" background-size="contain"}
 
-## The Compromise {style="font-size:25px"}
+## How to pick our value of c 
 
-- We need to compromise!
+- We can determine our critical value (c) by two main factors: 
+1. The significance level ($\alpha$) : This is the probability of rejecting the null hypothesis when it is actually true ( Type I error!). Common values are $\alpha = .05, .01,.10$. A lower $\alpha$ means we have a lower probability of making an Type 1 error, requiring stronger evidence to reject the null
+2. The type of test (one tailed vs two tailed)
+- Once we know $\alpha$ and our type of test, we can find c! 
 
-- In practice, we go into the test knowing how much leeway we are going to allow ourselves to commit a Type I error. That is, we *prespecify* our tolerance for committing a Type I error.
+## How to pick our value of c
 
-- The probability of committing a Type I error is called the **level of significance** (or just **significance level**), and is often denoted $\alpha$.
-
-- Statisticians therefore construct a hypothesis test around a specific value of $\alpha$.
-
-- A common level of significance is $\alpha = 0.05$, though $\alpha = 0.01$ and $\alpha = 0.1$ are sometimes used as well.
-
-- Okay, so what does this mean for our test?
-
-- We now know that $\alpha$ denotes the probability of rejecting the null when the null is true; i.e.
-$$ \mathbb{P}_{H_0}(|\mathrm{TS}| > c) = \alpha $$
-where the symbol $\mathbb{P}_{H_0}$ just means "assuming the null, the probability of...."
-
-## The Compromise {style="font-size:28px"}
-
-- Again, remember that $\alpha$ is fixed (e.g. $0.05$); it is the value of $c$ we are after! 
-
-- So, a natural question arises: what is the distribution of $\mathrm{TS}$ under the null?
-
-- Recall that
-$$ \mathrm{TS} = \frac{\widehat{P} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{n}}} $$ 
-
-- Now, assuming the null is true (i.e. that $p = p_0$), the Central Limit Theorem for Proportions tells us
+- Assuming the null is true (i.e. that $p = p_0$), the Central Limit Theorem for Proportions tells us
 $$ \widehat{P} \stackrel{H_0}{\sim} \mathcal{N}\left(p_0, \ \sqrt{\frac{p_0(1 - p_0)}{n}} \right) $$
 where the symbol $\stackrel{H_0}{\sim}$ is just a shorthand for "distributed as, under the null"
 
+- Since our random variable follows the standard normal distribution, we can apply the symmetry of the standard normal distribution to find c: 
 
-## The Distribution of the Test Statistic {style="font-size:30px"}
+  - c = $(-1)  (\frac{\alpha}{2})* 100^{th} percentile$ **or** c = $(1 - \frac{\alpha}{2})* 100^{th} percentile$
 
-- Therefore, assuming the null is correct, we have
-$$ \mathrm{TS} \sim \mathcal{N}(0, \ 1)$$
-
-- So, our condition
-$$ \mathbb{P}_{H_0}(|\mathrm{TS}| > c) = \alpha $$
-which, by the symmetry of the standard normal distribution, is equivalent to
-$$ \mathbb{P}_{H_0}(\mathrm{TS} < -c) = \frac{\alpha}{2} $$
-
-- Hence, $-c$ is just the $(\alpha / 2) \times 100$ percentile of the standard normal distribution!!!
 
 ## The Test {style="font-size:30px"}
 
@@ -660,13 +620,6 @@ import scipy.stats as sps
 
 - If we increase this value (which we did, in adopting $\alpha = 0.1$ as opposed to $\alpha = 0.05$ in the previous example), we are allowing a greater chance of falsely rejecting the null, which comes part-in-parcel with rejecting for more values of the test statistic.
 
-## One-Sided Tests
-
-- On the homework, I ask you to walk through the details of deriving a lower-tailed test.
-
-- You can use a similar set of arguments to derive the upper-tailed test as well.
-
-- For posterity's sake, here are the final results of each:
 
 ## Lower-Tailed Test
 
