@@ -5416,5 +5416,12 @@
     "title": "PSTAT 5A: Lecture 12",
     "section": "How to pick our value of c",
     "text": "How to pick our value of c\n\nAssuming the null is true (i.e. that \\(p = p_0\\)), the Central Limit Theorem for Proportions tells us \\[ \\widehat{P} \\stackrel{H_0}{\\sim} \\mathcal{N}\\left(p_0, \\ \\sqrt{\\frac{p_0(1 - p_0)}{n}} \\right) \\] where the symbol \\(\\stackrel{H_0}{\\sim}\\) is just a shorthand for “distributed as, under the null”\nSince our random variable follows the standard normal distribution, we can apply the symmetry of the standard normal distribution to find c:\n\nc = \\((-1) (\\frac{\\alpha}{2})* 100^{th} percentile\\) or c = \\((1 - \\frac{\\alpha}{2})* 100^{th} percentile\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#class-updates",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#class-updates",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Class Updates",
+    "text": "Class Updates\n\nQuiz 3 today!\nQuiz next week will take place on Tuesday, 9/2\nNo class this Thursday"
   }
 ]

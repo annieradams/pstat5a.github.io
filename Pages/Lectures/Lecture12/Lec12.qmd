@@ -26,6 +26,14 @@ library(tidyverse)
 library(ggthemes)
 ```
 
+## Class Updates
+- Quiz 3 today! 
+- Quiz next week will take place on Tuesday, 9/2 
+- No class this Thursday
+
+
+
+
 ## Let's return to pets {style="font-size:20px"}
 
 - According to the American Pet Products Association, prior to the pandemic, 67% of all U.S. households had pets. Many people have speculated that the rate of pet ownership changed during the pandemic. Recently, a group of veterinarians surveyed a random sample of 480 U.S. households and found that 336 had at least one pet. *Is there evidence to support the claim that the rate of pet ownership now differs from the 67% before the pandemic?*
