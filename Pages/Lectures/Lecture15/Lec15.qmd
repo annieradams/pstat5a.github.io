@@ -339,22 +339,6 @@ data.frame(x) %>% ggplot(aes(x = x)) +
 $$ \mathbb{P}(a \leq X \leq b) = \underbrace{\mathbb{P}(X \leq b)}_{\text{c.d.f. at $b$}} - \underbrace{\mathbb{P}(X \leq a)}_{\text{c.d.f. at $a$}} $$
 :::
 
-## Challenge Problem: Try It On Your Own!
-
-:::{.fragment}
-::: callout-tip
-## Take-Home Exercise 1
-
-:::{.nonincremental}
-::: {style="font-size: 30px"}
-The time (in minutes) spent waiting in line at *Starbucks* is found to vary uniformly between 5mins and 15mins.
-
-What is the c.d.f. of wait times? (I.e., find the probability that a randomly selected person spends less than $x$ minutes waiting in line, for an arbitrary value $x$. Yes, your final answer will depend on $x$; that's why the c.d.f. is a *function*!)
-:::
-:::
-:::
-:::
-
 
 ## Chalkboard Example
 
@@ -378,95 +362,6 @@ A random sample of 10 customers is taken; what is the probability that exactly 4
 
 - The normal density curve is bell-shaped
 
-
-## Changing $\mu$ and $\sigma$
-
-
-```{ojs}
-viewof µ = Inputs.range(
-  [-3, 3], 
-  {value: 0, step: 0.1, label: "µ:"}
-)
-
-viewof σ = Inputs.range(
-  [0.2, 3.1], 
-  {value: 1, step: 0.01, label: "σ:"}
-)
-
-sigsquared = σ**2
-```
-
-```{ojs}
-margin = ({top: 20, right: 30, bottom: 30, left: 40})
-
-height = 400
-
-x_values = d3.scaleLinear()
-    .domain(d3.extent(data, d => d.x))
-    .range([margin.left, width - margin.right])
-
-y_values = d3.scaleLinear()
-    .domain([Math.min(d3.min(data, d => d.y),0), Math.max(1,d3.max(data, d => d.y))]).nice()
-    .range([height - margin.bottom, margin.top])
-    
-line = d3.line()
-    .x(d => x_values(d.x))
-    .y(d => y_values(d.y))
-
-xAxis = g => g
-  .attr("transform", `translate(0,${height - margin.bottom})`)
-  .call(d3.axisBottom(x_values)
-      .ticks(width / 80)
-      .tickSizeOuter(0))
-
-yAxis = g => g
-  .attr("transform", `translate(${margin.left},0)`)
-  .call(d3.axisLeft(y_values)
-      .tickValues(d3.scaleLinear().domain(y_values.domain()).ticks()))
-    
-function normal_pdf (input_value, mu, sigsq) {
-  let left_chunk = 1/(Math.sqrt(2*Math.PI*sigsq))
-  let right_top = -((input_value-mu)**2)
-  let right_bottom = 2*sigsq
-  return left_chunk * Math.exp(right_top/right_bottom)
-}
-
-abs_x=6
-
-data = {
-  let values = [];
-  for (let x = -abs_x; x < abs_x; x=x+0.01) values.push({"x":x,"y":normal_pdf(x, µ, sigsquared)});
-  return values;
-}
-
-d3 = require("https://d3js.org/d3.v5.min.js")
-
-chart = {
-  const svg = d3.select(DOM.svg(width, height));
-
-  svg.append("g")
-      .call(xAxis);
-
-  svg.append("g")
-      .call(yAxis);
-  
-  svg.append("path")
-      .datum(data)
-      .attr("fill", "none")
-      .attr("stroke", "steelblue")
-      .attr("stroke-width", 4)
-      .attr("stroke-linejoin", "round")
-      .attr("stroke-linecap", "round")
-      .attr("d", line);
-  
-  return svg.node();
-}
-
-```
-
-:::{style="font-size:18px; text-align:right"}
-*Credit to https://observablehq.com/@dswalter/normal-distribution for the majority of the applet code*
-:::
 
 
 ## Standardization {style="font-size:30px"}
@@ -611,142 +506,9 @@ $$ 0.3 \pm 1.96 \cdot \sqrt{\frac{0.3 \cdot 0.7}{120}} = \boxed{[0.218 \ , \ 0.3
     - **Lower-tailed alternative/test:** $H_A: \ p < p_0$
     - **Upper-tailed alternative/test:** $H_A: \ p > p_0$
 
-## Hypothesis Testing for a Proportion {style="font-size:32px"}
-
-- The different alternative hypotheses lead to different forms of our **hypothesis test**.
-
-- Last lecture, we discussed how to construct a two-sided hypothesis test.
-
-- On the homework, I ask you to derive the lower-tailed hypothesis test (and I also provide you with the form for an upper-tailed hypothesis test in the last lecture slide deck)
-
-- To help you with that homework problem, allow me to re-do the derivations we did last lecture, but this time more in the style of the homework problem.
-
-## Two-Sided Test for a Proportion {style="font-size:32px"}
-
-- We start with the test statistic
-$$ \mathrm{TS} = \frac{\widehat{P} - p_0}{\sqrt{\frac{p_0 (1 - p_0)}{n}}} $$
-
-- If the null were true, i.e. if the true value of $p$ were $p_0$, then this test statistic would follow the Normal Distribution provided that we are able to invoke the Central Limit Theorem for proportions, which we can do only if
-
-    1) $np_0 \geq 10$
-    2) $n(1 - p_0) \geq 10$
-
-## Two-Sided Test for a Proportion {style="font-size:32px"}
-
-- If these conditions hold, we then know that (by the Central Limit Theorem for Proportions) 
-$$ \widehat{P} \stackrel{H_0}{\sim} \mathcal{N}\left( p_0, \ \sqrt{\frac{p_0 (1 - p_0)}{n}} \right) $$
-which means, by our Standardization Result, that 
-$$\mathrm{TS} \stackrel{H_0}{\sim} \mathcal{N}(0, \ 1)$$
-where the symbol $\stackrel{H_0}{\sim}$ just means "distributed under the null"; i.e. assuming the null hypothesis is correct.
 
 
 
-## Two-Sided Test for a Proportion {style="font-size:30px"}
-
-- Now, let's think about when we would reject the null that $p = p_0$ in favor of the alternative that $p \neq p_0$.
-
-    - If we observed a value of $\widehat{p}$ that was much greater than $p_0$ (i.e. if $\mathrm{ts}$ was much larger than 0), we would probably reject the null in favor of the alternative.
-    
-    - But, if we observed a value of $\widehat{p}$ that was much *smaller* than $p_0$ (i.e. if $\mathrm{ts}$ was much *smaller* than 0), we would probably *also* reject the null in favor of the alternative.
-    
-    - Therefore, we reject when the magnitude of $\mathrm{ts}$ is large; i.e. with $|\mathrm{ts}| > c$ for some constant $c$.
-    
-- This means our test should take the form
-$$ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 & \text{if } |\mathrm{TS}| > c \\ \texttt{fail to reject } H_0 & \text{otherwise}\\ \end{cases}  $$
-    
-## Two-Sided Test for a Proportion {style="font-size:30px"}
-
-- Finally, we need to consider how large to make our cutoff (or **critical value**) $c$.
-
-- This is where we need to consider the two types of errors we could commit: **Type I** and **Type II Errors**
-
-    - Type I error: the null was rejected when it was in fact true (convicting an innocent person)
-    
-    - Type II error: the null was not rejected when it was in fact false (letting a guilty person go free)
-
-- We call the probability of committing a Type I error the **level of significance** $\alpha$, which we fix before beginning our testing procedure.
-
-- In terms of the critical value, this means $c$ should satisfy the equation
-$$ \mathbb{P}_{H_0}(|\mathrm{TS}| > c) = \alpha $$
-where $\mathbb{P}_{H_0}$ means "probability of, assuming the null is actually true (i.e. that $p = p_0$)".
-
-
-## Two-Sided Test for a Proportion {style="font-size:28px"}
-
-- Since we know that $\mathrm{TS}$ follows a standard normal distribution under the null, this means that $c$ should be the $(\alpha / 2) \times 100$^th^ percentile of the standard normal distribution.
-
-    - For example, if $\alpha = 0.05$, then the critical value is the $(0.05) / 2 \times 100 = 2.5$^th^ percentile of the standard normal distribution, which we see to be $1.96$.
-
-- As such, the final form of our test is
-$$ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 & \text{if } |\mathrm{TS}| > z_{1 - \alpha/2} \\ \texttt{fail to reject } H_0 & \text{otherwise}\\ \end{cases}  $$
-where we use the notation $z_{1 - \alpha/2}$ to denote the following (which, recall, are equivalent):
-    - $(\alpha / 2) \times 100$^th^ percentile of the standard normal distribution, **scaled by negative 1**.
-    - $[1 - (\alpha / 2)] \times 100$^th^ percentile, not scaled by anything.
-
-## Quick Note {style="font-size:30px"}
-
-- Again, it turns out that the $(\alpha / 2) \times 100$^th^ percentile of the standard normal distribution scaled by negative 1 is equivalent to the $(1 - \alpha / 2)$^th^ percentile of the standard normal distribution, not scaled by negative 1.
-
-:::{.fragment}
-```{python}
-#| echo: True
-import scipy.stats as sps
-
--sps.norm.ppf(0.05/2)
-```
-:::
-
-:::{.fragment}
-```{python}
-#| echo: True
-import scipy.stats as sps
-
-sps.norm.ppf(1 - 0.05/2)
-```
-:::
-
-- Basically, when doing a *two-sided test*, ensure that the critical value is positive. (This is not the case for a one-sided test.)
-
-## Worked-Out Example {style="font-size:30px"}
-
-:::{.fragment}
-::: callout-tip
-## Worked-Out Example 1
-
-:::{.nonincremental}
-::: {style="font-size: 28px"}
-Administration within a Statistics department at an unnamed university claims to admit 24\% of all applicants. A disgruntled student, dubious of the administration's claims, takes a representative sample of 120 students who applied to the Statistics major, and found that 20\% of these students were actually admitted into the major. \
-
-Conduct a two-sided hypothesis test at a 5\% level of significance on the administrator's claims that 24\% of applicants into the Statistics major are admitted. Be sure you phrase your conclusion clearly, and in the context of the problem.
-:::
-:::
-:::
-:::
-
-## Solutions {style="font-size:30px"}
-
-- We first phrase the hypotheses.
-
-- Let $p$ denote the true proportion of applicants who get admitted into the major. Since we are performing a two-sided test, our hypotheses take the form
-$$ \left[ \begin{array}{rr}
-  H_0:    p = 0.24    \\
-  H_A:    p \neq 0.24
-\end{array} \right.$$
-
-- Now we compute the observed value of the test statistic:
-$$ \mathrm{ts} = \frac{\widehat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}} = \frac{0.2 - 0.24}{\sqrt{\frac{(0.24) \cdot (1 - 0.24)}{120}}} \approx -1.026 $$
-
-- Next, we compute the critical value. Since we are using an $\alpha = 0.05$ level of significance, we will use the critical value $1.96$
-
-## Solutions {style="font-size:30px"}
-
-- Finally, we perform the test: we will reject the null in favor of the alternative if $|\mathrm{ts}|$ is larger than the critical value.
-
-- In this case, $|\mathrm{ts}| = |-1.026| = 1.026 < 1.96$ meaning we fail to reject the null:
-
-:::{.fragment}
-> At an $\alpha = 0.05$ level of significance, there was insufficient evidence to reject the null hypothesis that 24\% of applicants are admitted into the major in favor of the alternative that the true admittance rate was *not* 24\%.
-:::
 
 ## Two-Sided Test for a Proportion {style="font-size:30px"}
 
@@ -816,6 +578,50 @@ provided that: $n p_0 \geq 10$ and $n (1 - p_0) \geq 10$.
 :::
 :::
 
+
+
+## Worked-Out Example {style="font-size:30px"}
+
+:::{.fragment}
+::: callout-tip
+## Worked-Out Example 4
+
+:::{.nonincremental}
+::: {style="font-size: 28px"}
+Administration within a Statistics department at an unnamed university claims to admit 24\% of all applicants. A disgruntled student, dubious of the administration's claims, takes a representative sample of 120 students who applied to the Statistics major, and found that 20\% of these students were actually admitted into the major. \
+
+Conduct a two-sided hypothesis test at a 5\% level of significance on the administrator's claims that 24\% of applicants into the Statistics major are admitted. Be sure you phrase your conclusion clearly, and in the context of the problem.
+:::
+:::
+:::
+:::
+
+## Solutions {style="font-size:30px"}
+
+- We first phrase the hypotheses.
+
+- Let $p$ denote the true proportion of applicants who get admitted into the major. Since we are performing a two-sided test, our hypotheses take the form
+$$ \left[ \begin{array}{rr}
+  H_0:    p = 0.24    \\
+  H_A:    p \neq 0.24
+\end{array} \right.$$
+
+- Now we compute the observed value of the test statistic:
+$$ \mathrm{ts} = \frac{\widehat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}} = \frac{0.2 - 0.24}{\sqrt{\frac{(0.24) \cdot (1 - 0.24)}{120}}} \approx -1.026 $$
+
+- Next, we compute the critical value. Since we are using an $\alpha = 0.05$ level of significance, we will use the critical value $1.96$
+
+## Solutions {style="font-size:30px"}
+
+- Finally, we perform the test: we will reject the null in favor of the alternative if $|\mathrm{ts}|$ is larger than the critical value.
+
+- In this case, $|\mathrm{ts}| = |-1.026| = 1.026 < 1.96$ meaning we fail to reject the null:
+
+:::{.fragment}
+> At an $\alpha = 0.05$ level of significance, there was insufficient evidence to reject the null hypothesis that 24\% of applicants are admitted into the major in favor of the alternative that the true admittance rate was *not* 24\%.
+:::
+
+
 ## Hypothesis Testing for Mean {style="font-size:32px"}
 
 Similar to test for proportions, we also have the following alternatives:
@@ -828,17 +634,7 @@ Similar to test for proportions, we also have the following alternatives:
 
 We want to check the following conditions:
 
-:::{.fragment}
-```{mermaid}
-graph TB
-  A[Is the population Normal?  . ] --> |Yes| B{{Use Normal .}}
-  A --> |No| C[Is n >= 30?  .]
-  C --> |Yes| D[sigma or s?  .]
-  C --> |No| E{{cannot proceed   .}}
-  D --> |sigma| F{{Use Normal .}}
-  D --> |s| G{{Use t }}
-```
-:::
+![](norm_flow_chart.png)
 
 ## Test Statistics for Hypothesis Testing for Mean {style="font-size:32px"}
 
@@ -848,12 +644,6 @@ $$ \mathrm{TS} = \begin{cases}
 \end{cases} $$
 
 ## Test Statistic for Two-Sided Hypothesis Testing for Mean {style="font-size:32px"}
-
-- In the two-sided case, our critical value will still be the value $c$ that ensures
-$$ \mathbb{P}(|\mathrm{TS}| > c) = \alpha $$
-(i.e. we reject $H_0$ whenever $\overline{X}$ is far away from $\mu_0$) meaning $c$ will the $(\alpha /2) \times 100\%$ percentile, scaled by negative 1, of either the standard normal distribution or the $t_{n - 1}$ distribution.
-
-    - Again, don't forget about how the symmetry of the normal and _t_-distributions translates to relationships between percentiles!
 
 - Our test in the two-sided case will then take the form
 $$ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 & \text{if } |\mathrm{TS}| > c \\ \texttt{fail to reject } H_0 & \text{otherwise}\\ \end{cases}  $$
@@ -877,11 +667,10 @@ $$ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 & \text{i
 
 ## P-Value {style="font-size:32px"}
 
-We say that the data provide **statistically significant** evidence against the null hypothesis when the p-value is less than some reference valiue (the significance level $\alpha$). Three common significance levels are $\alpha = 0.01, \alpha = 0.05, $ and $\alpha = 0.1$. 
   
-|                       | Decision              | Statistically significant? |
-|-----------------------|:----------------------|---------------------------:|
-| p-value $\leq \alpha$ | Reject $H_0$          |           Yes              |
-| p-value $> \alpha$    | Fail to reject $H_0$  |           No               |
+|                       | Decision              |
+|-----------------------|:----------------------|
+| p-value $\leq \alpha$ | Reject $H_0$          |    
+| p-value $> \alpha$    | Fail to reject $H_0$  |
 
 

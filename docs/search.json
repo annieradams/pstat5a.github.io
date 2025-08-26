@@ -417,7 +417,7 @@
     "href": "Pages/Lectures/Lecture15/Lec15.html#worked-out-example",
     "title": "PSTAT 5A: Lecture 18",
     "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\nSuppose that GauchoAir has found that each passenger that books a ticket on the GA5A flight from SBA to GCV (GauchoVille) actually shows up with probability 90%.\nIf flight GA5A has only 186 seats, but sells 195 tickets, what is the probability that GauchoAir will need to re-book certain passengers?"
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 3\n\n\n\n\nSaoirse would like to construct a 95% confidence interval for the true proportion of California Residents that speak Spanish. To that end, she took a representative sample of 120 CA residents and found that 36 of these residents speak Spanish.\n\nIdentify the population\nDefine the parameter of interest.\nDefine the random variable of interest.\nConstruct a 95% confidence interval for the true proportion of CA residents that speak Spanish."
   },
   {
     "objectID": "Pages/Lectures/Lecture15/Lec15.html#solution",
@@ -557,7 +557,7 @@
     "href": "Pages/Lectures/Lecture15/Lec15.html#worked-out-example-1",
     "title": "PSTAT 5A: Lecture 18",
     "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 3\n\n\n\n\nSaoirse would like to construct a 95% confidence interval for the true proportion of California Residents that speak Spanish. To that end, she took a representative sample of 120 CA residents and found that 36 of these residents speak Spanish.\n\nIdentify the population\nDefine the parameter of interest.\nDefine the random variable of interest.\nConstruct a 95% confidence interval for the true proportion of CA residents that speak Spanish."
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 4\n\n\n\n\nAdministration within a Statistics department at an unnamed university claims to admit 24% of all applicants. A disgruntled student, dubious of the administration’s claims, takes a representative sample of 120 students who applied to the Statistics major, and found that 20% of these students were actually admitted into the major.\n\nConduct a two-sided hypothesis test at a 5% level of significance on the administrator’s claims that 24% of applicants into the Statistics major are admitted. Be sure you phrase your conclusion clearly, and in the context of the problem."
   },
   {
     "objectID": "Pages/Lectures/Lecture15/Lec15.html#solutions",
@@ -585,7 +585,7 @@
     "href": "Pages/Lectures/Lecture15/Lec15.html#two-sided-test-for-a-proportion",
     "title": "PSTAT 5A: Lecture 18",
     "section": "Two-Sided Test for a Proportion",
-    "text": "Two-Sided Test for a Proportion\n\nWe start with the test statistic \\[ \\mathrm{TS} = \\frac{\\widehat{P} - p_0}{\\sqrt{\\frac{p_0 (1 - p_0)}{n}}} \\]\nIf the null were true, i.e. if the true value of \\(p\\) were \\(p_0\\), then this test statistic would follow the Normal Distribution provided that we are able to invoke the Central Limit Theorem for proportions, which we can do only if\n\n\\(np_0 \\geq 10\\)\n\\(n(1 - p_0) \\geq 10\\)"
+    "text": "Two-Sided Test for a Proportion\n\n\n\n\n\n\n\nTwo-Sided Test for a Proportion:\n\n\n\n\nWhen testing \\(H_0: \\ p = p_0\\) vs \\(H_A: \\ p \\neq p_0\\) at an \\(\\alpha\\) level of significance, where \\(p\\) denotes a population proportion, the test takes the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| &gt; z_{1 - \\alpha/2} \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] where:\n\n\\(\\displaystyle \\mathrm{TS} = \\frac{\\widehat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}}\\)\n\\(z_{1 - \\alpha/2}\\) denotes the \\((\\alpha/2) \\times 100\\)th percentile of the standard normal distribution, scaled by negative 1 (which is equivalent to the \\((1 - \\alpha/2) \\times 100\\)th percentile)\n\nprovided that: \\(n p_0 \\geq 10\\) and \\(n (1 - p_0) \\geq 10\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture15/Lec15.html#two-sided-test-for-a-proportion-1",
@@ -676,7 +676,7 @@
     "href": "Pages/Lectures/Lecture15/Lec15.html#conditions-to-check-for-hypothesis-testing-for-mean",
     "title": "PSTAT 5A: Lecture 18",
     "section": "Conditions to Check for Hypothesis Testing for Mean",
-    "text": "Conditions to Check for Hypothesis Testing for Mean\nWe want to check the following conditions:\n\n\n\n\n\ngraph TB\n  A[Is the population Normal?  . ] --&gt; |Yes| B{{Use Normal .}}\n  A --&gt; |No| C[Is n &gt;= 30?  .]\n  C --&gt; |Yes| D[sigma or s?  .]\n  C --&gt; |No| E{{cannot proceed   .}}\n  D --&gt; |sigma| F{{Use Normal .}}\n  D --&gt; |s| G{{Use t }}"
+    "text": "Conditions to Check for Hypothesis Testing for Mean\nWe want to check the following conditions:"
   },
   {
     "objectID": "Pages/Lectures/Lecture15/Lec15.html#test-statistics-for-hypothesis-testing-for-mean",
@@ -690,7 +690,7 @@
     "href": "Pages/Lectures/Lecture15/Lec15.html#test-statistic-for-two-sided-hypothesis-testing-for-mean",
     "title": "PSTAT 5A: Lecture 18",
     "section": "Test Statistic for Two-Sided Hypothesis Testing for Mean",
-    "text": "Test Statistic for Two-Sided Hypothesis Testing for Mean\n\nIn the two-sided case, our critical value will still be the value \\(c\\) that ensures \\[ \\mathbb{P}(|\\mathrm{TS}| &gt; c) = \\alpha \\] (i.e. we reject \\(H_0\\) whenever \\(\\overline{X}\\) is far away from \\(\\mu_0\\)) meaning \\(c\\) will the \\((\\alpha /2) \\times 100\\%\\) percentile, scaled by negative 1, of either the standard normal distribution or the \\(t_{n - 1}\\) distribution.\n\nAgain, don’t forget about how the symmetry of the normal and t-distributions translates to relationships between percentiles!\n\nOur test in the two-sided case will then take the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| &gt; c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]"
+    "text": "Test Statistic for Two-Sided Hypothesis Testing for Mean\n\nOur test in the two-sided case will then take the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| &gt; c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture15/Lec15.html#test-statistic-for-one-sided-hypothesis-testing-for-mean",
@@ -711,7 +711,7 @@
     "href": "Pages/Lectures/Lecture15/Lec15.html#p-value-1",
     "title": "PSTAT 5A: Lecture 18",
     "section": "P-Value",
-    "text": "P-Value\nWe say that the data provide statistically significant evidence against the null hypothesis when the p-value is less than some reference valiue (the significance level \\(\\alpha\\)). Three common significance levels are $= 0.01, = 0.05, $ and \\(\\alpha = 0.1\\).\n\n\n\n\n\n\n\n\n\nDecision\nStatistically significant?\n\n\n\n\np-value \\(\\leq \\alpha\\)\nReject \\(H_0\\)\nYes\n\n\np-value \\(&gt; \\alpha\\)\nFail to reject \\(H_0\\)\nNo"
+    "text": "P-Value\n\n\n\n\nDecision\n\n\n\n\np-value \\(\\leq \\alpha\\)\nReject \\(H_0\\)\n\n\np-value \\(&gt; \\alpha\\)\nFail to reject \\(H_0\\)"
   },
   {
     "objectID": "Pages/Lectures/Lecture01/Lec01.html#what-is-data",
