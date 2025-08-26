@@ -130,21 +130,17 @@ $$\text{TS} = \frac{\bar{x}_1-\bar{x}_2 - 0}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2
 
 And similar to the one mean problem, this test statistic follows a $t$ distribution with degrees of freedom calculated from technology. 
 
-## Step 4: Make decision on test and Step 5: Write a conclusion
+## Step 4: Make decision on test 
 
 - As we did with one mean, the decision will be based on the kind of test (two sided, lower tail, or greater tail tests). We will calculate the p-value to measure the strength of the evidence against the null hypothesis, comparing it to the significance level, $\alpha$. 
 
-- Finally, we write a conclusion in the context of the problem which include our 5 elements: 
+## Step 5: Write a conclusion.
+Your conclusion should include: 
 
-  1) significance level, 
-
-  2) decision of the test, 
-
-  3) as a function of the null hypothesis. Then we write an interpretation that is 
-
-  4) not too strong, and 
-
-  5) in affirmation or not in affirmation of the alternative hypothesis. 
+  1. significance level, [At an $\alpha$ = .05 level of significance]{.fragment style="color: blue;"} 
+  2) decision of the test, , [There was sufficient evidence to reject the Census' claim]{.fragment style="color: blue;"}
+  3) as a function of the null hypothesis. Then we write an interpretation that is, [that the average commute time of Americans was 27.6 minutes]{.fragment style="color: blue;"}
+  4) in affirmation or not in affirmation of the alternative hypothesis., [in favor of the alternative that the true average commute time was not 27.6 minutes.]{.fragment style="color: blue;"} 
 
 
 ## Worked-Out Example {style="font-size:32px"}

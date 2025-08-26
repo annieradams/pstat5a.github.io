@@ -5275,7 +5275,7 @@
     "href": "Pages/Lectures/Lecture14/Lec14.html#step-4-make-decision-on-test-and-step-5-write-a-conclusion",
     "title": "PSTAT 5A: Lecture 14",
     "section": "Step 4: Make decision on test and Step 5: Write a conclusion",
-    "text": "Step 4: Make decision on test and Step 5: Write a conclusion\n\nAs we did with one mean, the decision will be based on the kind of test (two sided, lower tail, or greater tail tests). We will calculate the p-value to measure the strength of the evidence against the null hypothesis, comparing it to the significance level, \\(\\alpha\\).\nFinally, we write a conclusion in the context of the problem which include our 5 elements:\n\nsignificance level,\ndecision of the test,\nas a function of the null hypothesis. Then we write an interpretation that is\nnot too strong, and\nin affirmation or not in affirmation of the alternative hypothesis."
+    "text": "Step 4: Make decision on test and Step 5: Write a conclusion\n\nAs we did with one mean, the decision will be based on the kind of test (two sided, lower tail, or greater tail tests). We will calculate the p-value to measure the strength of the evidence against the null hypothesis, comparing it to the significance level, \\(\\alpha\\).\nFinally, we write a conclusion in the context of the problem which include our 5 elements:\n\nsignificance level, At an \\(\\alpha\\) = .05 level of significance\n\n\ndecision of the test, , There was sufficient evidence to reject the Census’ claim\nas a function of the null hypothesis. Then we write an interpretation that is, that the average commute time of Americans was 27.6 minutes\nin affirmation or not in affirmation of the alternative hypothesis., in favor of the alternative that the true average commute time was not 27.6 minutes."
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#worked-out-example",
@@ -5380,14 +5380,14 @@
     "href": "Pages/schedule.html#week-3-818---821",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Week 3 (8/18 - 8/21)",
-    "text": "Week 3 (8/18 - 8/21)\n\n\nLectures\n08: Continuous Random Variables 09: Introduction to Inference 10: Confidence Intervals for Proportions 11: Confidence Intervals for Means\nT-Table  Z-Table  \n\n\nDiscussion\nDiscussion 03 \n\n\nLab\nLab 03"
+    "text": "Week 3 (8/18 - 8/21)\n\n\nLectures\n08: Continuous Random Variables 09: Introduction to Inference 10: Confidence Intervals for Proportions 11: Confidence Intervals for Means\nT-Table  Z-Table  \n\n\nDiscussion\nDiscussion 03 Solutions\n\n\nLab\nLab 03"
   },
   {
     "objectID": "Pages/schedule.html#week-4-825---828",
     "href": "Pages/schedule.html#week-4-825---828",
     "title": "PSTAT 5A: Understanding Data",
     "section": "Week 4 (8/25 - 8/28)",
-    "text": "Week 4 (8/25 - 8/28)\n\n\nLectures\n12: Hypothesis Testing  for Proportions 13: Hypothesis Testing, Part II 14: Two-Sample t-Tests\n15: Review\nHW4 Soln\n\n\nDiscussion\nDiscussion 04 \n\n\nLab\nLab 04"
+    "text": "Week 4 (8/25 - 8/28)\n\n\nLectures\n12: Hypothesis Testing  for Proportions 13: Hypothesis Testing, Part II 14: Two-Sample t-Tests\n15: Review\n\n\n\nDiscussion\nDiscussion 04 \n\n\nLab\nLab 04"
   },
   {
     "objectID": "Pages/schedule.html#week-5-901---904",
@@ -5458,5 +5458,19 @@
     "title": "PSTAT 5A: Lecture 13",
     "section": "How do we calculate our p value?",
     "text": "How do we calculate our p value?\n\nWe find our p- value in the same way!\nRemember our p value is representing a probability - so to find it we are looking for an area under the curve.\nWe can look up our test statistic in the z table to find our corresponding probability."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture14/Lec14.html#step-4-make-decision-on-test",
+    "href": "Pages/Lectures/Lecture14/Lec14.html#step-4-make-decision-on-test",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Step 4: Make decision on test",
+    "text": "Step 4: Make decision on test\n\nAs we did with one mean, the decision will be based on the kind of test (two sided, lower tail, or greater tail tests). We will calculate the p-value to measure the strength of the evidence against the null hypothesis, comparing it to the significance level, \\(\\alpha\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture14/Lec14.html#step-5-write-a-conclusion.",
+    "href": "Pages/Lectures/Lecture14/Lec14.html#step-5-write-a-conclusion.",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Step 5: Write a conclusion.",
+    "text": "Step 5: Write a conclusion.\nYour conclusion should include:\n\nsignificance level, At an \\(\\alpha\\) = .05 level of significance\n\n\ndecision of the test, , There was sufficient evidence to reject the Census’ claim\nas a function of the null hypothesis. Then we write an interpretation that is, that the average commute time of Americans was 27.6 minutes\nin affirmation or not in affirmation of the alternative hypothesis., in favor of the alternative that the true average commute time was not 27.6 minutes."
   }
 ]

@@ -1,6 +1,6 @@
 ---
 title: "PSTAT 5A: Understanding Data"
-subtitle: "Summer 2024 <br /> Instructor: Mallory Wang"
+subtitle: "Summer 2024 <br /> Instructor: Annie Adams"
 ---
 
 \
