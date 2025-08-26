@@ -130,12 +130,12 @@ Last Updated: *August 4, 2025*
 
 <a href="Lectures/Lecture15/Lec15.qmd" class="button label-outline lecture">15: Review</a><br/>
 
-<!-- <a href="../Files/HW/HW04_Solns.pdf" class="button label-outline hw">HW4 Soln</a><br/> -->
+<a href="../Files/HW/HW04_Solns.pdf" class="button label-outline hw">HW4 Soln</a><br/>
 </div>
 
 <div>
 **Discussion**  
-<a href="../Files/Wkshts/Wksht01_Blank.pdf" class="button label-outline Discussion">Discussion 04</a><br/>
+<a href="../Files/Wkshts/Wksht04_Blank.pdf" class="button label-outline Discussion">Discussion 04</a><br/>
 <!-- <a href="../Files/Wkshts/Wksht04_Solns.pdf" class="button label-outline Discussion">Solutions</a><br/> -->
 </div>
 
