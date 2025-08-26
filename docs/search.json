@@ -60,7 +60,7 @@
     "href": "Pages/Lectures/Lecture13/Lec13.html#test-statistic-1",
     "title": "PSTAT 5A: Lecture 13",
     "section": "Test Statistic",
-    "text": "Test Statistic\n\nIn the two-sided case, our critical value will still be the value \\(c\\) that ensures \\[ \\mathbb{P}(|\\mathrm{TS}| &gt; c) = \\alpha \\] if the null hypothesis is true. We reject \\(H_0\\) whenever \\(\\overline{X}\\) is far away from \\(\\mu_0\\)) meaning \\(c\\) will be the \\((\\alpha /2) \\times 100\\%\\) percentile, scaled by negative 1, of either the standard normal distribution or the \\(t_{n - 1}\\) distribution.\nOur test in the two-sided case will then take the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| &gt; c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]\nLet’s do an example."
+    "text": "Test Statistic\n\nOur test in the two-sided case will then take the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| &gt; c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]\nLet’s do an example."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example",

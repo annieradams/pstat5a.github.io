@@ -76,10 +76,6 @@ $$ \mathrm{TS} = \begin{cases}
 
 ## Test Statistic
 
-- In the two-sided case, our critical value will still be the value $c$ that ensures
-$$ \mathbb{P}(|\mathrm{TS}| > c) = \alpha $$ if the null hypothesis is true.
-We reject $H_0$ whenever $\overline{X}$ is far away from $\mu_0$) meaning $c$ will be the $(\alpha /2) \times 100\%$ percentile, scaled by negative 1, of either the standard normal distribution or the $t_{n - 1}$ distribution.
-
 - Our test in the two-sided case will then take the form
 $$ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 & \text{if } |\mathrm{TS}| > c \\ \texttt{fail to reject } H_0 & \text{otherwise}\\ \end{cases}  $$
 
