@@ -99,7 +99,7 @@ There is a **final** exam for this class. You are required to take the final exa
 
 ### Homework:
 
-There will be weekly homework due on Thursday at 11:59p. It must be turned into Gradescope. No late homework will be accepted since solutions to the homework will be posted on Friday. I advise you review your homework in preparation for the quiz on Monday.There will be six homework assignments, all weighted equally. Homework will be graded on an effort-based basis with the following cutoffs: 
+There will be weekly homework due on Thursday at 11:59p. It must be turned into Gradescope. No late homework will be accepted since solutions to the homework will be posted on Friday. I advise you review your homework in preparation for the quiz on Monday.There will be five homework assignments, all weighted equally.There will be one extra credit homework assignment. Homework will be graded on an effort-based basis with the following cutoffs: 
 
 | Submission Quality | Credit Earned |
 |:-------------------|:--------------|
@@ -135,8 +135,7 @@ There will be weekly homework due on Thursday at 11:59p. It must be turned into 
 **HW5**: Thurs., Sept 4 at 11:59pm
 
 **Week 6**|
-**Lab6**: Thurs., Sept 11 at 11:59pm
-**HW6**: Thurs., Sept 11 at 11:59pm 
+**HW6**: Wed, Sept 10 at 11:59pm 
 
 ## Grading Scheme
 
