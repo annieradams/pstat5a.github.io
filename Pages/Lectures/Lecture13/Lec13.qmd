@@ -60,17 +60,8 @@ library(ggthemes)
     
 ## Sampling Distribution of $\overline{X}$
 
-:::{.fragment}
-```{mermaid}
-graph TB
-  A[Is the population Normal?   ] --> |Yes| B{{Use Normal }}
-  A --> |No| C[Is n >= 30?  ]
-  C --> |Yes| D[sigma or s?  ]
-  C --> |No| E{{cannot proceed   }}
-  D --> |sigma| F{{Use Normal }}
-  D --> |s| G{{Use t }}
-```
-:::
+![](norm_flow_chart.png)
+
 
 ## Test Statistic
 

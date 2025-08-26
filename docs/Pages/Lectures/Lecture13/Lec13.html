@@ -388,9 +388,6 @@
       margin-right: 0; 
     }
   </style>
-  <script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
   <link href="../../../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
   <script src="../../../site_libs/countdown-0.4.0/countdown.js"></script>
 </head>
@@ -444,25 +441,8 @@
 </section>
 <section id="sampling-distribution-of-overlinex" class="slide level2">
 <h2>Sampling Distribution of <span class="math inline">\(\overline{X}\)</span></h2>
-<div class="fragment">
-<div class="cell" data-reveal="true">
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">graph TB
-  A[Is the population Normal?   ] --&gt; |Yes| B{{Use Normal }}
-  A --&gt; |No| C[Is n &gt;= 30?  ]
-  C --&gt; |Yes| D[sigma or s?  ]
-  C --&gt; |No| E{{cannot proceed   }}
-  D --&gt; |sigma| F{{Use Normal }}
-  D --&gt; |s| G{{Use t }}
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="norm_flow_chart.png" class="r-stretch"></section>
 <section id="test-statistic" class="slide level2">
 <h2>Test Statistic</h2>
 <ul>
@@ -637,7 +617,7 @@
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_aa38faa3" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_197ad02c" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -681,15 +661,15 @@ H_A:    &amp; p &lt; p_0
 </ul>
 </div>
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
 <section id="reject-or-not" class="slide level2">
 <h2>Reject or Not?</h2>
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
 <section id="reject-or-not-1" class="slide level2">
 <h2>Reject or Not?</h2>
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
 <section id="leadup" class="slide level2">
 <h2>Leadup</h2>
 <ul>
@@ -716,11 +696,11 @@ H_A:    &amp; p &lt; p_0
 <section class="slide level2">
 
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
 <section class="slide level2">
 
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"><ul>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"><ul>
 <li class="fragment"><p>How does the area to the left of the test statistic compare to <span class="math inline">\(\alpha\)</span>?</p>
 <ul>
 <li class="fragment">It is smaller.</li>
@@ -730,11 +710,11 @@ H_A:    &amp; p &lt; p_0
 <section class="slide level2">
 
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
 <section class="slide level2">
 
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"><ul>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"><ul>
 <li class="fragment"><p>How does the area to the left of the test statistic compare to <span class="math inline">\(\alpha\)</span>?</p>
 <ul>
 <li class="fragment">It is larger</li>
@@ -788,21 +768,21 @@ H_A:    &amp; p &lt; p_0
 <section id="the-test-statistic" class="slide level2">
 <h2>The Test Statistic</h2>
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
 <section id="p-value-lower-tailed-test" class="slide level2">
 <h2><em>p</em>-value; Lower-Tailed Test</h2>
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"><p>The pink shaded area represents the p value. It is the area under the curve that is equivalent to or less than the test statistic.</p>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"><p>The pink shaded area represents the p value. It is the area under the curve that is equivalent to or less than the test statistic.</p>
 </section>
 <section id="p-value-upper-tailed-test" class="slide level2">
 <h2><em>p</em>-value; Upper-Tailed Test</h2>
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"><p>The pink shaded area represents the p value. It is the area under the curve that is equivalent to or greater than the test statistic.</p>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"><p>The pink shaded area represents the p value. It is the area under the curve that is equivalent to or greater than the test statistic.</p>
 </section>
 <section id="p-value-two-sided-test" class="slide level2">
 <h2><em>p</em>-value; Two-Sided Test</h2>
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"><p>The pink shaded area represents the p value. It is the area under the curve that is equivalent to or more extreme than the test statistic in both directions.</p>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"><p>The pink shaded area represents the p value. It is the area under the curve that is equivalent to or more extreme than the test statistic in both directions.</p>
 </section>
 <section id="how-do-we-calculate-our-p-value" class="slide level2">
 <h2>How do we calculate our p value?</h2>
@@ -815,7 +795,7 @@ H_A:    &amp; p &lt; p_0
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-14-1.png" width="576"></p>
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-13-1.png" width="576"></p>
 </figure>
 </div>
 </div>
@@ -829,7 +809,7 @@ H_A:    &amp; p &lt; p_0
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-15-1.png" width="576"></p>
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-14-1.png" width="576"></p>
 </figure>
 </div>
 </div>
@@ -882,7 +862,7 @@ H_A:    &amp; p &lt; p_0
 <div class="fragment">
 <div class="cell" data-fig="true">
 <div class="cell-output-display">
-<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -895,7 +875,7 @@ H_A:    &amp; p &lt; p_0
 <div class="fragment">
 <div class="cell" data-fig="true">
 <div class="cell-output-display">
-<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -936,7 +916,7 @@ H_A:    &amp; p &lt; p_0
 <div class="fragment">
 <div class="cell" data-fig="true">
 <div class="cell-output-display">
-<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -1005,7 +985,7 @@ H_A:    &amp; p &lt; p_0
 <div class="fragment">
 <div class="cell" data-fig="true">
 <div class="cell-output-display">
-<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-20-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -1018,7 +998,7 @@ H_A:    &amp; p &lt; p_0
 <div class="fragment">
 <div class="cell" data-fig="true">
 <div class="cell-output-display">
-<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-22-1.png" width="960"></p>
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -1039,7 +1019,7 @@ H_A:    &amp; p &lt; p_0
 <div class="fragment">
 <div class="cell" data-fig="true">
 <div class="cell-output-display">
-<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-24-1.png" width="960"></p>
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-23-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -1093,7 +1073,7 @@ H_A:    &amp; p &lt; p_0
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_b3a7d489" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_04112d21" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1127,7 +1107,7 @@ H_A:    &amp; p &lt; p_0
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_c6dfe791" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown" id="timer_17c67bc5" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>

@@ -46,7 +46,7 @@
     "href": "Pages/Lectures/Lecture13/Lec13.html#sampling-distribution-of-overlinex",
     "title": "PSTAT 5A: Lecture 13",
     "section": "Sampling Distribution of \\(\\overline{X}\\)",
-    "text": "Sampling Distribution of \\(\\overline{X}\\)\n\n\n\n\n\ngraph TB\n  A[Is the population Normal?   ] --&gt; |Yes| B{{Use Normal }}\n  A --&gt; |No| C[Is n &gt;= 30?  ]\n  C --&gt; |Yes| D[sigma or s?  ]\n  C --&gt; |No| E{{cannot proceed   }}\n  D --&gt; |sigma| F{{Use Normal }}\n  D --&gt; |s| G{{Use t }}"
+    "text": "Sampling Distribution of \\(\\overline{X}\\)"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#test-statistic",
