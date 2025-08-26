@@ -196,6 +196,13 @@
     "text": "p-Values\n\nThe textbook defines \\(p-\\)values as:\n\n\n\n[…] the probability of observing data at least as favorable to the alternative hypothesis as our current data set, if the null hypothesis were true.\n\n\n\nAnother way to think about it is this: if the null were true, what is the probability that we would observe something even more extreme (i.e. even “farther away”, in the direction of the alternative) as our current observations?\nNote that exactly how we compute \\(p-\\)values depends heavily on our alternative."
   },
   {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#p-values-1",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#p-values-1",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "p-Values",
+    "text": "p-Values\nImagine you suspect a coin is rigged to land on heads more often so you conduct the following test:\n\n\\(H_0\\): The coin is fair\n\\(H_A\\): The coin is rigged\n\n\nYou flip the coin 10 times and get 9 heads. The p value asks us “If this coin is really fair, what is the probability I get 9 heads just by bad luck?” The answer is very small! - only about a 1% chance. We can confirm this with \\[ \\mathbb{P} (X = k) = \\binom{n}{k} \\cdot p^k \\cdot (1-p)^{n-k} = 10 \\cdot .0019 \\cdot 0.5 = .01  \\]\n\n\nSo the p value is .01. This means that the coin really is fair and you got unlucky (1% chance), or the coin is probably rigged."
+  },
+  {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#the-test-statistic",
     "href": "Pages/Lectures/Lecture13/Lec13.html#the-test-statistic",
     "title": "PSTAT 5A: Lecture 13",
@@ -222,6 +229,27 @@
     "title": "PSTAT 5A: Lecture 13",
     "section": "p-value; Two-Sided Test",
     "text": "p-value; Two-Sided Test\n\nThe pink shaded area represents the p value. It is the area under the curve that is equivalent to or more extreme than the test statistic in both directions."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#how-do-we-calculate-our-p-value",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#how-do-we-calculate-our-p-value",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "How do we calculate our p value?",
+    "text": "How do we calculate our p value?\nLet’s review this slide from Lecture 8:\n\nRecall that for continuous variables, probabilities are found as areas underneath the density curve. For example, if \\(X \\sim \\mathcal{N}(0, 1)\\), then \\(\\mathbb{P}(X \\leq -1)\\) is found by computing the area below:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#how-do-we-calculate-our-p-value-1",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#how-do-we-calculate-our-p-value-1",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "How do we calculate our p value?",
+    "text": "How do we calculate our p value?\n\n\n\n\n\n\n\n\n\n\n\n\nWe found this area by looking at our z table!\nTo find \\(\\mathbb{P}(X\\leq .83)\\) we broke it up as \\(0.83 = 0.8 + 0.03\\) and then found the row on our z table that corresponds to \\(0.8\\) and the column that corresponds to \\(.03\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#how-do-we-calculate-our-p-value-2",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#how-do-we-calculate-our-p-value-2",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "How do we calculate our p value?",
+    "text": "How do we calculate our p value?\n\nWe find our p- value in the same way!\nRemember our p value is representing a probability - so to find it we are looking for an area under the curve.\nWe can look up our test statistic in the z table to find our corresponding probability."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example-3",
@@ -266,11 +294,11 @@
     "text": "Solutions\n\nAlternatively, note that we can utilize the symmetry of the normal distribution in our favor- the area we’re interested in is simply twice the area we found in the lower-tailed case!\nSo, our \\(p-\\)value in the two-sided case is simply \\(2 \\times (0.0314) = 0.0628\\).\nIf you don’t believe me:\n\n\n\nsps.norm.cdf(-1.86) + (1 - sps.norm.cdf(1.86))\n\nnp.float64(0.06288552596150537)"
   },
   {
-    "objectID": "Pages/Lectures/Lecture13/Lec13.html#p-values-1",
-    "href": "Pages/Lectures/Lecture13/Lec13.html#p-values-1",
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#p-values-2",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#p-values-2",
     "title": "PSTAT 5A: Lecture 13",
     "section": "p-Values",
-    "text": "p-Values\nImagine you suspect a coin is rigged to land on heads more often so you conduct the following test:\n\n\\(H_0\\): The coin is fair\n\\(H_A\\): The coin is rigged\n\n\nYou flip the coin 10 times and get 9 heads. The p value asks us “If this coin is really fair, what is the probability I get 9 heads just by bad luck?” The answer is very small! - only about a 1% chance. We can confirm this with \\[ \\mathbb{P} (X = k) = \\binom{n}{k} \\cdot p^k \\cdot (1-p)^{n-k} = 10 \\cdot .0019 \\cdot 0.5 = .01  \\]\n\n\nSo the p value is .01. This means that the coin really is fair and you got unlucky (1% chance), or the coin is probably rigged."
+    "text": "p-Values\n\nOf course, p-values are not restricted to the case of hypothesis testing a proportion; we can absolutely compute \\(p-\\)values in a setting where we are testing a population mean!\n\n\n\n\n\n\n\n\nWorked-Out Example 4\n\n\n\n\nConsider again the setup of Worked-Out Example 2: McGaucho’s claims that, on average, they are able to serve customers their food in 10 minutes. Dubious of these claims, Markus takes a representative sample of 40 customers and finds that these customers waited an combined average of 15 minutes before receiving their food, with a standard deviation of 10 minutes.\n\nCompute the p-value if we were to use a lower-tailed alternative.\nCompute the p-value if we were to use a two-sided alternative."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-11",
@@ -320,13 +348,6 @@
     "title": "PSTAT 5A: Lecture 13",
     "section": "Your Turn!",
     "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 3\n\n\n\n\nA botanist claims that the average weight of a chestnut is around 5 grams. To test this claim, a representative sample of 35 chestnuts is taken; these chestnuts have a combined average weight of 4.87 grams and a standard deviation of 1.82 grams. Suppose we use an \\(\\alpha = 0.05\\) level of significance, and a lower-tailed alternative.\n\nConduct the test using critical values.\nConduct the test using p-values.\n\n\n\n\n−+\n03:00"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture13/Lec13.html#criticisms-of-p-values",
-    "href": "Pages/Lectures/Lecture13/Lec13.html#criticisms-of-p-values",
-    "title": "PSTAT 5A: Lecture 13",
-    "section": "Criticisms of p-Values",
-    "text": "Criticisms of p-Values\n\nI should note that there are some growing criticism within the statistical and data scientific communities regarding p-values.\nFor one thing, they can be easily misinterpreted.\n\nTake a look at this Wikipedia page for a list of common misinterpretations of p-values to make sure you don’t make any of these (and yes, I might test you on some of these on a quiz/exam!)\n\nTo fully understand and appreciate the more nuanced criticisms, however, we would need a bit of extra background/theory pertaining to the framework of Hypothesis Testing - material that we don’t cover in this class.\n\nI encourage you to take PSTAT 120B and PSTAT 120C if you’d like to learn more about this!"
   },
   {
     "objectID": "Pages/Lectures/Lecture15/Lec15.html#basics-of-random-variables",
@@ -4907,6 +4928,13 @@
     "text": "Your Turn!\n\n\n\n\n\n\nExercise 3\n\n\n\n\nSuppose Jana tosses \\(65\\) different \\(12-\\)sided dice, independently of each other; let \\(Z\\) denote the number of times a multiple of three results.\n\nVerify that \\(Z\\) follows the Binomial Distribution, and identify its parameters.\nWhat is the probability that Jana observes exactly 23 multiples of three?\nWhat is the expected number of multiples of three Jana will observe?\nWhat is the standard deviation of the number of multiples of three Jana will observe?"
   },
   {
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#class-updates",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#class-updates",
+    "title": "PSTAT 5A: Lecture 12",
+    "section": "Class Updates",
+    "text": "Class Updates\n\nQuiz 3 today!\nQuiz next week will take place on Tuesday, 9/2\nNo class this Thursday"
+  },
+  {
     "objectID": "Pages/Lectures/Lecture12/Lec12.html#lets-return-to-pets",
     "href": "Pages/Lectures/Lecture12/Lec12.html#lets-return-to-pets",
     "title": "PSTAT 5A: Lecture 12",
@@ -5054,13 +5082,6 @@
     "text": "Test Statistic\n\nLet’s try and convert our decision-making process to be in terms of the test statistic.\nFirst, note that saying \\(\\widehat{p}\\) is “far away” from \\(p_0\\) could mean one of two things:\n\n\\(\\widehat{p}\\) was much larger than \\(p_0\\)\n\\(\\widehat{p}\\) was much smaller than \\(p_0\\)\n\nThese two cases can be combined into a single case if we think in terms of the magnitude of the distance bewteen \\(\\widehat{p}\\) and \\(p_0\\), which is equivalent to considering \\(|\\mathrm{ts}|\\).\nWhat I’m getting at is this: if \\(\\widehat{p}\\) was far away from \\(p_0\\), then \\(|\\mathrm{ts}|\\) must be large.\nHence, we can rephrase our decision process as \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if $|\\mathrm{TS}|$ is large} \\\\  \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]"
   },
   {
-    "objectID": "Pages/Lectures/Lecture12/Lec12.html#test-statistic-2",
-    "href": "Pages/Lectures/Lecture12/Lec12.html#test-statistic-2",
-    "title": "PSTAT 5A: Lecture 12",
-    "section": "Test Statistic",
-    "text": "Test Statistic\n\nLet’s try and convert our decision-making process to be in terms of the test statistic.\nFirst, note that saying \\(\\widehat{p}\\) is “far away” from \\(p_0\\) could mean one of two things:\n\n\\(\\widehat{p}\\) was much larger than \\(p_0\\)\n\\(\\widehat{p}\\) was much smaller than \\(p_0\\)\n\nThese two cases can be combined into a single case if we think in terms of the magnitude of the distance bewteen \\(\\widehat{p}\\) and \\(p_0\\), which is equivalent to considering \\(|\\mathrm{ts}|\\).\nWhat I’m getting at is this: if \\(\\widehat{p}\\) was far away from \\(p_0\\), then \\(|\\mathrm{ts}|\\) must be large.\nHence, we can rephrase our decision process as \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if $|\\mathrm{TS}|$ is large} \\\\  \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]"
-  },
-  {
     "objectID": "Pages/Lectures/Lecture12/Lec12.html#constructing-the-test",
     "href": "Pages/Lectures/Lecture12/Lec12.html#constructing-the-test",
     "title": "PSTAT 5A: Lecture 12",
@@ -5075,25 +5096,18 @@
     "text": "The Errors\n\nWell, to answer this question, we need to return to our considerations of Type II and Type II errors.\nRecall that a Type I error occurs when we reject \\(H_0\\) when \\(H_0\\) was actually true, and a Type II error occurs when we fail to reject \\(H_0\\) when \\(H_0\\) was false.\nChanging the value of \\(c\\) changes the probability of committing the two types of errors!\nSpecifically, setting a larger value of \\(c\\) corresponds to rejecting \\(H_0\\) for fewer values, thereby decreasing the probability of committing a Type I errror but increasing the probability of committing a Type II error.\nConversely, setting a smaller value of \\(c\\) corresponds to rejecting \\(H_0\\) for more values, thereby increasing the probability of committing a Type I error but decreasing the probability of committing a Type II error."
   },
   {
-    "objectID": "Pages/Lectures/Lecture12/Lec12.html#the-compromise",
-    "href": "Pages/Lectures/Lecture12/Lec12.html#the-compromise",
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#how-to-pick-our-value-of-c",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#how-to-pick-our-value-of-c",
     "title": "PSTAT 5A: Lecture 12",
-    "section": "The Compromise",
-    "text": "The Compromise\n\nWe need to compromise!\nIn practice, we go into the test knowing how much leeway we are going to allow ourselves to commit a Type I error. That is, we prespecify our tolerance for committing a Type I error.\nThe probability of committing a Type I error is called the level of significance (or just significance level), and is often denoted \\(\\alpha\\).\nStatisticians therefore construct a hypothesis test around a specific value of \\(\\alpha\\).\nA common level of significance is \\(\\alpha = 0.05\\), though \\(\\alpha = 0.01\\) and \\(\\alpha = 0.1\\) are sometimes used as well.\nOkay, so what does this mean for our test?\nWe now know that \\(\\alpha\\) denotes the probability of rejecting the null when the null is true; i.e. \\[ \\mathbb{P}_{H_0}(|\\mathrm{TS}| &gt; c) = \\alpha \\] where the symbol \\(\\mathbb{P}_{H_0}\\) just means “assuming the null, the probability of….”"
+    "section": "How to pick our value of c",
+    "text": "How to pick our value of c\n\nWe can determine our critical value (c) by two main factors:\n\n\nThe significance level (\\(\\alpha\\)) : This is the probability of rejecting the null hypothesis when it is actually true ( Type I error!). Common values are \\(\\alpha = .05, .01,.10\\). A lower \\(\\alpha\\) means we have a lower probability of making an Type 1 error, requiring stronger evidence to reject the null\nThe type of test (one tailed vs two tailed)\n\n\nOnce we know \\(\\alpha\\) and our type of test, we can find c!"
   },
   {
-    "objectID": "Pages/Lectures/Lecture12/Lec12.html#the-compromise-1",
-    "href": "Pages/Lectures/Lecture12/Lec12.html#the-compromise-1",
+    "objectID": "Pages/Lectures/Lecture12/Lec12.html#how-to-pick-our-value-of-c-1",
+    "href": "Pages/Lectures/Lecture12/Lec12.html#how-to-pick-our-value-of-c-1",
     "title": "PSTAT 5A: Lecture 12",
-    "section": "The Compromise",
-    "text": "The Compromise\n\nAgain, remember that \\(\\alpha\\) is fixed (e.g. \\(0.05\\)); it is the value of \\(c\\) we are after!\nSo, a natural question arises: what is the distribution of \\(\\mathrm{TS}\\) under the null?\nRecall that \\[ \\mathrm{TS} = \\frac{\\widehat{P} - p_0}{\\sqrt{\\frac{p_0 (1 - p_0)}{n}}} \\]\nNow, assuming the null is true (i.e. that \\(p = p_0\\)), the Central Limit Theorem for Proportions tells us \\[ \\widehat{P} \\stackrel{H_0}{\\sim} \\mathcal{N}\\left(p_0, \\ \\sqrt{\\frac{p_0(1 - p_0)}{n}} \\right) \\] where the symbol \\(\\stackrel{H_0}{\\sim}\\) is just a shorthand for “distributed as, under the null”"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture12/Lec12.html#the-distribution-of-the-test-statistic",
-    "href": "Pages/Lectures/Lecture12/Lec12.html#the-distribution-of-the-test-statistic",
-    "title": "PSTAT 5A: Lecture 12",
-    "section": "The Distribution of the Test Statistic",
-    "text": "The Distribution of the Test Statistic\n\nTherefore, assuming the null is correct, we have \\[ \\mathrm{TS} \\sim \\mathcal{N}(0, \\ 1)\\]\nSo, our condition \\[ \\mathbb{P}_{H_0}(|\\mathrm{TS}| &gt; c) = \\alpha \\] which, by the symmetry of the standard normal distribution, is equivalent to \\[ \\mathbb{P}_{H_0}(\\mathrm{TS} &lt; -c) = \\frac{\\alpha}{2} \\]\nHence, \\(-c\\) is just the \\((\\alpha / 2) \\times 100\\) percentile of the standard normal distribution!!!"
+    "section": "How to pick our value of c",
+    "text": "How to pick our value of c\n\nAssuming the null is true (i.e. that \\(p = p_0\\)), the Central Limit Theorem for Proportions tells us \\[ \\widehat{P} \\stackrel{H_0}{\\sim} \\mathcal{N}\\left(p_0, \\ \\sqrt{\\frac{p_0(1 - p_0)}{n}} \\right) \\] where the symbol \\(\\stackrel{H_0}{\\sim}\\) is just a shorthand for “distributed as, under the null”\nSince our random variable follows the standard normal distribution, we can apply the symmetry of the standard normal distribution to find c:\n\nc = \\((-1) (\\frac{\\alpha}{2})* 100^{th} percentile\\) or c = \\((1 - \\frac{\\alpha}{2})* 100^{th} percentile\\)"
   },
   {
     "objectID": "Pages/Lectures/Lecture12/Lec12.html#the-test",
@@ -5171,13 +5185,6 @@
     "title": "PSTAT 5A: Lecture 12",
     "section": "Solutions (cont’d)",
     "text": "Solutions (cont’d)\n\nHence, we adopt a critical value of \\(1.645\\).\nSince the observed value of our test statistic \\(|\\mathrm{ts}| = 1.86\\) is now larger than the critical value, we reject the null.\n\n\n\nAt an \\(\\alpha = 0.1\\) level of significance, there is evidence to reject Forbes’s claim that 91.7% of US households own a vehicle in favor of the alternative that the true proportion of households that own a vehicle is not 91.7%.\n\n\n\nIntuitively, it makes sense why we might reject for this new level of significance.\nWe know that the level of significance represents the probability of committing a Type I Error.\nIf we increase this value (which we did, in adopting \\(\\alpha = 0.1\\) as opposed to \\(\\alpha = 0.05\\) in the previous example), we are allowing a greater chance of falsely rejecting the null, which comes part-in-parcel with rejecting for more values of the test statistic."
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture12/Lec12.html#one-sided-tests",
-    "href": "Pages/Lectures/Lecture12/Lec12.html#one-sided-tests",
-    "title": "PSTAT 5A: Lecture 12",
-    "section": "One-Sided Tests",
-    "text": "One-Sided Tests\n\nOn the homework, I ask you to walk through the details of deriving a lower-tailed test.\nYou can use a similar set of arguments to derive the upper-tailed test as well.\nFor posterity’s sake, here are the final results of each:"
   },
   {
     "objectID": "Pages/Lectures/Lecture12/Lec12.html#lower-tailed-test",
@@ -5271,18 +5278,25 @@
     "text": "Step 3: Calculate test statistic\nSimilar to how we determined our test statistic before, with the generic form:\n\\[\\frac{\\text{sample statistic} - \\text{null value}}{\\text{standard error}}\\]\nIn this situation, we have:\n\\[\\text{TS} = \\frac{\\bar{x}_1-\\bar{x}_2 - 0}{\\sqrt{\\frac{s_1^2}{n_1} + \\frac{s_2^2}{n_2}}}\\]\nAnd similar to the one mean problem, this test statistic follows a \\(t\\) distribution with degrees of freedom calculated from technology."
   },
   {
-    "objectID": "Pages/Lectures/Lecture14/Lec14.html#step-4-make-decision-on-test-and-step-5-write-a-conclusion",
-    "href": "Pages/Lectures/Lecture14/Lec14.html#step-4-make-decision-on-test-and-step-5-write-a-conclusion",
+    "objectID": "Pages/Lectures/Lecture14/Lec14.html#step-4-make-decision-on-test",
+    "href": "Pages/Lectures/Lecture14/Lec14.html#step-4-make-decision-on-test",
     "title": "PSTAT 5A: Lecture 14",
-    "section": "Step 4: Make decision on test and Step 5: Write a conclusion",
-    "text": "Step 4: Make decision on test and Step 5: Write a conclusion\n\nAs we did with one mean, the decision will be based on the kind of test (two sided, lower tail, or greater tail tests). We will calculate the p-value to measure the strength of the evidence against the null hypothesis, comparing it to the significance level, \\(\\alpha\\).\nFinally, we write a conclusion in the context of the problem which include our 5 elements:\n\nsignificance level, At an \\(\\alpha\\) = .05 level of significance\n\n\ndecision of the test, , There was sufficient evidence to reject the Census’ claim\nas a function of the null hypothesis. Then we write an interpretation that is, that the average commute time of Americans was 27.6 minutes\nin affirmation or not in affirmation of the alternative hypothesis., in favor of the alternative that the true average commute time was not 27.6 minutes."
+    "section": "Step 4: Make decision on test",
+    "text": "Step 4: Make decision on test\n\nAs we did with one mean, the decision will be based on the kind of test (two sided, lower tail, or greater tail tests). We will calculate the p-value to measure the strength of the evidence against the null hypothesis, comparing it to the significance level, \\(\\alpha\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture14/Lec14.html#step-5-write-a-conclusion.",
+    "href": "Pages/Lectures/Lecture14/Lec14.html#step-5-write-a-conclusion.",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Step 5: Write a conclusion.",
+    "text": "Step 5: Write a conclusion.\nYour conclusion should include:\n\nsignificance level, At an \\(\\alpha\\) = .05 level of significance\n\n\ndecision of the test, , There was sufficient evidence to reject the Census’ claim\nas a function of the null hypothesis. Then we write an interpretation that is, that the average commute time of Americans was 27.6 minutes\nin affirmation or not in affirmation of the alternative hypothesis., in favor of the alternative that the true average commute time was not 27.6 minutes."
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#worked-out-example",
     "href": "Pages/Lectures/Lecture14/Lec14.html#worked-out-example",
     "title": "PSTAT 5A: Lecture 14",
     "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nGaucho Gourmande has two locations: one in Goleta and one in Santa Barbara. The owner would like to determine whether the average revenue generated by the two locations are equal or not. To that end, he computes the net revenue generated by the Goleta location over 30 days and also computes the net revenue generated by the Santa Barbara location over 35 days (assume all of the necessary independence conditions hold), and produced the following information:\n\\[\\begin{array}{r|cc}\n                    & \\text{Sample Average}     & \\text{Sample Standard Deviation}    \\\\\n  \\hline\n  \\textbf{Goleta}   &     \\$13                    & \\$3.45        \\\\\n  \\textbf{Santa Barbara}   &     \\$15                    & \\$4.23\n\\end{array}\\]\nTest the owner’s claims at an \\(\\alpha = 0.05\\) level of significance, using a two-sided alternative."
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nKyle’s Kitchen has two locations: one in Goleta and one in Santa Barbara. The owner would like to determine whether the average revenue generated by the two locations are equal or not. To that end, he computes the net revenue generated by the Goleta location over 30 days and also computes the net revenue generated by the Santa Barbara location over 35 days (assume all of the necessary independence conditions hold), and produced the following information:\n\\[\\begin{array}{r|cc}\n                    & \\text{Sample Average}     & \\text{Sample Standard Deviation}    \\\\\n  \\hline\n  \\textbf{Goleta}   &     \\$13                    & \\$3.45        \\\\\n  \\textbf{Santa Barbara}   &     \\$15                    & \\$4.23\n\\end{array}\\]\nTest the owner’s claims at an \\(\\alpha = 0.05\\) level of significance, using a two-sided alternative."
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#solutions",
@@ -5303,7 +5317,7 @@
     "href": "Pages/Lectures/Lecture14/Lec14.html#solutions-2",
     "title": "PSTAT 5A: Lecture 14",
     "section": "Solutions",
-    "text": "Solutions\n\nAt this point, we could either proceed using critical values or using p-values.\nLet’s use p-values, for practice.\nOur p-value is computed as\n\n\n\nimport scipy.stats as sps\n2*sps.t.cdf(-2.10, 63)\n\nnp.float64(0.03973904581390475)\n\n\n\n\nThis is below our level of significance \\(\\alpha = 0.05\\) meaning we would reject the null.\nIf we wanted to instead use critical values:\n\n\n\n-sps.t.ppf(0.05, 63)\n\nnp.float64(1.669402221706813)\n\n\n\n\nThis means our critical value is 1.67; since \\(|\\mathrm{TS}| = |2.10| = 2.10 &gt; 1.67\\), we would again reject at an \\(\\alpha = 0.05\\) level of significance."
+    "text": "Solutions\n\nAt this point, we could either proceed using critical values or using p-values.\nLet’s use p-values, for practice.\nOur p-value is computed as\n\n\n\nimport scipy.stats as sps\n2*sps.t.cdf(-2.10, 63)\n\nnp.float64(0.03973904581390475)\n\n\n\n\nThis is below our level of significance \\(\\alpha = 0.05\\) meaning we would reject the null.\nIf we wanted to instead use critical values:\n\n\n\nsps.t.ppf(0.975, 63)\n\nnp.float64(1.9983405425207408)\n\n\n\n\nThis means our critical value is 2.0; since \\(|\\mathrm{TS}| = |2.10| = 2.10 &gt; 2\\), we would again reject at an \\(\\alpha = 0.05\\) level of significance."
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#solutions-3",
@@ -5313,18 +5327,32 @@
     "text": "Solutions\n\nAt a 5% level of significance, there was sufficient evidence to reject the owner’s claims that the revenue generated by the two locations are equal, in favor of the alternative that the revenue generated by the two locations are not equal."
   },
   {
-    "objectID": "Pages/Lectures/Lecture14/Lec14.html#extensions",
-    "href": "Pages/Lectures/Lecture14/Lec14.html#extensions",
+    "objectID": "Pages/Lectures/Lecture14/Lec14.html#lower-tailed-difference-in-mean-tests",
+    "href": "Pages/Lectures/Lecture14/Lec14.html#lower-tailed-difference-in-mean-tests",
     "title": "PSTAT 5A: Lecture 14",
-    "section": "Extensions",
-    "text": "Extensions\n\nUnsurprisingly, we can adapt the above procedure to account for one-sided alternatives as well.\nFor instance, suppose we wish to test \\[ \\left[ \\begin{array}{rr}\nH_0:    & \\mu_1 = \\mu_2   \\\\\nH_A:    & \\mu_1 &lt; \\mu_2\n\\end{array} \\right.\\]\nAgain, we rephrase things as: \\[ \\left[ \\begin{array}{rr}\nH_0:    & \\mu_2 - \\mu_1 = 0   \\\\\nH_A:    & \\mu_2 - \\mu_1 &gt; 0\n\\end{array} \\right.\\] which is now a familiar upper-tailed test on \\(\\delta = \\mu_2 - \\mu_1\\) and \\(\\mu_0 = 0.\\)"
+    "section": "Lower-tailed difference in mean tests",
+    "text": "Lower-tailed difference in mean tests\n\n\nUnsurprisingly, we can adapt the above procedure to account for one-sided alternatives as well.Our lower tailed test would look like:\n\n\n\n\\[ \\left[ \\begin{array}{rr}\n  H_0:    & \\mu_1 = \\mu_2   \\\\\n  H_A:    & \\mu_1 &lt; \\mu_2\n\\end{array} \\right.\\]\n\n\n\nAgain, we rephrase things as: \\[ \\left[ \\begin{array}{rr}\nH_0:    & \\mu_1 - \\mu_2 = 0   \\\\\nH_A:    & \\mu_1 - \\mu_2 &lt; 0\n\\end{array} \\right.\\]"
   },
   {
-    "objectID": "Pages/Lectures/Lecture14/Lec14.html#extensions-1",
-    "href": "Pages/Lectures/Lecture14/Lec14.html#extensions-1",
+    "objectID": "Pages/Lectures/Lecture14/Lec14.html#lower-tailed-difference-in-mean-tests-1",
+    "href": "Pages/Lectures/Lecture14/Lec14.html#lower-tailed-difference-in-mean-tests-1",
     "title": "PSTAT 5A: Lecture 14",
-    "section": "Extensions",
-    "text": "Extensions\n\nSpecifically, we would take the same test statistic (which would still follow the same distribution under the null) and use the decision rule \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\mathrm{TS} &gt; c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] where \\(c\\) is the appropriate quantile of the approximate t distribution (with degrees of freedom given by the Satterthwaite Approximation).\nA similar result holds for the lower-tailed test- I encourage you to work it out on your own."
+    "section": "Lower-tailed difference in mean tests",
+    "text": "Lower-tailed difference in mean tests\n\\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\mathrm{TS} &lt; c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] where \\(c\\) is the appropriate quantile of the approximate t distribution (with degrees of freedom given by the Satterthwaite Approximation)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture14/Lec14.html#upper-tailed-difference-in-mean-tests",
+    "href": "Pages/Lectures/Lecture14/Lec14.html#upper-tailed-difference-in-mean-tests",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Upper-tailed difference in mean tests",
+    "text": "Upper-tailed difference in mean tests\n\\[ \\left[ \\begin{array}{rr}\n  H_0:    & \\mu_1 = \\mu_2   \\\\\n  H_A:    & \\mu_1 &gt; \\mu_2\n\\end{array} \\right.\\]\n\nAgain, we rephrase things as: \\[ \\left[ \\begin{array}{rr}\nH_0:    & \\mu_1 - \\mu_2 = 0   \\\\\nH_A:    & \\mu_1 - \\mu_2 &gt; 0\n\\end{array} \\right.\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture14/Lec14.html#upper-tailed-difference-in-mean-tests-1",
+    "href": "Pages/Lectures/Lecture14/Lec14.html#upper-tailed-difference-in-mean-tests-1",
+    "title": "PSTAT 5A: Lecture 14",
+    "section": "Upper-tailed difference in mean tests",
+    "text": "Upper-tailed difference in mean tests\n\nSpecifically, we would take the same test statistic (which would still follow the same distribution under the null) and use the decision rule \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } \\mathrm{TS} &gt; c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\] where \\(c\\) is the appropriate quantile of the approximate t distribution (with degrees of freedom given by the Satterthwaite Approximation)."
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#confidence-interval-for-mu_1-mu_2-1",
@@ -5345,7 +5373,7 @@
     "href": "Pages/Lectures/Lecture14/Lec14.html#solutions-4",
     "title": "PSTAT 5A: Lecture 14",
     "section": "Solutions",
-    "text": "Solutions\n\nThese are both random samples so the observations with each sample are independent of one another.\nThere is no reason why the two samples would not be independent between each other.\nGiven \\(n_1 = 75 \\geq 30\\) and \\(n_2 = 80 \\geq 30\\), we have large enough sample to relax normality assumption and use CLT.\nTo calculate the degrees of freedom:\n\n\\[df =\\min(n_1-1,n_2-1) = \\min(74, 79) = 74\\] - Calculate \\(t^*\\) critical value given \\(\\alpha = 0.1\\) which is 1.6657"
+    "text": "Solutions\n\nThese are both random samples so the observations with each sample are independent of one another.\nThere is no reason why the two samples would not be independent between each other.\nGiven \\(n_1 = 75 \\geq 30\\) and \\(n_2 = 80 \\geq 30\\), we have large enough sample to relax normality assumption and use CLT.\nTo calculate the degrees of freedom:\n\n\n\\[df =\\min(n_1-1,n_2-1) = \\min(74, 79) = 74\\] - Calculate \\(t^*\\) critical value given \\(\\alpha = 0.1\\) which is 1.6657"
   },
   {
     "objectID": "Pages/Lectures/Lecture14/Lec14.html#solutions-5",
@@ -5402,75 +5430,5 @@
     "title": "PSTAT 5A: Understanding Data",
     "section": "Week 6 (9/08 - 9/11)",
     "text": "Week 6 (9/08 - 9/11)\n\n\nLectures\n19: Regression Diagnostics, and  Sampling Procedures 20: Ways Statistics Can Deceive 21: Review FINAL EXAM: Thursday, Sept 11 during lecture\n\n\nDiscussion\nQ&A with TA\n\n\nLab\nLab 06"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture12/Lec12.html#how-to-pick-our-value-of-c",
-    "href": "Pages/Lectures/Lecture12/Lec12.html#how-to-pick-our-value-of-c",
-    "title": "PSTAT 5A: Lecture 12",
-    "section": "How to pick our value of c",
-    "text": "How to pick our value of c\n\nWe can determine our critical value (c) by two main factors:\n\n\nThe significance level (\\(\\alpha\\)) : This is the probability of rejecting the null hypothesis when it is actually true ( Type I error!). Common values are \\(\\alpha = .05, .01,.10\\). A lower \\(\\alpha\\) means we have a lower probability of making an Type 1 error, requiring stronger evidence to reject the null\nThe type of test (one tailed vs two tailed)\n\n\nOnce we know \\(\\alpha\\) and our type of test, we can find c!"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture12/Lec12.html#how-to-pick-our-value-of-c-1",
-    "href": "Pages/Lectures/Lecture12/Lec12.html#how-to-pick-our-value-of-c-1",
-    "title": "PSTAT 5A: Lecture 12",
-    "section": "How to pick our value of c",
-    "text": "How to pick our value of c\n\nAssuming the null is true (i.e. that \\(p = p_0\\)), the Central Limit Theorem for Proportions tells us \\[ \\widehat{P} \\stackrel{H_0}{\\sim} \\mathcal{N}\\left(p_0, \\ \\sqrt{\\frac{p_0(1 - p_0)}{n}} \\right) \\] where the symbol \\(\\stackrel{H_0}{\\sim}\\) is just a shorthand for “distributed as, under the null”\nSince our random variable follows the standard normal distribution, we can apply the symmetry of the standard normal distribution to find c:\n\nc = \\((-1) (\\frac{\\alpha}{2})* 100^{th} percentile\\) or c = \\((1 - \\frac{\\alpha}{2})* 100^{th} percentile\\)"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture12/Lec12.html#class-updates",
-    "href": "Pages/Lectures/Lecture12/Lec12.html#class-updates",
-    "title": "PSTAT 5A: Lecture 12",
-    "section": "Class Updates",
-    "text": "Class Updates\n\nQuiz 3 today!\nQuiz next week will take place on Tuesday, 9/2\nNo class this Thursday"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture13/Lec13.html#p-values-2",
-    "href": "Pages/Lectures/Lecture13/Lec13.html#p-values-2",
-    "title": "PSTAT 5A: Lecture 13",
-    "section": "p-Values",
-    "text": "p-Values\n\nOf course, p-values are not restricted to the case of hypothesis testing a proportion; we can absolutely compute \\(p-\\)values in a setting where we are testing a population mean!\n\n\n\n\n\n\n\n\nWorked-Out Example 4\n\n\n\n\nConsider again the setup of Worked-Out Example 2: McGaucho’s claims that, on average, they are able to serve customers their food in 10 minutes. Dubious of these claims, Markus takes a representative sample of 40 customers and finds that these customers waited an combined average of 15 minutes before receiving their food, with a standard deviation of 10 minutes.\n\nCompute the p-value if we were to use a lower-tailed alternative.\nCompute the p-value if we were to use a two-sided alternative."
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture13/Lec13.html#p-values-3",
-    "href": "Pages/Lectures/Lecture13/Lec13.html#p-values-3",
-    "title": "PSTAT 5A: Lecture 13",
-    "section": "p-Values",
-    "text": "p-Values\n\nOf course, p-values are not restricted to the case of hypothesis testing a proportion; we can absolutely compute \\(p-\\)values in a setting where we are testing a population mean!\n\n\n\n\n\n\n\n\nWorked-Out Example 4\n\n\n\n\nConsider again the setup of Worked-Out Example 2: McGaucho’s claims that, on average, they are able to serve customers their food in 10 minutes. Dubious of these claims, Markus takes a representative sample of 40 customers and finds that these customers waited an combined average of 15 minutes before receiving their food, with a standard deviation of 10 minutes.\n\nCompute the p-value if we were to use a lower-tailed alternative.\nCompute the p-value if we were to use a two-sided alternative."
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture13/Lec13.html#how-do-we-calculate-our-p-value",
-    "href": "Pages/Lectures/Lecture13/Lec13.html#how-do-we-calculate-our-p-value",
-    "title": "PSTAT 5A: Lecture 13",
-    "section": "How do we calculate our p value?",
-    "text": "How do we calculate our p value?\nLet’s review this slide from Lecture 8:\n\nRecall that for continuous variables, probabilities are found as areas underneath the density curve. For example, if \\(X \\sim \\mathcal{N}(0, 1)\\), then \\(\\mathbb{P}(X \\leq -1)\\) is found by computing the area below:"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture13/Lec13.html#how-do-we-calculate-our-p-value-1",
-    "href": "Pages/Lectures/Lecture13/Lec13.html#how-do-we-calculate-our-p-value-1",
-    "title": "PSTAT 5A: Lecture 13",
-    "section": "How do we calculate our p value?",
-    "text": "How do we calculate our p value?\n\n\n\n\n\n\n\n\n\n\n\n\nWe found this area by looking at our z table!\nTo find \\(\\mathbb{P}(X\\leq .83)\\) we broke it up as \\(0.83 = 0.8 + 0.03\\) and then found the row on our z table that corresponds to \\(0.8\\) and the column that corresponds to \\(.03\\)."
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture13/Lec13.html#how-do-we-calculate-our-p-value-2",
-    "href": "Pages/Lectures/Lecture13/Lec13.html#how-do-we-calculate-our-p-value-2",
-    "title": "PSTAT 5A: Lecture 13",
-    "section": "How do we calculate our p value?",
-    "text": "How do we calculate our p value?\n\nWe find our p- value in the same way!\nRemember our p value is representing a probability - so to find it we are looking for an area under the curve.\nWe can look up our test statistic in the z table to find our corresponding probability."
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture14/Lec14.html#step-4-make-decision-on-test",
-    "href": "Pages/Lectures/Lecture14/Lec14.html#step-4-make-decision-on-test",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Step 4: Make decision on test",
-    "text": "Step 4: Make decision on test\n\nAs we did with one mean, the decision will be based on the kind of test (two sided, lower tail, or greater tail tests). We will calculate the p-value to measure the strength of the evidence against the null hypothesis, comparing it to the significance level, \\(\\alpha\\)."
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture14/Lec14.html#step-5-write-a-conclusion.",
-    "href": "Pages/Lectures/Lecture14/Lec14.html#step-5-write-a-conclusion.",
-    "title": "PSTAT 5A: Lecture 14",
-    "section": "Step 5: Write a conclusion.",
-    "text": "Step 5: Write a conclusion.\nYour conclusion should include:\n\nsignificance level, At an \\(\\alpha\\) = .05 level of significance\n\n\ndecision of the test, , There was sufficient evidence to reject the Census’ claim\nas a function of the null hypothesis. Then we write an interpretation that is, that the average commute time of Americans was 27.6 minutes\nin affirmation or not in affirmation of the alternative hypothesis., in favor of the alternative that the true average commute time was not 27.6 minutes."
   }
 ]
