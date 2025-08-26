@@ -63,11 +63,11 @@ library(ggthemes)
 :::{.fragment}
 ```{mermaid}
 graph TB
-  A[Is the population Normal?  . ] --> |Yes| B{{Use Normal .}}
-  A --> |No| C[Is n >= 30?  .]
-  C --> |Yes| D[sigma or s?  .]
-  C --> |No| E{{cannot proceed   .}}
-  D --> |sigma| F{{Use Normal .}}
+  A[Is the population Normal?   ] --> |Yes| B{{Use Normal }}
+  A --> |No| C[Is n >= 30?  ]
+  C --> |Yes| D[sigma or s?  ]
+  C --> |No| E{{cannot proceed   }}
+  D --> |sigma| F{{Use Normal }}
   D --> |s| G{{Use t }}
 ```
 :::
@@ -86,10 +86,8 @@ $$ \mathrm{TS} = \begin{cases}
 ## Test Statistic
 
 - In the two-sided case, our critical value will still be the value $c$ that ensures
-$$ \mathbb{P}(|\mathrm{TS}| > c) = \alpha $$
-(i.e. we reject $H_0$ whenever $\overline{X}$ is far away from $\mu_0$) meaning $c$ will the $(\alpha /2) \times 100\%$ percentile, scaled by negative 1, of either the standard normal distribution or the $t_{n - 1}$ distribution.
-
-    - Again, don't forget about how the symmetry of the normal and _t_-distributions translates to relationships between percentiles!
+$$ \mathbb{P}(|\mathrm{TS}| > c) = \alpha $$ if the null hypothesis is true.
+We reject $H_0$ whenever $\overline{X}$ is far away from $\mu_0$) meaning $c$ will be the $(\alpha /2) \times 100\%$ percentile, scaled by negative 1, of either the standard normal distribution or the $t_{n - 1}$ distribution.
 
 - Our test in the two-sided case will then take the form
 $$ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 & \text{if } |\mathrm{TS}| > c \\ \texttt{fail to reject } H_0 & \text{otherwise}\\ \end{cases}  $$
@@ -209,9 +207,9 @@ $$ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 & \text{i
 
 ## Solutions
 
-- Now, we are using an upper-tailed alternative, meaning our critical value is the point such that $(1 - 0.01) = 0.99$ area lies to the left (or, equivalently, $0.01$ lies to the right).
+- With an $\alpha$ = .01, we can consult our t table and see that a one tailed test with $\alpha = 0.5$ and $dof$ = 39 leaves us with a a critical value of 2.43. 
 
-- This means our critical value is 2.43, and we reject the null whenever $\mathrm{TS} > 2.43$.
+- This means we reject the null whenever $\mathrm{TS} > 2.43$.
 
 - The observed value of our test statistic is
 $$ \frac{15 - 10}{10 / \sqrt{40}} = 3.162 $$
@@ -238,6 +236,25 @@ A university administrator at *Gaucho University* (GU) claims that GU students g
 
 a) ...two-sided alternative
 b) ...lower-tailed alternative
+
+
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
 :::
 :::
 :::
@@ -391,7 +408,7 @@ data.frame(x) %>% ggplot(aes(x = x)) +
     - If the test statistic is smaller than the critical value, we reject.
     - Otherwise, we fail to reject.
 
-- Again, remember the intuition behind *why* this is: if we observe a value of $\widehat{P}$ that is much smaller than $p_0$, this leads credence to the claim that $p < p_0$ (i.e. this leads credence to our *alternative* and *away* from our null).
+- Again, remember the intuition behind *why* this is: if we observe a value of $\widehat{P}$ that is much smaller than $p_0$, this leads us to the claim that $p < p_0$ (i.e. this leads us towards our *alternative* and *away* from our null).
 
     - Values of $\widehat{P}$ less than $p_0$ lead to very negative values of $\mathrm{TS}$.
 
@@ -612,6 +629,24 @@ data.frame(x) %>% ggplot(aes(x = x)) +
 
 
 
+
+## _p_-Values
+
+Imagine you suspect a coin is rigged to land on heads more often so you conduct the following test: 
+
+- $H_0$: The coin is fair
+- $H_A$: The coin is rigged
+
+:::{.fragment}
+You flip the coin 10 times and get 9 heads. The p value asks us "If this coin is really fair, what is the probability I get 9 heads just by bad luck?" The answer is very small! - only about a 1% chance.  We can confirm this with $$ \mathbb{P} (X = k) = \binom{n}{k} \cdot p^k \cdot (1-p)^{n-k} = 10 \cdot .0019 \cdot 0.5 = .01  $$
+:::
+
+:::{.fragment}
+So the _p_ value is .01. This means that the coin really is fair and you got unlucky (1% chance), or the coin is probably rigged. 
+:::
+
+
+
 ## The Test Statistic
 
 ```{r, fig = T}
@@ -646,7 +681,6 @@ data.frame(x) %>% ggplot(aes(x = x)) +
   xlab("") +
   ylab("") 
 ```
-
 
 
 ## _p_-value; Lower-Tailed Test
@@ -689,6 +723,8 @@ data.frame(x) %>% ggplot(aes(x = x)) +
   ylab("") 
 ```
 
+The pink shaded area represents the p value. It is the area under the curve that is equivalent to or less than the test statistic. 
+
 
 ## _p_-value; Upper-Tailed Test
 
@@ -730,6 +766,7 @@ data.frame(x) %>% ggplot(aes(x = x)) +
   ylab("") 
 ```
 
+The pink shaded area represents the p value. It is the area under the curve that is equivalent to or greater than the test statistic. 
 
 
 ## _p_-value; Two-Sided Test
@@ -776,6 +813,78 @@ data.frame(x) %>% ggplot(aes(x = x)) +
   xlab("") +
   ylab("") 
 ```
+
+The pink shaded area represents the p value. It is the area under the curve that is equivalent to or more extreme than the test statistic in both directions. 
+
+
+## How do we calculate our p value? 
+
+Let's review this slide from Lecture 8: 
+
+- Recall that for continuous variables, probabilities are found as areas underneath the density curve. For example, if $X \sim \mathcal{N}(0, 1)$, then $\mathbb{P}(X \leq -1)$ is found by computing the area below:
+
+:::{.fragment}
+```{r, fig.height=4.5, fig.width=6, fig.align='center'}
+#| echo: False
+data.frame(x = c(-3, 3)) %>%
+  ggplot(aes(x)) +
+  stat_function(fun = dnorm, 
+                xlim = c(-3,-1),
+                geom = "area",
+                fill = "#a4caeb") +
+  stat_function(fun = dnorm, 
+                size = 1.5) +
+  scale_x_continuous(breaks = round(seq(-3, 3, by = 0.5), 1)) +
+  theme_economist_white() +
+  theme(
+    panel.background = element_rect("#f0ebd8"),
+    plot.background = element_rect(fill = "#f0ebd8")
+  ) +
+  xlab("") +
+  ylab("") +
+  ylim(c(0, 0.75)) +
+  theme(plot.margin = margin(-2, 0, 0, 0, "cm"))
+```
+:::
+
+
+
+## How do we calculate our p value?{style="font-size:23px"}
+
+:::{.fragment}
+```{r, fig.height=4.5, fig.width=6, fig.align='center'}
+#| echo: False
+data.frame(x = c(-3, 3)) %>%
+  ggplot(aes(x)) +
+  stat_function(fun = dnorm, 
+                xlim = c(-3,-1),
+                geom = "area",
+                fill = "#a4caeb") +
+  stat_function(fun = dnorm, 
+                size = 1.5) +
+  scale_x_continuous(breaks = round(seq(-3, 3, by = 0.5), 1)) +
+  theme_economist_white() +
+  theme(
+    panel.background = element_rect("#f0ebd8"),
+    plot.background = element_rect(fill = "#f0ebd8")
+  ) +
+  xlab("") +
+  ylab("") +
+  ylim(c(0, 0.75)) +
+  theme(plot.margin = margin(-2, 0, 0, 0, "cm"))
+```
+:::
+
+- We found this area by looking at our z table! 
+- To find $\mathbb{P}(X\leq .83)$ we broke it up as $0.83 = 0.8 + 0.03$ and then found the row on our z table that corresponds to $0.8$ and the column that corresponds to $.03$. 
+
+
+## How do we calculate our p value?
+
+- We find our p- value in the same way!
+- Remember our p value is representing a probability - so to find it we are looking for an area under the curve. 
+- We can look up our test statistic in the z table to find our corresponding probability. 
+
 
 ## Worked-Out Example
 :::{.fragment}
@@ -1119,6 +1228,8 @@ sps.t.cdf(-3.162, 39) + (1 - sps.t.cdf(3.162, 39))
 
 - We reject when _p_ is small; specifically, we reject when _p_ is less than the level of significance. 
 
+- *"If p is low, the null must go!"*
+
 - So, in other words, we now have two ways to conduct hypothesis tests under our belt: using critical values, and using _p_-values.
 
 - I'd like to stress- these two frameworks are completely equivalent!
@@ -1137,6 +1248,24 @@ UCSB [claims](https://firstgen.ucsb.edu/) that 40\% of its undergraduate student
 
 - Conduct the test using critical values.
 - Conduct the test using _p_-values.
+
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
 :::
 :::
 :::
@@ -1156,19 +1285,26 @@ A botanist claims that the average weight of a chestnut is around 5 grams. To te
 
 - Conduct the test using critical values.
 - Conduct the test using _p_-values.
+
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
 :::
 :::
 :::
 :::
 
-## Criticisms of _p_-Values
-
-- I should note that there are some growing criticism within the statistical and data scientific communities regarding _p_-values.
-
-- For one thing, they can be easily misinterpreted.
-
-    - Take a look at [this](https://en.wikipedia.org/wiki/Misuse_of_p-values) Wikipedia page for a list of common misinterpretations of _p_-values to make sure you don't make any of these (and yes, I might test you on some of these on a quiz/exam!)
-
-- To fully understand and appreciate the more nuanced criticisms, however, we would need a bit of extra background/theory pertaining to the framework of Hypothesis Testing - material that we don't cover in this class.
-
-    - I encourage you to take PSTAT 120B and PSTAT 120C if you'd like to learn more about this!

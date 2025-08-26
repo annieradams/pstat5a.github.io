@@ -46,7 +46,7 @@
     "href": "Pages/Lectures/Lecture13/Lec13.html#sampling-distribution-of-overlinex",
     "title": "PSTAT 5A: Lecture 13",
     "section": "Sampling Distribution of \\(\\overline{X}\\)",
-    "text": "Sampling Distribution of \\(\\overline{X}\\)\n\n\n\n\n\ngraph TB\n  A[Is the population Normal?  . ] --&gt; |Yes| B{{Use Normal .}}\n  A --&gt; |No| C[Is n &gt;= 30?  .]\n  C --&gt; |Yes| D[sigma or s?  .]\n  C --&gt; |No| E{{cannot proceed   .}}\n  D --&gt; |sigma| F{{Use Normal .}}\n  D --&gt; |s| G{{Use t }}"
+    "text": "Sampling Distribution of \\(\\overline{X}\\)\n\n\n\n\n\ngraph TB\n  A[Is the population Normal?   ] --&gt; |Yes| B{{Use Normal }}\n  A --&gt; |No| C[Is n &gt;= 30?  ]\n  C --&gt; |Yes| D[sigma or s?  ]\n  C --&gt; |No| E{{cannot proceed   }}\n  D --&gt; |sigma| F{{Use Normal }}\n  D --&gt; |s| G{{Use t }}"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#test-statistic",
@@ -60,7 +60,7 @@
     "href": "Pages/Lectures/Lecture13/Lec13.html#test-statistic-1",
     "title": "PSTAT 5A: Lecture 13",
     "section": "Test Statistic",
-    "text": "Test Statistic\n\nIn the two-sided case, our critical value will still be the value \\(c\\) that ensures \\[ \\mathbb{P}(|\\mathrm{TS}| &gt; c) = \\alpha \\] (i.e. we reject \\(H_0\\) whenever \\(\\overline{X}\\) is far away from \\(\\mu_0\\)) meaning \\(c\\) will the \\((\\alpha /2) \\times 100\\%\\) percentile, scaled by negative 1, of either the standard normal distribution or the \\(t_{n - 1}\\) distribution.\n\nAgain, don’t forget about how the symmetry of the normal and t-distributions translates to relationships between percentiles!\n\nOur test in the two-sided case will then take the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| &gt; c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]\nLet’s do an example."
+    "text": "Test Statistic\n\nIn the two-sided case, our critical value will still be the value \\(c\\) that ensures \\[ \\mathbb{P}(|\\mathrm{TS}| &gt; c) = \\alpha \\] if the null hypothesis is true. We reject \\(H_0\\) whenever \\(\\overline{X}\\) is far away from \\(\\mu_0\\)) meaning \\(c\\) will be the \\((\\alpha /2) \\times 100\\%\\) percentile, scaled by negative 1, of either the standard normal distribution or the \\(t_{n - 1}\\) distribution.\nOur test in the two-sided case will then take the form \\[ \\texttt{decision}(\\mathrm{TS}) = \\begin{cases} \\texttt{reject } H_0 & \\text{if } |\\mathrm{TS}| &gt; c \\\\ \\texttt{fail to reject } H_0 & \\text{otherwise}\\\\ \\end{cases}  \\]\nLet’s do an example."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example",
@@ -116,7 +116,7 @@
     "href": "Pages/Lectures/Lecture13/Lec13.html#solutions-4",
     "title": "PSTAT 5A: Lecture 13",
     "section": "Solutions",
-    "text": "Solutions\n\nNow, we are using an upper-tailed alternative, meaning our critical value is the point such that \\((1 - 0.01) = 0.99\\) area lies to the left (or, equivalently, \\(0.01\\) lies to the right).\nThis means our critical value is 2.43, and we reject the null whenever \\(\\mathrm{TS} &gt; 2.43\\).\nThe observed value of our test statistic is \\[ \\frac{15 - 10}{10 / \\sqrt{40}} = 3.162 \\]"
+    "text": "Solutions\n\nWith an \\(\\alpha\\) = .01, we can consult our t table and see that a one tailed test with \\(\\alpha = 0.5\\) and \\(dof\\) = 39 leaves us with a a critical value of 2.43.\nThis means we reject the null whenever \\(\\mathrm{TS} &gt; 2.43\\).\nThe observed value of our test statistic is \\[ \\frac{15 - 10}{10 / \\sqrt{40}} = 3.162 \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-5",
@@ -130,7 +130,7 @@
     "href": "Pages/Lectures/Lecture13/Lec13.html#your-turn",
     "title": "PSTAT 5A: Lecture 13",
     "section": "Your Turn!",
-    "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 1\n\n\n\n\nA university administrator at Gaucho University (GU) claims that GU students get, on average, 8 hours of sleep per night. A sample of 35 students had a combined average of 7.72 hours of sleep and a standard deviation of 3.8 hours. Using an \\(\\alpha = 0.05\\) level of significance, test the administrator’s claims against a…\n\n…two-sided alternative\n…lower-tailed alternative"
+    "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 1\n\n\n\n\nA university administrator at Gaucho University (GU) claims that GU students get, on average, 8 hours of sleep per night. A sample of 35 students had a combined average of 7.72 hours of sleep and a standard deviation of 3.8 hours. Using an \\(\\alpha = 0.05\\) level of significance, test the administrator’s claims against a…\n\n…two-sided alternative\n…lower-tailed alternative\n\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#recap-1",
@@ -172,7 +172,7 @@
     "href": "Pages/Lectures/Lecture13/Lec13.html#leadup",
     "title": "PSTAT 5A: Lecture 13",
     "section": "Leadup",
-    "text": "Leadup\n\nSo, up until now, our decision has been based on comparing the raw value of the test statistic to the critical value.\n\nIf the test statistic is smaller than the critical value, we reject.\nOtherwise, we fail to reject.\n\nAgain, remember the intuition behind why this is: if we observe a value of \\(\\widehat{P}\\) that is much smaller than \\(p_0\\), this leads credence to the claim that \\(p &lt; p_0\\) (i.e. this leads credence to our alternative and away from our null).\n\nValues of \\(\\widehat{P}\\) less than \\(p_0\\) lead to very negative values of \\(\\mathrm{TS}\\)."
+    "text": "Leadup\n\nSo, up until now, our decision has been based on comparing the raw value of the test statistic to the critical value.\n\nIf the test statistic is smaller than the critical value, we reject.\nOtherwise, we fail to reject.\n\nAgain, remember the intuition behind why this is: if we observe a value of \\(\\widehat{P}\\) that is much smaller than \\(p_0\\), this leads us to the claim that \\(p &lt; p_0\\) (i.e. this leads us towards our alternative and away from our null).\n\nValues of \\(\\widehat{P}\\) less than \\(p_0\\) lead to very negative values of \\(\\mathrm{TS}\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#leadup-1",
@@ -207,21 +207,21 @@
     "href": "Pages/Lectures/Lecture13/Lec13.html#p-value-lower-tailed-test",
     "title": "PSTAT 5A: Lecture 13",
     "section": "p-value; Lower-Tailed Test",
-    "text": "p-value; Lower-Tailed Test"
+    "text": "p-value; Lower-Tailed Test\n\nThe pink shaded area represents the p value. It is the area under the curve that is equivalent to or less than the test statistic."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#p-value-upper-tailed-test",
     "href": "Pages/Lectures/Lecture13/Lec13.html#p-value-upper-tailed-test",
     "title": "PSTAT 5A: Lecture 13",
     "section": "p-value; Upper-Tailed Test",
-    "text": "p-value; Upper-Tailed Test"
+    "text": "p-value; Upper-Tailed Test\n\nThe pink shaded area represents the p value. It is the area under the curve that is equivalent to or greater than the test statistic."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#p-value-two-sided-test",
     "href": "Pages/Lectures/Lecture13/Lec13.html#p-value-two-sided-test",
     "title": "PSTAT 5A: Lecture 13",
     "section": "p-value; Two-Sided Test",
-    "text": "p-value; Two-Sided Test"
+    "text": "p-value; Two-Sided Test\n\nThe pink shaded area represents the p value. It is the area under the curve that is equivalent to or more extreme than the test statistic in both directions."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#worked-out-example-3",
@@ -270,7 +270,7 @@
     "href": "Pages/Lectures/Lecture13/Lec13.html#p-values-1",
     "title": "PSTAT 5A: Lecture 13",
     "section": "p-Values",
-    "text": "p-Values\n\nOf course, p-values are not restricted to the case of hypothesis testing a proportion; we can absolutely compute \\(p-\\)values in a setting where we are testing a population mean!\n\n\n\n\n\n\n\n\nWorked-Out Example 4\n\n\n\n\nConsider again the setup of Worked-Out Example 2: McGaucho’s claims that, on average, they are able to serve customers their food in 10 minutes. Dubious of these claims, Markus takes a representative sample of 40 customers and finds that these customers waited an combined average of 15 minutes before receiving their food, with a standard deviation of 10 minutes.\n\nCompute the p-value if we were to use a lower-tailed alternative.\nCompute the p-value if we were to use a two-sided alternative."
+    "text": "p-Values\nImagine you suspect a coin is rigged to land on heads more often so you conduct the following test:\n\n\\(H_0\\): The coin is fair\n\\(H_A\\): The coin is rigged\n\n\nYou flip the coin 10 times and get 9 heads. The p value asks us “If this coin is really fair, what is the probability I get 9 heads just by bad luck?” The answer is very small! - only about a 1% chance. We can confirm this with \\[ \\mathbb{P} (X = k) = \\binom{n}{k} \\cdot p^k \\cdot (1-p)^{n-k} = 10 \\cdot .0019 \\cdot 0.5 = .01  \\]\n\n\nSo the p value is .01. This means that the coin really is fair and you got unlucky (1% chance), or the coin is probably rigged."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#solutions-11",
@@ -305,21 +305,21 @@
     "href": "Pages/Lectures/Lecture13/Lec13.html#what-do-we-do-with-a-p-value",
     "title": "PSTAT 5A: Lecture 13",
     "section": "What Do We Do with a p-Value?",
-    "text": "What Do We Do with a p-Value?\n\nOkay, so after we’ve computed our p-value… what do we do?\nWe reject when p is small; specifically, we reject when p is less than the level of significance.\nSo, in other words, we now have two ways to conduct hypothesis tests under our belt: using critical values, and using p-values.\nI’d like to stress- these two frameworks are completely equivalent!\n\nYour decision using critical values will always be the same as your decision using p-values, by construction."
+    "text": "What Do We Do with a p-Value?\n\nOkay, so after we’ve computed our p-value… what do we do?\nWe reject when p is small; specifically, we reject when p is less than the level of significance.\n“If p is low, the null must go!”\nSo, in other words, we now have two ways to conduct hypothesis tests under our belt: using critical values, and using p-values.\nI’d like to stress- these two frameworks are completely equivalent!\n\nYour decision using critical values will always be the same as your decision using p-values, by construction."
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#your-turn-1",
     "href": "Pages/Lectures/Lecture13/Lec13.html#your-turn-1",
     "title": "PSTAT 5A: Lecture 13",
     "section": "Your Turn!",
-    "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 2\n\n\n\n\nUCSB claims that 40% of its undergraduate student body are first-generation students (as in, the first in their families to earn a Bachelor’s degree). To test this claim, a representative sample of 120 undergraduates is taken and it is found that 43% of these students are first-generation. Suppose we use an \\(\\alpha = 0.05\\) level of significance, and we test the University’s claims against a two-sided alternative.\n\nConduct the test using critical values.\nConduct the test using p-values."
+    "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 2\n\n\n\n\nUCSB claims that 40% of its undergraduate student body are first-generation students (as in, the first in their families to earn a Bachelor’s degree). To test this claim, a representative sample of 120 undergraduates is taken and it is found that 43% of these students are first-generation. Suppose we use an \\(\\alpha = 0.05\\) level of significance, and we test the University’s claims against a two-sided alternative.\n\nConduct the test using critical values.\nConduct the test using p-values.\n\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#your-turn-2",
     "href": "Pages/Lectures/Lecture13/Lec13.html#your-turn-2",
     "title": "PSTAT 5A: Lecture 13",
     "section": "Your Turn!",
-    "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 3\n\n\n\n\nA botanist claims that the average weight of a chestnut is around 5 grams. To test this claim, a representative sample of 35 chestnuts is taken; these chestnuts have a combined average weight of 4.87 grams and a standard deviation of 1.82 grams. Suppose we use an \\(\\alpha = 0.05\\) level of significance, and a lower-tailed alternative.\n\nConduct the test using critical values.\nConduct the test using p-values."
+    "text": "Your Turn!\n\n\n\n\n\n\n\nExercise 3\n\n\n\n\nA botanist claims that the average weight of a chestnut is around 5 grams. To test this claim, a representative sample of 35 chestnuts is taken; these chestnuts have a combined average weight of 4.87 grams and a standard deviation of 1.82 grams. Suppose we use an \\(\\alpha = 0.05\\) level of significance, and a lower-tailed alternative.\n\nConduct the test using critical values.\nConduct the test using p-values.\n\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "Pages/Lectures/Lecture13/Lec13.html#criticisms-of-p-values",
@@ -5423,5 +5423,40 @@
     "title": "PSTAT 5A: Lecture 12",
     "section": "Class Updates",
     "text": "Class Updates\n\nQuiz 3 today!\nQuiz next week will take place on Tuesday, 9/2\nNo class this Thursday"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#p-values-2",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#p-values-2",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "p-Values",
+    "text": "p-Values\n\nOf course, p-values are not restricted to the case of hypothesis testing a proportion; we can absolutely compute \\(p-\\)values in a setting where we are testing a population mean!\n\n\n\n\n\n\n\n\nWorked-Out Example 4\n\n\n\n\nConsider again the setup of Worked-Out Example 2: McGaucho’s claims that, on average, they are able to serve customers their food in 10 minutes. Dubious of these claims, Markus takes a representative sample of 40 customers and finds that these customers waited an combined average of 15 minutes before receiving their food, with a standard deviation of 10 minutes.\n\nCompute the p-value if we were to use a lower-tailed alternative.\nCompute the p-value if we were to use a two-sided alternative."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#p-values-3",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#p-values-3",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "p-Values",
+    "text": "p-Values\n\nOf course, p-values are not restricted to the case of hypothesis testing a proportion; we can absolutely compute \\(p-\\)values in a setting where we are testing a population mean!\n\n\n\n\n\n\n\n\nWorked-Out Example 4\n\n\n\n\nConsider again the setup of Worked-Out Example 2: McGaucho’s claims that, on average, they are able to serve customers their food in 10 minutes. Dubious of these claims, Markus takes a representative sample of 40 customers and finds that these customers waited an combined average of 15 minutes before receiving their food, with a standard deviation of 10 minutes.\n\nCompute the p-value if we were to use a lower-tailed alternative.\nCompute the p-value if we were to use a two-sided alternative."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#how-do-we-calculate-our-p-value",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#how-do-we-calculate-our-p-value",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "How do we calculate our p value?",
+    "text": "How do we calculate our p value?\nLet’s review this slide from Lecture 8:\n\nRecall that for continuous variables, probabilities are found as areas underneath the density curve. For example, if \\(X \\sim \\mathcal{N}(0, 1)\\), then \\(\\mathbb{P}(X \\leq -1)\\) is found by computing the area below:"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#how-do-we-calculate-our-p-value-1",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#how-do-we-calculate-our-p-value-1",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "How do we calculate our p value?",
+    "text": "How do we calculate our p value?\n\n\n\n\n\n\n\n\n\n\n\n\nWe found this area by looking at our z table!\nTo find \\(\\mathbb{P}(X\\leq .83)\\) we broke it up as \\(0.83 = 0.8 + 0.03\\) and then found the row on our z table that corresponds to \\(0.8\\) and the column that corresponds to \\(.03\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture13/Lec13.html#how-do-we-calculate-our-p-value-2",
+    "href": "Pages/Lectures/Lecture13/Lec13.html#how-do-we-calculate-our-p-value-2",
+    "title": "PSTAT 5A: Lecture 13",
+    "section": "How do we calculate our p value?",
+    "text": "How do we calculate our p value?\n\nWe find our p- value in the same way!\nRemember our p value is representing a probability - so to find it we are looking for an area under the curve.\nWe can look up our test statistic in the z table to find our corresponding probability."
   }
 ]

@@ -391,6 +391,8 @@
   <script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
   <script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
   <link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+  <link href="../../../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
+  <script src="../../../site_libs/countdown-0.4.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -448,11 +450,11 @@
 <div>
 <div>
 <pre class="mermaid mermaid-js">graph TB
-  A[Is the population Normal?  . ] --&gt; |Yes| B{{Use Normal .}}
-  A --&gt; |No| C[Is n &gt;= 30?  .]
-  C --&gt; |Yes| D[sigma or s?  .]
-  C --&gt; |No| E{{cannot proceed   .}}
-  D --&gt; |sigma| F{{Use Normal .}}
+  A[Is the population Normal?   ] --&gt; |Yes| B{{Use Normal }}
+  A --&gt; |No| C[Is n &gt;= 30?  ]
+  C --&gt; |Yes| D[sigma or s?  ]
+  C --&gt; |No| E{{cannot proceed   }}
+  D --&gt; |sigma| F{{Use Normal }}
   D --&gt; |s| G{{Use t }}
 </pre>
 </div>
@@ -474,10 +476,7 @@
 <section id="test-statistic-1" class="slide level2">
 <h2>Test Statistic</h2>
 <ul>
-<li class="fragment"><p>In the two-sided case, our critical value will still be the value <span class="math inline">\(c\)</span> that ensures <span class="math display">\[ \mathbb{P}(|\mathrm{TS}| &gt; c) = \alpha \]</span> (i.e.&nbsp;we reject <span class="math inline">\(H_0\)</span> whenever <span class="math inline">\(\overline{X}\)</span> is far away from <span class="math inline">\(\mu_0\)</span>) meaning <span class="math inline">\(c\)</span> will the <span class="math inline">\((\alpha /2) \times 100\%\)</span> percentile, scaled by negative 1, of either the standard normal distribution or the <span class="math inline">\(t_{n - 1}\)</span> distribution.</p>
-<ul>
-<li class="fragment">Again, don’t forget about how the symmetry of the normal and <em>t</em>-distributions translates to relationships between percentiles!</li>
-</ul></li>
+<li class="fragment"><p>In the two-sided case, our critical value will still be the value <span class="math inline">\(c\)</span> that ensures <span class="math display">\[ \mathbb{P}(|\mathrm{TS}| &gt; c) = \alpha \]</span> if the null hypothesis is true. We reject <span class="math inline">\(H_0\)</span> whenever <span class="math inline">\(\overline{X}\)</span> is far away from <span class="math inline">\(\mu_0\)</span>) meaning <span class="math inline">\(c\)</span> will be the <span class="math inline">\((\alpha /2) \times 100\%\)</span> percentile, scaled by negative 1, of either the standard normal distribution or the <span class="math inline">\(t_{n - 1}\)</span> distribution.</p></li>
 <li class="fragment"><p>Our test in the two-sided case will then take the form <span class="math display">\[ \texttt{decision}(\mathrm{TS}) = \begin{cases} \texttt{reject } H_0 &amp; \text{if } |\mathrm{TS}| &gt; c \\ \texttt{fail to reject } H_0 &amp; \text{otherwise}\\ \end{cases}  \]</span></p></li>
 <li class="fragment"><p>Let’s do an example.</p></li>
 </ul>
@@ -601,8 +600,8 @@
 <section id="solutions-4" class="slide level2">
 <h2>Solutions</h2>
 <ul>
-<li class="fragment"><p>Now, we are using an upper-tailed alternative, meaning our critical value is the point such that <span class="math inline">\((1 - 0.01) = 0.99\)</span> area lies to the left (or, equivalently, <span class="math inline">\(0.01\)</span> lies to the right).</p></li>
-<li class="fragment"><p>This means our critical value is 2.43, and we reject the null whenever <span class="math inline">\(\mathrm{TS} &gt; 2.43\)</span>.</p></li>
+<li class="fragment"><p>With an <span class="math inline">\(\alpha\)</span> = .01, we can consult our t table and see that a one tailed test with <span class="math inline">\(\alpha = 0.5\)</span> and <span class="math inline">\(dof\)</span> = 39 leaves us with a a critical value of 2.43.</p></li>
+<li class="fragment"><p>This means we reject the null whenever <span class="math inline">\(\mathrm{TS} &gt; 2.43\)</span>.</p></li>
 <li class="fragment"><p>The observed value of our test statistic is <span class="math display">\[ \frac{15 - 10}{10 / \sqrt{40}} = 3.162 \]</span></p></li>
 </ul>
 </section>
@@ -636,6 +635,14 @@
 <li>…two-sided alternative</li>
 <li>…lower-tailed alternative</li>
 </ol>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_aa38faa3" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -674,15 +681,15 @@ H_A:    &amp; p &lt; p_0
 </ul>
 </div>
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
 <section id="reject-or-not" class="slide level2">
 <h2>Reject or Not?</h2>
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
 <section id="reject-or-not-1" class="slide level2">
 <h2>Reject or Not?</h2>
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
 <section id="leadup" class="slide level2">
 <h2>Leadup</h2>
 <ul>
@@ -691,7 +698,7 @@ H_A:    &amp; p &lt; p_0
 <li class="fragment">If the test statistic is smaller than the critical value, we reject.</li>
 <li class="fragment">Otherwise, we fail to reject.</li>
 </ul></li>
-<li class="fragment"><p>Again, remember the intuition behind <em>why</em> this is: if we observe a value of <span class="math inline">\(\widehat{P}\)</span> that is much smaller than <span class="math inline">\(p_0\)</span>, this leads credence to the claim that <span class="math inline">\(p &lt; p_0\)</span> (i.e.&nbsp;this leads credence to our <em>alternative</em> and <em>away</em> from our null).</p>
+<li class="fragment"><p>Again, remember the intuition behind <em>why</em> this is: if we observe a value of <span class="math inline">\(\widehat{P}\)</span> that is much smaller than <span class="math inline">\(p_0\)</span>, this leads us to the claim that <span class="math inline">\(p &lt; p_0\)</span> (i.e.&nbsp;this leads us towards our <em>alternative</em> and <em>away</em> from our null).</p>
 <ul>
 <li class="fragment">Values of <span class="math inline">\(\widehat{P}\)</span> less than <span class="math inline">\(p_0\)</span> lead to very negative values of <span class="math inline">\(\mathrm{TS}\)</span>.</li>
 </ul></li>
@@ -709,11 +716,11 @@ H_A:    &amp; p &lt; p_0
 <section class="slide level2">
 
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
 <section class="slide level2">
 
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"><ul>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"><ul>
 <li class="fragment"><p>How does the area to the left of the test statistic compare to <span class="math inline">\(\alpha\)</span>?</p>
 <ul>
 <li class="fragment">It is smaller.</li>
@@ -723,11 +730,11 @@ H_A:    &amp; p &lt; p_0
 <section class="slide level2">
 
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
 <section class="slide level2">
 
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"><ul>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"><ul>
 <li class="fragment"><p>How does the area to the left of the test statistic compare to <span class="math inline">\(\alpha\)</span>?</p>
 <ul>
 <li class="fragment">It is larger</li>
@@ -764,22 +771,83 @@ H_A:    &amp; p &lt; p_0
 <li class="fragment"><p>Note that exactly <em>how</em> we compute <span class="math inline">\(p-\)</span>values depends heavily on our alternative.</p></li>
 </ul>
 </section>
+<section id="p-values-1" class="slide level2">
+<h2><em>p</em>-Values</h2>
+<p>Imagine you suspect a coin is rigged to land on heads more often so you conduct the following test:</p>
+<ul>
+<li class="fragment"><span class="math inline">\(H_0\)</span>: The coin is fair</li>
+<li class="fragment"><span class="math inline">\(H_A\)</span>: The coin is rigged</li>
+</ul>
+<div class="fragment">
+<p>You flip the coin 10 times and get 9 heads. The p value asks us “If this coin is really fair, what is the probability I get 9 heads just by bad luck?” The answer is very small! - only about a 1% chance. We can confirm this with <span class="math display">\[ \mathbb{P} (X = k) = \binom{n}{k} \cdot p^k \cdot (1-p)^{n-k} = 10 \cdot .0019 \cdot 0.5 = .01  \]</span></p>
+</div>
+<div class="fragment">
+<p>So the <em>p</em> value is .01. This means that the coin really is fair and you got unlucky (1% chance), or the coin is probably rigged.</p>
+</div>
+</section>
 <section id="the-test-statistic" class="slide level2">
 <h2>The Test Statistic</h2>
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
 <section id="p-value-lower-tailed-test" class="slide level2">
 <h2><em>p</em>-value; Lower-Tailed Test</h2>
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"><p>The pink shaded area represents the p value. It is the area under the curve that is equivalent to or less than the test statistic.</p>
+</section>
 <section id="p-value-upper-tailed-test" class="slide level2">
 <h2><em>p</em>-value; Upper-Tailed Test</h2>
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"><p>The pink shaded area represents the p value. It is the area under the curve that is equivalent to or greater than the test statistic.</p>
+</section>
 <section id="p-value-two-sided-test" class="slide level2">
 <h2><em>p</em>-value; Two-Sided Test</h2>
 
-<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lec13_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"><p>The pink shaded area represents the p value. It is the area under the curve that is equivalent to or more extreme than the test statistic in both directions.</p>
+</section>
+<section id="how-do-we-calculate-our-p-value" class="slide level2">
+<h2>How do we calculate our p value?</h2>
+<p>Let’s review this slide from Lecture 8:</p>
+<ul>
+<li class="fragment">Recall that for continuous variables, probabilities are found as areas underneath the density curve. For example, if <span class="math inline">\(X \sim \mathcal{N}(0, 1)\)</span>, then <span class="math inline">\(\mathbb{P}(X \leq -1)\)</span> is found by computing the area below:</li>
+</ul>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-14-1.png" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="how-do-we-calculate-our-p-value-1" class="slide level2" style="font-size:23px">
+<h2>How do we calculate our p value?</h2>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-15-1.png" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">We found this area by looking at our z table!</li>
+<li class="fragment">To find <span class="math inline">\(\mathbb{P}(X\leq .83)\)</span> we broke it up as <span class="math inline">\(0.83 = 0.8 + 0.03\)</span> and then found the row on our z table that corresponds to <span class="math inline">\(0.8\)</span> and the column that corresponds to <span class="math inline">\(.03\)</span>.</li>
+</ul>
+</section>
+<section id="how-do-we-calculate-our-p-value-2" class="slide level2">
+<h2>How do we calculate our p value?</h2>
+<ul>
+<li class="fragment">We find our p- value in the same way!</li>
+<li class="fragment">Remember our p value is representing a probability - so to find it we are looking for an area under the curve.</li>
+<li class="fragment">We can look up our test statistic in the z table to find our corresponding probability.</li>
+</ul>
+</section>
 <section id="worked-out-example-3" class="slide level2">
 <h2>Worked-Out Example</h2>
 <div class="fragment">
@@ -814,7 +882,7 @@ H_A:    &amp; p &lt; p_0
 <div class="fragment">
 <div class="cell" data-fig="true">
 <div class="cell-output-display">
-<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -827,7 +895,7 @@ H_A:    &amp; p &lt; p_0
 <div class="fragment">
 <div class="cell" data-fig="true">
 <div class="cell-output-display">
-<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-17-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -868,7 +936,7 @@ H_A:    &amp; p &lt; p_0
 <div class="fragment">
 <div class="cell" data-fig="true">
 <div class="cell-output-display">
-<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-16-1.png" width="960"></p>
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -892,7 +960,7 @@ H_A:    &amp; p &lt; p_0
 </div>
 </div>
 </section>
-<section id="p-values-1" class="slide level2">
+<section id="p-values-2" class="slide level2">
 <h2><em>p</em>-Values</h2>
 <ul>
 <li class="fragment">Of course, <em>p</em>-values are not restricted to the case of hypothesis testing a proportion; we can absolutely compute <span class="math inline">\(p-\)</span>values in a setting where we are testing a population mean!</li>
@@ -937,7 +1005,7 @@ H_A:    &amp; p &lt; p_0
 <div class="fragment">
 <div class="cell" data-fig="true">
 <div class="cell-output-display">
-<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-18-1.png" width="960"></p>
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -950,7 +1018,7 @@ H_A:    &amp; p &lt; p_0
 <div class="fragment">
 <div class="cell" data-fig="true">
 <div class="cell-output-display">
-<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-19-1.png" width="960"></p>
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-22-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -971,7 +1039,7 @@ H_A:    &amp; p &lt; p_0
 <div class="fragment">
 <div class="cell" data-fig="true">
 <div class="cell-output-display">
-<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-21-1.png" width="960"></p>
+<p><img data-src="Lec13_files/figure-revealjs/unnamed-chunk-24-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -996,6 +1064,7 @@ H_A:    &amp; p &lt; p_0
 <ul>
 <li class="fragment"><p>Okay, so after we’ve computed our <em>p</em>-value… what do we do?</p></li>
 <li class="fragment"><p>We reject when <em>p</em> is small; specifically, we reject when <em>p</em> is less than the level of significance.</p></li>
+<li class="fragment"><p><em>“If p is low, the null must go!”</em></p></li>
 <li class="fragment"><p>So, in other words, we now have two ways to conduct hypothesis tests under our belt: using critical values, and using <em>p</em>-values.</p></li>
 <li class="fragment"><p>I’d like to stress- these two frameworks are completely equivalent!</p>
 <ul>
@@ -1022,6 +1091,14 @@ H_A:    &amp; p &lt; p_0
 <li>Conduct the test using critical values.</li>
 <li>Conduct the test using <em>p</em>-values.</li>
 </ul>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_b3a7d489" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1048,26 +1125,20 @@ H_A:    &amp; p &lt; p_0
 <li>Conduct the test using critical values.</li>
 <li>Conduct the test using <em>p</em>-values.</li>
 </ul>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_c6dfe791" data-update-every="1" data-play-sound="true" tabindex="0" style="right:0;bottom:0;font-size:2em;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="criticisms-of-p-values" class="slide level2">
-<h2>Criticisms of <em>p</em>-Values</h2>
-<ul>
-<li class="fragment"><p>I should note that there are some growing criticism within the statistical and data scientific communities regarding <em>p</em>-values.</p></li>
-<li class="fragment"><p>For one thing, they can be easily misinterpreted.</p>
-<ul>
-<li class="fragment">Take a look at <a href="https://en.wikipedia.org/wiki/Misuse_of_p-values">this</a> Wikipedia page for a list of common misinterpretations of <em>p</em>-values to make sure you don’t make any of these (and yes, I might test you on some of these on a quiz/exam!)</li>
-</ul></li>
-<li class="fragment"><p>To fully understand and appreciate the more nuanced criticisms, however, we would need a bit of extra background/theory pertaining to the framework of Hypothesis Testing - material that we don’t cover in this class.</p>
-<ul>
-<li class="fragment">I encourage you to take PSTAT 120B and PSTAT 120C if you’d like to learn more about this!</li>
-</ul></li>
-</ul>
+</div>
+</div>
+</div>
 
 
 <img src="5a_hex.png" class="slide-logo r-stretch"><div class="footer footer-default">
