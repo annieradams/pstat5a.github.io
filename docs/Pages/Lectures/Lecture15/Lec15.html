@@ -31,71 +31,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -388,8 +323,6 @@
       margin-right: 0; 
     }
   </style>
-  <script type="module" src="../../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
-  <link href="../../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -438,190 +371,6 @@
 <p><img data-src="unif.svg" style="width:60.0%"></p>
 </div>
 </section>
-<section id="effect-of-changing-a-and-b" class="slide level2">
-<h2>Effect of Changing <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span></h2>
-<div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="86" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 85;"><span id="cb1-86"><a href="#cb1-86"></a>viewof a <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
-<span id="cb1-87"><a href="#cb1-87"></a>  [<span class="op">-</span><span class="dv">3</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">,</span> </span>
-<span id="cb1-88"><a href="#cb1-88"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"a="</span>}</span>
-<span id="cb1-89"><a href="#cb1-89"></a>)</span>
-<span id="cb1-90"><a href="#cb1-90"></a></span>
-<span id="cb1-91"><a href="#cb1-91"></a>viewof b <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(</span>
-<span id="cb1-92"><a href="#cb1-92"></a>  [<span class="op">-</span><span class="dv">3</span><span class="op">,</span> <span class="dv">3</span>]<span class="op">,</span> </span>
-<span id="cb1-93"><a href="#cb1-93"></a>  {<span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"b="</span>}</span>
-<span id="cb1-94"><a href="#cb1-94"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="98" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 97;"><span id="cb2-98"><a href="#cb2-98"></a>margin2 <span class="op">=</span> ({<span class="dt">top</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span> <span class="dt">right</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span> <span class="dt">bottom</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span> <span class="dt">left</span><span class="op">:</span> <span class="dv">40</span>})</span>
-<span id="cb2-99"><a href="#cb2-99"></a></span>
-<span id="cb2-100"><a href="#cb2-100"></a>height2 <span class="op">=</span> <span class="dv">400</span></span>
-<span id="cb2-101"><a href="#cb2-101"></a></span>
-<span id="cb2-102"><a href="#cb2-102"></a>x_values2 <span class="op">=</span> d32<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
-<span id="cb2-103"><a href="#cb2-103"></a><span class="op">.</span><span class="fu">domain</span>(d32<span class="op">.</span><span class="fu">extent</span>(data2<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span>))</span>
-<span id="cb2-104"><a href="#cb2-104"></a><span class="op">.</span><span class="fu">range</span>([margin2<span class="op">.</span><span class="at">left</span><span class="op">,</span> width <span class="op">-</span> margin2<span class="op">.</span><span class="at">right</span>])</span>
-<span id="cb2-105"><a href="#cb2-105"></a></span>
-<span id="cb2-106"><a href="#cb2-106"></a>y_values2 <span class="op">=</span> d32<span class="op">.</span><span class="fu">scaleLinear</span>()</span>
-<span id="cb2-107"><a href="#cb2-107"></a><span class="op">.</span><span class="fu">domain</span>([<span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(d32<span class="op">.</span><span class="fu">min</span>(data2<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>)<span class="op">,</span><span class="dv">0</span>)<span class="op">,</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(<span class="dv">1</span><span class="op">,</span>d32<span class="op">.</span><span class="fu">max</span>(data2<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>))])<span class="op">.</span><span class="fu">nice</span>()</span>
-<span id="cb2-108"><a href="#cb2-108"></a><span class="op">.</span><span class="fu">range</span>([height2 <span class="op">-</span> margin2<span class="op">.</span><span class="at">bottom</span><span class="op">,</span> margin2<span class="op">.</span><span class="at">top</span>])</span>
-<span id="cb2-109"><a href="#cb2-109"></a></span>
-<span id="cb2-110"><a href="#cb2-110"></a>line2 <span class="op">=</span> d32<span class="op">.</span><span class="fu">line</span>()</span>
-<span id="cb2-111"><a href="#cb2-111"></a><span class="op">.</span><span class="fu">x</span>(d <span class="kw">=&gt;</span> <span class="fu">x_values2</span>(d<span class="op">.</span><span class="at">x</span>))</span>
-<span id="cb2-112"><a href="#cb2-112"></a><span class="op">.</span><span class="fu">y</span>(d <span class="kw">=&gt;</span> <span class="fu">y_values2</span>(d<span class="op">.</span><span class="at">y</span>))</span>
-<span id="cb2-113"><a href="#cb2-113"></a></span>
-<span id="cb2-114"><a href="#cb2-114"></a>xAxis2 <span class="op">=</span> g <span class="kw">=&gt;</span> g</span>
-<span id="cb2-115"><a href="#cb2-115"></a><span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(0,</span><span class="sc">${</span>height2 <span class="op">-</span> margin2<span class="op">.</span><span class="at">bottom</span><span class="sc">}</span><span class="vs">)`</span>)</span>
-<span id="cb2-116"><a href="#cb2-116"></a><span class="op">.</span><span class="fu">call</span>(d32<span class="op">.</span><span class="fu">axisBottom</span>(x_values2)</span>
-<span id="cb2-117"><a href="#cb2-117"></a>      <span class="op">.</span><span class="fu">ticks</span>(width <span class="op">/</span> <span class="dv">80</span>)</span>
-<span id="cb2-118"><a href="#cb2-118"></a>      <span class="op">.</span><span class="fu">tickSizeOuter</span>(<span class="dv">0</span>))</span>
-<span id="cb2-119"><a href="#cb2-119"></a></span>
-<span id="cb2-120"><a href="#cb2-120"></a>yAxis2 <span class="op">=</span> g <span class="kw">=&gt;</span> g</span>
-<span id="cb2-121"><a href="#cb2-121"></a><span class="op">.</span><span class="fu">attr</span>(<span class="st">"transform"</span><span class="op">,</span> <span class="vs">`translate(</span><span class="sc">${</span>margin2<span class="op">.</span><span class="at">left</span><span class="sc">}</span><span class="vs">,0)`</span>)</span>
-<span id="cb2-122"><a href="#cb2-122"></a><span class="op">.</span><span class="fu">call</span>(d32<span class="op">.</span><span class="fu">axisLeft</span>(y_values2)</span>
-<span id="cb2-123"><a href="#cb2-123"></a>      <span class="op">.</span><span class="fu">tickValues</span>(d32<span class="op">.</span><span class="fu">scaleLinear</span>()<span class="op">.</span><span class="fu">domain</span>(y_values2<span class="op">.</span><span class="fu">domain</span>())<span class="op">.</span><span class="fu">ticks</span>()))</span>
-<span id="cb2-124"><a href="#cb2-124"></a></span>
-<span id="cb2-125"><a href="#cb2-125"></a><span class="kw">function</span> <span class="fu">unif_pdf</span> (input_value<span class="op">,</span> mu<span class="op">,</span> sigsq) {</span>
-<span id="cb2-126"><a href="#cb2-126"></a><span class="cf">if</span>(input_value <span class="op">&lt;</span> a){</span>
-<span id="cb2-127"><a href="#cb2-127"></a>  <span class="cf">return</span> <span class="dv">0</span></span>
-<span id="cb2-128"><a href="#cb2-128"></a>} <span class="cf">else</span> <span class="cf">if</span>(input_value <span class="op">&gt;</span> b){</span>
-<span id="cb2-129"><a href="#cb2-129"></a>  <span class="cf">return</span> <span class="dv">0</span></span>
-<span id="cb2-130"><a href="#cb2-130"></a>} <span class="cf">else</span>{</span>
-<span id="cb2-131"><a href="#cb2-131"></a>  <span class="cf">return</span> <span class="dv">1</span> <span class="op">/</span> (b <span class="op">-</span> a)</span>
-<span id="cb2-132"><a href="#cb2-132"></a>}</span>
-<span id="cb2-133"><a href="#cb2-133"></a>}</span>
-<span id="cb2-134"><a href="#cb2-134"></a></span>
-<span id="cb2-135"><a href="#cb2-135"></a>abs_x2<span class="op">=</span><span class="dv">6</span></span>
-<span id="cb2-136"><a href="#cb2-136"></a></span>
-<span id="cb2-137"><a href="#cb2-137"></a>data2 <span class="op">=</span> {</span>
-<span id="cb2-138"><a href="#cb2-138"></a>  <span class="kw">let</span> values <span class="op">=</span> []<span class="op">;</span></span>
-<span id="cb2-139"><a href="#cb2-139"></a>  <span class="cf">for</span> (<span class="kw">let</span> x <span class="op">=</span> <span class="op">-</span>abs_x2<span class="op">;</span> x <span class="op">&lt;</span> abs_x2<span class="op">;</span> x<span class="op">=</span>x<span class="op">+</span><span class="fl">0.01</span>) values<span class="op">.</span><span class="fu">push</span>({<span class="st">"x"</span><span class="op">:</span>x<span class="op">,</span><span class="st">"y"</span><span class="op">:</span><span class="fu">unif_pdf</span>(x<span class="op">,</span> µ<span class="op">,</span> sigsquared)})<span class="op">;</span></span>
-<span id="cb2-140"><a href="#cb2-140"></a>  <span class="cf">return</span> values<span class="op">;</span></span>
-<span id="cb2-141"><a href="#cb2-141"></a>}</span>
-<span id="cb2-142"><a href="#cb2-142"></a></span>
-<span id="cb2-143"><a href="#cb2-143"></a>d32 <span class="op">=</span> <span class="pp">require</span>(<span class="st">"https://d3js.org/d3.v5.min.js"</span>)</span>
-<span id="cb2-144"><a href="#cb2-144"></a></span>
-<span id="cb2-145"><a href="#cb2-145"></a>chart2 <span class="op">=</span> {</span>
-<span id="cb2-146"><a href="#cb2-146"></a>  <span class="kw">const</span> svg <span class="op">=</span> d32<span class="op">.</span><span class="fu">select</span>(DOM<span class="op">.</span><span class="fu">svg</span>(width<span class="op">,</span> height2))<span class="op">;</span></span>
-<span id="cb2-147"><a href="#cb2-147"></a>  </span>
-<span id="cb2-148"><a href="#cb2-148"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
-<span id="cb2-149"><a href="#cb2-149"></a>  <span class="op">.</span><span class="fu">call</span>(xAxis2)<span class="op">;</span></span>
-<span id="cb2-150"><a href="#cb2-150"></a>  </span>
-<span id="cb2-151"><a href="#cb2-151"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"g"</span>)</span>
-<span id="cb2-152"><a href="#cb2-152"></a>  <span class="op">.</span><span class="fu">call</span>(yAxis2)<span class="op">;</span></span>
-<span id="cb2-153"><a href="#cb2-153"></a>  </span>
-<span id="cb2-154"><a href="#cb2-154"></a>  svg<span class="op">.</span><span class="fu">append</span>(<span class="st">"path"</span>)</span>
-<span id="cb2-155"><a href="#cb2-155"></a>  <span class="op">.</span><span class="fu">datum</span>(data2)</span>
-<span id="cb2-156"><a href="#cb2-156"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> <span class="st">"none"</span>)</span>
-<span id="cb2-157"><a href="#cb2-157"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"steelblue"</span>)</span>
-<span id="cb2-158"><a href="#cb2-158"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">4</span>)</span>
-<span id="cb2-159"><a href="#cb2-159"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-linejoin"</span><span class="op">,</span> <span class="st">"round"</span>)</span>
-<span id="cb2-160"><a href="#cb2-160"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-linecap"</span><span class="op">,</span> <span class="st">"round"</span>)</span>
-<span id="cb2-161"><a href="#cb2-161"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"d"</span><span class="op">,</span> line)<span class="op">;</span></span>
-<span id="cb2-162"><a href="#cb2-162"></a>  </span>
-<span id="cb2-163"><a href="#cb2-163"></a>  <span class="cf">return</span> svg<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span>
-<span id="cb2-164"><a href="#cb2-164"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-3" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-4" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-5" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-6" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-7" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-8" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-9" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-10" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-11" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-12" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
-<div style="font-size:18px; text-align:right">
-<p><em>Credit to https://observablehq.com/<span class="citation" data-cites="dswalter/normal-distribution">@dswalter/normal-distribution</span> for the base of the applet code</em></p>
-</div>
-</section>
 <section id="uniform-distribution-1" class="slide level2" style="font-size:32px">
 <h2>Uniform Distribution</h2>
 <ul>
@@ -633,7 +382,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Lec15_files/figure-revealjs/unnamed-chunk-4-1.png" width="672"></p>
+<p><img data-src="Lec15_files/figure-revealjs/unnamed-chunk-2-1.png" width="672"></p>
 </figure>
 </div>
 </div>
@@ -655,7 +404,7 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Lec15_files/figure-revealjs/unnamed-chunk-5-1.png" width="672"></p>
+<p><img data-src="Lec15_files/figure-revealjs/unnamed-chunk-3-1.png" width="672"></p>
 </figure>
 </div>
 </div>
@@ -675,7 +424,7 @@ can be decomposed as</p>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Lec15_files/figure-revealjs/unnamed-chunk-6-1.png" width="672"></p>
+<p><img data-src="Lec15_files/figure-revealjs/unnamed-chunk-4-1.png" width="672"></p>
 </figure>
 </div>
 </div>
@@ -692,7 +441,7 @@ can be decomposed as</p>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Lec15_files/figure-revealjs/unnamed-chunk-7-1.png" width="672"></p>
+<p><img data-src="Lec15_files/figure-revealjs/unnamed-chunk-5-1.png" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1301,17 +1050,6 @@ H_A:    p \neq 0.24
           RevealZoom
         ]
       });
-    </script>
-    <script type="ojs-module-contents">
-    {"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"viewof a = Inputs.range(\n  [-3, 3], \n  {value: 0, step: 0.1, label: \"a=\"}\n)\n\nviewof b = Inputs.range(\n  [-3, 3], \n  {value: 1, step: 0.1, label: \"b=\"}\n)\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"margin2 = ({top: 20, right: 30, bottom: 30, left: 40})\n\nheight2 = 400\n\nx_values2 = d32.scaleLinear()\n.domain(d32.extent(data2, d => d.x))\n.range([margin2.left, width - margin2.right])\n\ny_values2 = d32.scaleLinear()\n.domain([Math.min(d32.min(data2, d => d.y),0), Math.max(1,d32.max(data2, d => d.y))]).nice()\n.range([height2 - margin2.bottom, margin2.top])\n\nline2 = d32.line()\n.x(d => x_values2(d.x))\n.y(d => y_values2(d.y))\n\nxAxis2 = g => g\n.attr(\"transform\", `translate(0,${height2 - margin2.bottom})`)\n.call(d32.axisBottom(x_values2)\n      .ticks(width / 80)\n      .tickSizeOuter(0))\n\nyAxis2 = g => g\n.attr(\"transform\", `translate(${margin2.left},0)`)\n.call(d32.axisLeft(y_values2)\n      .tickValues(d32.scaleLinear().domain(y_values2.domain()).ticks()))\n\nfunction unif_pdf (input_value, mu, sigsq) {\nif(input_value < a){\n  return 0\n} else if(input_value > b){\n  return 0\n} else{\n  return 1 / (b - a)\n}\n}\n\nabs_x2=6\n\ndata2 = {\n  let values = [];\n  for (let x = -abs_x2; x < abs_x2; x=x+0.01) values.push({\"x\":x,\"y\":unif_pdf(x, µ, sigsquared)});\n  return values;\n}\n\nd32 = require(\"https://d3js.org/d3.v5.min.js\")\n\nchart2 = {\n  const svg = d32.select(DOM.svg(width, height2));\n  \n  svg.append(\"g\")\n  .call(xAxis2);\n  \n  svg.append(\"g\")\n  .call(yAxis2);\n  \n  svg.append(\"path\")\n  .datum(data2)\n  .attr(\"fill\", \"none\")\n  .attr(\"stroke\", \"steelblue\")\n  .attr(\"stroke-width\", 4)\n  .attr(\"stroke-linejoin\", \"round\")\n  .attr(\"stroke-linecap\", \"round\")\n  .attr(\"d\", line);\n  \n  return svg.node();\n}\n\n"},{"methodName":"interpretQuiet","source":"shinyInput('a')"},{"methodName":"interpretQuiet","source":"shinyInput('b')"}]}
-    </script>
-    <script type="module">
-    if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
-    window._ojs.paths.runtimeToDoc = "../../Pages/Lectures/Lecture15";
-    window._ojs.paths.runtimeToRoot = "../..";
-    window._ojs.paths.docToRoot = "../../..";
-    window._ojs.selfContained = false;
-    window._ojs.runtime.interpretFromScriptTags();
     </script>
     
     <script>
