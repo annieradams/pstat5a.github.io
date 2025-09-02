@@ -14,7 +14,7 @@ css: styles.css
 
 ------------------------------------------------------------------------
 
-Let's start off this week's lab by taking a quick break from Python and instead learn some tools for making our Jupyter Notebooks look a little nicer (and help incorporate some mathematical equations into them!).
+Let's start off this week's lab by taking a quick break from Python and instead learn some tools for making our Jupyter Notebooks look a little nicer (and help incorporate some mathematical equations into them!).gi
 
 
 ## Introduction to Markdown Syntax

@@ -135,7 +135,9 @@ There will be weekly homework due on Thursday at 11:59p. It must be turned into 
 **HW5**: Thurs., Sept 4 at 11:59pm
 
 **Week 6**|
-**HW6**: Wed, Sept 10 at 11:59pm 
+**HW6**: Wed, Sept 10 at 11:59pm
+**Lab6**: Thurs., Sept 11 at 11:59pm
+
 
 ## Grading Scheme
 
