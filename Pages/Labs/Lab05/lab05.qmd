@@ -16,19 +16,6 @@ css: styles.css
 
 Let's start off this week's lab by taking a quick break from Python and instead learn some tools for making our Jupyter Notebooks look a little nicer (and help incorporate some mathematical equations into them!).
 
-:::{.callout-caution}
-## **IMPORTANT**
-
-For this lab in particular:
-
-- You **must** submit a `.PDF` file. Failure to do so will incur a **25\% point deduction**.
-- You **must** change the metadata in your notebook in accordance with the procedures outlined in Lab01. Failure to do so will incur a **25\% point deduction**.
-- Because this lab is a little more involved than previous labs, you have until **11:59pm on TUESDAY** to submit to Gradescope.
-    - Please make sure to really grasp the material asked of you in this lab. Next week's lab will take the form of a project that will be graded in part on *correctness*; more details will be provided soon.
-:::
-
-Also, the format of this lab is a little different in that there aren't any numbered "Tasks"; instead, there are "Action Items" which you need to perform in a `.ipynb` file. As such, you don't need to label your tasks; we will only be looking at your final product (i.e. your final PDF).
-
 
 ## Introduction to Markdown Syntax
 
@@ -397,7 +384,7 @@ Finally, let's play with some real-world data!
 
 ### Introduction to the Dataset
 
-The dataset we will explore is called `air22.csv`, and can be accessed at [https://pstat5a.github.io/Files/Datasets/air22.csv](https://pstat5a.github.io/Files/Datasets/air22.csv). It contains observations from the Bureau of Transportation Statistics [https://www.transtats.bts.gov/](https://www.transtats.bts.gov/) on flights taking place during 2022.
+The dataset we will explore is called `air22.csv`, and can be accessed at [https://drive.google.com/file/d/1YSelXYQSmj-x9wWt71bW_Vf9t93TF2ns/view?usp=sharing](https://drive.google.com/file/d/1YSelXYQSmj-x9wWt71bW_Vf9t93TF2ns/view?usp=sharing). It contains observations from the Bureau of Transportation Statistics [https://www.transtats.bts.gov/](https://www.transtats.bts.gov/) on flights taking place during 2022.
 
 Here is an abridged version of the data dictionary:
 
