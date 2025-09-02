@@ -233,6 +233,8 @@ where $\bar{x}_d$ is the sample mean of the differences, $s_d$ is the sample sta
 
 A company institutes an exercise break for its workers to see if this will *improve* job satisfaction, as measured by a questionnaire that assesses workers’ satisfaction. A random sample of 50 workers was taken. Each worker was given the questionnaire twice: once prior to the implementation of the exercise break; a second time after the implementation of the exercise break. The differences in job satisfaction (satisfaction after implementation of the exercise program minus satisfaction before implementation of the exercise program) were calculated, and the mean of the difference is calculated to be 11.727 and standard deviation of 17.3869.
 
+Conduct a one-sided hypothesis test at a 5% level to determine if the exercise break program significantly improves job satisfaction scores. Be sure you phrase your conclusion clearly, and in the context of the problem.
+
 :::
 :::
 :::
@@ -295,7 +297,7 @@ Therefore, we have enough evidence to reject the null hypothesis.
 ## Solution {style="font-size:30px"}
 
 5. Step 5: Write a conclusion
-
+git st
 :::{.fragment}
 At the $\alpha = 0.05$ significance level, we have enough evidence to reject the claim that mean difference in job satisfaction before and after implementing exercise break is the same. This data suggests that the mean difference in job satisfaction after implementing exercise break is greater than that before. 
 :::

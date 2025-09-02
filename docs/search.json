@@ -3798,7 +3798,7 @@
     "href": "Pages/Lectures/Lecture16/Lec16.html#solution-3",
     "title": "PSTAT 5A: Lecture 16",
     "section": "Solution",
-    "text": "Solution\n\nStep 5: Write a conclusion\n\n\nAt the \\(\\alpha = 0.05\\) significance level, we have enough evidence to reject the claim that mean difference in job satisfaction before and after implementing exercise break is the same. This data suggests that the mean difference in job satisfaction after implementing exercise break is greater than that before."
+    "text": "Solution\n\nStep 5: Write a conclusion git st :::{.fragment} At the \\(\\alpha = 0.05\\) significance level, we have enough evidence to reject the claim that mean difference in job satisfaction before and after implementing exercise break is the same. This data suggests that the mean difference in job satisfaction after implementing exercise break is greater than that before. :::"
   },
   {
     "objectID": "Pages/Lectures/Lecture10/Lec10.html#last-time",
@@ -5296,7 +5296,7 @@
     "href": "Pages/Lectures/Lecture16/Lec16.html#worked-out-example",
     "title": "PSTAT 5A: Lecture 16",
     "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nA company institutes an exercise break for its workers to see if this will improve job satisfaction, as measured by a questionnaire that assesses workers’ satisfaction. A random sample of 50 workers was taken. Each worker was given the questionnaire twice: once prior to the implementation of the exercise break; a second time after the implementation of the exercise break. The differences in job satisfaction (satisfaction after implementation of the exercise program minus satisfaction before implementation of the exercise program) were calculated, and the mean of the difference is calculated to be 11.727 and standard deviation of 17.3869."
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nA company institutes an exercise break for its workers to see if this will improve job satisfaction, as measured by a questionnaire that assesses workers’ satisfaction. A random sample of 50 workers was taken. Each worker was given the questionnaire twice: once prior to the implementation of the exercise break; a second time after the implementation of the exercise break. The differences in job satisfaction (satisfaction after implementation of the exercise program minus satisfaction before implementation of the exercise program) were calculated, and the mean of the difference is calculated to be 11.727 and standard deviation of 17.3869.\nConduct a one-sided hypothesis test at a 5% level to determine if the exercise break program significantly improves job satisfaction scores. Be sure you phrase your conclusion clearly, and in the context of the problem."
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#reminders",
