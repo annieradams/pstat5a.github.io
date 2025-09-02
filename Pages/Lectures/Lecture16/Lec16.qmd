@@ -26,6 +26,137 @@ library(tidyverse)
 library(ggthemes)
 ```
 
+
+
+## Reminders
+- Quiz 4 today!! 
+- Extra credit Homework released on Friday and due next Wednesday 
+- Exam next Thursday! Need calculator and Access Card
+
+
+
+## Warm up {style="font-size:30px"}
+
+:::{.fragment}
+::: callout-tip
+## Warm Up #1
+
+:::{.nonincremental}
+::: {style="font-size: 30px"}
+Melanie would like to construct a 95\% confidence interval for the true proportion of California Residents that speak Spanish. To that end, she took a representative sample of 120 CA residents and found that 36 of these residents speak Spanish.
+
+a. Identify the population
+b. Define the parameter of interest.
+c. Define the random variable of interest.
+e. Construct a 95\% confidence interval for the true proportion of CA residents that speak Spanish.
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+:::
+:::
+:::
+:::
+
+## Solutions {style="font-size:30px"}
+
+a. The population is the set of all California residents.
+
+b. The parameter of interest is $p$, the true proportion of CA residents that speak Spanish.
+
+c. The random variable of interest is $\widehat{P}$, the proportion of people in a representative sample of 120 CA residents that speak spanish.
+
+e. We check the success-failure conditions, with the substitution approximation:
+    - $n \widehat{p} = (120) \cdot \left( \frac{36}{120} \right) = 36 \ \checkmark$
+    - $n (1 - \widehat{p}) = (120) \cdot \left( \frac{84}{120} \right) = 84 \ \checkmark$
+    
+- Since these conditions are met, we can proceed in constructing our confidence interval as
+$$ 0.3 \pm 1.96 \cdot \sqrt{\frac{0.3 \cdot 0.7}{120}} = \boxed{[0.218 \ , \ 0.382]} $$
+
+
+
+
+
+
+
+## Warm Up {style="font-size:30px"}
+:::{.fragment}
+::: callout-tip
+## Warm Up # 2
+
+:::{.nonincremental}
+::: {style="font-size: 28px"}
+Administration within a Statistics department at an unnamed university claims to admit 24\% of all applicants. A disgruntled student, dubious of the administration's claims, takes a representative sample of 120 students who applied to the Statistics major, and found that 20\% of these students were actually admitted into the major. \
+
+Conduct a two-sided hypothesis test at a 5\% level of significance on the administrator's claims that 24\% of applicants into the Statistics major are admitted. Be sure you phrase your conclusion clearly, and in the context of the problem.
+
+
+```{r}
+countdown::countdown(
+  minutes = 2,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+:::
+:::
+:::
+:::
+
+## Solutions {style="font-size:30px"}
+
+- We first phrase the hypotheses.
+
+- Let $p$ denote the true proportion of applicants who get admitted into the major. Since we are performing a two-sided test, our hypotheses take the form
+$$ \left[ \begin{array}{rr}
+  H_0:    p = 0.24    \\
+  H_A:    p \neq 0.24
+\end{array} \right.$$
+
+- Now we compute the observed value of the test statistic:
+$$ \mathrm{ts} = \frac{\widehat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}} = \frac{0.2 - 0.24}{\sqrt{\frac{(0.24) \cdot (1 - 0.24)}{120}}} \approx -1.026 $$
+
+- Next, we compute the critical value. Since we are using an $\alpha = 0.05$ level of significance, we will use the critical value $1.96$
+
+## Solutions {style="font-size:30px"}
+
+- Finally, we perform the test: we will reject the null in favor of the alternative if $|\mathrm{ts}|$ is larger than the critical value.
+
+- In this case, $|\mathrm{ts}| = |-1.026| = 1.026 < 1.96$ meaning we fail to reject the null:
+
+- We can also solve this using a p value! $$\mathbb{P}(TS \leq -1.026) = .1539$$. We will reject the null if  $$p\ value < \alpha$$. 
+
+- Since we are using a two sided alternative test, our p value = 2 * .1539 = .3078. .3078 > .05, so once again we fail to reject the null. 
+
+:::{.fragment}
+> At an $\alpha = 0.05$ level of significance, there was insufficient evidence to reject the null hypothesis that 24\% of applicants are admitted into the major in favor of the alternative that the true admittance rate was *not* 24\%.
+:::
+
+
+
+
 ## Paired Data
 
 - Data are **paired** when each observation in one data set corresponds to exactly one observation in the other data set. This can happen when there are two measurements on each individual in the sample or when there is a natural pairing between the samples (e.g., siblings, spouses, days of the week).
@@ -73,13 +204,12 @@ where $\sigma_d$ is the standard deviation of the population of differences and 
 
 - As soon as we estimate the population standard deviation $\sigma_d$ with the sample standard deviation $s_d$, we need to switch from the standard normal N(0, 1) distribution to a $t$ distribution.
 
-- The sample mean of the differences $\bar{x}_d$ can be modeled using a $t$ distribution and the estimated standard error $\frac{s_d}{\sqrt{n}}$ when each sample mean can itself be modeled using a $t$ distribution with $n − 1$ degrees of freedom.
 
 ## Hypothesis Test for $\mu_d$
 
 Based on a sample of $n$ independent differences from a nearly normal distribution, the test statistic is
 
-$$t = \frac{\bar{x}_d -\mu_0}{\frac{s_d}{\sqrt{n}}}$$
+$$ts = \frac{\bar{x}_d -\mu_0}{\frac{s_d}{\sqrt{n}}}$$
 where $\bar{x}_d$ is the sample mean of the differences, $s_d$ is the sample standard deviation of the differences, $n$ is the sample size (number of pairs), and $\mu_0$ corresponds to the null value of the population mean of the differences, $\mu_d$.
 
 We use the $t$ distribution with $n-1$ degrees of freedom to calculate our p-values. 
@@ -145,7 +275,7 @@ This is paired data so we want to check
 
 :::{.fragment}
 
-$$TS = \frac{\bar{x}_d -\mu_0}{\frac{s_d}{\sqrt{n}}} = \frac{11.727 - 0}{\frac{17.3869}{\sqrt{50}}} = 4.77$$
+$$ts = \frac{\bar{x}_d -\mu_0}{\frac{s_d}{\sqrt{n}}} = \frac{11.727 - 0}{\frac{17.3869}{\sqrt{50}}} = 4.77$$
 
 For one-tail test with $\alpha = 0.05$ and $df = 50-1 = 49$, the critical value $t_{0.05, 49} = 1.68$. 
 :::
@@ -156,7 +286,7 @@ For one-tail test with $\alpha = 0.05$ and $df = 50-1 = 49$, the critical value 
 
 :::{.fragment}
 Since this is an upper tail test, we want 
-$$TS > t$$
+$$TS > t_{.05,49}$$
 $$4.77 > 1.68$$
 Therefore, we have enough evidence to reject the null hypothesis.
 :::

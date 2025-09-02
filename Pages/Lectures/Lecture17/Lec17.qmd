@@ -270,9 +270,6 @@ $$ \texttt{y} = f(\texttt{x}) + \texttt{noise} $$
 
 - As an illustration of a classic classification problem, suppose we have access to a roster of passengers on the *Titanic*.
 
-    - For those who don't know, the RMS *Titanic* was a British passenger line that crahsed into an iceberg on April 15, 1912. 
-    
-- Tragically, not all passengers survived.
 
 - One question we may want to ask is: how did various factors (e.g. class, gender, etc.) affect whether or not a given passenger survived?
 

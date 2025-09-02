@@ -1481,7 +1481,7 @@
     "href": "Pages/Lectures/Lecture17/Lec17.html#classification-problem",
     "title": "PSTAT 5A: Lecture 17",
     "section": "Classification Problem",
-    "text": "Classification Problem\n\nAs an illustration of a classic classification problem, suppose we have access to a roster of passengers on the Titanic.\n\nFor those who don’t know, the RMS Titanic was a British passenger line that crahsed into an iceberg on April 15, 1912.\n\nTragically, not all passengers survived.\nOne question we may want to ask is: how did various factors (e.g. class, gender, etc.) affect whether or not a given passenger survived?\n\nFor instance, since women and children boarded lifeboats first, it may be plausible surmise that women and children had a higher likelihood of surviving."
+    "text": "Classification Problem\n\nAs an illustration of a classic classification problem, suppose we have access to a roster of passengers on the Titanic.\nOne question we may want to ask is: how did various factors (e.g. class, gender, etc.) affect whether or not a given passenger survived?\n\nFor instance, since women and children boarded lifeboats first, it may be plausible surmise that women and children had a higher likelihood of surviving."
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#classification-problem-1",
@@ -3749,14 +3749,14 @@
     "href": "Pages/Lectures/Lecture16/Lec16.html#sampling-distribution-of-the-sample-mean-of-the-differences-barx_d-2",
     "title": "PSTAT 5A: Lecture 16",
     "section": "Sampling Distribution of the Sample Mean of the Differences \\(\\bar{x}_d\\)",
-    "text": "Sampling Distribution of the Sample Mean of the Differences \\(\\bar{x}_d\\)\n\nSince we do not usually know the population standard deviation of the differences \\(\\sigma_d\\), we estimate it with the sample standard deviation of the differences \\(s_d\\).\nAs soon as we estimate the population standard deviation \\(\\sigma_d\\) with the sample standard deviation \\(s_d\\), we need to switch from the standard normal N(0, 1) distribution to a \\(t\\) distribution.\nThe sample mean of the differences \\(\\bar{x}_d\\) can be modeled using a \\(t\\) distribution and the estimated standard error \\(\\frac{s_d}{\\sqrt{n}}\\) when each sample mean can itself be modeled using a \\(t\\) distribution with \\(n − 1\\) degrees of freedom."
+    "text": "Sampling Distribution of the Sample Mean of the Differences \\(\\bar{x}_d\\)\n\nSince we do not usually know the population standard deviation of the differences \\(\\sigma_d\\), we estimate it with the sample standard deviation of the differences \\(s_d\\).\nAs soon as we estimate the population standard deviation \\(\\sigma_d\\) with the sample standard deviation \\(s_d\\), we need to switch from the standard normal N(0, 1) distribution to a \\(t\\) distribution."
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#hypothesis-test-for-mu_d",
     "href": "Pages/Lectures/Lecture16/Lec16.html#hypothesis-test-for-mu_d",
     "title": "PSTAT 5A: Lecture 16",
     "section": "Hypothesis Test for \\(\\mu_d\\)",
-    "text": "Hypothesis Test for \\(\\mu_d\\)\nBased on a sample of \\(n\\) independent differences from a nearly normal distribution, the test statistic is\n\\[t = \\frac{\\bar{x}_d -\\mu_0}{\\frac{s_d}{\\sqrt{n}}}\\] where \\(\\bar{x}_d\\) is the sample mean of the differences, \\(s_d\\) is the sample standard deviation of the differences, \\(n\\) is the sample size (number of pairs), and \\(\\mu_0\\) corresponds to the null value of the population mean of the differences, \\(\\mu_d\\).\nWe use the \\(t\\) distribution with \\(n-1\\) degrees of freedom to calculate our p-values."
+    "text": "Hypothesis Test for \\(\\mu_d\\)\nBased on a sample of \\(n\\) independent differences from a nearly normal distribution, the test statistic is\n\\[ts = \\frac{\\bar{x}_d -\\mu_0}{\\frac{s_d}{\\sqrt{n}}}\\] where \\(\\bar{x}_d\\) is the sample mean of the differences, \\(s_d\\) is the sample standard deviation of the differences, \\(n\\) is the sample size (number of pairs), and \\(\\mu_0\\) corresponds to the null value of the population mean of the differences, \\(\\mu_d\\).\nWe use the \\(t\\) distribution with \\(n-1\\) degrees of freedom to calculate our p-values."
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#confidence-interval-for-mu_d",
@@ -3784,14 +3784,14 @@
     "href": "Pages/Lectures/Lecture16/Lec16.html#solution-1",
     "title": "PSTAT 5A: Lecture 16",
     "section": "Solution",
-    "text": "Solution\n\nStep 3: Calculate test statistic and critical value\n\n\n\\[TS = \\frac{\\bar{x}_d -\\mu_0}{\\frac{s_d}{\\sqrt{n}}} = \\frac{11.727 - 0}{\\frac{17.3869}{\\sqrt{50}}} = 4.77\\]\nFor one-tail test with \\(\\alpha = 0.05\\) and \\(df = 50-1 = 49\\), the critical value \\(t_{0.05, 49} = 1.68\\)."
+    "text": "Solution\n\nStep 3: Calculate test statistic and critical value\n\n\n\\[ts = \\frac{\\bar{x}_d -\\mu_0}{\\frac{s_d}{\\sqrt{n}}} = \\frac{11.727 - 0}{\\frac{17.3869}{\\sqrt{50}}} = 4.77\\]\nFor one-tail test with \\(\\alpha = 0.05\\) and \\(df = 50-1 = 49\\), the critical value \\(t_{0.05, 49} = 1.68\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#solution-2",
     "href": "Pages/Lectures/Lecture16/Lec16.html#solution-2",
     "title": "PSTAT 5A: Lecture 16",
     "section": "Solution",
-    "text": "Solution\n\nStep 4: Decision\n\n\nSince this is an upper tail test, we want \\[TS &gt; t\\] \\[4.77 &gt; 1.68\\] Therefore, we have enough evidence to reject the null hypothesis."
+    "text": "Solution\n\nStep 4: Decision\n\n\nSince this is an upper tail test, we want \\[TS &gt; t_{.05,49}\\] \\[4.77 &gt; 1.68\\] Therefore, we have enough evidence to reject the null hypothesis."
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#solution-3",
@@ -5289,7 +5289,7 @@
     "href": "Pages/Lectures/Lecture16/Lec16.html#solutions",
     "title": "PSTAT 5A: Lecture 16",
     "section": "Solutions",
-    "text": "Solutions\n\nStep 1: Write hypotheses\n\n\nSince the company is interested in if exercise break will improve job satisfaction, we can formulate the hypotheses as\n\n\n\\[H_0: \\mu_d = 0\\] \\[H_A: \\mu_d &gt; 0\\]"
+    "text": "Solutions\n\nThe population is the set of all California residents.\nThe parameter of interest is \\(p\\), the true proportion of CA residents that speak Spanish.\nThe random variable of interest is \\(\\widehat{P}\\), the proportion of people in a representative sample of 120 CA residents that speak spanish.\nWe check the success-failure conditions, with the substitution approximation:\n\n\\(n \\widehat{p} = (120) \\cdot \\left( \\frac{36}{120} \\right) = 36 \\ \\checkmark\\)\n\\(n (1 - \\widehat{p}) = (120) \\cdot \\left( \\frac{84}{120} \\right) = 84 \\ \\checkmark\\)\n\n\n\nSince these conditions are met, we can proceed in constructing our confidence interval as \\[ 0.3 \\pm 1.96 \\cdot \\sqrt{\\frac{0.3 \\cdot 0.7}{120}} = \\boxed{[0.218 \\ , \\ 0.382]} \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#worked-out-example",
@@ -5297,5 +5297,61 @@
     "title": "PSTAT 5A: Lecture 16",
     "section": "Worked-Out Example",
     "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nA company institutes an exercise break for its workers to see if this will improve job satisfaction, as measured by a questionnaire that assesses workers’ satisfaction. A random sample of 50 workers was taken. Each worker was given the questionnaire twice: once prior to the implementation of the exercise break; a second time after the implementation of the exercise break. The differences in job satisfaction (satisfaction after implementation of the exercise program minus satisfaction before implementation of the exercise program) were calculated, and the mean of the difference is calculated to be 11.727 and standard deviation of 17.3869."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#reminders",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#reminders",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Reminders",
+    "text": "Reminders\n\nQuiz 4 today!!\nExtra credit Homework released on Friday and due next Wednesday\nExam next Thursday! Need calculator and Access Card"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#warm--up",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#warm--up",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Warm- Up",
+    "text": "Warm- Up"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#warm-up",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#warm-up",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Warm up",
+    "text": "Warm up\n\n\n\n\n\n\n\nWarm Up #1\n\n\n\n\nMelanie would like to construct a 95% confidence interval for the true proportion of California Residents that speak Spanish. To that end, she took a representative sample of 120 CA residents and found that 36 of these residents speak Spanish.\n\nIdentify the population\nDefine the parameter of interest.\nDefine the random variable of interest.\nConstruct a 95% confidence interval for the true proportion of CA residents that speak Spanish.\n\n\n\n\n−+\n03:00"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-1",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-1",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nWe first phrase the hypotheses.\nLet \\(p\\) denote the true proportion of applicants who get admitted into the major. Since we are performing a two-sided test, our hypotheses take the form \\[ \\left[ \\begin{array}{rr}\nH_0:    p = 0.24    \\\\\nH_A:    p \\neq 0.24\n\\end{array} \\right.\\]\nNow we compute the observed value of the test statistic: \\[ \\mathrm{ts} = \\frac{\\widehat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}} = \\frac{0.2 - 0.24}{\\sqrt{\\frac{(0.24) \\cdot (1 - 0.24)}{120}}} \\approx -1.026 \\]\nNext, we compute the critical value. Since we are using an \\(\\alpha = 0.05\\) level of significance, we will use the critical value \\(1.96\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-2",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-2",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nFinally, we perform the test: we will reject the null in favor of the alternative if \\(|\\mathrm{ts}|\\) is larger than the critical value.\nIn this case, \\(|\\mathrm{ts}| = |-1.026| = 1.026 &lt; 1.96\\) meaning we fail to reject the null:\nWe can also solve this using a p value! \\[\\mathbb{P}(TS \\leq -1.026) = .1539\\]. We will reject the null if \\[p\\ value &lt; \\alpha\\].\nSince we are using a two sided alternative test, our p value = 2 * .1539 = .3078. .3078 &gt; .05, so once again we fail to reject the null.\n\n\n\nAt an \\(\\alpha = 0.05\\) level of significance, there was insufficient evidence to reject the null hypothesis that 24% of applicants are admitted into the major in favor of the alternative that the true admittance rate was not 24%."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#worked-out-example-1",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#worked-out-example-1",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nA company institutes an exercise break for its workers to see if this will improve job satisfaction, as measured by a questionnaire that assesses workers’ satisfaction. A random sample of 50 workers was taken. Each worker was given the questionnaire twice: once prior to the implementation of the exercise break; a second time after the implementation of the exercise break. The differences in job satisfaction (satisfaction after implementation of the exercise program minus satisfaction before implementation of the exercise program) were calculated, and the mean of the difference is calculated to be 11.727 and standard deviation of 17.3869."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-3",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-3",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nStep 1: Write hypotheses\n\n\nSince the company is interested in if exercise break will improve job satisfaction, we can formulate the hypotheses as\n\n\n\\[H_0: \\mu_d = 0\\] \\[H_A: \\mu_d &gt; 0\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#warm-up-2",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#warm-up-2",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Warm Up",
+    "text": "Warm Up\n\n\n\n\n\n\n\nWarm Up # 2\n\n\n\n\nAdministration within a Statistics department at an unnamed university claims to admit 24% of all applicants. A disgruntled student, dubious of the administration’s claims, takes a representative sample of 120 students who applied to the Statistics major, and found that 20% of these students were actually admitted into the major.\n\nConduct a two-sided hypothesis test at a 5% level of significance on the administrator’s claims that 24% of applicants into the Statistics major are admitted. Be sure you phrase your conclusion clearly, and in the context of the problem.\n\n\n\n−+\n02:00"
   }
 ]
