@@ -3728,7 +3728,7 @@
     "href": "Pages/Lectures/Lecture16/Lec16.html#paired-data-procedures",
     "title": "PSTAT 5A: Lecture 16",
     "section": "Paired Data Procedures",
-    "text": "Paired Data Procedures\nOnce we compute the set of differences, we use our one-sample methods for inference. Our notation changes to indicate that we are working with differences.\n\nOur parameter of interest is \\(\\mu_d\\), the populatioon mean of the differences.\nThe point estimate for \\(\\mu_d\\) is \\(\\bar{x}_d\\), the sample mean of the differences."
+    "text": "Paired Data Procedures\nOnce we compute the set of differences, we use our one-sample methods for inference. Our notation changes to indicate that we are working with differences.\n\nOur parameter of interest is \\(\\mu_d\\), the population mean of the differences.\nThe point estimate for \\(\\mu_d\\) is \\(\\bar{x}_d\\), the sample mean of the differences."
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#sampling-distribution-of-the-sample-mean-of-the-differences-barx_d",
@@ -3763,7 +3763,7 @@
     "href": "Pages/Lectures/Lecture16/Lec16.html#confidence-interval-for-mu_d",
     "title": "PSTAT 5A: Lecture 16",
     "section": "Confidence Interval for \\(\\mu_d\\)",
-    "text": "Confidence Interval for \\(\\mu_d\\)\nBased on a sample of \\(n\\) independent differences from a nearly normal distributioon, a confidence interval for the population mean of the differences \\(\\mu_d\\) is\n\\[\\bar{x}_d \\pm t^* \\frac{s_d}{\\sqrt{n}}\\]\nwhere \\(\\bar{x}_d\\) is the sample mean of the differences, \\(s_d\\) is the sample standard deviation of the differences, n is the sample size, and \\(t^*\\) corresponds to the confidence level and n-1 degrees of freedom."
+    "text": "Confidence Interval for \\(\\mu_d\\)\nBased on a sample of \\(n\\) independent differences from a nearly normal distribution, a confidence interval for the population mean of the differences \\(\\mu_d\\) is\n\\[\\bar{x}_d \\pm t^* \\frac{s_d}{\\sqrt{n}}\\]\nwhere \\(\\bar{x}_d\\) is the sample mean of the differences, \\(s_d\\) is the sample standard deviation of the differences, n is the sample size, and \\(t^*\\) corresponds to the confidence level and n-1 degrees of freedom."
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#example-1",
@@ -3777,28 +3777,28 @@
     "href": "Pages/Lectures/Lecture16/Lec16.html#solution",
     "title": "PSTAT 5A: Lecture 16",
     "section": "Solution",
-    "text": "Solution\n\nStep 1: Write hypotheses\n\n\nSince the company is interested in if exercise break will improve job satisfaction, we can formulate the hypotheses as\n\n\\[H_0: \\mu_d = 0\\] \\[H_A: \\mu_d &gt; 0\\]"
+    "text": "Solution\n\nStep 2: Check conditions\n\n\nThis is paired data so we want to check\n\n\nIndependence: Since the data comes from a random sample of workers, we can assume the independence condition is met.\nNormality: The population of differences is normally distributed. Suppose this is the histogram of job satisfaction differences:"
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#solution-1",
     "href": "Pages/Lectures/Lecture16/Lec16.html#solution-1",
     "title": "PSTAT 5A: Lecture 16",
     "section": "Solution",
-    "text": "Solution\n\nStep 2: Check conditions\n\nThis is paired data so we want to check\n\nSince the data comes from a random sample of workers, we can assume the independence condition is met.\nThe population of differences is normally distributed. Suppose this is the histogram of job satisfaction differences:"
+    "text": "Solution\n\nStep 3: Calculate test statistic and critical value\n\n\n\\[TS = \\frac{\\bar{x}_d -\\mu_0}{\\frac{s_d}{\\sqrt{n}}} = \\frac{11.727 - 0}{\\frac{17.3869}{\\sqrt{50}}} = 4.77\\]\nFor one-tail test with \\(\\alpha = 0.05\\) and \\(df = 50-1 = 49\\), the critical value \\(t_{0.05, 49} = 1.68\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#solution-2",
     "href": "Pages/Lectures/Lecture16/Lec16.html#solution-2",
     "title": "PSTAT 5A: Lecture 16",
     "section": "Solution",
-    "text": "Solution\n\nStep 3: Calculate test statistic and critical value\n\n\\[TS = \\frac{\\bar{x}_d -\\mu_0}{\\frac{s_d}{\\sqrt{n}}} = \\frac{11.727 - 0}{\\frac{17.3869}{\\sqrt{50}}} = 4.77\\]\nFor one-tail test with \\(\\alpha = 0.05\\) and \\(df = 50-1 = 49\\), the critical value \\(t_{0.05, 49} = 1.68\\)."
+    "text": "Solution\n\nStep 4: Decision\n\n\nSince this is an upper tail test, we want \\[TS &gt; t\\] \\[4.77 &gt; 1.68\\] Therefore, we have enough evidence to reject the null hypothesis."
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#solution-3",
     "href": "Pages/Lectures/Lecture16/Lec16.html#solution-3",
     "title": "PSTAT 5A: Lecture 16",
     "section": "Solution",
-    "text": "Solution\n\nStep 4: Decision\n\nSince this is an upper tail test, we want \\[TS &gt; t\\] \\[4.77 &gt; 1.68\\] Therefore, we have enough evidence to reject the null hypothesis.\n\nStep 5: Write a conclusion\n\nAt the \\(\\alpha = 0.05\\) significance level, we have enough evidence to reject the claim that mean difference in job satisfaction before and after implementing exercise break is the same. This data suggests that the mean difference in job satisfaction after implementing exercise break is greater than that before."
+    "text": "Solution\n\nStep 5: Write a conclusion\n\n\nAt the \\(\\alpha = 0.05\\) significance level, we have enough evidence to reject the claim that mean difference in job satisfaction before and after implementing exercise break is the same. This data suggests that the mean difference in job satisfaction after implementing exercise break is greater than that before."
   },
   {
     "objectID": "Pages/Lectures/Lecture10/Lec10.html#last-time",
@@ -5283,5 +5283,19 @@
     "title": "PSTAT 5A: Understanding Data",
     "section": "Week 6 (9/08 - 9/11)",
     "text": "Week 6 (9/08 - 9/11)\n\n\nLectures\n19: Regression Diagnostics, and  Sampling Procedures 20: Ways Statistics Can Deceive 21: Review FINAL EXAM: Thursday, Sept 11 during lecture\n\n\nDiscussion\nQ&A with TA\n\n\nLab\nLab 06"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nStep 1: Write hypotheses\n\n\nSince the company is interested in if exercise break will improve job satisfaction, we can formulate the hypotheses as\n\n\n\\[H_0: \\mu_d = 0\\] \\[H_A: \\mu_d &gt; 0\\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#worked-out-example",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#worked-out-example",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nA company institutes an exercise break for its workers to see if this will improve job satisfaction, as measured by a questionnaire that assesses workers’ satisfaction. A random sample of 50 workers was taken. Each worker was given the questionnaire twice: once prior to the implementation of the exercise break; a second time after the implementation of the exercise break. The differences in job satisfaction (satisfaction after implementation of the exercise program minus satisfaction before implementation of the exercise program) were calculated, and the mean of the difference is calculated to be 11.727 and standard deviation of 17.3869."
   }
 ]

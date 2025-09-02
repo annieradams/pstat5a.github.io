@@ -46,7 +46,7 @@ library(ggthemes)
 
 Once we compute the set of differences, we use our one-sample methods for inference. Our notation changes to indicate that we are working with differences.
 
-- Our parameter of interest is $\mu_d$, the populatioon mean of the differences.
+- Our parameter of interest is $\mu_d$, the population mean of the differences.
 
 - The point estimate for $\mu_d$ is $\bar{x}_d$, the sample mean of the differences.
 
@@ -86,37 +86,56 @@ We use the $t$ distribution with $n-1$ degrees of freedom to calculate our p-val
 
 ## Confidence Interval for $\mu_d$
 
-Based on a sample of $n$ independent differences from a nearly normal distributioon, a confidence interval for the population mean of the differences $\mu_d$ is 
+Based on a sample of $n$ independent differences from a nearly normal distribution, a confidence interval for the population mean of the differences $\mu_d$ is 
 
 $$\bar{x}_d \pm t^* \frac{s_d}{\sqrt{n}}$$
 
 where $\bar{x}_d$ is the sample mean of the differences, $s_d$ is the sample standard deviation of the differences, n is the sample size, and $t^*$ corresponds to the confidence level and n-1 degrees of freedom. 
 
-## Example
+## Worked-Out Example {style="font-size:32px"}
+
+:::{.fragment}
+::: callout-tip
+## Worked-Out Example 1
+
+:::{.nonincremental}
+::: {style="font-size: 28px"}
 
 A company institutes an exercise break for its workers to see if this will *improve* job satisfaction, as measured by a questionnaire that assesses workers’ satisfaction. A random sample of 50 workers was taken. Each worker was given the questionnaire twice: once prior to the implementation of the exercise break; a second time after the implementation of the exercise break. The differences in job satisfaction (satisfaction after implementation of the exercise program minus satisfaction before implementation of the exercise program) were calculated, and the mean of the difference is calculated to be 11.727 and standard deviation of 17.3869.
 
-## Solution {style="font-size:30px"}
+:::
+:::
+:::
+:::
+
+
+## Solutions {style="font-size:30px"}
 
 1. Step 1: Write hypotheses
 
 - Since the company is interested in if exercise break will *improve* job satisfaction, we can formulate the hypotheses as
 
+:::{.fragment}
 $$H_0: \mu_d = 0$$
 $$H_A: \mu_d > 0$$
+:::
 
 ## Solution {style="font-size:30px"}
 
 2. Step 2: Check conditions
 
-
+:::{.fragment}
 This is paired data so we want to check
+:::
 
-a. Since the data comes from a random sample of workers, we can assume the independence condition is met. 
 
-b. The population of differences is normally distributed. Suppose this is the histogram of job satisfaction differences:
+1. Independence:  Since the data comes from a random sample of workers, we can assume the independence condition is met. 
 
+2. Normality:  The population of differences is normally distributed. Suppose this is the histogram of job satisfaction differences:
+
+:::{.fragment}
 ![](lec19ex.png)
+:::
 
 
 
@@ -124,20 +143,29 @@ b. The population of differences is normally distributed. Suppose this is the hi
 
 3. Step 3: Calculate test statistic and critical value
 
+:::{.fragment}
+
 $$TS = \frac{\bar{x}_d -\mu_0}{\frac{s_d}{\sqrt{n}}} = \frac{11.727 - 0}{\frac{17.3869}{\sqrt{50}}} = 4.77$$
 
 For one-tail test with $\alpha = 0.05$ and $df = 50-1 = 49$, the critical value $t_{0.05, 49} = 1.68$. 
+:::
 
 ## Solution {style="font-size:30px"}
 
 4. Step 4: Decision
 
+:::{.fragment}
 Since this is an upper tail test, we want 
 $$TS > t$$
 $$4.77 > 1.68$$
 Therefore, we have enough evidence to reject the null hypothesis.
+:::
+
+
+## Solution {style="font-size:30px"}
 
 5. Step 5: Write a conclusion
 
+:::{.fragment}
 At the $\alpha = 0.05$ significance level, we have enough evidence to reject the claim that mean difference in job satisfaction before and after implementing exercise break is the same. This data suggests that the mean difference in job satisfaction after implementing exercise break is greater than that before. 
-
+:::
