@@ -515,6 +515,24 @@ Compute the correlation between the following two sets of numbers:
   \boldsymbol{x}    & = \{-1, \ 0, \ 1\}    \\
   \boldsymbol{y}    & = \{1, \ 2, \ 0\}
 \end{align*}
+
+
+```{r}
+countdown::countdown(
+  minutes = 4,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
 :::
 :::
 :::
