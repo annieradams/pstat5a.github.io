@@ -3609,7 +3609,7 @@
     "href": "Pages/Lectures/Lecture18/Lec18.html#confidence-intervals-for-beta_1",
     "title": "PSTAT 5A: Lecture 18",
     "section": "Confidence Intervals for \\(\\beta_1\\)",
-    "text": "Confidence Intervals for \\(\\beta_1\\)\n\nRecall that (at least in the confines of this course), given a parameter \\(\\theta\\) and an estimator \\(\\widehat{\\theta}\\) of \\(\\theta\\), we construct a confidence interval for \\(\\theta\\) as \\[ \\widehat{\\theta} \\pm t^* \\cdot \\mathrm{SD}(\\widehat{\\theta}) \\] where \\(c\\) is a constant that depends on both the sampling distribution of \\(\\widehat{\\theta}\\) along with the confidence level.\nThis means we can construct a confidence interval for \\(\\beta_1\\) using \\[ \\widehat{\\beta}_1 \\pm c \\cdot \\mathrm{SD}(\\widehat{\\beta}_1) \\] where \\(\\widehat{\\beta}_1\\) is the OLS estimator of \\(\\beta_1\\)."
+    "text": "Confidence Intervals for \\(\\beta_1\\)\n\nRecall that (at least in the confines of this course), given a parameter \\(\\theta\\) and an estimator \\(\\widehat{\\theta}\\) of \\(\\theta\\), we construct a confidence interval for \\(\\theta\\) as \\[ \\widehat{\\theta} \\pm c \\cdot \\mathrm{SD}(\\widehat{\\theta}) \\] where \\(c\\) is a constant that depends on both the sampling distribution of \\(\\widehat{\\theta}\\) along with the confidence level.\nThis means we can construct a confidence interval for \\(\\beta_1\\) using \\[ \\widehat{\\beta}_1 \\pm t^* \\cdot \\mathrm{SD}(\\widehat{\\beta}_1) \\] where \\(\\widehat{\\beta}_1\\) is the OLS estimator of \\(\\beta_1\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#confidence-intervals-for-beta_1-1",
