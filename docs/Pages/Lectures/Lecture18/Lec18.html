@@ -578,7 +578,7 @@
 <section id="confidence-intervals-for-beta_1" class="slide level2">
 <h2>Confidence Intervals for <span class="math inline">\(\beta_1\)</span></h2>
 <ul>
-<li class="fragment"><p>Recall that (at least in the confines of this course), given a parameter <span class="math inline">\(\theta\)</span> and an estimator <span class="math inline">\(\widehat{\theta}\)</span> of <span class="math inline">\(\theta\)</span>, we construct a confidence interval for <span class="math inline">\(\theta\)</span> as <span class="math display">\[ \widehat{\theta} \pm c \cdot \mathrm{SD}(\widehat{\theta}) \]</span> where <span class="math inline">\(c\)</span> is a constant that depends on both the sampling distribution of <span class="math inline">\(\widehat{\theta}\)</span> along with the confidence level.</p></li>
+<li class="fragment"><p>Recall that (at least in the confines of this course), given a parameter <span class="math inline">\(\theta\)</span> and an estimator <span class="math inline">\(\widehat{\theta}\)</span> of <span class="math inline">\(\theta\)</span>, we construct a confidence interval for <span class="math inline">\(\theta\)</span> as <span class="math display">\[ \widehat{\theta} \pm t^* \cdot \mathrm{SD}(\widehat{\theta}) \]</span> where <span class="math inline">\(c\)</span> is a constant that depends on both the sampling distribution of <span class="math inline">\(\widehat{\theta}\)</span> along with the confidence level.</p></li>
 <li class="fragment"><p>This means we can construct a confidence interval for <span class="math inline">\(\beta_1\)</span> using <span class="math display">\[ \widehat{\beta}_1 \pm c \cdot \mathrm{SD}(\widehat{\beta}_1) \]</span> where <span class="math inline">\(\widehat{\beta}_1\)</span> is the OLS estimator of <span class="math inline">\(\beta_1\)</span>.</p></li>
 </ul>
 </section>
@@ -772,7 +772,7 @@ H_A:    &amp; \beta_1 \neq 0
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: right;"><code>x</code></th>
+<th style="text-align: right;"><code>x (# of stores)</code></th>
 <th style="text-align: center;">0</th>
 <th style="text-align: center;">5</th>
 <th style="text-align: center;">6</th>
@@ -787,7 +787,7 @@ H_A:    &amp; \beta_1 \neq 0
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;"><code>y</code></td>
+<td style="text-align: right;"><code>y (DUI arrests)</code></td>
 <td style="text-align: center;">40</td>
 <td style="text-align: center;">50</td>
 <td style="text-align: center;">55</td>
@@ -810,7 +810,6 @@ H_A:    &amp; \beta_1 \neq 0
 <li>What is the response variable?</li>
 <li>Find the equation of the OLS regression line.</li>
 <li>If the standard deviation of <span class="math inline">\(\widehat{\beta}_1\)</span> is <span class="math inline">\(0.37\)</span>, construct a 95% confidence interval for <span class="math inline">\(\beta_1\)</span>.</li>
-<li>Is the slope significant? (Use the standard deviation from part (d) if necessary.)</li>
 </ol>
 </div>
 </div>

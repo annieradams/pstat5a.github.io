@@ -404,7 +404,7 @@ b. If a particular flight has a duration of 130 minutes, how many ounces of soda
 ## Confidence Intervals for $\beta_1$
 
 - Recall that (at least in the confines of this course), given a parameter $\theta$ and an estimator $\widehat{\theta}$ of $\theta$, we construct a confidence interval for $\theta$ as
-$$ \widehat{\theta} \pm c \cdot \mathrm{SD}(\widehat{\theta}) $$
+$$ \widehat{\theta} \pm t^* \cdot \mathrm{SD}(\widehat{\theta}) $$
 where $c$ is a constant that depends on both the sampling distribution of $\widehat{\theta}$ along with the confidence level.
 
 - This means we can construct a confidence interval for $\beta_1$ using
@@ -680,9 +680,9 @@ $$ \left[ \begin{array}{rl}
 ::: {style="font-size: 20px"}
 Ten towns were the subject of a study to determine whether or not an increased number of stores selling liquor in their downtown areas is linked with a higher number of DUI arrests downtown during one month. The data and summary information is provided below.
 
-| `x` | 0 | 5 | 6 | 5 | 11 | 9 | 10 | 3 | 7 | 4 |
+| `x (# of stores)` | 0 | 5 | 6 | 5 | 11 | 9 | 10 | 3 | 7 | 4 |
 |--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| `y` | 40 | 50 | 55 | 64 | 73 | 75 | 88 | 25 | 20 | 10 |
+| `y (DUI arrests)` | 40 | 50 | 55 | 64 | 73 | 75 | 88 | 25 | 20 | 10 |
 
 $$ \begin{array}{lll}
   \overline{x} = 6    & \displaystyle \sum_{i=1}^{10} (x_i - \overline{x})^2 = 102   \\
@@ -693,7 +693,6 @@ a. What is the explanatory variable?
 b. What is the response variable?
 c. Find the equation of the OLS regression line.
 d. If the standard deviation of $\widehat{\beta}_1$ is $0.37$, construct a 95\% confidence interval for $\beta_1$.
-e. Is the slope significant? (Use the standard deviation from part (d) if necessary.)
 
 :::
 :::
