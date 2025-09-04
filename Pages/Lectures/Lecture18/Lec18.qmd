@@ -413,7 +413,7 @@ where $\widehat{\beta}_1$ is the OLS estimator of $\beta_1$.
 
 ## Confidence Intervals for $\beta_1$
 
-- It turns out that finding $\mathrm{SD}(\widehat{\beta}_1)$ is fairly involved. As such, I won't expect you to compute it- you will be provided with its value for a given problem (see the practice problems for an example of what I mean).
+- It turns out that finding $\mathrm{SD}(\widehat{\beta}_1)$ is fairly involved. As such, I won't expect you to compute it- you will be provided with its value for a given problem.
 
 - We also need access to the sampling distribution of $\widehat{\beta}_1$. 
 
@@ -429,9 +429,16 @@ $$ \frac{\widehat{\beta}_1 - \beta_1}{\mathrm{SD}(\widehat{\beta_1})} \sim t_{n 
 ## Worked-Out Example 1
 
 :::{.nonincremental}
-::: {style="font-size: 28px"}
-Consider the same setup as Exercise 1. Suppose it is known that
-$$ \mathrm{Var}(\widehat{\beta}_1) \approx 0.006135 $$
+::: {style="font-size: 20px"}
+Consider the same setup as Exercise 1: An airline is interested in determining the relationship between flight duration (in minutes) and the net amount of soda consumed (in oz.). Letting `x` denote `flight duration` (the explanatory variable) and `y` denote `amount of soda consumed` (the response variable), a sample yielded the following results:
+$$ \begin{array}{cc}
+  \displaystyle \sum_{i=1}^{102} x_i  = 20,\!190.55;   & \displaystyle \sum_{i=1}^{102} (x_i - \overline{x})^2 =  101,\!865    \\
+  \displaystyle \sum_{i=1}^{102} y_i  = 166,\!907.8   & \displaystyle \sum_{i=1}^{102} (y_i - \overline{y})^2 =  120,\!794.2   \\
+ \displaystyle \sum_{i=1}^{100} (x_i - \overline{x})(y_i - \overline{y}) = 80,\!184.62 \\
+\end{array} $$. Suppose it is known that
+$$ \mathrm{Var}(\widehat{\beta}_1) \approx 0.006135$$
+Recall that we previously found  $\widehat{\beta}_1 \approx 0.7871656$. 
+
 Construct a 95\% confidence interval for $\beta_1$, the true amount of change in `y` (amount of soda consumed) associated with a one-unit change in `x` (flight duration)
 :::
 :::
@@ -623,7 +630,7 @@ where $c$ is the appropriately-selected quantile of the _t_~n-2~ distribution.
     
 ## Hypothesis Testing on $\beta_1$ {style="font-size:30px"}
 
-- Indeed, many computer softwares (and statistical papers!) report a table resembling the following after running a regression:
+- Many computer softwares (and statistical papers!) report a table resembling the following after running a regression:
 
 :::{.fragment}
 | | Estimate | Std. Error | _t_-value | Pr(>\|t\|) |
@@ -640,13 +647,6 @@ where $c$ is the appropriately-selected quantile of the _t_~n-2~ distribution.
     
 - The fourth column is the _p_-value in a two-sided test, testing whether or not the given parameter is actually zero or not.
 
-# Let's Play Around with Regression in Python
-
-## Task
-
-- Here's a task for you: write a function called `regtab()` that takes in two inputs, `x` and `y`, and returns a regression table resulting from regressing `y` on `x`.
-
-    - You can use the `scipy.stats.linregress()` function
     
     
 ## Some Exercises
@@ -677,7 +677,7 @@ $$ \left[ \begin{array}{rl}
 ## Exercise 3 (modified from *StatClass*)
 
 :::{.nonincremental}
-::: {style="font-size: 24px"}
+::: {style="font-size: 20px"}
 Ten towns were the subject of a study to determine whether or not an increased number of stores selling liquor in their downtown areas is linked with a higher number of DUI arrests downtown during one month. The data and summary information is provided below.
 
 | `x` | 0 | 5 | 6 | 5 | 11 | 9 | 10 | 3 | 7 | 4 |

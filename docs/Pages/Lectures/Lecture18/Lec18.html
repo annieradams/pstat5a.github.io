@@ -585,7 +585,7 @@
 <section id="confidence-intervals-for-beta_1-1" class="slide level2">
 <h2>Confidence Intervals for <span class="math inline">\(\beta_1\)</span></h2>
 <ul>
-<li class="fragment"><p>It turns out that finding <span class="math inline">\(\mathrm{SD}(\widehat{\beta}_1)\)</span> is fairly involved. As such, I won’t expect you to compute it- you will be provided with its value for a given problem (see the practice problems for an example of what I mean).</p></li>
+<li class="fragment"><p>It turns out that finding <span class="math inline">\(\mathrm{SD}(\widehat{\beta}_1)\)</span> is fairly involved. As such, I won’t expect you to compute it- you will be provided with its value for a given problem.</p></li>
 <li class="fragment"><p>We also need access to the sampling distribution of <span class="math inline">\(\widehat{\beta}_1\)</span>.</p></li>
 <li class="fragment"><p>Assuming both the <code>x-</code>observations and <code>y-</code>observations are roughly normal, then <span class="math display">\[ \frac{\widehat{\beta}_1 - \beta_1}{\mathrm{SD}(\widehat{\beta_1})} \sim t_{n - 2} \]</span></p></li>
 <li class="fragment"><p>This means our critical value should be the appropriately-selected quantiles of the <em>t</em><sub>n-2</sub> distribution.</p></li>
@@ -603,8 +603,13 @@
 </div>
 <div class="callout-content">
 <div>
-<div style="font-size: 28px">
-<p>Consider the same setup as Exercise 1. Suppose it is known that <span class="math display">\[ \mathrm{Var}(\widehat{\beta}_1) \approx 0.006135 \]</span> Construct a 95% confidence interval for <span class="math inline">\(\beta_1\)</span>, the true amount of change in <code>y</code> (amount of soda consumed) associated with a one-unit change in <code>x</code> (flight duration)</p>
+<div style="font-size: 20px">
+<p>Consider the same setup as Exercise 1: An airline is interested in determining the relationship between flight duration (in minutes) and the net amount of soda consumed (in oz.). Letting <code>x</code> denote <code>flight duration</code> (the explanatory variable) and <code>y</code> denote <code>amount of soda consumed</code> (the response variable), a sample yielded the following results: <span class="math display">\[ \begin{array}{cc}
+  \displaystyle \sum_{i=1}^{102} x_i  = 20,\!190.55;   &amp; \displaystyle \sum_{i=1}^{102} (x_i - \overline{x})^2 =  101,\!865    \\
+  \displaystyle \sum_{i=1}^{102} y_i  = 166,\!907.8   &amp; \displaystyle \sum_{i=1}^{102} (y_i - \overline{y})^2 =  120,\!794.2   \\
+\displaystyle \sum_{i=1}^{100} (x_i - \overline{x})(y_i - \overline{y}) = 80,\!184.62 \\
+\end{array} \]</span>. Suppose it is known that <span class="math display">\[ \mathrm{Var}(\widehat{\beta}_1) \approx 0.006135\]</span> Recall that we previously found <span class="math inline">\(\widehat{\beta}_1 \approx 0.7871656\)</span>.</p>
+<p>Construct a 95% confidence interval for <span class="math inline">\(\beta_1\)</span>, the true amount of change in <code>y</code> (amount of soda consumed) associated with a one-unit change in <code>x</code> (flight duration)</p>
 </div>
 </div>
 </div>
@@ -688,7 +693,7 @@ H_A:    &amp; \beta_1 \neq 0
 <section id="hypothesis-testing-on-beta_1-3" class="slide level2" style="font-size:30px">
 <h2>Hypothesis Testing on <span class="math inline">\(\beta_1\)</span></h2>
 <ul>
-<li class="fragment">Indeed, many computer softwares (and statistical papers!) report a table resembling the following after running a regression:</li>
+<li class="fragment">Many computer softwares (and statistical papers!) report a table resembling the following after running a regression:</li>
 </ul>
 <div class="fragment">
 <table>
@@ -724,20 +729,6 @@ H_A:    &amp; \beta_1 \neq 0
 <li class="fragment"><p>The second column is the standard error (i.e.&nbsp;standard deviation) of the estimator</p></li>
 <li class="fragment"><p>The third column is the test statistic (i.e.&nbsp;the first column divided by the second)</p></li>
 <li class="fragment"><p>The fourth column is the <em>p</em>-value in a two-sided test, testing whether or not the given parameter is actually zero or not.</p></li>
-</ul>
-</section>
-<section>
-<section id="lets-play-around-with-regression-in-python" class="title-slide slide level1 center">
-<h1>Let’s Play Around with Regression in Python</h1>
-
-</section>
-<section id="task" class="slide level2">
-<h2>Task</h2>
-<ul>
-<li class="fragment"><p>Here’s a task for you: write a function called <code>regtab()</code> that takes in two inputs, <code>x</code> and <code>y</code>, and returns a regression table resulting from regressing <code>y</code> on <code>x</code>.</p>
-<ul>
-<li class="fragment">You can use the <code>scipy.stats.linregress()</code> function</li>
-</ul></li>
 </ul>
 </section>
 <section id="some-exercises" class="slide level2">
@@ -776,7 +767,7 @@ H_A:    &amp; \beta_1 \neq 0
 </div>
 <div class="callout-content">
 <div>
-<div style="font-size: 24px">
+<div style="font-size: 20px">
 <p>Ten towns were the subject of a study to determine whether or not an increased number of stores selling liquor in their downtown areas is linked with a higher number of DUI arrests downtown during one month. The data and summary information is provided below.</p>
 <table>
 <thead>
@@ -831,7 +822,7 @@ H_A:    &amp; \beta_1 \neq 0
 <img src="5a_hex.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
