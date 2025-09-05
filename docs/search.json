@@ -2559,7 +2559,7 @@
     "href": "Pages/hw.html",
     "title": "PSTAT 5A: Understanding Data",
     "section": "",
-    "text": "Here you will find all homework assignments and their solutions. Please remember that solutions to homework will only be released after each respective homework assignment is due; we encourage you to come to Office Hours to ask any questions you may have about the assignments!\n\nHomework 1: Blank Solns\nHomework 2: Blank Solns\nHomework 3: Blank Solns\nHomework 4: Blank Solns\nHomework 5: Blank"
+    "text": "Here you will find all homework assignments and their solutions. Please remember that solutions to homework will only be released after each respective homework assignment is due; we encourage you to come to Office Hours to ask any questions you may have about the assignments!\n\nHomework 1: Blank Solns\nHomework 2: Blank Solns\nHomework 3: Blank Solns\nHomework 4: Blank Solns\nHomework 5: Blank \nHomework 6 (Extra Credit): Blank"
   },
   {
     "objectID": "Pages/exam_prep.html",
@@ -3689,13 +3689,6 @@
     "text": "Hypothesis Testing on \\(\\beta_1\\)\n\nMany computer softwares (and statistical papers!) report a table resembling the following after running a regression:\n\n\n\n\n\n\nEstimate\nStd. Error\nt-value\nPr(&gt;|t|)\n\n\n\n\nIntercept\n-2.588\n2.327\n-1.112\n0.269\n\n\nSlope\n-1.734\n0.222\n-7.811\n6.41e-12\n\n\n\n\n\nThe first column is the raw estimated value (i.e. \\(\\widehat{\\beta_0}\\) and \\(\\widehat{\\beta_1}\\), respectively)\nThe second column is the standard error (i.e. standard deviation) of the estimator\nThe third column is the test statistic (i.e. the first column divided by the second)\nThe fourth column is the p-value in a two-sided test, testing whether or not the given parameter is actually zero or not."
   },
   {
-    "objectID": "Pages/Lectures/Lecture18/Lec18.html#task",
-    "href": "Pages/Lectures/Lecture18/Lec18.html#task",
-    "title": "PSTAT 5A: Lecture 18",
-    "section": "Task",
-    "text": "Task\n\nHere’s a task for you: write a function called regtab() that takes in two inputs, x and y, and returns a regression table resulting from regressing y on x.\n\nYou can use the scipy.stats.linregress() function"
-  },
-  {
     "objectID": "Pages/Lectures/Lecture18/Lec18.html#some-exercises",
     "href": "Pages/Lectures/Lecture18/Lec18.html#some-exercises",
     "title": "PSTAT 5A: Lecture 18",
@@ -3708,6 +3701,48 @@
     "title": "PSTAT 5A: Lecture 18",
     "section": "Some Exercises",
     "text": "Some Exercises\n\n\n\n\n\n\nExercise 3 (modified from StatClass)\n\n\n\n\nTen towns were the subject of a study to determine whether or not an increased number of stores selling liquor in their downtown areas is linked with a higher number of DUI arrests downtown during one month. The data and summary information is provided below.\n\n\n\nx (# of stores)\n0\n5\n6\n5\n11\n9\n10\n3\n7\n4\n\n\n\n\ny (DUI arrests)\n40\n50\n55\n64\n73\n75\n88\n25\n20\n10\n\n\n\n\\[ \\begin{array}{lll}\n  \\overline{x} = 6    & \\displaystyle \\sum_{i=1}^{10} (x_i - \\overline{x})^2 = 102   \\\\\n  \\overline{y} = 50    & \\displaystyle \\sum_{i=1}^{10} (y_i - \\overline{y})^2 = 6,\\!024 & \\displaystyle \\sum_{i=1}^{10} (x_i - \\overline{x})(y_i - \\overline{y}) = 513\n\\end{array} \\]\n\nWhat is the explanatory variable?\nWhat is the response variable?\nFind the equation of the OLS regression line.\nIf the standard deviation of \\(\\widehat{\\beta}_1\\) is \\(0.37\\), construct a 95% confidence interval for \\(\\beta_1\\)."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#reminders",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#reminders",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Reminders",
+    "text": "Reminders\n\nQuiz 4 today!!\nExtra credit Homework released on Friday and due next Wednesday\nExam next Thursday! Need calculator and Access Card"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#warm-up",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#warm-up",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Warm up",
+    "text": "Warm up\n\n\n\n\n\n\n\nWarm Up #1\n\n\n\n\nMelanie would like to construct a 95% confidence interval for the true proportion of California Residents that speak Spanish. To that end, she took a representative sample of 120 CA residents and found that 36 of these residents speak Spanish.\n\nIdentify the population\nDefine the parameter of interest.\nDefine the random variable of interest.\nConstruct a 95% confidence interval for the true proportion of CA residents that speak Spanish.\n\n\n\n\n−+\n03:00"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nThe population is the set of all California residents.\nThe parameter of interest is \\(p\\), the true proportion of CA residents that speak Spanish.\nThe random variable of interest is \\(\\widehat{P}\\), the proportion of people in a representative sample of 120 CA residents that speak spanish.\nWe check the success-failure conditions, with the substitution approximation:\n\n\\(n \\widehat{p} = (120) \\cdot \\left( \\frac{36}{120} \\right) = 36 \\ \\checkmark\\)\n\\(n (1 - \\widehat{p}) = (120) \\cdot \\left( \\frac{84}{120} \\right) = 84 \\ \\checkmark\\)\n\n\n\nSince these conditions are met, we can proceed in constructing our confidence interval as \\[ 0.3 \\pm 1.96 \\cdot \\sqrt{\\frac{0.3 \\cdot 0.7}{120}} = \\boxed{[0.218 \\ , \\ 0.382]} \\]"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#warm-up-2",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#warm-up-2",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Warm Up",
+    "text": "Warm Up\n\n\n\n\n\n\n\nWarm Up # 2\n\n\n\n\nAdministration within a Statistics department at an unnamed university claims to admit 24% of all applicants. A disgruntled student, dubious of the administration’s claims, takes a representative sample of 120 students who applied to the Statistics major, and found that 20% of these students were actually admitted into the major.\n\nConduct a two-sided hypothesis test at a 5% level of significance on the administrator’s claims that 24% of applicants into the Statistics major are admitted. Be sure you phrase your conclusion clearly, and in the context of the problem.\n\n\n\n−+\n02:00"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-1",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-1",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nWe first phrase the hypotheses.\nLet \\(p\\) denote the true proportion of applicants who get admitted into the major. Since we are performing a two-sided test, our hypotheses take the form \\[ \\left[ \\begin{array}{rr}\nH_0:    p = 0.24    \\\\\nH_A:    p \\neq 0.24\n\\end{array} \\right.\\]\nNow we compute the observed value of the test statistic: \\[ \\mathrm{ts} = \\frac{\\widehat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}} = \\frac{0.2 - 0.24}{\\sqrt{\\frac{(0.24) \\cdot (1 - 0.24)}{120}}} \\approx -1.026 \\]\nNext, we compute the critical value. Since we are using an \\(\\alpha = 0.05\\) level of significance, we will use the critical value \\(1.96\\)"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-2",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-2",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nFinally, we perform the test: we will reject the null in favor of the alternative if \\(|\\mathrm{ts}|\\) is larger than the critical value.\nIn this case, \\(|\\mathrm{ts}| = |-1.026| = 1.026 &lt; 1.96\\) meaning we fail to reject the null:\nWe can also solve this using a p value! \\[\\mathbb{P}(TS \\leq -1.026) = .1539\\]. We will reject the null if \\[p\\ value &lt; \\alpha\\].\nSince we are using a two sided alternative test, our p value = 2 * .1539 = .3078. .3078 &gt; .05, so once again we fail to reject the null.\n\n\n\nAt an \\(\\alpha = 0.05\\) level of significance, there was insufficient evidence to reject the null hypothesis that 24% of applicants are admitted into the major in favor of the alternative that the true admittance rate was not 24%."
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#paired-data",
@@ -3766,11 +3801,18 @@
     "text": "Confidence Interval for \\(\\mu_d\\)\nBased on a sample of \\(n\\) independent differences from a nearly normal distribution, a confidence interval for the population mean of the differences \\(\\mu_d\\) is\n\\[\\bar{x}_d \\pm t^* \\frac{s_d}{\\sqrt{n}}\\]\nwhere \\(\\bar{x}_d\\) is the sample mean of the differences, \\(s_d\\) is the sample standard deviation of the differences, n is the sample size, and \\(t^*\\) corresponds to the confidence level and n-1 degrees of freedom."
   },
   {
-    "objectID": "Pages/Lectures/Lecture16/Lec16.html#example-1",
-    "href": "Pages/Lectures/Lecture16/Lec16.html#example-1",
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#worked-out-example",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#worked-out-example",
     "title": "PSTAT 5A: Lecture 16",
-    "section": "Example",
-    "text": "Example\nA company institutes an exercise break for its workers to see if this will improve job satisfaction, as measured by a questionnaire that assesses workers’ satisfaction. A random sample of 50 workers was taken. Each worker was given the questionnaire twice: once prior to the implementation of the exercise break; a second time after the implementation of the exercise break. The differences in job satisfaction (satisfaction after implementation of the exercise program minus satisfaction before implementation of the exercise program) were calculated, and the mean of the difference is calculated to be 11.727 and standard deviation of 17.3869."
+    "section": "Worked-Out Example",
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nA company institutes an exercise break for its workers to see if this will improve job satisfaction, as measured by a questionnaire that assesses workers’ satisfaction. A random sample of 50 workers was taken. Each worker was given the questionnaire twice: once prior to the implementation of the exercise break; a second time after the implementation of the exercise break. The differences in job satisfaction (satisfaction after implementation of the exercise program minus satisfaction before implementation of the exercise program) were calculated, and the mean of the difference is calculated to be 11.727 and standard deviation of 17.3869.\nConduct a one-sided hypothesis test at a 5% level to determine if the exercise break program significantly improves job satisfaction scores. Be sure you phrase your conclusion clearly, and in the context of the problem."
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-3",
+    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-3",
+    "title": "PSTAT 5A: Lecture 16",
+    "section": "Solutions",
+    "text": "Solutions\n\nStep 1: Write hypotheses\n\n\nSince the company is interested in if exercise break will improve job satisfaction, we can formulate the hypotheses as\n\n\n\\[H_0: \\mu_d = 0\\] \\[H_A: \\mu_d &gt; 0\\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture16/Lec16.html#solution",
@@ -5283,75 +5325,5 @@
     "title": "PSTAT 5A: Understanding Data",
     "section": "Week 6 (9/08 - 9/11)",
     "text": "Week 6 (9/08 - 9/11)\n\n\nLectures\n19: Regression Diagnostics, and  Sampling Procedures 20: Ways Statistics Can Deceive 21: Review FINAL EXAM: Thursday, Sept 11 during lecture\n\n\nDiscussion\nQ&A with TA\n\n\nLab\nLab 06"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions",
-    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions",
-    "title": "PSTAT 5A: Lecture 16",
-    "section": "Solutions",
-    "text": "Solutions\n\nThe population is the set of all California residents.\nThe parameter of interest is \\(p\\), the true proportion of CA residents that speak Spanish.\nThe random variable of interest is \\(\\widehat{P}\\), the proportion of people in a representative sample of 120 CA residents that speak spanish.\nWe check the success-failure conditions, with the substitution approximation:\n\n\\(n \\widehat{p} = (120) \\cdot \\left( \\frac{36}{120} \\right) = 36 \\ \\checkmark\\)\n\\(n (1 - \\widehat{p}) = (120) \\cdot \\left( \\frac{84}{120} \\right) = 84 \\ \\checkmark\\)\n\n\n\nSince these conditions are met, we can proceed in constructing our confidence interval as \\[ 0.3 \\pm 1.96 \\cdot \\sqrt{\\frac{0.3 \\cdot 0.7}{120}} = \\boxed{[0.218 \\ , \\ 0.382]} \\]"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture16/Lec16.html#worked-out-example",
-    "href": "Pages/Lectures/Lecture16/Lec16.html#worked-out-example",
-    "title": "PSTAT 5A: Lecture 16",
-    "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nA company institutes an exercise break for its workers to see if this will improve job satisfaction, as measured by a questionnaire that assesses workers’ satisfaction. A random sample of 50 workers was taken. Each worker was given the questionnaire twice: once prior to the implementation of the exercise break; a second time after the implementation of the exercise break. The differences in job satisfaction (satisfaction after implementation of the exercise program minus satisfaction before implementation of the exercise program) were calculated, and the mean of the difference is calculated to be 11.727 and standard deviation of 17.3869.\nConduct a one-sided hypothesis test at a 5% level to determine if the exercise break program significantly improves job satisfaction scores. Be sure you phrase your conclusion clearly, and in the context of the problem."
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture16/Lec16.html#reminders",
-    "href": "Pages/Lectures/Lecture16/Lec16.html#reminders",
-    "title": "PSTAT 5A: Lecture 16",
-    "section": "Reminders",
-    "text": "Reminders\n\nQuiz 4 today!!\nExtra credit Homework released on Friday and due next Wednesday\nExam next Thursday! Need calculator and Access Card"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture16/Lec16.html#warm--up",
-    "href": "Pages/Lectures/Lecture16/Lec16.html#warm--up",
-    "title": "PSTAT 5A: Lecture 16",
-    "section": "Warm- Up",
-    "text": "Warm- Up"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture16/Lec16.html#warm-up",
-    "href": "Pages/Lectures/Lecture16/Lec16.html#warm-up",
-    "title": "PSTAT 5A: Lecture 16",
-    "section": "Warm up",
-    "text": "Warm up\n\n\n\n\n\n\n\nWarm Up #1\n\n\n\n\nMelanie would like to construct a 95% confidence interval for the true proportion of California Residents that speak Spanish. To that end, she took a representative sample of 120 CA residents and found that 36 of these residents speak Spanish.\n\nIdentify the population\nDefine the parameter of interest.\nDefine the random variable of interest.\nConstruct a 95% confidence interval for the true proportion of CA residents that speak Spanish.\n\n\n\n\n−+\n03:00"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-1",
-    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-1",
-    "title": "PSTAT 5A: Lecture 16",
-    "section": "Solutions",
-    "text": "Solutions\n\nWe first phrase the hypotheses.\nLet \\(p\\) denote the true proportion of applicants who get admitted into the major. Since we are performing a two-sided test, our hypotheses take the form \\[ \\left[ \\begin{array}{rr}\nH_0:    p = 0.24    \\\\\nH_A:    p \\neq 0.24\n\\end{array} \\right.\\]\nNow we compute the observed value of the test statistic: \\[ \\mathrm{ts} = \\frac{\\widehat{p} - p_0}{\\sqrt{\\frac{p_0(1 - p_0)}{n}}} = \\frac{0.2 - 0.24}{\\sqrt{\\frac{(0.24) \\cdot (1 - 0.24)}{120}}} \\approx -1.026 \\]\nNext, we compute the critical value. Since we are using an \\(\\alpha = 0.05\\) level of significance, we will use the critical value \\(1.96\\)"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-2",
-    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-2",
-    "title": "PSTAT 5A: Lecture 16",
-    "section": "Solutions",
-    "text": "Solutions\n\nFinally, we perform the test: we will reject the null in favor of the alternative if \\(|\\mathrm{ts}|\\) is larger than the critical value.\nIn this case, \\(|\\mathrm{ts}| = |-1.026| = 1.026 &lt; 1.96\\) meaning we fail to reject the null:\nWe can also solve this using a p value! \\[\\mathbb{P}(TS \\leq -1.026) = .1539\\]. We will reject the null if \\[p\\ value &lt; \\alpha\\].\nSince we are using a two sided alternative test, our p value = 2 * .1539 = .3078. .3078 &gt; .05, so once again we fail to reject the null.\n\n\n\nAt an \\(\\alpha = 0.05\\) level of significance, there was insufficient evidence to reject the null hypothesis that 24% of applicants are admitted into the major in favor of the alternative that the true admittance rate was not 24%."
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture16/Lec16.html#worked-out-example-1",
-    "href": "Pages/Lectures/Lecture16/Lec16.html#worked-out-example-1",
-    "title": "PSTAT 5A: Lecture 16",
-    "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nA company institutes an exercise break for its workers to see if this will improve job satisfaction, as measured by a questionnaire that assesses workers’ satisfaction. A random sample of 50 workers was taken. Each worker was given the questionnaire twice: once prior to the implementation of the exercise break; a second time after the implementation of the exercise break. The differences in job satisfaction (satisfaction after implementation of the exercise program minus satisfaction before implementation of the exercise program) were calculated, and the mean of the difference is calculated to be 11.727 and standard deviation of 17.3869."
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture16/Lec16.html#solutions-3",
-    "href": "Pages/Lectures/Lecture16/Lec16.html#solutions-3",
-    "title": "PSTAT 5A: Lecture 16",
-    "section": "Solutions",
-    "text": "Solutions\n\nStep 1: Write hypotheses\n\n\nSince the company is interested in if exercise break will improve job satisfaction, we can formulate the hypotheses as\n\n\n\\[H_0: \\mu_d = 0\\] \\[H_A: \\mu_d &gt; 0\\]"
-  },
-  {
-    "objectID": "Pages/Lectures/Lecture16/Lec16.html#warm-up-2",
-    "href": "Pages/Lectures/Lecture16/Lec16.html#warm-up-2",
-    "title": "PSTAT 5A: Lecture 16",
-    "section": "Warm Up",
-    "text": "Warm Up\n\n\n\n\n\n\n\nWarm Up # 2\n\n\n\n\nAdministration within a Statistics department at an unnamed university claims to admit 24% of all applicants. A disgruntled student, dubious of the administration’s claims, takes a representative sample of 120 students who applied to the Statistics major, and found that 20% of these students were actually admitted into the major.\n\nConduct a two-sided hypothesis test at a 5% level of significance on the administrator’s claims that 24% of applicants into the Statistics major are admitted. Be sure you phrase your conclusion clearly, and in the context of the problem.\n\n\n\n−+\n02:00"
   }
 ]

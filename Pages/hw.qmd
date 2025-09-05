@@ -22,3 +22,5 @@ Here you will find all homework assignments and their solutions. Please remember
 - **Homework 4:** <a href = "../Files/HW/HW04_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a>   <a href = "../Files/HW/HW04_Solns.pdf" class = "button label-outline" target = "_blank">Solns</a> 
 
 - **Homework 5:** <a href = "../Files/HW/HW05_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a>  <!-- <a href = "../Files/HW/HW05_Answers.pdf" class = "button label-outline" target = "_blank">Solns</a> -->
+
+- **Homework 6 (Extra Credit):** <a href = "../Files/HW/HW06_Blank.pdf" class = "button label-outline" target = "_blank">Blank</a>  <!-- <a href = "../Files/HW/HW05_Answers.pdf" class = "button label-outline" target = "_blank">Solns</a> -->
