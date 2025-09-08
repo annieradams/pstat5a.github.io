@@ -4050,7 +4050,7 @@
     "href": "Pages/Lectures/Lecture21/Lec21.html#testing-a-mean",
     "title": "PSTAT 5A: Final Exam Review",
     "section": "Testing a Mean",
-    "text": "Testing a Mean\n\nBefore MT2, we discussed the framework of hypothesis testing a population proportion p.\nAfter MT2, we discussed how to perform hypothesis testing on a population mean \\(\\mu\\).\nLet’s, for the moment, consider a two-sided test: \\[ \\left[ \\begin{array}{rr}\nH_0:    & \\mu = \\mu_0   \\\\\nH_A:    & \\mu \\neq \\mu_0\n\\end{array} \\right. \\]\nSince we know that \\(\\overline{X}\\), the sample mean, is a relatively good point estimator of a population mean \\(\\mu\\), we know that our test statistic should involve \\(\\overline{X}\\) in some way."
+    "text": "Testing a Mean\n\nWe have discussed hypothesis testing for a population proportion p, as well as how to perform hypothesis testing on a population mean \\(\\mu\\) .\nLet’s, for the moment, consider a two-sided test: \\[ \\left[ \\begin{array}{rr}\nH_0:    & \\mu = \\mu_0   \\\\\nH_A:    & \\mu \\neq \\mu_0\n\\end{array} \\right. \\]\nSince we know that \\(\\overline{X}\\), the sample mean, is a relatively good point estimator of a population mean \\(\\mu\\), we know that our test statistic should involve \\(\\overline{X}\\) in some way."
   },
   {
     "objectID": "Pages/Lectures/Lecture21/Lec21.html#testing-a-mean-1",

@@ -323,9 +323,6 @@
       margin-right: 0; 
     }
   </style>
-  <script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -356,8 +353,7 @@
 <section id="testing-a-mean" class="slide level2">
 <h2>Testing a Mean</h2>
 <ul>
-<li class="fragment"><p>Before MT2, we discussed the framework of hypothesis testing a population <em>proportion</em> <em>p</em>.</p></li>
-<li class="fragment"><p>After MT2, we discussed how to perform hypothesis testing on a population <em>mean</em> <span class="math inline">\(\mu\)</span>.</p></li>
+<li class="fragment"><p>We have discussed hypothesis testing for a population <em>proportion</em> <em>p</em>, as well as how to perform hypothesis testing on a population <em>mean</em> <span class="math inline">\(\mu\)</span> .</p></li>
 <li class="fragment"><p>Let’s, for the moment, consider a two-sided test: <span class="math display">\[ \left[ \begin{array}{rr}
 H_0:    &amp; \mu = \mu_0   \\
 H_A:    &amp; \mu \neq \mu_0
@@ -377,27 +373,6 @@ H_A:    &amp; \mu \neq \mu_0
 <li class="fragment"><p>But, we won’t always have access to the true population standard deviation <span class="math inline">\(\sigma\)</span>! Rather, sometimes we only have access to <span class="math inline">\(s_X\)</span>, the sample standard deviation.</p></li>
 <li class="fragment"><p>This leads to the following test statistic: <span class="math display">\[ \mathrm{TS} = \frac{\overline{X} - \mu_0}{s_X / \sqrt{n}} \]</span> which now no longer follows the standard normal distribution under the null, but rather a <strong><em>t</em>-distribution</strong> with <span class="math inline">\(n - 1\)</span> <strong>degrees of freedom</strong>: <span class="math display">\[ \mathrm{TS} = \frac{\overline{X} - \mu_0}{s_X / \sqrt{n}} \stackrel{H_0}{\sim} t_{n - 1} \]</span></p></li>
 </ul>
-</section>
-<section id="sampling-distribution-of-overlinex" class="slide level2">
-<h2>Sampling Distribution of <span class="math inline">\(\overline{X}\)</span></h2>
-<div class="fragment">
-<div class="cell" data-reveal="true">
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">graph TB
-  A[Is the population Normal?  . ] --&gt; |Yes| B{{Use Normal .}}
-  A --&gt; |No| C[Is n &gt;= 30?  .]
-  C --&gt; |Yes| D[sigma or s?  .]
-  C --&gt; |No| E{{cannot proceed   .}}
-  D --&gt; |sigma| F{{Use Normal .}}
-  D --&gt; |s| G{{Use t }}
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
 </section>
 <section id="test-statistic" class="slide level2">
 <h2>Test Statistic</h2>
@@ -438,7 +413,7 @@ H_A:    &amp; \mu \neq \mu_0
 <section id="critical-value" class="slide level2">
 <h2>Critical Value</h2>
 
-<img data-src="Lec21_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"><ul>
+<img data-src="Lec21_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"><ul>
 <li class="fragment">The critical value is the <em>positive</em> value along the <em>x</em>-axis that makes the blue shaded region equal to <span class="math inline">\(\alpha\)</span>.</li>
 </ul>
 </section>
@@ -456,15 +431,15 @@ H_A:    &amp; \mu \neq \mu_0
 <section id="p-value-lower-tailed-test" class="slide level2">
 <h2><em>p</em>-value; Lower-Tailed Test</h2>
 
-<img data-src="Lec21_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lec21_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
 <section id="p-value-upper-tailed-test" class="slide level2">
 <h2><em>p</em>-value; Upper-Tailed Test</h2>
 
-<img data-src="Lec21_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lec21_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
 <section id="p-value-two-sided-test" class="slide level2">
 <h2><em>p</em>-value; Two-Sided Test</h2>
 
-<img data-src="Lec21_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<img data-src="Lec21_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
 <section id="worked-out-example" class="slide level2">
 <h2>Worked-Out Example</h2>
 <div class="fragment">
@@ -777,7 +752,7 @@ H_A:    &amp; \text{at least one of the $\mu_i$'s is different from the others}
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="Lec21_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
+<p><img data-src="Lec21_files/figure-revealjs/unnamed-chunk-5-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -861,7 +836,7 @@ H_A:    &amp; \text{at least one of the $\mu_i$'s is different from the others}
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="Lec21_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
+<p><img data-src="Lec21_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -872,7 +847,7 @@ H_A:    &amp; \text{at least one of the $\mu_i$'s is different from the others}
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="Lec21_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+<p><img data-src="Lec21_files/figure-revealjs/unnamed-chunk-7-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -886,7 +861,7 @@ H_A:    &amp; \text{at least one of the $\mu_i$'s is different from the others}
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="Lec21_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
+<p><img data-src="Lec21_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -897,7 +872,7 @@ H_A:    &amp; \text{at least one of the $\mu_i$'s is different from the others}
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="Lec21_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+<p><img data-src="Lec21_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -912,7 +887,7 @@ H_A:    &amp; \text{at least one of the $\mu_i$'s is different from the others}
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="Lec21_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
+<p><img data-src="Lec21_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -926,7 +901,7 @@ H_A:    &amp; \text{at least one of the $\mu_i$'s is different from the others}
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="Lec21_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
+<p><img data-src="Lec21_files/figure-revealjs/unnamed-chunk-11-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -934,7 +909,7 @@ H_A:    &amp; \text{at least one of the $\mu_i$'s is different from the others}
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="Lec21_files/figure-revealjs/unnamed-chunk-13-1.png" width="960"></p>
+<p><img data-src="Lec21_files/figure-revealjs/unnamed-chunk-12-1.png" width="960"></p>
 </div>
 </div>
 </div>

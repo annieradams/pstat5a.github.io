@@ -40,9 +40,8 @@ library(ggthemes)
     
 ## Testing a Mean
 
-- Before MT2, we discussed the framework of hypothesis testing a population *proportion* _p_.
+- We have discussed hypothesis testing for a population *proportion* _p_, as well as how to perform hypothesis testing on a population *mean* $\mu$ .
 
-- After MT2, we discussed how to perform hypothesis testing on a population *mean* $\mu$.
 
 - Let's, for the moment, consider a two-sided test:
 $$ \left[ \begin{array}{rr}
@@ -71,19 +70,7 @@ which now no longer follows the standard normal distribution under the null, but
 $$ \mathrm{TS} = \frac{\overline{X} - \mu_0}{s_X / \sqrt{n}} \stackrel{H_0}{\sim} t_{n - 1} $$ 
 
     
-## Sampling Distribution of $\overline{X}$
 
-:::{.fragment}
-```{mermaid}
-graph TB
-  A[Is the population Normal?  . ] --> |Yes| B{{Use Normal .}}
-  A --> |No| C[Is n >= 30?  .]
-  C --> |Yes| D[sigma or s?  .]
-  C --> |No| E{{cannot proceed   .}}
-  D --> |sigma| F{{Use Normal .}}
-  D --> |s| G{{Use t }}
-```
-:::
 
 ## Test Statistic
 
