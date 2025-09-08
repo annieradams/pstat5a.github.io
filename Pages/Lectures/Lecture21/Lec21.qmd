@@ -1,8 +1,8 @@
 ---
 title: "PSTAT 5A: Final Exam Review"
 subtitle: "Post-MT2 Review"
-author: "Ethan P. Marzban"
-date: "08/03/23"
+author: "Annie Adams"
+date: "09/10/25"
 format: 
     revealjs:
       chalkboard: true
