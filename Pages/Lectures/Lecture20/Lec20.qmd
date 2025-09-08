@@ -1,8 +1,8 @@
 ---
 title: "PSTAT 5A: Lecture 23"
 subtitle: "Tying Up Loose Ends"
-author: "Ethan P. Marzban"
-date: "08/02/23"
+author: "Annie Adams"
+date: "09/09/23"
 format: 
     revealjs:
       chalkboard: true
