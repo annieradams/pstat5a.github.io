@@ -1292,7 +1292,7 @@
     "href": "Pages/Lectures/Lecture19/Lec19.html#the-research-process",
     "title": "PSTAT 5A: Lecture 19",
     "section": "The Research Process",
-    "text": "The Research Process\n\nIndeed, most experiments and studies begin with some sort of question.\n\nFor example: “does this new drug truly reduce blood pressure?”\nOr: “is smoking really linked with higher rates of lung cancer?”\nOr: “what is the average mercury content in swordfish in the Atlantic Ocean?”\nOr: “over the past 3 years, what is the average number of people that have been admitted into the PSTAT major?”\n\nThe next step is something we’ve actually done several times in this class already: identify the population of interest!\n\nCan anyone tell me what the populations associated with the above research questions are?"
+    "text": "The Research Process\n\nIndeed, most experiments and studies begin with some sort of question.\n\nFor example: “does this new drug truly reduce blood pressure?”\nOr: “is smoking really linked with higher rates of lung cancer?”\nOr: “what is the average mercury content in swordfish in the Atlantic Ocean?”\nOr: “over the past 3 years, what is the average number of people that have been admitted into the PSTAT major?”\n\nThe next step is something we’ve actually done several times in this class already: identify the population of interest!"
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#sampling-procedures",
@@ -1313,14 +1313,14 @@
     "href": "Pages/Lectures/Lecture19/Lec19.html#sampling-procedures-2",
     "title": "PSTAT 5A: Lecture 19",
     "section": "Sampling Procedures",
-    "text": "Sampling Procedures\n\nThat’s right- we run the risk of obtaining a biased sample.\nSaid differently: if we take an SRS of employees at this company, there is a high probability that this sample will contain a disproportionately larger number of Caucasians than non-Caucasians.\n\nThis would almost certainly affect the results of our survey!\n\nOne way to remedy this would be to perform what is known as in which we first divide the population into several strata (i.e. groups), and then take an SRS from each stratum.\n\nThis has the benefit of ensuring a roughly equal number of participants from each stratum, but has the downsides of being very dependent on the strata that are created.\nThat is, sometimes it won’t necessarily be obvious how to divide the population!"
+    "text": "Sampling Procedures\n\nThat’s right- we run the risk of obtaining a biased sample.\nSaid differently: if we take an SRS of employees at this company, there is a high probability that this sample will contain a disproportionately larger number of Caucasians than non-Caucasians.\n\nThis would almost certainly affect the results of our survey!\n\nOne way to remedy this would be to perform what is known as stratified sampling in which we first divide the population into several strata (i.e. groups), and then take an SRS from each stratum.\n\nThis has the benefit of ensuring a roughly equal number of participants from each stratum, but has the downsides of being very dependent on the strata that are created.\nThat is, sometimes it won’t necessarily be obvious how to divide the population!"
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#sampling-procedures-3",
     "href": "Pages/Lectures/Lecture19/Lec19.html#sampling-procedures-3",
     "title": "PSTAT 5A: Lecture 19",
     "section": "Sampling Procedures",
-    "text": "Sampling Procedures\n\nAnother type of sampling is called cluster sampling. Similar to stratified sampling, the population is first divided into several groups (now called clusters). But, instead of taking an SRS from every cluster we instead take an SRS of clusters and then take an SRS from each included cluster\n\nNote, then, that we are not including every cluster in our sample in this way of sampling.\nThis has the benefit of being (potentially) cheaper, but has the (obvious) downside of potentially skewing results due to the lack of certain clusters.\n\nBy the way, this is slightly different than the notion of Cluster Sampling outlined in the textbook; the textbook calls the above scheme “multistage sampling”. However, this term is not widely used, and as such we will simply refer to the above as “Cluster Sampling”, as most statisticians do."
+    "text": "Sampling Procedures\n\nAnother type of sampling is called cluster sampling. Similar to stratified sampling, the population is first divided into several groups (now called clusters). But, instead of taking an SRS from every cluster we instead take an SRS of clusters and then take an SRS from each included cluster\n\nNote, then, that we are not including every cluster in our sample in this way of sampling.\nThis has the benefit of being (potentially) cheaper, but has the (obvious) downside of potentially skewing results due to the lack of certain clusters."
   },
   {
     "objectID": "Pages/Lectures/Lecture19/Lec19.html#example",
@@ -1432,7 +1432,7 @@
     "href": "Pages/Lectures/Lecture19/Lec19.html#experimental-design",
     "title": "PSTAT 5A: Lecture 19",
     "section": "Experimental Design",
-    "text": "Experimental Design\n\nExperimental Design loosely refers to the principles of and procedures related to setting up an experiment.\nI won’t go into this in too much detail.\nI do highly encourage you to read Section 1.4 of your textbook, as it provides a very nice summary of some of the main tenants of experimental design.\nRemember - as Data Scientists, it is very important we understand our data as much as possible before performing analyses.\n\nPart of knowing our data is knowing how it was collected, and, indeed, how we might go about collecting our own!"
+    "text": "Experimental Design\n\nExperimental Design loosely refers to the principles of and procedures related to setting up an experiment.\nRemember - as Data Scientists, it is very important we understand our data as much as possible before performing analyses.\n\nPart of knowing our data is knowing how it was collected, and, indeed, how we might go about collecting our own!"
   },
   {
     "objectID": "Pages/Lectures/Lecture17/Lec17.html#scatterplots-and-trends",
@@ -5325,5 +5325,26 @@
     "title": "PSTAT 5A: Understanding Data",
     "section": "Week 6 (9/08 - 9/11)",
     "text": "Week 6 (9/08 - 9/11)\n\n\nLectures\n19: Regression Diagnostics, and  Sampling Procedures 20: Ways Statistics Can Deceive 21: Review FINAL EXAM: Thursday, Sept 11 during lecture\n\n\nLab\nLab 06"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#class-announcements",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#class-announcements",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Class Announcements",
+    "text": "Class Announcements\n\nExam this Thursday! Make sure to bring calculator, pencils, and access card!\nExtra credit homework due Wednesday\nCourse evals!"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#stratified-sampling",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#stratified-sampling",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Stratified sampling",
+    "text": "Stratified sampling"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture19/Lec19.html#cluster-sampling",
+    "href": "Pages/Lectures/Lecture19/Lec19.html#cluster-sampling",
+    "title": "PSTAT 5A: Lecture 19",
+    "section": "Cluster sampling",
+    "text": "Cluster sampling"
   }
 ]

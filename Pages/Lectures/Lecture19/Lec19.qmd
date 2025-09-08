@@ -27,6 +27,12 @@ library(ggthemes)
 library(gridExtra)
 ```
 
+
+## Class Announcements
+- Exam this Thursday! Make sure to bring calculator, pencils, and access card! 
+- Extra credit homework due **Wednesday** 
+- Course evals! 
+
 # Regression Diagnostics
 
 ## Recap
@@ -377,70 +383,6 @@ grid.arrange(p1, p2, ncol = 1)
 
 
 
-## Residual Plots
-
-:::{.fragment}
-```{r, fig.width = 6, fig.height = 7, fig.align = 'center'}
-set.seed(123)
-
-x1 <- rnorm(100)
-y1 <- 2.5*(x - 1)^2 + rnorm(100)
-
-p1 <- data.frame(x = x1, y = y1) %>%
-  ggplot(aes(x = x, y = y)) +
-  geom_point(size = 4) +
-  theme_economist(base_size = 24) +
-  ggtitle("Y vs. X") +
-  theme(panel.background = element_rect("#f0ebd8"),
-        plot.background = element_rect(fill = "#f0ebd8"),
-        axis.title.y = element_text(size = 16,
-                                    margin = margin(
-                                      t = 0, 
-                                      r = 10,
-                                      b = 0, 
-                                      l = 0)),
-        axis.title.x = element_text(size = 16,
-                                    margin = margin(
-                                      t = 10, 
-                                      r = 0,
-                                      b = 0, 
-                                      l = 0)),
-        title = element_text(size = 18)
-  ) +
-  ylab("y") +
-  xlab("x") +
-  geom_smooth(formula = y ~ poly(x, 2),
-              method = "lm", se = F, col = "blue", linewidth = 1) 
-
-mod3 <- lm(y1~poly(x1, 2))
-
-p2 <- data.frame(x = mod3$residuals, y = mod3$fitted.values) %>%
-  ggplot(aes(x = x, y = y)) +
-  geom_point(size = 4) +
-  theme_economist(base_size = 24) +
-  ggtitle("Residual Plot") +
-  theme(panel.background = element_rect("#f0ebd8"),
-        plot.background = element_rect(fill = "#f0ebd8"),
-        axis.title.y = element_text(size = 16,
-                                    margin = margin(
-                                      t = 0, 
-                                      r = 10,
-                                      b = 0, 
-                                      l = 0)),
-        axis.title.x = element_text(size = 16,
-                                    margin = margin(
-                                      t = 10, 
-                                      r = 0,
-                                      b = 0, 
-                                      l = 0)),
-        title = element_text(size = 18)
-  ) +
-  ylab("fitted. val.") +
-  xlab("resid.") 
-
-grid.arrange(p1, p2, ncol = 1)
-```
-:::
 
 ## Other Diagnostics
 
@@ -475,8 +417,7 @@ grid.arrange(p1, p2, ncol = 1)
     
 - The next step is something we've actually done several times in this class already: identify the **population** of interest!
 
-    - Can anyone tell me what the populations associated with the above research questions are?
-    
+
     
 ## Sampling Procedures {style="font-size:30px"}
 
@@ -521,11 +462,17 @@ grid.arrange(p1, p2, ncol = 1)
 
     - This would almost certainly affect the results of our survey!
     
-- One way to remedy this would be to perform what is known as in which we first divide the population into several *strata* (i.e. groups), and then take an SRS from each stratum.
+- One way to remedy this would be to perform what is known as stratified sampling in which we first divide the population into several *strata* (i.e. groups), and then take an SRS from each stratum.
 
     - This has the benefit of ensuring a roughly equal number of participants from each stratum, but has the downsides of being very dependent on the strata that are created.
     
     - That is, sometimes it won't necessarily be obvious *how* to divide the population!
+    
+    
+## Stratified sampling {style="font-size:30px"}
+
+![](stratified-sample.png)
+
 
 ## Sampling Procedures {style="font-size:30px"}
 
@@ -535,7 +482,11 @@ grid.arrange(p1, p2, ncol = 1)
     
     - This has the benefit of being (potentially) cheaper, but has the (obvious) downside of potentially skewing results due to the lack of certain clusters.
     
-- By the way, this is slightly different than the notion of Cluster Sampling outlined in the textbook; the textbook calls the above scheme "multistage sampling". However, this term is not widely used, and as such we will simply refer to the above as "Cluster Sampling", as most statisticians do.
+
+
+## Cluster sampling {style="font-size:30px"}
+
+![](cluster-sample.png)
 
 ## Example {style="font-size:30px"}
 
@@ -734,10 +685,6 @@ b. In this case, **stratified sampling** would likely be a good idea, with each 
 ## Experimental Design
 
 - **Experimental Design** loosely refers to the principles of and procedures related to setting up an experiment.
-
-- I won't go into this in too much detail.
-
-- I do highly encourage you to read Section 1.4 of your textbook, as it provides a very nice summary of some of the main tenants of experimental design.
 
 - Remember - as Data Scientists, it is very important we understand our data as much as possible *before* performing analyses.
 

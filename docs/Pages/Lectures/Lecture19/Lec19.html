@@ -334,6 +334,14 @@
   <p class="author" style="text-align: right">Annie Adams</p>
   <p class="date" style="text-align: right">2025-09-08</p>
 </section>
+<section id="class-announcements" class="slide level2">
+<h2>Class Announcements</h2>
+<ul>
+<li class="fragment">Exam this Thursday! Make sure to bring calculator, pencils, and access card!</li>
+<li class="fragment">Extra credit homework due <strong>Wednesday</strong></li>
+<li class="fragment">Course evals!</li>
+</ul>
+</section>
 <section>
 <section id="regression-diagnostics" class="title-slide slide level1 center">
 <h1>Regression Diagnostics</h1>
@@ -467,20 +475,6 @@
 </div>
 </div>
 </section>
-<section id="residual-plots-8" class="slide level2">
-<h2>Residual Plots</h2>
-<div class="fragment">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Lec19_files/figure-revealjs/unnamed-chunk-7-1.png" width="576"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
 <section id="other-diagnostics" class="slide level2">
 <h2>Other Diagnostics</h2>
 <ul>
@@ -518,10 +512,7 @@
 <li class="fragment">Or: “what is the average mercury content in swordfish in the Atlantic Ocean?”</li>
 <li class="fragment">Or: “over the past 3 years, what is the average number of people that have been admitted into the PSTAT major?”</li>
 </ul></li>
-<li class="fragment"><p>The next step is something we’ve actually done several times in this class already: identify the <strong>population</strong> of interest!</p>
-<ul>
-<li class="fragment">Can anyone tell me what the populations associated with the above research questions are?</li>
-</ul></li>
+<li class="fragment"><p>The next step is something we’ve actually done several times in this class already: identify the <strong>population</strong> of interest!</p></li>
 </ul>
 </section>
 <section id="sampling-procedures" class="slide level2" style="font-size:30px">
@@ -564,13 +555,17 @@
 <ul>
 <li class="fragment">This would almost certainly affect the results of our survey!</li>
 </ul></li>
-<li class="fragment"><p>One way to remedy this would be to perform what is known as in which we first divide the population into several <em>strata</em> (i.e.&nbsp;groups), and then take an SRS from each stratum.</p>
+<li class="fragment"><p>One way to remedy this would be to perform what is known as stratified sampling in which we first divide the population into several <em>strata</em> (i.e.&nbsp;groups), and then take an SRS from each stratum.</p>
 <ul>
 <li class="fragment"><p>This has the benefit of ensuring a roughly equal number of participants from each stratum, but has the downsides of being very dependent on the strata that are created.</p></li>
 <li class="fragment"><p>That is, sometimes it won’t necessarily be obvious <em>how</em> to divide the population!</p></li>
 </ul></li>
 </ul>
 </section>
+<section id="stratified-sampling" class="slide level2" style="font-size:30px">
+<h2>Stratified sampling</h2>
+
+<img data-src="stratified-sample.png" class="r-stretch"></section>
 <section id="sampling-procedures-3" class="slide level2" style="font-size:30px">
 <h2>Sampling Procedures</h2>
 <ul>
@@ -579,9 +574,12 @@
 <li class="fragment"><p>Note, then, that we are not including every cluster in our sample in this way of sampling.</p></li>
 <li class="fragment"><p>This has the benefit of being (potentially) cheaper, but has the (obvious) downside of potentially skewing results due to the lack of certain clusters.</p></li>
 </ul></li>
-<li class="fragment"><p>By the way, this is slightly different than the notion of Cluster Sampling outlined in the textbook; the textbook calls the above scheme “multistage sampling”. However, this term is not widely used, and as such we will simply refer to the above as “Cluster Sampling”, as most statisticians do.</p></li>
 </ul>
 </section>
+<section id="cluster-sampling" class="slide level2" style="font-size:30px">
+<h2>Cluster sampling</h2>
+
+<img data-src="cluster-sample.png" class="r-stretch"></section>
 <section id="example" class="slide level2" style="font-size:30px">
 <h2>Example</h2>
 <ul>
@@ -790,8 +788,6 @@
 <h2>Experimental Design</h2>
 <ul>
 <li class="fragment"><p><strong>Experimental Design</strong> loosely refers to the principles of and procedures related to setting up an experiment.</p></li>
-<li class="fragment"><p>I won’t go into this in too much detail.</p></li>
-<li class="fragment"><p>I do highly encourage you to read Section 1.4 of your textbook, as it provides a very nice summary of some of the main tenants of experimental design.</p></li>
 <li class="fragment"><p>Remember - as Data Scientists, it is very important we understand our data as much as possible <em>before</em> performing analyses.</p>
 <ul>
 <li class="fragment">Part of knowing our data is knowing <em>how</em> it was collected, and, indeed, how <em>we</em> might go about collecting our own!</li>
