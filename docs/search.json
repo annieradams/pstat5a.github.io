@@ -2062,7 +2062,7 @@
     "href": "Pages/Lectures/Lecture20/Lec20.html#case-study-admissions-at-uc-berkeley",
     "title": "PSTAT 5A: Lecture 23",
     "section": "Case Study: Admissions at UC Berkeley",
-    "text": "Case Study: Admissions at UC Berkeley\n\nIn the 1970’s, UC Berkeley conducted an observational study to determine whether or not there was gender bias in the graduate student admittance practices at the university.\n\nA disclaimer: at the time, “gender” was treated as a binary variable with values male and female. I would like to also acknowledge that we now recognize that there are a great deal many more genders than simply “male” and “female”.\n\nOverall, the survey included 8,422 men and 4,321 women.\nOf the men 44% were admitted; of the women only 35% were admitted.\n\nThis difference was also deemed statistically significant.\n\nSo, on the surface, it does appear as though women are being disproportionately denied entry."
+    "text": "Case Study: Admissions at UC Berkeley\n\nIn the 1970’s, UC Berkeley conducted an observational study to determine whether or not there was gender bias in the graduate student admittance practices at the university.\n\nA disclaimer: at the time, “gender” was treated as a binary variable with values male and female.\n\nOverall, the survey included 8,422 men and 4,321 women.\nOf the men 44% were admitted; of the women only 35% were admitted.\n\nThis difference was also deemed statistically significant.\n\nSo, on the surface, it does appear as though women are being disproportionately denied entry."
   },
   {
     "objectID": "Pages/Lectures/Lecture20/Lec20.html#case-study-admissions-at-uc-berkeley-1",
@@ -2111,7 +2111,7 @@
     "href": "Pages/Lectures/Lecture20/Lec20.html#what-now-2",
     "title": "PSTAT 5A: Lecture 23",
     "section": "What Now?",
-    "text": "What Now?\n\nThe key operating word in this is “introduction-” we only just scratched the surface of the topics we discussed!\n\nI sometimes (affectionately) refer to PSTAT 5A as a “table of contents” of statistics and data science.\n\nEven within our own PSTAT department, there are lots of different courses that dive deeper into the subjects we discussed."
+    "text": "What Now?\n\nThe key operating word in this is “introduction-” we only just scratched the surface of the topics we discussed!\n\nI sometimes refer to PSTAT 5A as a “table of contents” of statistics and data science.\n\nEven within our own PSTAT department, there are lots of different courses that dive deeper into the subjects we discussed."
   },
   {
     "objectID": "Pages/Lectures/Lecture20/Lec20.html#what-now-3",
@@ -2125,7 +2125,7 @@
     "href": "Pages/Lectures/Lecture20/Lec20.html#story",
     "title": "PSTAT 5A: Lecture 23",
     "section": "Story",
-    "text": "Story\n\nNow, I know many of you are graduating this quarter (or have recently graduated).\n\nCongratulations, by the way!!!\n\nFor those of you who are not, and especially for those of you who aren’t quite sure what you want to do, I’d like to leave you with a story.\nI encountered a student who had come into undergrad not knowing what they wanted to do at all.\nThey had a vague inkling that they might want to do math, but after a quarter switched to Econ, then Physics, and finally wound their way into the equivalent of PSTAT 5A at their undergraduate institution.\nBy the end of the quarter, they were so intrigued to learn more the decided to take the analog of 120A, and then 120B, and then, before they knew it, they had completed a degree in statistics!"
+    "text": "Story\n\nWherever there is data, there is the need for a data scientist.\nWhenever there is uncertainty, there is the need for a statistician.\nStatistics and Data Science have far reaching applications in so many fields!\nThere is a famous quote from an extremely influential statistician named John Tukey:\n\n\n\nThe best thing about being a statistician is that you get to play in everyone’s backyard."
   },
   {
     "objectID": "Pages/Lectures/Lecture20/Lec20.html#story-1",
@@ -5346,5 +5346,12 @@
     "title": "PSTAT 5A: Lecture 19",
     "section": "Cluster sampling",
     "text": "Cluster sampling"
+  },
+  {
+    "objectID": "Pages/Lectures/Lecture20/Lec20.html#section",
+    "href": "Pages/Lectures/Lecture20/Lec20.html#section",
+    "title": "PSTAT 5A: Lecture 23",
+    "section": "",
+    "text": "Wherever there is data, there is the need for a data scientist.\nWhenever there is uncertainty, there is the need for a statistician.\nStatistics and Data Science have far reaching applications in so many fields!\nThere is a famous quote from an extremely influential statistician named John Tukey:\n\n\n\nThe best thing about being a statistician is that you get to play in everyone’s backyard."
   }
 ]

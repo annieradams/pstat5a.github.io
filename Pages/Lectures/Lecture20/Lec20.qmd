@@ -70,7 +70,7 @@ A researcher would like to determine whether or not there is an association betw
 
 - In the 1970's, UC Berkeley conducted an observational study to determine whether or not there was gender bias in the graduate student admittance practices at the university. 
 
-    - A disclaimer: at the time, "gender" was treated as a binary variable with values `male` and `female`. I would like to also acknowledge that we now recognize that there are a great deal many more genders than simply "male" and "female".
+    - A disclaimer: at the time, "gender" was treated as a binary variable with values `male` and `female`. 
     
 - Overall, the survey included 8,422 men and 4,321 women. 
 
@@ -232,7 +232,7 @@ A researcher would like to determine whether or not there is an association betw
 ## What Now? 
 
 - The key operating word in this is "introduction-" we only just scratched the surface of the topics we discussed!
-    - I sometimes (affectionately) refer to PSTAT 5A as a "table of contents" of statistics and data science.
+    - I sometimes refer to PSTAT 5A as a "table of contents" of statistics and data science.
 
 - Even within our own PSTAT department, there are lots of different courses that dive deeper into the subjects we discussed.
 
@@ -251,28 +251,10 @@ A researcher would like to determine whether or not there is an association betw
 - Want to learn more about regression (including logistic regression)? Take PSTAT 126 and 131!
 
 
-## Story {style="font-size:30px"}
-
-- Now, I know many of you are graduating this quarter (or have recently graduated).
-
-    - Congratulations, by the way!!!
-    
-- For those of you who are not, and especially for those of you who aren't quite sure what you want to do, I'd like to leave you with a story.
-
-- I encountered a student who had come into undergrad not knowing what they wanted to do *at all*.
-
-- They had a vague inkling that they might want to do math, but after a quarter switched to Econ, then Physics, and finally wound their way into the equivalent of PSTAT 5A at their undergraduate institution.
-
-- By the end of the quarter, they were so intrigued to learn more the decided to take the analog of 120A, and then 120B, and then, before they knew it, they had completed a degree in statistics!
 
 
-## Story {style="font-size:30px"}
+##  {style="font-size:30px"}
 
-- That student.... was me!
-
-- Years ago, I stumbled into the analog of PSTAT 5A and was so enamored by the field that here I am now, pursuing a PhD in it!
-
-- I truly believe statistics and data science are some of the most useful and applicable fields around.
 
 - Wherever there is data, there is the need for a data scientist.
 
@@ -280,22 +262,10 @@ A researcher would like to determine whether or not there is an association betw
 
 - Statistics and Data Science have far reaching applications in so many fields!
 
-## Story {style="font-size:30px"}
-
 - There is a famous quote from an extremely influential statistician named John Tukey:
 
 :::{.fragment}
 > The best thing about being a statistician is that you get to play in everyone's backyard.
-:::
-
-- I couldn't agree more!
-
-    - Though, I would perhaps update this quote to say "statistician and/or data scientist"
-    
-- So, now that you've learned the basics...
-
-:::{.fragment style="font-size:50px"}
-...**_go out and play!_**
 :::
 
 # **_Thank you for a great quarter!_**
