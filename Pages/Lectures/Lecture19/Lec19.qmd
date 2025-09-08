@@ -33,6 +33,24 @@ library(gridExtra)
 - Extra credit homework due **Wednesday** 
 - Course evals! 
 
+:::{.fragment}
+```{r}
+countdown::countdown(
+  minutes = 5,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+:::
+
 # Regression Diagnostics
 
 ## Recap
@@ -684,7 +702,7 @@ b. In this case, **stratified sampling** would likely be a good idea, with each 
     
 ## Experimental Design
 
-- **Experimental Design** loosely refers to the principles of and procedures related to setting up an experiment.
+- **Experimental Design** loosely refers to the principles of and procedures related to setting up an experiment.git 
 
 - Remember - as Data Scientists, it is very important we understand our data as much as possible *before* performing analyses.
 
