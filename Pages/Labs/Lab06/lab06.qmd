@@ -26,20 +26,6 @@ Make sure all plots you generate are properly labelled and include titles.
 
 
 
-::: {.callout-caution}
-
-## Caution
-
-Here is how this lab will be graded:
-
-- You will get 0.5pts of the total points for submitting both a `.pdf` and a `.ipnyb` file. 
-
-- Your TA will then examine two of your plots (exactly which plots will not be revealed to you until after grading is done) and award you 0.15pts for each correct plot.
-
-- Your TA will then examine one of your statistical analyses (exactly which analyses will not be revealed to you until after grading is done) and award you 0.2pts for each correct analysis.
-
-:::
-
 
 
 
