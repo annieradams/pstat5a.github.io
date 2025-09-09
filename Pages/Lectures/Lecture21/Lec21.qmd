@@ -26,7 +26,7 @@ library(ggthemes)
 ```
 
 # Recap of Hypothesis Testing
-
+ 
 ## Setup
 
 - Consider a population, governed by some parameter $\theta$ (e.g. a mean $\mu$, a variance $\sigma^2$, a proportion $p$, etc.)
