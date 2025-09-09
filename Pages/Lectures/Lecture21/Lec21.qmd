@@ -406,7 +406,7 @@ $$ \mathrm{TS} \stackrel{H_0}{\sim} t_{\mathrm{df}}; \quad \text{df given by abo
 
 ## Test {style="font-size:32px"}
 
-- If we are conducting a two-sided hypothesis test, then both large *positive* values *and* large *negative* values of our test statistic would lead credence to the null over the alternative. 
+- If we are conducting a two-sided hypothesis test, then both large *positive* values *and* large *negative* values of our test statistic would lead us to reject the null.  
 
     - As such, our test would reject for large values of $|\mathrm{TS}|$
     
