@@ -4043,7 +4043,7 @@
     "href": "Pages/Lectures/Lecture21/Lec21.html#setup",
     "title": "PSTAT 5A: Final Exam Review",
     "section": "Setup",
-    "text": "Setup\n\nConsider a population, governed by some parameter \\(\\theta\\) (e.g. a mean \\(\\mu\\), a variance \\(\\sigma^2\\), a proportion \\(p\\), etc.)\nSuppose we have a null hypothesis that \\(\\theta = \\theta_0\\) (for some specified and fixed value \\(\\theta_0\\)), along with an alternative hypothesis.\nThe goal of hypothesis testing is to use data (in the form of a representative sample taken from the population), and determine whether or not this data leads credence to the null in favor of the alternative.\n\nRecall that there are four main types of alternatives we could adopt: two-sided, lower-tailed, upper-tailed, and simple-vs-simple."
+    "text": "Setup\n\nConsider a population, governed by some parameter \\(\\theta\\) (e.g. a mean \\(\\mu\\), a variance \\(\\sigma^2\\), a proportion \\(p\\), etc.)\nSuppose we have a null hypothesis that \\(\\theta = \\theta_0\\) (for some specified and fixed value \\(\\theta_0\\)), along with an alternative hypothesis.\nThe goal of hypothesis testing is to use data (in the form of a representative sample taken from the population), and determine whether or not this data supports our null or alternative hypothesis.\n\nRecall that there are four main types of alternatives we could adopt: two-sided, lower-tailed, upper-tailed, and simple-vs-simple."
   },
   {
     "objectID": "Pages/Lectures/Lecture21/Lec21.html#testing-a-mean",
@@ -4106,7 +4106,7 @@
     "href": "Pages/Lectures/Lecture21/Lec21.html#p-values",
     "title": "PSTAT 5A: Final Exam Review",
     "section": "p-Values",
-    "text": "p-Values\n\nWe also saw how, instead of looking at critical values, we can also look at p-values.\nThe p-value is the probability of observing something as or more extreme (in the directino of the alternative) than what we currently observe.\nAs such, p-values that are smaller than the level of significance lead credence to the alternative over the null; i.e. we reject whenever \\(p &lt; \\alpha\\).\n\nNote this means that the way we compute p-values depends on the type of test (i.e. two-sided, lower-tailed, or upper-tailed) that we are conducting."
+    "text": "p-Values\n\nWe also saw how, instead of looking at critical values, we can also look at p-values.\nThe p-value is the probability of observing something as or more extreme (in the direction of the alternative) than what we currently observe.\nAs such, p-values that are smaller than the level of significance lead us to reject our null hypothesisl; i.e. we reject whenever \\(p &lt; \\alpha\\).\n\nNote this means that the way we compute p-values depends on the type of test (i.e. two-sided, lower-tailed, or upper-tailed) that we are conducting."
   },
   {
     "objectID": "Pages/Lectures/Lecture21/Lec21.html#p-value-lower-tailed-test",
@@ -4134,28 +4134,28 @@
     "href": "Pages/Lectures/Lecture21/Lec21.html#worked-out-example",
     "title": "PSTAT 5A: Final Exam Review",
     "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nA city official claims that the average monthly rent of a 1 bedroom apartment in GauchoVille is $1.1k. To test this claim, a representative sample of 37 1 bedroom apartments is taken; the average monthly rent of these 37 apartments is found to be $1.21k and the standard deviation of these 37 apartments is found to be 0.34. Assume we are conducting a two-sided test with a 5% level of significance.\n\nDefine the parameter of interest.\nState the null and alternative hypotheses.\nCompute the value of the test statistic.\nAssuming the null is correct, what is the distribution of the test statistic?\nWhat is the critical value of the test?\nConduct the test, and phrase your conclusions in the context of the problem.\nWhat code would we use to compute the p-value? Would we expect this value to be less than or greater than 5%?"
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 1\n\n\n\n\nA city official claims that the average monthly rent of a 1 bedroom apartment in GauchoVille is $1.1k. To test this claim, a representative sample of 37 1 bedroom apartments is taken; the average monthly rent of these 37 apartments is found to be $1.21k and the standard deviation of these 37 apartments is found to be 0.34. Assume we are conducting a two-sided test with a 5% level of significance.\n\nState the null and alternative hypotheses.\nCompute the value of the test statistic.\nWhat is the critical value of the test?\nConduct the test, and phrase your conclusions in the context of the problem."
   },
   {
     "objectID": "Pages/Lectures/Lecture21/Lec21.html#solutions",
     "href": "Pages/Lectures/Lecture21/Lec21.html#solutions",
     "title": "PSTAT 5A: Final Exam Review",
     "section": "Solutions",
-    "text": "Solutions\n\n\\(\\mu =\\) average monthly cost of a 1 bedroom apartment in GauchoVille.\n\n\\[\\left[ \\begin{array}{rr}\n  H_0:    & \\mu = 1.1   \\\\\n  H_A:    & \\mu \\neq 1.1\n\\end{array} \\right. \\]\n\nSince we do not have access to the population standard deviation, we use \\[ \\mathrm{TS} = \\frac{\\overline{X} - \\mu_0}{s / \\sqrt{n}} = \\frac{1.21 - 1.1}{0.34 / \\sqrt{37}} = \\boxed{ 1.97 } \\]"
+    "text": "Solutions\n\n\\[\\left[ \\begin{array}{rr}\n  H_0:    & \\mu = 1.1   \\\\\n  H_A:    & \\mu \\neq 1.1\n\\end{array} \\right. \\]\n\nSince we do not have access to the population standard deviation, we use \\[ \\mathrm{TS} = \\frac{\\overline{X} - \\mu_0}{s / \\sqrt{n}} = \\frac{1.21 - 1.1}{0.34 / \\sqrt{37}} = \\boxed{ 1.97 } \\]"
   },
   {
     "objectID": "Pages/Lectures/Lecture21/Lec21.html#solutions-1",
     "href": "Pages/Lectures/Lecture21/Lec21.html#solutions-1",
     "title": "PSTAT 5A: Final Exam Review",
     "section": "Solutions",
-    "text": "Solutions\n\nWe ask:\n\nIs the population normally distributed (i.e. are housing prices in GauchoVille normally distributed)? No.\nIs our sample size large enough? Yes; \\(n = 37 \\geq 30\\).\nDo we have \\(\\sigma\\) or \\(s\\)? We have \\(s\\).\n\n\n\nTherefore, we use a t-distribution with \\(n - 1 = 37 - 1 = 36\\) degrees of freedom: \\[ \\boxed{\\mathrm{TS} \\stackrel{H_0}{\\sim} t_{36} } \\]"
+    "text": "Solutions"
   },
   {
     "objectID": "Pages/Lectures/Lecture21/Lec21.html#solutions-2",
     "href": "Pages/Lectures/Lecture21/Lec21.html#solutions-2",
     "title": "PSTAT 5A: Final Exam Review",
     "section": "Solutions",
-    "text": "Solutions\n\nFrom the t-table provided on the website (which will also be provided to you during the exam), the critical value is \\(\\boxed{2.03}\\).\n\nSince \\(|\\mathrm{TS}| = |1.97| = 1.97 &lt; 2.03\\), we fail to reject the null:\n\n\n\nAt a 5% level of significance, there was insufficient evidence to reject the null hypothesis that the true monthly cost of a 1-bedroom apartment in GauchoVille is $1.1k in favor of the alternative that the true cost is not $1.1k.\n\n\n\nThe code we would use, after importing scipy.stats, is 2 * scipy.stats.t.cdf(-1.97, 36), which we would expect to be larger than 5% as we failed to reject based on the critical value, and we only reject when p is less than \\(\\alpha\\) (which is 5% for this problem)."
+    "text": "Solutions\n\nFrom the t-table provided on the website (which will also be provided to you during the exam), the critical value is \\(\\boxed{2.03}\\).\n\nSince \\(|\\mathrm{TS}| = |1.97| = 1.97 &lt; 2.03\\), we fail to reject the null:\n\n\n\nAt a 5% level of significance, there was insufficient evidence to reject the null hypothesis that the true monthly cost of a 1-bedroom apartment in GauchoVille is $1.1k in favor of the alternative that the true cost is not $1.1k."
   },
   {
     "objectID": "Pages/Lectures/Lecture21/Lec21.html#two-samples",
@@ -4183,7 +4183,7 @@
     "href": "Pages/Lectures/Lecture21/Lec21.html#test-statistic-1",
     "title": "PSTAT 5A: Final Exam Review",
     "section": "Test Statistic",
-    "text": "Test Statistic\n\nNow, we need some sort of test statistic.\nSuppose we have a (representative) sample \\(X = \\{x_i\\}_{i=1}^{n_1}\\) from Population 1 and a (representative) sample \\(Y = \\{y_i\\}_{i=1}^{n_2}\\) from Population 2 (note the potentially different sample sizes!)\nWe have an inkling that a decent point estimator for \\(\\delta = \\mu_2 - \\mu_1\\) is \\(\\widehat{\\delta} = \\overline{Y} - \\overline{X}\\).\nOur test statistic will be some standardized form of \\(\\widehat{\\delta}\\), meaning we need to find \\(\\mathbb{E}[\\widehat{\\delta}]\\) and \\(\\mathrm{SD}(\\widehat{\\delta})\\)."
+    "text": "Test Statistic\n\nNow, we need some sort of test statistic.\nSuppose we have a (representative) sample \\(X = \\{x_i\\}_{i=1}^{n_1}\\) from Population 1 and a (representative) sample \\(Y = \\{y_i\\}_{i=1}^{n_2}\\) from Population 2 (note the potentially different sample sizes!)\nWe have an inkling that a decent point estimator for \\(\\delta = \\mu_2 - \\mu_1\\) is \\(\\widehat{\\delta} = \\overline{Y} - \\overline{X}\\)."
   },
   {
     "objectID": "Pages/Lectures/Lecture21/Lec21.html#linear-combinations-of-random-variables",
@@ -4232,35 +4232,35 @@
     "href": "Pages/Lectures/Lecture21/Lec21.html#worked-out-example-2",
     "title": "PSTAT 5A: Final Exam Review",
     "section": "Worked-Out Example",
-    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\nA renter wants to know which city is cheaper to live in: GauchoVille or Bruin City. Specifically, she would like to test the null hypothesis that the two cities have the same average monthly rent against the alternative that GauchoVille has a higher average monthly rent.\n\nAs such, she takes a representative sample of 32 houses from GauchoVille (which she calls Population 1) and 32 houses from Bruin City (which she calls Population 2), and records the following information about her samples (all values are reported in thousands of dollars):\n\\[\\begin{array}{r|cc}\n                    & \\text{Sample Average}     & \\text{Sample Standard Deviation}    \\\\\n  \\hline\n  \\textbf{GauchoVille}  &     3.2                    & 0.50        \\\\\n  \\textbf{Bruin City}   &     3.5                    & 0.60\n\\end{array}\\]\n\nWrite down the null and alternative hypotheses, taking care to define any relevant parameter(s).\nCompute the value of the test statistic.\nAssuming the null is correct, what is the distribution of the test statistic? Be sure to include any/all relevant parameter(s)! (Assume all independence and normality conditions are met.)\nWhat is the critical value of the test, if we are to use a 5% level of significance?\nConduct the relevant test at a 5% level of significance, and report your conclusions in the context of the problem."
+    "text": "Worked-Out Example\n\n\n\n\n\n\n\nWorked-Out Example 2\n\n\n\n\nA renter wants to know which city is cheaper to live in: GauchoVille or Bruin City. Specifically, she would like to test the null hypothesis that the two cities have the same average monthly rent against the alternative that GauchoVille has a higher average monthly rent.\n\nAs such, she takes a representative sample of 32 houses from GauchoVille (which she calls Population 1) and 32 houses from Bruin City (which she calls Population 2), and records the following information about her samples (all values are reported in thousands of dollars):\n\\[\\begin{array}{r|cc}\n                    & \\text{Sample Average}     & \\text{Sample Standard Deviation}    \\\\\n  \\hline\n  \\textbf{GauchoVille}  &     3.2                    & 0.50        \\\\\n  \\textbf{Bruin City}   &     3.5                    & 0.60\n\\end{array}\\]\n\nWrite down the null and alternative hypotheses.\nCompute the value of the test statistic.\nWhat is the critical value of the test, if we are to use a 5% level of significance?\nConduct the relevant test at a 5% level of significance, and report your conclusions in the context of the problem."
   },
   {
     "objectID": "Pages/Lectures/Lecture21/Lec21.html#solutions-3",
     "href": "Pages/Lectures/Lecture21/Lec21.html#solutions-3",
     "title": "PSTAT 5A: Final Exam Review",
     "section": "Solutions",
-    "text": "Solutions\n\nLet \\(\\mu_1\\) denote the true average monthly rent in Population 1 (GauchoVille) and let \\(\\mu_2\\) denote the true average monthly rent in Population 2 (Bruin City). Then, the null and alternative hypotheses can be phrased as: \\[ \\left[ \\begin{array}{rr}\n  H_0:    & \\mu_1 = \\mu_2   \\\\\n  H_A:    & \\mu_1 &lt; \\mu_2\n\\end{array} \\right. \\] which, phrased in terms of the difference \\(\\mu_2 - \\mu_1\\), is equivalent to \\[ \\left[ \\begin{array}{rr}\n  H_0:    & \\mu_2 - \\mu_1 = 0   \\\\\n  H_A:    & \\mu_2 - \\mu_1 &gt; 0\n\\end{array} \\right. \\]"
+    "text": "Solutions\n\n\\[\\begin{align*}\n  \\widehat{\\beta_1}   & = \\frac{\\sum_{i=1}^{n}(x_i - \\overline{x})(y_i - \\overline{y})} {\\sum_{i=1}^{n} (x_i - \\overline{x})^2} = \\frac{80,\\!184.62}{101,\\!865} \\approx \\boxed{0.7872}   \\\\\n  \\widehat{\\beta_0}   & = \\overline{y} - \\widehat{\\beta_1} \\cdot \\overline{x} = \\boxed{1510.138}\n\\end{align*}\\] Therefore, \\[ \\widehat{(\\texttt{amt. of soda})} = 1510.138 + (0.7872) \\cdot (\\texttt{flight duration}) \\]\n\n\n\n\n\\(\\widehat{y}^{(130)} = 1510.138 + (0.7872) \\cdot (130) = \\boxed{1612.474 \\text{ oz.}}\\)"
   },
   {
     "objectID": "Pages/Lectures/Lecture21/Lec21.html#solutions-4",
     "href": "Pages/Lectures/Lecture21/Lec21.html#solutions-4",
     "title": "PSTAT 5A: Final Exam Review",
     "section": "Solutions",
-    "text": "Solutions\n\nWe compute\n\n\n\\[\\begin{align*}\n  \\mathrm{TS}   & = \\frac{\\overline{Y} - \\overline{X}}{\\sqrt{\\frac{s_X^2}{n_1} + \\frac{s_Y^2}{n_2}}} \\\\\n    & = \\frac{3.5 - 3.2}{\\sqrt{\\frac{0.5^2}{32} + \\frac{0.6^2}{32}  }} \\approx \\boxed{2.173}\n\\end{align*}\\]"
+    "text": "Solutions\n\nTreatment has neither been administered nor withheld, meaning this is an observational study.\n\n\n\n\nStratified sampling seems like the way to go, with western campus and eastern campus being the two strata.\n\nSpecifically, we should take an SRS from both western campus and eastern campus students, to ensure that students across all years are (somewhat) equally represented."
   },
   {
     "objectID": "Pages/Lectures/Lecture21/Lec21.html#solutions-5",
     "href": "Pages/Lectures/Lecture21/Lec21.html#solutions-5",
     "title": "PSTAT 5A: Final Exam Review",
     "section": "Solutions",
-    "text": "Solutions\n\nWe know that, under the null, the test statistic (assuming all independence and normality conditions hold) follows a t-distribution with degrees of freedom given by the Satterthwaite Approximation. As such, we should first compute the degrees of freedom:\n\n\n\\[\\begin{align*}\n  \\mathrm{df}   & = \\mathrm{round}\\left\\{ \\frac{ \\left[ \\left( \\frac{s_X^2}{n_1} \\right) + \\left( \\frac{s_Y^2}{n_2} \\right) \\right]^2 }{ \\frac{\\left( \\frac{s_X^2}{n_1} \\right)^2}{n_1 - 1} + \\frac{\\left( \\frac{s_Y^2}{n_2} \\right)^2}{n_2 - 1} } \\right\\} \\\\\n    & = \\mathrm{round}\\left\\{ \\frac{ \\left[ \\left( \\frac{0.5^2}{32} \\right) + \\left( \\frac{0.6^2}{32} \\right) \\right]^2 }{ \\frac{\\left( \\frac{0.5^2}{32} \\right)^2}{32 - 1} + \\frac{\\left( \\frac{0.6^2}{32} \\right)^2}{32 - 1} } \\right\\} \\\\\n    & = \\mathrm{round}\\{60.04737\\} = 60\n\\end{align*}\\]\n\n\nTherefore, \\(\\mathrm{TS} \\stackrel{H_0}{\\sim} t_{60}\\)"
+    "text": "Solutions\n\nRecall that we have an upper-tailed alternative. As such, the critical value will be the \\((1 - 0.05) \\times 100 = 95\\)th percentile of the \\(t_{60}\\) distribution. From our table, we see that this is \\(\\boxed{1.67}\\).\nWe reject when our test statistic is larger than the critical value (again, since we are using an upper-tailed alternative). Since \\(\\mathrm{TS} = 2.173 &gt; 1.67\\), we reject the null:\n\n\n\nAt a 5% level of significance, there was sufficient evidence to reject the null that the average monthly rent in the two cities is the same against the alternative that the average monthly rent in Bruin City is higher than that in GauchoVille.\n\n\n\nQuick aside: do you think it was a valid assumption to make that the “normality conditions” hold?"
   },
   {
     "objectID": "Pages/Lectures/Lecture21/Lec21.html#solutions-6",
     "href": "Pages/Lectures/Lecture21/Lec21.html#solutions-6",
     "title": "PSTAT 5A: Final Exam Review",
     "section": "Solutions",
-    "text": "Solutions\n\nRecall that we have an upper-tailed alternative. As such, the critical value will be the \\((1 - 0.05) \\times 100 = 95\\)th percentile of the \\(t_{60}\\) distribution. From our table, we see that this is \\(\\boxed{1.67}\\).\nWe reject when our test statistic is larger than the critical value (again, since we are using an upper-tailed alternative). Since \\(\\mathrm{TS} = 2.173 &gt; 1.67\\), we reject the null:\n\n\n\nAt a 5% level of significance, there was sufficient evidence to reject the null that the average monthly rent in the two cities is the same against the alternative that the average monthly rent in Bruin City is higher than that in GauchoVille.\n\n\n\nQuick aside: do you think it was a valid assumption to make that the “normality conditions” hold?"
+    "text": "Solutions\n\n\\[\\begin{align*}\n  \\widehat{\\beta_1}   & = \\frac{\\sum_{i=1}^{n}(x_i - \\overline{x})(y_i - \\overline{y})} {\\sum_{i=1}^{n} (x_i - \\overline{x})^2} = \\frac{80,\\!184.62}{101,\\!865} \\approx \\boxed{0.7872}   \\\\\n  \\widehat{\\beta_0}   & = \\overline{y} - \\widehat{\\beta_1} \\cdot \\overline{x} = \\boxed{1510.138}\n\\end{align*}\\] Therefore, \\[ \\widehat{(\\texttt{amt. of soda})} = 1510.138 + (0.7872) \\cdot (\\texttt{flight duration}) \\]\n\n\n\n\n\\(\\widehat{y}^{(130)} = 1510.138 + (0.7872) \\cdot (130) = \\boxed{1612.474 \\text{ oz.}}\\)"
   },
   {
     "objectID": "Pages/Lectures/Lecture21/Lec21.html#multiple-populations",
@@ -4379,7 +4379,7 @@
     "href": "Pages/Lectures/Lecture21/Lec21.html#solutions-7",
     "title": "PSTAT 5A: Final Exam Review",
     "section": "Solutions",
-    "text": "Solutions\n\n\\[\\begin{align*}\n  \\widehat{\\beta_1}   & = \\frac{\\sum_{i=1}^{n}(x_i - \\overline{x})(y_i - \\overline{y})} {\\sum_{i=1}^{n} (x_i - \\overline{x})^2} = \\frac{80,\\!184.62}{101,\\!865} \\approx \\boxed{0.7872}   \\\\\n  \\widehat{\\beta_0}   & = \\overline{y} - \\widehat{\\beta_1} \\cdot \\overline{x} = \\boxed{1510.138}\n\\end{align*}\\] Therefore, \\[ \\widehat{(\\texttt{amt. of soda})} = 1510.138 + (0.7872) \\cdot (\\texttt{flight duration}) \\]\n\n\n\n\n\\(\\widehat{y}^{(130)} = 1510.138 + (0.7872) \\cdot (130) = \\boxed{1612.474 \\text{ oz.}}\\)"
+    "text": "Solutions\n\nTreatment has neither been administered nor withheld, meaning this is an observational study.\n\n\n\n\nStratified sampling seems like the way to go, with western campus and eastern campus being the two strata.\n\nSpecifically, we should take an SRS from both western campus and eastern campus students, to ensure that students across all years are (somewhat) equally represented."
   },
   {
     "objectID": "Pages/Lectures/Lecture21/Lec21.html#extrapolation",

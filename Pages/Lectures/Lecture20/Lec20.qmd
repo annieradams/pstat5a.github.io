@@ -197,21 +197,7 @@ A researcher would like to determine whether or not there is an association betw
 
     - After controlling for this variable, it was actually found that there was *no* significant difference in addmittance rates between men and women.
     
-## Simpson's Paradox
 
-- What this shows us is that relationships between percentages in subgroups can sometimes be reversed after the subgroups are aggregated. 
-
-- This is what we call **Simpson's Paradox**.
-
-:::{.fragment}
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sxYrzzy3cq8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-:::
-
-## On the Subject of Misleading
-
-\
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/i60wwZDA1CI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
     
