@@ -20,8 +20,6 @@ Welcome to the final PSTAT 5A Lab of the quarter! In this lab, we will put every
 
 At the end of this lab, you should have a well-formatted lab report containing selected figures and code. As a general practice, though, most Data Scientists perefer **not** to include the entirety of their code in their reports, opting instead to only summarize the code they used and then provide the full code in an appendix. We will not ask you to do this for this report; you may leave your full code in your report. \
 
-**Please pay attention to the formatting of your document**. Make sure your equations render properly, and make sure any hyperlinks you include function properly. Also ensure you update your Notebook Metadata to include your name on your `.pdf`; failure to do so will incur a 50\% penalty. \
-
 Make sure all plots you generate are properly labelled and include titles.
 
 
@@ -31,7 +29,7 @@ Make sure all plots you generate are properly labelled and include titles.
 
 ## Getting To Know the Dataset
 
-The **Internet Movie Database** (IMdB) very graciously provides a quite comprehensive suite of media-related datasets, available to download at [this link](https://developer.imdb.com/non-commercial-datasets/). The dataset we will work with in this lab has been truncated to only include movies released in the 2000s, and has the following data dictionary (with entried copied from the official IMdB documentation):
+The **Internet Movie Database** (IMdB) very graciously provides a quite comprehensive suite of media-related datasets, available to download at [this link](https://drive.google.com/file/d/1uNolx7_eF7pOSQNkRUFFd_7ZlJQGHxbc/view?usp=sharing). The dataset we will work with in this lab has been truncated to only include movies released in the 2000s, and has the following data dictionary (with entried copied from the official IMdB documentation):
 
 - `tconst` (string) - alphanumeric unique identifier of the title
 - `titleType` (string) – the type/format of the title (e.g. movie, short, tvseries, tvepisode, video, etc)
@@ -46,7 +44,7 @@ genres (string array) – includes up to three genres associated with the title
 - `averageRating` – weighted average of all the individual user ratings
 - `numVotes` - number of votes the title has received
 
-The dataset itself can be found at this link: https://pstat5a.github.io/Files/Datasets/movies_2000s.csv
+
 
 ::: {.callout-important}
 
