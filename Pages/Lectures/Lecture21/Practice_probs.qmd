@@ -1,0 +1,295 @@
+---
+title: "PSTAT 5A: Lecture 22"
+subtitle: "Practice Problems" 
+author: "Annie Adams"
+date: "09/09/25"
+format: 
+    revealjs:
+      chalkboard: true
+      html-math-method: mathjax
+      theme: [default, ../CSS/custom.scss]
+      incremental: true
+      logo: 5a_hex.png
+      template-partials:
+        - title-slide.html
+      
+editor: source
+title-slide-attributes:
+    data-background-image: "5a_hex.png"
+    data-background-size: contain
+    data-background-opacity: "0.5"
+    data-background-position: left
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(ggthemes)
+```
+
+
+
+## Exam Reminders
+- Extra credit Homework due tonight!!
+- Bring calculator and access card for exam tomorrow 
+- You will have access to the formula sheet, t table, and z table 
+
+
+
+
+
+
+
+## Confidence Interval {style="font-size:30px"}
+
+:::{.fragment}
+::: callout-tip
+## Confidence Interval
+
+:::{.nonincremental}
+::: {style="font-size: 30px"}
+Melanie would like to construct a confidence interval for the true proportion of California Residents that are vegetarian. To that end, she took a representative sample of 120 CA residents and found that 40 of these residents are vegetarian. Construct an 88\% confidence interval for the true proportion of CA residents that are vegetarian.
+
+```{r}
+countdown::countdown(
+  minutes = 4,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+:::
+:::
+:::
+:::
+
+
+
+## Continuous Random Variables {style="font-size:30px"}
+
+:::{.fragment}
+::: callout-tip
+## Probabilities for a Continuous RV
+
+:::{.nonincremental}
+::: {style="font-size: 30px"}
+It is found that the scores on a particular exam are normally distributed with a mean of 90 and a standard deviation of 4.
+
+a. Define the random variable of interest, and call it X. 
+
+b. If a student is selected at random, what is the probability that they scored 81 or lower?
+
+c. If a student is selected at random, what is the probability that they scored 75 or higher?
+
+```{r}
+countdown::countdown(
+  minutes = 4,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+:::
+:::
+:::
+:::
+
+
+
+## Counting {style="font-size:30px"}
+
+:::{.fragment}
+::: callout-tip
+## Counting with/without replacement
+
+:::{.nonincremental}
+::: {style="font-size: 30px"}
+You have a 4-digit combination lock where each digit can be any number from 0 to 9. How many different combinations are possible? How many combinations are possible if you can't repeat a digit? 
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+:::
+:::
+:::
+:::
+
+
+
+
+
+## Proportion Probabilities {style="font-size:30px"}
+
+:::{.fragment}
+::: callout-tip
+## Proportion Probabilities
+
+:::{.nonincremental}
+::: {style="font-size: 30px"}
+Suppose a recent study has revealed that 72% of Americans are in favor of government incentives for electric vehicle purchases. A pollster takes a representative sample of size 150 Americans, and records the proportion of these Americans that support government incentives for electric vehicles.
+
+a. What is the probability that more than 75% of people in the sample support government incentives for electric vehicles?
+
+b. What is the probability that the proportion of people in the sample who support government incentives for electric vehicles lies within 3% of the true proportion of 72%?
+
+
+```{r}
+countdown::countdown(
+  minutes = 4,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+:::
+:::
+:::
+:::
+
+
+
+## Hypothesis test for $\mu_d$ {style="font-size:30px"}
+
+:::{.fragment}
+::: callout-tip
+## Hypothesis test for $\mu_d$
+
+:::{.nonincremental}
+::: {style="font-size: 30px"}
+A mattress company wants to test if their new ergonomic mattress design improves sleep quality compared to customers' current mattresses. They conduct a study with a random sample of 35 participants who have been experiencing sleep issues. Each participant uses their current mattress for one week while tracking their sleep quality using a standardized sleep quality index (scale 0-100, where higher scores indicate better sleep quality), then switches to the new ergonomic mattress for one week and tracks their sleep quality again. The differences in sleep quality scores (sleep quality with new mattress minus sleep quality with current mattress) were calculated, and the mean of the differences is 8.42 with a standard deviation of 15.67.
+
+
+Conduct a one-sided hypothesis test at a 5% level to determine if the new ergonomic mattress significantly improves sleep quality scores. Be sure you phrase your conclusion clearly, and in the context of the problem.
+
+
+```{r}
+countdown::countdown(
+  minutes = 4,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+:::
+:::
+:::
+:::
+
+
+
+
+## P values {style="font-size:30px"}
+
+:::{.fragment}
+::: callout-tip
+## P values
+
+:::{.nonincremental}
+::: {style="font-size: 30px"}
+The Wall Street Journal has reported that, as of March 2024, 68.2% of US households have a Netflix subscription. To verify this claim, we take a representative sample of 400 US households and observe that 71.5% of these households have a Netflix subscription.
+
+a. Compute the p-value of our observed value of the statistic, assuming we are using an upper-tailed alternative.
+
+b. Compute the p-value of our observed value of the statistic, assuming we are using a two-sided alternative.
+
+C. Compute the p-value of our observed value of the statistic, assuming we are using a lower-tailed alternative.
+
+```{r}
+countdown::countdown(
+  minutes = 4,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+:::
+:::
+:::
+:::
+
+
+
+## Standard Deviation {style="font-size:30px"}
+
+:::{.fragment}
+::: callout-tip
+## Standard Deviation
+
+:::{.nonincremental}
+::: {style="font-size: 30px"}
+Consider the list of numbers X = {−3, −1, 0, 0.4, 0.7, 3.9, 6}. 
+
+Find the standard deviation of $X$. 
+
+```{r}
+countdown::countdown(
+  minutes = 4,
+  # left = 0, right = 0,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  )
+```
+
+:::
+:::
+:::
+:::
+
