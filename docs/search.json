@@ -1467,7 +1467,7 @@
     "href": "Pages/Lectures/Lecture21/Practice_probs.html#continuous-random-variables",
     "title": "PSTAT 5A: Lecture 22",
     "section": "Continuous Random Variables",
-    "text": "Continuous Random Variables\n\n\n\n\n\n\n\nProbabilities for a Continuous RV\n\n\n\n\nIt is found that the scores on a particular exam are normally distributed with a mean of 90 and a standard deviation of 4.\n\nDefine the random variable of interest, and call it X.\nIf a student is selected at random, what is the probability that they scored 81 or lower?\nIf a student is selected at random, what is the probability that they scored 75 or higher?\n\n\n\n\n−+\n04:00"
+    "text": "Continuous Random Variables\n\n\n\n\n\n\n\nProbabilities for a Continuous RV\n\n\n\n\nIt is found that the scores on a particular exam are normally distributed with a mean of 90 and a standard deviation of 4.\n\nDefine the random variable of interest, and call it X.\nIf a student is selected at random, what is the probability that they scored 81 or lower?\nIf a student is selected at random, what is the probability that they scored higher than 93?\n\n\n\n\n−+\n04:00"
   },
   {
     "objectID": "Pages/Lectures/Lecture21/Practice_probs.html#counting",
@@ -1495,7 +1495,7 @@
     "href": "Pages/Lectures/Lecture21/Practice_probs.html#p-values",
     "title": "PSTAT 5A: Lecture 22",
     "section": "P values",
-    "text": "P values\n\n\n\n\n\n\n\nP values\n\n\n\n\nThe Wall Street Journal has reported that, as of March 2024, 68.2% of US households have a Netflix subscription. To verify this claim, we take a representative sample of 400 US households and observe that 71.5% of these households have a Netflix subscription.\n\nCompute the p-value of our observed value of the statistic, assuming we are using an upper-tailed alternative.\nCompute the p-value of our observed value of the statistic, assuming we are using a two-sided alternative.\n\nC. Compute the p-value of our observed value of the statistic, assuming we are using a lower-tailed alternative.\n\n\n\n−+\n04:00"
+    "text": "P values\n\n\n\n\n\n\n\nP values\n\n\n\n\nThe Wall Street Journal has reported that, as of March 2024, 68.2% of US households have a Netflix subscription. To verify this claim, we take a representative sample of 400 US households and observe that 71.5% of these households have a Netflix subscription.\n\nCompute the p-value of our observed value of the statistic, assuming we are using an upper-tailed alternative.\nCompute the p-value of our observed value of the statistic, assuming we are using a two-sided alternative.\n\n\n\n\n−+\n04:00"
   },
   {
     "objectID": "Pages/Lectures/Lecture21/Practice_probs.html#standard-deviation",

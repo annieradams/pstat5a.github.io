@@ -86,7 +86,7 @@ a. Define the random variable of interest, and call it X.
 
 b. If a student is selected at random, what is the probability that they scored 81 or lower?
 
-c. If a student is selected at random, what is the probability that they scored 75 or higher?
+c. If a student is selected at random, what is the probability that they scored higher than 93?
 
 ```{r}
 countdown::countdown(
@@ -183,7 +183,7 @@ countdown::countdown(
 
 
 
-## Hypothesis test for $\mu_d$ {style="font-size:30px"}
+## Hypothesis test for $\mu_d$ {style="font-size:25px"}
 
 :::{.fragment}
 ::: callout-tip
@@ -235,7 +235,6 @@ a. Compute the p-value of our observed value of the statistic, assuming we are u
 
 b. Compute the p-value of our observed value of the statistic, assuming we are using a two-sided alternative.
 
-C. Compute the p-value of our observed value of the statistic, assuming we are using a lower-tailed alternative.
 
 ```{r}
 countdown::countdown(
